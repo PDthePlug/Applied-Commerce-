@@ -57,3 +57,14 @@ test("center menu keeps five learner destinations and accessible dialog behavior
   assert.match(shell,/aria-haspopup="dialog"/);
   assert.match(shell,/event\.key!=="Tab"/);
 });
+
+test("home is a learner welcome dashboard, not a duplicated curriculum index",()=>{
+  const home=read("components/home-dashboard.tsx");
+  assert.match(home,/Welcome back/);
+  assert.match(home,/Welcome to Applied Commerce/);
+  assert.match(home,/Pick up where you left off/);
+  assert.match(home,/View the full curriculum/);
+  assert.doesNotMatch(home,/Choose where you are learning/);
+  assert.doesNotMatch(home,/grade-section/);
+  assert.doesNotMatch(home,/GradeCard/);
+});

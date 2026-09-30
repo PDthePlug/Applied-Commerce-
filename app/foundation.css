@@ -12,3 +12,14 @@
 .topbar{min-height:70px}.topbar-note{margin-left:auto}
 .page-intro{max-width:880px}.page-intro>p:last-child{font-size:14px}
 .grade-card-bottom span,.term-stats span,.progress-grade-list small{letter-spacing:.01em}
+
+/* Home dashboard: learner-facing welcome state */
+.home-dashboard-hero{min-height:500px;padding:clamp(38px,5.5vw,68px)}
+.home-dashboard-hero h1{max-width:820px;margin:18px 0 20px;font-size:clamp(42px,5.8vw,72px);line-height:.98;letter-spacing:-.052em}
+.home-dashboard-hero .hero-copy{max-width:620px;font-size:15px;line-height:1.68}
+.home-dashboard-hero .hero-actions{margin-top:28px}
+.home-dashboard-hero .learner-metrics{right:38px;bottom:34px;width:min(560px,55%)}
+.home-dashboard-hero .learner-metrics>div{padding:17px 18px}
+.home-dashboard-hero .learner-metrics strong{font-size:17px}
+.home-dashboard-hero .learner-metrics span{font-size:9.5px}
+.home-page{min-height:calc(100vh - 72px)}
