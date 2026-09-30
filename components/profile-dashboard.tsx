@@ -25,7 +25,7 @@ export function ProfileDashboard(){
   const name=state.profile?.displayName?.trim() || "Learner";
   const gradeOptions=useMemo(()=>index?.grades.map(item=>item.grade) ?? [8,9,10,11,12],[index]);
 
-  return <main className="profile-page">
+  return <div className="profile-page">
     <section className="profile-hero">
       <div>
         <p className="eyebrow">Profile</p>
@@ -74,5 +74,5 @@ export function ProfileDashboard(){
         <div><strong>Your learning record currently stays on this device.</strong><p>When learner accounts are introduced, this profile will become the place your progress and portfolio travel with you.</p></div>
       </aside>
     </section>
-  </main>;
+  </div>;
 }
