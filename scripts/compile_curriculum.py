@@ -4,6 +4,7 @@ from docx.text.paragraph import Paragraph
 from docx.table import Table
 from pathlib import Path
 import base64, gzip, json, re, shutil, sys
+from language_accessibility import adapt_text, audit_summary, is_internal_editorial_note, reset_audit_counts
 
 SOURCE_DIR = Path(sys.argv[1]) if len(sys.argv) > 1 else Path('/mnt/data')
 OUT = Path(sys.argv[2]) if len(sys.argv) > 2 else Path('public/curriculum')
@@ -39,14 +40,19 @@ def block_type(text: str, style: str) -> str:
     if len(text)<=100 and upper_ratio(text)>.9: return 'section'
     return 'paragraph'
 
-def serialize(item):
+def serialize(item, grade: int):
     if isinstance(item, Paragraph):
-        text=clean(item.text)
+        raw=clean(item.text)
+        if not raw or is_internal_editorial_note(raw): return None
+        text=adapt_text(raw, grade)
         if text: return {'kind':'text','type':block_type(text,item.style.name if item.style else ''),'text':text}
     elif isinstance(item, Table):
         rows=[]
         for row in item.rows:
-            vals=[clean(cell.text) for cell in row.cells]
+            vals=[]
+            for cell in row.cells:
+                raw=clean(cell.text)
+                vals.append(adapt_text(raw, grade) if raw else '')
             if any(vals): rows.append(vals)
         if rows: return {'kind':'table','type':'table','rows':rows}
     return None
@@ -62,6 +68,7 @@ def source_note(text: str) -> bool:
     return u.startswith('SITUATION REPORT:') or u.startswith('END OF GRADE ') or u.startswith('END OF PAPER ')
 
 PART_SIZE = 40000
+reset_audit_counts()
 catalogue={'product':'Applied Commerce','formatVersion':2,'grades':[]}
 for path in sorted(SOURCE_DIR.glob('APPLIED COMMERCE Grade *.docx')):
     grade=int(re.search(r'Grade (\d+)',path.name).group(1))
@@ -78,28 +85,30 @@ for path in sorted(SOURCE_DIR.glob('APPLIED COMMERCE Grade *.docx')):
     terms={n:{'term':n,'intro':[],'units':[]} for n in range(1,5)}
     preface=[]; current_term=1; current_unit=None; seen=False; serial=0; assessment_serial=0
     for item in items:
-        b=serialize(item)
-        if not b: continue
-        text=b.get('text','') if b['kind']=='text' else ''
-        if text:
-            tm=term_marker(text,grade)
+        raw_text=clean(item.text) if isinstance(item, Paragraph) else ''
+        if raw_text:
+            tm=term_marker(raw_text,grade)
             if tm:
                 current_term=tm; current_unit=None
                 if seen: continue
-            if source_note(text):
+            if source_note(raw_text):
                 current_unit=None; continue
-            exam=re.fullmatch(rf'GRADE\s+{grade}\s+TERM\s+([1-4])\s+MOCK EXAM',text,re.I)
+            exam=re.fullmatch(rf'GRADE\s+{grade}\s+TERM\s+([1-4])\s+MOCK EXAM',raw_text,re.I)
             if exam:
                 current_term=int(exam.group(1)); assessment_serial+=1; serial+=1; seen=True
-                current_unit={'id':f'g{grade}-t{current_term}-assessment-{assessment_serial}','type':'assessment','grade':grade,'term':current_term,'label':text,'title':text,'blocks':[],'position':len(terms[current_term]['units'])}
+                exam_title=adapt_text(raw_text, grade)
+                current_unit={'id':f'g{grade}-t{current_term}-assessment-{assessment_serial}','type':'assessment','grade':grade,'term':current_term,'label':exam_title,'title':exam_title,'blocks':[],'position':len(terms[current_term]['units'])}
                 terms[current_term]['units'].append(current_unit); continue
-            if re.fullmatch(r'END OF MOCK EXAM\s*[—-].*',text,re.I):
+            if re.fullmatch(r'END OF MOCK EXAM\s*[—-].*',raw_text,re.I):
                 current_unit=None; continue
-            lesson=lesson_heading(text)
+            lesson=lesson_heading(raw_text)
             if lesson:
-                seen=True; serial+=1; start,end,l_title=lesson
+                seen=True; serial+=1; start,end,l_title_raw=lesson
+                l_title=adapt_text(l_title_raw, grade)
                 current_unit={'id':f'g{grade}-t{current_term}-l{start:02d}-{serial:03d}','type':'lesson','grade':grade,'term':current_term,'label':f'Lesson {start}' if start==end else f'Lessons {start}–{end}','title':l_title,'startLesson':start,'endLesson':end,'blocks':[],'position':len(terms[current_term]['units'])}
                 terms[current_term]['units'].append(current_unit); continue
+        b=serialize(item, grade)
+        if not b: continue
         if current_unit is not None: current_unit['blocks'].append(b)
         elif seen: terms[current_term]['intro'].append(b)
         else: preface.append(b)
@@ -130,4 +139,4 @@ for path in sorted(SOURCE_DIR.glob('APPLIED COMMERCE Grade *.docx')):
 
 catalogue['grades'].sort(key=lambda g:g['grade'])
 (OUT/'index.json').write_text(json.dumps(catalogue,ensure_ascii=False,separators=(',',':')),encoding='utf-8')
-print(json.dumps({g['grade']:{'lessons':g['unitCount'],'assessments':g['assessmentCount'],'terms':[t['unitCount'] for t in g['terms']]} for g in catalogue['grades']},indent=2))
+print(json.dumps({'curriculum': {g['grade']:{'lessons':g['unitCount'],'assessments':g['assessmentCount'],'terms':[t['unitCount'] for t in g['terms']]} for g in catalogue['grades']}, 'languageAudit': audit_summary()}, indent=2))
