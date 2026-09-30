@@ -193,6 +193,74 @@ function FillBlankLine({
   </div>;
 }
 
+function ChoiceBlock({
+  text,
+  unitId,
+  blockIndex,
+  promptResponses,
+  onSavePromptResponse,
+}:{
+  text:string;
+  unitId:string;
+  blockIndex:number;
+  promptResponses:Record<string,string>;
+  onSavePromptResponse:(promptId:string,value:string)=>void;
+}){
+  const cleaned=displayText(text);
+  const parts=cleaned.split("☐");
+  const prefix=(parts.shift()??"").trim();
+  const options=parts.map(value=>value.trim()).filter(Boolean).filter(value=>!TENSION_RE.test(value));
+  const choiceId=promptId(unitId,blockIndex,"choice");
+  const selected=(promptResponses[choiceId]??"").split("\n").map(value=>value.trim()).filter(Boolean);
+  const multi=/check all|choose at least|rank|completed all|portfolio|full year|term \d/i.test(prefix) || !prefix;
+  const singleChoice=!multi && (
+    prefix.includes("?") ||
+    /^(?:My (?:option|chosen option|risk tolerance)|Am I|Is |Do |Did |Have |Can |Given )/i.test(prefix)
+  );
+
+  const toggle=(option:string)=>{
+    if(singleChoice){
+      onSavePromptResponse(choiceId,selected.includes(option)?"":option);
+      return;
+    }
+    const next=selected.includes(option)?selected.filter(value=>value!==option):[...selected,option];
+    onSavePromptResponse(choiceId,next.join("\n"));
+  };
+
+  return <div className="choice-answerable">
+    {prefix&&<div className="choice-prefix">
+      {BLANK_RE.test(prefix)
+        ? <FillBlankLine text={prefix} unitId={unitId} blockIndex={blockIndex} promptResponses={promptResponses} onSavePromptResponse={onSavePromptResponse} slotPrefix="choice-prefix"/>
+        : <p>{prefix}</p>}
+    </div>}
+    <div className="choice-options" role={singleChoice?"radiogroup":"group"} aria-label={prefix||"Select options"}>
+      {options.map((rawOption,index)=>{
+        const hasDetail=BLANK_RE.test(rawOption);
+        const option=cleanMarkup(rawOption.replace(/_{3,}/g,"")).trim()||`Option ${index+1}`;
+        const active=selected.includes(option);
+        const detailId=promptId(unitId,blockIndex,`choice-${index}-detail`);
+        return <div className={`choice-option-wrap ${active?"selected":""}`} key={`${option}-${index}`}>
+          <button
+            type="button"
+            className="choice-option"
+            role={singleChoice?"radio":"checkbox"}
+            aria-checked={active}
+            onClick={()=>toggle(option)}
+          ><span aria-hidden="true">{active?"✓":""}</span><strong>{option}</strong></button>
+          {hasDetail&&active&&<input
+            className="choice-detail"
+            value={promptResponses[detailId]??""}
+            onChange={event=>onSavePromptResponse(detailId,event.target.value)}
+            placeholder="Add details"
+            aria-label={`Details for ${option}`}
+          />}
+        </div>;
+      })}
+    </div>
+    <ResponseStatus value={selected.join(" ")}/>
+  </div>;
+}
+
 function isMajorBoundary(block:ContentBlock){
   if(block.kind!=="text") return false;
   if(["activity","reflection","checkpoint","portfolio","story","section"].includes(block.type)) return true;
@@ -251,6 +319,7 @@ function isAnswerPrompt(text:string,context:PromptContext,type:TextBlockType,nex
   if(isGenericActivityLabel(value,context,nextBlock)) return true;
   if(type==="activity"||type==="reflection"||type==="checkpoint"||type==="portfolio") return false;
   if((context==="reflection"||context==="checkpoint")&&value.includes("?")) return true;
+  if(context&&/(?:\.\.\.|…)\s*$/.test(value)) return true;
   if(context&&IMPERATIVE_RE.test(value)&&!hasDedicatedInput(nextBlock)) return true;
   return false;
 }
@@ -417,6 +486,18 @@ export function ContentBlocks({blocks,unitId,promptResponses,onSavePromptRespons
       }
 
       if(block.type==="story"||block.type==="section") context=null;
+
+      if(block.text.includes("☐")){
+        views.push(<ChoiceBlock
+          text={block.text}
+          unitId={unitId}
+          blockIndex={index}
+          promptResponses={promptResponses}
+          onSavePromptResponse={onSavePromptResponse}
+          key={`choice-${index}`}
+        />);
+        continue;
+      }
 
       if(BLANK_RE.test(block.text)){
         const multi=parseMultiBlankFields(block.text);

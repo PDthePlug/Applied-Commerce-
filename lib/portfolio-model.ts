@@ -20,9 +20,19 @@ export function cleanMarkup(text:string){
   return text.replace(/\*\*/g,"").replace(/__/g,"").replace(/^[📂✍️💭✅]\s*/u,"").trim();
 }
 
+export function isTensionSectionHeading(block:ContentBlock){
+  if(block.kind!=="text") return false;
+  const text=cleanMarkup(block.text);
+  return TENSION_RE.test(text) && (
+    block.type==="activity" ||
+    block.type==="portfolio" ||
+    /^Tension\s*\/\s*Experiment\s+Log/i.test(text)
+  );
+}
+
 export function isRemovedLogBlock(block:ContentBlock){
   if(block.kind!=="text") return false;
-  return TENSION_RE.test(block.text) || SAVE_LOG_RE.test(block.text);
+  return isTensionSectionHeading(block) || SAVE_LOG_RE.test(block.text);
 }
 
 export function sanitizeRemovedLogReferences(text:string){
@@ -32,6 +42,7 @@ export function sanitizeRemovedLogReferences(text:string){
     .replace(/,?\s*every Log entry/gi,"")
     .replace(/,?\s*all Log entries/gi,"")
     .replace(/,?\s*your Log(?=[.,])/gi,"")
+    .replace(/☐\s*All Tension\s*\/\s*Experiment Log entries[^☐]*/gi,"")
     .replace(/\s{2,}/g," ")
     .trim();
 }
@@ -52,8 +63,24 @@ export function buildPortfolioDefinitions(unit:UnitContent):PortfolioDefinition[
   const definitions:PortfolioDefinition[]=[];
   let title=unit.title;
   let blockIndices:number[]=[];
+  let suppressLogSection=false;
 
   unit.blocks.forEach((block,index)=>{
+    if(suppressLogSection){
+      const boundary=block.kind==="text" && (
+        ["activity","reflection","checkpoint","portfolio","story","section"].includes(block.type) ||
+        /^Part\s+[A-Z]\s*:/i.test(block.text.trim())
+      );
+      if(boundary && !isRemovedLogBlock(block)) suppressLogSection=false;
+      else return;
+    }
+
+    if(isTensionSectionHeading(block)){
+      suppressLogSection=true;
+      blockIndices=[];
+      return;
+    }
+
     if(isRemovedLogBlock(block)){
       blockIndices=[];
       return;
@@ -69,7 +96,7 @@ export function buildPortfolioDefinitions(unit:UnitContent):PortfolioDefinition[
       definitions.push({
         id:`${unit.id}::portfolio::${index}`,
         title,
-        instruction:cleanMarkup(block.text).replace(/^Portfolio:\s*/i,""),
+        instruction:"Captured automatically from this activity.",
         blockIndices:[...blockIndices],
       });
       blockIndices=[];
