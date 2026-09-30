@@ -24,10 +24,7 @@ export function HomeDashboard(){
 
   useEffect(()=>{
     const last=state.lastOpened;
-    if(!last){
-      setActiveLesson(null);
-      return;
-    }
+    if(!last) return;
     let cancelled=false;
     curriculum.unit(last.grade,last.term,last.unitId)
       .then(unit=>{
@@ -50,6 +47,7 @@ export function HomeDashboard(){
   const displayName=state.profile?.displayName?.trim();
   const firstName=displayName?.split(/\s+/)[0];
 
+  const lesson=state.lastOpened?activeLesson:null;
   const continueHref=state.lastOpened
     ? `/learn/${state.lastOpened.grade}/term/${state.lastOpened.term}/${state.lastOpened.unitId}`
     : `/learn/${currentGrade}`;
@@ -84,10 +82,10 @@ export function HomeDashboard(){
     <section className="home-dashboard-grid" aria-label="Your learning today">
       <article className="home-dashboard-card home-continue-card">
         <p className="eyebrow">{state.lastOpened?"Continue your learning":"Start your learning"}</p>
-        <h2>{activeLesson?activeLesson.title:`Grade ${currentGrade}`}</h2>
+        <h2>{lesson?lesson.title:`Grade ${currentGrade}`}</h2>
         <p>
-          {activeLesson
-            ? `Grade ${activeLesson.grade} · Term ${activeLesson.term} · ${activeLesson.label}. Pick up exactly where you left off.`
+          {lesson
+            ? `Grade ${lesson.grade} · Term ${lesson.term} · ${lesson.label}. Pick up exactly where you left off.`
             : `Your Grade ${currentGrade} Applied Commerce journey is ready.`}
         </p>
         <small><BookOpenCheck/> {captured} responses captured so far</small>
