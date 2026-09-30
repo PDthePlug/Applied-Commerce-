@@ -1,30 +1,72 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { BookOpen, Archive, BarChart3, Home } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { Archive, BarChart3, BookOpen, Home, Menu, X } from "lucide-react";
 import { Brand } from "./brand";
 
 const nav=[
-  {href:"/",label:"Home",icon:Home},
-  {href:"/learn",label:"Learn",icon:BookOpen},
-  {href:"/portfolio",label:"Portfolio",icon:Archive},
-  {href:"/progress",label:"Progress",icon:BarChart3},
+  {href:"/",label:"Home",detail:"Your Applied Commerce starting point",icon:Home},
+  {href:"/learn",label:"Learn",detail:"Grades, terms and lessons",icon:BookOpen},
+  {href:"/portfolio",label:"Portfolio",detail:"Evidence captured from your work",icon:Archive},
+  {href:"/progress",label:"Progress",detail:"See what you have completed",icon:BarChart3},
 ];
 
 export function AppShell({children}:{children:React.ReactNode}) {
   const pathname=usePathname();
   const focusedReader=/\/learn\/\d+\/term\/\d+\/.+/.test(pathname);
+  const [menuOpen,setMenuOpen]=useState(false);
+  const triggerRef=useRef<HTMLButtonElement|null>(null);
+  const closeRef=useRef<HTMLButtonElement|null>(null);
+
+  useEffect(()=>{
+    if(!menuOpen) return;
+    const previousOverflow=document.body.style.overflow;
+    const trigger=triggerRef.current;
+    document.body.style.overflow="hidden";
+    requestAnimationFrame(()=>closeRef.current?.focus());
+    const onKeyDown=(event:KeyboardEvent)=>{
+      if(event.key==="Escape"){
+        event.preventDefault();
+        setMenuOpen(false);
+      }
+    };
+    window.addEventListener("keydown",onKeyDown);
+    return ()=>{
+      document.body.style.overflow=previousOverflow;
+      window.removeEventListener("keydown",onKeyDown);
+      requestAnimationFrame(()=>trigger?.focus());
+    };
+  },[menuOpen]);
+
   return <div className={`app-shell ${focusedReader?"focused-reader":""}`}>
     {!focusedReader && <header className="topbar">
       <Brand />
-      <nav className="desktop-nav" aria-label="Main navigation">
-        {nav.map(item=>{const I=item.icon; const active=item.href==="/"?pathname==="/":pathname.startsWith(item.href); return <Link className={active?"active":""} href={item.href} key={item.href}><I/> {item.label}</Link>})}
-      </nav>
       <div className="topbar-note">Grades 8–12</div>
     </header>}
     <main>{children}</main>
-    {!focusedReader && <nav className="mobile-nav" aria-label="Mobile navigation">
-      {nav.map(item=>{const I=item.icon; const active=item.href==="/"?pathname==="/":pathname.startsWith(item.href); return <Link className={active?"active":""} href={item.href} key={item.href}><I/><span>{item.label}</span></Link>})}
-    </nav>}
+
+    {menuOpen && <>
+      <button className="app-menu-scrim" type="button" onClick={()=>setMenuOpen(false)} aria-label="Close Applied Commerce menu"/>
+      <section className="app-menu-sheet" role="dialog" aria-modal="true" aria-label="Applied Commerce menu">
+       <header>
+        <div><span className="brand-mark">AC</span><div><strong>Applied Commerce</strong><small>Learner menu</small></div></div>
+        <button ref={closeRef} type="button" onClick={()=>setMenuOpen(false)} aria-label="Close menu"><X/></button>
+       </header>
+       <nav className="app-menu-items">
+        {nav.map(item=>{
+          const Icon=item.icon;
+          const active=item.href==="/"?pathname==="/":pathname.startsWith(item.href);
+          return <Link key={item.href} className={active?"active":""} href={item.href} onClick={()=>setMenuOpen(false)} aria-current={active?"page":undefined}>
+           <Icon/><span><strong>{item.label}</strong><small>{item.detail}</small></span>{active&&<em>Current</em>}
+          </Link>;
+        })}
+       </nav>
+      </section>
+    </>}
+
+    <button ref={triggerRef} className="app-menu-trigger" type="button" onClick={()=>setMenuOpen(true)} aria-label="Open Applied Commerce menu" aria-expanded={menuOpen}>
+      <Menu/><span>Menu</span>
+    </button>
   </div>;
 }
