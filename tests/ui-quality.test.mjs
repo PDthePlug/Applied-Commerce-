@@ -60,7 +60,7 @@ test("center menu keeps five learner destinations and accessible dialog behavior
 
 test("home is a learner welcome dashboard, not a duplicated curriculum index",()=>{
   const home=read("components/home-dashboard.tsx");
-  assert.match(home,/Welcome back/);
+  assert.match(home,/Good to see you/);
   assert.match(home,/Welcome to Applied Commerce/);
   assert.match(home,/Pick up where you left off/);
   assert.match(home,/View the full curriculum/);
