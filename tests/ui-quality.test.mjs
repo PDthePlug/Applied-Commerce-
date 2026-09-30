@@ -80,3 +80,14 @@ test("thinking equation notices do not promote ordinary narrative into banners",
   assert.doesNotMatch(compiler,/'THINKING EQUATION' in u/);
   assert.match(compiler,/re\.fullmatch\(r'THINKING EQUATION'/);
 });
+
+test("home adopts BIS Today hierarchy without a giant enclosing hero card",()=>{
+  const home=read("components/home-dashboard.tsx");
+  assert.match(home,/home-today-hero/);
+  assert.match(home,/Good to see you/);
+  assert.match(home,/home-today-status/);
+  assert.match(home,/home-dashboard-grid/);
+  assert.match(home,/Continue your learning/);
+  assert.doesNotMatch(home,/className="hero home-dashboard-hero"/);
+  assert.doesNotMatch(home,/hero-metrics/);
+});

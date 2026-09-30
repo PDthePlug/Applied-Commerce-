@@ -23,3 +23,31 @@
 .home-dashboard-hero .learner-metrics strong{font-size:17px}
 .home-dashboard-hero .learner-metrics span{font-size:9.5px}
 .home-page{min-height:calc(100vh - 72px)}
+
+/* BIS-derived Home hierarchy: open canvas, status first, action second */
+.bis-home{width:min(1120px,100%);padding-top:46px}
+.home-today-hero{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(260px,.75fr);gap:34px;align-items:end;margin-bottom:18px;padding:8px 0 34px;border-bottom:1px solid var(--line)}
+.home-welcome-copy h1{max-width:760px;margin:7px 0 14px;font:500 clamp(38px,5vw,60px)/1 var(--serif);letter-spacing:-.048em}
+.home-principle{max-width:720px;margin:0;color:var(--ink);font:500 clamp(21px,2.5vw,29px)/1.25 var(--serif);letter-spacing:-.025em}
+.home-lede{max-width:650px;margin:14px 0 0;color:var(--muted);font-size:14px;line-height:1.65}
+.home-today-status{display:grid;gap:7px;padding:20px 0 4px}
+.home-today-status>span{color:var(--accent);font-size:9px;font-weight:900;letter-spacing:.1em;text-transform:uppercase}
+.home-today-status>strong{font:500 24px/1.15 var(--serif);letter-spacing:-.025em}
+.home-today-status>small{color:var(--muted);font-size:10px}
+.home-progress-track{height:6px;overflow:hidden;margin:6px 0 2px;border-radius:99px;background:#dddcd5}
+.home-progress-track i{display:block;height:100%;border-radius:inherit;background:var(--teal)}
+.home-dashboard-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:16px}
+.home-dashboard-card{display:grid;align-content:start;min-height:230px;padding:26px;border:1px solid var(--line);border-radius:22px;background:#fff}
+.home-dashboard-card h2{margin:5px 0 10px;font:500 clamp(27px,3vw,36px)/1.08 var(--serif);letter-spacing:-.035em}
+.home-dashboard-card h3{margin:5px 0 10px;font:500 24px/1.12 var(--serif);letter-spacing:-.025em}
+.home-dashboard-card>p:not(.eyebrow){margin:0;color:var(--muted);font-size:13px;line-height:1.6}
+.home-continue-card>small{display:flex;align-items:center;gap:7px;margin:16px 0 18px;color:var(--muted);font-size:10px}
+.home-continue-card>small svg{width:14px;color:var(--teal)}
+.home-portfolio-card{background:var(--warm)}
+.home-portfolio-card>svg{width:25px;height:25px;margin-bottom:15px;color:var(--accent)}
+.home-primary-action,.home-secondary-action{display:inline-flex;align-items:center;gap:8px;width:max-content;margin-top:auto;font-size:11px;font-weight:900}
+.home-primary-action{min-height:44px;padding:0 16px;border-radius:12px;background:var(--ink);color:#fff}
+.home-secondary-action{padding-top:18px;border-top:1px solid rgba(23,49,59,.10);color:var(--ink)}
+.home-primary-action svg,.home-secondary-action svg,.home-curriculum-link svg{width:14px}
+.home-curriculum-link{display:inline-flex;align-items:center;gap:8px;margin:20px 2px 0;color:var(--muted);font-size:11px;font-weight:850}
+.home-curriculum-link:hover{color:var(--ink)}
