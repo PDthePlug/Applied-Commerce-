@@ -9,7 +9,7 @@ import { useLearningStore } from "@/lib/learning-store";
 
 export function LessonReader({grade,term,unitId}:{grade:number;term:number;unitId:string}){
  const [termData,setTermData]=useState<TermIndex|null>(null); const [unit,setUnit]=useState<UnitContent|null>(null); const [menu,setMenu]=useState(false);
- const {state,completedIds,markComplete,saveResponse,setLastOpened}=useLearningStore();
+ const {state,completedIds,markComplete,saveResponse,savePromptResponse,setLastOpened}=useLearningStore();
  useEffect(()=>{Promise.all([curriculum.term(grade,term),curriculum.unit(grade,term,unitId)]).then(([t,u])=>{setTermData(t);setUnit(u);setLastOpened(grade,term,unitId);window.scrollTo(0,0);});},[grade,term,unitId,setLastOpened]);
  const sequence=useMemo<UnitSummary[]>(()=>termData?[...termData.units,...termData.assessments]:[],[termData]);
  const pos=sequence.findIndex(x=>x.id===unitId); const prev=pos>0?sequence[pos-1]:null; const next=pos>=0&&pos<sequence.length-1?sequence[pos+1]:null;
@@ -31,13 +31,18 @@ export function LessonReader({grade,term,unitId}:{grade:number;term:number;unitI
   <main className="reader-stage">
     <article className="lesson-document">
       <header className="lesson-heading"><p className="eyebrow">Grade {grade} · Term {term} · {unit.label}</p><h1>{unit.title}</h1></header>
-      <ContentBlocks blocks={unit.blocks}/>
+      <ContentBlocks
+        blocks={unit.blocks}
+        unitId={unitId}
+        promptResponses={state.promptResponses}
+        onSavePromptResponse={savePromptResponse}
+      />
     </article>
     <section className="workbook-panel">
-      <div className="workbook-title"><NotebookPen/><div><p className="eyebrow">Learner portfolio</p><h2>My notes and responses</h2></div></div>
-      <p>Use this space while working through the activities, reflections, checkpoints and portfolio prompts above. Your response is attached to this lesson.</p>
-      <textarea value={response} onChange={e=>saveResponse(unitId,e.target.value)} placeholder="Write here…" rows={8}/>
-      <div className="workbook-actions"><span>{response?"Saved on this device":"No response yet"}</span><button className={complete?"completed":""} onClick={()=>markComplete(unitId,!complete)}>{complete?<><CheckCircle2/>Completed</>:<><Check/>Mark lesson complete</>}</button></div>
+      <div className="workbook-title"><NotebookPen/><div><p className="eyebrow">Lesson notes</p><h2>Anything you want to remember</h2></div></div>
+      <p>Your answers now save beside each question, activity and workbook blank. Use this separate space only for extra notes you want to keep about the lesson.</p>
+      <textarea value={response} onChange={e=>saveResponse(unitId,e.target.value)} placeholder="Add a note about this lesson…" rows={6}/>
+      <div className="workbook-actions"><span>{response?"Saved on this device":"No lesson note yet"}</span><button className={complete?"completed":""} onClick={()=>markComplete(unitId,!complete)}>{complete?<><CheckCircle2/>Completed</>:<><Check/>Mark lesson complete</>}</button></div>
     </section>
     <footer className="reader-footer">
       {prev?<Link href={unitHref(prev)}><ArrowLeft/><span><small>Previous</small><strong>{prev.title}</strong></span></Link>:<span/>}

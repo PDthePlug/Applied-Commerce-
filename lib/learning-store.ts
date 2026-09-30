@@ -5,7 +5,7 @@ import type { LearningState } from "./types";
 
 const KEY = "applied-commerce-learning-state-v1";
 const EVENT = "applied-commerce-learning-state-change";
-const emptyState: LearningState = { version: 1, completed: {}, responses: {} };
+const emptyState: LearningState = { version: 1, completed: {}, responses: {}, promptResponses: {} };
 const emptyRaw = JSON.stringify(emptyState);
 
 function readRaw(): string {
@@ -15,8 +15,16 @@ function readRaw(): string {
 
 function parse(raw: string): LearningState {
   try {
-    const value = JSON.parse(raw) as LearningState;
-    return value.version === 1 ? value : emptyState;
+    const value = JSON.parse(raw) as Partial<LearningState>;
+    if (value.version !== 1) return emptyState;
+    return {
+      version: 1,
+      activeGrade: value.activeGrade,
+      completed: value.completed ?? {},
+      responses: value.responses ?? {},
+      promptResponses: value.promptResponses ?? {},
+      lastOpened: value.lastOpened,
+    };
   } catch {
     return emptyState;
   }
@@ -60,10 +68,14 @@ export function useLearningStore() {
     ...current, responses:{...current.responses,[unitId]:value}
   })), [update]);
 
+  const savePromptResponse = useCallback((promptId:string, value:string) => update(current => ({
+    ...current, promptResponses:{...current.promptResponses,[promptId]:value}
+  })), [update]);
+
   const setLastOpened = useCallback((grade:number, term:number, unitId:string) => update(current => ({
     ...current, activeGrade:grade, lastOpened:{grade,term,unitId,at:new Date().toISOString()}
   })), [update]);
 
   const completedIds = useMemo(() => new Set(Object.keys(state.completed)), [state.completed]);
-  return {state, hydrated, completedIds, markComplete, saveResponse, setLastOpened};
+  return {state, hydrated, completedIds, markComplete, saveResponse, savePromptResponse, setLastOpened};
 }

@@ -63,5 +63,6 @@ export type LearningState = {
   activeGrade?: number;
   completed: Record<string, string>;
   responses: Record<string, string>;
+  promptResponses: Record<string, string>;
   lastOpened?: {grade:number; term:number; unitId:string; at:string};
 };
