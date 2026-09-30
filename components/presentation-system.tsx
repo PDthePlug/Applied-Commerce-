@@ -1,7 +1,7 @@
 "use client";
 
 import type { ReactNode } from "react";
-import { Archive, CheckCircle2, ChevronDown, Lightbulb, MessageCircleQuestion, PenLine } from "lucide-react";
+import { Archive, CheckCircle2, ChevronDown, Equal, Lightbulb, MessageCircleQuestion, PenLine } from "lucide-react";
 
 type NoticeTone = "activity" | "reflection" | "checkpoint" | "portfolio";
 
@@ -29,6 +29,16 @@ export function LearningNotice({
       <span>{meta.label}</span>
       <strong>{title}</strong>
       {body?<p>{body}</p>:null}
+    </div>
+  </aside>;
+}
+
+export function ThinkingEquationNotice({equation}:{equation:string}){
+  return <aside className="thinking-equation-notice">
+    <div className="thinking-equation-icon"><Equal aria-hidden="true"/></div>
+    <div className="thinking-equation-copy">
+      <span>Thinking Equation</span>
+      <strong>{equation}</strong>
     </div>
   </aside>;
 }

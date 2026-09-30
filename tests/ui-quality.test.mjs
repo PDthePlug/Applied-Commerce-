@@ -68,3 +68,15 @@ test("home is a learner welcome dashboard, not a duplicated curriculum index",()
   assert.doesNotMatch(home,/grade-section/);
   assert.doesNotMatch(home,/GradeCard/);
 });
+
+test("thinking equation notices do not promote ordinary narrative into banners",()=>{
+  const blocks=read("components/content-blocks.tsx");
+  const presentation=read("components/presentation-system.tsx");
+  const compiler=read("scripts/compile_curriculum.py");
+  assert.match(blocks,/isEquationMarker/);
+  assert.match(blocks,/equation-reference/);
+  assert.match(blocks,/ThinkingEquationNotice/);
+  assert.match(presentation,/thinking-equation-notice/);
+  assert.doesNotMatch(compiler,/'THINKING EQUATION' in u/);
+  assert.match(compiler,/re\.fullmatch\(r'THINKING EQUATION'/);
+});

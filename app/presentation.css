@@ -26,3 +26,41 @@
 .source-table-wrap{box-shadow:var(--presentation-shadow)}.workbook-table tr:first-child td{background:#f4f4ef!important}.workbook-table .editable-cell textarea{border-color:#e2e4df!important}.add-table-row{min-height:46px!important;font-size:11px!important}
 .response-status{display:block;margin-top:2px;letter-spacing:.01em}.response-status.saved{color:var(--success)}
 @media(max-width:820px){.module-part-heading{font-size:24px}.module-section-heading{font-size:28px}.choice-answerable{padding:16px}.choice-option{min-height:52px}.source-table-wrap{border-radius:16px}}
+
+/* Compact notice hierarchy */
+.learning-notice{grid-template-columns:30px minmax(0,1fr);gap:10px;margin:24px 0 14px;padding:12px 14px;border-radius:14px;box-shadow:0 5px 18px rgba(23,49,59,.03)}
+.learning-notice-icon{width:28px;height:28px;border-radius:9px}
+.learning-notice-icon svg{width:14px}
+.learning-notice-copy{gap:3px}
+.learning-notice-copy>span{font-size:8px;letter-spacing:.09em}
+.learning-notice-copy>strong{font:700 15px/1.35 var(--sans);letter-spacing:-.005em}
+.learning-notice-copy>p{margin:1px 0 0!important;font-size:10.5px!important;line-height:1.45!important}
+.thinking-equation-notice{display:grid;grid-template-columns:30px minmax(0,1fr);gap:10px;align-items:start;margin:22px 0 14px;padding:12px 14px;border:1px solid #cfddd9;border-left:3px solid var(--teal);border-radius:14px;background:#f1f6f4;box-shadow:0 5px 18px rgba(23,49,59,.025)}
+.thinking-equation-icon{display:grid;width:28px;height:28px;place-items:center;border-radius:9px;background:#dfece8;color:var(--teal)}
+.thinking-equation-icon svg{width:14px}
+.thinking-equation-copy{display:grid;gap:3px;min-width:0}
+.thinking-equation-copy>span{color:var(--teal);font-size:8px;font-weight:900;letter-spacing:.09em;text-transform:uppercase}
+.thinking-equation-copy>strong{color:var(--ink);font:500 17px/1.35 var(--serif);letter-spacing:-.01em}
+.equation-reference{margin:18px 0!important;color:#35443e!important;font:inherit!important;line-height:1.76!important}
+.deepening-insight{margin:24px 0 16px;border-radius:14px;box-shadow:0 5px 18px rgba(23,49,59,.03)}
+.deepening-insight summary{grid-template-columns:30px minmax(0,1fr) 20px;gap:10px;min-height:58px;padding:12px 14px}
+.deepening-insight summary .learning-notice-icon{width:28px;height:28px}
+.deepening-insight summary strong{font:700 15px/1.25 var(--sans)}
+.deepening-insight summary small{font-size:8.5px}
+.deepening-insight summary>svg{width:16px}
+.deepening-insight-body{padding:0 14px 14px}
+.deepening-insight-body>*:first-child{margin-top:14px}
+.source-callout{margin:24px 0 14px!important;padding:13px 15px!important;border-left-width:3px!important;border-radius:0 12px 12px 0!important}
+.source-callout strong{font-size:16px!important;line-height:1.35!important}
+.equation{margin:22px 0 14px!important;padding:13px 15px!important;border-radius:14px!important;font:500 17px/1.4 var(--serif)!important}
+@media(max-width:820px){
+  .learning-notice{grid-template-columns:28px minmax(0,1fr);gap:9px;margin:22px 0 13px;padding:11px 12px}
+  .learning-notice-icon,.thinking-equation-icon{width:26px;height:26px;border-radius:8px}
+  .learning-notice-icon svg,.thinking-equation-icon svg{width:13px}
+  .learning-notice-copy>strong{font-size:14px}
+  .learning-notice-copy>p{font-size:10px!important}
+  .thinking-equation-notice{grid-template-columns:28px minmax(0,1fr);gap:9px;margin:20px 0 13px;padding:11px 12px}
+  .thinking-equation-copy>strong{font-size:16px}
+  .deepening-insight summary{grid-template-columns:28px minmax(0,1fr) 18px;min-height:54px;padding:11px 12px}
+  .deepening-insight summary strong{font-size:14px}
+}

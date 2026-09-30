@@ -3,7 +3,7 @@
 import { Plus } from "lucide-react";
 import type { ContentBlock, TextBlockType } from "@/lib/types";
 import { cleanMarkup, isRemovedLogBlock, sanitizeRemovedLogReferences } from "@/lib/portfolio-model";
-import { DeepeningInsightPanel, LearningNotice, PortfolioCaptureNotice, ResponseSurface } from "./presentation-system";
+import { DeepeningInsightPanel, LearningNotice, PortfolioCaptureNotice, ResponseSurface, ThinkingEquationNotice } from "./presentation-system";
 
 type PromptContext = "activity" | "reflection" | "checkpoint" | null;
 type IndexedBlock = { block: ContentBlock; index: number };
@@ -37,6 +37,20 @@ function portfolioMessage(){
   return <PortfolioCaptureNotice/>;
 }
 
+function isEquationMarker(block:ContentBlock){
+  if(block.kind!=="text" || block.type!=="equation") return false;
+  const text=cleanMarkup(displayText(block.text)).replace(/^⬜\s*/,"").trim();
+  return /^Thinking Equation$/i.test(text);
+}
+
+function looksLikeEquationValue(block?:ContentBlock){
+  if(!block || block.kind!=="text" || block.type!=="paragraph") return false;
+  const text=displayText(block.text).trim();
+  if(!text || text.length>180 || text.includes("?")) return false;
+  if(PART_HEADING_RE.test(text)) return false;
+  return true;
+}
+
 function TextBlockView({block}:{block:Extract<ContentBlock,{kind:"text"}>}) {
   const text=displayText(block.text);
   if(PART_HEADING_RE.test(text)) return <h3 className="module-part-heading">{text}</h3>;
@@ -50,7 +64,7 @@ function TextBlockView({block}:{block:Extract<ContentBlock,{kind:"text"}>}) {
     case "portfolio": return portfolioMessage();
     case "story": return <h3 className="story-heading">{text}</h3>;
     case "learning": return <p className="learning-line">{text}</p>;
-    case "equation": return <blockquote className="equation">{text}</blockquote>;
+    case "equation": return <p className="equation-reference">{text}</p>;
     default: return <p>{text}</p>;
   }
 }
@@ -453,6 +467,21 @@ export function ContentBlocks({blocks,unitId,promptResponses,onSavePromptRespons
         const insightBlocks=items.slice(position+1,end);
         views.push(<DeepeningInsightPanel key={`insight-${index}`}>{renderIndexedBlocks(insightBlocks,false)}</DeepeningInsightPanel>);
         position=end-1;
+        continue;
+      }
+
+      if(block.kind==="text"&&block.type==="equation"){
+        if(isEquationMarker(block)){
+          const next=items[position+1]?.block;
+          if(looksLikeEquationValue(next) && next?.kind==="text"){
+            views.push(<ThinkingEquationNotice equation={displayText(next.text)} key={`equation-${index}`}/>);
+            position+=1;
+          }else{
+            views.push(<ThinkingEquationNotice equation="Pause here and hold this idea." key={`equation-${index}`}/>);
+          }
+        }else{
+          views.push(<p className="equation-reference" key={`equation-reference-${index}`}>{displayText(block.text)}</p>);
+        }
         continue;
       }
 

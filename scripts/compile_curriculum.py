@@ -34,7 +34,7 @@ def block_type(text: str, style: str) -> str:
     if text.startswith('📂'): return 'portfolio'
     if text.startswith('📘'): return 'story'
     if text.startswith(('🔍','💡','🔬')): return 'learning'
-    if 'THINKING EQUATION' in u or text.startswith('⬜'): return 'equation'
+    if text.startswith('⬜') or re.fullmatch(r'THINKING EQUATION', u): return 'equation'
     if u in {'LEARNING OUTCOMES','KEY VOCABULARY','DEEPENING INSIGHT','HOW TO USE THIS BOOK','YOUR TENSION/EXPERIMENT LOG'}: return 'section'
     if len(text)<=100 and upper_ratio(text)>.9: return 'section'
     return 'paragraph'
