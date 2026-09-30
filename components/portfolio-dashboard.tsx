@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import { ArrowRight, Archive, FileText, NotebookPen } from "lucide-react";
+import { ArrowRight, Archive, NotebookPen } from "lucide-react";
 import { curriculum } from "@/lib/curriculum";
 import type { GradeIndex, UnitContent, UnitSummary } from "@/lib/types";
 import { buildPortfolioDefinitions, responsesForPortfolio } from "@/lib/portfolio-model";
@@ -52,7 +52,7 @@ export function PortfolioDashboard(){
   <section className="page-intro">
    <p className="eyebrow">Learner portfolio</p>
    <h1>Your evidence builds itself as you learn.</h1>
-   <p>Whenever the handbook marks work for the portfolio, Applied Commerce captures the completed responses automatically. There is nothing extra to save.</p>
+   <p>When the curriculum marks work as portfolio evidence, Applied Commerce captures the relevant responses automatically. There is nothing extra to file or submit.</p>
   </section>
 
   {artifacts.length===0

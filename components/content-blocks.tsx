@@ -1,8 +1,9 @@
 "use client";
 
-import { ChevronDown, Plus } from "lucide-react";
+import { Plus } from "lucide-react";
 import type { ContentBlock, TextBlockType } from "@/lib/types";
 import { cleanMarkup, isRemovedLogBlock, sanitizeRemovedLogReferences } from "@/lib/portfolio-model";
+import { DeepeningInsightPanel, LearningNotice, PortfolioCaptureNotice, ResponseSurface } from "./presentation-system";
 
 type PromptContext = "activity" | "reflection" | "checkpoint" | null;
 type IndexedBlock = { block: ContentBlock; index: number };
@@ -33,21 +34,19 @@ function promptId(unitId:string,blockIndex:number,slot:string|number){
 }
 
 function portfolioMessage(){
-  return <div className="source-callout portfolio auto-portfolio">
-    <span>Portfolio · Captured automatically</span>
-    <strong>This work is being added to your learner portfolio.</strong>
-    <small>You do not need to save it separately. Complete the activity and Applied Commerce keeps the evidence with the lesson.</small>
-  </div>;
+  return <PortfolioCaptureNotice/>;
 }
 
 function TextBlockView({block}:{block:Extract<ContentBlock,{kind:"text"}>}) {
   const text=displayText(block.text);
+  if(PART_HEADING_RE.test(text)) return <h3 className="module-part-heading">{text}</h3>;
+  if(/^My Term\s+\d+\s+Portfolio Entry/i.test(text)) return <h3 className="module-section-heading">{text}</h3>;
   switch(block.type){
     case "list": return <li>{text}</li>;
     case "section": return <h3 className="source-section">{text}</h3>;
-    case "activity": return <div className="source-callout activity"><span>Activity</span><strong>{text.replace(/^✍️\s*/,"")}</strong></div>;
-    case "reflection": return <div className="source-callout reflection"><span>Reflect</span><strong>{text.replace(/^💭\s*/,"")}</strong></div>;
-    case "checkpoint": return <div className="source-callout checkpoint"><span>Checkpoint</span><strong>{text.replace(/^✅\s*/,"")}</strong></div>;
+    case "activity": return <LearningNotice tone="activity" title={text.replace(/^✍️\s*/,"")}/>;
+    case "reflection": return <LearningNotice tone="reflection" title={text.replace(/^💭\s*/,"")}/>;
+    case "checkpoint": return <LearningNotice tone="checkpoint" title={text.replace(/^✅\s*/,"")}/>;
     case "portfolio": return portfolioMessage();
     case "story": return <h3 className="story-heading">{text}</h3>;
     case "learning": return <p className="learning-line">{text}</p>;
@@ -57,7 +56,7 @@ function TextBlockView({block}:{block:Extract<ContentBlock,{kind:"text"}>}) {
 }
 
 function ResponseStatus({value}:{value:string}){
-  return <span className={value.trim()?"response-status saved":"response-status"}>{value.trim()?"Saved on this device":"Type your response"}</span>;
+  return <span className={value.trim()?"response-status saved":"response-status"}>{value.trim()?"Captured":"Type your response"}</span>;
 }
 
 function ResponseArea({
@@ -452,10 +451,7 @@ export function ContentBlocks({blocks,unitId,promptResponses,onSavePromptRespons
         let end=position+1;
         while(end<items.length&&!isInsightBoundary(items[end].block)) end+=1;
         const insightBlocks=items.slice(position+1,end);
-        views.push(<details className="deepening-insight" key={`insight-${index}`}>
-          <summary><div><span>Deepening Insight</span><small>Tap to explore</small></div><ChevronDown aria-hidden="true"/></summary>
-          <div className="deepening-insight-body">{renderIndexedBlocks(insightBlocks,false)}</div>
-        </details>);
+        views.push(<DeepeningInsightPanel key={`insight-${index}`}>{renderIndexedBlocks(insightBlocks,false)}</DeepeningInsightPanel>);
         position=end-1;
         continue;
       }
@@ -523,10 +519,9 @@ export function ContentBlocks({blocks,unitId,promptResponses,onSavePromptRespons
       if(isAnswerPrompt(block.text,context,block.type,items[position+1]?.block)){
         const id=promptId(unitId,index,"response");
         const compact=/^(?:Date|Name|Education|Skills)\b/i.test(displayText(block.text).trim());
-        views.push(<div className="answerable-block label-answerable-block" key={`prompt-${index}`}>
-          <p className={block.type==="equation"?"question-prompt equation-question":"question-prompt"}>{displayText(block.text)}</p>
+        views.push(<ResponseSurface key={`prompt-${index}`} compact={compact} prompt={<p className={block.type==="equation"?"question-prompt equation-question":"question-prompt"}>{displayText(block.text)}</p>}>
           <ResponseArea compact={compact} id={id} value={promptResponses[id]??""} onChange={value=>onSavePromptResponse(id,value)} label={displayText(block.text)}/>
-        </div>);
+        </ResponseSurface>);
         continue;
       }
 

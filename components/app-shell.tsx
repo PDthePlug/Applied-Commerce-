@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { Archive, BarChart3, BookOpen, Home, Menu, X } from "lucide-react";
+import { Archive, BarChart3, BookOpen, Home, Menu, UserRound, X } from "lucide-react";
 import { Brand } from "./brand";
 
 const nav=[
@@ -10,6 +10,7 @@ const nav=[
   {href:"/learn",label:"Learn",detail:"Grades, terms and lessons",icon:BookOpen},
   {href:"/portfolio",label:"Portfolio",detail:"Evidence captured from your work",icon:Archive},
   {href:"/progress",label:"Progress",detail:"See what you have completed",icon:BarChart3},
+  {href:"/profile",label:"Profile",detail:"Your learner record and current grade",icon:UserRound},
 ];
 
 export function AppShell({children}:{children:React.ReactNode}) {
@@ -29,6 +30,21 @@ export function AppShell({children}:{children:React.ReactNode}) {
       if(event.key==="Escape"){
         event.preventDefault();
         setMenuOpen(false);
+        return;
+      }
+      if(event.key!=="Tab") return;
+      const dialog=document.querySelector<HTMLElement>(".app-menu-sheet");
+      if(!dialog) return;
+      const focusable=[...dialog.querySelectorAll<HTMLElement>('a[href],button:not([disabled]),input,select,textarea,[tabindex]:not([tabindex="-1"])')];
+      if(!focusable.length) return;
+      const first=focusable[0];
+      const last=focusable[focusable.length-1];
+      if(event.shiftKey&&document.activeElement===first){
+        event.preventDefault();
+        last.focus();
+      }else if(!event.shiftKey&&document.activeElement===last){
+        event.preventDefault();
+        first.focus();
       }
     };
     window.addEventListener("keydown",onKeyDown);
@@ -65,7 +81,7 @@ export function AppShell({children}:{children:React.ReactNode}) {
       </section>
     </>}
 
-    <button ref={triggerRef} className="app-menu-trigger" type="button" onClick={()=>setMenuOpen(true)} aria-label="Open Applied Commerce menu" aria-expanded={menuOpen}>
+    <button ref={triggerRef} className="app-menu-trigger" type="button" onClick={()=>setMenuOpen(true)} aria-label="Open Applied Commerce menu" aria-haspopup="dialog" aria-expanded={menuOpen}>
       <Menu/><span>Menu</span>
     </button>
   </div>;

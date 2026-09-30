@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useMemo, useSyncExternalStore } from "react";
-import type { LearningState } from "./types";
+import type { LearnerProfile, LearningState } from "./types";
 
 const KEY = "applied-commerce-learning-state-v1";
 const EVENT = "applied-commerce-learning-state-change";
@@ -23,6 +23,7 @@ function parse(raw: string): LearningState {
       completed: value.completed ?? {},
       responses: value.responses ?? {},
       promptResponses: value.promptResponses ?? {},
+      profile: value.profile ?? {},
       lastOpened: value.lastOpened,
     };
   } catch {
@@ -72,10 +73,15 @@ export function useLearningStore() {
     ...current, promptResponses:{...current.promptResponses,[promptId]:value}
   })), [update]);
 
+  const setProfile = useCallback((patch:Partial<LearnerProfile>) => update(current => {
+    const profile={...(current.profile ?? {}),...patch};
+    return {...current,profile,activeGrade:profile.grade ?? current.activeGrade};
+  }), [update]);
+
   const setLastOpened = useCallback((grade:number, term:number, unitId:string) => update(current => ({
     ...current, activeGrade:grade, lastOpened:{grade,term,unitId,at:new Date().toISOString()}
   })), [update]);
 
   const completedIds = useMemo(() => new Set(Object.keys(state.completed)), [state.completed]);
-  return {state, hydrated, completedIds, markComplete, saveResponse, savePromptResponse, setLastOpened};
+  return {state, hydrated, completedIds, markComplete, saveResponse, savePromptResponse, setProfile, setLastOpened};
 }

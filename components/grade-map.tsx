@@ -15,21 +15,21 @@ export function GradeMap({grade}:{grade:number}){
  return <div className="page grade-map-page">
   <Link className="back-link" href="/learn"><ArrowLeft/> All grades</Link>
   <section className="grade-hero">
-   <div><p className="eyebrow">Grade {grade} · {gradeThemes[grade]}</p><h1>{data.title.replace(/^APPLIED COMMERCE\s*[—-]\s*/i,"")}</h1><p>{data.bookTitle}</p></div>
-   <div className="grade-progress"><strong>{pct}%</strong><span>{completed} of {data.unitCount} lesson pages complete</span><div className="progress-track"><i style={{width:`${pct}%`}}/></div></div>
+   <div><p className="eyebrow">Grade {grade} · {gradeThemes[grade]}</p><h1>{data.title.replace(/^APPLIED COMMERCE\s*[—-]\s*/i,"")}</h1><p>Four-term Applied Commerce learning journey</p></div>
+   <div className="grade-progress"><strong>{pct}%</strong><span>{completed} of {data.unitCount} lessons complete</span><div className="progress-track"><i style={{width:`${pct}%`}}/></div></div>
   </section>
   <div className="term-grid">
    {data.terms.map(term=>{
     const tc=term.units.filter(u=>completedIds.has(u.id)).length; const tp=term.unitCount?Math.round(tc/term.unitCount*100):0; const first=term.units[0];
     return <section className="term-card" key={term.term}>
       <header><span>0{term.term}</span><div><p>Term {term.term}</p><h2>{first?.title ?? "Term material"}</h2></div></header>
-      <div className="term-stats"><span>{term.unitCount} lesson pages</span>{term.assessmentCount>0&&<span>{term.assessmentCount} mock exam{term.assessmentCount>1?"s":""}</span>}</div>
+      <div className="term-stats"><span>{term.unitCount} lessons</span>{term.assessmentCount>0&&<span>{term.assessmentCount} mock exam{term.assessmentCount>1?"s":""}</span>}</div>
       <div className="progress-track small"><i style={{width:`${tp}%`}}/></div>
       <div className="term-preview">
        {term.units.slice(0,4).map(u=><div key={u.id} className="term-preview-row">{completedIds.has(u.id)?<Check/>:<LockOpen/>}<span>{u.label}</span><strong>{u.title}</strong></div>)}
-       {term.unitCount>4&&<small>+ {term.unitCount-4} more lesson pages</small>}
+       {term.unitCount>4&&<small>+ {term.unitCount-4} more lessons</small>}
       </div>
-      {first?<Link className="term-open" href={`/learn/${grade}/term/${term.term}/${first.id}`}>Open Term {term.term}<ArrowRight/></Link>:<span className="term-empty"><FileText/> No learner lessons detected in source</span>}
+      {first?<Link className="term-open" href={`/learn/${grade}/term/${term.term}/${first.id}`}>Open Term {term.term}<ArrowRight/></Link>:<span className="term-empty"><FileText/> No lessons available for this term</span>}
     </section>
    })}
   </div>

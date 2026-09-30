@@ -13,7 +13,7 @@ export function GradeCard({grade,completed}:{grade:GradeSummary;completed:number
       <h2>{grade.title.replace(/^APPLIED COMMERCE\s*[—-]\s*/i,"")}</h2>
     </div>
     <div className="grade-card-bottom">
-      <div><strong>{grade.unitCount}</strong><span>lesson pages</span></div>
+      <div><strong>{grade.unitCount}</strong><span>lessons</span></div>
       <div><strong>4</strong><span>terms</span></div>
       <div><strong>{pct}%</strong><span>complete</span></div>
     </div>

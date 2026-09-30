@@ -58,11 +58,17 @@ export type UnitContent = UnitSummary & {
   blocks: ContentBlock[];
 };
 
+export type LearnerProfile = {
+  displayName?: string;
+  grade?: number;
+};
+
 export type LearningState = {
   version: 1;
   activeGrade?: number;
   completed: Record<string, string>;
   responses: Record<string, string>;
   promptResponses: Record<string, string>;
+  profile?: LearnerProfile;
   lastOpened?: {grade:number; term:number; unitId:string; at:string};
 };
