@@ -841,3 +841,5 @@ export function ContentBlocks({blocks,unitId,promptResponses,onSavePromptRespons
 
   return <>{renderIndexedBlocks(indexed)}</>;
 }
+
+// Deployment retry checkpoint: 2026-10-01
