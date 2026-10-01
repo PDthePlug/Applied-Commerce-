@@ -16,6 +16,7 @@ const nav=[
 export function AppShell({children}:{children:React.ReactNode}) {
   const pathname=usePathname();
   const focusedReader=/\/learn\/\d+\/term\/\d+\/.+/.test(pathname);
+  const institutional=pathname.startsWith("/institutions");
   const [menuOpen,setMenuOpen]=useState(false);
   const triggerRef=useRef<HTMLButtonElement|null>(null);
   const closeRef=useRef<HTMLButtonElement|null>(null);
@@ -55,14 +56,23 @@ export function AppShell({children}:{children:React.ReactNode}) {
     };
   },[menuOpen]);
 
-  return <div className={`app-shell ${focusedReader?"focused-reader":""}`}>
+  useEffect(()=>{
+    if(institutional&&menuOpen) setMenuOpen(false);
+  },[institutional,menuOpen]);
+
+  return <div className={"app-shell "+(focusedReader?"focused-reader ":"")+(institutional?"institutional-shell":"")}>
     {!focusedReader && <header className="topbar">
-      <Brand />
-      <div className="topbar-note">Grades 8–12</div>
+      <Brand
+        href={institutional?"/institutions":"/"}
+        subtitle={institutional?"Learning Infrastructure":"Learning Platform"}
+      />
+      {institutional
+        ? <div className="topbar-note institutional-topbar-note"><Link href="/">Learner platform</Link><span>For institutions</span></div>
+        : <div className="topbar-note"><span>Grades 8–12</span><Link className="topbar-institution-link" href="/institutions">For institutions</Link></div>}
     </header>}
     <main>{children}</main>
 
-    {menuOpen && <>
+    {!institutional && menuOpen && <>
       <button className="app-menu-scrim" type="button" onClick={()=>setMenuOpen(false)} aria-label="Close Applied Commerce menu"/>
       <section className="app-menu-sheet" role="dialog" aria-modal="true" aria-label="Applied Commerce menu">
        <header>
@@ -81,8 +91,8 @@ export function AppShell({children}:{children:React.ReactNode}) {
       </section>
     </>}
 
-    <button ref={triggerRef} className="app-menu-trigger" type="button" onClick={()=>setMenuOpen(true)} aria-label="Open Applied Commerce menu" aria-haspopup="dialog" aria-expanded={menuOpen}>
+    {!institutional && <button ref={triggerRef} className="app-menu-trigger" type="button" onClick={()=>setMenuOpen(true)} aria-label="Open Applied Commerce menu" aria-haspopup="dialog" aria-expanded={menuOpen}>
       <Menu/><span>Menu</span>
-    </button>
+    </button>}
   </div>;
 }
