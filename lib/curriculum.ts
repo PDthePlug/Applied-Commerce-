@@ -40,6 +40,55 @@ async function loadCompressedParts(paths:string[],label:string){
   return (await Promise.all(responses.map(response=>response.text()))).join("");
 }
 
+function normalizeRestoredGrade9Term2Unit(unit:UnitContent):UnitContent{
+  const lesson=unit.startLesson;
+  if(
+    unit.grade!==9 ||
+    unit.term!==2 ||
+    unit.type!=="lesson" ||
+    typeof lesson!=="number" ||
+    lesson<23 ||
+    lesson>34
+  ) return unit;
+
+  let removeCapsTable=false;
+  const blocks=unit.blocks.flatMap(block=>{
+    if(block.kind==="text"){
+      const text=block.text.trim();
+
+      if(/^CAPS Integration$/i.test(text)){
+        removeCapsTable=true;
+        return [];
+      }
+
+      if(
+        /^Pride 2\.0 executing\.?$/i.test(text) ||
+        /^I will now complete Lessons 24[–-]34\b/i.test(text)
+      ){
+        return [];
+      }
+
+      if(/^💭\s*Truth\s*\/\s*Danger\s*\/\s*Your Move\s*$/i.test(text)){
+        removeCapsTable=false;
+        return [{...block,text:"💭 Deepening Insight"}];
+      }
+
+      if(removeCapsTable) removeCapsTable=false;
+      return [block];
+    }
+
+    if(removeCapsTable&&block.kind==="table"){
+      removeCapsTable=false;
+      return [];
+    }
+
+    removeCapsTable=false;
+    return [block];
+  });
+
+  return {...unit,blocks};
+}
+
 function applyPatch(bundle:GradeBundle,patch:GradePatch){
   if(patch.grade!==bundle.grade) throw new Error(`Curriculum patch does not belong to Grade ${bundle.grade}.`);
   const target=bundle.terms.find(term=>term.term===patch.term);
@@ -68,6 +117,7 @@ function applyPatch(bundle:GradeBundle,patch:GradePatch){
     return a.position-b.position;
   });
 
+  target.units=target.units.map(normalizeRestoredGrade9Term2Unit);
   target.units.forEach((unit,index)=>{ unit.position=index; });
 }
 
