@@ -137,7 +137,7 @@ function buildPromptBreakdown(text:string,mode:PromptMode):PromptBreakdown{
     }
 
     if(GUIDANCE_START_RE.test(value)){
-      if(prompts.length&&/^(?:Be specific|Do not |Don't |Listen\b|Just listen\b|Just receive\b)/i.test(value)){
+      if(prompts.length&&/^(?:Be specific|Write both\.?$|Do not |Don't |Listen\b|Just listen\b|Just receive\b)/i.test(value)){
         appendPromptHelper(prompts[prompts.length-1],value);
       }else{
         intro.push(value);
