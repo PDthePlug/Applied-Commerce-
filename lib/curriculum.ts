@@ -1,4 +1,4 @@
-import type { CurriculumIndex, GradeIndex, TermIndex, UnitContent, UnitSummary } from "./types";
+import type { ContentBlock, CurriculumIndex, GradeIndex, TermIndex, UnitContent, UnitSummary } from "./types";
 
 type GradeBundle = {
   grade:number;
