@@ -9,10 +9,66 @@ type GradeBundle = {
   terms:Array<{term:number;intro:GradeIndex["preface"];units:UnitContent[]}>;
 };
 
+type GradePatch = {
+  grade:number;
+  term:number;
+  intro?:GradeIndex["preface"];
+  units:UnitContent[];
+};
+
 async function getJson<T>(url:string):Promise<T>{
   const response=await fetch(url,{cache:"force-cache"});
   if(!response.ok) throw new Error(`Could not load curriculum content (${response.status}).`);
   return response.json() as Promise<T>;
+}
+
+async function decodeCompressedJson<T>(encoded:string):Promise<T>{
+  if(!(globalThis as typeof globalThis & {DecompressionStream?:typeof DecompressionStream}).DecompressionStream){
+    throw new Error("This browser cannot open compressed curriculum content.");
+  }
+  const binary=atob(encoded.replace(/\s+/g,""));
+  const bytes=Uint8Array.from(binary,c=>c.charCodeAt(0));
+  const stream=new Blob([bytes]).stream().pipeThrough(new DecompressionStream("gzip"));
+  return JSON.parse(await new Response(stream).text()) as T;
+}
+
+async function loadCompressedParts(paths:string[],label:string){
+  const responses=await Promise.all(paths.map(path=>
+    fetch(path.startsWith("/")?path:`/curriculum/${path}`,{cache:"force-cache"})
+  ));
+  if(responses.some(response=>!response.ok)) throw new Error(`Could not load ${label}.`);
+  return (await Promise.all(responses.map(response=>response.text()))).join("");
+}
+
+function applyPatch(bundle:GradeBundle,patch:GradePatch){
+  if(patch.grade!==bundle.grade) throw new Error(`Curriculum patch does not belong to Grade ${bundle.grade}.`);
+  const target=bundle.terms.find(term=>term.term===patch.term);
+  if(!target) throw new Error(`Curriculum patch targets missing Term ${patch.term}.`);
+
+  if(patch.intro) target.intro=patch.intro;
+
+  const patchedLessonNumbers=new Set(
+    patch.units
+      .filter(unit=>unit.type==="lesson"&&typeof unit.startLesson==="number")
+      .map(unit=>unit.startLesson as number)
+  );
+
+  target.units=[
+    ...target.units.filter(unit=>!(
+      unit.type==="lesson" &&
+      typeof unit.startLesson==="number" &&
+      patchedLessonNumbers.has(unit.startLesson)
+    )),
+    ...patch.units,
+  ].sort((a,b)=>{
+    const typeOrder=(a.type==="lesson"?0:1)-(b.type==="lesson"?0:1);
+    if(typeOrder) return typeOrder;
+    const lessonOrder=(a.startLesson??Number.MAX_SAFE_INTEGER)-(b.startLesson??Number.MAX_SAFE_INTEGER);
+    if(lessonOrder) return lessonOrder;
+    return a.position-b.position;
+  });
+
+  target.units.forEach((unit,index)=>{ unit.position=index; });
 }
 
 let indexPromise: Promise<CurriculumIndex> | null = null;
@@ -25,15 +81,21 @@ async function loadBundle(grade:number):Promise<GradeBundle>{
     const index=await loadIndex();
     const meta=index.grades.find(item=>item.grade===grade);
     if(!meta) throw new Error(`Grade ${grade} is not in this curriculum.`);
-    const partResponses=await Promise.all(Array.from({length:meta.bundleParts},(_,i)=>
-      fetch(`/curriculum/grade-${grade}.part-${i+1}.b64`,{cache:"force-cache"})
-    ));
-    if(partResponses.some(response=>!response.ok)) throw new Error(`Could not load Grade ${grade}.`);
-    if(!(globalThis as typeof globalThis & {DecompressionStream?:typeof DecompressionStream}).DecompressionStream) throw new Error("This browser cannot open compressed curriculum content.");
-    const encoded=(await Promise.all(partResponses.map(response=>response.text()))).join("").replace(/\s+/g,"");
-    const binary=atob(encoded); const bytes=Uint8Array.from(binary,c=>c.charCodeAt(0));
-    const stream=new Blob([bytes]).stream().pipeThrough(new DecompressionStream("gzip"));
-    return JSON.parse(await new Response(stream).text()) as GradeBundle;
+
+    const basePaths=Array.from({length:meta.bundleParts},(_,i)=>`grade-${grade}.part-${i+1}.b64`);
+    const bundle=await decodeCompressedJson<GradeBundle>(
+      await loadCompressedParts(basePaths,`Grade ${grade}`)
+    );
+
+    for(const patchMeta of meta.patches??[]){
+      const patch=await decodeCompressedJson<GradePatch>(
+        await loadCompressedParts(patchMeta.parts,`Grade ${grade} Term ${patchMeta.term} correction`)
+      );
+      if(patch.term!==patchMeta.term) throw new Error(`Grade ${grade} curriculum patch metadata does not match its content.`);
+      applyPatch(bundle,patch);
+    }
+
+    return bundle;
   })();
   bundleCache.set(grade,promise); return promise;
 }

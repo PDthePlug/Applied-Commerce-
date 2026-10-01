@@ -23,12 +23,18 @@ export type TermSummary = {
   assessments: UnitSummary[];
 };
 
+export type CurriculumPatchSummary = {
+  term: number;
+  parts: string[];
+};
+
 export type GradeSummary = {
   grade: number;
   title: string;
   bookTitle: string;
   unitCount: number;
   bundleParts: number;
+  patches?: CurriculumPatchSummary[];
   terms: Array<{term:number; unitCount:number; assessmentCount:number}>;
 };
 
