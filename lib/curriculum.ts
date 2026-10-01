@@ -52,7 +52,7 @@ function normalizeRestoredGrade9Term2Unit(unit:UnitContent):UnitContent{
   ) return unit;
 
   let removeCapsTable=false;
-  const blocks=unit.blocks.flatMap(block=>{
+  const blocks=unit.blocks.flatMap<ContentBlock>(block=>{
     if(block.kind==="text"){
       const text=block.text.trim();
 
