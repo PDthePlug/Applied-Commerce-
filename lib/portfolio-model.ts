@@ -111,10 +111,16 @@ export function buildPortfolioDefinitions(unit:UnitContent):PortfolioDefinition[
 
 function responseLabelForBlock(block:ContentBlock,slot:string){
   if(block.kind==="text"){
-    return cleanMarkup(sanitizeRemovedLogReferences(block.text))
+    const label=cleanMarkup(sanitizeRemovedLogReferences(block.text))
       .replace(/_{3,}/g,"")
       .replace(/\s+:/g,":")
       .trim() || "Response";
+    const structured=slot.match(/^response-(\d+)$/);
+    if(structured){
+      const group=label.match(/^((?:Question|Q)\s*\d+(?:\s*[—-]\s*[^:]+)?):/i)?.[1];
+      return `${group||"Response"} · part ${Number(structured[1])+1}`;
+    }
+    return label;
   }
 
   const tableMatch=slot.match(/^table-(\d+)-(\d+)/);
@@ -138,18 +144,28 @@ export function responsesForPortfolio(
   const allowed=new Set(definition.blockIndices);
   const prefix=`${unit.id}::block-`;
 
-  return Object.entries(promptResponses)
-    .filter(([key,value])=>key.startsWith(prefix) && value.trim() && !key.endsWith("::row-count"))
+  const entries=Object.entries(promptResponses)
+    .filter(([key,value])=>key.startsWith(prefix) && value.trim() && !key.endsWith("::row-count"));
+
+  const splitBlocks=new Set<number>();
+  entries.forEach(([key])=>{
+    const match=key.match(/::block-(\d+)::response-\d+$/);
+    if(match) splitBlocks.add(Number(match[1]));
+  });
+
+  return entries
     .map(([key,value])=>{
       const match=key.match(/::block-(\d+)::(.+)$/);
       if(!match) return null;
       const blockIndex=Number(match[1]);
+      const slot=match[2];
       if(!allowed.has(blockIndex)) return null;
+      if(slot==="response"&&splitBlocks.has(blockIndex)) return null;
       const block=unit.blocks[blockIndex];
       if(!block) return null;
       return {
         key,
-        label:responseLabelForBlock(block,match[2]),
+        label:responseLabelForBlock(block,slot),
         value,
       };
     })
