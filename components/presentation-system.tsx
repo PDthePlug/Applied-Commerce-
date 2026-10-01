@@ -1,15 +1,16 @@
 "use client";
 
 import type { ReactNode } from "react";
-import { Archive, CheckCircle2, ChevronDown, Equal, Lightbulb, MessageCircleQuestion, PenLine } from "lucide-react";
+import { Archive, CheckCircle2, ChevronDown, Equal, House, Lightbulb, MessageCircleQuestion, PenLine } from "lucide-react";
 
-type NoticeTone = "activity" | "reflection" | "checkpoint" | "portfolio";
+type NoticeTone = "activity" | "reflection" | "checkpoint" | "portfolio" | "home";
 
 const noticeMeta={
   activity:{label:"Activity",icon:PenLine},
   reflection:{label:"Reflect",icon:MessageCircleQuestion},
   checkpoint:{label:"Checkpoint",icon:CheckCircle2},
   portfolio:{label:"Portfolio evidence",icon:Archive},
+  home:{label:"Try This at Home",icon:House},
 } as const;
 
 export function LearningNotice({
@@ -23,7 +24,8 @@ export function LearningNotice({
 }){
   const meta=noticeMeta[tone];
   const Icon=meta.icon;
-  return <aside className={`learning-notice learning-notice-${tone}`}>
+  const toneClass=tone==="home"?"learning-notice-activity learning-notice-home":`learning-notice-${tone}`;
+  return <aside className={`learning-notice ${toneClass}`}>
     <div className="learning-notice-icon"><Icon aria-hidden="true"/></div>
     <div className="learning-notice-copy">
       <span>{meta.label}</span>
