@@ -56,10 +56,6 @@ export function AppShell({children}:{children:React.ReactNode}) {
     };
   },[menuOpen]);
 
-  useEffect(()=>{
-    if(institutional&&menuOpen) setMenuOpen(false);
-  },[institutional,menuOpen]);
-
   return <div className={"app-shell "+(focusedReader?"focused-reader ":"")+(institutional?"institutional-shell":"")}>
     {!focusedReader && <header className="topbar">
       <Brand
