@@ -31,8 +31,8 @@ const HOME_HEADING_RE=/^🏠\s*Try This at Home\s*(?:—|-)\s*(.+)$/i;
 const HOME_ALTERNATIVE_RE=/^(?:If you cannot|If you can't|If you are unable|If there is no|If no one|If you do not|If you don't|If you share\b|If you want\b|Otherwise\b)/i;
 const QUESTION_GROUP_RE=/^((?:Question|Q)\s*\d+(?:\s*[—-]\s*[^:]+)?)\s*:\s*(.*)$/i;
 const SCAFFOLD_START_RE=/^(?:Is it because|Or because|Or is it|Could it be|For example|For instance|It might be|Maybe|Say,)\b/i;
-const GUIDANCE_START_RE=/^(?:Be specific|Do not |Don't |Listen\b|Just listen\b|Just receive\b|Read\b|Look at\b|Review\b|Think about\b|Consider\b)/i;
-const STRUCTURED_IMPERATIVE_RE=/^(?:Write|Explain|Name|List|Give|Describe|Identify|Calculate|Show|Predict|Record|State|Complete|Choose|Trace|Map|Draw)\b/i;
+const GUIDANCE_START_RE=/^(?:Be specific|Write both\.?$|Do not |Don't |Listen\b|Just listen\b|Just receive\b|Read\b|Look at\b|Review\b|Think about\b|Consider\b)/i;
+const STRUCTURED_IMPERATIVE_RE=/^(?:(?:Now\s+)?Design|Write|Answer|Explain|Name|List|Give|Describe|Identify|Calculate|Show|Predict|Record|State|Complete|Choose|Trace|Map|Draw)\b/i;
 
 function displayText(text:string){
   return sanitizeRemovedLogReferences(text);
@@ -69,7 +69,7 @@ function restoreQuotedText(text:string,quotes:string[]){
 function splitAuthorSentences(text:string){
   const {masked,quotes}=maskQuotedText(text);
   const coarse=masked.match(/.+?(?:[?!](?=\s|$)|\.(?=\s|$)|$)/g)??[masked];
-  const directiveSplit=/\s+(?=(?:Write down|Then track|Now write|Then write|Show your calculations)\b)/i;
+  const directiveSplit=/\s+(?=(?:Write\b|Answer\b|Then track\b|Now write\b|Then write\b|Show your (?:calculations|working)\b))/;
   return coarse
     .flatMap(value=>value.trim().split(directiveSplit))
     .map(value=>restoreQuotedText(value.trim(),quotes))
@@ -147,6 +147,11 @@ function buildPromptBreakdown(text:string,mode:PromptMode):PromptBreakdown{
 
     const {masked}=maskQuotedText(value);
     if(masked.includes("?")){
+      prompts.push({prompt:value});
+      return;
+    }
+
+    if(/^For each,\s*(?:state|explain|describe|identify|record)\b/i.test(value)){
       prompts.push({prompt:value});
       return;
     }
