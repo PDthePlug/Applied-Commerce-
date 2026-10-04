@@ -252,3 +252,110 @@
   .assessment-choice-list label>span b{width:25px;height:25px}
   .assessment-choice-list label>span em{font-size:11px}
 }
+
+
+/* Applied Commerce Presentation Architecture 2.0 */
+.story-heading-block{
+  display:grid;
+  gap:5px;
+  margin:42px 0 14px;
+  padding-top:16px;
+  border-top:1px solid rgba(23,49,59,.11);
+}
+.story-heading-block>span{
+  color:var(--accent);
+  font-size:8px;
+  font-weight:900;
+  letter-spacing:.11em;
+  text-transform:uppercase;
+}
+.story-heading-block .story-heading{
+  margin:0;
+  color:var(--ink);
+  font:500 29px/1.18 var(--serif);
+  letter-spacing:-.025em;
+}
+.response-surface-activity{border-left:3px solid var(--accent)}
+.response-surface-reflection{border-left:3px solid #765f78}
+.response-surface-checkpoint{border-left:3px solid var(--teal)}
+.response-surface-home{border-left:3px solid #627a50}
+.response-surface-assessment{border-left:3px solid var(--ink)}
+.source-table-wrap thead th{
+  padding:10px 13px;
+  border-right:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  background:#f4f4ef;
+  color:var(--ink);
+  font-size:10px;
+  font-weight:900;
+  line-height:1.35;
+  text-align:left;
+  vertical-align:top;
+  letter-spacing:.02em;
+}
+.source-table-wrap thead th:last-child{border-right:0}
+.workbook-table thead th{background:#f4f4ef}
+@media(max-width:620px){
+  .story-heading-block{margin:34px 0 12px;padding-top:14px}
+  .story-heading-block .story-heading{font-size:25px}
+  .response-surface{padding:15px}
+  .source-table-wrap.responsive-row-table{
+    overflow:visible;
+    border:0;
+    background:transparent;
+    box-shadow:none;
+  }
+  .responsive-row-table table,
+  .responsive-row-table tbody{display:block;width:100%}
+  .responsive-row-table thead{
+    position:absolute;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+    clip:rect(0 0 0 0);
+    clip-path:inset(50%);
+    white-space:nowrap;
+  }
+  .responsive-row-table tbody{
+    display:grid;
+    gap:10px;
+  }
+  .responsive-row-table tbody tr{
+    display:grid;
+    overflow:hidden;
+    border:1px solid var(--line);
+    border-radius:14px;
+    background:#fff;
+    box-shadow:0 7px 20px rgba(23,49,59,.035);
+  }
+  .responsive-row-table tbody td{
+    display:grid;
+    grid-template-columns:minmax(88px,34%) minmax(0,1fr);
+    gap:12px;
+    align-items:start;
+    min-width:0!important;
+    padding:11px 12px;
+    border:0;
+    border-bottom:1px solid #ecece7;
+    overflow-wrap:anywhere;
+  }
+  .responsive-row-table tbody td:last-child{border-bottom:0}
+  .responsive-row-table tbody td::before{
+    content:attr(data-label);
+    color:var(--muted);
+    font-size:8.5px;
+    font-weight:900;
+    line-height:1.35;
+    letter-spacing:.04em;
+    text-transform:uppercase;
+  }
+  .responsive-row-table .editable-cell textarea{
+    min-width:0;
+    min-height:58px;
+    padding:9px 10px;
+  }
+  .responsive-row-table .inline-blank-cell .fill-response-line{
+    min-width:0;
+    font-size:14px;
+  }
+}
