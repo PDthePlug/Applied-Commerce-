@@ -4,7 +4,7 @@ import { responseView, persistResponseKey } from "@/lib/response-identity";
 import { Plus } from "lucide-react";
 import type { ContentBlock, TextBlockType, UnitContent } from "@/lib/types";
 import { cleanMarkup, isRemovedLogBlock, sanitizeRemovedLogReferences } from "@/lib/portfolio-model";
-import { DeepeningInsightPanel, LearningNotice, PortfolioCaptureNotice, ResponseSurface, ThinkingEquationNotice } from "./presentation-system";
+import { DeepeningInsightPanel, LearningNotice, PortfolioCaptureNotice, ResponseSurface, StoryHeading, ThinkingEquationNotice } from "./presentation-system";
 
 type PromptContext = "activity" | "reflection" | "checkpoint" | "home" | null;
 type PromptMode = "checkpoint" | "home";
@@ -253,7 +253,7 @@ function TextBlockView({block}:{block:Extract<ContentBlock,{kind:"text"}>}) {
     case "reflection": return <LearningNotice tone="reflection" title={text.replace(/^💭\s*/,"")}/>;
     case "checkpoint": return <LearningNotice tone="checkpoint" title={text.replace(/^✅\s*/,"")}/>;
     case "portfolio": return portfolioMessage();
-    case "story": return <h3 className="story-heading">{text}</h3>;
+    case "story": return <StoryHeading title={text}/>;
     case "learning": return <p className="learning-line">{text}</p>;
     case "equation": return <p className="equation-reference">{text}</p>;
     default: return <p>{text}</p>;
@@ -320,6 +320,7 @@ function AssessmentMultipleChoice({
   onChange:(value:string)=>void;
 }){
   return <ResponseSurface
+    tone="assessment"
     prompt={<p className="question-prompt assessment-question-prompt">{question}</p>}
   >
     <div className="assessment-choice-list" role="radiogroup" aria-label={question}>
@@ -354,12 +355,14 @@ function StructuredResponseGroup({
   blockIndex,
   promptResponses,
   onSavePromptResponse,
+  tone="default",
 }:{
   breakdown:PromptBreakdown;
   unitId:string;
   blockIndex:number;
   promptResponses:Record<string,string>;
   onSavePromptResponse:(promptId:string,value:string)=>void;
+  tone?:"default"|"activity"|"reflection"|"checkpoint"|"home"|"assessment";
 }){
   const many=breakdown.prompts.length>1;
   const legacyId=promptId(unitId,blockIndex,"response");
@@ -380,6 +383,7 @@ function StructuredResponseGroup({
         return <ResponseSurface
           key={id}
           compact={compact}
+          tone={tone}
           prompt={<>
             {many&&<span className="structured-part-label">Part {index+1} of {breakdown.prompts.length}</span>}
             <p className="question-prompt">{part.prompt}</p>
@@ -684,49 +688,63 @@ function TableBlockView({
   const rows=headerOnly
     ? [block.rows[0],...Array.from({length:generatedRows},()=>Array.from({length:headers.length},()=>""))]
     : block.rows;
+  const bodyRows=rows.slice(1);
+  const responsiveRows=
+    headers.length>0
+    && headers.length<=4
+    && headers.every(Boolean)
+    && bodyRows.length>0
+    && bodyRows.every(row=>row.length===headers.length);
 
-  return <div className={`source-table-wrap ${hasWorkbookCells?"workbook-table":""}`}>
+  return <div className={`source-table-wrap ${hasWorkbookCells?"workbook-table":""} ${responsiveRows?"responsive-row-table":""}`}>
     <table>
+      <thead>
+        <tr>{headers.map((header,colIndex)=><th scope="col" key={colIndex}>{header}</th>)}</tr>
+      </thead>
       <tbody>
-        {rows.map((row,rowIndex)=><tr key={rowIndex}>
-          {row.map((cell,colIndex)=>{
-            const cleaned=cleanMarkup(displayText(cell));
-            const editable=hasWorkbookCells&&rowIndex>0&&(!cleaned||/^_+$/.test(cleaned));
-            const containsBlank=BLANK_RE.test(cleaned);
+        {bodyRows.map((row,rowOffset)=>{
+          const rowIndex=rowOffset+1;
+          return <tr key={rowIndex}>
+            {row.map((cell,colIndex)=>{
+              const cleaned=cleanMarkup(displayText(cell));
+              const editable=hasWorkbookCells&&(!cleaned||/^_+$/.test(cleaned));
+              const containsBlank=BLANK_RE.test(cleaned);
+              const dataLabel=headers[colIndex]||undefined;
 
-            if(editable){
-              const id=promptId(unitId,blockIndex,`table-${rowIndex}-${colIndex}`);
-              const value=promptResponses[id]??"";
-              const rowLabel=cleanMarkup(row.find((value,index)=>index!==colIndex&&cleanMarkup(value))??"");
-              const label=[rowLabel,headers[colIndex],headerOnly?`Entry ${rowIndex}`:""].filter(Boolean).join(" — ")||"Table response";
-              return <td className="editable-cell" key={colIndex}>
-                <textarea
-                  aria-label={label}
-                  rows={2}
-                  value={value}
-                  onChange={event=>onSavePromptResponse(id,event.target.value)}
-                  placeholder="Type your answer"
-                />
-                {value.trim()&&<small>Saved</small>}
-              </td>;
-            }
+              if(editable){
+                const id=promptId(unitId,blockIndex,`table-${rowIndex}-${colIndex}`);
+                const value=promptResponses[id]??"";
+                const rowLabel=cleanMarkup(row.find((value,index)=>index!==colIndex&&cleanMarkup(value))??"");
+                const label=[rowLabel,headers[colIndex],headerOnly?`Entry ${rowIndex}`:""].filter(Boolean).join(" — ")||"Table response";
+                return <td className="editable-cell" data-label={dataLabel} key={colIndex}>
+                  <textarea
+                    aria-label={label}
+                    rows={2}
+                    value={value}
+                    onChange={event=>onSavePromptResponse(id,event.target.value)}
+                    placeholder="Type your answer"
+                  />
+                  {value.trim()&&<small>Saved</small>}
+                </td>;
+              }
 
-            if(rowIndex>0&&containsBlank){
-              return <td className="inline-blank-cell" key={colIndex}>
-                <FillBlankLine
-                  text={cleaned}
-                  unitId={unitId}
-                  blockIndex={blockIndex}
-                  promptResponses={promptResponses}
-                  onSavePromptResponse={onSavePromptResponse}
-                  slotPrefix={`table-${rowIndex}-${colIndex}`}
-                />
-              </td>;
-            }
+              if(containsBlank){
+                return <td className="inline-blank-cell" data-label={dataLabel} key={colIndex}>
+                  <FillBlankLine
+                    text={cleaned}
+                    unitId={unitId}
+                    blockIndex={blockIndex}
+                    promptResponses={promptResponses}
+                    onSavePromptResponse={onSavePromptResponse}
+                    slotPrefix={`table-${rowIndex}-${colIndex}`}
+                  />
+                </td>;
+              }
 
-            return <td key={colIndex}>{cleaned}</td>;
-          })}
-        </tr>)}
+              return <td data-label={dataLabel} key={colIndex}>{cleaned}</td>;
+            })}
+          </tr>;
+        })}
       </tbody>
     </table>
     {headerOnly&&<button className="add-table-row" type="button" onClick={()=>onSavePromptResponse(countId,String(generatedRows+1))}><Plus/>Add another row</button>}
@@ -846,6 +864,7 @@ export function ContentBlocks({blocks,unitId,unitType="lesson",promptResponses:s
             blockIndex={index}
             promptResponses={promptResponses}
             onSavePromptResponse={onSavePromptResponse}
+            tone="assessment"
           />);
           continue;
         }
@@ -856,6 +875,7 @@ export function ContentBlocks({blocks,unitId,unitType="lesson",promptResponses:s
           views.push(<ResponseSurface
             key={"assessment-response-"+index}
             compact={compact}
+            tone="assessment"
             prompt={<p className="question-prompt assessment-question-prompt">{displayText(block.text)}</p>}
           >
             <ResponseArea
@@ -915,6 +935,7 @@ export function ContentBlocks({blocks,unitId,unitType="lesson",promptResponses:s
               blockIndex={index}
               promptResponses={promptResponses}
               onSavePromptResponse={onSavePromptResponse}
+              tone="checkpoint"
               key={`structured-checkpoint-${index}`}
             />);
             continue;
@@ -945,6 +966,7 @@ export function ContentBlocks({blocks,unitId,unitType="lesson",promptResponses:s
             blockIndex={index}
             promptResponses={promptResponses}
             onSavePromptResponse={onSavePromptResponse}
+            tone="home"
           />;
           views.push(alternative
             ? <HomeAlternative key={`home-alt-${index}`}>{responses}</HomeAlternative>
@@ -961,7 +983,7 @@ export function ContentBlocks({blocks,unitId,unitType="lesson",promptResponses:s
       if(isAnswerPrompt(block.text,context,block.type,nextBlock)){
         const id=promptId(unitId,index,"response");
         const compact=/^(?:Date|Name|Education|Skills)\b/i.test(displayText(block.text).trim());
-        views.push(<ResponseSurface key={`prompt-${index}`} compact={compact} prompt={<p className={block.type==="equation"?"question-prompt equation-question":"question-prompt"}>{displayText(block.text)}</p>}>
+        views.push(<ResponseSurface key={`prompt-${index}`} compact={compact} tone={context??"default"} prompt={<p className={block.type==="equation"?"question-prompt equation-question":"question-prompt"}>{displayText(block.text)}</p>}>
           <ResponseArea compact={compact} id={id} value={promptResponses[id]??""} onChange={value=>onSavePromptResponse(id,value)} label={displayText(block.text)}/>
         </ResponseSurface>);
         continue;
