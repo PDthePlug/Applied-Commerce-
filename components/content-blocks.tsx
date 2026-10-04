@@ -2,7 +2,7 @@
 
 import { responseView, persistResponseKey } from "@/lib/response-identity";
 import { Plus } from "lucide-react";
-import type { ContentBlock, TextBlockType } from "@/lib/types";
+import type { ContentBlock, TextBlockType, UnitContent } from "@/lib/types";
 import { cleanMarkup, isRemovedLogBlock, sanitizeRemovedLogReferences } from "@/lib/portfolio-model";
 import { DeepeningInsightPanel, LearningNotice, PortfolioCaptureNotice, ResponseSurface, ThinkingEquationNotice } from "./presentation-system";
 
@@ -15,6 +15,7 @@ type IndexedBlock = { block: ContentBlock; index: number };
 type Props = {
   blocks: ContentBlock[];
   unitId: string;
+  unitType?: UnitContent["type"];
   promptResponses: Record<string,string>;
   onSavePromptResponse: (promptId:string,value:string)=>void;
 };
@@ -34,6 +35,52 @@ const QUESTION_GROUP_RE=/^((?:Question|Q)\s*\d+(?:\s*[—-]\s*[^:]+)?)\s*:\s*(.*
 const SCAFFOLD_START_RE=/^(?:Is it because|Or because|Or is it|Could it be|For example|For instance|It might be|Maybe|Say,)\b/i;
 const GUIDANCE_START_RE=/^(?:Be specific|Write both\.?$|Do not |Don't |Listen\b|Just listen\b|Just receive\b|Read\b|Look at\b|Review\b|Think about\b|Consider\b)/i;
 const STRUCTURED_IMPERATIVE_RE=/^(?:(?:Now\s+)?Design|Write|Answer|Explain|Name|List|Give|Describe|Identify|Calculate|Show|Predict|Record|State|Complete|Choose|Trace|Map|Draw)\b/i;
+const ASSESSMENT_NUMBER_RE=/^\d+\.\s+/;
+const ASSESSMENT_SUBPART_RE=/^[a-h]\)\s+/i;
+const ASSESSMENT_DIRECTIVE_RE=/^(?:\d+\.\s+)?(?:what|why|how|which|who|where|when|name|list|give|describe|explain|identify|calculate|show|state|compare|suggest|draw|evaluate|define)\b/i;
+
+type AssessmentChoice={key:string;label:string};
+type AssessmentChoicePrompt={question:string;options:AssessmentChoice[]};
+
+function parseAssessmentChoices(text:string):AssessmentChoicePrompt|null{
+  const value=displayText(text).trim();
+  if(!ASSESSMENT_NUMBER_RE.test(value)) return null;
+  const first=value.search(/\s+a\)\s+/i);
+  if(first<0) return null;
+
+  const question=value.slice(0,first).trim();
+  const optionText=value.slice(first).trim();
+  const matches=[...optionText.matchAll(/(?:^|\s)([a-d])\)\s+/gi)];
+  if(matches.length<2) return null;
+
+  const options=matches.map((match,index)=>{
+    const start=(match.index??0)+match[0].length;
+    const end=index+1<matches.length?(matches[index+1].index??optionText.length):optionText.length;
+    return {key:match[1].toLowerCase(),label:optionText.slice(start,end).trim()};
+  }).filter(option=>option.label);
+
+  return options.length>=2?{question,options}:null;
+}
+
+function assessmentSubparts(text:string):StructuredPrompt[]{
+  const value=displayText(text).trim();
+  const matches=[...value.matchAll(/(?:^|\s)([a-h])\)\s+/gi)];
+  if(!matches.length||!ASSESSMENT_SUBPART_RE.test(value)) return [];
+  return matches.map((match,index)=>{
+    const start=match.index??0;
+    const end=index+1<matches.length?(matches[index+1].index??value.length):value.length;
+    return {prompt:value.slice(start,end).trim()};
+  }).filter(part=>part.prompt);
+}
+
+function isAssessmentAnswerPrompt(text:string){
+  const value=displayText(text).trim();
+  if(ASSESSMENT_SUBPART_RE.test(value)) return true;
+  if(!ASSESSMENT_NUMBER_RE.test(value)) return false;
+  const afterNumber=value.replace(ASSESSMENT_NUMBER_RE,"").trim();
+  return afterNumber.includes("?")||ASSESSMENT_DIRECTIVE_RE.test(afterNumber);
+}
+
 
 function displayText(text:string){
   return sanitizeRemovedLogReferences(text);
@@ -255,6 +302,40 @@ function ResponseArea({
     />
     <ResponseStatus value={value}/>
   </div>;
+}
+
+
+
+function AssessmentMultipleChoice({
+  question,
+  options,
+  id,
+  value,
+  onChange,
+}:{
+  question:string;
+  options:AssessmentChoice[];
+  id:string;
+  value:string;
+  onChange:(value:string)=>void;
+}){
+  return <ResponseSurface
+    prompt={<p className="question-prompt assessment-question-prompt">{question}</p>}
+  >
+    <div className="assessment-choice-list" role="radiogroup" aria-label={question}>
+      {options.map(option=><label className={value===option.key?"selected":""} key={option.key}>
+        <input
+          type="radio"
+          name={id}
+          value={option.key}
+          checked={value===option.key}
+          onChange={()=>onChange(option.key)}
+        />
+        <span><b>{option.key.toUpperCase()}</b><em>{option.label}</em></span>
+      </label>)}
+    </div>
+    <ResponseStatus value={value}/>
+  </ResponseSurface>;
 }
 
 
@@ -652,7 +733,7 @@ function TableBlockView({
   </div>;
 }
 
-export function ContentBlocks({blocks,unitId,promptResponses:storedResponses,onSavePromptResponse:saveResponse}:Props) {
+export function ContentBlocks({blocks,unitId,unitType="lesson",promptResponses:storedResponses,onSavePromptResponse:saveResponse}:Props) {
   const promptResponses=responseView(unitId,blocks,storedResponses);
   const onSavePromptResponse=(key:string,value:string)=>saveResponse(persistResponseKey(unitId,blocks,key),value);
   const indexed=pruneTensionContent(blocks);
@@ -740,6 +821,54 @@ export function ContentBlocks({blocks,unitId,promptResponses:storedResponses,onS
       if(block.type==="story") context=null;
       // Activity parts keep their task context; unrelated sections end it.
       if(block.type==="section"&&!PART_HEADING_RE.test(block.text)) context=null;
+
+      if(unitType==="assessment"&&block.kind==="text"){
+        const choice=parseAssessmentChoices(block.text);
+        if(choice){
+          const id=promptId(unitId,index,"choice");
+          views.push(<AssessmentMultipleChoice
+            key={"assessment-choice-"+index}
+            question={choice.question}
+            options={choice.options}
+            id={id}
+            value={promptResponses[id]??""}
+            onChange={value=>onSavePromptResponse(id,value)}
+          />);
+          continue;
+        }
+
+        const subparts=assessmentSubparts(block.text);
+        if(subparts.length>1){
+          views.push(<StructuredResponseGroup
+            key={"assessment-parts-"+index}
+            breakdown={{prompts:subparts}}
+            unitId={unitId}
+            blockIndex={index}
+            promptResponses={promptResponses}
+            onSavePromptResponse={onSavePromptResponse}
+          />);
+          continue;
+        }
+
+        if(isAssessmentAnswerPrompt(block.text)){
+          const id=promptId(unitId,index,"response");
+          const compact=/\(\s*[12]\s+marks?\s*\)\s*$/i.test(displayText(block.text).trim())&&displayText(block.text).length<110;
+          views.push(<ResponseSurface
+            key={"assessment-response-"+index}
+            compact={compact}
+            prompt={<p className="question-prompt assessment-question-prompt">{displayText(block.text)}</p>}
+          >
+            <ResponseArea
+              compact={compact}
+              id={id}
+              value={promptResponses[id]??""}
+              onChange={value=>onSavePromptResponse(id,value)}
+              label={displayText(block.text)}
+            />
+          </ResponseSurface>);
+          continue;
+        }
+      }
 
       if(block.text.includes("☐")){
         views.push(<ChoiceBlock
