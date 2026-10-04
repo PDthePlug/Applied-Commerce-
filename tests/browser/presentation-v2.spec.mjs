@@ -1,3 +1,4 @@
+import { mkdir } from "node:fs/promises";
 import { expect, test } from "@playwright/test";
 
 const fixtures = {
@@ -60,9 +61,12 @@ async function expectViewportIntegrity(page) {
 }
 
 async function attachEvidence(page, testInfo, name) {
-  const image = await page.screenshot({ fullPage: true, animations: "disabled" });
+  const directory = "test-results/presentation-v2";
+  await mkdir(directory, { recursive: true });
+  const path = `${directory}/${name}-${testInfo.project.name}.png`;
+  await page.screenshot({ path, fullPage: true, animations: "disabled" });
   await testInfo.attach(`${name}-${testInfo.project.name}`, {
-    body: image,
+    path,
     contentType: "image/png",
   });
 }
