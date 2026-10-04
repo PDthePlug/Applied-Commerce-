@@ -8,6 +8,7 @@ from language_accessibility import adapt_text, audit_summary, is_internal_editor
 
 SOURCE_DIR = Path(sys.argv[1]) if len(sys.argv) > 1 else Path('/mnt/data')
 OUT = Path(sys.argv[2]) if len(sys.argv) > 2 else Path('public/curriculum')
+UNIT_IDS = json.loads((Path(__file__).parent / 'curriculum-unit-ids.json').read_text())
 if OUT.exists():
     shutil.rmtree(OUT)
 OUT.mkdir(parents=True, exist_ok=True)
@@ -29,6 +30,10 @@ def lesson_heading(text: str):
 def block_type(text: str, style: str) -> str:
     u=text.upper()
     if style.startswith('List'): return 'list'
+    if u.startswith(('PAUSE AND REFLECT', 'REFLECTION')): return 'reflection'
+    if u.startswith('CHECKPOINT'): return 'checkpoint'
+    if u.startswith(('PORTFOLIO', 'EVIDENCE TO KEEP')): return 'portfolio'
+    if re.fullmatch(r'THINKING EQUATION', u): return 'equation'
     if text.startswith('✍️') or u.startswith('ACTIVITY '): return 'activity'
     if text.startswith('💭'): return 'reflection'
     if text.startswith('✅'): return 'checkpoint'
@@ -37,6 +42,7 @@ def block_type(text: str, style: str) -> str:
     if text.startswith(('🔍','💡','🔬')): return 'learning'
     if text.startswith('⬜') or re.fullmatch(r'THINKING EQUATION', u): return 'equation'
     if u in {'LEARNING OUTCOMES','KEY VOCABULARY','DEEPENING INSIGHT','HOW TO USE THIS BOOK','YOUR TENSION/EXPERIMENT LOG'}: return 'section'
+    if style.startswith('Heading'): return 'section'
     if len(text)<=100 and upper_ratio(text)>.9: return 'section'
     return 'paragraph'
 
@@ -97,15 +103,15 @@ for path in sorted(SOURCE_DIR.glob('APPLIED COMMERCE Grade *.docx')):
             if exam:
                 current_term=int(exam.group(1)); assessment_serial+=1; serial+=1; seen=True
                 exam_title=adapt_text(raw_text, grade)
-                current_unit={'id':f'g{grade}-t{current_term}-assessment-{assessment_serial}','type':'assessment','grade':grade,'term':current_term,'label':exam_title,'title':exam_title,'blocks':[],'position':len(terms[current_term]['units'])}
+                current_unit={'id':UNIT_IDS.get(f'{grade}:assessment:{current_term}', f'g{grade}-t{current_term}-assessment-{assessment_serial}'),'type':'assessment','grade':grade,'term':current_term,'label':exam_title,'title':exam_title,'blocks':[],'position':len(terms[current_term]['units'])}
                 terms[current_term]['units'].append(current_unit); continue
             if re.fullmatch(r'END OF MOCK EXAM\s*[—-].*',raw_text,re.I):
                 current_unit=None; continue
             lesson=lesson_heading(raw_text)
-            if lesson:
+            if lesson and item.style.name == 'Heading 1':
                 seen=True; serial+=1; start,end,l_title_raw=lesson
                 l_title=adapt_text(l_title_raw, grade)
-                current_unit={'id':f'g{grade}-t{current_term}-l{start:02d}-{serial:03d}','type':'lesson','grade':grade,'term':current_term,'label':f'Lesson {start}' if start==end else f'Lessons {start}–{end}','title':l_title,'startLesson':start,'endLesson':end,'blocks':[],'position':len(terms[current_term]['units'])}
+                current_unit={'id':UNIT_IDS.get(f'{grade}:lesson:{start}', f'g{grade}-t{current_term}-l{start:02d}-checkpoint-20261004'),'type':'lesson','grade':grade,'term':current_term,'label':f'Lesson {start}' if start==end else f'Lessons {start}–{end}','title':l_title,'startLesson':start,'endLesson':end,'blocks':[],'position':len(terms[current_term]['units'])}
                 terms[current_term]['units'].append(current_unit); continue
         b=serialize(item, grade)
         if not b: continue
@@ -131,7 +137,7 @@ for path in sorted(SOURCE_DIR.glob('APPLIED COMMERCE Grade *.docx')):
         bundle['terms'].append({'term':n,'intro':terms[n]['intro'],'units':units})
         term_catalogue.append({'term':n,'unitCount':len(lesson_units),'assessmentCount':len(assessments)})
     raw=json.dumps(bundle,ensure_ascii=False,separators=(',',':')).encode('utf-8')
-    encoded=base64.b64encode(gzip.compress(raw,9)).decode('ascii')
+    encoded=base64.b64encode(gzip.compress(raw,9,mtime=0)).decode('ascii')
     parts=[encoded[i:i+PART_SIZE] for i in range(0,len(encoded),PART_SIZE)]
     for i,part in enumerate(parts,1):
         (OUT/f'grade-{grade}.part-{i}.b64').write_text(part,encoding='ascii')

@@ -75,7 +75,7 @@ test("index counts match generated grade bundles",()=>{
 test("source lesson structure is preserved with the Grade 9 Term 2 correction",()=>{
   const g9=meta(9),g12=meta(12);
   assert.equal(g9.terms[1].unitCount,18);
-  assert.equal(g12.terms[2].unitCount,12);
+  assert.equal(g12.terms[2].unitCount,20);
 
   const term2=bundle(9).terms.find(t=>t.term===2);
   const lessonNumbers=term2.units.filter(u=>u.type==="lesson").map(u=>u.startLesson);
@@ -98,4 +98,41 @@ test("representative lesson content retains authored learning blocks",()=>{
   assert.equal(l1.title,"WHO AM I?");
   assert.ok(l1.blocks.some(b=>b.kind==="text"&&b.type==="activity"));
   assert.ok(l1.blocks.some(b=>b.kind==="text"&&b.type==="portfolio"));
+});
+
+
+test("checkpoint books have continuous unique lessons and all Grade 9 exams",()=>{
+  for(const grade of [8,9,10,11,12]){
+    const data=bundle(grade);
+    const units=data.terms.flatMap(term=>term.units);
+    const lessons=units.filter(unit=>unit.type==="lesson");
+    assert.deepEqual(lessons.map(unit=>unit.startLesson),Array.from({length:grade===9?75:80},(_,i)=>i+1));
+    assert.equal(new Set(units.map(unit=>unit.id)).size,units.length);
+    for(const unit of lessons) assert.ok(unit.blocks.length>0,unit.id);
+  }
+  assert.deepEqual(bundle(9).terms.map(t=>t.units.filter(u=>u.type==="assessment").length),[1,1,1,1]);
+});
+
+test("existing lesson and assessment identities survive the source rebuild",()=>{
+  const ids=JSON.parse(fs.readFileSync("scripts/curriculum-unit-ids.json","utf8"));
+  for(const grade of [8,9,10,11,12]){
+    for(const term of bundle(grade).terms){
+      for(const unit of term.units){
+        const key=unit.type==="lesson"?`${grade}:lesson:${unit.startLesson}`:`${grade}:assessment:${term.term}`;
+        if(ids[key]) assert.equal(unit.id,ids[key],key);
+      }
+    }
+  }
+});
+
+test("new workshops and clinics contain practical evidence and checkpoint prompts",()=>{
+  for(const [grade,start,end] of [[10,70,74],[12,53,60]]){
+    const lessons=bundle(grade).terms.flatMap(t=>t.units).filter(u=>u.type==="lesson"&&u.startLesson>=start&&u.startLesson<=end);
+    assert.equal(lessons.length,end-start+1);
+    for(const lesson of lessons){
+      assert.ok(lesson.blocks.some(b=>b.kind==="text"&&b.type==="activity"),lesson.id);
+      assert.ok(lesson.blocks.some(b=>b.kind==="text"&&b.type==="checkpoint"),lesson.id);
+      assert.ok(lesson.blocks.some(b=>b.kind==="text"&&/evidence/i.test(b.text)),lesson.id);
+    }
+  }
 });

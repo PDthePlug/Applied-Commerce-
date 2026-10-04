@@ -137,6 +137,10 @@ async function loadBundle(grade:number):Promise<GradeBundle>{
       await loadCompressedParts(basePaths,`Grade ${grade}`)
     );
 
+    for(const term of bundle.terms){
+      term.units=term.units.map(normalizeRestoredGrade9Term2Unit);
+    }
+
     for(const patchMeta of meta.patches??[]){
       const patch=await decodeCompressedJson<GradePatch>(
         await loadCompressedParts(patchMeta.parts,`Grade ${grade} Term ${patchMeta.term} correction`)

@@ -13,7 +13,7 @@ AUDIT_COUNTS: Counter[str] = Counter()
 _INTERNAL_PATTERNS = [
     re.compile(r"^I have internalized the complete conversation", re.I),
     re.compile(r"^I have internalized the complete Grade", re.I),
-    re.compile(r"^Pride 2\.0 activated\.", re.I),
+    re.compile(r"^Pride 2\.0 (?:activated|executing)\.", re.I),
     re.compile(r"^I'm building Lessons?\b", re.I),
     re.compile(r"^Building Lessons?\b", re.I),
     re.compile(r"^The original draft covers Lessons?\b", re.I),

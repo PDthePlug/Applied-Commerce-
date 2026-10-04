@@ -27,7 +27,7 @@ const TENSION_RE=/tension\s*\/\s*experiment\s+log/i;
 const PART_HEADING_RE=/^Part\s+[A-Z]\s*:/i;
 const INSTRUCTION_ONLY_RE=/^(?:Complete|Fill in|Use)\s+(?:this|the|these)\s+(?:page|table|section|activity|worksheet|space|sentences|questions)(?:\s+below)?\.?$/i;
 const NUMBER_WORDS:Record<string,number>={one:1,two:2,three:3,four:4,five:5,six:6,seven:7,eight:8,nine:9,ten:10};
-const HOME_HEADING_RE=/^🏠\s*Try This at Home\s*(?:—|-)\s*(.+)$/i;
+const HOME_HEADING_RE=/^(?:🏠\s*)?Try This at Home(?:\s*(?:—|-)\s*(.+))?$/i;
 const HOME_ALTERNATIVE_RE=/^(?:If you cannot|If you can't|If you are unable|If there is no|If no one|If you do not|If you don't|If you share\b|If you want\b|Otherwise\b)/i;
 const QUESTION_GROUP_RE=/^((?:Question|Q)\s*\d+(?:\s*[—-]\s*[^:]+)?)\s*:\s*(.*)$/i;
 const SCAFFOLD_START_RE=/^(?:Is it because|Or because|Or is it|Could it be|For example|For instance|It might be|Maybe|Say,)\b/i;
@@ -49,7 +49,7 @@ function portfolioMessage(){
 
 function homeTaskSubtype(text:string){
   const match=displayText(text).trim().match(HOME_HEADING_RE);
-  return match?.[1]?.trim()||null;
+  return match ? (match[1]?.trim() || "Try This at Home") : null;
 }
 
 function maskQuotedText(text:string){

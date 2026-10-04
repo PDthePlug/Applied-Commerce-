@@ -74,11 +74,11 @@ test("digital learner language replaces paper-only framing",()=>{
 
 test("lesson structure remains unchanged after the language pass",()=>{
   const expected={
-    8:[20,19,20,20],
-    9:[16,6,20,21],
-    10:[16,20,22,18],
+    8:[20,20,20,20],
+    9:[16,18,20,21],
+    10:[16,20,22,22],
     11:[20,20,20,20],
-    12:[20,20,12,20],
+    12:[20,20,20,20],
   };
   for(const grade of index.grades){
     assert.deepEqual(grade.terms.map(term=>term.unitCount),expected[grade.grade]);
