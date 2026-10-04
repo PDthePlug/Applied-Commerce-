@@ -1,37 +1,32 @@
 "use client";
 
-import { useCallback, useMemo, useSyncExternalStore } from "react";
+import { useCallback, useMemo, useState, useSyncExternalStore } from "react";
+import { emptyLearningState, parseLearningState } from "./response-identity";
 import type { LearnerProfile, LearningState } from "./types";
 
 const KEY = "applied-commerce-learning-state-v1";
 const EVENT = "applied-commerce-learning-state-change";
-const emptyState: LearningState = { version: 1, completed: {}, responses: {}, promptResponses: {} };
-const emptyRaw = JSON.stringify(emptyState);
+const emptyState=emptyLearningState;
+const emptyRaw=JSON.stringify(emptyState);
 
-function readRaw(): string {
-  if (typeof window === "undefined") return emptyRaw;
-  return localStorage.getItem(KEY) ?? emptyRaw;
+function readRaw():string{
+  if(typeof window==="undefined") return emptyRaw;
+  return localStorage.getItem(KEY)??emptyRaw;
 }
-
-function parse(raw: string): LearningState {
-  try {
-    const value = JSON.parse(raw) as Partial<LearningState>;
-    if (value.version !== 1) return emptyState;
-    return {
-      version: 1,
-      activeGrade: value.activeGrade,
-      completed: value.completed ?? {},
-      responses: value.responses ?? {},
-      promptResponses: value.promptResponses ?? {},
-      profile: value.profile ?? {},
-      lastOpened: value.lastOpened,
-    };
-  } catch {
-    return emptyState;
-  }
+function parse(raw:string):LearningState{
+  try{return parseLearningState(raw);}catch{return emptyState;}
 }
 
 function write(state: LearningState) {
+  const existing=localStorage.getItem(KEY);
+  if(existing){
+    // Validate before overwriting, and retain an untouched pre-migration backup.
+    const parsed=JSON.parse(existing);
+    parseLearningState(existing);
+    if(parsed.version===1&&!localStorage.getItem(`${KEY}-before-stable-prompts`)){
+      localStorage.setItem(`${KEY}-before-stable-prompts`,existing);
+    }
+  }
   localStorage.setItem(KEY, JSON.stringify(state));
   window.dispatchEvent(new Event(EVENT));
 }
@@ -51,12 +46,18 @@ function subscribe(onStoreChange: () => void) {
 const subscribeHydration = () => () => {};
 
 export function useLearningStore() {
+  const [saveError,setSaveError]=useState<string|null>(null);
   const raw = useSyncExternalStore(subscribe, readRaw, () => emptyRaw);
   const hydrated = useSyncExternalStore(subscribeHydration, () => true, () => false);
   const state = useMemo(() => parse(raw), [raw]);
 
   const update = useCallback((fn: (current: LearningState) => LearningState) => {
-    write(fn(parse(readRaw())));
+    try{
+      write(fn(parseLearningState(readRaw())));
+      setSaveError(null);
+    }catch{
+      setSaveError("Your latest change could not be saved on this device. Keep this page open and copy your work before leaving.");
+    }
   }, []);
 
   const markComplete = useCallback((unitId: string, complete=true) => update(current => {
@@ -83,5 +84,5 @@ export function useLearningStore() {
   })), [update]);
 
   const completedIds = useMemo(() => new Set(Object.keys(state.completed)), [state.completed]);
-  return {state, hydrated, completedIds, markComplete, saveResponse, savePromptResponse, setProfile, setLastOpened};
+  return {state, hydrated, saveError, completedIds, markComplete, saveResponse, savePromptResponse, setProfile, setLastOpened};
 }

@@ -9,7 +9,7 @@ import { useLearningStore } from "@/lib/learning-store";
 
 export function LessonReader({grade,term,unitId}:{grade:number;term:number;unitId:string}){
  const [termData,setTermData]=useState<TermIndex|null>(null); const [unit,setUnit]=useState<UnitContent|null>(null); const [menu,setMenu]=useState(false);
- const {state,completedIds,markComplete,saveResponse,savePromptResponse,setLastOpened}=useLearningStore();
+ const {state,saveError,completedIds,markComplete,saveResponse,savePromptResponse,setLastOpened}=useLearningStore();
  useEffect(()=>{Promise.all([curriculum.term(grade,term),curriculum.unit(grade,term,unitId)]).then(([t,u])=>{setTermData(t);setUnit(u);setLastOpened(grade,term,unitId);window.scrollTo(0,0);});},[grade,term,unitId,setLastOpened]);
  const sequence=useMemo<UnitSummary[]>(()=>termData?[...termData.units,...termData.assessments]:[],[termData]);
  const pos=sequence.findIndex(x=>x.id===unitId); const prev=pos>0?sequence[pos-1]:null; const next=pos>=0&&pos<sequence.length-1?sequence[pos+1]:null;
@@ -29,6 +29,7 @@ export function LessonReader({grade,term,unitId}:{grade:number;term:number;unitI
   </aside>
   {menu&&<button className="reader-scrim" onClick={()=>setMenu(false)} aria-label="Close menu"/>}
   <main className="reader-stage">
+    {saveError&&<p role="alert" className="save-error">{saveError}</p>}
     <article className="lesson-document">
       <header className="lesson-heading"><p className="eyebrow">Grade {grade} · Term {term} · {unit.label}</p><h1>{unit.title}</h1></header>
       <ContentBlocks

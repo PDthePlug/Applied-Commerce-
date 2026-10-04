@@ -43,6 +43,11 @@ export function PortfolioDashboard(){
   });
  },[units,meta,state.promptResponses]);
 
+ const orphaned=Object.fromEntries(Object.entries(state.promptResponses).filter(([key])=>{
+  const unit=units[key.split("::")[0]];
+  return unit&&!unit.blocks.some(block=>block.id&&key.startsWith(`${unit.id}::prompt-${block.id}::`));
+ }));
+ const previous=Object.entries({...state.previousResponses,...orphaned}).filter(([key,value])=>value.trim()&&!key.endsWith("::row-count"));
  const notes=useMemo(()=>Object.entries(state.responses)
   .filter(([,value])=>value.trim())
   .map(([id,value])=>({id,value,meta:meta[id]}))
@@ -72,6 +77,15 @@ export function PortfolioDashboard(){
        </div>
       </article>)}
      </div>}
+
+  {previous.length>0&&<section className="portfolio-notes-section">
+   <h2>Earlier answers kept for review</h2>
+   <p>These answers belong to an earlier layout or a task that has changed. They are kept separately because their match to the current question cannot be verified. You can copy an answer into the matching activity after reviewing it.</p>
+   <div className="portfolio-list">{previous.map(([key,value])=>{
+    const lesson=meta[key.split("::")[0]];
+    return <article key={key}><h3>{lesson?`${lesson.label} · ${lesson.title}`:"Earlier learning record"}</h3><p>{value}</p>{lesson&&<Link href={`/learn/${lesson.grade}/term/${lesson.term}/${lesson.id}`}>Review lesson <ArrowRight/></Link>}</article>;
+   })}</div>
+  </section>}
 
   {notes.length>0 && <section className="portfolio-notes-section">
    <div className="portfolio-section-heading"><NotebookPen/><div><p className="eyebrow">Personal notes</p><h2>Notes you chose to keep</h2></div></div>

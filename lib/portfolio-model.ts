@@ -1,3 +1,4 @@
+import { responseView } from "./response-identity";
 import type { ContentBlock, UnitContent } from "./types";
 
 export type PortfolioDefinition = {
@@ -94,7 +95,7 @@ export function buildPortfolioDefinitions(unit:UnitContent):PortfolioDefinition[
 
     if(isMeaningfulPortfolioBlock(block)){
       definitions.push({
-        id:`${unit.id}::portfolio::${index}`,
+        id:`${unit.id}::portfolio::${block.id??index}`,
         title,
         instruction:"Captured automatically from this activity.",
         blockIndices:[...blockIndices],
@@ -141,6 +142,7 @@ export function responsesForPortfolio(
   definition:PortfolioDefinition,
   promptResponses:Record<string,string>,
 ):PortfolioResponse[]{
+  promptResponses=responseView(unit.id,unit.blocks,promptResponses);
   const allowed=new Set(definition.blockIndices);
   const prefix=`${unit.id}::block-`;
 

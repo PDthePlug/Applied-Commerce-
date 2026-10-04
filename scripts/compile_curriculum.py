@@ -4,6 +4,7 @@ from docx.text.paragraph import Paragraph
 from docx.table import Table
 from pathlib import Path
 import base64, gzip, json, re, shutil, sys
+from block_identity import identify_blocks
 from language_accessibility import adapt_text, audit_summary, is_internal_editorial_note, reset_audit_counts
 
 SOURCE_DIR = Path(sys.argv[1]) if len(sys.argv) > 1 else Path('/mnt/data')
@@ -75,7 +76,7 @@ def source_note(text: str) -> bool:
 
 PART_SIZE = 40000
 reset_audit_counts()
-catalogue={'product':'Applied Commerce','formatVersion':2,'grades':[]}
+catalogue={'product':'Applied Commerce','formatVersion':3,'grades':[]}
 for path in sorted(SOURCE_DIR.glob('APPLIED COMMERCE Grade *.docx')):
     grade=int(re.search(r'Grade (\d+)',path.name).group(1))
     doc=Document(path)
@@ -132,6 +133,7 @@ for path in sorted(SOURCE_DIR.glob('APPLIED COMMERCE Grade *.docx')):
     term_catalogue=[]
     for n in range(1,5):
         units=terms[n]['units']
+        for unit in units: identify_blocks(unit['blocks'])
         lesson_units=[u for u in units if u['type']=='lesson']; assessments=[u for u in units if u['type']=='assessment']
         total_lessons+=len(lesson_units); total_assessments+=len(assessments)
         bundle['terms'].append({'term':n,'intro':terms[n]['intro'],'units':units})

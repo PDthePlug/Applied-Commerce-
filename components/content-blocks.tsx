@@ -1,5 +1,6 @@
 "use client";
 
+import { responseView, persistResponseKey } from "@/lib/response-identity";
 import { Plus } from "lucide-react";
 import type { ContentBlock, TextBlockType } from "@/lib/types";
 import { cleanMarkup, isRemovedLogBlock, sanitizeRemovedLogReferences } from "@/lib/portfolio-model";
@@ -542,6 +543,7 @@ function isAnswerPrompt(text:string,context:PromptContext,type:TextBlockType,nex
   const value=displayText(text).trim();
   if(!value||INSTRUCTION_ONLY_RE.test(value)) return false;
   if(QUESTION_RE.test(value)) return true;
+  if(!context) return false;
   if(INTERROGATIVE_RE.test(value)&&value.includes("?")) return true;
   if(isGenericActivityLabel(value,context,nextBlock)) return true;
   if(type==="activity"||type==="reflection"||type==="checkpoint"||type==="portfolio") return false;
@@ -650,7 +652,9 @@ function TableBlockView({
   </div>;
 }
 
-export function ContentBlocks({blocks,unitId,promptResponses,onSavePromptResponse}:Props) {
+export function ContentBlocks({blocks,unitId,promptResponses:storedResponses,onSavePromptResponse:saveResponse}:Props) {
+  const promptResponses=responseView(unitId,blocks,storedResponses);
+  const onSavePromptResponse=(key:string,value:string)=>saveResponse(persistResponseKey(unitId,blocks,key),value);
   const indexed=pruneTensionContent(blocks);
 
   const renderIndexedBlocks=(items:IndexedBlock[],allowInsightGrouping=true)=>{
@@ -733,7 +737,9 @@ export function ContentBlocks({blocks,unitId,promptResponses,onSavePromptRespons
         continue;
       }
 
-      if(block.type==="story"||block.type==="section") context=null;
+      if(block.type==="story") context=null;
+      // Activity parts keep their task context; unrelated sections end it.
+      if(block.type==="section"&&!PART_HEADING_RE.test(block.text)) context=null;
 
       if(block.text.includes("☐")){
         views.push(<ChoiceBlock

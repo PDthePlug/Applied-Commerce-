@@ -2,8 +2,8 @@ export type TextBlockType =
   | "paragraph" | "list" | "activity" | "reflection" | "checkpoint"
   | "portfolio" | "story" | "learning" | "equation" | "section";
 
-export type TextBlock = { kind: "text"; type: TextBlockType; text: string };
-export type TableBlock = { kind: "table"; type: "table"; rows: string[][] };
+export type TextBlock = { id?: string; kind: "text"; type: TextBlockType; text: string };
+export type TableBlock = { id?: string; kind: "table"; type: "table"; rows: string[][] };
 export type ContentBlock = TextBlock | TableBlock;
 
 export type UnitSummary = {
@@ -70,7 +70,8 @@ export type LearnerProfile = {
 };
 
 export type LearningState = {
-  version: 1;
+  version: 2;
+  previousResponses: Record<string, string>;
   activeGrade?: number;
   completed: Record<string, string>;
   responses: Record<string, string>;

@@ -66,3 +66,7 @@ The runtime is rebuilt from these committed sources. It now contains 80 lessons 
 `scripts/curriculum-unit-ids.json` preserves the prior runtime IDs for existing lessons and assessments so lesson-level saved responses and completion records remain attached to the same lesson. New lessons have checkpoint-specific IDs. Prompt-level keys depend on content positions, so this preservation does not guarantee that every previous activity answer maps to a revised prompt. Existing responses remain in local storage; no learner state is cleared.
 
 These additions require teacher review. Curriculum mapping, current legal/financial reference verification and full exam moderation remain release work.
+
+## Stable learner responses
+
+The response persistence milestone uses compiled block identities rather than document positions. Legacy positional answers appear in Portfolio under **Earlier answers kept for review**; they are preserved without guessing which revised question they answered. Before the first migration write, the previous record is backed up on the same device. New task answers and portfolio evidence share the same stable identities. See `docs/checkpoints/2026-10-04-response-persistence.md` for validation and limitations.

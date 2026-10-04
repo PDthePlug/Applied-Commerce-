@@ -1,0 +1,42 @@
+import type { ContentBlock, LearningState } from "./types";
+
+export function stableResponseKey(unitId:string,block:ContentBlock,slot:string){
+  if(!block.id) throw new Error("This task has no response identity. Reload the lesson before answering.");
+  return `${unitId}::prompt-${block.id}::${slot}`;
+}
+
+// The renderer may address its current view by position; persisted data never does.
+export function responseView(unitId:string,blocks:ContentBlock[],responses:Record<string,string>){
+  const view:Record<string,string>={};
+  blocks.forEach((block,index)=>{
+    if(!block.id) return;
+    const prefix=`${unitId}::prompt-${block.id}::`;
+    for(const [key,value] of Object.entries(responses)){
+      if(key.startsWith(prefix)) view[`${unitId}::block-${index}::${key.slice(prefix.length)}`]=value;
+    }
+  });
+  return view;
+}
+
+export function persistResponseKey(unitId:string,blocks:ContentBlock[],viewKey:string){
+  const prefix=`${unitId}::block-`;
+  if(!viewKey.startsWith(prefix)) throw new Error("Response does not belong to this lesson.");
+  const match=viewKey.slice(prefix.length).match(/^(\d+)::(.+)$/);
+  const block=match&&blocks[Number(match[1])];
+  if(!match||!block) throw new Error("Response task was not found.");
+  return stableResponseKey(unitId,block,match[2]);
+}
+
+export const emptyLearningState:LearningState={version:2,completed:{},responses:{},promptResponses:{},previousResponses:{}};
+export function parseLearningState(raw:string):LearningState{
+  const value=JSON.parse(raw);
+  if(value.version!==1&&value.version!==2) throw new Error("Unsupported learning record. Your saved data has not been changed.");
+  const stable:Record<string,string>={};
+  const previous:Record<string,string>={...value.previousResponses};
+  for(const [key,answer] of Object.entries(value.promptResponses??{})){
+    if(typeof answer!=="string") continue;
+    if(key.includes("::prompt-")) stable[key]=answer;
+    else previous[key]=answer;
+  }
+  return {...value,version:2,completed:value.completed??{},responses:value.responses??{},promptResponses:stable,previousResponses:previous};
+}
