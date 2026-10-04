@@ -146,3 +146,18 @@ Presentation Architecture 2.0 introduces:
 - regression tests that guard the contract.
 
 The next presentation checkpoint should add browser visual regression fixtures for the representative acceptance set rather than relying only on structural tests.
+
+
+## Browser certification checkpoint
+
+The presentation contract is now exercised in Chromium at 1280×900, 430×932 and 360×800 against five deliberately difficult source-backed learner journeys:
+
+- Grade 8 Lesson 2 — dense hierarchy: Thinking Equation, activity/reflection/checkpoint transitions and response surfaces.
+- Grade 10 Lesson 26 — mixed simple, editable and wide tables.
+- Grade 11 Lesson 42 — authored choice interaction and selected-state clarity.
+- Grade 12 Lesson 5 — long title wrapping and dense decision content.
+- Grade 9 Term 1 Mock Exam — formal assessment response surfaces and real radio controls.
+
+The browser suite fails on page-level horizontal overflow, reader-chrome collisions, broken mobile table labelling, loss of wide-table scrolling, unusable compact tap targets or assessment controls that do not retain selected state.
+
+Every browser run also records full-page screenshots as CI evidence. These screenshots are review artifacts; the automated gate remains semantic and geometric so legitimate text reflow does not create meaningless pixel-diff failures.
