@@ -91,13 +91,23 @@ for path in sorted(SOURCE_DIR.glob('APPLIED COMMERCE Grade *.docx')):
 
     terms={n:{'term':n,'intro':[],'units':[]} for n in range(1,5)}
     preface=[]; current_term=1; current_unit=None; seen=False; serial=0; assessment_serial=0
+    suppress_marking_guidelines=False
     for item in items:
         raw_text=clean(item.text) if isinstance(item, Paragraph) else ''
         if raw_text:
             tm=term_marker(raw_text,grade)
             if tm:
-                current_term=tm; current_unit=None
+                current_term=tm; current_unit=None; suppress_marking_guidelines=False
                 if seen: continue
+
+            if suppress_marking_guidelines:
+                continue
+
+            if re.fullmatch(r'MARKING GUIDELINES',raw_text,re.I) or re.fullmatch(r'PAPER\s+\d+\s*[—-]\s*MARKING GUIDELINES',raw_text,re.I):
+                suppress_marking_guidelines=True
+                current_unit=None
+                continue
+
             paper_end=re.fullmatch(r'END OF PAPER\s+(\d+)', raw_text, re.I)
             if paper_end:
                 # Paper 1 is only an internal boundary. Paper 2 closes the learner
@@ -125,6 +135,8 @@ for path in sorted(SOURCE_DIR.glob('APPLIED COMMERCE Grade *.docx')):
                 l_title=adapt_text(l_title_raw, grade)
                 current_unit={'id':UNIT_IDS.get(f'{grade}:lesson:{start}', f'g{grade}-t{current_term}-l{start:02d}-checkpoint-20261004'),'type':'lesson','grade':grade,'term':current_term,'label':f'Lesson {start}' if start==end else f'Lessons {start}–{end}','title':l_title,'startLesson':start,'endLesson':end,'blocks':[],'position':len(terms[current_term]['units'])}
                 terms[current_term]['units'].append(current_unit); continue
+        if suppress_marking_guidelines:
+            continue
         b=serialize(item, grade)
         if not b: continue
         if current_unit is not None: current_unit['blocks'].append(b)
