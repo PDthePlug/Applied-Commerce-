@@ -4,6 +4,7 @@ import type { ReactNode } from "react";
 import { Archive, CheckCircle2, ChevronDown, Equal, House, Lightbulb, MessageCircleQuestion, PenLine } from "lucide-react";
 
 type NoticeTone = "activity" | "reflection" | "checkpoint" | "portfolio" | "home";
+export type ResponseTone = "default" | "activity" | "reflection" | "checkpoint" | "home" | "assessment";
 
 const noticeMeta={
   activity:{label:"Activity",icon:PenLine},
@@ -35,6 +36,13 @@ export function LearningNotice({
   </aside>;
 }
 
+export function StoryHeading({title}:{title:string}){
+  return <header className="story-heading-block">
+    <span>Story</span>
+    <h3 className="story-heading">{title}</h3>
+  </header>;
+}
+
 export function ThinkingEquationNotice({equation}:{equation:string}){
   return <aside className="thinking-equation-notice">
     <div className="thinking-equation-icon"><Equal aria-hidden="true"/></div>
@@ -60,12 +68,14 @@ export function ResponseSurface({
   prompt,
   children,
   compact=false,
+  tone="default",
 }:{
   prompt?:ReactNode;
   children:ReactNode;
   compact?:boolean;
+  tone?:ResponseTone;
 }){
-  return <section className={`response-surface ${compact?"response-surface-compact":""}`}>
+  return <section className={`response-surface response-surface-${tone} ${compact?"response-surface-compact":""}`}>
     {prompt?<div className="response-surface-prompt">{prompt}</div>:null}
     <div className="response-surface-control">{children}</div>
   </section>;
