@@ -17,6 +17,10 @@ The first production-shaped milestone includes:
 - responsive desktop/mobile shell;
 - curriculum compiler that converts the five DOCX learner books into structured runtime JSON.
 
+### Presentation Architecture 2.0
+
+The learner reader now uses a shared semantic presentation contract: source-authored stories, activities, reflections, checkpoints, Thinking Equations, portfolio evidence, response surfaces and tables render through one consistent hierarchy. Simple source tables become labelled row cards on compact screens while wider or structurally irregular tables keep their table geometry. See `docs/APPLIED_COMMERCE_PRESENTATION_ARCHITECTURE_V2.md`.
+
 ## Important source-preservation rule
 
 The compiler does **not** renumber or manufacture lessons to make the books look uniform. If a supplied book jumps between lesson numbers or contains a different number of lesson headings in a term, the platform preserves that source structure. Editorial `SITUATION REPORT` markers and `END OF ...` production markers are treated as source metadata rather than learner-facing lessons.
