@@ -17,6 +17,8 @@ export function AppShell({children}:{children:React.ReactNode}) {
   const pathname=usePathname();
   const focusedReader=/\/learn\/\d+\/term\/\d+\/.+/.test(pathname);
   const institutional=pathname.startsWith("/institutions");
+  const facilitator=pathname.startsWith("/facilitator");
+  const staffSurface=institutional||facilitator;
   const [menuOpen,setMenuOpen]=useState(false);
   const triggerRef=useRef<HTMLButtonElement|null>(null);
   const closeRef=useRef<HTMLButtonElement|null>(null);
@@ -56,19 +58,21 @@ export function AppShell({children}:{children:React.ReactNode}) {
     };
   },[menuOpen]);
 
-  return <div className={"app-shell "+(focusedReader?"focused-reader ":"")+(institutional?"institutional-shell":"")}>
+  return <div className={"app-shell "+(focusedReader?"focused-reader ":"")+(institutional?"institutional-shell ":"")+(facilitator?"facilitator-shell":"")}>
     {!focusedReader && <header className="topbar">
       <Brand
-        href={institutional?"/institutions":"/"}
-        subtitle={institutional?"Learning Infrastructure":"Learning Platform"}
+        href={institutional?"/institutions":facilitator?"/facilitator":"/"}
+        subtitle={institutional?"Learning Infrastructure":facilitator?"Facilitator Workspace":"Learning Platform"}
       />
       {institutional
         ? <div className="topbar-note institutional-topbar-note"><Link href="/">Learner platform</Link><span>For institutions</span></div>
-        : <div className="topbar-note"><span>Grades 8–12</span><Link className="topbar-institution-link" href="/institutions">For institutions</Link></div>}
+        : facilitator
+          ? <div className="topbar-note"><Link href="/">Learner platform</Link><span>Evidence & assessment</span></div>
+          : <div className="topbar-note"><span>Grades 8–12</span><Link className="topbar-institution-link" href="/institutions">For institutions</Link></div>}
     </header>}
     <main>{children}</main>
 
-    {!institutional && menuOpen && <>
+    {!staffSurface && menuOpen && <>
       <button className="app-menu-scrim" type="button" onClick={()=>setMenuOpen(false)} aria-label="Close Applied Commerce menu"/>
       <section className="app-menu-sheet" role="dialog" aria-modal="true" aria-label="Applied Commerce menu">
        <header>
@@ -87,7 +91,7 @@ export function AppShell({children}:{children:React.ReactNode}) {
       </section>
     </>}
 
-    {!institutional && <button ref={triggerRef} className="app-menu-trigger" type="button" onClick={()=>setMenuOpen(true)} aria-label="Open Applied Commerce menu" aria-haspopup="dialog" aria-expanded={menuOpen}>
+    {!staffSurface && <button ref={triggerRef} className="app-menu-trigger" type="button" onClick={()=>setMenuOpen(true)} aria-label="Open Applied Commerce menu" aria-haspopup="dialog" aria-expanded={menuOpen}>
       <Menu/><span>Menu</span>
     </button>}
   </div>;
