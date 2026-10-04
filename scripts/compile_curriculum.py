@@ -72,7 +72,7 @@ def term_marker(text: str, grade: int):
 
 def source_note(text: str) -> bool:
     u=text.upper()
-    return u.startswith('SITUATION REPORT:') or u.startswith('END OF GRADE ') or u.startswith('END OF PAPER ')
+    return u.startswith('SITUATION REPORT:') or u.startswith('END OF GRADE ')
 
 PART_SIZE = 40000
 reset_audit_counts()
@@ -98,6 +98,13 @@ for path in sorted(SOURCE_DIR.glob('APPLIED COMMERCE Grade *.docx')):
             if tm:
                 current_term=tm; current_unit=None
                 if seen: continue
+            if re.fullmatch(r'END OF PAPER\s+\d+', raw_text, re.I):
+                # Multi-paper assessments remain one assessment unit. The end-of-paper
+                # marker is editorial structure, not the end of the mock exam.
+                if current_unit is not None and current_unit.get('type')=='assessment':
+                    continue
+                current_unit=None
+                continue
             if source_note(raw_text):
                 current_unit=None; continue
             exam=re.fullmatch(rf'GRADE\s+{grade}\s+TERM\s+([1-4])\s+MOCK EXAM',raw_text,re.I)
