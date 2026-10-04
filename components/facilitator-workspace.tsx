@@ -109,7 +109,7 @@ export function FacilitatorWorkspace(){
     return true;
   }),[records,reviews,search,statusFilter,termFilter]);
 
-  const selected=records.find(record=>record.responseKey===selectedKey)??filtered[0]??records[0];
+  const selected=filtered.find(record=>record.responseKey===selectedKey)??filtered[0]??records[0];
   const report=useMemo(()=>buildEvidenceReport({learnerName,grade,records,reviews}),[grade,records,reviews,learnerName]);
   const completionRate=gradeLessonTotal?Math.round(learner.completedLessons/gradeLessonTotal*100):0;
   const pendingTotal=priorities.reduce((sum,item)=>sum+item.count,0);
@@ -407,7 +407,7 @@ function RubricLibrary(){
 }
 
 function ProgressRow({rowLabel,value,reviewed,rate}:{rowLabel:string;value:number;reviewed:number;rate:number}){
-  return <div className="fac-progress-row"><span>{rowLabel}</span><div><i style={{width:Math.min(100,Math.max(8,rate))+"%"}}/></div><strong>{value}</strong><small>{reviewed} reviewed</small></div>;
+  return <div className="fac-progress-row"><span>{rowLabel}</span><div><i style={{width:Math.min(100,Math.max(0,rate))+"%"}}/></div><strong>{value}</strong><small>{reviewed} reviewed</small></div>;
 }
 
 function EmptyInline({title,text}:{title:string;text:string}){
