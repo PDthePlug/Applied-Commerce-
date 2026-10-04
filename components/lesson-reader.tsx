@@ -35,6 +35,7 @@ export function LessonReader({grade,term,unitId}:{grade:number;term:number;unitI
       <ContentBlocks
         blocks={unit.blocks}
         unitId={unitId}
+        unitType={unit.type}
         promptResponses={state.promptResponses}
         onSavePromptResponse={savePromptResponse}
       />
