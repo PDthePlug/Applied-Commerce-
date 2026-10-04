@@ -91,3 +91,27 @@ test("home adopts BIS Today hierarchy without a giant enclosing hero card",()=>{
   assert.doesNotMatch(home,/className="hero home-dashboard-hero"/);
   assert.doesNotMatch(home,/hero-metrics/);
 });
+
+
+test("formal assessment units render real response controls",()=>{
+  const blocks=read("components/content-blocks.tsx");
+  const reader=read("components/lesson-reader.tsx");
+  assert.match(reader,/unitType=\{unit\.type\}/);
+  assert.match(blocks,/unitType==="assessment"/);
+  assert.match(blocks,/parseAssessmentChoices/);
+  assert.match(blocks,/assessmentSubparts/);
+  assert.match(blocks,/AssessmentMultipleChoice/);
+  assert.match(blocks,/assessment-response-/);
+  assert.match(blocks,/type="radio"/);
+});
+
+test("compact facilitator navigation uses the centered menu instead of a horizontal rail",()=>{
+  const workspace=read("components/facilitator-workspace.tsx");
+  const styles=read("app/evidence.css");
+  assert.match(workspace,/fac-menu-trigger/);
+  assert.match(workspace,/fac-menu-sheet/);
+  assert.match(workspace,/aria-haspopup="dialog"/);
+  assert.match(styles,/\.fac-menu-trigger/);
+  assert.match(styles,/@media\(max-width:860px\)/);
+  assert.match(styles,/\.fac-sidebar\{display:none!important\}/);
+});
