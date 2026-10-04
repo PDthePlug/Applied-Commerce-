@@ -17,7 +17,9 @@ type GradePatch = {
 };
 
 async function getJson<T>(url:string):Promise<T>{
-  const response=await fetch(url,{cache:"force-cache"});
+  // These filenames are reused on publication. Revalidate the complete release
+  // rather than mixing an old catalogue or part with the current application.
+  const response=await fetch(url,{cache:"no-store"});
   if(!response.ok) throw new Error(`Could not load curriculum content (${response.status}).`);
   return response.json() as Promise<T>;
 }
@@ -34,7 +36,7 @@ async function decodeCompressedJson<T>(encoded:string):Promise<T>{
 
 async function loadCompressedParts(paths:string[],label:string){
   const responses=await Promise.all(paths.map(path=>
-    fetch(path.startsWith("/")?path:`/curriculum/${path}`,{cache:"force-cache"})
+    fetch(path.startsWith("/")?path:`/curriculum/${path}`,{cache:"no-store"})
   ));
   if(responses.some(response=>!response.ok)) throw new Error(`Could not load ${label}.`);
   return (await Promise.all(responses.map(response=>response.text()))).join("");

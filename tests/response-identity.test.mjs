@@ -11,6 +11,26 @@ const identityUrl=moduleUrl('lib/response-identity.ts');
 const {responseView,persistResponseKey,parseLearningState}=await import(identityUrl);
 const {buildPortfolioDefinitions,responsesForPortfolio}=await import(moduleUrl('lib/portfolio-model.ts',{'./response-identity':identityUrl}));
 const unit='g8-t1-l01-001';
+test('runtime curriculum bypasses stale HTTP files and supplies identities to answer fields',async()=>{
+ const originalFetch=globalThis.fetch;
+ const requests=[];
+ globalThis.fetch=async(url,options)=>{
+  requests.push({url,cache:options?.cache});
+  assert.equal(options?.cache,'no-store');
+  return new Response(fs.readFileSync(`public${url}`));
+ };
+ try{
+  const {curriculum}=await import(moduleUrl('lib/curriculum.ts'));
+  const actual=await curriculum.unit(8,1,unit);
+  assert.ok(actual.blocks.length>0);
+  assert.ok(actual.blocks.every(block=>block.id));
+  assert.ok(requests.some(request=>request.url.endsWith('index.json')));
+  assert.ok(requests.some(request=>request.url.endsWith('.b64')));
+  const count=requests.length;
+  await curriculum.unit(8,1,unit);
+  assert.equal(requests.length,count,'reuse the validated release in memory');
+ }finally{globalThis.fetch=originalFetch;}
+});
 const blocks=[{id:'activity',kind:'text',type:'activity',text:'Activity 1: One action'},{id:'answer',kind:'text',type:'paragraph',text:'My action: ______'},{id:'evidence',kind:'text',type:'portfolio',text:'Portfolio: Keep your action.'}];
 
 test('saved answer survives insertion and reordering without populating a different task',()=>{
