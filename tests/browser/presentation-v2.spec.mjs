@@ -169,8 +169,10 @@ test.describe("Applied Commerce Presentation Architecture 2.0", () => {
     expect(await page.locator(".response-surface-assessment").count()).toBeGreaterThan(0);
     expect(await page.locator(".assessment-choice-list").count()).toBeGreaterThan(0);
     const radio = page.locator(".assessment-choice-list input[type=radio]").first();
+    const option = page.locator(".assessment-choice-list label").first();
     await expect(radio).toBeAttached();
-    await radio.check();
+    await expect(option).toBeVisible();
+    await option.click();
     await expect(radio).toBeChecked();
 
     const selected = page.locator(".assessment-choice-list label.selected").first();
