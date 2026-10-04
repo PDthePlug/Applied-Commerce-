@@ -2,14 +2,14 @@
 
 **Project:** Applied Commerce Production  
 **Project ref:** `vxmcykmrqubwlysrqjyt`  
-**Status:** backend foundation active; frontend sign-in intentionally not enabled.
+**Current status:** **PAUSED** — the schema foundation was previously applied, but the project cannot be reactivated while the account has no free active-project slot.
 
-## Applied migrations
+## Previously applied backend foundation
 
 1. `applied_commerce_core_tables`
 2. `applied_commerce_security_policies`
 
-## Core data model
+The project was prepared with:
 
 - `profiles` — identity row linked 1:1 to `auth.users`
 - `learner_profiles` — learner grade and learner-facing profile data
@@ -24,37 +24,42 @@
 - `portfolio_artifacts` — curriculum-directed portfolio records
 - `portfolio_evidence` — provenance links from portfolio artifacts to prompt responses
 
-## Security model
+The previously documented security model was deny-by-default for anonymous users, with learners restricted to their own records and educators/school administrators restricted through cohort or school membership.
 
-All application tables in `public` have Row Level Security enabled.
+## Evidence & Assessment Engine prepared while paused
 
-The Data API is **deny-by-default for anonymous users**. No table privileges are granted to `anon`.
+The repository now contains:
 
-Authenticated access is explicitly granted per table and then constrained by RLS:
+- `migrations/20261004193000_evidence_assessment_engine.sql`
+- evidence definitions and developmental-domain mapping
+- rubric templates and criteria
+- evidence records and facilitator reviews
+- report snapshot schema
+- deterministic answer-rule support
+- class-scale facilitator dashboard
+- backend-mode contract
+- facilitator data-source interface
+- activation checklist in `ACTIVATION.md`
 
-- learners can read/write their own learning records;
-- educators assigned to a cohort can read learner records for that cohort;
-- school owners/admins can read learner records for learners enrolled at their school;
-- school/cohort provisioning remains server-side for this milestone;
-- educator access is read-only for learner progress, responses, notes and portfolio evidence.
+**Prepared does not mean applied.** The evidence migration has not been run against the paused database.
 
-Private authorization helper functions live in the unexposed `private` schema.
+## Runtime boundary
 
-## Authentication state
+Production remains:
 
-Supabase Auth is prepared at the backend level, including automatic creation of a `profiles` row when a future auth user is created.
+`NEXT_PUBLIC_APPLIED_COMMERCE_BACKEND_MODE=local`
 
-**Do not add a sign-in page or authentication gate yet.** The current Applied Commerce learner experience remains local-first until the account migration milestone is explicitly enabled.
+The learner and facilitator surfaces therefore read browser-local records only. The facilitator dashboard is deliberately not exposed in the learner menu.
 
-## Current frontend boundary
-
-The production frontend still uses the existing local learner store. This is deliberate: schema, RLS and provisioning boundaries are being established before switching persistence.
-
-The later account migration should map:
+When the project is active again, the shared persistence implementation should map:
 
 `lesson completion -> lesson_progress`  
-`inline answers -> prompt_responses`  
+`inline answers -> prompt_responses -> evidence_records`  
 `lesson notes -> lesson_notes`  
-`portfolio markers -> portfolio_artifacts + portfolio_evidence`
+`portfolio markers -> portfolio_artifacts + portfolio_evidence`  
+`facilitator judgement -> evidence_reviews`  
+`report exports -> evidence_report_snapshots`
 
-without changing the learner-facing curriculum interaction model.
+Stable prompt identities must not change during that migration.
+
+See `ACTIVATION.md` for the activation sequence and acceptance gates.
