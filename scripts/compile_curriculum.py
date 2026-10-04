@@ -98,10 +98,14 @@ for path in sorted(SOURCE_DIR.glob('APPLIED COMMERCE Grade *.docx')):
             if tm:
                 current_term=tm; current_unit=None
                 if seen: continue
-            if re.fullmatch(r'END OF PAPER\s+\d+', raw_text, re.I):
-                # Multi-paper assessments remain one assessment unit. The end-of-paper
-                # marker is editorial structure, not the end of the mock exam.
+            paper_end=re.fullmatch(r'END OF PAPER\s+(\d+)', raw_text, re.I)
+            if paper_end:
+                # Paper 1 is only an internal boundary. Paper 2 closes the learner
+                # assessment so any marking guidelines that follow never leak into it.
                 if current_unit is not None and current_unit.get('type')=='assessment':
+                    if int(paper_end.group(1)) == 1:
+                        continue
+                    current_unit=None
                     continue
                 current_unit=None
                 continue
