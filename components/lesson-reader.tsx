@@ -16,16 +16,16 @@ export function LessonReader({grade,term,unitId}:{grade:number;term:number;unitI
  const response=state.responses[unitId]??""; const complete=completedIds.has(unitId); const pct=sequence.length?Math.round((Math.max(pos,0)+1)/sequence.length*100):0;
  if(!unit||!termData) return <div className="reader-loading">Opening lesson…</div>;
  const unitHref=(u:UnitSummary)=>`/learn/${grade}/term/${term}/${u.id}`;
- return <div className="reader-shell">
+ return <div className="reader-shell" data-presentation-contract="applied-commerce-v2">
   <header className="reader-topbar">
    <Link href={`/learn/${grade}`} className="reader-brand"><span>AC</span><div><strong>Grade {grade}</strong><small>Term {term}</small></div></Link>
-   <div className="reader-progress"><span>{unit.label}</span><div className="progress-track"><i style={{width:`${pct}%`}}/></div><strong>{pos+1}/{sequence.length}</strong></div>
+   <div className="reader-progress" aria-label={`Lesson ${pos+1} of ${sequence.length}`}><span>{unit.label}</span><div className="progress-track" role="progressbar" aria-valuemin={0} aria-valuemax={100} aria-valuenow={pct}><i style={{width:`${pct}%`}}/></div><strong>{pos+1}/{sequence.length}</strong></div>
    <button className="reader-menu-button" onClick={()=>setMenu(true)} aria-label="Open term map"><Menu/></button>
   </header>
   <aside className={`reader-rail ${menu?"open":""}`}>
    <div className="rail-head"><div><p>Grade {grade}</p><strong>Term {term}</strong></div><button onClick={()=>setMenu(false)} aria-label="Close"><X/></button></div>
    <Link className="rail-back" href={`/learn/${grade}`}><ArrowLeft/> Grade map</Link>
-   <nav>{sequence.map((u,i)=><Link onClick={()=>setMenu(false)} className={`${u.id===unitId?"current":""} ${completedIds.has(u.id)?"complete":""}`} href={unitHref(u)} key={u.id}><span>{completedIds.has(u.id)?<Check/>:i+1}</span><div><small>{u.label}</small><strong>{u.title}</strong></div></Link>)}</nav>
+   <nav aria-label="Term lessons">{sequence.map((u,i)=><Link aria-current={u.id===unitId?"page":undefined} onClick={()=>setMenu(false)} className={`${u.id===unitId?"current":""} ${completedIds.has(u.id)?"complete":""}`} href={unitHref(u)} key={u.id}><span>{completedIds.has(u.id)?<Check/>:i+1}</span><div><small>{u.label}</small><strong>{u.title}</strong></div></Link>)}</nav>
   </aside>
   {menu&&<button className="reader-scrim" onClick={()=>setMenu(false)} aria-label="Close menu"/>}
   <main className="reader-stage">
