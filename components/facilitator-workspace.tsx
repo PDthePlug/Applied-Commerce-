@@ -4,7 +4,7 @@ import {useEffect,useMemo,useState,type Dispatch,type SetStateAction} from "reac
 import {
   Archive,ArrowRight,BarChart3,BookOpenCheck,CheckCircle2,ClipboardCheck,
   FileBarChart,FileCheck2,Filter,Gauge,Layers3,LayoutDashboard,ListChecks,
-  Search,ShieldCheck,TriangleAlert,UserRound,UsersRound
+  Search,ShieldCheck,TriangleAlert,UserRound,UsersRound,Menu,X
 } from "lucide-react";
 import {curriculum} from "@/lib/curriculum";
 import {buildEvidenceRecords} from "@/lib/evidence/engine";
@@ -357,7 +357,7 @@ function ReviewView({loading,records,selected,selectedKey,setSelectedKey,reviews
         <label><Search/><input value={search} onChange={event=>setSearch(event.target.value)} placeholder="Search evidence"/></label>
         <div>
           <select value={termFilter} onChange={event=>setTermFilter(Number(event.target.value))} aria-label="Filter by term"><option value={0}>All terms</option>{[1,2,3,4].map(term=><option value={term} key={term}>Term {term}</option>)}</select>
-          <select value={statusFilter} onChange={event=>setStatusFilter(event.target.value)} aria-label="Filter by review state">
+          <select value={statusFilter} onChange={event=>setStatusFilter(event.target.value as ReviewFilter)} aria-label="Filter by review state">
             <option value="all">All evidence</option><option value="unreviewed">Unreviewed</option><option value="verification">Needs verification</option><option value="revision">Needs revision</option><option value="reviewed">Reviewed</option>
           </select>
         </div>
