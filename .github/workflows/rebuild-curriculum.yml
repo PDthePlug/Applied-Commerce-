@@ -1,0 +1,53 @@
+name: Rebuild curriculum
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/compile_curriculum.py"
+      - "scripts/block_identity.py"
+      - "scripts/language_accessibility.py"
+      - "scripts/curriculum-unit-ids.json"
+      - "content/source-books/**"
+      - ".github/workflows/rebuild-curriculum.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Python 3
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install curriculum compiler
+        run: pip install -r scripts/requirements.txt
+
+      - name: Compile curriculum from source books
+        run: python scripts/compile_curriculum.py content/source-books public/curriculum
+
+      - name: Verify curriculum tests
+        run: |
+          npm install --no-audit --no-fund
+          npm test
+
+      - name: Commit generated curriculum when changed
+        run: |
+          if git diff --quiet -- public/curriculum; then
+            echo "Curriculum already up to date."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/curriculum
+          git commit -m "Rebuild curriculum from source books"
+          git push
