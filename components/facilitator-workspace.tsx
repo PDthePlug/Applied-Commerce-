@@ -56,6 +56,7 @@ export function FacilitatorWorkspace(){
   const [search,setSearch]=useState("");
   const [learnerSearch,setLearnerSearch]=useState("");
   const [gradeLessonTotal,setGradeLessonTotal]=useState(0);
+  const [facMenuOpen,setFacMenuOpen]=useState(false);
 
   const grade=state.profile?.grade??state.activeGrade;
   const learnerName=state.profile?.displayName?.trim()||"Current learner";
@@ -139,6 +140,43 @@ export function FacilitatorWorkspace(){
         <p>Dashboard structure is cohort-ready. Shared classes, staff accounts and cross-device reviews switch on when Applied Commerce Supabase is reactivated.</p>
       </div>
     </aside>
+
+    {facMenuOpen&&<>
+      <button className="fac-menu-scrim" type="button" aria-label="Close facilitator menu" onClick={()=>setFacMenuOpen(false)}/>
+      <section className="fac-menu-sheet" role="dialog" aria-modal="true" aria-label="Facilitator menu">
+        <header>
+          <div><span className="fac-context-mark">AC</span><div><strong>Facilitator workspace</strong><small>{grade?"Grade "+grade:"No grade selected"}</small></div></div>
+          <button type="button" onClick={()=>setFacMenuOpen(false)} aria-label="Close facilitator menu"><X/></button>
+        </header>
+        <nav>
+          {nav.map(item=>{
+            const Icon=item.icon;
+            return <button
+              key={item.id}
+              type="button"
+              className={section===item.id?"active":""}
+              onClick={()=>{setSection(item.id);setFacMenuOpen(false);}}
+              aria-current={section===item.id?"page":undefined}
+            >
+              <Icon/>
+              <span><strong>{copy[item.id].label}</strong><small>{copy[item.id].description}</small></span>
+              {item.id==="review"&&cohort.pendingCount>0?<em>{cohort.pendingCount}</em>:null}
+            </button>;
+          })}
+        </nav>
+      </section>
+    </>}
+
+    <button
+      className="fac-menu-trigger"
+      type="button"
+      onClick={()=>setFacMenuOpen(true)}
+      aria-label="Open facilitator menu"
+      aria-haspopup="dialog"
+      aria-expanded={facMenuOpen}
+    >
+      <Menu/><span>Menu</span>
+    </button>
 
     <main className="fac-main">
       <header className="fac-header">
