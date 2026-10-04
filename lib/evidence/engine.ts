@@ -1,6 +1,7 @@
 import { buildPortfolioDefinitions, cleanMarkup, sanitizeRemovedLogReferences } from "../portfolio-model";
 import type { ContentBlock, UnitContent } from "../types";
-import { domainsFor, rubricForKind, stageForGrade } from "./taxonomy";\nimport { authoredAnswerRule } from "./answer-rules";
+import { domainsFor, rubricForKind, stageForGrade } from "./taxonomy";
+import { authoredAnswerRule } from "./answer-rules";
 import type { AutoCheckResult, DeterministicRule, EvidenceDefinition, EvidenceKind, EvidenceRecord } from "./types";
 
 function parseStableResponseKey(key:string){
