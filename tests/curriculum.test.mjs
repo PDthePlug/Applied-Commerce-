@@ -136,3 +136,28 @@ test("new workshops and clinics contain practical evidence and checkpoint prompt
     }
   }
 });
+
+
+test("every compiled mock exam retains answerable assessment prompts",()=>{
+  const assessments=bundle(9).terms.flatMap(term=>term.units.filter(unit=>unit.type==="assessment"));
+  assert.equal(assessments.length,4);
+
+  for(const assessment of assessments){
+    const texts=assessment.blocks
+      .filter(block=>block.kind==="text")
+      .map(block=>block.text.trim())
+      .filter(Boolean);
+
+    const multipleChoice=texts.filter(text=>/^\d+\.\s/.test(text)&&/\s+a\)\s+/i.test(text)&&/\s+b\)\s+/i.test(text));
+    const openQuestions=texts.filter(text=>{
+      if(multipleChoice.includes(text)) return false;
+      if(/^[a-h]\)\s+/i.test(text)) return true;
+      if(!/^\d+\.\s/.test(text)) return false;
+      const body=text.replace(/^\d+\.\s+/,"");
+      return body.includes("?")||/^(?:what|why|how|which|who|where|when|name|list|give|describe|explain|identify|calculate|show|state|compare|suggest|draw|evaluate|define)\b/i.test(body);
+    });
+
+    assert.equal(multipleChoice.length,10,assessment.id+" multiple-choice items");
+    assert.ok(openQuestions.length>=8,assessment.id+" open questions");
+  }
+});
