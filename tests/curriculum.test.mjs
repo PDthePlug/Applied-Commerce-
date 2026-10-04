@@ -165,11 +165,13 @@ test("every compiled mock exam retains both papers and answerable assessment pro
     assert.equal(multipleChoice.length,10,assessment.id+" multiple-choice items");
     assert.ok(openQuestions.length>=8,assessment.id+" open questions");
     assert.ok(texts.some(text=>/^PAPER 2\b/i.test(text)),assessment.id+" Paper 2");
+    assert.equal(texts.some(text=>/MARKING GUIDELINES/i.test(text)),false,assessment.id+" must not expose marking guidelines");
     for(const section of ["D","E","F"]){
       assert.ok(texts.some(text=>new RegExp("^SECTION "+section+"\\b","i").test(text)),assessment.id+" Section "+section);
     }
 
     const introText=term.intro.filter(block=>block.kind==="text").map(block=>block.text.trim());
     assert.equal(introText.some(text=>/^PAPER 2\b/i.test(text)),false,"Term "+term.term+" Paper 2 must stay inside assessment");
+    assert.equal(introText.some(text=>/MARKING GUIDELINES/i.test(text)),false,"Term "+term.term+" must not expose marking guidelines");
   }
 });
