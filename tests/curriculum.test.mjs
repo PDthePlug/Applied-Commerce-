@@ -138,11 +138,16 @@ test("new workshops and clinics contain practical evidence and checkpoint prompt
 });
 
 
-test("every compiled mock exam retains answerable assessment prompts",()=>{
-  const assessments=bundle(9).terms.flatMap(term=>term.units.filter(unit=>unit.type==="assessment"));
+test("every compiled mock exam retains both papers and answerable assessment prompts",()=>{
+  const grade9=bundle(9);
+  const assessments=grade9.terms.flatMap(term=>term.units.filter(unit=>unit.type==="assessment"));
   assert.equal(assessments.length,4);
 
-  for(const assessment of assessments){
+  for(const term of grade9.terms){
+    const assessment=term.units.find(unit=>unit.type==="assessment");
+    assert.ok(assessment,"Grade 9 Term "+term.term+" mock exam");
+    assert.ok(assessment.blocks.every(block=>Boolean(block.id)),assessment.id+" stable block identities");
+
     const texts=assessment.blocks
       .filter(block=>block.kind==="text")
       .map(block=>block.text.trim())
@@ -159,5 +164,12 @@ test("every compiled mock exam retains answerable assessment prompts",()=>{
 
     assert.equal(multipleChoice.length,10,assessment.id+" multiple-choice items");
     assert.ok(openQuestions.length>=8,assessment.id+" open questions");
+    assert.ok(texts.some(text=>/^PAPER 2\b/i.test(text)),assessment.id+" Paper 2");
+    for(const section of ["D","E","F"]){
+      assert.ok(texts.some(text=>new RegExp("^SECTION "+section+"\\b","i").test(text)),assessment.id+" Section "+section);
+    }
+
+    const introText=term.intro.filter(block=>block.kind==="text").map(block=>block.text.trim());
+    assert.equal(introText.some(text=>/^PAPER 2\b/i.test(text)),false,"Term "+term.term+" Paper 2 must stay inside assessment");
   }
 });
