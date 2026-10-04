@@ -115,3 +115,23 @@ test("compact facilitator navigation uses the centered menu instead of a horizon
   assert.match(styles,/@media\(max-width:860px\)/);
   assert.match(styles,/\.fac-sidebar\{display:none!important\}/);
 });
+
+
+test("presentation architecture v2 preserves semantic hierarchy and mobile table meaning",()=>{
+  const blocks=read("components/content-blocks.tsx");
+  const system=read("components/presentation-system.tsx");
+  const reader=read("components/lesson-reader.tsx");
+  const styles=read("app/presentation.css");
+  assert.match(system,/StoryHeading/);
+  assert.match(system,/ResponseTone/);
+  assert.match(system,/response-surface-\$\{tone\}/);
+  assert.match(blocks,/responsive-row-table/);
+  assert.match(blocks,/<thead>/);
+  assert.match(blocks,/scope="col"/);
+  assert.match(blocks,/data-label=\{dataLabel\}/);
+  assert.match(reader,/data-presentation-contract="applied-commerce-v2"/);
+  assert.match(reader,/aria-current=\{u\.id===unitId\?"page":undefined\}/);
+  assert.match(reader,/role="progressbar"/);
+  assert.match(styles,/\.responsive-row-table tbody td::before/);
+  assert.ok(fs.existsSync("docs/APPLIED_COMMERCE_PRESENTATION_ARCHITECTURE_V2.md"));
+});
