@@ -1,6 +1,6 @@
 "use client";
 
-import {useEffect,useMemo,useState} from "react";
+import {useEffect,useMemo,useState,type Dispatch,type SetStateAction} from "react";
 import {
   Archive,ArrowRight,BarChart3,BookOpenCheck,CheckCircle2,ClipboardCheck,
   FileBarChart,FileCheck2,Filter,Gauge,Layers3,LayoutDashboard,ListChecks,
@@ -11,15 +11,19 @@ import {buildEvidenceRecords} from "@/lib/evidence/engine";
 import {buildEvidenceReport} from "@/lib/evidence/reporting";
 import {RUBRICS,rubricByKey,stageForGrade} from "@/lib/evidence/taxonomy";
 import {useEvidenceReviewStore} from "@/lib/evidence/review-store";
-import type {EvidenceRecord,EvidenceReview,ReviewStatus} from "@/lib/evidence/types";
+import type {EvidenceDomain,EvidenceKind,EvidenceRecord,EvidenceReport,EvidenceReview,ReviewStatus} from "@/lib/evidence/types";
 import {
   buildCohortSummary,buildDomainCoverage,buildKindCoverage,buildLearnerSummary,
   buildReviewPriorities,buildTermCoverage,statusLabel
+} from "@/lib/facilitator/model";
+import type {
+  CoverageRow,FacilitatorCohortSummary,FacilitatorLearnerSummary,FacilitatorPriorityItem
 } from "@/lib/facilitator/model";
 import {useLearningStore} from "@/lib/learning-store";
 
 type Section="overview"|"learners"|"review"|"coverage"|"reports"|"rubrics";
 type UnitRef={id:string;term:number};
+type ReviewFilter="all"|"unreviewed"|"reviewed"|"revision"|"verification";
 
 const copy:Record<Section,{label:string;title:string;description:string}>={
   overview:{label:"Overview",title:"Class overview",description:"See the review workload, learner status and evidence coverage before deciding where to spend facilitation time."},
@@ -52,7 +56,7 @@ export function FacilitatorWorkspace(){
   const [section,setSection]=useState<Section>("overview");
   const [selectedKey,setSelectedKey]=useState("");
   const [termFilter,setTermFilter]=useState<number|0>(0);
-  const [statusFilter,setStatusFilter]=useState<"all"|"unreviewed"|"reviewed"|"revision"|"verification">("all");
+  const [statusFilter,setStatusFilter]=useState<ReviewFilter>("all");
   const [search,setSearch]=useState("");
   const [learnerSearch,setLearnerSearch]=useState("");
   const [gradeLessonTotal,setGradeLessonTotal]=useState(0);
@@ -203,7 +207,21 @@ function NoGradeState(){
   return <section className="fac-empty large"><UserRound/><h2>No learner grade selected</h2><p>Set the learner grade in Profile first. Evidence is interpreted against the learner developmental stage, so the dashboard should not guess the grade.</p></section>;
 }
 
-function Overview({learnerName,cohort,learner,priorities,domains,completionRate,gradeLessonTotal,pendingTotal,onOpenReview,onOpenLearner,onOpenCoverage}:any){
+type OverviewProps={
+  learnerName:string;
+  cohort:FacilitatorCohortSummary;
+  learner:FacilitatorLearnerSummary;
+  priorities:FacilitatorPriorityItem[];
+  domains:CoverageRow<EvidenceDomain>[];
+  completionRate:number;
+  gradeLessonTotal:number;
+  pendingTotal:number;
+  onOpenReview:()=>void;
+  onOpenLearner:()=>void;
+  onOpenCoverage:()=>void;
+};
+
+function Overview({learnerName,cohort,learner,priorities,domains,completionRate,gradeLessonTotal,pendingTotal,onOpenReview,onOpenLearner,onOpenCoverage}:OverviewProps){
   return <div className="fac-section-stack">
     <section className="fac-metrics">
       <Metric icon={UsersRound} value={cohort.learnerCount} label="Learners in view" hint="Local mode currently exposes one learner record."/>
@@ -216,7 +234,7 @@ function Overview({learnerName,cohort,learner,priorities,domains,completionRate,
       <article className="fac-card fac-priority-card">
         <header><div><p className="eyebrow">Today&apos;s work</p><h2>Review priorities</h2></div><button type="button" onClick={onOpenReview}>Open queue <ArrowRight/></button></header>
         <div className="fac-priority-list">
-          {priorities.map((item:any)=><button key={item.key} type="button" onClick={onOpenReview} className={item.priority}>
+          {priorities.map(item=><button key={item.key} type="button" onClick={onOpenReview} className={item.priority}>
             <span>{item.count}</span><div><strong>{item.label}</strong><small>{item.description}</small></div><ArrowRight/>
           </button>)}
         </div>
@@ -241,7 +259,7 @@ function Overview({learnerName,cohort,learner,priorities,domains,completionRate,
     <section className="fac-overview-grid lower">
       <article className="fac-card fac-coverage-preview">
         <header><div><p className="eyebrow">Evidence quality</p><h2>Developmental coverage</h2></div><button type="button" onClick={onOpenCoverage}>Full coverage <ArrowRight/></button></header>
-        {domains.length?<div className="fac-bars">{domains.slice(0,6).map((row:any)=><ProgressRow key={row.key} rowLabel={titleCase(row.key)} value={row.count} reviewed={row.reviewed} rate={row.rate}/>)}</div>:<EmptyInline title="No developmental evidence yet" text="As the learner completes authored prompts, domain coverage will build here automatically."/>}
+        {domains.length?<div className="fac-bars">{domains.slice(0,6).map(row=><ProgressRow key={row.key} rowLabel={titleCase(row.key)} value={row.count} reviewed={row.reviewed} rate={row.rate}/>)}</div>:<EmptyInline title="No developmental evidence yet" text="As the learner completes authored prompts, domain coverage will build here automatically."/>}
       </article>
 
       <article className="fac-card fac-operating-card">
@@ -261,7 +279,19 @@ function Metric({icon:Icon,value,label,hint}:{icon:typeof FileCheck2;value:numbe
   return <article><Icon/><div><strong>{value}</strong><span>{label}</span><small>{hint}</small></div></article>;
 }
 
-function LearnersView({learner,learnerSearch,setLearnerSearch,gradeLessonTotal,completionRate,domains,terms,onReview,onReport}:any){
+type LearnersViewProps={
+  learner:FacilitatorLearnerSummary;
+  learnerSearch:string;
+  setLearnerSearch:Dispatch<SetStateAction<string>>;
+  gradeLessonTotal:number;
+  completionRate:number;
+  domains:CoverageRow<EvidenceDomain>[];
+  terms:CoverageRow<number>[];
+  onReview:()=>void;
+  onReport:()=>void;
+};
+
+function LearnersView({learner,learnerSearch,setLearnerSearch,gradeLessonTotal,completionRate,domains,terms,onReview,onReport}:LearnersViewProps){
   const matches=learner.name.toLowerCase().includes(learnerSearch.trim().toLowerCase());
   return <div className="fac-section-stack">
     <section className="fac-toolbar">
@@ -294,15 +324,32 @@ function LearnersView({learner,learnerSearch,setLearnerSearch,gradeLessonTotal,c
           <div><span>Needs revision</span><strong>{learner.needsRevisionCount}</strong><small>{learner.verifiedCount} verified actions</small></div>
         </div>
         <div className="fac-learner-insights">
-          <section><h3>Strongest evidence coverage</h3>{domains.length?domains.slice(0,5).map((row:any)=><ProgressRow key={row.key} rowLabel={titleCase(row.key)} value={row.count} reviewed={row.reviewed} rate={row.rate}/>):<p>No evidence domains yet.</p>}</section>
-          <section><h3>Term activity</h3>{terms.map((row:any)=><div className="fac-term-row" key={row.key}><span>Term {row.key}</span><strong>{row.count}</strong><small>{row.reviewed} reviewed</small></div>)}</section>
+          <section><h3>Strongest evidence coverage</h3>{domains.length?domains.slice(0,5).map(row=><ProgressRow key={row.key} rowLabel={titleCase(row.key)} value={row.count} reviewed={row.reviewed} rate={row.rate}/>):<p>No evidence domains yet.</p>}</section>
+          <section><h3>Term activity</h3>{terms.map(row=><div className="fac-term-row" key={row.key}><span>Term {row.key}</span><strong>{row.count}</strong><small>{row.reviewed} reviewed</small></div>)}</section>
         </div>
       </article>
     </section>
   </div>;
 }
 
-function ReviewView({loading,records,selected,selectedKey,setSelectedKey,reviews,search,setSearch,termFilter,setTermFilter,statusFilter,setStatusFilter,saveReview,advance}:any){
+type ReviewViewProps={
+  loading:boolean;
+  records:EvidenceRecord[];
+  selected?:EvidenceRecord;
+  selectedKey:string;
+  setSelectedKey:Dispatch<SetStateAction<string>>;
+  reviews:Record<string,EvidenceReview>;
+  search:string;
+  setSearch:Dispatch<SetStateAction<string>>;
+  termFilter:number;
+  setTermFilter:Dispatch<SetStateAction<number>>;
+  statusFilter:ReviewFilter;
+  setStatusFilter:Dispatch<SetStateAction<ReviewFilter>>;
+  saveReview:(review:EvidenceReview)=>void;
+  advance:()=>void;
+};
+
+function ReviewView({loading,records,selected,selectedKey,setSelectedKey,reviews,search,setSearch,termFilter,setTermFilter,statusFilter,setStatusFilter,saveReview,advance}:ReviewViewProps){
   return <section className="fac-review-layout">
     <aside className="fac-review-queue fac-card">
       <header><div><p className="eyebrow">Queue</p><h2>{records.length} evidence items</h2></div></header>
@@ -391,9 +438,18 @@ function EvidenceReviewPanel({record,existing,onSave,onAdvance}:{record:Evidence
   </article>;
 }
 
-function CoverageView({learner,domains,terms,kinds,gradeLessonTotal,completionRate}:any){
+type CoverageViewProps={
+  learner:FacilitatorLearnerSummary;
+  domains:CoverageRow<EvidenceDomain>[];
+  terms:CoverageRow<number>[];
+  kinds:CoverageRow<EvidenceKind>[];
+  gradeLessonTotal:number;
+  completionRate:number;
+};
+
+function CoverageView({learner,domains,terms,kinds,gradeLessonTotal,completionRate}:CoverageViewProps){
   const allDomains=["self-awareness","agency","economic-reasoning","systems-thinking","value-creation","financial-capability","decision-making","research-observation","communication","planning","execution","reflection"];
-  const missingDomains=allDomains.filter(domain=>!domains.some((row:any)=>row.key===domain));
+  const missingDomains=allDomains.filter(domain=>!domains.some(row=>row.key===domain));
   return <div className="fac-section-stack">
     <section className="fac-metrics">
       <Metric icon={BookOpenCheck} value={learner.completedLessons} label="Lessons completed" hint={completionRate+"% of "+(gradeLessonTotal||"—")+" grade lessons"}/>
@@ -403,15 +459,22 @@ function CoverageView({learner,domains,terms,kinds,gradeLessonTotal,completionRa
     </section>
 
     <section className="fac-coverage-grid">
-      <article className="fac-card"><header><div><p className="eyebrow">Developmental domains</p><h2>What the evidence is showing</h2></div></header>{domains.length?<div className="fac-bars">{domains.map((row:any)=><ProgressRow key={row.key} rowLabel={titleCase(row.key)} value={row.count} reviewed={row.reviewed} rate={row.rate}/>)}</div>:<EmptyInline title="No domain evidence yet" text="The dashboard will populate as the learner produces authored responses."/>}</article>
-      <article className="fac-card"><header><div><p className="eyebrow">Term balance</p><h2>Evidence by term</h2></div></header><div className="fac-term-coverage">{terms.map((row:any)=><div key={row.key}><span>Term {row.key}</span><strong>{row.count}</strong><small>{row.reviewed} reviewed · {row.rate}% coverage</small><i><b style={{width:row.rate+"%"}}/></i></div>)}</div></article>
-      <article className="fac-card"><header><div><p className="eyebrow">Evidence mix</p><h2>What learners are being asked to produce</h2></div></header>{kinds.length?<div className="fac-kind-grid">{kinds.map((row:any)=><div key={row.key}><span>{titleCase(row.key)}</span><strong>{row.count}</strong><small>{row.reviewed} reviewed</small></div>)}</div>:<EmptyInline title="No evidence types yet" text="Evidence types are inferred from the authored curriculum prompt and its interaction."/>}</article>
+      <article className="fac-card"><header><div><p className="eyebrow">Developmental domains</p><h2>What the evidence is showing</h2></div></header>{domains.length?<div className="fac-bars">{domains.map(row=><ProgressRow key={row.key} rowLabel={titleCase(row.key)} value={row.count} reviewed={row.reviewed} rate={row.rate}/>)}</div>:<EmptyInline title="No domain evidence yet" text="The dashboard will populate as the learner produces authored responses."/>}</article>
+      <article className="fac-card"><header><div><p className="eyebrow">Term balance</p><h2>Evidence by term</h2></div></header><div className="fac-term-coverage">{terms.map(row=><div key={row.key}><span>Term {row.key}</span><strong>{row.count}</strong><small>{row.reviewed} reviewed · {row.rate}% coverage</small><i><b style={{width:row.rate+"%"}}/></i></div>)}</div></article>
+      <article className="fac-card"><header><div><p className="eyebrow">Evidence mix</p><h2>What learners are being asked to produce</h2></div></header>{kinds.length?<div className="fac-kind-grid">{kinds.map(row=><div key={row.key}><span>{titleCase(row.key)}</span><strong>{row.count}</strong><small>{row.reviewed} reviewed</small></div>)}</div>:<EmptyInline title="No evidence types yet" text="Evidence types are inferred from the authored curriculum prompt and its interaction."/>}</article>
       <article className="fac-card fac-gap-card"><header><div><p className="eyebrow">Coverage gaps</p><h2>Signals not yet visible</h2></div></header>{missingDomains.length?<div className="fac-gap-list">{missingDomains.map(domain=><span key={domain}>{titleCase(domain)}</span>)}</div>:<p className="fac-positive"><CheckCircle2/>All evidence domains have at least one captured signal.</p>}<footer>Absence here means not yet evidenced in the current record. It does not mean the learner lacks the capability.</footer></article>
     </section>
   </div>;
 }
 
-function ReportsView({report,learner,gradeLessonTotal,completionRate}:any){
+type ReportsViewProps={
+  report:EvidenceReport;
+  learner:FacilitatorLearnerSummary;
+  gradeLessonTotal:number;
+  completionRate:number;
+};
+
+function ReportsView({report,learner,gradeLessonTotal,completionRate}:ReportsViewProps){
   return <div className="fac-section-stack">
     <section className="fac-report-actions"><div><p className="eyebrow">Current report</p><h2>{report.learnerName}</h2><p>Built from actual saved responses and facilitator review decisions.</p></div><button type="button" onClick={()=>window.print()}>Print learner report</button></section>
     <section className="fac-report-sheet">
@@ -423,9 +486,9 @@ function ReportsView({report,learner,gradeLessonTotal,completionRate}:any){
         <article><strong>{report.averageRubricLevel??"—"}</strong><span>average rubric level</span><small>across scored evidence</small></article>
       </div>
       <div className="fac-report-columns">
-        <article><h3>Developmental evidence</h3>{report.byDomain.length?report.byDomain.map((item:any)=><div className="fac-report-row" key={item.domain}><span>{titleCase(item.domain)}</span><strong>{item.count}</strong><small>{item.reviewed} reviewed</small></div>):<p>No evidence captured yet.</p>}</article>
-        <article><h3>Evidence by term</h3>{report.byTerm.length?report.byTerm.map((item:any)=><div className="fac-report-row" key={item.term}><span>Term {item.term}</span><strong>{item.count}</strong><small>{item.reviewed} reviewed</small></div>):<p>No evidence captured yet.</p>}</article>
-        <article><h3>Evidence types</h3>{report.byKind.length?report.byKind.map((item:any)=><div className="fac-report-row" key={item.kind}><span>{titleCase(item.kind)}</span><strong>{item.count}</strong></div>):<p>No evidence captured yet.</p>}</article>
+        <article><h3>Developmental evidence</h3>{report.byDomain.length?report.byDomain.map(item=><div className="fac-report-row" key={item.domain}><span>{titleCase(item.domain)}</span><strong>{item.count}</strong><small>{item.reviewed} reviewed</small></div>):<p>No evidence captured yet.</p>}</article>
+        <article><h3>Evidence by term</h3>{report.byTerm.length?report.byTerm.map(item=><div className="fac-report-row" key={item.term}><span>Term {item.term}</span><strong>{item.count}</strong><small>{item.reviewed} reviewed</small></div>):<p>No evidence captured yet.</p>}</article>
+        <article><h3>Evidence types</h3>{report.byKind.length?report.byKind.map(item=><div className="fac-report-row" key={item.kind}><span>{titleCase(item.kind)}</span><strong>{item.count}</strong></div>):<p>No evidence captured yet.</p>}</article>
         <article className="fac-report-status"><h3>Review status</h3><div><CheckCircle2/><span><strong>{report.totals.accepted}</strong> accepted</span></div><div><ShieldCheck/><span><strong>{report.totals.verified}</strong> verified real-world evidence</span></div><div><TriangleAlert/><span><strong>{report.totals.needsRevision}</strong> needs revision</span></div></article>
       </div>
       <footer>This report describes observable curriculum evidence. It does not claim to measure a learner internal identity, personality or character.</footer>
