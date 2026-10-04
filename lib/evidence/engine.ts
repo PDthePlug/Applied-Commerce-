@@ -1,6 +1,6 @@
 import { buildPortfolioDefinitions, cleanMarkup, sanitizeRemovedLogReferences } from "../portfolio-model";
 import type { ContentBlock, UnitContent } from "../types";
-import { domainsFor, rubricForKind, stageForGrade } from "./taxonomy";
+import { domainsFor, rubricForKind, stageForGrade } from "./taxonomy";\nimport { authoredAnswerRule } from "./answer-rules";
 import type { AutoCheckResult, DeterministicRule, EvidenceDefinition, EvidenceKind, EvidenceRecord } from "./types";
 
 function parseStableResponseKey(key:string){
@@ -45,8 +45,9 @@ function inferKind(block:ContentBlock,prompt:string,unitTitle:string,slot:string
   return "knowledge-response";
 }
 
-function assessmentModeFor(kind:EvidenceKind,slot:string){
-  if(slot==="choice"||slot.startsWith("choice-")) return "deterministic" as const;
+function assessmentModeFor(kind:EvidenceKind,slot:string,hasAuthoredRule:boolean){
+  if(hasAuthoredRule) return "deterministic" as const;
+  if(slot==="choice"||slot.startsWith("choice-")) return "unscored" as const;
   if(["action","interview","observation"].includes(kind)) return "verification" as const;
   if(kind==="reflection") return "rubric" as const;
   if(["analysis","calculation","plan","project","structured-work","knowledge-response"].includes(kind)) return "rubric" as const;
@@ -85,10 +86,12 @@ export function definitionForResponse(unit:UnitContent,responseKey:string,portfo
   const prompt=promptFor(block,parsed.slot);
   const stage=stageForGrade(unit.grade);
   const kind=inferKind(block,prompt,unit.title,parsed.slot);
-  const assessmentMode=assessmentModeFor(kind,parsed.slot);
-  const rubricKey=rubricForKind(kind);
+  const key=`${unit.id}::${parsed.promptId}::${parsed.slot}`;
+  const authoredRule=authoredAnswerRule(key);
+  const assessmentMode=assessmentModeFor(kind,parsed.slot,Boolean(authoredRule));
+  const rubricKey=assessmentMode==="rubric"?rubricForKind(kind):undefined;
   return {
-    key:`${unit.id}::${parsed.promptId}::${parsed.slot}`,
+    key,
     grade:unit.grade,
     term:unit.term,
     lessonNumber:unit.startLesson,
@@ -103,7 +106,7 @@ export function definitionForResponse(unit:UnitContent,responseKey:string,portfo
     assessmentMode,
     rubricKey,
     portfolioEligible:portfolioBlockIds.has(parsed.promptId),
-    deterministicRule:{kind:"presence"},
+    deterministicRule:authoredRule?.rule??{kind:"presence"},
   };
 }
 
