@@ -15,6 +15,12 @@ The learner task → saved answer → portfolio path now uses task identities in
 
 ## Validation
 
-26 Node tests, two Python task identity tests, typecheck and lint passed. The initial milestone production build passed; CI builds the final cache correction. Tests cover inserted content, changed questions, context isolation, legacy recovery, reopen serialization, portfolio evidence, fresh runtime loading and rejected foreign/missing task identities.
+26 Node tests, two Python task identity tests, typecheck, lint and production build passed. GitHub CI passed for both implementation commits. Tests cover inserted content, changed questions, context isolation, legacy recovery, reopen serialization, portfolio evidence, fresh runtime loading and rejected foreign/missing task identities.
 
-The local production server started successfully with an explicit host. The cloud browser cannot access loopback URLs (`ERR_BLOCKED_BY_CLIENT`); browser acceptance must therefore run against the deployed commit. This record does not claim cloud synchronization or a full curriculum-wide interactive review.
+The local production server started successfully with an explicit host. The cloud browser cannot access loopback URLs (`ERR_BLOCKED_BY_CLIENT`), so browser acceptance ran against production commit `f137c17a01666ae4a2562e6150bfbdfde5552f17` after Vercel reported READY.
+
+The browser saved a test answer in the previous release, then reopened the new release. That earlier answer appeared in the review section and did not populate the current task. Fresh Grade 8 Lesson 1 answers, a note and completion survived reload. Activity 1 displayed the same new answers under the correct portfolio labels; the note appeared separately. The story question had no input. The initial live check caught the stale curriculum cache issue, which was fixed and retested before acceptance.
+
+![Verified current activity and preserved earlier answer](evidence/2026-10-04-response-portfolio.jpg)
+
+This record does not claim cloud synchronization or a full curriculum-wide interactive review. QA values are synthetic and were saved only in the verification browser's local record.
