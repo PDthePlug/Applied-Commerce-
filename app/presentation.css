@@ -359,3 +359,280 @@
     font-size:14px;
   }
 }
+
+
+/* Continuous workbook canvas — hierarchy without card-on-card framing */
+.response-surface{
+  margin:30px 0 34px;
+  padding:0 0 30px!important;
+  border:0!important;
+  border-bottom:1px solid rgba(23,49,59,.13)!important;
+  border-radius:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+}
+.response-surface-compact{
+  padding:0 0 24px!important;
+}
+.response-surface-activity,
+.response-surface-reflection,
+.response-surface-checkpoint,
+.response-surface-home,
+.response-surface-assessment{
+  border-left:0!important;
+}
+.response-surface-prompt{
+  margin-bottom:16px;
+}
+.response-surface-prompt p,
+.response-surface-prompt .question-prompt{
+  color:var(--ink)!important;
+  font-size:18px!important;
+  font-weight:800!important;
+  line-height:1.42!important;
+  letter-spacing:-.012em;
+}
+.response-surface-control{
+  min-width:0;
+}
+.structured-response-group{
+  margin:34px 0 38px;
+}
+.structured-response-heading{
+  margin:0 0 18px;
+  padding:0;
+}
+.structured-response-heading>strong{
+  font-size:11px;
+}
+.structured-response-heading>p{
+  max-width:680px;
+  font-size:14px!important;
+  line-height:1.6!important;
+}
+.structured-response-parts{
+  gap:0;
+}
+.structured-response-parts .response-surface{
+  margin:0 0 26px;
+}
+.structured-response-parts .response-surface:last-child{
+  margin-bottom:0;
+}
+.structured-part-label{
+  margin-bottom:8px;
+  font-size:9px;
+}
+.structured-prompt-helper{
+  margin-top:8px;
+  font-size:11px;
+  line-height:1.55;
+}
+
+/* Prompts sit on the canvas; only the interactive control is contained. */
+.choice-answerable,
+.multi-field-answerable,
+.answerable-block{
+  margin:30px 0 34px!important;
+  padding:0 0 30px!important;
+  border:0!important;
+  border-bottom:1px solid rgba(23,49,59,.13)!important;
+  border-radius:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+}
+.choice-prefix p,
+.answerable-block .question-prompt,
+.label-answerable-block .question-prompt{
+  color:var(--ink)!important;
+  font-size:18px!important;
+  font-weight:800!important;
+  line-height:1.42!important;
+}
+.multi-field-answerable h4{
+  margin:0 0 16px;
+  color:var(--ink);
+  font:800 18px/1.42 var(--sans);
+  letter-spacing:-.012em;
+}
+
+/* Activity labels become editorial section markers, not coloured cards. */
+.learning-notice{
+  grid-template-columns:30px minmax(0,1fr);
+  gap:12px;
+  margin:38px 0 18px;
+  padding:22px 0 0!important;
+  border:0!important;
+  border-top:1px solid rgba(23,49,59,.13)!important;
+  border-radius:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+}
+.learning-notice-copy{
+  gap:4px;
+}
+.learning-notice-copy>span{
+  font-size:9px;
+}
+.learning-notice-copy>h3,
+.learning-notice-copy>strong{
+  margin:0;
+  color:var(--ink);
+  font:800 18px/1.35 var(--sans);
+  letter-spacing:-.012em;
+}
+.learning-notice-copy>p{
+  max-width:680px;
+  font-size:12px!important;
+}
+.learning-notice-icon{
+  width:28px;
+  height:28px;
+  border-radius:9px;
+}
+.learning-notice-activity .learning-notice-icon{background:#f0d8ca;color:var(--accent)}
+.learning-notice-reflection .learning-notice-icon{background:#e8ddea;color:#765f78}
+.learning-notice-checkpoint .learning-notice-icon{background:#dbeae6;color:var(--teal)}
+.learning-notice-portfolio .learning-notice-icon{background:#eee2c9;color:var(--gold)}
+.learning-notice-home .learning-notice-icon{background:#e2e9d5;color:#526d45}
+
+/* Concept boxes remain intentionally contained because the box carries meaning. */
+.thinking-equation-notice{
+  margin:28px 0 34px;
+  padding:18px 20px;
+  border:1px solid #cadbd6;
+  border-left:0;
+  border-radius:16px;
+  background:#f3f7f5;
+  box-shadow:none;
+}
+.thinking-equation-copy>strong{
+  font-size:19px;
+}
+.deepening-insight{
+  box-shadow:none;
+}
+
+/* Assessment options mirror the BIS interaction hierarchy while the question itself stays unboxed. */
+.assessment-question-prompt{
+  font-size:19px!important;
+  line-height:1.42!important;
+}
+.assessment-choice-list{
+  gap:10px;
+}
+.assessment-choice-list label>span{
+  grid-template-columns:40px minmax(0,1fr);
+  min-height:62px;
+  padding:13px 14px;
+  border-radius:15px;
+}
+.assessment-choice-list label>span b{
+  width:32px;
+  height:32px;
+  border-radius:50%;
+  background:#fff;
+  font-size:10px;
+}
+.assessment-choice-list label>span em{
+  padding-top:4px;
+  font-size:14px;
+  font-weight:700;
+  line-height:1.42;
+}
+.assessment-choice-list label.selected>span b{
+  border-color:var(--teal);
+  background:var(--teal);
+  color:#fff;
+}
+
+/* Inputs carry the visual containment instead of their parent section. */
+.prompt-response-control textarea{
+  min-height:132px;
+  padding:16px 18px;
+  border-radius:16px;
+  font-size:16px;
+}
+.short-response{
+  min-height:52px;
+  padding:12px 14px;
+  border-radius:14px;
+  font-size:15px;
+}
+.multi-field-grid{
+  gap:14px;
+}
+.multi-field-grid input,
+.fill-response-field input{
+  min-height:50px;
+  border-radius:13px;
+  padding:11px 13px;
+}
+
+/* Preserve breathing room around stories and authored sections on the continuous page. */
+.story-heading-block{
+  margin-top:50px;
+  padding-top:24px;
+}
+.module-part-heading,
+.module-section-heading,
+.source-section{
+  scroll-margin-top:120px;
+}
+
+@media(max-width:620px){
+  .response-surface{
+    margin:28px 0 32px;
+    padding:0 0 28px!important;
+  }
+  .response-surface-compact{
+    padding:0 0 22px!important;
+  }
+  .response-surface-prompt p,
+  .response-surface-prompt .question-prompt,
+  .assessment-question-prompt,
+  .choice-prefix p,
+  .answerable-block .question-prompt,
+  .label-answerable-block .question-prompt,
+  .multi-field-answerable h4{
+    font-size:17px!important;
+  }
+  .structured-response-group{
+    margin:30px 0 34px;
+  }
+  .structured-response-heading>p{
+    font-size:13px!important;
+  }
+  .learning-notice{
+    grid-template-columns:28px minmax(0,1fr);
+    gap:10px;
+    margin:34px 0 16px;
+    padding:20px 0 0!important;
+  }
+  .learning-notice-copy>h3,
+  .learning-notice-copy>strong{
+    font-size:17px;
+  }
+  .thinking-equation-notice{
+    grid-template-columns:28px minmax(0,1fr);
+    padding:16px;
+  }
+  .assessment-choice-list label>span{
+    grid-template-columns:38px minmax(0,1fr);
+    min-height:60px;
+    padding:12px;
+  }
+  .assessment-choice-list label>span em{
+    font-size:13px;
+  }
+  .prompt-response-control textarea{
+    min-height:124px;
+    padding:15px 16px;
+  }
+  .choice-answerable,
+  .multi-field-answerable,
+  .answerable-block{
+    margin:28px 0 32px!important;
+    padding:0 0 28px!important;
+  }
+}
