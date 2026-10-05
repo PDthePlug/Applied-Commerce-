@@ -1,0 +1,82 @@
+/* Semantic Learning Renderer 3.0: content stays editorial; work has a clear surface. */
+.learning-section{min-width:0;scroll-margin-top:150px}
+.lesson-outline{margin-top:28px;padding-top:18px;border-top:1px solid var(--line)}
+.lesson-outline ul{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 0;padding:0;list-style:none}
+.lesson-outline li{margin:0}
+.lesson-outline a{display:flex;align-items:center;min-height:44px;padding:10px 14px;border:1px solid var(--line);border-radius:10px;font:600 12px/1.4 var(--sans);color:var(--ink);background:rgba(255,255,255,.6)}
+.lesson-outline a:hover{border-color:var(--teal)}
+.semantic-learning-document .source-section{margin:38px 0 16px;font:500 30px/1.2 var(--serif);letter-spacing:-.02em}
+.semantic-learning-document .learning-notice{margin:40px 0 20px;padding:20px 0 0;grid-template-columns:28px minmax(0,1fr);border:0;border-top:1px solid var(--line);border-radius:0;background:transparent;box-shadow:none}
+.semantic-learning-document .learning-notice-copy>span{font-size:10px;line-height:1.4}
+.semantic-learning-document .learning-notice-copy>h3{margin:2px 0 0;font:500 28px/1.22 var(--serif);letter-spacing:-.02em;color:var(--ink)}
+.semantic-learning-document .learning-notice-copy>p{font-size:13px!important;line-height:1.6!important}
+.semantic-learning-document .learning-notice-portfolio{margin:20px 0 28px;padding:14px 0;border-top:0;border-bottom:1px solid var(--line)}
+.semantic-learning-document .learning-notice-portfolio .learning-notice-copy>h3{font:600 14px/1.5 var(--sans)}
+.semantic-learning-document .learning-notice-portfolio .learning-notice-copy>p{font-size:12px!important}
+.semantic-learning-document .thinking-equation-notice{margin:30px 0;padding:20px;border-radius:12px;box-shadow:none}
+.semantic-learning-document .thinking-equation-copy>strong{font:500 25px/1.4 var(--serif)}
+.semantic-learning-document .response-surface{margin:24px 0 30px;padding:18px;border:1px solid #d9ddd5;border-radius:12px;box-shadow:none;background:#fff}
+.semantic-learning-document .response-surface[data-learning-mode="prove"]{border-top:3px solid var(--teal)}
+.semantic-learning-document .response-surface[data-learning-mode="reflect"]{border-left:0;background:rgba(255,255,255,.5)}
+.semantic-learning-document .response-surface-prompt p{font-size:18px!important;line-height:1.5!important;font-weight:650}
+.semantic-learning-document .choice-answerable,.semantic-learning-document .answerable-block,.semantic-learning-document .multi-field-answerable{border-radius:12px!important;box-shadow:none!important}
+.semantic-learning-document .choice-option strong{font-size:14px;line-height:1.5}
+.semantic-learning-document .structured-prompt-helper{font-size:13px;line-height:1.6;font-weight:400}
+.semantic-learning-document .response-status{font-size:11px;line-height:1.5}
+.semantic-learning-document .source-table-wrap thead th{font-size:12px;line-height:1.45}
+.rating-options{display:flex;flex-wrap:wrap;gap:5px;min-width:0}
+.rating-options button{flex:0 0 44px;min-height:44px;border:1px solid #bbc5bf;border-radius:9px;background:#fff;color:var(--ink);font-size:14px;font-weight:700}
+.rating-options button[aria-pressed="true"],.values-options button[aria-pressed="true"]{border-color:var(--teal);background:#edf5f2;box-shadow:inset 0 0 0 1px var(--teal);color:var(--teal)}
+.rating-control{display:grid;gap:8px;min-width:0}
+.rating-cell{min-width:260px}
+.ranking-control ol{display:grid;gap:8px;list-style:none;padding:0;margin:16px 0}
+.ranking-control li{display:grid;grid-template-columns:26px minmax(0,1fr) 96px;align-items:center;gap:10px;min-height:64px;margin:0;padding:10px;border:1px solid var(--line);border-radius:10px}
+.rank-position{color:var(--muted);font:500 22px var(--serif)}
+.ranking-control li strong{font-size:14px;line-height:1.5;font-weight:600;overflow-wrap:anywhere}
+.rank-actions{display:flex;gap:6px}
+.rank-actions button{display:grid;place-items:center;min-width:44px;min-height:44px;padding:0;border:1px solid var(--line);border-radius:9px;background:#fff;color:var(--ink)}
+.rank-actions svg{width:17px;height:17px}
+.rank-actions button:disabled{opacity:.3;cursor:default}
+.confirm-ranking,.custom-value button{display:flex;gap:6px;align-items:center;justify-content:center;min-height:44px;padding:10px 16px;border:0;border-radius:10px;background:var(--ink);color:#fff;font-size:13px;font-weight:650}
+.confirm-ranking{margin-bottom:10px}
+.values-options{display:flex;flex-wrap:wrap;gap:8px}
+.values-options button{min-height:44px;max-width:100%;padding:10px 15px;border:1px solid #bbc5bf;border-radius:10px;background:#fff;color:var(--ink);font-size:14px;overflow-wrap:anywhere}
+.values-options button:disabled{opacity:.4}
+.custom-value{display:flex;align-items:end;gap:8px;margin-top:18px}
+.custom-value label{display:grid;flex:1;gap:6px;min-width:0}
+.custom-value span{font-size:12px;color:var(--muted)}
+.custom-value input{min-width:0;width:100%;min-height:44px;padding:10px;border:1px solid #bbc5bf;border-radius:9px;background:#fff}
+.custom-value svg{width:16px}
+.custom-value button:disabled{opacity:.4}
+.selection-count{display:block;margin-top:12px;color:var(--muted);font-size:12px}
+.lesson-document .interaction-guidance,.lesson-document .retained-answer{font-size:13px;line-height:1.6;color:var(--muted);white-space:pre-wrap}
+.semantic-learning-document button:focus-visible,.lesson-outline a:focus-visible,.custom-value input:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
+.assessment-choice-list input:focus-visible+span{outline:3px solid var(--teal);outline-offset:3px}
+.lesson-complete-continue{display:flex;justify-content:space-between;align-items:center;width:100%;min-height:52px;margin-top:22px;padding:14px 18px;border:0;border-radius:12px;background:var(--ink);color:#fff;font-size:14px;font-weight:650}
+.lesson-complete-continue svg{width:18px}
+.lesson-complete-continue:disabled{opacity:.4}
+.lesson-complete-continue:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
+/* Keep product navigation inside reserved chrome while the reader owns the page. */
+.focused-reader .app-menu-trigger{top:12px;right:70px;bottom:auto;left:auto;transform:none;height:44px;min-width:100px;padding:0 12px;border-radius:10px;box-shadow:none}
+.focused-reader .reader-topbar{grid-template-columns:235px minmax(0,1fr) 180px}
+@media(min-width:821px) and (max-width:1040px){.focused-reader .reader-topbar{grid-template-columns:210px minmax(0,1fr) 180px}}
+.focused-reader .reader-menu-button{justify-self:end;margin-right:10px}
+@media(max-width:620px){
+  .lesson-outline{margin-top:22px}
+  .lesson-outline ul{display:grid;gap:6px}
+  .lesson-outline a{font-size:12px}
+  .semantic-learning-document .source-section{font-size:27px}
+  .semantic-learning-document .learning-notice-copy>h3{font-size:25px}
+  .semantic-learning-document .response-surface{padding:14px}
+  .semantic-learning-document .response-surface-prompt p{font-size:16px!important}
+  .semantic-learning-document .thinking-equation-copy>strong{font-size:23px}
+  .ranking-control li{grid-template-columns:22px minmax(0,1fr) 94px;gap:6px;padding:8px}
+  .ranking-control li strong{font-size:13px}
+  .semantic-learning-document .responsive-row-table tbody td::before{font-size:11px;line-height:1.5}
+  .semantic-learning-document .responsive-row-table tbody td.rating-cell{grid-template-columns:1fr;gap:8px}
+}
+@media(max-width:820px){
+  .focused-reader .reader-topbar{grid-template-columns:minmax(0,1fr) 160px}
+  .focused-reader .app-menu-trigger{top:10px;right:60px;min-width:90px;height:44px}
+  .focused-reader .reader-progress{right:0}
+}

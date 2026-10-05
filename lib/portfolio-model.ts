@@ -49,7 +49,8 @@ export function sanitizeRemovedLogReferences(text:string){
 }
 
 export function isMeaningfulPortfolioBlock(block:ContentBlock){
-  return block.kind==="text" && block.type==="portfolio" && !isRemovedLogBlock(block);
+  return block.kind==="text" && block.type==="portfolio" && !isRemovedLogBlock(block)
+    && !(block.text.includes("=")&&!/^Portfolio:/i.test(block.text.trim()));
 }
 
 function contextTitle(block:ContentBlock, fallback:string){

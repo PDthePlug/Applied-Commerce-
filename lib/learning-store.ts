@@ -55,8 +55,10 @@ export function useLearningStore() {
     try{
       write(fn(parseLearningState(readRaw())));
       setSaveError(null);
+      return true;
     }catch{
       setSaveError("Your latest change could not be saved on this device. Keep this page open and copy your work before leaving.");
+      return false;
     }
   }, []);
 

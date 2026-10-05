@@ -5,6 +5,8 @@ import { Plus } from "lucide-react";
 import type { ContentBlock, TextBlockType, UnitContent } from "@/lib/types";
 import { cleanMarkup, isRemovedLogBlock, sanitizeRemovedLogReferences } from "@/lib/portfolio-model";
 import { DeepeningInsightPanel, LearningNotice, PortfolioCaptureNotice, ResponseSurface, StoryHeading, ThinkingEquationNotice } from "./presentation-system";
+import { authoredScale, choiceMeaning, learningSections, sourceCopy, valueSelection } from "@/lib/semantic-learning";
+import { RankingControl, RatingControl, ValuesControl } from "./semantic-controls";
 
 type PromptContext = "activity" | "reflection" | "checkpoint" | "home" | null;
 type PromptMode = "checkpoint" | "home";
@@ -90,8 +92,8 @@ function promptId(unitId:string,blockIndex:number,slot:string|number){
   return `${unitId}::block-${blockIndex}::${slot}`;
 }
 
-function portfolioMessage(){
-  return <PortfolioCaptureNotice/>;
+function portfolioMessage(instruction:string){
+  return <PortfolioCaptureNotice instruction={instruction}/>;
 }
 
 
@@ -235,7 +237,7 @@ function isEquationMarker(block:ContentBlock){
 }
 
 function looksLikeEquationValue(block?:ContentBlock){
-  if(!block || block.kind!=="text" || block.type!=="paragraph") return false;
+  if(!block || block.kind!=="text" || !(block.type==="paragraph"||(block.type==="portfolio"&&block.text.includes("=")))) return false;
   const text=displayText(block.text).trim();
   if(!text || text.length>180 || text.includes("?")) return false;
   if(PART_HEADING_RE.test(text)) return false;
@@ -252,7 +254,7 @@ function TextBlockView({block}:{block:Extract<ContentBlock,{kind:"text"}>}) {
     case "activity": return <LearningNotice tone="activity" title={text.replace(/^✍️\s*/,"")}/>;
     case "reflection": return <LearningNotice tone="reflection" title={text.replace(/^💭\s*/,"")}/>;
     case "checkpoint": return <LearningNotice tone="checkpoint" title={text.replace(/^✅\s*/,"")}/>;
-    case "portfolio": return portfolioMessage();
+    case "portfolio": return portfolioMessage(text);
     case "story": return <StoryHeading title={text}/>;
     case "learning": return <p className="learning-line">{text}</p>;
     case "equation": return <p className="equation-reference">{text}</p>;
@@ -511,12 +513,14 @@ function ChoiceBlock({
   blockIndex,
   promptResponses,
   onSavePromptResponse,
+  instruction="",
 }:{
   text:string;
   unitId:string;
   blockIndex:number;
   promptResponses:Record<string,string>;
   onSavePromptResponse:(promptId:string,value:string)=>void;
+  instruction?:string;
 }){
   const cleaned=displayText(text);
   const parts=cleaned.split("☐");
@@ -524,11 +528,12 @@ function ChoiceBlock({
   const options=parts.map(value=>value.trim()).filter(Boolean).filter(value=>!TENSION_RE.test(value));
   const choiceId=promptId(unitId,blockIndex,"choice");
   const selected=(promptResponses[choiceId]??"").split("\n").map(value=>value.trim()).filter(Boolean);
-  const multi=/check all|choose at least|rank|completed all|portfolio|full year|term \d/i.test(prefix) || !prefix;
-  const singleChoice=!multi && (
-    prefix.includes("?") ||
-    /^(?:My (?:option|chosen option|risk tolerance)|Am I|Is |Do |Did |Have |Can |Given )/i.test(prefix)
-  );
+  const meaning=choiceMeaning(cleaned,instruction);
+  const singleChoice=meaning?.kind==="single";
+
+  if(meaning?.kind==="ranking") return <ResponseSurface prompt={prefix?<p className="question-prompt">{prefix}</p>:undefined} mode="decide">
+    <RankingControl options={options} label={prefix||instruction} value={promptResponses[choiceId]??""} onChange={value=>onSavePromptResponse(choiceId,value)}/>
+  </ResponseSurface>;
 
   const toggle=(option:string)=>{
     if(singleChoice){
@@ -539,7 +544,7 @@ function ChoiceBlock({
     onSavePromptResponse(choiceId,next.join("\n"));
   };
 
-  return <div className="choice-answerable">
+  return <div className="choice-answerable" data-learning-mode="decide">
     {prefix&&<div className="choice-prefix">
       {BLANK_RE.test(prefix)
         ? <FillBlankLine text={prefix} unitId={unitId} blockIndex={blockIndex} promptResponses={promptResponses} onSavePromptResponse={onSavePromptResponse} slotPrefix="choice-prefix"/>
@@ -557,6 +562,16 @@ function ChoiceBlock({
             className="choice-option"
             role={singleChoice?"radio":"checkbox"}
             aria-checked={active}
+            onKeyDown={event=>{
+              if(!singleChoice||!["ArrowDown","ArrowUp","ArrowLeft","ArrowRight"].includes(event.key)) return;
+              event.preventDefault();
+              const offset=event.key==="ArrowDown"||event.key==="ArrowRight"?1:-1;
+              const nextIndex=(index+offset+options.length)%options.length;
+              const nextOption=cleanMarkup(options[nextIndex].replace(/_{3,}/g,"")).trim();
+              onSavePromptResponse(choiceId,nextOption);
+              const controls=event.currentTarget.closest(".choice-options")?.querySelectorAll<HTMLButtonElement>(".choice-option");
+              controls?.[nextIndex]?.focus();
+            }}
             onClick={()=>toggle(option)}
           ><span aria-hidden="true">{active?"✓":""}</span><strong>{option}</strong></button>
           {hasDetail&&active&&<input
@@ -676,10 +691,10 @@ function TableBlockView({
   onSavePromptResponse:(promptId:string,value:string)=>void;
   minimumRows?:number;
 }){
-  const headers=(block.rows[0]??[]).map(value=>cleanMarkup(displayText(value)));
+  const headers=(block.rows[0]??[]).map(value=>sourceCopy(displayText(value)));
   const headerOnly=block.rows.length===1;
   const hasWorkbookCells=headerOnly||block.rows.slice(1).some(row=>row.some(cell=>{
-    const value=cleanMarkup(cell);
+    const value=sourceCopy(cell);
     return !value||/^_+$/.test(value);
   }));
   const countId=promptId(unitId,blockIndex,"row-count");
@@ -696,7 +711,7 @@ function TableBlockView({
     && bodyRows.length>0
     && bodyRows.every(row=>row.length===headers.length);
 
-  return <div className={`source-table-wrap ${hasWorkbookCells?"workbook-table":""} ${responsiveRows?"responsive-row-table":""}`}>
+  return <div data-learning-mode={hasWorkbookCells?"do":"understand"} className={`source-table-wrap ${hasWorkbookCells?"workbook-table":""} ${responsiveRows?"responsive-row-table":""}`}>
     <table>
       <thead>
         <tr>{headers.map((header,colIndex)=><th scope="col" key={colIndex}>{header}</th>)}</tr>
@@ -706,7 +721,7 @@ function TableBlockView({
           const rowIndex=rowOffset+1;
           return <tr key={rowIndex}>
             {row.map((cell,colIndex)=>{
-              const cleaned=cleanMarkup(displayText(cell));
+              const cleaned=sourceCopy(displayText(cell));
               const editable=hasWorkbookCells&&(!cleaned||/^_+$/.test(cleaned));
               const containsBlank=BLANK_RE.test(cleaned);
               const dataLabel=headers[colIndex]||undefined;
@@ -716,6 +731,10 @@ function TableBlockView({
                 const value=promptResponses[id]??"";
                 const rowLabel=cleanMarkup(row.find((value,index)=>index!==colIndex&&cleanMarkup(value))??"");
                 const label=[rowLabel,headers[colIndex],headerOnly?`Entry ${rowIndex}`:""].filter(Boolean).join(" — ")||"Table response";
+                const scale=authoredScale(headers[colIndex]);
+                if(scale) return <td className="editable-cell rating-cell" data-label={dataLabel} key={colIndex}>
+                  <RatingControl scale={scale} label={label} value={value} onChange={next=>onSavePromptResponse(id,next)}/>
+                </td>;
                 return <td className="editable-cell" data-label={dataLabel} key={colIndex}>
                   <textarea
                     aria-label={label}
@@ -756,10 +775,10 @@ export function ContentBlocks({blocks,unitId,unitType="lesson",promptResponses:s
   const onSavePromptResponse=(key:string,value:string)=>saveResponse(persistResponseKey(unitId,blocks,key),value);
   const indexed=pruneTensionContent(blocks);
 
-  const renderIndexedBlocks=(items:IndexedBlock[],allowInsightGrouping=true)=>{
+  const renderIndexedBlocks=(items:IndexedBlock[],allowInsightGrouping=true,initialContext:PromptContext=null)=>{
     const views:React.ReactNode[]=[];
     let list:Array<{text:string;index:number}>=[];
-    let context:PromptContext=null;
+    let context:PromptContext=initialContext;
 
     const flush=()=>{
       if(list.length){
@@ -771,7 +790,7 @@ export function ContentBlocks({blocks,unitId,unitType="lesson",promptResponses:s
     for(let position=0;position<items.length;position+=1){
       const {block,index}=items[position];
 
-      if(block.kind==="text"&&block.type==="list"){
+      if(block.kind==="text"&&block.type==="list"&&!block.text.includes("☐")){
         list.push({text:block.text,index});
         continue;
       }
@@ -831,14 +850,17 @@ export function ContentBlocks({blocks,unitId,unitType="lesson",promptResponses:s
       }
 
       if(block.type==="portfolio"){
-        context=null;
+        if(block.text.includes("=")&&!/^Portfolio:/i.test(block.text.trim())){
+          views.push(<p className="equation-reference" key={`formula-${index}`}>{displayText(block.text)}</p>);
+          continue;
+        }
         views.push(<TextBlockView block={block} key={`text-${index}`}/>);
         continue;
       }
 
       if(block.type==="story") context=null;
       // Activity parts keep their task context; unrelated sections end it.
-      if(block.type==="section"&&!PART_HEADING_RE.test(block.text)) context=null;
+      if(block.type==="section"&&!PART_HEADING_RE.test(block.text)&&!/^OR$/i.test(block.text.trim())) context=null;
 
       if(unitType==="assessment"&&block.kind==="text"){
         const choice=parseAssessmentChoices(block.text);
@@ -897,12 +919,23 @@ export function ContentBlocks({blocks,unitId,unitType="lesson",promptResponses:s
           blockIndex={index}
           promptResponses={promptResponses}
           onSavePromptResponse={onSavePromptResponse}
+          instruction={items[position-1]?.block.kind==="text"?(items[position-1].block as Extract<ContentBlock,{kind:"text"}>).text:""}
           key={`choice-${index}`}
         />);
         continue;
       }
 
       if(BLANK_RE.test(block.text)){
+        const selection=valueSelection(blocks,index);
+        if(selection){
+          const id=promptId(unitId,index,"blank-0");
+          const options=selection.fromIndex===undefined?selection.options:(promptResponses[promptId(unitId,selection.fromIndex,"blank-0")]??"").split("\n").filter(Boolean);
+          views.push(<ResponseSurface key={`values-${index}`} mode="decide" prompt={<p className="question-prompt">{sourceCopy(displayText(block.text)).replace(/_{3,}/g,"").trim()}</p>}>
+            <ValuesControl options={options} count={selection.count} allowCustom={selection.allowCustom} label={displayText(block.text)}
+              value={promptResponses[id]??""} onChange={value=>onSavePromptResponse(id,value)}/>
+          </ResponseSurface>);
+          continue;
+        }
         const multi=parseMultiBlankFields(block.text);
         if(multi){
           views.push(<MultiBlankFields text={block.text} unitId={unitId} blockIndex={index} promptResponses={promptResponses} onSavePromptResponse={onSavePromptResponse} key={`multi-${index}`}/>);
@@ -924,6 +957,16 @@ export function ContentBlocks({blocks,unitId,unitType="lesson",promptResponses:s
       }
 
       const nextBlock=items[position+1]?.block;
+
+      // A ranking instruction belongs to the following native control. Preserve
+      // any older written answer, but do not ask the learner to rank twice.
+      if(/^Rank\b/i.test(displayText(block.text))&&nextBlock?.kind==="text"&&nextBlock.text.includes("☐")){
+        views.push(<div className="ranking-instruction" key={`ranking-instruction-${index}`}>
+          <p>{displayText(block.text)}</p>
+          <PreviousCombinedResponse value={promptResponses[promptId(unitId,index,"response")]??""}/>
+        </div>);
+        continue;
+      }
 
       if(context==="checkpoint"&&block.kind==="text"){
         const breakdown=buildPromptBreakdown(block.text,"checkpoint");
@@ -996,7 +1039,15 @@ export function ContentBlocks({blocks,unitId,unitType="lesson",promptResponses:s
     return views;
   };
 
-  return <>{renderIndexedBlocks(indexed)}</>;
+  return <div className="semantic-learning-document" data-semantic-renderer="applied-commerce-v3">
+    {learningSections(blocks,unitType).map(section=>{
+      const items=indexed.filter(item=>item.index>=section.start&&item.index<section.end);
+      if(!items.length) return null;
+      return <section className={`learning-section learning-mode-${section.mode}`} data-learning-mode={section.mode} id={section.anchor} key={section.anchor}>
+        {renderIndexedBlocks(items,true,section.context)}
+      </section>;
+    })}
+  </div>;
 }
 
 // Deployment retry checkpoint: 2026-10-01

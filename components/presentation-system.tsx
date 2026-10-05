@@ -1,6 +1,7 @@
 "use client";
 
 import type { ReactNode } from "react";
+import type { LearningMode } from "@/lib/semantic-learning";
 import { Archive, CheckCircle2, ChevronDown, Equal, House, Lightbulb, MessageCircleQuestion, PenLine } from "lucide-react";
 
 type NoticeTone = "activity" | "reflection" | "checkpoint" | "portfolio" | "home";
@@ -26,25 +27,25 @@ export function LearningNotice({
   const meta=noticeMeta[tone];
   const Icon=meta.icon;
   const toneClass=tone==="home"?"learning-notice-activity learning-notice-home":`learning-notice-${tone}`;
-  return <aside className={`learning-notice ${toneClass}`}>
+  return <aside className={`learning-notice ${toneClass}`} data-learning-mode={tone==="reflection"?"reflect":tone==="checkpoint"||tone==="portfolio"?"prove":"do"}>
     <div className="learning-notice-icon"><Icon aria-hidden="true"/></div>
     <div className="learning-notice-copy">
       <span>{meta.label}</span>
-      <strong>{title}</strong>
+      <h3>{title}</h3>
       {body?<p>{body}</p>:null}
     </div>
   </aside>;
 }
 
 export function StoryHeading({title}:{title:string}){
-  return <header className="story-heading-block">
+  return <header className="story-heading-block" data-learning-mode="read">
     <span>Story</span>
     <h3 className="story-heading">{title}</h3>
   </header>;
 }
 
 export function ThinkingEquationNotice({equation}:{equation:string}){
-  return <aside className="thinking-equation-notice">
+  return <aside className="thinking-equation-notice" data-learning-mode="understand">
     <div className="thinking-equation-icon"><Equal aria-hidden="true"/></div>
     <div className="thinking-equation-copy">
       <span>Thinking Equation</span>
@@ -69,22 +70,25 @@ export function ResponseSurface({
   children,
   compact=false,
   tone="default",
+  mode,
 }:{
   prompt?:ReactNode;
   children:ReactNode;
   compact?:boolean;
   tone?:ResponseTone;
+  mode?:LearningMode;
 }){
-  return <section className={`response-surface response-surface-${tone} ${compact?"response-surface-compact":""}`}>
+  const learningMode=mode??(tone==="reflection"?"reflect":tone==="checkpoint"||tone==="assessment"?"prove":"do");
+  return <section data-learning-mode={learningMode} className={`response-surface response-surface-${tone} ${compact?"response-surface-compact":""}`}>
     {prompt?<div className="response-surface-prompt">{prompt}</div>:null}
     <div className="response-surface-control">{children}</div>
   </section>;
 }
 
-export function PortfolioCaptureNotice(){
+export function PortfolioCaptureNotice({instruction}:{instruction?:string}){
   return <LearningNotice
     tone="portfolio"
     title="This work is added to your portfolio automatically."
-    body="Complete the activity here. Applied Commerce keeps the relevant evidence with this lesson—there is nothing extra to save."
+    body={instruction?`${instruction.replace(/^Portfolio:\s*/i,"")} Your responses stay with this lesson on this device.`:"Your responses stay with this lesson on this device."}
   />;
 }

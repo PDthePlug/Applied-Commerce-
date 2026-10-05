@@ -1,13 +1,16 @@
 "use client";
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { ArrowLeft, ArrowRight, Check, CheckCircle2, Menu, NotebookPen, X } from "lucide-react";
 import { curriculum } from "@/lib/curriculum";
+import { learningSections } from "@/lib/semantic-learning";
 import type { TermIndex, UnitContent, UnitSummary } from "@/lib/types";
 import { ContentBlocks } from "./content-blocks";
 import { useLearningStore } from "@/lib/learning-store";
 
 export function LessonReader({grade,term,unitId}:{grade:number;term:number;unitId:string}){
+ const router=useRouter();
  const [termData,setTermData]=useState<TermIndex|null>(null); const [unit,setUnit]=useState<UnitContent|null>(null); const [menu,setMenu]=useState(false);
  const {state,saveError,completedIds,markComplete,saveResponse,savePromptResponse,setLastOpened}=useLearningStore();
  useEffect(()=>{Promise.all([curriculum.term(grade,term),curriculum.unit(grade,term,unitId)]).then(([t,u])=>{setTermData(t);setUnit(u);setLastOpened(grade,term,unitId);window.scrollTo(0,0);});},[grade,term,unitId,setLastOpened]);
@@ -31,7 +34,11 @@ export function LessonReader({grade,term,unitId}:{grade:number;term:number;unitI
   <main className="reader-stage">
     {saveError&&<p role="alert" className="save-error">{saveError}</p>}
     <article className="lesson-document">
-      <header className="lesson-heading"><p className="eyebrow">Grade {grade} · Term {term} · {unit.label}</p><h1>{unit.title}</h1></header>
+      <header className="lesson-heading"><p className="eyebrow">Grade {grade} · Term {term} · {unit.label}</p><h1>{unit.title}</h1>
+        <nav className="lesson-outline" aria-label="In this lesson"><p className="eyebrow">In this lesson</p>
+          <ul>{learningSections(unit.blocks,unit.type).filter(section=>section.context&&section.context!=="reflection").map(section=><li key={section.anchor}><a href={`#${section.anchor}`}>{section.title}</a></li>)}</ul>
+        </nav>
+      </header>
       <ContentBlocks
         blocks={unit.blocks}
         unitId={unitId}
@@ -45,6 +52,9 @@ export function LessonReader({grade,term,unitId}:{grade:number;term:number;unitI
       <p>Your responses are captured beside each activity, reflection, table and workbook field. Use this separate space only for extra notes you want to keep about the lesson.</p>
       <textarea value={response} onChange={e=>saveResponse(unitId,e.target.value)} placeholder="Add a note about this lesson…" rows={6}/>
       <div className="workbook-actions"><span>{response?"Note kept on this device":"No lesson note yet"}</span><button className={complete?"completed":""} onClick={()=>markComplete(unitId,!complete)}>{complete?<><CheckCircle2/>Completed</>:<><Check/>Mark lesson complete</>}</button></div>
+      <button className="lesson-complete-continue" type="button" disabled={Boolean(saveError)} onClick={()=>{
+        if(markComplete(unitId,true)) router.push(next?unitHref(next):`/learn/${grade}`);
+      }}>Complete and continue<ArrowRight aria-hidden="true"/></button>
     </section>
     <footer className="reader-footer">
       {prev?<Link href={unitHref(prev)}><ArrowLeft/><span><small>Previous</small><strong>{prev.title}</strong></span></Link>:<span/>}

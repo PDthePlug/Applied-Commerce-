@@ -21,6 +21,12 @@ The first production-shaped milestone includes:
 
 The learner reader now uses a shared semantic presentation contract: source-authored stories, activities, reflections, checkpoints, Thinking Equations, portfolio evidence, response surfaces and tables render through one consistent hierarchy. Simple source tables become labelled row cards on compact screens while wider or structurally irregular tables keep their table geometry. See `docs/APPLIED_COMMERCE_PRESENTATION_ARCHITECTURE_V2.md`.
 
+### Semantic Learning Renderer 3.0
+
+Lessons now follow six source-derived presentation modes: Read, Understand, Decide, Do, Reflect and Prove. Explicit rankings, table rating scales and the Grade 9 values sort use native controls; list choices are interactive, equations retain their meaning and percentage blanks retain their units. Lesson outlines link to authored tasks, product navigation stays in reserved reader chrome, and Complete and continue saves before advancing. Source wording, sequence and answer identities remain intact.
+
+See `docs/APPLIED_COMMERCE_SEMANTIC_LEARNING_V3.md` for the interpretation and persistence contract. The repeatable census covers all 395 lessons and four assessments. Browser acceptance samples every grade and term at desktop, 430px and 360px and exercises the new control/persistence/error states.
+
 ## Important source-preservation rule
 
 The compiler does **not** renumber or manufacture lessons to make the books look uniform. If a supplied book jumps between lesson numbers or contains a different number of lesson headings in a term, the platform preserves that source structure. Editorial `SITUATION REPORT` markers and `END OF ...` production markers are treated as source metadata rather than learner-facing lessons.
