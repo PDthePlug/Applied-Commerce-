@@ -1,13 +1,13 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { Building2, CheckCircle2, GraduationCap, Plus, RefreshCw, ShieldCheck, Users } from "lucide-react";
+import { Building2, GraduationCap, Plus, RefreshCw, ShieldCheck, Users } from "lucide-react";
 import { useAuth } from "@/lib/auth-context";
 import { createClient } from "@/lib/supabase/client";
 import styles from "@/app/institution-admin/institution-admin.module.css";
 
 type School = { id:string; name:string; slug:string; status:string };
-type Membership = { id:string; user_id:string; role:string; status:string };
+type Membership = { id:string; user_id:string; school_id:string; role:string; status:string };
 type Cohort = { id:string; school_id:string; name:string; grade:number; academic_year:number; status:string };
 type CohortStaff = { id:string; cohort_id:string; user_id:string; role:string; status:string };
 type Enrolment = { id:string; cohort_id:string; learner_id:string; status:string };
@@ -45,41 +45,59 @@ export function InstitutionAdmin() {
   async function loadSchools() {
     if (!user) return;
     const { data: memberships, error: membershipError } = await supabase
-      .from("school_memberships").select("id,user_id,role,status").eq("user_id",user.id).in("role",["owner","admin"]).eq("status","active");
+      .from("school_memberships")
+      .select("id,user_id,school_id,role,status")
+      .eq("user_id",user.id)
+      .in("role",["owner","admin"])
+      .eq("status","active");
     if (membershipError) throw membershipError;
-    const schoolIds = (memberships ?? []).map(item => item.id);
-    const { data: membershipRows, error: allMembershipError } = await supabase
-      .from("school_memberships").select("id,user_id,role,status,school_id").in("school_id",
-        (memberships ?? []).length ? await (async()=> {
-          const {data} = await supabase.from("schools").select("id").in("id",
-            (memberships ?? []).map((m: Membership & {school_id?:string})=>m.school_id).filter(Boolean) as string[]);
-          return (data ?? []).map(s=>s.id);
-        })() : ["00000000-0000-0000-0000-000000000000"]
-      );
-    void schoolIds;
-    if (allMembershipError) throw allMembershipError;
-    const adminSchoolIds = [...new Set((memberships ?? []).map((m: Membership & {school_id?:string})=>m.school_id).filter(Boolean))] as string[];
-    const { data: schoolRows, error: schoolError } = await supabase.from("schools").select("id,name,slug,status").in("id",adminSchoolIds);
+
+    const schoolIds = [...new Set((memberships ?? []).map(item => item.school_id))];
+    if (!schoolIds.length) {
+      setSchools([]);
+      setSelectedSchool("");
+      return;
+    }
+
+    const { data: schoolRows, error: schoolError } = await supabase
+      .from("schools").select("id,name,slug,status").in("id",schoolIds);
     if (schoolError) throw schoolError;
+
     setSchools((schoolRows ?? []) as School[]);
-    setSelectedSchool(current => current && (schoolRows ?? []).some(s=>s.id===current) ? current : ((schoolRows ?? [])[0]?.id ?? ""));
-    void membershipRows;
+    setSelectedSchool(current =>
+      current && (schoolRows ?? []).some(s=>s.id===current)
+        ? current
+        : ((schoolRows ?? [])[0]?.id ?? "")
+    );
   }
 
   async function loadSchool(schoolId:string) {
     if (!schoolId) return;
-    const { data: memberRows, error: memberError } = await supabase.from("school_memberships").select("id,user_id,role,status").eq("school_id",schoolId);
+    const { data: memberRows, error: memberError } = await supabase
+      .from("school_memberships").select("id,user_id,school_id,role,status").eq("school_id",schoolId);
     if (memberError) throw memberError;
-    const { data: cohortRows, error: cohortError } = await supabase.from("cohorts").select("id,school_id,name,grade,academic_year,status").eq("school_id",schoolId).order("academic_year",{ascending:false}).order("grade");
+    const { data: cohortRows, error: cohortError } = await supabase
+      .from("cohorts").select("id,school_id,name,grade,academic_year,status")
+      .eq("school_id",schoolId).order("academic_year",{ascending:false}).order("grade");
     if (cohortError) throw cohortError;
+
     setMembers((memberRows ?? []) as Membership[]);
     setCohorts((cohortRows ?? []) as Cohort[]);
-    setSelectedCohort(current => current && (cohortRows ?? []).some(c=>c.id===current) ? current : ((cohortRows ?? [])[0]?.id ?? ""));
+    setSelectedCohort(current =>
+      current && (cohortRows ?? []).some(c=>c.id===current)
+        ? current
+        : ((cohortRows ?? [])[0]?.id ?? "")
+    );
+
     const ids = [...new Set((memberRows ?? []).map(m=>m.user_id))];
     if (ids.length) {
-      const { data: profileRows, error: profileError } = await supabase.from("profiles").select("id,display_name").in("id",ids);
+      const { data: profileRows, error: profileError } = await supabase
+        .from("profiles").select("id,display_name").in("id",ids);
       if (profileError) throw profileError;
-      setPeople(current => ({...current,...Object.fromEntries((profileRows ?? []).map(p=>[p.id,p as Person]))}));
+      setPeople(current => ({
+        ...current,
+        ...Object.fromEntries((profileRows ?? []).map(p=>[p.id,p as Person]))
+      }));
     }
   }
 
@@ -93,11 +111,19 @@ export function InstitutionAdmin() {
     if (enrolmentError) throw enrolmentError;
     setStaff((staffRows ?? []) as CohortStaff[]);
     setEnrolments((enrolmentRows ?? []) as Enrolment[]);
-    const ids = [...new Set([...(staffRows ?? []).map(s=>s.user_id),...(enrolmentRows ?? []).map(e=>e.learner_id)])];
+
+    const ids = [...new Set([
+      ...(staffRows ?? []).map(s=>s.user_id),
+      ...(enrolmentRows ?? []).map(e=>e.learner_id)
+    ])];
     if (ids.length) {
-      const {data: profileRows,error:profileError}=await supabase.from("profiles").select("id,display_name").in("id",ids);
+      const {data: profileRows,error:profileError}=await supabase
+        .from("profiles").select("id,display_name").in("id",ids);
       if(profileError) throw profileError;
-      setPeople(current=>({...current,...Object.fromEntries((profileRows ?? []).map(p=>[p.id,p as Person]))}));
+      setPeople(current=>({
+        ...current,
+        ...Object.fromEntries((profileRows ?? []).map(p=>[p.id,p as Person]))
+      }));
     }
   }
 
@@ -107,7 +133,9 @@ export function InstitutionAdmin() {
 
   async function run(action:()=>Promise<void>, success:string) {
     setBusy(true); setError(""); setMessage("");
-    try { await action(); setMessage(success); } catch(e) { setError(errorText(e)); } finally { setBusy(false); }
+    try { await action(); setMessage(success); }
+    catch(e) { setError(errorText(e)); }
+    finally { setBusy(false); }
   }
 
   async function createSchool() {
@@ -123,7 +151,9 @@ export function InstitutionAdmin() {
   async function addMember() {
     await run(async()=>{
       if(!selectedSchool) throw new Error("Select a school first.");
-      const {error}=await supabase.rpc("add_school_member_by_email",{p_school_id:selectedSchool,p_email:memberEmail.trim(),p_role:memberRole});
+      const {error}=await supabase.rpc("add_school_member_by_email",{
+        p_school_id:selectedSchool,p_email:memberEmail.trim(),p_role:memberRole
+      });
       if(error) throw error;
       setMemberEmail(""); await loadSchool(selectedSchool);
     },"School membership saved.");
@@ -132,7 +162,10 @@ export function InstitutionAdmin() {
   async function createCohort() {
     await run(async()=>{
       if(!selectedSchool) throw new Error("Create or select a school first.");
-      const {error}=await supabase.from("cohorts").insert({school_id:selectedSchool,name:cohortName.trim(),grade:Number(grade),academic_year:Number(academicYear),status:"active"});
+      const {error}=await supabase.from("cohorts").insert({
+        school_id:selectedSchool,name:cohortName.trim(),grade:Number(grade),
+        academic_year:Number(academicYear),status:"active"
+      });
       if(error) throw error;
       setCohortName(""); await loadSchool(selectedSchool);
     },"Cohort created.");
@@ -141,7 +174,9 @@ export function InstitutionAdmin() {
   async function addStaff() {
     await run(async()=>{
       if(!selectedCohort) throw new Error("Select a cohort first.");
-      const {error}=await supabase.rpc("add_cohort_staff_by_email",{p_cohort_id:selectedCohort,p_email:staffEmail.trim(),p_role:staffRole});
+      const {error}=await supabase.rpc("add_cohort_staff_by_email",{
+        p_cohort_id:selectedCohort,p_email:staffEmail.trim(),p_role:staffRole
+      });
       if(error) throw error;
       setStaffEmail(""); await loadCohort(selectedCohort);
     },"Cohort staff assignment saved.");
@@ -150,7 +185,9 @@ export function InstitutionAdmin() {
   async function enrolLearner() {
     await run(async()=>{
       if(!selectedCohort) throw new Error("Select a cohort first.");
-      const {error}=await supabase.rpc("enrol_learner_by_email",{p_cohort_id:selectedCohort,p_email:learnerEmail.trim()});
+      const {error}=await supabase.rpc("enrol_learner_by_email",{
+        p_cohort_id:selectedCohort,p_email:learnerEmail.trim()
+      });
       if(error) throw error;
       setLearnerEmail(""); await loadCohort(selectedCohort);
     },"Learner enrolled.");
@@ -160,7 +197,11 @@ export function InstitutionAdmin() {
 
   return <main className={styles.page}>
     <header className={styles.hero}>
-      <div><p className={styles.eyebrow}>Applied Commerce · Operations</p><h1>Institution administration</h1><p>Provision the real school, cohort, facilitator and learner relationships that the facilitator workspace already consumes.</p></div>
+      <div>
+        <p className={styles.eyebrow}>Applied Commerce · Operations</p>
+        <h1>Institution administration</h1>
+        <p>Provision the real school, cohort, facilitator and learner relationships that the facilitator workspace already consumes.</p>
+      </div>
       <div className={styles.heroBadge}><ShieldCheck/><span>Role-scoped</span><strong>Owner / Admin</strong></div>
     </header>
 
@@ -176,11 +217,14 @@ export function InstitutionAdmin() {
     </section> : <>
       <section className={styles.selectorBar}>
         <label>Institution<select value={selectedSchool} onChange={e=>setSelectedSchool(e.target.value)}>{schools.map(s=><option key={s.id} value={s.id}>{s.name}</option>)}</select></label>
-        <button className={styles.secondary} onClick={()=>void run(async()=>{await loadSchools();if(selectedSchool)await loadSchool(selectedSchool);if(selectedCohort)await loadCohort(selectedCohort);},"Workspace refreshed.")} disabled={busy}><RefreshCw/> Refresh</button>
+        <button className={styles.secondary} onClick={()=>void run(async()=>{
+          await loadSchools(); if(selectedSchool)await loadSchool(selectedSchool); if(selectedCohort)await loadCohort(selectedCohort);
+        },"Workspace refreshed.")} disabled={busy}><RefreshCw/> Refresh</button>
       </section>
 
       <div className={styles.grid}>
-        <section className={styles.panel}><div className={styles.panelHead}><div><p className={styles.eyebrow}>People</p><h2>School team</h2><p>Add existing Applied Commerce accounts to the institution.</p></div><Users/></div>
+        <section className={styles.panel}>
+          <div className={styles.panelHead}><div><p className={styles.eyebrow}>People</p><h2>School team</h2><p>Add existing Applied Commerce accounts to the institution.</p></div><Users/></div>
           <form className={styles.form} onSubmit={e=>{e.preventDefault();void addMember();}}>
             <label>Account email<input type="email" value={memberEmail} onChange={e=>setMemberEmail(e.target.value)} placeholder="facilitator@example.com" required/></label>
             <label>Role<select value={memberRole} onChange={e=>setMemberRole(e.target.value)}><option value="educator">Educator</option><option value="admin">Admin</option><option value="owner">Owner</option></select></label>
@@ -189,7 +233,8 @@ export function InstitutionAdmin() {
           <div className={styles.list}>{members.map(m=><div key={m.id}><strong>{people[m.user_id]?.display_name||"Account"}</strong><span>{m.role} · {m.status}</span></div>)}</div>
         </section>
 
-        <section className={styles.panel}><div className={styles.panelHead}><div><p className={styles.eyebrow}>Cohorts</p><h2>Create a delivery group</h2><p>These are the cohorts the facilitator workspace will read.</p></div><GraduationCap/></div>
+        <section className={styles.panel}>
+          <div className={styles.panelHead}><div><p className={styles.eyebrow}>Cohorts</p><h2>Create a delivery group</h2><p>These are the cohorts the facilitator workspace will read.</p></div><GraduationCap/></div>
           <form className={styles.form} onSubmit={e=>{e.preventDefault();void createCohort();}}>
             <label>Cohort name<input value={cohortName} onChange={e=>setCohortName(e.target.value)} placeholder="Grade 10 · 2027 · Class A" required/></label>
             <div className={styles.two}><label>Grade<select value={grade} onChange={e=>setGrade(e.target.value)}>{[8,9,10,11,12].map(g=><option key={g}>{g}</option>)}</select></label><label>Academic year<input type="number" value={academicYear} onChange={e=>setAcademicYear(e.target.value)} min="2020" max="2100" required/></label></div>
@@ -202,8 +247,21 @@ export function InstitutionAdmin() {
       {selectedCohort && <section className={styles.panel}>
         <div className={styles.panelHead}><div><p className={styles.eyebrow}>Selected cohort</p><h2>{cohorts.find(c=>c.id===selectedCohort)?.name}</h2><p>Assign staff and enrol learners using existing Applied Commerce accounts.</p></div><Users/></div>
         <div className={styles.grid}>
-          <div><form className={styles.form} onSubmit={e=>{e.preventDefault();void addStaff();}}><label>Facilitator account email<input type="email" value={staffEmail} onChange={e=>setStaffEmail(e.target.value)} placeholder="educator@example.com" required/></label><label>Role<select value={staffRole} onChange={e=>setStaffRole(e.target.value)}><option value="educator">Educator</option><option value="lead">Lead</option><option value="assistant">Assistant</option></select></label><button disabled={busy}><Plus/> Assign staff</button></form><div className={styles.list}>{staff.map(s=><div key={s.id}><strong>{people[s.user_id]?.display_name||"Account"}</strong><span>{s.role} · {s.status}</span></div>)}</div></div>
-          <div><form className={styles.form} onSubmit={e=>{e.preventDefault();void enrolLearner();}}><label>Learner account email<input type="email" value={learnerEmail} onChange={e=>setLearnerEmail(e.target.value)} placeholder="learner@example.com" required/></label><button disabled={busy}><Plus/> Enrol learner</button></form><div className={styles.list}>{enrolments.map(e=><div key={e.id}><strong>{people[e.learner_id]?.display_name||"Learner account"}</strong><span>{e.status}</span></div>)}</div></div>
+          <div>
+            <form className={styles.form} onSubmit={e=>{e.preventDefault();void addStaff();}}>
+              <label>Facilitator account email<input type="email" value={staffEmail} onChange={e=>setStaffEmail(e.target.value)} placeholder="educator@example.com" required/></label>
+              <label>Role<select value={staffRole} onChange={e=>setStaffRole(e.target.value)}><option value="educator">Educator</option><option value="lead">Lead</option><option value="assistant">Assistant</option></select></label>
+              <button disabled={busy}><Plus/> Assign staff</button>
+            </form>
+            <div className={styles.list}>{staff.map(s=><div key={s.id}><strong>{people[s.user_id]?.display_name||"Account"}</strong><span>{s.role} · {s.status}</span></div>)}</div>
+          </div>
+          <div>
+            <form className={styles.form} onSubmit={e=>{e.preventDefault();void enrolLearner();}}>
+              <label>Learner account email<input type="email" value={learnerEmail} onChange={e=>setLearnerEmail(e.target.value)} placeholder="learner@example.com" required/></label>
+              <button disabled={busy}><Plus/> Enrol learner</button>
+            </form>
+            <div className={styles.list}>{enrolments.map(e=><div key={e.id}><strong>{people[e.learner_id]?.display_name||"Learner account"}</strong><span>{e.status}</span></div>)}</div>
+          </div>
         </div>
       </section>}
     </>}
