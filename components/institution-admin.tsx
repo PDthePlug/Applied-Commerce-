@@ -19,7 +19,6 @@ function errorText(error: unknown) {
 
 export function InstitutionAdmin() {
   const { user } = useAuth();
-  const getSupabase = useCallback(() => createClient(), []);
   const [schools,setSchools] = useState<School[]>([]);
   const [members,setMembers] = useState<Membership[]>([]);
   const [people,setPeople] = useState<Record<string,Person>>({});
@@ -45,7 +44,6 @@ export function InstitutionAdmin() {
   const loadSchools = useCallback(async () => {
     if (!user) return;
     const supabase = createClient();
-    const supabase = getSupabase();
     const { data: memberships, error: membershipError } = await supabase.from("school_memberships")
       .select("id,user_id,school_id,role,status").eq("user_id",user.id).in("role",["owner","admin"]).eq("status","active");
     if (membershipError) throw membershipError;
@@ -55,11 +53,11 @@ export function InstitutionAdmin() {
     if(schoolError) throw schoolError;
     setSchools((schoolRows??[]) as School[]);
     setSelectedSchool(current=>current&&(schoolRows??[]).some(s=>s.id===current)?current:((schoolRows??[])[0]?.id??""));
-  },[getSupabase,user]);
+  },[user]);
 
   const loadSchool = useCallback(async (schoolId:string) => {
     if(!schoolId) return;
-    const supabase = getSupabase();
+    const supabase = createClient();
     const {data:memberRows,error:memberError}=await supabase.from("school_memberships").select("id,user_id,school_id,role,status").eq("school_id",schoolId);
     if(memberError) throw memberError;
     const {data:cohortRows,error:cohortError}=await supabase.from("cohorts").select("id,school_id,name,grade,academic_year,status").eq("school_id",schoolId).order("academic_year",{ascending:false}).order("grade");
@@ -73,12 +71,11 @@ export function InstitutionAdmin() {
       if(profileError) throw profileError;
       setPeople(current=>({...current,...Object.fromEntries((profileRows??[]).map(p=>[p.id,p as Person]))}));
     }
-  },[getSupabase]);
+  },[]);
 
   const loadCohort = useCallback(async (cohortId:string) => {
     if(!cohortId){setStaff([]);setEnrolments([]);return;}
     const supabase = getSupabase();
-    const supabase = createClient();
     const [{data:staffRows,error:staffError},{data:enrolmentRows,error:enrolmentError}]=await Promise.all([
       supabase.from("cohort_staff").select("id,cohort_id,user_id,role,status").eq("cohort_id",cohortId),
       supabase.from("cohort_enrolments").select("id,cohort_id,learner_id,status").eq("cohort_id",cohortId)
@@ -118,7 +115,6 @@ export function InstitutionAdmin() {
   }
 
   async function createSchool() {
-    const supabase = getSupabase();
     await run(async()=>{
       const supabase = createClient();
       const {data,error}=await supabase.rpc("create_school",{p_name:schoolName.trim(),p_slug:schoolSlug.trim().toLowerCase()});
