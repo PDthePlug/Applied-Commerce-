@@ -983,6 +983,43 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      add_cohort_staff_by_email: {
+        Args: { p_cohort_id: string; p_email: string; p_role?: string }
+        Returns: string
+      }
+      add_school_member_by_email: {
+        Args: { p_email: string; p_role?: string; p_school_id: string }
+        Returns: string
+      }
+      create_school: {
+        Args: { p_name: string; p_slug: string }
+        Returns: {
+          created_at: string
+          id: string
+          metadata: Json
+          name: string
+          slug: string
+          status: string
+          updated_at: string
+        }
+        SetofOptions: {
+          from: "*"
+          to: "schools"
+          isOneToOne: true
+          isSetofReturn: false
+        }
+      }
+      enrol_learner_by_email: {
+        Args: { p_cohort_id: string; p_email: string }
+        Returns: string
+      }
+      resolve_school_account: {
+        Args: { p_email: string; p_school_id: string }
+        Returns: {
+          display_name: string
+          user_id: string
+        }[]
+      }
       upsert_facilitator_evidence_record: {
         Args: {
           p_auto_result?: Json
