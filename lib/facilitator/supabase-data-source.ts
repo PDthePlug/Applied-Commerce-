@@ -149,8 +149,17 @@ export async function loadSupabaseFacilitatorWorkspace(userId: string): Promise<
     const promptResponses = promptsByLearner.get(learnerId)!;
     const records: EvidenceRecord[] = [];
     for (const [unitId, gradeTerm] of unitsByLearner.get(learnerId)!) {
-      const [grade, term] = gradeTerm.split(":").map(Number);
-      const unit = await curriculum.unit(grade, term, unitId);
+      const [storedGrade, storedTerm] = gradeTerm.split(":").map(Number);
+      const unitContext = unitId.match(/^g(\\d+)-t(\\d+)-/);
+      const inferredGrade = unitContext ? Number(unitContext[1]) : storedGrade;
+      const inferredTerm = unitContext ? Number(unitContext[2]) : storedTerm;
+      let unit;
+      try {
+        unit = await curriculum.unit(storedGrade, storedTerm, unitId);
+      } catch (error) {
+        if (inferredGrade === storedGrade && inferredTerm === storedTerm) throw error;
+        unit = await curriculum.unit(inferredGrade, inferredTerm, unitId);
+      }
       records.push(...buildEvidenceRecords(unit, promptResponses));
     }
     learners.push({ id: learnerId, state, records, reviews: reviewsByLearner.get(learnerId) ?? {} });
