@@ -53,6 +53,9 @@ jobs:
       - name: Browser presentation acceptance
         run: npx playwright test --config=playwright.config.mjs
 
+      - name: Refresh presentation census evidence
+        run: npm run census:presentation
+
       - name: Upload presentation evidence
         if: always()
         uses: actions/upload-artifact@v4
