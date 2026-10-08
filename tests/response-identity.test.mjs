@@ -98,7 +98,7 @@ test('learner merge uses remote when it is newer and never lets an older timesta
 
 test('legacy local values without timestamps remain available during migration',async()=>{
  const {mergeLearningState}=await import(learnerRecordUrl);
- const local={version:2,previousResponses:{},completed:{},completedMeta:{},responses:{[unit]:'legacy note'},promptResponses:{},previousResponses:{}};
+ const local={version:2,previousResponses:{},completed:{},completedMeta:{},responses:{[unit]:'legacy note'},promptResponses:{}};
  const remote={version:2,previousResponses:{},completed:{},completedMeta:{},responses:{[unit]:'remote note'},responseUpdatedAt:{[unit]:'2026-10-08T13:00:00.000Z'},promptResponses:{},promptResponseUpdatedAt:{}};
  const merged=mergeLearningState(local,remote);
  assert.equal(merged.responses[unit],'legacy note');
