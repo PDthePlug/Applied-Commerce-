@@ -377,7 +377,7 @@ begin
   end if;
 
   delete from public.learner_profiles where user_id=v_uid;
-  get diagnostics v_converted_learner = row_count;
+  v_converted_learner := found;
 
   insert into public.school_memberships(school_id,user_id,role,status)
   values(p_school_id,v_uid,p_role,'active')
@@ -422,7 +422,7 @@ begin
   end if;
 
   delete from public.learner_profiles where user_id=v_uid;
-  get diagnostics v_converted_learner = row_count;
+  v_converted_learner := found;
 
   insert into public.cohort_staff(cohort_id,user_id,role,status)
   values(p_cohort_id,v_uid,p_role,'active')
