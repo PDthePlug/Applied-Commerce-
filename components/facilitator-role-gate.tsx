@@ -7,19 +7,13 @@ import { useAuth } from "@/lib/auth-context";
 
 export function FacilitatorRoleGate({ children }: { children: React.ReactNode }) {
   const { user, loading: authLoading } = useAuth();
-  const [checking, setChecking] = useState(true);
-  const [assigned, setAssigned] = useState(false);
+  const [checkedUserId, setCheckedUserId] = useState<string | null>(null);
+  const [assignedUserId, setAssignedUserId] = useState<string | null>(null);
 
   useEffect(() => {
-    if (authLoading) return;
-    if (!user) {
-      setAssigned(false);
-      setChecking(false);
-      return;
-    }
+    if (authLoading || !user) return;
 
     let active = true;
-    setChecking(true);
     void createClient()
       .from("cohort_staff")
       .select("cohort_id")
@@ -28,14 +22,14 @@ export function FacilitatorRoleGate({ children }: { children: React.ReactNode })
       .limit(1)
       .then(({ data, error }) => {
         if (!active) return;
-        setAssigned(!error && Boolean(data?.length));
-        setChecking(false);
+        setAssignedUserId(!error && Boolean(data?.length) ? user.id : null);
+        setCheckedUserId(user.id);
       });
 
     return () => { active = false; };
   }, [authLoading, user]);
 
-  if (authLoading || checking) {
+  if (authLoading || (user && checkedUserId !== user.id)) {
     return <main className="institution-admin-page"><div className="institution-admin-state">Checking facilitator assignment…</div></main>;
   }
 
@@ -43,7 +37,7 @@ export function FacilitatorRoleGate({ children }: { children: React.ReactNode })
     return <main className="institution-admin-page"><section className="institution-admin-hero"><p className="eyebrow">Facilitator workspace</p><h1>Sign in to continue.</h1><p>Facilitator access is granted through an institution or cohort assignment.</p><Link className="institutional-primary" href="/auth">Sign in <span aria-hidden="true">→</span></Link></section></main>;
   }
 
-  if (!assigned) {
+  if (assignedUserId !== user.id) {
     return <main className="institution-admin-page"><section className="institution-admin-hero"><p className="eyebrow">Restricted workspace</p><h1>Facilitator access has not been assigned.</h1><p>This account can sign in, but it cannot review learner evidence or open facilitator tools until an institution administrator assigns it to a cohort.</p><Link className="institutional-text-link" href="/institutions">Back to institutions <span aria-hidden="true">→</span></Link></section></main>;
   }
 
