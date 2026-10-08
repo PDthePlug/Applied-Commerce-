@@ -1,5 +1,5 @@
 begin;
-select plan(24);
+select plan(25);
 select has_table('public','profiles','profiles exists');
 select has_table('public','learner_profiles','learner profiles exists');
 select has_table('public','schools','schools exists');
