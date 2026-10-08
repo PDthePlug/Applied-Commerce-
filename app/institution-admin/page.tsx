@@ -1,11 +1,5 @@
-import type { Metadata } from "next";
-import { InstitutionAdmin } from "@/components/institution-admin";
+import { redirect } from "next/navigation";
 
-export const metadata: Metadata = {
-  title: "Institution Administration",
-  description: "Provision Applied Commerce schools, cohorts, facilitators and learners.",
-};
-
-export default function InstitutionAdminPage() {
-  return <InstitutionAdmin />;
+export default function InstitutionAdminLegacyPage() {
+  redirect("/institutions/manage");
 }
