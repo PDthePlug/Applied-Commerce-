@@ -983,6 +983,7 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      is_platform_admin: { Args: Record<PropertyKey, never>; Returns: boolean }
       add_cohort_staff_by_email: {
         Args: { p_cohort_id: string; p_email: string; p_role?: string }
         Returns: string
