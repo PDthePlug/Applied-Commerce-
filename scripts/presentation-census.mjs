@@ -15,7 +15,18 @@ function textLength(block){return block.kind==="text"?block.text.replace(/<[^>]+
 for(const meta of index.grades){
  const files=Array.from({length:meta.bundleParts},(_,i)=>path.join(root,"grade-"+meta.grade+".part-"+(i+1)+".b64"));
  const encoded=files.map(file=>fs.readFileSync(file,"utf8").trim()).join("");
- const bundle=JSON.parse(zlib.gunzipSync(Buffer.from(encoded,"base64")).toString("utf8"));
+ let bundle=JSON.parse(zlib.gunzipSync(Buffer.from(encoded,"base64")).toString("utf8"));
+ for(const patchMeta of meta.patches??[]){
+  const patchEncoded=patchMeta.parts.map(part=>fs.readFileSync(path.join(root,part),"utf8").trim()).join("");
+  const patch=JSON.parse(zlib.gunzipSync(Buffer.from(patchEncoded,"base64")).toString("utf8"));
+  if(patch.grade!==meta.grade||patch.term!==patchMeta.term)fail("Invalid patch metadata for Grade "+meta.grade+" Term "+patchMeta.term);
+  const term=bundle.terms.find(item=>item.term===patch.term);
+  if(!term)fail("Missing patched term "+meta.grade+"-"+patch.term);
+  const patchedLessonNumbers=new Set(patch.units.filter(u=>u.type==="lesson"&&typeof u.startLesson==="number").map(u=>u.startLesson));
+  term.units=[...term.units.filter(u=>!(u.type==="lesson"&&typeof u.startLesson==="number"&&patchedLessonNumbers.has(u.startLesson))),...patch.units]
+    .sort((a,b)=>((a.type==="lesson"?0:1)-(b.type==="lesson"?0:1))||((a.startLesson??Number.MAX_SAFE_INTEGER)-(b.startLesson??Number.MAX_SAFE_INTEGER))||a.position-b.position);
+  term.units.forEach((unit,index)=>{unit.position=index});
+ }
  let units=0;
  const grade={grade:meta.grade,units:0,blocks:0,stableBlockIdentities:0,families:{}};
 
