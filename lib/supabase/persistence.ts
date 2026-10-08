@@ -42,6 +42,9 @@ export async function reconcileLearningState(userId:string,local:LearningState){
 
 export async function syncLearningState(userId:string,state:LearningState){
  const supabase=createClient();
+ const releaseResult=await supabase.from("curriculum_releases").select("id").eq("release_key",CURRICULUM_RUNTIME_RELEASE).single();
+ if(releaseResult.error)throw releaseResult.error;
+ const releaseId=releaseResult.data.id;
  const now=new Date().toISOString();
  const profile:TablesInsert<"learner_profiles">={user_id:userId,preferred_name:state.profile?.displayName?.trim()||null,current_grade:state.profile?.grade??state.activeGrade??null};
  const profileResult=await supabase.from("learner_profiles").upsert(profile,{onConflict:"user_id"});
@@ -54,7 +57,7 @@ export async function syncLearningState(userId:string,state:LearningState){
  if(progressRows.length){const result=await supabase.from("lesson_progress").upsert(progressRows,{onConflict:"learner_id,curriculum_release_id,unit_id"});if(result.error)throw result.error;}
 
  const noteRows:TablesInsert<"lesson_notes">[]=Object.entries(state.responses).filter(([,note])=>note.trim()).map(([unitId,note])=>({learner_id:userId,curriculum_version:CURRICULUM_RUNTIME_RELEASE,curriculum_release_id:releaseId,grade:state.activeGrade??8,term:state.lastOpened?.unitId===unitId?state.lastOpened.term:1,unit_id:unitId,note,updated_at:state.responseUpdatedAt?.[unitId]??now}));
- if(noteRows.length){const result=await supabase.from("lesson_notes").upsert(noteRows,{onConflict:"learner_id,curriculum_version,unit_id"});if(result.error)throw result.error;}
+ if(noteRows.length){const result=await supabase.from("lesson_notes").upsert(noteRows,{onConflict:"learner_id,curriculum_release_id,unit_id"});if(result.error)throw result.error;}
 
  const promptRows:TablesInsert<"prompt_responses">[]=Object.entries(state.promptResponses).map(([promptKey,response])=>{
   const unitId=promptKey.split("::")[0];
