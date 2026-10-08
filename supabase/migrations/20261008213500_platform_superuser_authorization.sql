@@ -34,9 +34,9 @@ language sql
 stable
 security invoker
 set search_path = ''
-as $
+as $$
   select private.is_platform_admin();
-$;
+$$;
 revoke execute on function public.is_platform_admin() from public, anon;
 grant execute on function public.is_platform_admin() to authenticated;
 
