@@ -62,3 +62,5 @@ Milestone 3 is not complete until:
 - new assessment intelligence;
 - canonical-source fingerprinting until the source is repository-governed;
 - destructive migration or removal of local-first recovery.
+
+The merge tests explicitly cover both timestamped cross-device conflicts and the first reconciliation of legacy local records without timestamps.
