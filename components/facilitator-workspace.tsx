@@ -1,6 +1,6 @@
 "use client";
 
-import {useEffect,useMemo,useState,type Dispatch,type SetStateAction} from "react";
+import {useCallback,useEffect,useMemo,useState,type Dispatch,type SetStateAction} from "react";
 import {
   Archive,ArrowRight,BarChart3,BookOpenCheck,CheckCircle2,ClipboardCheck,
   FileBarChart,FileCheck2,Filter,Gauge,Layers3,LayoutDashboard,ListChecks,
@@ -20,6 +20,7 @@ import type {
   CoverageRow,FacilitatorCohortSummary,FacilitatorLearnerSummary,FacilitatorPriorityItem
 } from "@/lib/facilitator/model";
 import {useLearningStore} from "@/lib/learning-store";
+import {saveSupabaseFacilitatorReview,useSupabaseFacilitatorWorkspace} from "@/lib/facilitator/supabase-data-source";
 
 type Section="overview"|"learners"|"review"|"coverage"|"reports"|"rubrics";
 type UnitRef={id:string;term:number};
@@ -50,8 +51,10 @@ function formatLastActivity(at?:string){
 
 export function FacilitatorWorkspace(){
   const {state,hydrated}=useLearningStore();
-  const {reviews,saveReview}=useEvidenceReviewStore();
+  const {reviews:localReviews,saveReview:saveLocalReview}=useEvidenceReviewStore();
+  const {workspace:remoteWorkspace,loading:remoteLoading,error:remoteError}=useSupabaseFacilitatorWorkspace();
   const [records,setRecords]=useState<EvidenceRecord[]>([]);
+  const [selectedLearnerId,setSelectedLearnerId]=useState("");
   const [loading,setLoading]=useState(true);
   const [section,setSection]=useState<Section>("overview");
   const [selectedKey,setSelectedKey]=useState("");
@@ -62,12 +65,36 @@ export function FacilitatorWorkspace(){
   const [gradeLessonTotal,setGradeLessonTotal]=useState(0);
   const [facMenuOpen,setFacMenuOpen]=useState(false);
 
-  const grade=state.profile?.grade??state.activeGrade;
-  const learnerName=state.profile?.displayName?.trim()||"Current learner";
+  const effectiveSelectedLearnerId=remoteWorkspace?.learners.some(item=>item.id===selectedLearnerId)?selectedLearnerId:(remoteWorkspace?.learners[0]?.id??"");
+  const remoteLearner=remoteWorkspace?.learners.find(item=>item.id===effectiveSelectedLearnerId)??remoteWorkspace?.learners[0]??null;
+  const activeState=remoteLearner?.state??state;
+  const localPromptResponses=state.promptResponses;
+  const reviews=remoteLearner?.reviews??localReviews;
+  const grade=activeState.profile?.grade??activeState.activeGrade;
+  const learnerName=activeState.profile?.displayName?.trim()||"Current learner";
+
+  const saveReview=useCallback(async(review:EvidenceReview)=>{
+    if(remoteLearner){
+      const record=records.find(item=>item.responseKey===review.responseKey);
+      if(!record)throw new Error("Evidence record is no longer available.");
+      await saveSupabaseFacilitatorReview(remoteLearner.id,record,review);
+      return;
+    }
+    saveLocalReview(review);
+  },[records,remoteLearner,saveLocalReview]);
 
   useEffect(()=>{
     let cancelled=false;
     async function load(){
+      if(remoteWorkspace){
+        if(!cancelled){
+          setRecords(remoteLearner?.records??[]);
+          setGradeLessonTotal(grade?((await curriculum.grade(grade)).unitCount):0);
+          setSelectedKey(current=>(remoteLearner?.records??[]).some(record=>record.responseKey===current)?current:(remoteLearner?.records[0]?.responseKey??""));
+          setLoading(false);
+        }
+        return;
+      }
       if(!hydrated)return;
       if(!grade){
         if(!cancelled){setRecords([]);setGradeLessonTotal(0);setLoading(false);}
@@ -78,13 +105,13 @@ export function FacilitatorWorkspace(){
         const gradeIndex=await curriculum.grade(grade);
         if(cancelled)return;
         setGradeLessonTotal(gradeIndex.unitCount);
-        const unitIds=new Set(Object.keys(state.promptResponses).map(key=>key.split("::prompt-")[0]).filter(Boolean));
+        const unitIds=new Set(Object.keys(localPromptResponses).map(key=>key.split("::prompt-")[0]).filter(Boolean));
         if(!unitIds.size){setRecords([]);setLoading(false);return;}
         const refs:UnitRef[]=gradeIndex.terms.flatMap(term=>
           [...term.units,...term.assessments].map(unit=>({id:unit.id,term:term.term}))
         ).filter(item=>unitIds.has(item.id));
         const units=await Promise.all(refs.map(ref=>curriculum.unit(grade,ref.term,ref.id)));
-        const next=units.flatMap(unit=>buildEvidenceRecords(unit,state.promptResponses));
+        const next=units.flatMap(unit=>buildEvidenceRecords(unit,localPromptResponses));
         if(!cancelled){
           setRecords(next);
           setSelectedKey(current=>next.some(record=>record.responseKey===current)?current:(next[0]?.responseKey??""));
@@ -93,10 +120,14 @@ export function FacilitatorWorkspace(){
     }
     void load();
     return ()=>{cancelled=true;};
-  },[grade,hydrated,state.promptResponses]);
+  },[activeState.promptResponses,activeState,grade,hydrated,localPromptResponses,remoteLearner,remoteWorkspace]);
 
-  const learner=useMemo(()=>buildLearnerSummary({state,records,reviews}),[state,records,reviews]);
-  const cohort=useMemo(()=>buildCohortSummary([learner]),[learner]);
+  const learner=useMemo(()=>{
+    if(remoteLearner)return buildLearnerSummary({state:remoteLearner.state,records:remoteLearner.records,reviews:remoteLearner.reviews});
+    return buildLearnerSummary({state:activeState,records,reviews});
+  },[activeState,records,reviews,remoteLearner]);
+  const remoteLearnerSummaries=useMemo(()=>remoteWorkspace?.learners.map(item=>buildLearnerSummary({state:item.state,records:item.records,reviews:item.reviews}))??[],[remoteWorkspace]);
+  const cohort=useMemo(()=>remoteLearnerSummaries.length?buildCohortSummary(remoteLearnerSummaries):buildCohortSummary([learner]),[learner,remoteLearnerSummaries]);
   const priorities=useMemo(()=>buildReviewPriorities(records,reviews),[records,reviews]);
   const domains=useMemo(()=>buildDomainCoverage(records,reviews),[records,reviews]);
   const kinds=useMemo(()=>buildKindCoverage(records,reviews),[records,reviews]);
@@ -140,8 +171,8 @@ export function FacilitatorWorkspace(){
         })}
       </nav>
       <div className="fac-backend-state">
-        <div><span/><strong>Local evidence mode</strong></div>
-        <p>Dashboard structure is cohort-ready. Shared classes, staff accounts and cross-device reviews switch on when Applied Commerce Supabase is reactivated.</p>
+        <div><span/><strong>{remoteWorkspace?"Shared Supabase cohort":"Local learner record"}</strong></div>
+        <p>{remoteWorkspace?"Authenticated cohort data, durable learner records and facilitator reviews are now connected through the existing Supabase security model.":"Sign in with an assigned facilitator account to load the shared cohort workspace."}</p>
       </div>
     </aside>
 
@@ -194,7 +225,9 @@ export function FacilitatorWorkspace(){
 
       {!grade?<NoGradeState/>:null}
       {grade&&section==="overview"?<Overview learnerName={learnerName} cohort={cohort} learner={learner} priorities={priorities} domains={domains} completionRate={completionRate} gradeLessonTotal={gradeLessonTotal} pendingTotal={pendingTotal} onOpenReview={()=>setSection("review")} onOpenLearner={()=>setSection("learners")} onOpenCoverage={()=>setSection("coverage")}/>:null}
-      {grade&&section==="learners"?<LearnersView learner={learner} learnerSearch={learnerSearch} setLearnerSearch={setLearnerSearch} gradeLessonTotal={gradeLessonTotal} completionRate={completionRate} domains={domains} terms={terms} onReview={()=>setSection("review")} onReport={()=>setSection("reports")}/>:null}
+      {remoteError?<section className="fac-card"><strong>Shared facilitator data unavailable</strong><p>{remoteError}</p><small>Showing the local learner record until the shared cohort can be loaded.</small></section>:null}
+      {remoteLoading&&!remoteWorkspace?<section className="fac-card"><strong>Loading shared cohort…</strong><p>Checking the authenticated facilitator scope and learner records.</p></section>:null}
+      {grade&&section==="learners"?<LearnersView learner={learner} learners={remoteLearnerSummaries} selectedLearnerId={effectiveSelectedLearnerId} onSelectLearner={setSelectedLearnerId} learnerSearch={learnerSearch} setLearnerSearch={setLearnerSearch} gradeLessonTotal={gradeLessonTotal} completionRate={completionRate} domains={domains} terms={terms} onReview={()=>setSection("review")} onReport={()=>setSection("reports")}/>:null}
       {grade&&section==="review"?<ReviewView loading={loading} records={filtered} selected={selected} selectedKey={selectedKey} setSelectedKey={setSelectedKey} reviews={reviews} search={search} setSearch={setSearch} termFilter={termFilter} setTermFilter={setTermFilter} statusFilter={statusFilter} setStatusFilter={setStatusFilter} saveReview={saveReview} advance={advance}/>:null}
       {grade&&section==="coverage"?<CoverageView learner={learner} domains={domains} terms={terms} kinds={kinds} gradeLessonTotal={gradeLessonTotal} completionRate={completionRate}/>:null}
       {grade&&section==="reports"?<ReportsView report={report} learner={learner} gradeLessonTotal={gradeLessonTotal} completionRate={completionRate}/>:null}
@@ -281,6 +314,9 @@ function Metric({icon:Icon,value,label,hint}:{icon:typeof FileCheck2;value:numbe
 
 type LearnersViewProps={
   learner:FacilitatorLearnerSummary;
+  learners:FacilitatorLearnerSummary[];
+  selectedLearnerId:string;
+  onSelectLearner:(id:string)=>void;
   learnerSearch:string;
   setLearnerSearch:Dispatch<SetStateAction<string>>;
   gradeLessonTotal:number;
@@ -291,24 +327,25 @@ type LearnersViewProps={
   onReport:()=>void;
 };
 
-function LearnersView({learner,learnerSearch,setLearnerSearch,gradeLessonTotal,completionRate,domains,terms,onReview,onReport}:LearnersViewProps){
+function LearnersView({learner,learners,selectedLearnerId,onSelectLearner,learnerSearch,setLearnerSearch,gradeLessonTotal,completionRate,domains,terms,onReview,onReport}:LearnersViewProps){
   const matches=learner.name.toLowerCase().includes(learnerSearch.trim().toLowerCase());
   return <div className="fac-section-stack">
     <section className="fac-toolbar">
       <label><Search/><input value={learnerSearch} onChange={event=>setLearnerSearch(event.target.value)} placeholder="Search learner"/></label>
-      <div><Filter/><span>Shared cohort filters will appear when the backend is active.</span></div>
+      <div><Filter/><span>{learners.length>1?"Shared cohort filters are connected to the assigned roster.":"Cohort filters will appear as additional learners are assigned."}</span></div>
     </section>
 
     <section className="fac-learners-layout">
       <article className="fac-card fac-roster-card">
-        <header><div><p className="eyebrow">Roster</p><h2>Learners</h2></div><span>1 local record</span></header>
+        <header><div><p className="eyebrow">Roster</p><h2>Learners</h2></div><span>{learners.length} {learners.length===1?"learner":"learners"}</span></header>
         <div className="fac-roster-table">
           <div className="fac-roster-head"><span>Learner</span><span>Lessons</span><span>Evidence</span><span>Review</span><span>Status</span></div>
-          {matches?<button type="button" className="fac-roster-row active">
-            <span className="fac-person"><i>{learner.name.slice(0,1).toUpperCase()}</i><b>{learner.name}</b><small>Grade {learner.grade??"—"}</small></span>
-            <span>{learner.completedLessons}/{gradeLessonTotal||"—"}</span><span>{learner.evidenceCount}</span><span>{learner.reviewRate}%</span>
-            <span><em className={"learner-status "+learner.status}>{statusLabel(learner.status)}</em></span>
-          </button>:<EmptyInline title="No learner matches that search" text="Clear the search to return to the current local learner record."/>}
+          {learners.filter(item=>item.name.toLowerCase().includes(learnerSearch.trim().toLowerCase())).map(item=><button key={item.id} type="button" className={"fac-roster-row "+(item.id===selectedLearnerId?"active":"")} onClick={()=>onSelectLearner(item.id)}>
+            <span className="fac-person"><i>{item.name.slice(0,1).toUpperCase()}</i><b>{item.name}</b><small>Grade {item.grade??"—"}</small></span>
+            <span>{item.completedLessons}/{gradeLessonTotal||"—"}</span><span>{item.evidenceCount}</span><span>{item.reviewRate}%</span>
+            <span><em className={"learner-status "+item.status}>{statusLabel(item.status)}</em></span>
+          </button>)}
+          {!learners.some(item=>item.name.toLowerCase().includes(learnerSearch.trim().toLowerCase()))?<EmptyInline title="No learner matches that search" text="Clear the search to return to the current cohort."/>:null}
         </div>
       </article>
 

@@ -983,7 +983,16 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      upsert_facilitator_evidence_record: {
+        Args: {
+          p_auto_result?: Json
+          p_learner_id: string
+          p_response_key: string
+          p_response_value: string
+          p_status?: string
+        }
+        Returns: string
+      }
     }
     Enums: {
       [_ in never]: never
