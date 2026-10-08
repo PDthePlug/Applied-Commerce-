@@ -183,7 +183,7 @@ returns public.schools
 language plpgsql
 security definer
 set search_path = ''
-as $
+as $$
 declare
   v_school public.schools;
   v_uid uuid := (select auth.uid());
@@ -235,7 +235,7 @@ where not exists (
 exception when unique_violation then
   raise unique_violation using message = 'A school with that slug or membership already exists';
 end;
-$;
+$$;
 
 revoke execute on function private.create_school_impl(text,text) from public, anon;
 grant execute on function private.create_school_impl(text,text) to authenticated;
