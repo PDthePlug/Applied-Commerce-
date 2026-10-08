@@ -133,7 +133,7 @@ create index if not exists portfolio_evidence_learner_idx on public.portfolio_ev
 
 create or replace function private.ac_school_member(
   p_school_id uuid,
-  p_user_id uuid default (select auth.uid())
+  p_user_id uuid default auth.uid()
 ) returns boolean
 language sql stable security definer set search_path=''
 as $$
