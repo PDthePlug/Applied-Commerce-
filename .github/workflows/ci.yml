@@ -42,7 +42,10 @@ jobs:
           npm run typecheck -- --pretty false 2>&1 | tee test-results/typecheck.log
 
       - name: Lint
-        run: npm run lint
+        run: |
+          set -o pipefail
+          mkdir -p test-results
+          npm run lint 2>&1 | tee test-results/lint.log
 
       - name: Production build
         run: npm run build
