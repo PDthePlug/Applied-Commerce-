@@ -1,0 +1,11 @@
+.profile-history{grid-column:1 / -1;border:1px solid var(--border-subtle,#d9d9d9);border-radius:24px;padding:24px;background:var(--surface,#fff)}
+.profile-history-heading{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:16px}
+.profile-history-heading h2{margin:.15rem 0 0}
+.profile-history-heading a,.profile-history-item{display:flex;align-items:center;gap:10px}
+.profile-history-list{display:grid;gap:8px}
+.profile-history-item{justify-content:space-between;text-decoration:none;padding:14px 0;border-top:1px solid var(--border-subtle,#e5e5e5);color:inherit}
+.profile-history-item span{display:grid;gap:3px;min-width:0;flex:1}
+.profile-history-item small{opacity:.7;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.profile-history-item time{font-size:.82rem;opacity:.65;white-space:nowrap}
+.profile-history-empty{opacity:.72;margin:0}
+@media (max-width:640px){.profile-history{padding:18px;border-radius:18px}.profile-history-heading{align-items:flex-start}.profile-history-item time{display:none}}
