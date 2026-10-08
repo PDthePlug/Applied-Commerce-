@@ -17,6 +17,10 @@ function errorText(error: unknown) {
   return error instanceof Error ? error.message : "Something went wrong. Please try again.";
 }
 
+function scheduleLoader(loader:()=>Promise<void>, onError:(message:string)=>void) {
+  void Promise.resolve().then(() => loader()).catch(error => onError(errorText(error)));
+}
+
 export function InstitutionAdmin() {
   const { user } = useAuth();
   const supabase = useMemo(() => createClient(), []);
