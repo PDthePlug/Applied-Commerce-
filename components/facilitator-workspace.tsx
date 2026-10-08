@@ -218,8 +218,9 @@ export function FacilitatorWorkspace(){
         <div><p className="eyebrow">Evidence & Assessment Engine</p><h1>{copy[section].title}</h1><p>{copy[section].description}</p></div>
         <div className="fac-header-context">
           <small>Current workspace</small>
-          <strong>{grade?"Grade "+grade+" · "+titleCase(stageForGrade(grade)):"Local learner record"}</strong>
-          <span>{cohort.learnerCount} learner · {cohort.evidenceCount} evidence records</span>
+          <strong>{remoteWorkspace?.schoolName ?? (grade?"Grade "+grade+" · "+titleCase(stageForGrade(grade)):"Local learner record")}</strong>
+          <span>{remoteWorkspace?.cohortName ?? "Local learner record"} </span>
+          <span>{cohort.learnerCount} learners · {cohort.evidenceCount} evidence records</span>
         </div>
       </header>
 
@@ -328,7 +329,6 @@ type LearnersViewProps={
 };
 
 function LearnersView({learner,learners,selectedLearnerId,onSelectLearner,learnerSearch,setLearnerSearch,gradeLessonTotal,completionRate,domains,terms,onReview,onReport}:LearnersViewProps){
-  const matches=learner.name.toLowerCase().includes(learnerSearch.trim().toLowerCase());
   return <div className="fac-section-stack">
     <section className="fac-toolbar">
       <label><Search/><input value={learnerSearch} onChange={event=>setLearnerSearch(event.target.value)} placeholder="Search learner"/></label>

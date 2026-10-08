@@ -5,6 +5,14 @@ import { mergeLearningState } from "@/lib/learner-record";
 
 export const CURRICULUM_RUNTIME_RELEASE = "ac-runtime-3";
 
+function unitContext(unitId:string):{grade:number;term:number}|null{
+ const match=unitId.match(/^g(\\d+)-t(\\d+)-/);
+ if(!match)return null;
+ const grade=Number(match[1]);
+ const term=Number(match[2]);
+ return Number.isInteger(grade)&&Number.isInteger(term)&&grade>=8&&grade<=12&&term>=1&&term<=4?{grade,term}:null;
+}
+
 function emptyState():LearningState{
  return {version:2,previousResponses:{},completed:{},completedMeta:{},responses:{},responseUpdatedAt:{},promptResponses:{},promptResponseUpdatedAt:{}};
 }
@@ -54,16 +62,20 @@ export async function syncLearningState(userId:string,state:LearningState){
   const meta=state.completedMeta?.[unitId];
   return {learner_id:userId,curriculum_version:CURRICULUM_RUNTIME_RELEASE,curriculum_release_id:releaseId,grade:meta?.grade??state.activeGrade??8,term:meta?.term??(state.lastOpened?.unitId===unitId?state.lastOpened.term:1),unit_id:unitId,status:"completed",started_at:completedAt,completed_at:completedAt,last_opened_at:state.lastOpened?.unitId===unitId?state.lastOpened.at:completedAt,updated_at:completedAt};
  });
- if(progressRows.length){const result=await supabase.from("lesson_progress").upsert(progressRows,{onConflict:"learner_id,curriculum_release_id,unit_id"});if(result.error)throw result.error;}
+ if(progressRows.length){const result=await supabase.from("lesson_progress").upsert(progressRows,{onConflict:"learner_id,curriculum_version,unit_id"});if(result.error)throw result.error;}
 
- const noteRows:TablesInsert<"lesson_notes">[]=Object.entries(state.responses).filter(([,note])=>note.trim()).map(([unitId,note])=>({learner_id:userId,curriculum_version:CURRICULUM_RUNTIME_RELEASE,curriculum_release_id:releaseId,grade:state.activeGrade??8,term:state.lastOpened?.unitId===unitId?state.lastOpened.term:1,unit_id:unitId,note,updated_at:state.responseUpdatedAt?.[unitId]??now}));
+ const noteRows:TablesInsert<"lesson_notes">[]=Object.entries(state.responses).filter(([,note])=>note.trim()).map(([unitId,note])=>{
+  const context=unitContext(unitId);
+  return {learner_id:userId,curriculum_version:CURRICULUM_RUNTIME_RELEASE,curriculum_release_id:releaseId,grade:context?.grade??state.activeGrade??8,term:context?.term??(state.lastOpened?.unitId===unitId?state.lastOpened.term:1),unit_id:unitId,note,updated_at:state.responseUpdatedAt?.[unitId]??now};
+ });
  if(noteRows.length){const result=await supabase.from("lesson_notes").upsert(noteRows,{onConflict:"learner_id,curriculum_release_id,unit_id"});if(result.error)throw result.error;}
 
  const promptRows:TablesInsert<"prompt_responses">[]=Object.entries(state.promptResponses).map(([promptKey,response])=>{
   const unitId=promptKey.split("::")[0];
-  return {learner_id:userId,curriculum_version:CURRICULUM_RUNTIME_RELEASE,curriculum_release_id:releaseId,grade:state.activeGrade??8,term:state.lastOpened?.unitId===unitId?state.lastOpened.term:1,unit_id:unitId,prompt_key:promptKey,response,response_kind:"text",answered_at:state.promptResponseUpdatedAt?.[promptKey]??now,updated_at:state.promptResponseUpdatedAt?.[promptKey]??now};
+  const context=unitContext(unitId);
+  return {learner_id:userId,curriculum_version:CURRICULUM_RUNTIME_RELEASE,curriculum_release_id:releaseId,grade:context?.grade??state.activeGrade??8,term:context?.term??(state.lastOpened?.unitId===unitId?state.lastOpened.term:1),unit_id:unitId,prompt_key:promptKey,response,response_kind:"text",answered_at:state.promptResponseUpdatedAt?.[promptKey]??now,updated_at:state.promptResponseUpdatedAt?.[promptKey]??now};
  });
- if(promptRows.length){const result=await supabase.from("prompt_responses").upsert(promptRows,{onConflict:"learner_id,curriculum_release_id,unit_id,prompt_key"});if(result.error)throw result.error;}
+ if(promptRows.length){const result=await supabase.from("prompt_responses").upsert(promptRows,{onConflict:"learner_id,curriculum_version,unit_id,prompt_key"});if(result.error)throw result.error;}
 }
 
 export function mergeForTest(local:LearningState,remote:LearningState){return mergeLearningState(local,remote);}

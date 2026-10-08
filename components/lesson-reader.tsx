@@ -11,13 +11,36 @@ import { useLearningStore } from "@/lib/learning-store";
 
 export function LessonReader({grade,term,unitId}:{grade:number;term:number;unitId:string}){
  const router=useRouter();
- const [termData,setTermData]=useState<TermIndex|null>(null); const [unit,setUnit]=useState<UnitContent|null>(null); const [menu,setMenu]=useState(false);
+ const [termData,setTermData]=useState<TermIndex|null>(null); const [unit,setUnit]=useState<UnitContent|null>(null); const [loadError,setLoadError]=useState<string|null>(null); const [menu,setMenu]=useState(false);
  const {state,saveError,completedIds,markComplete,saveResponse,savePromptResponse,setLastOpened}=useLearningStore();
- useEffect(()=>{Promise.all([curriculum.term(grade,term),curriculum.unit(grade,term,unitId)]).then(([t,u])=>{setTermData(t);setUnit(u);setLastOpened(grade,term,unitId);window.scrollTo(0,0);});},[grade,term,unitId,setLastOpened]);
+ useEffect(()=>{
+  let cancelled=false;
+  const unitContext=unitId.match(/^g(\\d+)-t(\\d+)-/);
+  const inferredGrade=unitContext?Number(unitContext[1]):grade;
+  const inferredTerm=unitContext?Number(unitContext[2]):term;
+  const candidates=inferredGrade===grade&&inferredTerm===term ? [{grade,term}] : [{grade,term},{grade:inferredGrade,term:inferredTerm}];
+  (async()=>{
+    setTermData(null);setUnit(null);setLoadError(null);
+    let lastError:unknown;
+    for(const context of candidates){
+      try{
+        const [t,u]=await Promise.all([curriculum.term(context.grade,context.term),curriculum.unit(context.grade,context.term,unitId)]);
+        if(cancelled)return;
+        setTermData(t);setUnit(u);setLastOpened(context.grade,context.term,unitId);window.scrollTo(0,0);
+        if(context.grade!==grade||context.term!==term) router.replace("/learn/"+context.grade+"/term/"+context.term+"/"+unitId);
+        return;
+      }catch(error){lastError=error;}
+    }
+    if(!cancelled)setLoadError(lastError instanceof Error?lastError.message:"Lesson could not be opened.");
+  })();
+  return ()=>{cancelled=true;};
+ },[grade,term,unitId,setLastOpened,router]);
  const sequence=useMemo<UnitSummary[]>(()=>termData?[...termData.units,...termData.assessments]:[],[termData]);
  const pos=sequence.findIndex(x=>x.id===unitId); const prev=pos>0?sequence[pos-1]:null; const next=pos>=0&&pos<sequence.length-1?sequence[pos+1]:null;
  const response=state.responses[unitId]??""; const complete=completedIds.has(unitId); const pct=sequence.length?Math.round((Math.max(pos,0)+1)/sequence.length*100):0;
- if(!unit||!termData) return <div className="reader-loading">Opening lesson…</div>;
+ if(!unit||!termData) return loadError
+  ? <div className="reader-loading"><strong>Lesson unavailable</strong><p>{loadError}</p><button type="button" onClick={()=>router.push("/learn/"+(state.profile?.grade??state.activeGrade??8))}>Return to grade map</button></div>
+  : <div className="reader-loading">Opening lesson…</div>;
  const unitHref=(u:UnitSummary)=>`/learn/${grade}/term/${term}/${u.id}`;
  return <div className="reader-shell" data-presentation-contract="applied-commerce-v2">
   <header className="reader-topbar">
