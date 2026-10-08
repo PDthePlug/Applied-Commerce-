@@ -44,6 +44,7 @@ export function InstitutionAdmin() {
 
   const loadSchools = useCallback(async () => {
     if (!user) return;
+    const supabase = createClient();
     const supabase = getSupabase();
     const { data: memberships, error: membershipError } = await supabase.from("school_memberships")
       .select("id,user_id,school_id,role,status").eq("user_id",user.id).in("role",["owner","admin"]).eq("status","active");
@@ -77,6 +78,7 @@ export function InstitutionAdmin() {
   const loadCohort = useCallback(async (cohortId:string) => {
     if(!cohortId){setStaff([]);setEnrolments([]);return;}
     const supabase = getSupabase();
+    const supabase = createClient();
     const [{data:staffRows,error:staffError},{data:enrolmentRows,error:enrolmentError}]=await Promise.all([
       supabase.from("cohort_staff").select("id,cohort_id,user_id,role,status").eq("cohort_id",cohortId),
       supabase.from("cohort_enrolments").select("id,cohort_id,learner_id,status").eq("cohort_id",cohortId)
@@ -118,6 +120,7 @@ export function InstitutionAdmin() {
   async function createSchool() {
     const supabase = getSupabase();
     await run(async()=>{
+      const supabase = createClient();
       const {data,error}=await supabase.rpc("create_school",{p_name:schoolName.trim(),p_slug:schoolSlug.trim().toLowerCase()});
       if(error) throw error;
       if(!data) throw new Error("School was not created.");
@@ -130,6 +133,7 @@ export function InstitutionAdmin() {
     const supabase = getSupabase();
     await run(async()=>{
       if(!selectedSchool) throw new Error("Select a school first.");
+      const supabase = createClient();
       const {error}=await supabase.rpc("add_school_member_by_email",{
         p_school_id:selectedSchool,p_email:memberEmail.trim(),p_role:memberRole
       });
@@ -142,6 +146,7 @@ export function InstitutionAdmin() {
     const supabase = getSupabase();
     await run(async()=>{
       if(!selectedSchool) throw new Error("Create or select a school first.");
+      const supabase = createClient();
       const {error}=await supabase.from("cohorts").insert({
         school_id:selectedSchool,name:cohortName.trim(),grade:Number(grade),
         academic_year:Number(academicYear),status:"active"
@@ -155,6 +160,7 @@ export function InstitutionAdmin() {
     const supabase = getSupabase();
     await run(async()=>{
       if(!selectedCohort) throw new Error("Select a cohort first.");
+      const supabase = createClient();
       const {error}=await supabase.rpc("add_cohort_staff_by_email",{
         p_cohort_id:selectedCohort,p_email:staffEmail.trim(),p_role:staffRole
       });
@@ -167,6 +173,7 @@ export function InstitutionAdmin() {
     const supabase = getSupabase();
     await run(async()=>{
       if(!selectedCohort) throw new Error("Select a cohort first.");
+      const supabase = createClient();
       const {error}=await supabase.rpc("enrol_learner_by_email",{
         p_cohort_id:selectedCohort,p_email:learnerEmail.trim()
       });
