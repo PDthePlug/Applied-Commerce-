@@ -37,7 +37,7 @@ export async function loadSupabaseFacilitatorWorkspace(userId: string): Promise<
   if (!cohortIds.length) return null;
 
   const [cohorts, enrolments, release] = await Promise.all([
-    supabase.from("cohorts").select("id,name,school_id,grade").in("id", cohortIds).eq("status", "active"),
+    supabase.from("cohorts").select("id,name,school_id,grade,academic_year").in("id", cohortIds).eq("status", "active"),
     supabase.from("cohort_enrolments").select("cohort_id,learner_id,status").in("cohort_id", cohortIds).in("status", ["active", "completed"]),
     supabase.from("curriculum_releases").select("id").eq("release_key", RELEASE).single()
   ]);
@@ -45,8 +45,20 @@ export async function loadSupabaseFacilitatorWorkspace(userId: string): Promise<
   if (enrolments.error) throw enrolments.error;
   if (release.error) throw release.error;
 
+  const activeCohorts = cohorts.data ?? [];
+  const schoolIds = [...new Set(activeCohorts.map(row => row.school_id))];
+  const schoolsResult = schoolIds.length
+    ? await supabase.from("schools").select("id,name").in("id", schoolIds)
+    : { data: [], error: null };
+  if (schoolsResult.error) throw schoolsResult.error;
+  const schoolNames = (schoolsResult.data ?? []).map(row => row.name);
+  const schoolName = schoolNames.join(" · ") || "Assigned school";
+  const cohortName = activeCohorts
+    .map(row => `${row.name} · Grade ${row.grade} · ${row.academic_year}`)
+    .join(" · ") || "Assigned cohort";
+
   const learnerIds = [...new Set((enrolments.data ?? []).map(row => row.learner_id))];
-  if (!learnerIds.length) return { mode: "supabase", cohortIds, cohortName: (cohorts.data ?? []).map(row => row.name).join(" · ") || "Assigned cohort", schoolName: "Assigned school", learners: [] };
+  if (!learnerIds.length) return { mode: "supabase", cohortIds, cohortName, schoolName, learners: [] };
 
   const releaseId = release.data.id;
   const [profiles, learnerProfiles, progress, prompts, notes, evidence] = await Promise.all([
@@ -147,8 +159,8 @@ export async function loadSupabaseFacilitatorWorkspace(userId: string): Promise<
   return {
     mode: "supabase",
     cohortIds,
-    cohortName: (cohorts.data ?? []).map(row => row.name).join(" · ") || "Assigned cohort",
-    schoolName: "Assigned school",
+    cohortName,
+    schoolName,
     learners
   };
 }
