@@ -46,7 +46,7 @@ for(const meta of index.grades){
     if(block.kind==="text"&&["activity","reflection","checkpoint","portfolio"].includes(block.type))responseBlocks++;
    }
    const reasons=[];
-   if(unit.blocks.length>=45) reasons.push("large-unit");
+   if(unit.blocks.length>=75) reasons.push("large-unit");
    if(maxColumns>=7) reasons.push("wide-table");
    if(longTextBlocks>=2) reasons.push("multiple-long-text-blocks");
    if(responseBlocks>=10) reasons.push("response-dense");
