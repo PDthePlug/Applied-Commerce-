@@ -67,6 +67,7 @@ export function FacilitatorWorkspace(){
 
   const remoteLearner=remoteWorkspace?.learners.find(item=>item.id===selectedLearnerId)??remoteWorkspace?.learners[0]??null;
   const activeState=remoteLearner?.state??state;
+  const localPromptResponses=state.promptResponses;
   const reviews=remoteLearner?.reviews??localReviews;
   const grade=activeState.profile?.grade??activeState.activeGrade;
   const learnerName=activeState.profile?.displayName?.trim()||"Current learner";
@@ -109,13 +110,13 @@ export function FacilitatorWorkspace(){
         const gradeIndex=await curriculum.grade(grade);
         if(cancelled)return;
         setGradeLessonTotal(gradeIndex.unitCount);
-        const unitIds=new Set(Object.keys(activeState.promptResponses).map(key=>key.split("::prompt-")[0]).filter(Boolean));
+        const unitIds=new Set(Object.keys(localPromptResponses).map(key=>key.split("::prompt-")[0]).filter(Boolean));
         if(!unitIds.size){setRecords([]);setLoading(false);return;}
         const refs:UnitRef[]=gradeIndex.terms.flatMap(term=>
           [...term.units,...term.assessments].map(unit=>({id:unit.id,term:term.term}))
         ).filter(item=>unitIds.has(item.id));
         const units=await Promise.all(refs.map(ref=>curriculum.unit(grade,ref.term,ref.id)));
-        const next=units.flatMap(unit=>buildEvidenceRecords(unit,activeState.promptResponses));
+        const next=units.flatMap(unit=>buildEvidenceRecords(unit,localPromptResponses));
         if(!cancelled){
           setRecords(next);
           setSelectedKey(current=>next.some(record=>record.responseKey===current)?current:(next[0]?.responseKey??""));
