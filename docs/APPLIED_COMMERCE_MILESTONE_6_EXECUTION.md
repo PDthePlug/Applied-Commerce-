@@ -19,9 +19,7 @@ The live production database now contains the governed runtime release `ac-runti
 
 Learner progress, prompt responses and notes were reconciled from the legacy `runtime-3` label to `ac-runtime-3`. Duplicate legacy rows were removed only where a corresponding release-labelled row already existed and the learner content was identical; progress timestamp differences were stale duplicate metadata, with the existing release-labelled row retained.
 
-All 13 lesson-progress rows, 31 prompt-response rows and 1 lesson-note row are now bound to the release UUID.
-
-The release remains explicitly not source-fingerprinted because canonical curriculum manuscripts are still not repository-governed.
+All learner progress, prompt-response, lesson-note, portfolio-artifact and portfolio-evidence rows are now release-bound. The release remains explicitly not source-fingerprinted because canonical curriculum manuscripts are still not repository-governed.
 
 ### Facilitator activation
 
@@ -42,11 +40,22 @@ Facilitator evidence writes use a narrowly scoped database function. The functio
 
 - requires an authenticated caller;
 - checks the existing learner-review authorization helper;
+- runs as `SECURITY INVOKER`;
+- relies on explicit evidence-record RLS for facilitator insert/update scope;
 - upserts one evidence record per learner/response identity;
 - is executable by authenticated users only;
 - is not executable by anonymous users.
 
-Reviews continue to use the existing evidence review table and its learner/staff RLS boundary.
+Reviews continue to use the existing `evidence_reviews` table and its learner/staff RLS boundary.
+
+### Migration provenance
+
+The live migration history records:
+
+- `20261008174811 milestone_6_operational_activation`
+- `20261008174922 milestone_6_security_and_migration_reconciliation`
+
+The repository migration filenames now match those live versions. No second or parallel Milestone 6 schema was introduced.
 
 ### Known boundary
 
@@ -59,8 +68,13 @@ School/cohort administration is intentionally not added here. It should be imple
 - release reconciliation verified directly against production Supabase;
 - no remaining `runtime-3` learner rows;
 - all learner progress/responses/notes are release-bound;
+- portfolio records are release-bound;
 - facilitator access is mediated by existing cohort RLS;
+- facilitator evidence writes use invoker security plus RLS;
+- anonymous execution of the facilitator write function is denied;
 - repository contract tests cover release-aware persistence and facilitator activation.
+
+The remaining Supabase security advisor warning is **Leaked Password Protection Disabled**, which is an Auth configuration item rather than a Milestone 6 data-access defect.
 
 ## Deferred
 
