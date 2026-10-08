@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { AppShell } from "@/components/app-shell";
+import { AuthProvider } from "@/lib/auth-context";
 
 export const metadata: Metadata = {
   title: { default: "Applied Commerce", template: "%s · Applied Commerce" },
@@ -8,5 +9,5 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({children}:{children:React.ReactNode}) {
-  return <html lang="en"><body><AppShell>{children}</AppShell></body></html>;
+  return <html lang="en"><body><AuthProvider><AppShell>{children}</AppShell></AuthProvider></body></html>;
 }

@@ -27,7 +27,7 @@ export function persistResponseKey(unitId:string,blocks:ContentBlock[],viewKey:s
   return stableResponseKey(unitId,block,match[2]);
 }
 
-export const emptyLearningState:LearningState={version:2,completed:{},responses:{},promptResponses:{},previousResponses:{}};
+export const emptyLearningState:LearningState={version:2,completed:{},completedMeta:{},responses:{},promptResponses:{},previousResponses:{}};
 export function parseLearningState(raw:string):LearningState{
   const value=JSON.parse(raw);
   if(value.version!==1&&value.version!==2) throw new Error("Unsupported learning record. Your saved data has not been changed.");

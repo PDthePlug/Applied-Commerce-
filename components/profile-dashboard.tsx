@@ -6,10 +6,13 @@ import { ArrowRight, Archive, BookOpenCheck, Database, NotebookPen } from "lucid
 import { curriculum } from "@/lib/curriculum";
 import type { CurriculumIndex } from "@/lib/types";
 import { useLearningStore } from "@/lib/learning-store";
+import { AuthPanel } from "@/components/auth-panel";
+import { useAuth } from "@/lib/auth-context";
 
 export function ProfileDashboard(){
   const [index,setIndex]=useState<CurriculumIndex|null>(null);
-  const {state,setProfile}=useLearningStore();
+  const {state,setProfile,syncError}=useLearningStore();
+  const {user}=useAuth();
   useEffect(()=>{curriculum.index().then(setIndex)},[]);
 
   const grade=state.profile?.grade ?? state.activeGrade ?? 8;
@@ -69,9 +72,11 @@ export function ProfileDashboard(){
         <Link href="/portfolio">Review notes <ArrowRight/></Link>
       </article>
 
+      <AuthPanel compact />
+      {syncError&&<p role="alert" className="auth-error">{syncError}</p>}
       <aside className="profile-record-note">
         <Database aria-hidden="true"/>
-        <div><strong>Your learning record currently stays on this device.</strong><p>When learner accounts are introduced, this profile will become the place your progress and portfolio travel with you.</p></div>
+        <div><strong>{user ? "Your learning record is linked to this account." : "Your learning record currently stays on this device."}</strong><p>{user ? "Changes continue to save locally first and sync to the account in the background." : "Create or sign in to an account to add cross-device recovery without losing the local record."}</p></div>
       </aside>
     </section>
   </div>;

@@ -74,6 +74,7 @@ export type LearningState = {
   previousResponses: Record<string, string>;
   activeGrade?: number;
   completed: Record<string, string>;
+  completedMeta?: Record<string, { grade: number; term: number }>;
   responses: Record<string, string>;
   promptResponses: Record<string, string>;
   profile?: LearnerProfile;
