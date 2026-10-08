@@ -111,3 +111,8 @@ Repository CI remains the release gate:
 - presentation census.
 
 The milestone should not be considered closed until the PR and post-merge main CI are green.
+
+
+## UI/data boundary
+
+The administration screen is a client-facing operational surface, but authorization is not delegated to the UI. Every institution-management mutation is enforced by Supabase function checks and RLS; the browser only determines which controls to present.
