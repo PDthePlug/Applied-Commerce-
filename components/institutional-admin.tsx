@@ -83,12 +83,13 @@ export function InstitutionalAdmin() {
   }
 
   useEffect(() => {
-    if (!user) return;
+    const currentUser = user;
+    if (!currentUser) return;
     let cancelled = false;
 
     async function load() {
       try {
-        const context = await loadInstitutionalContext(user.id);
+        const context = await loadInstitutionalContext(currentUser.id);
         if (cancelled) return;
         setSchools(context.schools);
         setMemberships(context.memberships as Membership[]);
