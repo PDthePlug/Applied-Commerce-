@@ -109,3 +109,8 @@ The database foundation is now ready for the next controlled slice:
 7. only then enable Supabase backend mode in Vercel.
 
 No application persistence switch has been made yet.
+
+
+## Milestone 2 application persistence gate
+
+The application now contains a Supabase Auth/browser-server client layer and a persistence adapter behind the existing `learning-store`. Browser-local state remains the first safe write; authenticated reconciliation is local-first and remote sync is debounced. Production Supabase environment variables are intentionally not enabled yet. The next gate is authenticated end-to-end recovery and learner-isolation certification before enabling backend persistence in Vercel.
