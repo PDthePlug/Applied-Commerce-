@@ -190,7 +190,7 @@ export function InstitutionalAdmin() {
           <div>
             <p className="eyebrow">First institution</p>
             <h2>Create the school record</h2>
-            <p>This uses the existing production school/membership model. The account becomes the school owner; no parallel institution record is created.</p>
+            <p>This creates an institution in the existing production model. Institution administrators are assigned separately; global authority is never granted by creating an institution.</p>
             <form onSubmit={(event) => {
               event.preventDefault();
               void run(async () => {
