@@ -18,6 +18,10 @@ const fixtures = {
     path: "/learn/12/term/1/g12-t1-l05-005",
     title: "MYAH'S FIRST BIG DECISION — THE DECISION MATRIX",
   },
+  wideTableOutlier: {
+    path: "/learn/10/term/2/g10-t2-l33-033",
+    title: "PROJECT WORKSHOP — PLANNING",
+  },
   assessment: {
     path: "/learn/9/term/1/g9-t1-assessment-1",
     title: "GRADE 9 TERM 1 MOCK EXAM",
@@ -163,7 +167,41 @@ test.describe("Applied Commerce Presentation Architecture 2.0", () => {
     expect(metrics.fontSize).toBeGreaterThanOrEqual(34);
     expect(metrics.lineHeight).toBeGreaterThan(metrics.fontSize * 0.9);
 
+    if ((page.viewportSize()?.width ?? 1280) <= 620) {
+      const tableOverflow = await page.locator(".source-table-wrap:not(.wide-source-table)").evaluateAll((nodes) =>
+        nodes.map((node) => ({
+          clientWidth: node.clientWidth,
+          scrollWidth: node.scrollWidth,
+        })),
+      );
+      for (const table of tableOverflow) {
+        expect(table.scrollWidth).toBeLessThanOrEqual(table.clientWidth + 1);
+      }
+    }
+
     await attachEvidence(page, testInfo, "long-title");
+  });
+
+  test("wide-table outlier preserves table geometry without creating page overflow", async ({ page }, testInfo) => {
+    await openFixture(page, fixtures.wideTableOutlier);
+    await expectViewportIntegrity(page);
+
+    const wide = page.locator(".wide-source-table").first();
+    await expect(wide).toHaveAttribute("role", "region");
+    await expect(wide).toHaveAttribute("tabindex", "0");
+
+    if ((page.viewportSize()?.width ?? 1280) <= 620) {
+      const metrics = await wide.evaluate((node) => ({
+        clientWidth: node.clientWidth,
+        scrollWidth: node.scrollWidth,
+        overflowX: getComputedStyle(node).overflowX,
+      }));
+      expect(["auto", "scroll"]).toContain(metrics.overflowX);
+      expect(metrics.scrollWidth).toBeGreaterThanOrEqual(metrics.clientWidth);
+      await wide.focus();
+    }
+
+    await attachEvidence(page, testInfo, "wide-table-outlier");
   });
 
   test("formal assessment answers use assessment surfaces and real controls", async ({ page }, testInfo) => {
