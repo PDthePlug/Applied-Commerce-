@@ -51,9 +51,9 @@ export function LessonReader({grade,term,unitId}:{grade:number;term:number;unitI
       <div className="workbook-title"><NotebookPen/><div><p className="eyebrow">Lesson notes</p><h2>Anything you want to remember</h2></div></div>
       <p>Your responses are captured beside each activity, reflection, table and workbook field. Use this separate space only for extra notes you want to keep about the lesson.</p>
       <textarea value={response} onChange={e=>saveResponse(unitId,e.target.value)} placeholder="Add a note about this lesson…" rows={6}/>
-      <div className="workbook-actions"><span>{response?"Note kept on this device":"No lesson note yet"}</span><button className={complete?"completed":""} onClick={()=>markComplete(unitId,!complete)}>{complete?<><CheckCircle2/>Completed</>:<><Check/>Mark lesson complete</>}</button></div>
+      <div className="workbook-actions"><span>{response?"Note kept on this device":"No lesson note yet"}</span><button className={complete?"completed":""} onClick={()=>markComplete(unitId,!complete,{grade,term})}>{complete?<><CheckCircle2/>Completed</>:<><Check/>Mark lesson complete</>}</button></div>
       <button className="lesson-complete-continue" type="button" disabled={Boolean(saveError)} onClick={()=>{
-        if(markComplete(unitId,true)) router.push(next?unitHref(next):`/learn/${grade}`);
+        if(markComplete(unitId,true,{grade,term})) router.push(next?unitHref(next):`/learn/${grade}`);
       }}>Complete and continue<ArrowRight aria-hidden="true"/></button>
     </section>
     <footer className="reader-footer">
