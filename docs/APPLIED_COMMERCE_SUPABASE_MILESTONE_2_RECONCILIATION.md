@@ -1,13 +1,14 @@
 # Applied Commerce Supabase Milestone 2 Reconciliation
 
-**Status:** schema foundation reconciled; production application intentionally deferred
+**Status:** live schema reconciled and Milestone 2 database foundation applied  
 **Date:** 8 October 2026
 
 ## Finding
 
-Milestone 2 started from an assumption that AC still needed its initial Supabase domain foundation. Repository evidence shows that this foundation already exists or was previously applied before the production project was paused.
+The live Applied Commerce Supabase database already contained the AC core domain. Repository evidence and live inspection confirmed that the correct path was to extend that schema rather than introduce a generic replacement.
 
-Existing AC backend vocabulary includes:
+Existing AC boundaries include:
+
 - profiles
 - learner_profiles
 - schools
@@ -21,50 +22,90 @@ Existing AC backend vocabulary includes:
 - portfolio_artifacts
 - portfolio_evidence
 
-A staged evidence/assessment migration also exists at supabase/migrations/20261004193000_evidence_assessment_engine.sql. It adds evidence definitions, rubrics, evidence records, reviews and report snapshots, but the activation documentation explicitly says it has not been applied while the project is paused.
+The live migration history confirmed:
 
-## Architecture correction
+- `20260930150116 applied_commerce_core_tables`
+- `20260930150212 applied_commerce_security_policies`
 
-The AC Supabase work will extend the existing domain model. It will not replace it with a generic learner/institution schema and will not copy BIS tables.
+The previously staged evidence/assessment migration was also compatible with the live core schema and has now been applied.
 
-Conceptual Milestone 2 mapping:
+## Milestone 2 changes
 
-| Platform concern | Existing AC boundary | Milestone 2 treatment |
-| --- | --- | --- |
-| Identity | profiles / learner_profiles / auth.users | Preserve and inspect live columns before adapter work |
-| Institution boundary | schools / school_memberships | Preserve existing terminology and authorization model |
-| Learning grouping | cohorts / cohort_staff / cohort_enrolments | Preserve cohort assignment semantics |
-| Lesson state | lesson_progress | Reconcile with the local learning-store contract |
-| Stable learner answers | prompt_responses | Preserve stable prompt identities; no positional migration |
-| Notes | lesson_notes | Keep separate from correctness/evidence |
-| Portfolio | portfolio_artifacts / portfolio_evidence | Extend existing provenance model |
-| Evidence | evidence_* migration | Apply only after live-schema inspection |
-| Curriculum release | not yet verified live | Add only after determining existing release/version fields |
-| Audit/recovery | not yet verified live | Design after inspecting existing audit/history conventions |
+The live database now additionally contains:
 
-## Current database gate
+- evidence definitions and rubric templates;
+- evidence records and reviews;
+- report snapshots;
+- curriculum releases;
+- curriculum-release references on learner state and portfolio records;
+- assessment attempts;
+- audit events;
+- cohort/school-scoped evidence review authorization;
+- audit-event client isolation;
+- supporting foreign-key and release indexes.
 
-The production project ref is vxmcykmrqubwlysrqjyt and is inactive. A restore attempt was rejected because the organisation has reached its active free-project limit. Direct database inspection also timed out while the project was inactive.
+The resulting migration history is:
 
-Therefore no production DDL has been executed during this Milestone 2 slice.
+- `20261008114756 evidence_assessment_engine`
+- `20261008114817 ac_curriculum_release_bridge`
+- `20261008114853 ac_evidence_scope_and_audit_guard`
+- `20261008114930 ac_rls_performance_hardening`
 
-## Required next database sequence
+## Why the first proposed schema was rejected
 
-Once an AC Supabase environment can be queried:
+A generic replacement schema was briefly staged during implementation. Live inspection showed that it did not match the actual AC backend.
 
-1. Restore or create an AC development/branch environment without deleting the existing project.
-2. Pull/list the live migration history.
-3. Inspect all public tables and columns.
-4. Inspect existing private authorization helpers and their dependencies.
-5. Compare the live schema with the repository migrations and activation documentation.
-6. Apply or repair migration history only when the actual schema is known.
-7. Run security and performance advisors.
-8. Add the smallest compatible migration needed for curriculum-release/version coupling and durable state.
-9. Run pgTAP RLS tests for learner, cohort-staff and school-admin isolation.
-10. Generate database types and then implement the application persistence adapter.
+It was removed from GitHub before becoming the source of truth and was never applied to production.
 
-## Safety decision
+That correction is important: the production database, existing AC terminology and existing authorization model remain authoritative.
 
-The duplicate initial migration briefly staged during implementation was removed after repository evidence exposed the existing AC backend foundation. This prevents an unverified second schema from becoming the new source of truth.
+## Security result
 
-That correction is itself part of the Milestone 2 engineering discipline: inspect the actual system before changing the schema.
+The live schema was inspected directly.
+
+Existing AC security-definer helpers were verified with an empty search path:
+
+- `private.can_view_learner`
+- `private.has_school_role`
+- `private.is_cohort_staff_member`
+- `private.handle_new_auth_user`
+
+Milestone 2 adds `private.can_review_learner` for staff-only evidence review authorization.
+
+Supabase security advisors currently return **no security lints**.
+
+## Source-governance boundary
+
+Canonical curriculum manuscripts are still not repository-governed. The database therefore does not contain a fabricated source hash or a false source-verified curriculum release.
+
+`curriculum_releases` records release identity and runtime/compiler metadata, while `source_release_key` remains nullable until source governance is completed.
+
+## Verification
+
+The live database passed the foundation smoke assertions for:
+
+- required AC domain tables;
+- RLS on response/evidence/assessment/audit surfaces;
+- stable response/release uniqueness;
+- evidence scope;
+- review scope;
+- audit client isolation;
+- review authorization helper.
+
+Generated TypeScript database types are committed at:
+
+`lib/supabase/database.types.ts`
+
+## Next application gate
+
+The database foundation is now ready for the next controlled slice:
+
+1. add the Supabase client/auth boundary;
+2. implement a persistence adapter behind the existing `learning-store` contract;
+3. preserve stable prompt keys exactly;
+4. reconcile browser-local state into durable records;
+5. test save/retry/recovery behaviour;
+6. certify learner isolation and facilitator visibility;
+7. only then enable Supabase backend mode in Vercel.
+
+No application persistence switch has been made yet.
