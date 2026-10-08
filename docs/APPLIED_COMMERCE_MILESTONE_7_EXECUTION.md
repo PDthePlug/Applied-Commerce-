@@ -1,120 +1,118 @@
-# Applied Commerce — Milestone 7: Institutional Provisioning Activation
+# Applied Commerce — Milestone 7: Institutional Provisioning
 
 ## Purpose
 
-Milestone 7 activates the institutional provisioning layer that already exists in the live AC architecture.
+Milestone 7 turns the institutional data model activated in Milestone 6 into an operational provisioning path.
 
-The goal is not to introduce another institution, school, cohort or roster model. The existing Supabase model is now exposed through an operational management surface so a real institution can be provisioned into the same cohort/facilitator path already activated in Milestone 6.
+It does **not** introduce a second facilitator system, reporting model or institutional data model. It populates the existing:
 
-## Repository + live-schema audit
+- schools;
+- school memberships;
+- cohorts;
+- cohort staff;
+- cohort enrolments.
 
-Before implementation, the live production schema was checked rather than assuming the repository was the complete source of the current database contract.
+The existing facilitator workspace can then consume real institutional assignments instead of depending on a future manual database setup.
 
-The live database already contains:
+## What was audited first
+
+The live production schema already contained the complete institutional relationship model and RLS:
 
 - schools
 - school_memberships
 - cohorts
 - cohort_staff
 - cohort_enrolments
-- RLS policies for school administration, cohort administration, cohort staff and enrolments
-- public.create_school
-- public.add_school_member_by_email
-- public.add_cohort_staff_by_email
-- public.enrol_learner_by_email
-- corresponding private.*_impl authorization functions
 
-The public RPC wrappers are SECURITY INVOKER; the privileged implementation functions are confined to the private schema, use SECURITY DEFINER with an empty search path, and perform explicit authorization checks.
+Milestone 6 had already wired the facilitator workspace to those tables.
 
-No second institutional schema was created.
+The missing capability was administration: there was no operational UI or safe provisioning path for creating a school, assigning staff, creating cohorts or enrolling learners.
 
-## Activation delivered
+The join tables also had no uniqueness constraints for school/member, cohort/staff or cohort/learner relationships. Those are now enforced.
 
-### Institution operations
+## Operational surface
 
-Added:
+A new authenticated route, /institution-admin, provides the minimum real provisioning workflow:
 
-- /institutions/manage
-- components/institutional-admin.tsx
-- lib/institutional/provisioning.ts
+1. create an institution;
+2. establish the signed-in account as owner;
+3. add existing Applied Commerce accounts to the school;
+4. create Grade 8–12 cohorts for an academic year;
+5. assign existing accounts as cohort staff;
+6. enrol existing learner accounts;
+7. inspect the resulting school, staff and learner relationships.
 
-The surface supports:
+This is deliberately an operational console rather than a new institutional dashboard.
 
-1. creating the first school/institution through the existing create_school contract;
-2. selecting an existing institution for accounts that already belong to one;
-3. creating active cohorts with grade and academic year;
-4. adding existing Applied Commerce accounts to the institution as administrators or educators;
-5. assigning existing accounts to cohorts as lead/educator/assistant staff;
-6. enrolling existing accounts as learners;
-7. seeing the real selected-cohort learner/staff roster;
-8. opening the existing facilitator workspace from the institutional operations surface.
+## Authorization
 
-The learner and staff actions use the existing email-based provisioning RPCs rather than exposing auth.users or introducing a client-side account directory.
+The database remains the authority.
 
-## Security boundary
+- School owners/admins can manage school memberships and cohorts.
+- School owners/admins can assign cohort staff.
+- Cohort staff and school owners/admins can manage cohort enrolments.
+- Existing learner/staff RLS remains the boundary for learner data.
+- Bootstrap creation is authenticated only.
+- Email-based account resolution is restricted to authorised school administrators.
+- Provisioning actions write audit events.
 
-The operations UI does not bypass Supabase RLS.
+The privileged Auth-schema lookups are kept in the private schema. Public RPC entry points are SECURITY INVOKER wrappers. This avoids exposing SECURITY DEFINER provisioning endpoints through the public API surface.
 
-School/cohort writes remain controlled by the existing policies and authorization helpers. The existing privileged implementation functions remain in the private schema. Public wrappers remain invoker functions.
+## Migration
 
-This follows the current Supabase guidance to prefer invoker functions and to keep genuinely privileged definer logic narrowly scoped with an explicit search_path. citeturn8search0turn8search5
+Live production migration:
 
-## Browser contract
+- 20261008182352 milestone_7_institution_provisioning
 
-Added browser coverage for:
+The migration adds:
 
-- unauthenticated /institutions/manage access;
-- safe sign-in gating;
-- viewport integrity;
-- the public /institutions entry point to institution operations.
+- unique institutional relationship indexes;
+- supporting access indexes;
+- school/cohort/staff/enrolment write policies;
+- cohort-admin authorization helper;
+- authenticated provisioning RPC wrappers and private implementations;
+- explicit authenticated grants.
 
-The existing full presentation suite continues to certify the learner/facilitator surfaces.
+## Security verification
 
-## Live production state at implementation time
+Direct production checks passed for:
 
-Verified directly against production Supabase:
+- unique school membership identity;
+- unique cohort staff identity;
+- unique cohort enrolment identity;
+- cohort administration select/write policies;
+- cohort staff write policy;
+- enrolment write policy;
+- invoker-safe public provisioning wrappers;
+- private security-definer implementation isolation;
+- anonymous execution denied.
 
-- schools: 0
-- cohorts: 0
-- cohort staff: 0
-- cohort enrolments: 0
-- governed runtime release ac-runtime-3: 1
-- unbound lesson progress rows: 0
-- unbound prompt responses: 0
+Supabase Security Advisor now shows no Milestone 7 provisioning-function warning.
 
-This means the institutional operations layer is ready for real provisioning, but no fabricated institution or cohort data was inserted to make the screen appear populated.
+The remaining independent Auth warning is **Leaked Password Protection Disabled**. That is an Auth configuration item, not a provisioning data-access defect.
 
-## Schema reconciliation boundary
+## Deliberate boundary
 
-The audit identified that several live institutional provisioning functions originate from the earlier live AC schema work and are not represented by the repository's original core migration files.
+This milestone provisions **existing Applied Commerce accounts**.
 
-Milestone 7 therefore does not pretend that repository migration history is fully reconstructable. The generated Supabase TypeScript contract has been refreshed from the live schema so the application reflects the actual production API contract.
+It does not yet implement invitation-email delivery or bulk learner import. Supabase's Auth Admin invitation API requires a trusted server environment and secret key; that should be added as a separate controlled capability rather than exposing privileged Auth credentials to the browser.
 
-A separate migration-history reconciliation remains a governance task; it is not mixed into the application activation work.
+## Verification gate
 
-## Verification
+Repository CI remains the release gate:
 
-- live function contracts verified;
-- public provisioning wrappers verified as invoker functions;
-- private implementation functions verified as definer functions;
-- institutional RLS policies verified;
-- no institutional production records fabricated;
-- release-bound learner state remains intact;
-- generated database types synchronized with live Supabase;
-- browser coverage added.
+- task identity tests;
+- curriculum tests;
+- Milestone 7 database contract tests;
+- typecheck;
+- lint;
+- production build;
+- browser presentation acceptance;
+- presentation census.
 
-## Known Supabase advisor items
+The milestone should not be considered closed until the PR and post-merge main CI are green.
 
-Security Advisor continues to report the independent Auth warning Leaked Password Protection Disabled.
 
-Performance Advisor also reports unused indexes, plus existing multiple-permissive-policy and duplicate-index findings. These pre-date this activation and are not treated as reasons to remove indexes that support the operational access model. They should be handled in a dedicated database-hardening pass rather than mixed into institutional feature work.
+## UI/data boundary
 
-## Deferred
-
-- email invitation sending / new-account provisioning;
-- bulk CSV learner import;
-- institution-level programme management;
-- advanced institutional analytics;
-- sponsor reporting;
-- canonical curriculum source fingerprinting;
-- full reconstruction of the historical repository migration chain.
+The administration screen is a client-facing operational surface, but authorization is not delegated to the UI. Every institution-management mutation is enforced by Supabase function checks and RLS; the browser only determines which controls to present.
