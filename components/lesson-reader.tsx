@@ -15,12 +15,12 @@ export function LessonReader({grade,term,unitId}:{grade:number;term:number;unitI
  const {state,saveError,completedIds,markComplete,saveResponse,savePromptResponse,setLastOpened}=useLearningStore();
  useEffect(()=>{
   let cancelled=false;
-  setTermData(null);setUnit(null);setLoadError(null);
   const unitContext=unitId.match(/^g(\\d+)-t(\\d+)-/);
   const inferredGrade=unitContext?Number(unitContext[1]):grade;
   const inferredTerm=unitContext?Number(unitContext[2]):term;
   const candidates=inferredGrade===grade&&inferredTerm===term ? [{grade,term}] : [{grade,term},{grade:inferredGrade,term:inferredTerm}];
   (async()=>{
+    setTermData(null);setUnit(null);setLoadError(null);
     let lastError:unknown;
     for(const context of candidates){
       try{
