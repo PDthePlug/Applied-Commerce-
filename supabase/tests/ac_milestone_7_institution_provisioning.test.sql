@@ -78,3 +78,5 @@ select case when exists (
   join pg_namespace n on n.oid=p.pronamespace
   where n.nspname='private' and p.proname='is_cohort_admin' and p.prosecdef=true
 ) then 'ok' else 'fail' end as cohort_admin_helper_secure;
+
+select case when exists (select 1 from pg_policies where tablename='profiles' and policyname='profiles_select' and qual like '%school_memberships%') then 'ok' else 'fail' end as school_admin_profile_visibility;
