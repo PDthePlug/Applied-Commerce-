@@ -63,3 +63,16 @@ When the project is active again, the shared persistence implementation should m
 Stable prompt identities must not change during that migration.
 
 See `ACTIVATION.md` for the activation sequence and acceptance gates.
+
+
+## Milestone 2 reconciliation
+
+The existing repository documentation establishes that the AC core schema was previously prepared/applied before the Supabase project was paused, and that the evidence/assessment migration is staged but not applied. Therefore Milestone 2 must **extend and reconcile the existing AC schema**, not introduce a second initial domain model.
+
+On 8 October 2026 the production project was checked through the Supabase management connection. The project is inactive, and the database query connection timed out. An attempted restore was rejected because the organisation has reached its active free-project limit. No production schema mutation was made.
+
+A temporary duplicate foundation migration was therefore removed from the repository after the existing backend README revealed the prior core schema. This is intentional: an unverified second schema would violate the migration discipline being introduced.
+
+The next database change, once the project is active or an AC development branch is available, must begin with a live schema pull/inspection and migration-history reconciliation. Only then should the stable curriculum-release bridge, durable learner-state adapter schema, and RLS certification be added.
+
+The source-governance decision is documented separately in docs/APPLIED_COMMERCE_SOURCE_GOVERNANCE_DECISION.md. Source fingerprinting remains blocked until the authoritative manuscripts are repository-governed.
