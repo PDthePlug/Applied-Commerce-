@@ -168,7 +168,7 @@ export async function saveSupabaseFacilitatorReview(learnerId: string, record: E
   if (userError || !userData.user) throw userError ?? new Error("Authentication required");
 
   const payload = {
-    evidence_record_id: recordRow.id,
+    evidence_record_id: recordId,
     reviewer_id: userData.user.id,
     rubric_key: review.rubricKey ?? null,
     status: review.status,
@@ -178,7 +178,7 @@ export async function saveSupabaseFacilitatorReview(learnerId: string, record: E
     updated_at: new Date().toISOString()
   };
 
-  const existing = await supabase.from("evidence_reviews").select("id,reviewer_id").eq("evidence_record_id", recordRow.id).maybeSingle();
+  const existing = await supabase.from("evidence_reviews").select("id,reviewer_id").eq("evidence_record_id", recordId).maybeSingle();
   if (existing.error) throw existing.error;
   if (existing.data) {
     if (existing.data.reviewer_id !== payload.reviewer_id) throw new Error("Evidence has already been reviewed by another facilitator.");
