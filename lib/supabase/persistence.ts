@@ -11,11 +11,14 @@ function emptyState():LearningState{
 
 export async function loadRemoteLearningState(userId:string):Promise<LearningState>{
  const supabase=createClient();
+ const releaseResult=await supabase.from("curriculum_releases").select("id").eq("release_key",CURRICULUM_RUNTIME_RELEASE).single();
+ if(releaseResult.error)throw releaseResult.error;
+ const releaseId=releaseResult.data.id;
  const [profileResult,progressResult,promptResult,notesResult]=await Promise.all([
   supabase.from("learner_profiles").select("preferred_name,current_grade").eq("user_id",userId).maybeSingle(),
-  supabase.from("lesson_progress").select("grade,term,unit_id,status,last_opened_at,completed_at,updated_at").eq("learner_id",userId),
-  supabase.from("prompt_responses").select("unit_id,prompt_key,response,updated_at").eq("learner_id",userId),
-  supabase.from("lesson_notes").select("unit_id,note,updated_at").eq("learner_id",userId),
+  supabase.from("lesson_progress").select("grade,term,unit_id,status,last_opened_at,completed_at,updated_at").eq("learner_id",userId).eq("curriculum_release_id",releaseId),
+  supabase.from("prompt_responses").select("unit_id,prompt_key,response,updated_at").eq("learner_id",userId).eq("curriculum_release_id",releaseId),
+  supabase.from("lesson_notes").select("unit_id,note,updated_at").eq("learner_id",userId).eq("curriculum_release_id",releaseId),
  ]);
  for(const result of [profileResult,progressResult,promptResult,notesResult])if(result.error)throw result.error;
  const remote=emptyState();
@@ -46,18 +49,18 @@ export async function syncLearningState(userId:string,state:LearningState){
 
  const progressRows:TablesInsert<"lesson_progress">[]=Object.entries(state.completed).map(([unitId,completedAt])=>{
   const meta=state.completedMeta?.[unitId];
-  return {learner_id:userId,curriculum_version:CURRICULUM_RUNTIME_RELEASE,grade:meta?.grade??state.activeGrade??8,term:meta?.term??(state.lastOpened?.unitId===unitId?state.lastOpened.term:1),unit_id:unitId,status:"completed",started_at:completedAt,completed_at:completedAt,last_opened_at:state.lastOpened?.unitId===unitId?state.lastOpened.at:completedAt,updated_at:completedAt};
+  return {learner_id:userId,curriculum_version:CURRICULUM_RUNTIME_RELEASE,curriculum_release_id:releaseId,grade:meta?.grade??state.activeGrade??8,term:meta?.term??(state.lastOpened?.unitId===unitId?state.lastOpened.term:1),unit_id:unitId,status:"completed",started_at:completedAt,completed_at:completedAt,last_opened_at:state.lastOpened?.unitId===unitId?state.lastOpened.at:completedAt,updated_at:completedAt};
  });
- if(progressRows.length){const result=await supabase.from("lesson_progress").upsert(progressRows,{onConflict:"learner_id,curriculum_version,unit_id"});if(result.error)throw result.error;}
+ if(progressRows.length){const result=await supabase.from("lesson_progress").upsert(progressRows,{onConflict:"learner_id,curriculum_release_id,unit_id"});if(result.error)throw result.error;}
 
- const noteRows:TablesInsert<"lesson_notes">[]=Object.entries(state.responses).filter(([,note])=>note.trim()).map(([unitId,note])=>({learner_id:userId,curriculum_version:CURRICULUM_RUNTIME_RELEASE,grade:state.activeGrade??8,term:state.lastOpened?.unitId===unitId?state.lastOpened.term:1,unit_id:unitId,note,updated_at:state.responseUpdatedAt?.[unitId]??now}));
+ const noteRows:TablesInsert<"lesson_notes">[]=Object.entries(state.responses).filter(([,note])=>note.trim()).map(([unitId,note])=>({learner_id:userId,curriculum_version:CURRICULUM_RUNTIME_RELEASE,curriculum_release_id:releaseId,grade:state.activeGrade??8,term:state.lastOpened?.unitId===unitId?state.lastOpened.term:1,unit_id:unitId,note,updated_at:state.responseUpdatedAt?.[unitId]??now}));
  if(noteRows.length){const result=await supabase.from("lesson_notes").upsert(noteRows,{onConflict:"learner_id,curriculum_version,unit_id"});if(result.error)throw result.error;}
 
  const promptRows:TablesInsert<"prompt_responses">[]=Object.entries(state.promptResponses).map(([promptKey,response])=>{
   const unitId=promptKey.split("::")[0];
-  return {learner_id:userId,curriculum_version:CURRICULUM_RUNTIME_RELEASE,grade:state.activeGrade??8,term:state.lastOpened?.unitId===unitId?state.lastOpened.term:1,unit_id:unitId,prompt_key:promptKey,response,response_kind:"text",answered_at:state.promptResponseUpdatedAt?.[promptKey]??now,updated_at:state.promptResponseUpdatedAt?.[promptKey]??now};
+  return {learner_id:userId,curriculum_version:CURRICULUM_RUNTIME_RELEASE,curriculum_release_id:releaseId,grade:state.activeGrade??8,term:state.lastOpened?.unitId===unitId?state.lastOpened.term:1,unit_id:unitId,prompt_key:promptKey,response,response_kind:"text",answered_at:state.promptResponseUpdatedAt?.[promptKey]??now,updated_at:state.promptResponseUpdatedAt?.[promptKey]??now};
  });
- if(promptRows.length){const result=await supabase.from("prompt_responses").upsert(promptRows,{onConflict:"learner_id,curriculum_version,unit_id,prompt_key"});if(result.error)throw result.error;}
+ if(promptRows.length){const result=await supabase.from("prompt_responses").upsert(promptRows,{onConflict:"learner_id,curriculum_release_id,unit_id,prompt_key"});if(result.error)throw result.error;}
 }
 
 export function mergeForTest(local:LearningState,remote:LearningState){return mergeLearningState(local,remote);}
