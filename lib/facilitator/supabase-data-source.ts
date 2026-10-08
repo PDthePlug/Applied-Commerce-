@@ -155,14 +155,15 @@ export async function loadSupabaseFacilitatorWorkspace(userId: string): Promise<
 
 export async function saveSupabaseFacilitatorReview(learnerId: string, record: EvidenceRecord, review: EvidenceReview) {
   const supabase = createClient();
-  const { data: recordRow, error: recordError } = await supabase.rpc("upsert_facilitator_evidence_record", {
+  const { data: recordId, error: recordError } = await supabase.rpc("upsert_facilitator_evidence_record", {
     p_learner_id: learnerId,
     p_response_key: record.responseKey,
     p_response_value: record.responseValue,
     p_auto_result: record.autoCheck,
     p_status: review.status
-  }).select("id").single();
+  });
   if (recordError) throw recordError;
+  if (!recordId) throw new Error("Unable to persist the evidence record.");
 
   const { data: userData, error: userError } = await supabase.auth.getUser();
   if (userError || !userData.user) throw userError ?? new Error("Authentication required");
