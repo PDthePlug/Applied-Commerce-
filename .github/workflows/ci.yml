@@ -36,7 +36,10 @@ jobs:
         run: npm test
 
       - name: Typecheck
-        run: npm run typecheck
+        run: |
+          set -o pipefail
+          mkdir -p test-results
+          npm run typecheck -- --pretty false 2>&1 | tee test-results/typecheck.log
 
       - name: Lint
         run: npm run lint
