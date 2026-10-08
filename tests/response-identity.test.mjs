@@ -75,3 +75,31 @@ test('foreign lesson keys and missing task identities cannot be saved',()=>{
  assert.throws(()=>persistResponseKey(unit,blocks,'other::block-1::response'));
  assert.throws(()=>persistResponseKey(unit,[{kind:'text',type:'paragraph',text:'question'}],`${unit}::block-0::response`));
 });
+
+
+const learnerRecordUrl=moduleUrl('lib/learner-record.ts');
+
+test('learner merge prefers the newest known answer and keeps older remote evidence out of the active record',async()=>{
+ const {mergeLearningState}=await import(learnerRecordUrl);
+ const local={version:2,previousResponses:{},completed:{},completedMeta:{},responses:{[unit]:'new local note'},responseUpdatedAt:{[unit]:'2026-10-08T12:00:00.000Z'},promptResponses:{[unit+'::prompt-answer::response']:'new local answer'},promptResponseUpdatedAt:{[unit+'::prompt-answer::response']:'2026-10-08T12:00:00.000Z'}};
+ const remote={version:2,previousResponses:{},completed:{},completedMeta:{},responses:{[unit]:'old remote note'},responseUpdatedAt:{[unit]:'2026-10-08T11:00:00.000Z'},promptResponses:{[unit+'::prompt-answer::response']:'old remote answer'},promptResponseUpdatedAt:{[unit+'::prompt-answer::response']:'2026-10-08T11:00:00.000Z'}};
+ const merged=mergeLearningState(local,remote);
+ assert.equal(merged.responses[unit],'new local note');
+ assert.equal(merged.promptResponses[unit+'::prompt-answer::response'],'new local answer');
+});
+
+test('learner merge uses remote when it is newer and never lets an older timestamp overwrite it',async()=>{
+ const {mergeLearningState}=await import(learnerRecordUrl);
+ const local={version:2,previousResponses:{},completed:{},completedMeta:{},responses:{[unit]:'old local note'},responseUpdatedAt:{[unit]:'2026-10-08T10:00:00.000Z'},promptResponses:{},promptResponseUpdatedAt:{}};
+ const remote={version:2,previousResponses:{},completed:{},completedMeta:{},responses:{[unit]:'new remote note'},responseUpdatedAt:{[unit]:'2026-10-08T13:00:00.000Z'},promptResponses:{},promptResponseUpdatedAt:{}};
+ const merged=mergeLearningState(local,remote);
+ assert.equal(merged.responses[unit],'new remote note');
+});
+
+test('legacy local values without timestamps remain available during migration',async()=>{
+ const {mergeLearningState}=await import(learnerRecordUrl);
+ const local={version:2,previousResponses:{},completed:{},completedMeta:{},responses:{[unit]:'legacy note'},promptResponses:{},previousResponses:{}};
+ const remote={version:2,previousResponses:{},completed:{},completedMeta:{},responses:{[unit]:'remote note'},responseUpdatedAt:{[unit]:'2026-10-08T13:00:00.000Z'},promptResponses:{},promptResponseUpdatedAt:{}};
+ const merged=mergeLearningState(local,remote);
+ assert.equal(merged.responses[unit],'legacy note');
+});
