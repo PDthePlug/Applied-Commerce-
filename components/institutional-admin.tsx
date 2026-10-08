@@ -84,15 +84,40 @@ export function InstitutionalAdmin() {
 
   useEffect(() => {
     if (!user) return;
-    void refresh().catch((err) => setError(messageFor(err)));
+    let cancelled = false;
+
+    async function load() {
+      try {
+        const context = await loadInstitutionalContext(user.id);
+        if (cancelled) return;
+        setSchools(context.schools);
+        setMemberships(context.memberships as Membership[]);
+        setCohorts(context.cohorts);
+        setSchoolId(context.selectedSchoolId);
+        const firstCohort = context.cohorts.find((item) => item.school_id === context.selectedSchoolId);
+        setCohortId(firstCohort?.id ?? "");
+      } catch (err) {
+        if (!cancelled) setError(messageFor(err));
+      }
+    }
+
+    void load();
+    return () => { cancelled = true; };
   }, [user]);
 
   useEffect(() => {
-    if (!cohortId) {
-      setPeople(null);
-      return;
-    }
-    void loadCohortPeople(cohortId).then(setPeople).catch((err) => setError(messageFor(err)));
+    if (!cohortId) return;
+    let cancelled = false;
+
+    void loadCohortPeople(cohortId)
+      .then((value) => {
+        if (!cancelled) setPeople(value);
+      })
+      .catch((err) => {
+        if (!cancelled) setError(messageFor(err));
+      });
+
+    return () => { cancelled = true; };
   }, [cohortId]);
 
   const schoolCohorts = cohorts.filter((item) => item.school_id === schoolId);
