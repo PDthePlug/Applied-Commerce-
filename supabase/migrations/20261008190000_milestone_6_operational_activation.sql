@@ -41,7 +41,7 @@ create or replace function public.upsert_facilitator_evidence_record(
   p_auto_result jsonb default '{}'::jsonb,
   p_status text default 'captured'
 )
-returns public.evidence_records
+returns uuid
 language plpgsql
 security definer
 set search_path=''
@@ -59,7 +59,7 @@ begin
   on conflict (learner_id,response_key) do update
   set response_value=excluded.response_value,auto_result=excluded.auto_result,status=excluded.status,updated_at=now()
   returning * into v_record;
-  return v_record;
+  return v_record.id;
 end;
 $$;
 
