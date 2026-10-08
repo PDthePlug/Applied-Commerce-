@@ -27,6 +27,7 @@ export default function InstitutionsPage() {
         </p>
         <div className="institutional-actions">
           <Link className="institutional-primary" href="/institutions/demo">View the institutional demo <ArrowRight/></Link>
+          <Link className="institutional-text-link" href="/institutions/manage">Open institution operations <ArrowRight/></Link>
           <a className="institutional-text-link" href="#offers">Explore the two offers <ArrowRight/></a>
         </div>
       </div>
@@ -123,7 +124,10 @@ export default function InstitutionsPage() {
       <p className="eyebrow">See the architecture</p>
       <h2>Switch between learner, facilitator, programme manager and sponsor views.</h2>
       <p>The demo uses illustrative data so the operating model is visible without implying real client results.</p>
-      <Link className="institutional-primary" href="/institutions/demo">Open institutional demo <ArrowRight/></Link>
+      <div className="institutional-actions">
+        <Link className="institutional-primary" href="/institutions/demo">Open institutional demo <ArrowRight/></Link>
+        <Link className="institutional-text-link dark-link" href="/institutions/manage">Manage a live institution <ArrowRight/></Link>
+      </div>
     </section>
   </div>;
 }
