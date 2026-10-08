@@ -156,6 +156,16 @@ export function FacilitatorWorkspace(){
     setSelectedKey(next.responseKey);
   };
 
+  if (remoteLoading && !remoteWorkspace) {
+    return <main className="institution-admin-page"><div className="institution-admin-state">Loading the assigned facilitator workspace…</div></main>;
+  }
+  if (remoteError) {
+    return <main className="institution-admin-page"><section className="institution-admin-hero"><p className="eyebrow">Facilitator workspace</p><h1>Shared facilitator data is unavailable.</h1><p>{remoteError}</p><p>For safety, local learner data is not shown as a substitute for an assigned shared cohort.</p></section></main>;
+  }
+  if (!remoteWorkspace) {
+    return <main className="institution-admin-page"><section className="institution-admin-hero"><p className="eyebrow">Facilitator workspace</p><h1>No active facilitator workspace is assigned.</h1><p>Ask an institution administrator to assign this account to an active cohort.</p></section></main>;
+  }
+
   return <div className="fac-console">
     <aside className="fac-sidebar">
       <div className="fac-context">
