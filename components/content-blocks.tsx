@@ -709,9 +709,16 @@ function TableBlockView({
     && headers.length<=4
     && headers.every(Boolean)
     && bodyRows.length>0
-    && bodyRows.every(row=>row.length===headers.length);
+    && bodyRows.every(row=>row.length<=headers.length);
+  const wideTable=headers.length>4;
 
-  return <div data-learning-mode={hasWorkbookCells?"do":"understand"} className={`source-table-wrap ${hasWorkbookCells?"workbook-table":""} ${responsiveRows?"responsive-row-table":""}`}>
+  return <div
+    data-learning-mode={hasWorkbookCells?"do":"understand"}
+    className={`source-table-wrap ${hasWorkbookCells?"workbook-table":""} ${responsiveRows?"responsive-row-table":""} ${wideTable?"wide-source-table":""}`}
+    tabIndex={wideTable?0:undefined}
+    role={wideTable?"region":undefined}
+    aria-label={wideTable?"Scrollable curriculum table":undefined}
+  >
     <table>
       <thead>
         <tr>{headers.map((header,colIndex)=><th scope="col" key={colIndex}>{header}</th>)}</tr>
