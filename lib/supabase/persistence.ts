@@ -3,7 +3,7 @@ import type { TablesInsert } from "./database.types";
 import { createClient } from "./client";
 import { mergeLearningState } from "@/lib/learner-record";
 
-const CURRICULUM_RUNTIME_VERSION = "runtime-3";
+const CURRICULUM_RUNTIME_VERSION = "ac-runtime-3";
 
 function emptyState():LearningState{
  return {version:2,previousResponses:{},completed:{},completedMeta:{},responses:{},responseUpdatedAt:{},promptResponses:{},promptResponseUpdatedAt:{}};
