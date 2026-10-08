@@ -153,6 +153,43 @@ export async function loadSupabaseFacilitatorWorkspace(userId: string): Promise<
   };
 }
 
+export async function saveSupabaseFacilitatorReview(learnerId: string, record: EvidenceRecord, review: EvidenceReview) {
+  const supabase = createClient();
+  const { data: recordRow, error: recordError } = await supabase.rpc("upsert_facilitator_evidence_record", {
+    p_learner_id: learnerId,
+    p_response_key: record.responseKey,
+    p_response_value: record.responseValue,
+    p_auto_result: record.autoCheck,
+    p_status: review.status
+  }).select("id").single();
+  if (recordError) throw recordError;
+
+  const { data: userData, error: userError } = await supabase.auth.getUser();
+  if (userError || !userData.user) throw userError ?? new Error("Authentication required");
+
+  const payload = {
+    evidence_record_id: recordRow.id,
+    reviewer_id: userData.user.id,
+    rubric_key: review.rubricKey ?? null,
+    status: review.status,
+    criteria_scores: review.criteria,
+    feedback: review.feedback,
+    reviewed_at: review.reviewedAt,
+    updated_at: new Date().toISOString()
+  };
+
+  const existing = await supabase.from("evidence_reviews").select("id,reviewer_id").eq("evidence_record_id", recordRow.id).maybeSingle();
+  if (existing.error) throw existing.error;
+  if (existing.data) {
+    if (existing.data.reviewer_id !== payload.reviewer_id) throw new Error("Evidence has already been reviewed by another facilitator.");
+    const result = await supabase.from("evidence_reviews").update(payload).eq("id", existing.data.id);
+    if (result.error) throw result.error;
+  } else {
+    const result = await supabase.from("evidence_reviews").insert(payload);
+    if (result.error) throw result.error;
+  }
+}
+
 export function useSupabaseFacilitatorWorkspace() {
   const { user } = useAuth();
   const [workspace, setWorkspace] = useState<SupabaseFacilitatorWorkspace | null>(null);
