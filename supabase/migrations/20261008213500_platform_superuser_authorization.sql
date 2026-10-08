@@ -188,8 +188,8 @@ declare
   v_school public.schools;
   v_uid uuid := (select auth.uid());
 begin
-  if v_uid is null then
-    raise insufficient_privilege using message = 'Authentication required';
+  if v_uid is null or not private.is_platform_admin() then
+    raise insufficient_privilege using message = 'Only platform administrators can create institutions';
   end if;
   if trim(p_name) = '' or trim(p_slug) = '' then
     raise invalid_parameter_value using message = 'School name and slug are required';
@@ -201,11 +201,6 @@ begin
   insert into public.schools(name, slug)
   values (trim(p_name), lower(trim(p_slug)))
   returning * into v_school;
-
-  if not private.is_platform_admin() then
-    insert into public.school_memberships(school_id, user_id, role, status)
-    values (v_school.id, v_uid, 'owner', 'active');
-  end if;
 
   insert into public.audit_events(actor_user_id, school_id, event_type, entity_type, entity_id, metadata)
   values (v_uid, v_school.id, 'school.created', 'school', v_school.id,
