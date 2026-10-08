@@ -194,27 +194,33 @@ export async function saveSupabaseFacilitatorReview(learnerId: string, record: E
 export function useSupabaseFacilitatorWorkspace() {
   const { user } = useAuth();
   const [workspace, setWorkspace] = useState<SupabaseFacilitatorWorkspace | null>(null);
-  const [loading, setLoading] = useState(Boolean(user));
+  const [loadedUserId, setLoadedUserId] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     let cancelled = false;
-    if (!user) {
-      setWorkspace(null);
-      setLoading(false);
-      return;
-    }
-    setLoading(true);
-    setError(null);
+    if (!user) return;
     void loadSupabaseFacilitatorWorkspace(user.id).then(value => {
-      if (!cancelled) setWorkspace(value);
+      if (!cancelled) {
+        setWorkspace(value);
+        setLoadedUserId(user.id);
+        setError(null);
+      }
     }).catch(err => {
-      if (!cancelled) setError(err instanceof Error ? err.message : "Unable to load facilitator data.");
+      if (!cancelled) {
+        setWorkspace(null);
+        setLoadedUserId(user.id);
+        setError(err instanceof Error ? err.message : "Unable to load facilitator data.");
+      }
     }).finally(() => {
       if (!cancelled) setLoading(false);
     });
     return () => { cancelled = true; };
   }, [user]);
 
-  return { workspace, loading, error };
+  const activeWorkspace = user && loadedUserId === user.id ? workspace : null;
+  const activeLoading = Boolean(user) && (loading || loadedUserId !== user?.id);
+  const activeError = user && loadedUserId === user.id ? error : null;
+  return { workspace: activeWorkspace, loading: activeLoading, error: activeError };
 }
