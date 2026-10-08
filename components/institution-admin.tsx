@@ -138,7 +138,6 @@ export function InstitutionAdmin() {
   }
 
   async function createCohort() {
-    const supabase = getSupabase();
     await run(async()=>{
       if(!selectedSchool) throw new Error("Create or select a school first.");
       const supabase = createClient();
