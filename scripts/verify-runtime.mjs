@@ -4,12 +4,20 @@ import zlib from "node:zlib";
 
 const root=path.resolve("public/curriculum");
 const indexPath=path.join(root,"index.json");
+const releasePath=path.join(root,"release.json");
 
 function fail(message){ throw new Error(message); }
 function readJson(file){ return JSON.parse(fs.readFileSync(file,"utf8")); }
 
 if(!fs.existsSync(indexPath)) fail("Missing public/curriculum/index.json");
 const index=readJson(indexPath);
+if(!fs.existsSync(releasePath)) fail("Missing public/curriculum/release.json");
+const release=readJson(releasePath);
+if(release.product!=="Applied Commerce") fail("Unexpected runtime release product");
+if(release.runtimeFormatVersion!==index.formatVersion) fail("Runtime release format does not match curriculum index");
+if(typeof release.releaseKey!=="string"||!release.releaseKey) fail("Missing runtime release key");
+if(release.curriculumSourceStatus!=="not-source-fingerprinted") fail("Source fingerprint status must remain explicit");
+if(release.sourceReleaseKey!==null) fail("Source release key must remain null until canonical source is governed");
 if(index.product!=="Applied Commerce") fail("Unexpected curriculum product");
 if(index.formatVersion!==3) fail(`Unsupported curriculum format: ${index.formatVersion}`);
 if(!Array.isArray(index.grades)||!index.grades.length) fail("Curriculum index contains no grades");
@@ -82,6 +90,7 @@ for(const gradeMeta of index.grades){
 console.log(JSON.stringify({
   ok:true,
   curriculumFormat:index.formatVersion,
+  runtimeRelease:release.releaseKey,
   grades:index.grades.length,
   lessons:lessonCount,
   assessments:assessmentCount,
