@@ -32,8 +32,6 @@ update public.lesson_notes set curriculum_release_id=(select id from public.curr
 update public.portfolio_artifacts set curriculum_release_id=(select id from public.curriculum_releases where release_key='ac-runtime-3') where curriculum_release_id is null and curriculum_version='ac-runtime-3';
 update public.portfolio_evidence set curriculum_release_id=(select id from public.curriculum_releases where release_key='ac-runtime-3') where curriculum_release_id is null;
 
-create unique index if not exists evidence_records_learner_response_key_uidx on public.evidence_records (learner_id,response_key);
-
 create or replace function public.upsert_facilitator_evidence_record(
   p_learner_id uuid,
   p_response_key text,
@@ -43,7 +41,7 @@ create or replace function public.upsert_facilitator_evidence_record(
 )
 returns uuid
 language plpgsql
-security definer
+security invoker
 set search_path=''
 as $$
 declare v_record public.evidence_records;
