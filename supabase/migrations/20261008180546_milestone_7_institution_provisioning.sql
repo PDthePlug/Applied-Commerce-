@@ -434,3 +434,19 @@ grant execute on function public.enrol_learner_by_email(uuid,text) to authentica
 grant select,insert,update,delete
 on public.schools,public.school_memberships,public.cohorts,public.cohort_staff,public.cohort_enrolments
 to authenticated;
+
+drop policy if exists "profiles_select" on public.profiles;
+create policy "profiles_select"
+on public.profiles
+for select to authenticated
+using (
+  (select auth.uid()) = id
+  or private.can_view_learner(id)
+  or exists (
+    select 1
+    from public.school_memberships sm
+    where sm.user_id=profiles.id
+      and private.has_school_role(sm.school_id,array['owner'::text,'admin'::text])
+      and sm.status='active'
+  )
+);
