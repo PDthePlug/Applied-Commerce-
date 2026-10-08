@@ -65,18 +65,13 @@ export function FacilitatorWorkspace(){
   const [gradeLessonTotal,setGradeLessonTotal]=useState(0);
   const [facMenuOpen,setFacMenuOpen]=useState(false);
 
-  const remoteLearner=remoteWorkspace?.learners.find(item=>item.id===selectedLearnerId)??remoteWorkspace?.learners[0]??null;
+  const effectiveSelectedLearnerId=remoteWorkspace?.learners.some(item=>item.id===selectedLearnerId)?selectedLearnerId:(remoteWorkspace?.learners[0]?.id??"");
+  const remoteLearner=remoteWorkspace?.learners.find(item=>item.id===effectiveSelectedLearnerId)??remoteWorkspace?.learners[0]??null;
   const activeState=remoteLearner?.state??state;
   const localPromptResponses=state.promptResponses;
   const reviews=remoteLearner?.reviews??localReviews;
   const grade=activeState.profile?.grade??activeState.activeGrade;
   const learnerName=activeState.profile?.displayName?.trim()||"Current learner";
-
-  useEffect(()=>{
-    if(remoteWorkspace?.learners.length&&!remoteWorkspace.learners.some(item=>item.id===selectedLearnerId)){
-      setSelectedLearnerId(remoteWorkspace.learners[0].id);
-    }
-  },[remoteWorkspace,selectedLearnerId]);
 
   const saveReview=useCallback(async(review:EvidenceReview)=>{
     if(remoteLearner){
@@ -125,7 +120,7 @@ export function FacilitatorWorkspace(){
     }
     void load();
     return ()=>{cancelled=true;};
-  },[activeState.promptResponses,activeState,grade,hydrated,remoteLearner,remoteWorkspace]);
+  },[activeState.promptResponses,activeState,grade,hydrated,localPromptResponses,remoteLearner,remoteWorkspace]);
 
   const learner=useMemo(()=>{
     if(remoteLearner)return buildLearnerSummary({state:remoteLearner.state,records:remoteLearner.records,reviews:remoteLearner.reviews});
@@ -232,7 +227,7 @@ export function FacilitatorWorkspace(){
       {grade&&section==="overview"?<Overview learnerName={learnerName} cohort={cohort} learner={learner} priorities={priorities} domains={domains} completionRate={completionRate} gradeLessonTotal={gradeLessonTotal} pendingTotal={pendingTotal} onOpenReview={()=>setSection("review")} onOpenLearner={()=>setSection("learners")} onOpenCoverage={()=>setSection("coverage")}/>:null}
       {remoteError?<section className="fac-card"><strong>Shared facilitator data unavailable</strong><p>{remoteError}</p><small>Showing the local learner record until the shared cohort can be loaded.</small></section>:null}
       {remoteLoading&&!remoteWorkspace?<section className="fac-card"><strong>Loading shared cohort…</strong><p>Checking the authenticated facilitator scope and learner records.</p></section>:null}
-      {grade&&section==="learners"?<LearnersView learner={learner} learners={remoteLearnerSummaries} selectedLearnerId={remoteLearner?.id??""} onSelectLearner={setSelectedLearnerId} learnerSearch={learnerSearch} setLearnerSearch={setLearnerSearch} gradeLessonTotal={gradeLessonTotal} completionRate={completionRate} domains={domains} terms={terms} onReview={()=>setSection("review")} onReport={()=>setSection("reports")}/>:null}
+      {grade&&section==="learners"?<LearnersView learner={learner} learners={remoteLearnerSummaries} selectedLearnerId={effectiveSelectedLearnerId} onSelectLearner={setSelectedLearnerId} learnerSearch={learnerSearch} setLearnerSearch={setLearnerSearch} gradeLessonTotal={gradeLessonTotal} completionRate={completionRate} domains={domains} terms={terms} onReview={()=>setSection("review")} onReport={()=>setSection("reports")}/>:null}
       {grade&&section==="review"?<ReviewView loading={loading} records={filtered} selected={selected} selectedKey={selectedKey} setSelectedKey={setSelectedKey} reviews={reviews} search={search} setSearch={setSearch} termFilter={termFilter} setTermFilter={setTermFilter} statusFilter={statusFilter} setStatusFilter={setStatusFilter} saveReview={saveReview} advance={advance}/>:null}
       {grade&&section==="coverage"?<CoverageView learner={learner} domains={domains} terms={terms} kinds={kinds} gradeLessonTotal={gradeLessonTotal} completionRate={completionRate}/>:null}
       {grade&&section==="reports"?<ReportsView report={report} learner={learner} gradeLessonTotal={gradeLessonTotal} completionRate={completionRate}/>:null}
@@ -337,12 +332,12 @@ function LearnersView({learner,learners,selectedLearnerId,onSelectLearner,learne
   return <div className="fac-section-stack">
     <section className="fac-toolbar">
       <label><Search/><input value={learnerSearch} onChange={event=>setLearnerSearch(event.target.value)} placeholder="Search learner"/></label>
-      <div><Filter/><span>Shared cohort filters will appear when the backend is active.</span></div>
+      <div><Filter/><span>{learners.length>1?"Shared cohort filters are connected to the assigned roster.":"Cohort filters will appear as additional learners are assigned."}</span></div>
     </section>
 
     <section className="fac-learners-layout">
       <article className="fac-card fac-roster-card">
-        <header><div><p className="eyebrow">Roster</p><h2>Learners</h2></div><span>1 local record</span></header>
+        <header><div><p className="eyebrow">Roster</p><h2>Learners</h2></div><span>{learners.length} {learners.length===1?"learner":"learners"}</span></header>
         <div className="fac-roster-table">
           <div className="fac-roster-head"><span>Learner</span><span>Lessons</span><span>Evidence</span><span>Review</span><span>Status</span></div>
           {learners.filter(item=>item.name.toLowerCase().includes(learnerSearch.trim().toLowerCase())).map(item=><button key={item.id} type="button" className={"fac-roster-row "+(item.id===selectedLearnerId?"active":"")} onClick={()=>onSelectLearner(item.id)}>
