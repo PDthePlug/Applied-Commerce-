@@ -59,7 +59,7 @@ test("paused backend is configured as an activation seam rather than a fake live
 });
 
 test("database migration separates definitions records reviews and reports",()=>{
-  const sql=read("supabase/migrations/20261004193000_evidence_assessment_engine.sql");
+  const sql=read("supabase/migrations/20261008114756_evidence_assessment_engine.sql");
   for(const table of ["evidence_definitions","rubric_templates","rubric_criteria","evidence_records","evidence_reviews","evidence_report_snapshots"]){
     assert.match(sql,new RegExp("create table if not exists public\\."+table));
   }
