@@ -8,32 +8,45 @@ export type Cohort = Tables<"cohorts">;
 
 export async function loadInstitutionalContext(userId: string) {
   const supabase = createClient();
-  const { data: memberships, error: membershipError } = await supabase
-    .from("school_memberships")
-    .select("school_id,role,status")
-    .eq("user_id", userId)
-    .eq("status", "active");
+  const [{ data: isPlatformAdmin, error: platformAdminError }, { data: memberships, error: membershipError }] =
+    await Promise.all([
+      supabase.rpc("is_platform_admin"),
+      supabase
+        .from("school_memberships")
+        .select("school_id,role,status")
+        .eq("user_id", userId)
+        .eq("status", "active")
+    ]);
 
+  if (platformAdminError) throw platformAdminError;
   if (membershipError) throw membershipError;
 
-  const schoolIds = [...new Set((memberships ?? []).map((row) => row.school_id))];
-  if (!schoolIds.length) {
+  const schoolIds = isPlatformAdmin
+    ? undefined
+    : [...new Set((memberships ?? []).map((row) => row.school_id))];
+  if (schoolIds && !schoolIds.length) {
     return { schools: [] as School[], memberships: memberships ?? [], cohorts: [] as Cohort[], selectedSchoolId: "" };
   }
 
-  const { data: schools, error: schoolError } = await supabase
+  let schoolQuery = supabase
     .from("schools")
     .select("id,name,slug,status,metadata,created_at,updated_at")
-    .in("id", schoolIds)
     .eq("status", "active")
     .order("name");
+  if (schoolIds) schoolQuery = schoolQuery.in("id", schoolIds);
 
+  const { data: schools, error: schoolError } = await schoolQuery;
   if (schoolError) throw schoolError;
+
+  const visibleSchoolIds = (schools ?? []).map((school) => school.id);
+  if (!visibleSchoolIds.length) {
+    return { schools: [], memberships: memberships ?? [], cohorts: [] as Cohort[], selectedSchoolId: "" };
+  }
 
   const { data: cohorts, error: cohortError } = await supabase
     .from("cohorts")
     .select("id,school_id,name,grade,academic_year,status,starts_on,ends_on,created_at,updated_at")
-    .in("school_id", schoolIds)
+    .in("school_id", visibleSchoolIds)
     .order("academic_year", { ascending: false })
     .order("name");
 
