@@ -194,27 +194,7 @@ begin
   if trim(p_name) = '' or trim(p_slug) = '' then
     raise invalid_parameter_value using message = 'School name and slug are required';
   end if;
-  if lower(trim(p_slug)) !~ '^[a-z0-9]+(?:-[a-z0-9]+)*
-insert into private.platform_admins (user_id, status)
-select u.id, 'active'
-from auth.users u
-where lower(u.email) = 'pdmpofu@gmail.com'
-on conflict (user_id) do update set status = 'active', updated_at = now();
-
--- The account is not to operate as a learner. Historical learning records remain untouched.
-delete from public.learner_profiles
-where user_id = (
-  select id from auth.users where lower(email) = 'pdmpofu@gmail.com'
-);
-
--- Create the requested AC platform institution if it does not already exist.
-insert into public.schools (name, slug, status, metadata)
-select 'Applied Commerce', 'applied-commerce', 'active',
-       '{"purpose":"platform administration home; global authority is held separately"}'::jsonb
-where not exists (
-  select 1 from public.schools where lower(slug) = 'applied-commerce'
-);
- then
+  if lower(trim(p_slug)) !~ '^[a-z0-9]+(-[a-z0-9]+)*$' then
     raise invalid_parameter_value using message = 'Slug must use lowercase letters, numbers and hyphens';
   end if;
 
