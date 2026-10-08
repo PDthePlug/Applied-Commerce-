@@ -44,98 +44,55 @@ export function InstitutionAdmin() {
 
   const loadSchools = useCallback(async () => {
     if (!user) return;
-    const { data: memberships, error: membershipError } = await supabase
-      .from("school_memberships")
-      .select("id,user_id,school_id,role,status")
-      .eq("user_id",user.id)
-      .in("role",["owner","admin"])
-      .eq("status","active");
+    const { data: memberships, error: membershipError } = await supabase.from("school_memberships")
+      .select("id,user_id,school_id,role,status").eq("user_id",user.id).in("role",["owner","admin"]).eq("status","active");
     if (membershipError) throw membershipError;
-
-    const schoolIds = [...new Set((memberships ?? []).map(item => item.school_id))];
-    if (!schoolIds.length) {
-      setSchools([]);
-      setSelectedSchool("");
-      return;
-    }
-
-    const { data: schoolRows, error: schoolError } = await supabase
-      .from("schools").select("id,name,slug,status").in("id",schoolIds);
-    if (schoolError) throw schoolError;
-
-    setSchools((schoolRows ?? []) as School[]);
-    setSelectedSchool(current =>
-      current && (schoolRows ?? []).some(s=>s.id===current)
-        ? current
-        : ((schoolRows ?? [])[0]?.id ?? "")
-    );
-  }, [supabase, user]);
+    const schoolIds=[...new Set((memberships??[]).map(item=>item.school_id))];
+    if(!schoolIds.length){setSchools([]);setSelectedSchool("");return;}
+    const {data:schoolRows,error:schoolError}=await supabase.from("schools").select("id,name,slug,status").in("id",schoolIds);
+    if(schoolError) throw schoolError;
+    setSchools((schoolRows??[]) as School[]);
+    setSelectedSchool(current=>current&&(schoolRows??[]).some(s=>s.id===current)?current:((schoolRows??[])[0]?.id??""));
+  },[supabase,user]);
 
   const loadSchool = useCallback(async (schoolId:string) => {
-    if (!schoolId) return;
-    const { data: memberRows, error: memberError } = await supabase
-      .from("school_memberships").select("id,user_id,school_id,role,status").eq("school_id",schoolId);
-    if (memberError) throw memberError;
-    const { data: cohortRows, error: cohortError } = await supabase
-      .from("cohorts").select("id,school_id,name,grade,academic_year,status")
-      .eq("school_id",schoolId).order("academic_year",{ascending:false}).order("grade");
-    if (cohortError) throw cohortError;
-
-    setMembers((memberRows ?? []) as Membership[]);
-    setCohorts((cohortRows ?? []) as Cohort[]);
-    setSelectedCohort(current =>
-      current && (cohortRows ?? []).some(c=>c.id===current)
-        ? current
-        : ((cohortRows ?? [])[0]?.id ?? "")
-    );
-
-    const ids = [...new Set((memberRows ?? []).map(m=>m.user_id))];
-    if (ids.length) {
-      const { data: profileRows, error: profileError } = await supabase
-        .from("profiles").select("id,display_name").in("id",ids);
-      if (profileError) throw profileError;
-      setPeople(current => ({
-        ...current,
-        ...Object.fromEntries((profileRows ?? []).map(p=>[p.id,p as Person]))
-      }));
+    if(!schoolId) return;
+    const {data:memberRows,error:memberError}=await supabase.from("school_memberships").select("id,user_id,school_id,role,status").eq("school_id",schoolId);
+    if(memberError) throw memberError;
+    const {data:cohortRows,error:cohortError}=await supabase.from("cohorts").select("id,school_id,name,grade,academic_year,status").eq("school_id",schoolId).order("academic_year",{ascending:false}).order("grade");
+    if(cohortError) throw cohortError;
+    setMembers((memberRows??[]) as Membership[]);
+    setCohorts((cohortRows??[]) as Cohort[]);
+    setSelectedCohort(current=>current&&(cohortRows??[]).some(cohort=>cohort.id===current)?current:((cohortRows??[])[0]?.id??""));
+    const ids=[...new Set((memberRows??[]).map(m=>m.user_id))];
+    if(ids.length){
+      const {data:profileRows,error:profileError}=await supabase.from("profiles").select("id,display_name").in("id",ids);
+      if(profileError) throw profileError;
+      setPeople(current=>({...current,...Object.fromEntries((profileRows??[]).map(p=>[p.id,p as Person]))}));
     }
-  }, [supabase]);
+  },[supabase]);
 
   const loadCohort = useCallback(async (cohortId:string) => {
-    if (!cohortId) { setStaff([]); setEnrolments([]); return; }
-    const [{data:staffRows,error:staffError},{data:enrolmentRows,error:enrolmentError}] = await Promise.all([
+    if(!cohortId){setStaff([]);setEnrolments([]);return;}
+    const [{data:staffRows,error:staffError},{data:enrolmentRows,error:enrolmentError}]=await Promise.all([
       supabase.from("cohort_staff").select("id,cohort_id,user_id,role,status").eq("cohort_id",cohortId),
       supabase.from("cohort_enrolments").select("id,cohort_id,learner_id,status").eq("cohort_id",cohortId)
     ]);
-    if (staffError) throw staffError;
-    if (enrolmentError) throw enrolmentError;
-    setStaff((staffRows ?? []) as CohortStaff[]);
-    setEnrolments((enrolmentRows ?? []) as Enrolment[]);
-
-    const ids = [...new Set([
-      ...(staffRows ?? []).map(s=>s.user_id),
-      ...(enrolmentRows ?? []).map(e=>e.learner_id)
-    ])];
-    if (ids.length) {
-      const {data: profileRows,error:profileError}=await supabase
-        .from("profiles").select("id,display_name").in("id",ids);
+    if(staffError) throw staffError;
+    if(enrolmentError) throw enrolmentError;
+    setStaff((staffRows??[]) as CohortStaff[]);
+    setEnrolments((enrolmentRows??[]) as Enrolment[]);
+    const ids=[...new Set([...(staffRows??[]).map(s=>s.user_id),...(enrolmentRows??[]).map(e=>e.learner_id)])];
+    if(ids.length){
+      const {data:profileRows,error:profileError}=await supabase.from("profiles").select("id,display_name").in("id",ids);
       if(profileError) throw profileError;
-      setPeople(current=>({
-        ...current,
-        ...Object.fromEntries((profileRows ?? []).map(p=>[p.id,p as Person]))
-      }));
+      setPeople(current=>({...current,...Object.fromEntries((profileRows??[]).map(p=>[p.id,p as Person]))}));
     }
-  }, [supabase]);
+  },[supabase]);
 
-  useEffect(()=>{
-    void loadSchools().catch(e=>setError(errorText(e)));
-  },[loadSchools]);
-  useEffect(()=>{
-    void loadSchool(selectedSchool).catch(e=>setError(errorText(e)));
-  },[loadSchool,selectedSchool]);
-  useEffect(()=>{
-    void loadCohort(selectedCohort).catch(e=>setError(errorText(e)));
-  },[loadCohort,selectedCohort]);
+  useEffect(()=>{ void loadSchools().catch(e=>setError(errorText(e))); },[loadSchools]);
+  useEffect(()=>{ void loadSchool(selectedSchool).catch(e=>setError(errorText(e))); },[loadSchool,selectedSchool]);
+  useEffect(()=>{ void loadCohort(selectedCohort).catch(e=>setError(errorText(e))); },[loadCohort,selectedCohort]);
 
   async function run(action:()=>Promise<void>, success:string) {
     setBusy(true); setError(""); setMessage("");
