@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { Building2, GraduationCap, Plus, RefreshCw, ShieldCheck, Users } from "lucide-react";
 import { useAuth } from "@/lib/auth-context";
 import { createClient } from "@/lib/supabase/client";
@@ -42,7 +42,7 @@ export function InstitutionAdmin() {
   const [message,setMessage] = useState("");
   const [error,setError] = useState("");
 
-  async function loadSchools() {
+  const loadSchools = useCallback(async () => {
     if (!user) return;
     const { data: memberships, error: membershipError } = await supabase
       .from("school_memberships")
@@ -71,7 +71,7 @@ export function InstitutionAdmin() {
     );
   }
 
-  async function loadSchool(schoolId:string) {
+  const loadSchool = useCallback(async (schoolId:string) => {
     if (!schoolId) return;
     const { data: memberRows, error: memberError } = await supabase
       .from("school_memberships").select("id,user_id,school_id,role,status").eq("school_id",schoolId);
@@ -101,7 +101,7 @@ export function InstitutionAdmin() {
     }
   }
 
-  async function loadCohort(cohortId:string) {
+  const loadCohort = useCallback(async (cohortId:string) => {
     if (!cohortId) { setStaff([]); setEnrolments([]); return; }
     const [{data:staffRows,error:staffError},{data:enrolmentRows,error:enrolmentError}] = await Promise.all([
       supabase.from("cohort_staff").select("id,cohort_id,user_id,role,status").eq("cohort_id",cohortId),
@@ -127,9 +127,21 @@ export function InstitutionAdmin() {
     }
   }
 
-  useEffect(()=>{ void loadSchools().catch(e=>setError(errorText(e))); },[user]);
-  useEffect(()=>{ void loadSchool(selectedSchool).catch(e=>setError(errorText(e))); },[selectedSchool]);
-  useEffect(()=>{ void loadCohort(selectedCohort).catch(e=>setError(errorText(e))); },[selectedCohort]);
+  }, [supabase, user]);
+
+  }, [supabase]);
+
+  }, [supabase]);
+
+  useEffect(()=>{
+    void loadSchools().catch(e=>setError(errorText(e)));
+  },[loadSchools]);
+  useEffect(()=>{
+    void loadSchool(selectedSchool).catch(e=>setError(errorText(e)));
+  },[loadSchool,selectedSchool]);
+  useEffect(()=>{
+    void loadCohort(selectedCohort).catch(e=>setError(errorText(e)));
+  },[loadCohort,selectedCohort]);
 
   async function run(action:()=>Promise<void>, success:string) {
     setBusy(true); setError(""); setMessage("");
