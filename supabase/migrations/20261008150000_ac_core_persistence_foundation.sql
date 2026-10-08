@@ -146,7 +146,7 @@ $$;
 create or replace function private.ac_school_role(
   p_school_id uuid,
   p_roles text[],
-  p_user_id uuid default (select auth.uid())
+  p_user_id uuid default auth.uid()
 ) returns boolean
 language sql stable security definer set search_path=''
 as $$
@@ -160,7 +160,7 @@ $$;
 
 create or replace function private.ac_learner_in_scope(
   p_learner_id uuid,
-  p_user_id uuid default (select auth.uid())
+  p_user_id uuid default auth.uid()
 ) returns boolean
 language sql stable security definer set search_path=''
 as $$
