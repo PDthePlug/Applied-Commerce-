@@ -175,8 +175,8 @@ export function FacilitatorWorkspace(){
         })}
       </nav>
       <div className="fac-backend-state">
-        <div><span/><strong>Local evidence mode</strong></div>
-        <p>Dashboard structure is cohort-ready. Shared classes, staff accounts and cross-device reviews switch on when Applied Commerce Supabase is reactivated.</p>
+        <div><span/><strong>{remoteWorkspace?"Shared Supabase cohort":"Local learner record"}</strong></div>
+        <p>{remoteWorkspace?"Authenticated cohort data, durable learner records and facilitator reviews are now connected through the existing Supabase security model.":"Sign in with an assigned facilitator account to load the shared cohort workspace."}</p>
       </div>
     </aside>
 
