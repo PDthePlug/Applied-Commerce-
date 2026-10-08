@@ -126,7 +126,6 @@ export function InstitutionAdmin() {
   }
 
   async function addMember() {
-    const supabase = getSupabase();
     await run(async()=>{
       if(!selectedSchool) throw new Error("Select a school first.");
       const supabase = createClient();
