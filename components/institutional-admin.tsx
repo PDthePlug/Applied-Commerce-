@@ -87,9 +87,9 @@ export function InstitutionalAdmin() {
     if (!userId) return;
     let cancelled = false;
 
-    async function load() {
+    async function load(authenticatedUserId: string) {
       try {
-        const context = await loadInstitutionalContext(userId);
+        const context = await loadInstitutionalContext(authenticatedUserId);
         if (cancelled) return;
         setSchools(context.schools);
         setMemberships(context.memberships as Membership[]);
@@ -102,7 +102,7 @@ export function InstitutionalAdmin() {
       }
     }
 
-    void load();
+    void load(userId);
     return () => { cancelled = true; };
   }, [user]);
 
