@@ -163,7 +163,6 @@ export function InstitutionAdmin() {
   }
 
   async function enrolLearner() {
-    const supabase = getSupabase();
     await run(async()=>{
       if(!selectedCohort) throw new Error("Select a cohort first.");
       const supabase = createClient();
