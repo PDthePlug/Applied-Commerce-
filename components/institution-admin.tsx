@@ -90,9 +90,20 @@ export function InstitutionAdmin() {
     }
   },[supabase]);
 
-  useEffect(()=>{ void loadSchools().catch(e=>setError(errorText(e))); },[loadSchools]);
-  useEffect(()=>{ void loadSchool(selectedSchool).catch(e=>setError(errorText(e))); },[loadSchool,selectedSchool]);
-  useEffect(()=>{ void loadCohort(selectedCohort).catch(e=>setError(errorText(e))); },[loadCohort,selectedCohort]);
+  useEffect(()=>{
+    const timer=window.setTimeout(()=>{ void loadSchools().catch(e=>setError(errorText(e))); },0);
+    return ()=>window.clearTimeout(timer);
+  },[loadSchools]);
+
+  useEffect(()=>{
+    const timer=window.setTimeout(()=>{ void loadSchool(selectedSchool).catch(e=>setError(errorText(e))); },0);
+    return ()=>window.clearTimeout(timer);
+  },[loadSchool,selectedSchool]);
+
+  useEffect(()=>{
+    const timer=window.setTimeout(()=>{ void loadCohort(selectedCohort).catch(e=>setError(errorText(e))); },0);
+    return ()=>window.clearTimeout(timer);
+  },[loadCohort,selectedCohort]);
 
   async function run(action:()=>Promise<void>, success:string) {
     setBusy(true); setError(""); setMessage("");
