@@ -27,12 +27,12 @@ for(const meta of index.grades){
     .sort((a,b)=>((a.type==="lesson"?0:1)-(b.type==="lesson"?0:1))||((a.startLesson??Number.MAX_SAFE_INTEGER)-(b.startLesson??Number.MAX_SAFE_INTEGER))||a.position-b.position);
   term.units.forEach((unit,index)=>{unit.position=index});
  }
- let units=0;
+ let lessonUnits=0;
  const grade={grade:meta.grade,units:0,blocks:0,stableBlockIdentities:0,families:{}};
 
  for(const term of bundle.terms){
   for(const unit of term.units){
-   units++; grade.units++; report.totals.units++;
+   if(unit.type==="lesson"){lessonUnits++; grade.units++; report.totals.units++;}
    const unitFamilies={}; let maxColumns=0; let longTextBlocks=0; let responseBlocks=0;
    for(const block of unit.blocks){
     grade.blocks++; report.totals.blocks++;
@@ -54,7 +54,7 @@ for(const meta of index.grades){
    if(reasons.length) report.outliers.push({grade:meta.grade,term:term.term,unitId:unit.id,title:unit.title,blockCount:unit.blocks.length,maxColumns,longTextBlocks,responseBlocks,families:unitFamilies,reasons});
   }
  }
- if(units!==meta.unitCount)fail("Grade "+meta.grade+" unit census mismatch: expected "+meta.unitCount+" got "+units);
+ if(lessonUnits!==meta.unitCount)fail("Grade "+meta.grade+" lesson census mismatch: expected "+meta.unitCount+" got "+lessonUnits);
  report.grades.push(grade);
 }
 
