@@ -69,7 +69,7 @@ export function InstitutionAdmin() {
         ? current
         : ((schoolRows ?? [])[0]?.id ?? "")
     );
-  }
+  }, [supabase, user]);
 
   const loadSchool = useCallback(async (schoolId:string) => {
     if (!schoolId) return;
@@ -99,7 +99,7 @@ export function InstitutionAdmin() {
         ...Object.fromEntries((profileRows ?? []).map(p=>[p.id,p as Person]))
       }));
     }
-  }
+  }, [supabase]);
 
   const loadCohort = useCallback(async (cohortId:string) => {
     if (!cohortId) { setStaff([]); setEnrolments([]); return; }
@@ -125,12 +125,6 @@ export function InstitutionAdmin() {
         ...Object.fromEntries((profileRows ?? []).map(p=>[p.id,p as Person]))
       }));
     }
-  }
-
-  }, [supabase, user]);
-
-  }, [supabase]);
-
   }, [supabase]);
 
   useEffect(()=>{
