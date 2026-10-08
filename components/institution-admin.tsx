@@ -75,7 +75,7 @@ export function InstitutionAdmin() {
 
   const loadCohort = useCallback(async (cohortId:string) => {
     if(!cohortId){setStaff([]);setEnrolments([]);return;}
-    const supabase = getSupabase();
+    const supabase = createClient();
     const [{data:staffRows,error:staffError},{data:enrolmentRows,error:enrolmentError}]=await Promise.all([
       supabase.from("cohort_staff").select("id,cohort_id,user_id,role,status").eq("cohort_id",cohortId),
       supabase.from("cohort_enrolments").select("id,cohort_id,learner_id,status").eq("cohort_id",cohortId)
@@ -90,7 +90,7 @@ export function InstitutionAdmin() {
       if(profileError) throw profileError;
       setPeople(current=>({...current,...Object.fromEntries((profileRows??[]).map(p=>[p.id,p as Person]))}));
     }
-  },[getSupabase]);
+  },[]);
 
   useEffect(()=>{
     const timer=window.setTimeout(()=>{ void loadSchools().catch(e=>setError(errorText(e))); },0);
