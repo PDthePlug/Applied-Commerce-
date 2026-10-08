@@ -991,17 +991,7 @@ export type Database = {
           p_response_value: string
           p_status?: string
         }
-        Returns: {
-          auto_result: Json
-          captured_at: string
-          definition_id: string | null
-          id: string
-          learner_id: string
-          response_key: string
-          response_value: string
-          status: string
-          updated_at: string
-        }
+        Returns: string
       }
     }
     Enums: {
