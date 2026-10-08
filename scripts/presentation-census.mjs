@@ -5,30 +5,48 @@ import zlib from "node:zlib";
 const root=path.resolve("public/curriculum");
 const index=JSON.parse(fs.readFileSync(path.join(root,"index.json"),"utf8"));
 const ids=new Set();
-const counts={units:0,blocks:0,stableBlockIdentities:0,families:{}};
+const report={ok:true,grades:[],outliers:[],totals:{units:0,blocks:0,stableBlockIdentities:0,families:{}}};
+
 function fail(message){throw new Error(message)}
-function add(key){counts.families[key]=(counts.families[key]||0)+1}
-function family(block){
- if(block.kind==="table")return "table";
- return block.type||"unknown";
-}
+function addFamily(key){report.totals.families[key]=(report.totals.families[key]||0)+1}
+function family(block){return block.kind==="table"?"table":block.type||"unknown"}
+function textLength(block){return block.kind==="text"?block.text.replace(/<[^>]+>/g,"").trim().length:0}
+
 for(const meta of index.grades){
  const files=Array.from({length:meta.bundleParts},(_,i)=>path.join(root,"grade-"+meta.grade+".part-"+(i+1)+".b64"));
  const encoded=files.map(file=>fs.readFileSync(file,"utf8").trim()).join("");
  const bundle=JSON.parse(zlib.gunzipSync(Buffer.from(encoded,"base64")).toString("utf8"));
  let units=0;
+ const grade={grade:meta.grade,units:0,blocks:0,stableBlockIdentities:0,families:{}};
+
  for(const term of bundle.terms){
   for(const unit of term.units){
-   units++; counts.units++;
+   units++; grade.units++; report.totals.units++;
+   const unitFamilies={}; let maxColumns=0; let longTextBlocks=0; let responseBlocks=0;
    for(const block of unit.blocks){
-    counts.blocks++;
+    grade.blocks++; report.totals.blocks++;
     if(!block.id)fail("Missing stable block identity in "+unit.id);
     const key=unit.id+"::"+block.id;
     if(ids.has(key))fail("Duplicate stable block identity: "+key);
-    ids.add(key); counts.stableBlockIdentities++; add(family(block));
+    ids.add(key); grade.stableBlockIdentities++; report.totals.stableBlockIdentities++;
+    const f=family(block); unitFamilies[f]=(unitFamilies[f]||0)+1; grade.families[f]=(grade.families[f]||0)+1; addFamily(f);
+    if(block.kind==="table")maxColumns=Math.max(maxColumns,block.rows.reduce((n,row)=>Math.max(n,row.length),0));
+    if(textLength(block)>900){longTextBlocks++;}
+    if(block.kind==="text"&&["activity","reflection","checkpoint","portfolio"].includes(block.type))responseBlocks++;
    }
+   const reasons=[];
+   if(unit.blocks.length>=45) reasons.push("large-unit");
+   if(maxColumns>=7) reasons.push("wide-table");
+   if(longTextBlocks>=2) reasons.push("multiple-long-text-blocks");
+   if(responseBlocks>=10) reasons.push("response-dense");
+   if(Object.keys(unitFamilies).some(k=>k==="unknown")) reasons.push("unknown-presentation-family");
+   if(reasons.length) report.outliers.push({grade:meta.grade,term:term.term,unitId:unit.id,title:unit.title,blockCount:unit.blocks.length,maxColumns,longTextBlocks,responseBlocks,families:unitFamilies,reasons});
   }
  }
  if(units!==meta.unitCount)fail("Grade "+meta.grade+" unit census mismatch: expected "+meta.unitCount+" got "+units);
+ report.grades.push(grade);
 }
-console.log(JSON.stringify({ok:true,census:counts},null,2));
+
+fs.mkdirSync(path.resolve("test-results"),{recursive:true});
+fs.writeFileSync(path.resolve("test-results/presentation-census.json"),JSON.stringify(report,null,2));
+console.log(JSON.stringify(report,null,2));
