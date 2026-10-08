@@ -25,7 +25,7 @@ export async function loadInstitutionalContext(userId: string) {
     ? undefined
     : [...new Set((memberships ?? []).map((row) => row.school_id))];
   if (schoolIds && !schoolIds.length) {
-    return { schools: [] as School[], memberships: memberships ?? [], cohorts: [] as Cohort[], selectedSchoolId: "" };
+    return { isPlatformAdmin: Boolean(isPlatformAdmin), schools: [] as School[], memberships: memberships ?? [], cohorts: [] as Cohort[], selectedSchoolId: "" };
   }
 
   let schoolQuery = supabase
@@ -40,7 +40,7 @@ export async function loadInstitutionalContext(userId: string) {
 
   const visibleSchoolIds = (schools ?? []).map((school) => school.id);
   if (!visibleSchoolIds.length) {
-    return { schools: [], memberships: memberships ?? [], cohorts: [] as Cohort[], selectedSchoolId: "" };
+    return { isPlatformAdmin: Boolean(isPlatformAdmin), schools: [], memberships: memberships ?? [], cohorts: [] as Cohort[], selectedSchoolId: "" };
   }
 
   const { data: cohorts, error: cohortError } = await supabase
@@ -53,6 +53,7 @@ export async function loadInstitutionalContext(userId: string) {
   if (cohortError) throw cohortError;
 
   return {
+    isPlatformAdmin: Boolean(isPlatformAdmin),
     schools: schools ?? [],
     memberships: memberships ?? [],
     cohorts: cohorts ?? [],

@@ -32,6 +32,8 @@ export function InstitutionalAdmin() {
   const [schools, setSchools] = useState<School[]>([]);
   const [cohorts, setCohorts] = useState<Cohort[]>([]);
   const [memberships, setMemberships] = useState<Membership[]>([]);
+  const [isPlatformAdmin, setIsPlatformAdmin] = useState(false);
+  const [contextLoading, setContextLoading] = useState(true);
   const [schoolId, setSchoolId] = useState("");
   const [cohortId, setCohortId] = useState("");
   const [people, setPeople] = useState<{ learners: Array<{ learner_id: string; status: string; profile: { id: string; display_name: string | null; status: string } | null }>; staff: Array<{ user_id: string; role: string; status: string }>; staffIds: string[] } | null>(null);
@@ -51,7 +53,8 @@ export function InstitutionalAdmin() {
   const [learnerEmail, setLearnerEmail] = useState("");
 
   const membership = useMemo(() => memberships.find((item) => item.school_id === schoolId), [memberships, schoolId]);
-  const isAdmin = membership?.role === "owner" || membership?.role === "admin";
+  const isAdmin = isPlatformAdmin || membership?.role === "owner" || membership?.role === "admin";
+  const hasInstitutionAdminAccess = isPlatformAdmin || memberships.some((item) => item.status === "active" && (item.role === "owner" || item.role === "admin"));
   const selectedCohort = cohorts.find((item) => item.id === cohortId);
   const isCohortStaff = Boolean(user && people?.staffIds.includes(user.id));
   const canManageLearners = Boolean(isAdmin || isCohortStaff);
@@ -59,6 +62,8 @@ export function InstitutionalAdmin() {
   async function refresh(preferredSchoolId?: string, preferredCohortId?: string) {
     if (!user) return;
     const context = await loadInstitutionalContext(user.id);
+    setIsPlatformAdmin(context.isPlatformAdmin);
+    setContextLoading(false);
     setSchools(context.schools);
     setMemberships(context.memberships as Membership[]);
     const nextSchoolId = preferredSchoolId && context.schools.some((item) => item.id === preferredSchoolId)
@@ -91,6 +96,8 @@ export function InstitutionalAdmin() {
       try {
         const context = await loadInstitutionalContext(authenticatedUserId);
         if (cancelled) return;
+        setIsPlatformAdmin(context.isPlatformAdmin);
+        setContextLoading(false);
         setSchools(context.schools);
         setMemberships(context.memberships as Membership[]);
         setCohorts(context.cohorts);
@@ -98,7 +105,7 @@ export function InstitutionalAdmin() {
         const firstCohort = context.cohorts.find((item) => item.school_id === context.selectedSchoolId);
         setCohortId(firstCohort?.id ?? "");
       } catch (err) {
-        if (!cancelled) setError(messageFor(err));
+        if (!cancelled) { setError(messageFor(err)); setContextLoading(false); }
       }
     }
 
@@ -155,6 +162,14 @@ export function InstitutionalAdmin() {
     );
   }
 
+  if (contextLoading) {
+    return <main className="institution-admin-page"><div className="institution-admin-state">Checking institution permissions…</div></main>;
+  }
+
+  if (!hasInstitutionAdminAccess) {
+    return <main className="institution-admin-page"><section className="institution-admin-hero"><p className="eyebrow">Restricted workspace</p><h1>Institution administrator access required.</h1><p>Signing in creates an account, but it does not grant institution-management permissions. Ask a platform or institution administrator to assign the appropriate role.</p><Link className="institutional-text-link" href="/institutions">Back to institutions <ArrowRight /></Link></section></main>;
+  }
+
   return (
     <main className="institution-admin-page">
       <header className="institution-admin-header">
@@ -175,7 +190,7 @@ export function InstitutionalAdmin() {
           <div>
             <p className="eyebrow">First institution</p>
             <h2>Create the school record</h2>
-            <p>This uses the existing production school/membership model. The account becomes the school owner; no parallel institution record is created.</p>
+            <p>This creates an institution in the existing production model. Institution administrators are assigned separately; global authority is never granted by creating an institution.</p>
             <form onSubmit={(event) => {
               event.preventDefault();
               void run(async () => {
@@ -197,7 +212,7 @@ export function InstitutionalAdmin() {
         <>
           <section className="institution-admin-toolbar">
             <label><span>Institution</span><select value={schoolId} onChange={(event) => { setSchoolId(event.target.value); const next = cohorts.filter((item) => item.school_id === event.target.value)[0]; setCohortId(next?.id ?? ""); }}>{schools.map((school) => <option value={school.id} key={school.id}>{school.name}</option>)}</select></label>
-            <div className="institution-admin-role"><ShieldCheck /><span>{membership?.role ?? "member"}</span></div>
+            <div className="institution-admin-role"><ShieldCheck /><span>{isPlatformAdmin ? "System administrator" : membership?.role ?? "member"}</span></div>
           </section>
 
           <section className="institution-admin-metrics">
