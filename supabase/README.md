@@ -1,78 +1,78 @@
-# Applied Commerce Supabase Backend
+# Applied Commerce Supabase foundation
 
-**Project:** Applied Commerce Production  
-**Project ref:** `vxmcykmrqubwlysrqjyt`  
-**Current status:** **PAUSED** — the schema foundation was previously applied, but the project cannot be reactivated while the account has no free active-project slot.
+This directory contains the repository-managed database foundation for Applied Commerce Milestone 2.
 
-## Previously applied backend foundation
+## Current status
 
-1. `applied_commerce_core_tables`
-2. `applied_commerce_security_policies`
+The Applied Commerce Production Supabase project is now active and healthy after BIS Staging was paused to free an active-project slot.
 
-The project was prepared with:
+Project ref: `vxmcykmrqubwlysrqjyt`  
+Region: `eu-west-1`  
+Postgres: 17.11.0.002
 
-- `profiles` — identity row linked 1:1 to `auth.users`
-- `learner_profiles` — learner grade and learner-facing profile data
-- `schools` — school / delivery organisation boundary
-- `school_memberships` — owner, admin and educator membership
-- `cohorts` — grade/year learning cohorts
-- `cohort_staff` — educator assignment to cohorts
-- `cohort_enrolments` — learner enrolment in cohorts
-- `lesson_progress` — durable lesson completion/opening state
-- `prompt_responses` — durable answer data keyed to curriculum prompt IDs
-- `lesson_notes` — learner lesson notes
-- `portfolio_artifacts` — curriculum-directed portfolio records
-- `portfolio_evidence` — provenance links from portfolio artifacts to prompt responses
+The live database was inspected before schema changes. It already contained the AC core schema and two repository-recorded migrations:
 
-The previously documented security model was deny-by-default for anonymous users, with learners restricted to their own records and educators/school administrators restricted through cohort or school membership.
+- `20260930150116 applied_commerce_core_tables`
+- `20260930150212 applied_commerce_security_policies`
 
-## Evidence & Assessment Engine prepared while paused
+The Milestone 2 work therefore **extends the existing AC schema** rather than replacing it.
 
-The repository now contains:
+## Milestone 2 migrations applied
 
-- `migrations/20261004193000_evidence_assessment_engine.sql`
-- evidence definitions and developmental-domain mapping
-- rubric templates and criteria
-- evidence records and facilitator reviews
-- report snapshot schema
-- deterministic answer-rule support
-- class-scale facilitator dashboard
-- backend-mode contract
-- facilitator data-source interface
-- activation checklist in `ACTIVATION.md`
+- `20261008114756 evidence_assessment_engine`
+- `20261008114817 ac_curriculum_release_bridge`
+- `20261008114853 ac_evidence_scope_and_audit_guard`
+- `20261008114930 ac_rls_performance_hardening`
 
-**Prepared does not mean applied.** The evidence migration has not been run against the paused database.
+Repository migrations are kept under `supabase/migrations/`.
 
-## Runtime boundary
+## What the foundation now provides
 
-Production remains:
+- Existing AC identity, school and cohort model preserved.
+- Existing learner progress, prompt response, notes and portfolio model preserved.
+- Evidence definitions, rubric templates, evidence records, reviews and report snapshots are active.
+- Curriculum release metadata is now a first-class release boundary.
+- Durable learner records can reference a specific curriculum release without positional identities.
+- Assessment attempts have durable release/unit/attempt identity.
+- Audit events exist with client access denied.
+- Evidence review access is scoped through the verified AC cohort/school authorization model.
+- RLS remains enabled across the learner/evidence domain.
+- Generated TypeScript database types are committed at `lib/supabase/database.types.ts`.
 
-`NEXT_PUBLIC_APPLIED_COMMERCE_BACKEND_MODE=local`
+## Source-governance boundary
 
-The learner and facilitator surfaces therefore read browser-local records only. The facilitator dashboard is deliberately not exposed in the learner menu.
+Canonical curriculum manuscripts are still not repository-governed. Consequently:
 
-When the project is active again, the shared persistence implementation should map:
+- `curriculum_releases.source_release_key` is nullable.
+- No fabricated source SHA-256 was inserted.
+- No curriculum release has been falsely declared source-verified.
+- Source fingerprinting remains a future release gate.
 
-`lesson completion -> lesson_progress`  
-`inline answers -> prompt_responses -> evidence_records`  
-`lesson notes -> lesson_notes`  
-`portfolio markers -> portfolio_artifacts + portfolio_evidence`  
-`facilitator judgement -> evidence_reviews`  
-`report exports -> evidence_report_snapshots`
+The runtime format is currently recorded as version 3 because that is the verified compiled-runtime contract; compiler/source identity remains explicit metadata rather than an invented provenance claim.
 
-Stable prompt identities must not change during that migration.
+## Verification
 
-See `ACTIVATION.md` for the activation sequence and acceptance gates.
+The live database passed the Milestone 2 foundation smoke assertions for:
 
+- required AC tables;
+- RLS on the critical response/evidence/assessment/audit surfaces;
+- stable response/release uniqueness;
+- evidence and review authorization policies;
+- audit client isolation;
+- review authorization helper existence.
 
-## Milestone 2 reconciliation
+Supabase security advisors currently report **no security lints**.
 
-The existing repository documentation establishes that the AC core schema was previously prepared/applied before the Supabase project was paused, and that the evidence/assessment migration is staged but not applied. Therefore Milestone 2 must **extend and reconcile the existing AC schema**, not introduce a second initial domain model.
+Performance advisors report unused-index information on the currently empty/near-empty database; these are not treated as defects at this stage. The previous RLS initialization-plan warning and missing foreign-key index findings introduced by the Milestone 2 work were corrected.
 
-On 8 October 2026 the production project was checked through the Supabase management connection. The project is inactive, and the database query connection timed out. An attempted restore was rejected because the organisation has reached its active free-project limit. No production schema mutation was made.
+## Important boundary
 
-A temporary duplicate foundation migration was therefore removed from the repository after the existing backend README revealed the prior core schema. This is intentional: an unverified second schema would violate the migration discipline being introduced.
+This milestone does **not** yet:
 
-The next database change, once the project is active or an AC development branch is available, must begin with a live schema pull/inspection and migration-history reconciliation. Only then should the stable curriculum-release bridge, durable learner-state adapter schema, and RLS certification be added.
+- switch the Next.js application from local learning state to Supabase persistence;
+- migrate existing learner browser state;
+- expose facilitator navigation;
+- seed a curriculum release without governed source provenance;
+- perform production learner-data migration.
 
-The source-governance decision is documented separately in docs/APPLIED_COMMERCE_SOURCE_GOVERNANCE_DECISION.md. Source fingerprinting remains blocked until the authoritative manuscripts are repository-governed.
+Those are subsequent persistence/application rollout gates.
