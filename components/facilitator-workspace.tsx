@@ -329,7 +329,6 @@ type LearnersViewProps={
 };
 
 function LearnersView({learner,learners,selectedLearnerId,onSelectLearner,learnerSearch,setLearnerSearch,gradeLessonTotal,completionRate,domains,terms,onReview,onReport}:LearnersViewProps){
-  const matches=learner.name.toLowerCase().includes(learnerSearch.trim().toLowerCase());
   return <div className="fac-section-stack">
     <section className="fac-toolbar">
       <label><Search/><input value={learnerSearch} onChange={event=>setLearnerSearch(event.target.value)} placeholder="Search learner"/></label>
