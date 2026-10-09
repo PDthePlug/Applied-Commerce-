@@ -19,6 +19,7 @@ values (
   null,
   jsonb_build_object(
     'product', 'Applied Commerce',
+    'releaseManifest', 'public/curriculum/release.json',
     'curriculumSourceStatus', 'not-source-fingerprinted',
     'sourceReleaseKey', null,
     'releaseSchemaVersion', 1
