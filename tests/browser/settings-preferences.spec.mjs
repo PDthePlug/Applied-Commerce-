@@ -70,6 +70,7 @@ test("dark and system themes keep the learner menu and settings readable", async
 });
 
 test("all appearance, accent, text size and reading width settings update the document", async ({ page }) => {
+  await page.emulateMedia({ colorScheme: "dark" });
   await page.goto("/settings");
   await page.getByRole("button", { name: /Appearance/ }).click();
   const theme = page.getByLabel("Theme");
