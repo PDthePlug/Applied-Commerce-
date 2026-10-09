@@ -171,3 +171,13 @@ test("legacy auth profile repair is additive and does not assign application rol
   assert.match(migration,/on conflict \(id\) do nothing/);
   assert.match(migration,/does not grant any learner, facilitator, institution or admin role/i);
 });
+
+
+test("platform-admin learning evidence sync respects exclusive operating roles",()=>{
+  const persistence=read("lib/supabase/persistence.ts");
+  assert.match(persistence,/supabase\.rpc\("is_platform_admin"\)/);
+  assert.match(persistence,/if\(!adminResult\.data\)/);
+  assert.match(persistence,/Platform administrators are intentionally excluded from the learner role/);
+  assert.match(persistence,/from\("prompt_responses"\)\.upsert\(promptRows/);
+  assert.match(persistence,/from\("lesson_progress"\)\.upsert\(progressRows/);
+});
