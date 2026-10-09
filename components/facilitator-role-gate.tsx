@@ -44,7 +44,7 @@ export function FacilitatorRoleGate({ children }: { children: React.ReactNode })
   }, [authLoading, user]);
 
   if (authLoading || (user && checkedUserId !== user.id)) {
-    return <main className="institution-admin-page"><div className="institution-admin-state">Checking facilitator assignment…</div></main>;
+    return <main className="institution-admin-page"><div className="institution-admin-state">Getting your facilitator workspace ready…</div></main>;
   }
 
   if (!user) {
