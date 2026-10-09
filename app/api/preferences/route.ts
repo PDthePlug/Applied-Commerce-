@@ -42,6 +42,8 @@ export async function PATCH(request: Request) {
   try {
     const auth = await authenticatedClient();
     if ("response" in auth) return auth.response;
+    const expectedUserId = request.headers.get("x-ac-expected-user-id");
+    if (expectedUserId && expectedUserId !== auth.user.id) return responseError("The active account changed. Reload settings and try again.", 409);
     let body: Record<string, unknown>;
     try { body = await request.json() as Record<string, unknown>; }
     catch { return responseError("Settings could not be read. Check the values and try again.", 400); }
