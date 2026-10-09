@@ -143,10 +143,10 @@ export function InstitutionalAdmin({ initialSection = "overview" }: { initialSec
   useEffect(() => {
     if (!cohortId || (pageSection !== "overview" && pageSection !== "cohorts")) return;
     let cancelled = false;
-    setCohortInsightsLoading(true);
-    setCohortInsightsUnavailable(false);
-    void loadCohortLearningInsights(cohortId)
-      .then(value => { if (!cancelled) setCohortInsights(value); })
+    void Promise.resolve().then(() => {
+      if (!cancelled) { setCohortInsightsLoading(true); setCohortInsightsUnavailable(false); }
+      return loadCohortLearningInsights(cohortId);
+    }).then(value => { if (!cancelled) setCohortInsights(value); })
       .catch(() => { if (!cancelled) { setCohortInsights(null); setCohortInsightsUnavailable(true); } })
       .finally(() => { if (!cancelled) setCohortInsightsLoading(false); });
     return () => { cancelled = true; };
