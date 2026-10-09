@@ -1,6 +1,8 @@
--- Verified data-free staging baseline exported from the reconstructed AC catalog on 2026-10-09.
--- This snapshot is for rebuilding an isolated staging project only; do not apply to an existing production schema.
--- Contains table definitions, constraints, indexes, functions, triggers, RLS policies and grants. No rows or credentials.
+-- Verified data-free AC production catalog snapshot reconstructed on 2026-10-09.
+-- STAGING ONLY: do not apply to an existing production schema.
+-- Includes tables, columns, constraints, indexes, functions, triggers, RLS policies, explicit staging registry deny policy, and source ACLs.
+-- Revoke inherited Supabase default table/function grants before replaying the source grants.
+-- No production rows, users, passwords, tokens, or credentials are included.
 create extension if not exists pgcrypto;
 
 create schema if not exists public;
@@ -741,8 +743,6 @@ CREATE TRIGGER school_memberships_set_updated_at BEFORE UPDATE ON school_members
 
 CREATE TRIGGER schools_set_updated_at BEFORE UPDATE ON schools FOR EACH ROW EXECUTE FUNCTION private.set_updated_at();
 
-alter table private.platform_admins enable row level security;
-
 alter table public.assessment_attempts enable row level security;
 
 alter table public.audit_events enable row level security;
@@ -784,6 +784,8 @@ alter table public.rubric_templates enable row level security;
 alter table public.school_memberships enable row level security;
 
 alter table public.schools enable row level security;
+
+alter table private.platform_admins enable row level security;
 
 create policy "assessment attempts insert own" on public.assessment_attempts as permissive for INSERT to authenticated with check ((learner_id = ( SELECT auth.uid() AS uid)));
 
@@ -937,6 +939,12 @@ create policy schools_select on public.schools as permissive for SELECT to authe
      JOIN cohort_enrolments ce ON ((ce.cohort_id = c.id)))
   WHERE ((c.school_id = schools.id) AND (ce.learner_id = ( SELECT auth.uid() AS uid)) AND (ce.status = ANY (ARRAY['active'::text, 'completed'::text])))))));
 
+create policy platform_admin_registry_deny_client_access on private.platform_admins as permissive for all to anon, authenticated using (false) with check (false);
+
+revoke all privileges on all tables in schema public, private from public, anon, authenticated, service_role;
+
+revoke all privileges on all functions in schema public, private from public, anon, authenticated, service_role;
+
 grant CREATE on schema private to postgres;
 
 grant USAGE on schema private to postgres;
@@ -991,23 +999,13 @@ grant TRUNCATE on table public.assessment_attempts to postgres;
 
 grant UPDATE on table public.assessment_attempts to postgres;
 
-grant DELETE on table public.assessment_attempts to anon;
-
-grant INSERT on table public.assessment_attempts to anon;
-
 grant MAINTAIN on table public.assessment_attempts to anon;
 
 grant REFERENCES on table public.assessment_attempts to anon;
 
-grant SELECT on table public.assessment_attempts to anon;
-
 grant TRIGGER on table public.assessment_attempts to anon;
 
 grant TRUNCATE on table public.assessment_attempts to anon;
-
-grant UPDATE on table public.assessment_attempts to anon;
-
-grant DELETE on table public.assessment_attempts to authenticated;
 
 grant INSERT on table public.assessment_attempts to authenticated;
 
@@ -1023,21 +1021,13 @@ grant TRUNCATE on table public.assessment_attempts to authenticated;
 
 grant UPDATE on table public.assessment_attempts to authenticated;
 
-grant DELETE on table public.assessment_attempts to service_role;
-
-grant INSERT on table public.assessment_attempts to service_role;
-
 grant MAINTAIN on table public.assessment_attempts to service_role;
 
 grant REFERENCES on table public.assessment_attempts to service_role;
 
-grant SELECT on table public.assessment_attempts to service_role;
-
 grant TRIGGER on table public.assessment_attempts to service_role;
 
 grant TRUNCATE on table public.assessment_attempts to service_role;
-
-grant UPDATE on table public.assessment_attempts to service_role;
 
 grant DELETE on table public.audit_events to postgres;
 
@@ -1055,53 +1045,13 @@ grant TRUNCATE on table public.audit_events to postgres;
 
 grant UPDATE on table public.audit_events to postgres;
 
-grant DELETE on table public.audit_events to anon;
-
-grant INSERT on table public.audit_events to anon;
-
-grant MAINTAIN on table public.audit_events to anon;
-
-grant REFERENCES on table public.audit_events to anon;
-
-grant SELECT on table public.audit_events to anon;
-
-grant TRIGGER on table public.audit_events to anon;
-
-grant TRUNCATE on table public.audit_events to anon;
-
-grant UPDATE on table public.audit_events to anon;
-
-grant DELETE on table public.audit_events to authenticated;
-
-grant INSERT on table public.audit_events to authenticated;
-
-grant MAINTAIN on table public.audit_events to authenticated;
-
-grant REFERENCES on table public.audit_events to authenticated;
-
-grant SELECT on table public.audit_events to authenticated;
-
-grant TRIGGER on table public.audit_events to authenticated;
-
-grant TRUNCATE on table public.audit_events to authenticated;
-
-grant UPDATE on table public.audit_events to authenticated;
-
-grant DELETE on table public.audit_events to service_role;
-
-grant INSERT on table public.audit_events to service_role;
-
 grant MAINTAIN on table public.audit_events to service_role;
 
 grant REFERENCES on table public.audit_events to service_role;
 
-grant SELECT on table public.audit_events to service_role;
-
 grant TRIGGER on table public.audit_events to service_role;
 
 grant TRUNCATE on table public.audit_events to service_role;
-
-grant UPDATE on table public.audit_events to service_role;
 
 grant DELETE on table public.cohort_enrolments to postgres;
 
@@ -1119,35 +1069,11 @@ grant TRUNCATE on table public.cohort_enrolments to postgres;
 
 grant UPDATE on table public.cohort_enrolments to postgres;
 
-grant DELETE on table public.cohort_enrolments to anon;
-
-grant INSERT on table public.cohort_enrolments to anon;
-
-grant MAINTAIN on table public.cohort_enrolments to anon;
-
-grant REFERENCES on table public.cohort_enrolments to anon;
-
-grant SELECT on table public.cohort_enrolments to anon;
-
-grant TRIGGER on table public.cohort_enrolments to anon;
-
-grant TRUNCATE on table public.cohort_enrolments to anon;
-
-grant UPDATE on table public.cohort_enrolments to anon;
-
 grant DELETE on table public.cohort_enrolments to authenticated;
 
 grant INSERT on table public.cohort_enrolments to authenticated;
 
-grant MAINTAIN on table public.cohort_enrolments to authenticated;
-
-grant REFERENCES on table public.cohort_enrolments to authenticated;
-
 grant SELECT on table public.cohort_enrolments to authenticated;
-
-grant TRIGGER on table public.cohort_enrolments to authenticated;
-
-grant TRUNCATE on table public.cohort_enrolments to authenticated;
 
 grant UPDATE on table public.cohort_enrolments to authenticated;
 
@@ -1183,35 +1109,11 @@ grant TRUNCATE on table public.cohort_staff to postgres;
 
 grant UPDATE on table public.cohort_staff to postgres;
 
-grant DELETE on table public.cohort_staff to anon;
-
-grant INSERT on table public.cohort_staff to anon;
-
-grant MAINTAIN on table public.cohort_staff to anon;
-
-grant REFERENCES on table public.cohort_staff to anon;
-
-grant SELECT on table public.cohort_staff to anon;
-
-grant TRIGGER on table public.cohort_staff to anon;
-
-grant TRUNCATE on table public.cohort_staff to anon;
-
-grant UPDATE on table public.cohort_staff to anon;
-
 grant DELETE on table public.cohort_staff to authenticated;
 
 grant INSERT on table public.cohort_staff to authenticated;
 
-grant MAINTAIN on table public.cohort_staff to authenticated;
-
-grant REFERENCES on table public.cohort_staff to authenticated;
-
 grant SELECT on table public.cohort_staff to authenticated;
-
-grant TRIGGER on table public.cohort_staff to authenticated;
-
-grant TRUNCATE on table public.cohort_staff to authenticated;
 
 grant UPDATE on table public.cohort_staff to authenticated;
 
@@ -1247,35 +1149,11 @@ grant TRUNCATE on table public.cohorts to postgres;
 
 grant UPDATE on table public.cohorts to postgres;
 
-grant DELETE on table public.cohorts to anon;
-
-grant INSERT on table public.cohorts to anon;
-
-grant MAINTAIN on table public.cohorts to anon;
-
-grant REFERENCES on table public.cohorts to anon;
-
-grant SELECT on table public.cohorts to anon;
-
-grant TRIGGER on table public.cohorts to anon;
-
-grant TRUNCATE on table public.cohorts to anon;
-
-grant UPDATE on table public.cohorts to anon;
-
 grant DELETE on table public.cohorts to authenticated;
 
 grant INSERT on table public.cohorts to authenticated;
 
-grant MAINTAIN on table public.cohorts to authenticated;
-
-grant REFERENCES on table public.cohorts to authenticated;
-
 grant SELECT on table public.cohorts to authenticated;
-
-grant TRIGGER on table public.cohorts to authenticated;
-
-grant TRUNCATE on table public.cohorts to authenticated;
 
 grant UPDATE on table public.cohorts to authenticated;
 
@@ -1311,25 +1189,13 @@ grant TRUNCATE on table public.curriculum_releases to postgres;
 
 grant UPDATE on table public.curriculum_releases to postgres;
 
-grant DELETE on table public.curriculum_releases to anon;
-
-grant INSERT on table public.curriculum_releases to anon;
-
 grant MAINTAIN on table public.curriculum_releases to anon;
 
 grant REFERENCES on table public.curriculum_releases to anon;
 
-grant SELECT on table public.curriculum_releases to anon;
-
 grant TRIGGER on table public.curriculum_releases to anon;
 
 grant TRUNCATE on table public.curriculum_releases to anon;
-
-grant UPDATE on table public.curriculum_releases to anon;
-
-grant DELETE on table public.curriculum_releases to authenticated;
-
-grant INSERT on table public.curriculum_releases to authenticated;
 
 grant MAINTAIN on table public.curriculum_releases to authenticated;
 
@@ -1341,23 +1207,13 @@ grant TRIGGER on table public.curriculum_releases to authenticated;
 
 grant TRUNCATE on table public.curriculum_releases to authenticated;
 
-grant UPDATE on table public.curriculum_releases to authenticated;
-
-grant DELETE on table public.curriculum_releases to service_role;
-
-grant INSERT on table public.curriculum_releases to service_role;
-
 grant MAINTAIN on table public.curriculum_releases to service_role;
 
 grant REFERENCES on table public.curriculum_releases to service_role;
 
-grant SELECT on table public.curriculum_releases to service_role;
-
 grant TRIGGER on table public.curriculum_releases to service_role;
 
 grant TRUNCATE on table public.curriculum_releases to service_role;
-
-grant UPDATE on table public.curriculum_releases to service_role;
 
 grant DELETE on table public.evidence_definitions to postgres;
 
@@ -1375,25 +1231,13 @@ grant TRUNCATE on table public.evidence_definitions to postgres;
 
 grant UPDATE on table public.evidence_definitions to postgres;
 
-grant DELETE on table public.evidence_definitions to anon;
-
-grant INSERT on table public.evidence_definitions to anon;
-
 grant MAINTAIN on table public.evidence_definitions to anon;
 
 grant REFERENCES on table public.evidence_definitions to anon;
 
-grant SELECT on table public.evidence_definitions to anon;
-
 grant TRIGGER on table public.evidence_definitions to anon;
 
 grant TRUNCATE on table public.evidence_definitions to anon;
-
-grant UPDATE on table public.evidence_definitions to anon;
-
-grant DELETE on table public.evidence_definitions to authenticated;
-
-grant INSERT on table public.evidence_definitions to authenticated;
 
 grant MAINTAIN on table public.evidence_definitions to authenticated;
 
@@ -1405,23 +1249,13 @@ grant TRIGGER on table public.evidence_definitions to authenticated;
 
 grant TRUNCATE on table public.evidence_definitions to authenticated;
 
-grant UPDATE on table public.evidence_definitions to authenticated;
-
-grant DELETE on table public.evidence_definitions to service_role;
-
-grant INSERT on table public.evidence_definitions to service_role;
-
 grant MAINTAIN on table public.evidence_definitions to service_role;
 
 grant REFERENCES on table public.evidence_definitions to service_role;
 
-grant SELECT on table public.evidence_definitions to service_role;
-
 grant TRIGGER on table public.evidence_definitions to service_role;
 
 grant TRUNCATE on table public.evidence_definitions to service_role;
-
-grant UPDATE on table public.evidence_definitions to service_role;
 
 grant DELETE on table public.evidence_records to postgres;
 
@@ -1439,23 +1273,13 @@ grant TRUNCATE on table public.evidence_records to postgres;
 
 grant UPDATE on table public.evidence_records to postgres;
 
-grant DELETE on table public.evidence_records to anon;
-
-grant INSERT on table public.evidence_records to anon;
-
 grant MAINTAIN on table public.evidence_records to anon;
 
 grant REFERENCES on table public.evidence_records to anon;
 
-grant SELECT on table public.evidence_records to anon;
-
 grant TRIGGER on table public.evidence_records to anon;
 
 grant TRUNCATE on table public.evidence_records to anon;
-
-grant UPDATE on table public.evidence_records to anon;
-
-grant DELETE on table public.evidence_records to authenticated;
 
 grant INSERT on table public.evidence_records to authenticated;
 
@@ -1471,21 +1295,13 @@ grant TRUNCATE on table public.evidence_records to authenticated;
 
 grant UPDATE on table public.evidence_records to authenticated;
 
-grant DELETE on table public.evidence_records to service_role;
-
-grant INSERT on table public.evidence_records to service_role;
-
 grant MAINTAIN on table public.evidence_records to service_role;
 
 grant REFERENCES on table public.evidence_records to service_role;
 
-grant SELECT on table public.evidence_records to service_role;
-
 grant TRIGGER on table public.evidence_records to service_role;
 
 grant TRUNCATE on table public.evidence_records to service_role;
-
-grant UPDATE on table public.evidence_records to service_role;
 
 grant DELETE on table public.evidence_report_snapshots to postgres;
 
@@ -1503,25 +1319,13 @@ grant TRUNCATE on table public.evidence_report_snapshots to postgres;
 
 grant UPDATE on table public.evidence_report_snapshots to postgres;
 
-grant DELETE on table public.evidence_report_snapshots to anon;
-
-grant INSERT on table public.evidence_report_snapshots to anon;
-
 grant MAINTAIN on table public.evidence_report_snapshots to anon;
 
 grant REFERENCES on table public.evidence_report_snapshots to anon;
 
-grant SELECT on table public.evidence_report_snapshots to anon;
-
 grant TRIGGER on table public.evidence_report_snapshots to anon;
 
 grant TRUNCATE on table public.evidence_report_snapshots to anon;
-
-grant UPDATE on table public.evidence_report_snapshots to anon;
-
-grant DELETE on table public.evidence_report_snapshots to authenticated;
-
-grant INSERT on table public.evidence_report_snapshots to authenticated;
 
 grant MAINTAIN on table public.evidence_report_snapshots to authenticated;
 
@@ -1533,23 +1337,13 @@ grant TRIGGER on table public.evidence_report_snapshots to authenticated;
 
 grant TRUNCATE on table public.evidence_report_snapshots to authenticated;
 
-grant UPDATE on table public.evidence_report_snapshots to authenticated;
-
-grant DELETE on table public.evidence_report_snapshots to service_role;
-
-grant INSERT on table public.evidence_report_snapshots to service_role;
-
 grant MAINTAIN on table public.evidence_report_snapshots to service_role;
 
 grant REFERENCES on table public.evidence_report_snapshots to service_role;
 
-grant SELECT on table public.evidence_report_snapshots to service_role;
-
 grant TRIGGER on table public.evidence_report_snapshots to service_role;
 
 grant TRUNCATE on table public.evidence_report_snapshots to service_role;
-
-grant UPDATE on table public.evidence_report_snapshots to service_role;
 
 grant DELETE on table public.evidence_reviews to postgres;
 
@@ -1567,23 +1361,13 @@ grant TRUNCATE on table public.evidence_reviews to postgres;
 
 grant UPDATE on table public.evidence_reviews to postgres;
 
-grant DELETE on table public.evidence_reviews to anon;
-
-grant INSERT on table public.evidence_reviews to anon;
-
 grant MAINTAIN on table public.evidence_reviews to anon;
 
 grant REFERENCES on table public.evidence_reviews to anon;
 
-grant SELECT on table public.evidence_reviews to anon;
-
 grant TRIGGER on table public.evidence_reviews to anon;
 
 grant TRUNCATE on table public.evidence_reviews to anon;
-
-grant UPDATE on table public.evidence_reviews to anon;
-
-grant DELETE on table public.evidence_reviews to authenticated;
 
 grant INSERT on table public.evidence_reviews to authenticated;
 
@@ -1599,21 +1383,13 @@ grant TRUNCATE on table public.evidence_reviews to authenticated;
 
 grant UPDATE on table public.evidence_reviews to authenticated;
 
-grant DELETE on table public.evidence_reviews to service_role;
-
-grant INSERT on table public.evidence_reviews to service_role;
-
 grant MAINTAIN on table public.evidence_reviews to service_role;
 
 grant REFERENCES on table public.evidence_reviews to service_role;
 
-grant SELECT on table public.evidence_reviews to service_role;
-
 grant TRIGGER on table public.evidence_reviews to service_role;
 
 grant TRUNCATE on table public.evidence_reviews to service_role;
-
-grant UPDATE on table public.evidence_reviews to service_role;
 
 grant DELETE on table public.learner_profiles to postgres;
 
@@ -1631,35 +1407,9 @@ grant TRUNCATE on table public.learner_profiles to postgres;
 
 grant UPDATE on table public.learner_profiles to postgres;
 
-grant DELETE on table public.learner_profiles to anon;
-
-grant INSERT on table public.learner_profiles to anon;
-
-grant MAINTAIN on table public.learner_profiles to anon;
-
-grant REFERENCES on table public.learner_profiles to anon;
-
-grant SELECT on table public.learner_profiles to anon;
-
-grant TRIGGER on table public.learner_profiles to anon;
-
-grant TRUNCATE on table public.learner_profiles to anon;
-
-grant UPDATE on table public.learner_profiles to anon;
-
-grant DELETE on table public.learner_profiles to authenticated;
-
 grant INSERT on table public.learner_profiles to authenticated;
 
-grant MAINTAIN on table public.learner_profiles to authenticated;
-
-grant REFERENCES on table public.learner_profiles to authenticated;
-
 grant SELECT on table public.learner_profiles to authenticated;
-
-grant TRIGGER on table public.learner_profiles to authenticated;
-
-grant TRUNCATE on table public.learner_profiles to authenticated;
 
 grant UPDATE on table public.learner_profiles to authenticated;
 
@@ -1695,35 +1445,11 @@ grant TRUNCATE on table public.lesson_notes to postgres;
 
 grant UPDATE on table public.lesson_notes to postgres;
 
-grant DELETE on table public.lesson_notes to anon;
-
-grant INSERT on table public.lesson_notes to anon;
-
-grant MAINTAIN on table public.lesson_notes to anon;
-
-grant REFERENCES on table public.lesson_notes to anon;
-
-grant SELECT on table public.lesson_notes to anon;
-
-grant TRIGGER on table public.lesson_notes to anon;
-
-grant TRUNCATE on table public.lesson_notes to anon;
-
-grant UPDATE on table public.lesson_notes to anon;
-
 grant DELETE on table public.lesson_notes to authenticated;
 
 grant INSERT on table public.lesson_notes to authenticated;
 
-grant MAINTAIN on table public.lesson_notes to authenticated;
-
-grant REFERENCES on table public.lesson_notes to authenticated;
-
 grant SELECT on table public.lesson_notes to authenticated;
-
-grant TRIGGER on table public.lesson_notes to authenticated;
-
-grant TRUNCATE on table public.lesson_notes to authenticated;
 
 grant UPDATE on table public.lesson_notes to authenticated;
 
@@ -1759,35 +1485,11 @@ grant TRUNCATE on table public.lesson_progress to postgres;
 
 grant UPDATE on table public.lesson_progress to postgres;
 
-grant DELETE on table public.lesson_progress to anon;
-
-grant INSERT on table public.lesson_progress to anon;
-
-grant MAINTAIN on table public.lesson_progress to anon;
-
-grant REFERENCES on table public.lesson_progress to anon;
-
-grant SELECT on table public.lesson_progress to anon;
-
-grant TRIGGER on table public.lesson_progress to anon;
-
-grant TRUNCATE on table public.lesson_progress to anon;
-
-grant UPDATE on table public.lesson_progress to anon;
-
 grant DELETE on table public.lesson_progress to authenticated;
 
 grant INSERT on table public.lesson_progress to authenticated;
 
-grant MAINTAIN on table public.lesson_progress to authenticated;
-
-grant REFERENCES on table public.lesson_progress to authenticated;
-
 grant SELECT on table public.lesson_progress to authenticated;
-
-grant TRIGGER on table public.lesson_progress to authenticated;
-
-grant TRUNCATE on table public.lesson_progress to authenticated;
 
 grant UPDATE on table public.lesson_progress to authenticated;
 
@@ -1823,35 +1525,11 @@ grant TRUNCATE on table public.portfolio_artifacts to postgres;
 
 grant UPDATE on table public.portfolio_artifacts to postgres;
 
-grant DELETE on table public.portfolio_artifacts to anon;
-
-grant INSERT on table public.portfolio_artifacts to anon;
-
-grant MAINTAIN on table public.portfolio_artifacts to anon;
-
-grant REFERENCES on table public.portfolio_artifacts to anon;
-
-grant SELECT on table public.portfolio_artifacts to anon;
-
-grant TRIGGER on table public.portfolio_artifacts to anon;
-
-grant TRUNCATE on table public.portfolio_artifacts to anon;
-
-grant UPDATE on table public.portfolio_artifacts to anon;
-
 grant DELETE on table public.portfolio_artifacts to authenticated;
 
 grant INSERT on table public.portfolio_artifacts to authenticated;
 
-grant MAINTAIN on table public.portfolio_artifacts to authenticated;
-
-grant REFERENCES on table public.portfolio_artifacts to authenticated;
-
 grant SELECT on table public.portfolio_artifacts to authenticated;
-
-grant TRIGGER on table public.portfolio_artifacts to authenticated;
-
-grant TRUNCATE on table public.portfolio_artifacts to authenticated;
 
 grant UPDATE on table public.portfolio_artifacts to authenticated;
 
@@ -1887,37 +1565,11 @@ grant TRUNCATE on table public.portfolio_evidence to postgres;
 
 grant UPDATE on table public.portfolio_evidence to postgres;
 
-grant DELETE on table public.portfolio_evidence to anon;
-
-grant INSERT on table public.portfolio_evidence to anon;
-
-grant MAINTAIN on table public.portfolio_evidence to anon;
-
-grant REFERENCES on table public.portfolio_evidence to anon;
-
-grant SELECT on table public.portfolio_evidence to anon;
-
-grant TRIGGER on table public.portfolio_evidence to anon;
-
-grant TRUNCATE on table public.portfolio_evidence to anon;
-
-grant UPDATE on table public.portfolio_evidence to anon;
-
 grant DELETE on table public.portfolio_evidence to authenticated;
 
 grant INSERT on table public.portfolio_evidence to authenticated;
 
-grant MAINTAIN on table public.portfolio_evidence to authenticated;
-
-grant REFERENCES on table public.portfolio_evidence to authenticated;
-
 grant SELECT on table public.portfolio_evidence to authenticated;
-
-grant TRIGGER on table public.portfolio_evidence to authenticated;
-
-grant TRUNCATE on table public.portfolio_evidence to authenticated;
-
-grant UPDATE on table public.portfolio_evidence to authenticated;
 
 grant DELETE on table public.portfolio_evidence to service_role;
 
@@ -1951,35 +1603,7 @@ grant TRUNCATE on table public.profiles to postgres;
 
 grant UPDATE on table public.profiles to postgres;
 
-grant DELETE on table public.profiles to anon;
-
-grant INSERT on table public.profiles to anon;
-
-grant MAINTAIN on table public.profiles to anon;
-
-grant REFERENCES on table public.profiles to anon;
-
-grant SELECT on table public.profiles to anon;
-
-grant TRIGGER on table public.profiles to anon;
-
-grant TRUNCATE on table public.profiles to anon;
-
-grant UPDATE on table public.profiles to anon;
-
-grant DELETE on table public.profiles to authenticated;
-
-grant INSERT on table public.profiles to authenticated;
-
-grant MAINTAIN on table public.profiles to authenticated;
-
-grant REFERENCES on table public.profiles to authenticated;
-
 grant SELECT on table public.profiles to authenticated;
-
-grant TRIGGER on table public.profiles to authenticated;
-
-grant TRUNCATE on table public.profiles to authenticated;
 
 grant UPDATE on table public.profiles to authenticated;
 
@@ -2015,35 +1639,11 @@ grant TRUNCATE on table public.prompt_responses to postgres;
 
 grant UPDATE on table public.prompt_responses to postgres;
 
-grant DELETE on table public.prompt_responses to anon;
-
-grant INSERT on table public.prompt_responses to anon;
-
-grant MAINTAIN on table public.prompt_responses to anon;
-
-grant REFERENCES on table public.prompt_responses to anon;
-
-grant SELECT on table public.prompt_responses to anon;
-
-grant TRIGGER on table public.prompt_responses to anon;
-
-grant TRUNCATE on table public.prompt_responses to anon;
-
-grant UPDATE on table public.prompt_responses to anon;
-
 grant DELETE on table public.prompt_responses to authenticated;
 
 grant INSERT on table public.prompt_responses to authenticated;
 
-grant MAINTAIN on table public.prompt_responses to authenticated;
-
-grant REFERENCES on table public.prompt_responses to authenticated;
-
 grant SELECT on table public.prompt_responses to authenticated;
-
-grant TRIGGER on table public.prompt_responses to authenticated;
-
-grant TRUNCATE on table public.prompt_responses to authenticated;
 
 grant UPDATE on table public.prompt_responses to authenticated;
 
@@ -2079,25 +1679,13 @@ grant TRUNCATE on table public.rubric_criteria to postgres;
 
 grant UPDATE on table public.rubric_criteria to postgres;
 
-grant DELETE on table public.rubric_criteria to anon;
-
-grant INSERT on table public.rubric_criteria to anon;
-
 grant MAINTAIN on table public.rubric_criteria to anon;
 
 grant REFERENCES on table public.rubric_criteria to anon;
 
-grant SELECT on table public.rubric_criteria to anon;
-
 grant TRIGGER on table public.rubric_criteria to anon;
 
 grant TRUNCATE on table public.rubric_criteria to anon;
-
-grant UPDATE on table public.rubric_criteria to anon;
-
-grant DELETE on table public.rubric_criteria to authenticated;
-
-grant INSERT on table public.rubric_criteria to authenticated;
 
 grant MAINTAIN on table public.rubric_criteria to authenticated;
 
@@ -2109,23 +1697,13 @@ grant TRIGGER on table public.rubric_criteria to authenticated;
 
 grant TRUNCATE on table public.rubric_criteria to authenticated;
 
-grant UPDATE on table public.rubric_criteria to authenticated;
-
-grant DELETE on table public.rubric_criteria to service_role;
-
-grant INSERT on table public.rubric_criteria to service_role;
-
 grant MAINTAIN on table public.rubric_criteria to service_role;
 
 grant REFERENCES on table public.rubric_criteria to service_role;
 
-grant SELECT on table public.rubric_criteria to service_role;
-
 grant TRIGGER on table public.rubric_criteria to service_role;
 
 grant TRUNCATE on table public.rubric_criteria to service_role;
-
-grant UPDATE on table public.rubric_criteria to service_role;
 
 grant DELETE on table public.rubric_templates to postgres;
 
@@ -2143,25 +1721,13 @@ grant TRUNCATE on table public.rubric_templates to postgres;
 
 grant UPDATE on table public.rubric_templates to postgres;
 
-grant DELETE on table public.rubric_templates to anon;
-
-grant INSERT on table public.rubric_templates to anon;
-
 grant MAINTAIN on table public.rubric_templates to anon;
 
 grant REFERENCES on table public.rubric_templates to anon;
 
-grant SELECT on table public.rubric_templates to anon;
-
 grant TRIGGER on table public.rubric_templates to anon;
 
 grant TRUNCATE on table public.rubric_templates to anon;
-
-grant UPDATE on table public.rubric_templates to anon;
-
-grant DELETE on table public.rubric_templates to authenticated;
-
-grant INSERT on table public.rubric_templates to authenticated;
 
 grant MAINTAIN on table public.rubric_templates to authenticated;
 
@@ -2173,23 +1739,13 @@ grant TRIGGER on table public.rubric_templates to authenticated;
 
 grant TRUNCATE on table public.rubric_templates to authenticated;
 
-grant UPDATE on table public.rubric_templates to authenticated;
-
-grant DELETE on table public.rubric_templates to service_role;
-
-grant INSERT on table public.rubric_templates to service_role;
-
 grant MAINTAIN on table public.rubric_templates to service_role;
 
 grant REFERENCES on table public.rubric_templates to service_role;
 
-grant SELECT on table public.rubric_templates to service_role;
-
 grant TRIGGER on table public.rubric_templates to service_role;
 
 grant TRUNCATE on table public.rubric_templates to service_role;
-
-grant UPDATE on table public.rubric_templates to service_role;
 
 grant DELETE on table public.school_memberships to postgres;
 
@@ -2207,35 +1763,11 @@ grant TRUNCATE on table public.school_memberships to postgres;
 
 grant UPDATE on table public.school_memberships to postgres;
 
-grant DELETE on table public.school_memberships to anon;
-
-grant INSERT on table public.school_memberships to anon;
-
-grant MAINTAIN on table public.school_memberships to anon;
-
-grant REFERENCES on table public.school_memberships to anon;
-
-grant SELECT on table public.school_memberships to anon;
-
-grant TRIGGER on table public.school_memberships to anon;
-
-grant TRUNCATE on table public.school_memberships to anon;
-
-grant UPDATE on table public.school_memberships to anon;
-
 grant DELETE on table public.school_memberships to authenticated;
 
 grant INSERT on table public.school_memberships to authenticated;
 
-grant MAINTAIN on table public.school_memberships to authenticated;
-
-grant REFERENCES on table public.school_memberships to authenticated;
-
 grant SELECT on table public.school_memberships to authenticated;
-
-grant TRIGGER on table public.school_memberships to authenticated;
-
-grant TRUNCATE on table public.school_memberships to authenticated;
 
 grant UPDATE on table public.school_memberships to authenticated;
 
@@ -2271,35 +1803,11 @@ grant TRUNCATE on table public.schools to postgres;
 
 grant UPDATE on table public.schools to postgres;
 
-grant DELETE on table public.schools to anon;
-
-grant INSERT on table public.schools to anon;
-
-grant MAINTAIN on table public.schools to anon;
-
-grant REFERENCES on table public.schools to anon;
-
-grant SELECT on table public.schools to anon;
-
-grant TRIGGER on table public.schools to anon;
-
-grant TRUNCATE on table public.schools to anon;
-
-grant UPDATE on table public.schools to anon;
-
 grant DELETE on table public.schools to authenticated;
 
 grant INSERT on table public.schools to authenticated;
 
-grant MAINTAIN on table public.schools to authenticated;
-
-grant REFERENCES on table public.schools to authenticated;
-
 grant SELECT on table public.schools to authenticated;
-
-grant TRIGGER on table public.schools to authenticated;
-
-grant TRUNCATE on table public.schools to authenticated;
 
 grant UPDATE on table public.schools to authenticated;
 
@@ -2319,25 +1827,17 @@ grant TRUNCATE on table public.schools to service_role;
 
 grant UPDATE on table public.schools to service_role;
 
-grant execute on function private.add_cohort_staff_by_email_impl(uuid, text, text) to PUBLIC;
-
 grant execute on function private.add_cohort_staff_by_email_impl(uuid, text, text) to postgres;
 
 grant execute on function private.add_cohort_staff_by_email_impl(uuid, text, text) to authenticated;
-
-grant execute on function private.add_school_member_by_email_impl(uuid, text, text) to PUBLIC;
 
 grant execute on function private.add_school_member_by_email_impl(uuid, text, text) to postgres;
 
 grant execute on function private.add_school_member_by_email_impl(uuid, text, text) to authenticated;
 
-grant execute on function private.can_review_learner(uuid) to PUBLIC;
-
 grant execute on function private.can_review_learner(uuid) to postgres;
 
 grant execute on function private.can_review_learner(uuid) to authenticated;
-
-grant execute on function private.can_view_learner(uuid) to PUBLIC;
 
 grant execute on function private.can_view_learner(uuid) to postgres;
 
@@ -2345,29 +1845,19 @@ grant execute on function private.can_view_learner(uuid) to authenticated;
 
 grant execute on function private.can_view_learner(uuid) to service_role;
 
-grant execute on function private.create_school_impl(text, text) to PUBLIC;
-
 grant execute on function private.create_school_impl(text, text) to postgres;
 
 grant execute on function private.create_school_impl(text, text) to authenticated;
 
-grant execute on function private.enforce_exclusive_operating_roles() to PUBLIC;
-
 grant execute on function private.enforce_exclusive_operating_roles() to postgres;
-
-grant execute on function private.enrol_learner_by_email_impl(uuid, text) to PUBLIC;
 
 grant execute on function private.enrol_learner_by_email_impl(uuid, text) to postgres;
 
 grant execute on function private.enrol_learner_by_email_impl(uuid, text) to authenticated;
 
-grant execute on function private.handle_new_auth_user() to PUBLIC;
-
 grant execute on function private.handle_new_auth_user() to postgres;
 
 grant execute on function private.handle_new_auth_user() to service_role;
-
-grant execute on function private.has_school_role(uuid, text[]) to PUBLIC;
 
 grant execute on function private.has_school_role(uuid, text[]) to postgres;
 
@@ -2375,13 +1865,9 @@ grant execute on function private.has_school_role(uuid, text[]) to authenticated
 
 grant execute on function private.has_school_role(uuid, text[]) to service_role;
 
-grant execute on function private.is_cohort_admin(uuid) to PUBLIC;
-
 grant execute on function private.is_cohort_admin(uuid) to postgres;
 
 grant execute on function private.is_cohort_admin(uuid) to authenticated;
-
-grant execute on function private.is_cohort_staff_member(uuid) to PUBLIC;
 
 grant execute on function private.is_cohort_staff_member(uuid) to postgres;
 
@@ -2389,90 +1875,42 @@ grant execute on function private.is_cohort_staff_member(uuid) to authenticated;
 
 grant execute on function private.is_cohort_staff_member(uuid) to service_role;
 
-grant execute on function private.is_platform_admin() to PUBLIC;
-
 grant execute on function private.is_platform_admin() to postgres;
 
 grant execute on function private.is_platform_admin() to authenticated;
-
-grant execute on function private.resolve_school_account_impl(uuid, text) to PUBLIC;
 
 grant execute on function private.resolve_school_account_impl(uuid, text) to postgres;
 
 grant execute on function private.resolve_school_account_impl(uuid, text) to authenticated;
 
-grant execute on function private.set_updated_at() to PUBLIC;
-
 grant execute on function private.set_updated_at() to postgres;
 
 grant execute on function private.set_updated_at() to service_role;
 
-grant execute on function public.add_cohort_staff_by_email(uuid, text, text) to PUBLIC;
-
 grant execute on function public.add_cohort_staff_by_email(uuid, text, text) to postgres;
-
-grant execute on function public.add_cohort_staff_by_email(uuid, text, text) to anon;
 
 grant execute on function public.add_cohort_staff_by_email(uuid, text, text) to authenticated;
 
-grant execute on function public.add_cohort_staff_by_email(uuid, text, text) to service_role;
-
-grant execute on function public.add_school_member_by_email(uuid, text, text) to PUBLIC;
-
 grant execute on function public.add_school_member_by_email(uuid, text, text) to postgres;
-
-grant execute on function public.add_school_member_by_email(uuid, text, text) to anon;
 
 grant execute on function public.add_school_member_by_email(uuid, text, text) to authenticated;
 
-grant execute on function public.add_school_member_by_email(uuid, text, text) to service_role;
-
-grant execute on function public.create_school(text, text) to PUBLIC;
-
 grant execute on function public.create_school(text, text) to postgres;
-
-grant execute on function public.create_school(text, text) to anon;
 
 grant execute on function public.create_school(text, text) to authenticated;
 
-grant execute on function public.create_school(text, text) to service_role;
-
-grant execute on function public.enrol_learner_by_email(uuid, text) to PUBLIC;
-
 grant execute on function public.enrol_learner_by_email(uuid, text) to postgres;
-
-grant execute on function public.enrol_learner_by_email(uuid, text) to anon;
 
 grant execute on function public.enrol_learner_by_email(uuid, text) to authenticated;
 
-grant execute on function public.enrol_learner_by_email(uuid, text) to service_role;
-
-grant execute on function public.is_platform_admin() to PUBLIC;
-
 grant execute on function public.is_platform_admin() to postgres;
-
-grant execute on function public.is_platform_admin() to anon;
 
 grant execute on function public.is_platform_admin() to authenticated;
 
-grant execute on function public.is_platform_admin() to service_role;
-
-grant execute on function public.resolve_school_account(uuid, text) to PUBLIC;
-
 grant execute on function public.resolve_school_account(uuid, text) to postgres;
-
-grant execute on function public.resolve_school_account(uuid, text) to anon;
 
 grant execute on function public.resolve_school_account(uuid, text) to authenticated;
 
-grant execute on function public.resolve_school_account(uuid, text) to service_role;
-
-grant execute on function public.upsert_facilitator_evidence_record(uuid, text, text, jsonb, text) to PUBLIC;
-
 grant execute on function public.upsert_facilitator_evidence_record(uuid, text, text, jsonb, text) to postgres;
 
-grant execute on function public.upsert_facilitator_evidence_record(uuid, text, text, jsonb, text) to anon;
-
 grant execute on function public.upsert_facilitator_evidence_record(uuid, text, text, jsonb, text) to authenticated;
-
-grant execute on function public.upsert_facilitator_evidence_record(uuid, text, text, jsonb, text) to service_role;
