@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import { ArrowRight, Building2, CheckCircle2, GraduationCap, Plus, ShieldCheck, UserPlus, UsersRound } from "lucide-react";
 import Link from "next/link";
 import { useAuth } from "@/lib/auth-context";
+import { InstitutionWorkspaceMenu } from "./institution-workspace-menu";
 import {
   addCohortStaff,
   addInstitutionMember,
@@ -17,6 +18,7 @@ import {
 } from "@/lib/institutional/provisioning";
 
 type Membership = { school_id: string; role: string; status: string };
+type InstitutionSection = "overview" | "cohorts" | "learners" | "facilitators" | "team";
 
 function slugify(value: string) {
   return value.toLowerCase().trim().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 80);
@@ -27,8 +29,9 @@ function messageFor(error: unknown) {
   return "Something went wrong. Try again.";
 }
 
-export function InstitutionalAdmin() {
+export function InstitutionalAdmin({ initialSection = "overview" }: { initialSection?: InstitutionSection } = {}) {
   const { user, loading: authLoading } = useAuth();
+  const pageSection = initialSection;
   const [schools, setSchools] = useState<School[]>([]);
   const [cohorts, setCohorts] = useState<Cohort[]>([]);
   const [memberships, setMemberships] = useState<Membership[]>([]);
@@ -171,15 +174,16 @@ export function InstitutionalAdmin() {
   }
 
   return (
-    <main className="institution-admin-page">
+    <main className="institution-admin-page" data-workspace-section={pageSection}>
       <header className="institution-admin-header">
         <div>
           <p className="eyebrow">Applied Commerce · Institutional operations</p>
-          <h1>Provision the real programme.</h1>
-          <p>Create the school and cohort structure that the existing facilitator workspace already understands.</p>
+          <h1>{pageSection === "overview" ? (isPlatformAdmin ? "Platform administration." : "Institution home.") : pageSection === "cohorts" ? "Cohorts & delivery groups." : pageSection === "learners" ? "Learner enrolment." : pageSection === "facilitators" ? "Facilitator assignments." : "Institution team access."}</h1>
+          <p>{pageSection === "overview" ? "A dedicated home for school setup, cohort delivery and role assignments." : pageSection === "cohorts" ? "Create and manage the cohorts that structure programme delivery." : pageSection === "learners" ? "Assign learners by email before or after registration." : pageSection === "facilitators" ? "Assign facilitators to the right school and cohort." : "Manage school-level administrator and educator access."}</p>
         </div>
         <Link className="institution-admin-secondary" href="/facilitator">Open facilitator workspace <ArrowRight /></Link>
       </header>
+      <InstitutionWorkspaceMenu isPlatformAdmin={isPlatformAdmin} />
 
       {error ? <div className="institution-admin-alert error"><span>{error}</span></div> : null}
       {notice ? <div className="institution-admin-alert success"><CheckCircle2 /><span>{notice}</span></div> : null}
@@ -212,10 +216,11 @@ export function InstitutionalAdmin() {
         <>
           <section className="institution-admin-toolbar">
             <label><span>Institution</span><select value={schoolId} onChange={(event) => { setSchoolId(event.target.value); const next = cohorts.filter((item) => item.school_id === event.target.value)[0]; setCohortId(next?.id ?? ""); }}>{schools.map((school) => <option value={school.id} key={school.id}>{school.name}</option>)}</select></label>
+            {(pageSection === "learners" || pageSection === "facilitators") ? <label><span>Cohort</span><select value={cohortId} onChange={(event) => setCohortId(event.target.value)}>{schoolCohorts.map((cohort) => <option value={cohort.id} key={cohort.id}>{cohort.name}</option>)}</select></label> : null}
             <div className="institution-admin-role"><ShieldCheck /><span>{isPlatformAdmin ? "System administrator" : membership?.role ?? "member"}</span></div>
           </section>
 
-          <section className="institution-admin-metrics">
+          <section className="institution-admin-metrics" data-workspace-section="overview">
             <article><Building2 /><strong>{schools.length}</strong><span>Institution{schools.length === 1 ? "" : "s"}</span></article>
             <article><UsersRound /><strong>{schoolCohorts.length}</strong><span>Active cohorts</span></article>
             <article><GraduationCap /><strong>{people?.learners.length ?? 0}</strong><span>Learners in selected cohort</span></article>
@@ -223,7 +228,7 @@ export function InstitutionalAdmin() {
           </section>
 
           <div className="institution-admin-grid">
-            <section className="institution-admin-card">
+            <section className="institution-admin-card" data-workspace-section="overview cohorts">
               <header><div><p className="eyebrow">Cohorts</p><h2>Programme delivery groups</h2></div><span>{schoolCohorts.length}</span></header>
               <div className="institution-admin-list">
                 {schoolCohorts.map((cohort) => <button key={cohort.id} className={cohort.id === cohortId ? "active" : ""} onClick={() => setCohortId(cohort.id)}>
@@ -250,25 +255,25 @@ export function InstitutionalAdmin() {
               </form> : null}
             </section>
 
-            <section className="institution-admin-card">
+            <section className="institution-admin-card" data-workspace-section="overview learners facilitators">
               <header><div><p className="eyebrow">Selected cohort</p><h2>{selectedCohort?.name ?? "Choose a cohort"}</h2></div>{selectedCohort ? <span>Grade {selectedCohort.grade}</span> : null}</header>
               {selectedCohort ? <>
                 <div className="institution-admin-people">
                   <div><GraduationCap /><span><strong>{people?.learners.length ?? 0}</strong> learners</span></div>
                   <div><UsersRound /><span><strong>{people?.staff.length ?? 0}</strong> staff</span></div>
                 </div>
-                <div className="institution-admin-person-list">
+                <div className="institution-admin-person-list" data-workspace-section="overview learners">
                   {people?.learners.map((learner) => <article key={learner.learner_id}><i>{(learner.profile?.display_name || "L").slice(0, 1).toUpperCase()}</i><span><strong>{learner.profile?.display_name || "Learner"}</strong><small>{learner.status}</small></span></article>)}
                   {!people?.learners.length ? <p className="institution-admin-empty">No learners enrolled yet.</p> : null}
                 </div>
-                {canManageLearners ? <form className="institution-admin-form compact" onSubmit={(event) => {
+                {canManageLearners ? <form data-workspace-section="overview learners" className="institution-admin-form compact" onSubmit={(event) => {
                   event.preventDefault();
                   void run(async () => { await enrolLearner(selectedCohort.id, learnerEmail); setLearnerEmail(""); await refresh(schoolId, selectedCohort.id); }, "Learner assignment saved. If this email is not registered yet, access activates after the person signs up.");
                 }}>
                   <p className="eyebrow">Add learner</p>
                   <div className="institution-admin-inline"><input type="email" required value={learnerEmail} onChange={(event) => setLearnerEmail(event.target.value)} placeholder="learner@example.com" /><button className="institutional-primary" disabled={busy}><UserPlus /> Enrol</button></div>
                 </form> : null}
-                {isAdmin ? <form className="institution-admin-form compact" onSubmit={(event) => {
+                {isAdmin ? <form data-workspace-section="overview facilitators" className="institution-admin-form compact" onSubmit={(event) => {
                   event.preventDefault();
                   void run(async () => { await addCohortStaff(selectedCohort.id, staffEmail, staffRole); setStaffEmail(""); await refresh(schoolId, selectedCohort.id); }, "Facilitator assignment saved. If this email is not registered yet, access activates after the person signs up.");
                 }}>
@@ -279,7 +284,7 @@ export function InstitutionalAdmin() {
             </section>
           </div>
 
-          {isAdmin ? <section className="institution-admin-card institution-admin-member-card">
+          {isAdmin ? <section data-workspace-section="overview team" className="institution-admin-card institution-admin-member-card">
             <header><div><p className="eyebrow">Institution team</p><h2>School-level access</h2><p>Assign access by email, even before registration. New accounts inherit the pending assignment after sign-up; platform administrator access is never granted through this form.</p></div></header>
             <form className="institution-admin-form" onSubmit={(event) => {
               event.preventDefault();
