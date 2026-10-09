@@ -6,9 +6,10 @@ const read=(path)=>fs.readFileSync(path,"utf8");
 
 test("profile omits evidence, notes and recent activity sections",()=>{
   const profile=read("components/profile-dashboard.tsx");
-  assert.match(profile,/Learning progress/);
+  assert.match(profile,/profile-hub-identity/);
+  assert.match(profile,/Settings/);
   assert.doesNotMatch(profile,/Learning evidence|Responses captured|Personal notes|Lesson notes|Learning history|Recent activity|profile-history/);
-  assert.match(profile,/profile-identity/);
+  assert.match(profile,/href="\/settings"/);
 });
 
 test("learner home keeps the learning action without a duplicate portfolio card",()=>{
