@@ -215,3 +215,140 @@ html[data-ac-appearance="dark"] :is(
     .settings-nav button[aria-current="page"] span
   ){color:var(--ac-user-accent-text)}
 }
+
+
+/* Reader and card contrast follow the selected theme, including legacy literal colours. */
+html[data-ac-appearance="dark"]{
+  --presentation-surface:var(--ac-surface);
+  --presentation-border:var(--line);
+}
+html[data-ac-appearance="dark"] .lesson-document :is(p,li),
+html[data-ac-appearance="dark"] .lesson-document .equation-reference,
+html[data-ac-appearance="dark"] .previous-combined-response>p,
+html[data-ac-appearance="dark"] .portfolio-evidence p,
+html[data-ac-appearance="dark"] .portfolio-list article>p{
+  color:var(--ink-2)!important;
+}
+html[data-ac-appearance="dark"] :is(
+  .response-surface,.choice-answerable,.multi-field-answerable,.answerable-block,
+  .deepening-insight,.deepening-insight-body,.workbook-panel,.portfolio-artifact,
+  .portfolio-list article,.portfolio-synthesis,.portfolio-synthesis-card,
+  .profile-history,.profile-history-item,.progress-grade-list>a,.empty-state,
+  .source-table-wrap,.responsive-row-table tbody tr,.assessment-choice-list label>span,
+  .choice-option,.choice-detail,.rating-options button,.values-options button,
+  .rank-actions button,.custom-value input,.workbook-panel textarea
+){
+  background:var(--ac-surface)!important;
+  color:var(--ink)!important;
+  border-color:var(--line)!important;
+}
+html[data-ac-appearance="dark"] :is(
+  .response-surface-prompt,.choice-prefix,.choice-option,.choice-option strong,
+  .assessment-choice-list label>span em,.portfolio-synthesis-heading h3,
+  .portfolio-synthesis-card>p,.portfolio-evidence>div,.portfolio-evidence p,
+  .portfolio-list h2,.portfolio-list article>p,.portfolio-artifact h2,
+  .profile-history-heading h2,.profile-history-item,.empty-state h1,.empty-state h2,
+  .progress-grade-list strong,.source-table-wrap td,.workbook-table td,
+  .workbook-panel textarea,.choice-detail,.rating-options button,.values-options button,
+  .rank-actions button,.custom-value input
+){color:var(--ink)!important}
+html[data-ac-appearance="dark"] :is(
+  .response-surface-prompt p,.choice-prefix p,.choice-option strong,
+  .assessment-choice-list label>span em,.portfolio-synthesis-card>small,
+  .portfolio-synthesis-evidence>a>small,.portfolio-evidence small,
+  .portfolio-artifact header span,.portfolio-artifact header a,
+  .portfolio-list header a,.profile-history-item small,.profile-history-item time,
+  .empty-state p,.progress-grade-list small,.workbook-panel>p,.workbook-actions>span
+){color:var(--muted)!important}
+html[data-ac-appearance="dark"] :is(
+  .choice-option.selected,.choice-option-wrap.selected .choice-option,
+  .assessment-choice-list label.selected>span,.rating-options button[aria-pressed="true"],
+  .values-options button[aria-pressed="true"]
+){background:#303b35!important;color:var(--ink)!important;border-color:#789f94!important}
+html[data-ac-appearance="dark"] .assessment-choice-list label>span b{
+  background:var(--ac-surface-raised);color:var(--ink-2);border-color:var(--line)
+}
+html[data-ac-appearance="dark"] .source-table-wrap thead th,
+html[data-ac-appearance="dark"] .workbook-table thead th,
+html[data-ac-appearance="dark"] .workbook-table tr:first-child td{
+  background:var(--ac-surface-raised)!important;color:var(--ink)!important;border-color:var(--line)!important
+}
+html[data-ac-appearance="dark"] .responsive-row-table tbody td{
+  border-color:var(--line)!important
+}
+html[data-ac-appearance="dark"] .portfolio-synthesis-heading>span,
+html[data-ac-appearance="dark"] .portfolio-synthesis-heading>span[data-confidence]{
+  background:var(--ac-surface-raised);color:var(--ink-2);border:1px solid var(--line)
+}
+html[data-ac-appearance="dark"] .portfolio-synthesis-evidence>a{
+  background:var(--ac-surface-raised);color:var(--ink);border:1px solid var(--line)
+}
+html[data-ac-appearance="dark"] .portfolio-synthesis-evidence>a>span:first-child,
+html[data-ac-appearance="dark"] .portfolio-synthesis-evidence>a>span:last-of-type{color:var(--ink)}
+html[data-ac-appearance="dark"] .profile-history-item{border-color:var(--line)}
+@media(prefers-color-scheme:dark){
+  html[data-ac-appearance="system"]{
+    --presentation-surface:var(--ac-surface);
+    --presentation-border:var(--line);
+  }
+  html[data-ac-appearance="system"] .lesson-document :is(p,li),
+  html[data-ac-appearance="system"] .lesson-document .equation-reference,
+  html[data-ac-appearance="system"] .previous-combined-response>p,
+  html[data-ac-appearance="system"] .portfolio-evidence p,
+  html[data-ac-appearance="system"] .portfolio-list article>p{
+    color:var(--ink-2)!important;
+  }
+  html[data-ac-appearance="system"] :is(
+    .response-surface,.choice-answerable,.multi-field-answerable,.answerable-block,
+    .deepening-insight,.deepening-insight-body,.workbook-panel,.portfolio-artifact,
+    .portfolio-list article,.portfolio-synthesis,.portfolio-synthesis-card,
+    .profile-history,.profile-history-item,.progress-grade-list>a,.empty-state,
+    .source-table-wrap,.responsive-row-table tbody tr,.assessment-choice-list label>span,
+    .choice-option,.choice-detail,.rating-options button,.values-options button,
+    .rank-actions button,.custom-value input,.workbook-panel textarea
+  ){
+    background:var(--ac-surface)!important;color:var(--ink)!important;border-color:var(--line)!important;
+  }
+  html[data-ac-appearance="system"] :is(
+    .response-surface-prompt,.choice-prefix,.choice-option,.choice-option strong,
+    .assessment-choice-list label>span em,.portfolio-synthesis-heading h3,
+    .portfolio-synthesis-card>p,.portfolio-evidence>div,.portfolio-evidence p,
+    .portfolio-list h2,.portfolio-list article>p,.portfolio-artifact h2,
+    .profile-history-heading h2,.profile-history-item,.empty-state h1,.empty-state h2,
+    .progress-grade-list strong,.source-table-wrap td,.workbook-table td,
+    .workbook-panel textarea,.choice-detail,.rating-options button,.values-options button,
+    .rank-actions button,.custom-value input
+  ){color:var(--ink)!important}
+  html[data-ac-appearance="system"] :is(
+    .response-surface-prompt p,.choice-prefix p,.choice-option strong,
+    .assessment-choice-list label>span em,.portfolio-synthesis-card>small,
+    .portfolio-synthesis-evidence>a>small,.portfolio-evidence small,
+    .portfolio-artifact header span,.portfolio-artifact header a,
+    .portfolio-list header a,.profile-history-item small,.profile-history-item time,
+    .empty-state p,.progress-grade-list small,.workbook-panel>p,.workbook-actions>span
+  ){color:var(--muted)!important}
+  html[data-ac-appearance="system"] :is(
+    .choice-option.selected,.choice-option-wrap.selected .choice-option,
+    .assessment-choice-list label.selected>span,.rating-options button[aria-pressed="true"],
+    .values-options button[aria-pressed="true"]
+  ){background:#303b35!important;color:var(--ink)!important;border-color:#789f94!important}
+  html[data-ac-appearance="system"] .assessment-choice-list label>span b{
+    background:var(--ac-surface-raised);color:var(--ink-2);border-color:var(--line)
+  }
+  html[data-ac-appearance="system"] .source-table-wrap thead th,
+  html[data-ac-appearance="system"] .workbook-table thead th,
+  html[data-ac-appearance="system"] .workbook-table tr:first-child td{
+    background:var(--ac-surface-raised)!important;color:var(--ink)!important;border-color:var(--line)!important
+  }
+  html[data-ac-appearance="system"] .responsive-row-table tbody td{border-color:var(--line)!important}
+  html[data-ac-appearance="system"] .portfolio-synthesis-heading>span,
+  html[data-ac-appearance="system"] .portfolio-synthesis-heading>span[data-confidence]{
+    background:var(--ac-surface-raised);color:var(--ink-2);border:1px solid var(--line)
+  }
+  html[data-ac-appearance="system"] .portfolio-synthesis-evidence>a{
+    background:var(--ac-surface-raised);color:var(--ink);border:1px solid var(--line)
+  }
+  html[data-ac-appearance="system"] .portfolio-synthesis-evidence>a>span:first-child,
+  html[data-ac-appearance="system"] .portfolio-synthesis-evidence>a>span:last-of-type{color:var(--ink)}
+  html[data-ac-appearance="system"] .profile-history-item{border-color:var(--line)}
+}
