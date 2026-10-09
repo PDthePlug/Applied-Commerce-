@@ -31,21 +31,52 @@ function emptyState(): LearningState {
 
 export async function loadSupabaseFacilitatorWorkspace(userId: string): Promise<SupabaseFacilitatorWorkspace | null> {
   const supabase = createClient();
-  const { data: staff, error: staffError } = await supabase.from("cohort_staff").select("cohort_id,role").eq("user_id", userId).eq("status", "active");
-  if (staffError) throw staffError;
-  const cohortIds = [...new Set((staff ?? []).map(row => row.cohort_id))];
-  if (!cohortIds.length) return null;
+  const { data: isPlatformAdmin, error: adminError } = await supabase.rpc("is_platform_admin");
+  if (adminError) throw adminError;
 
-  const [cohorts, enrolments, release] = await Promise.all([
-    supabase.from("cohorts").select("id,name,school_id,grade,academic_year").in("id", cohortIds).eq("status", "active"),
-    supabase.from("cohort_enrolments").select("cohort_id,learner_id,status").in("cohort_id", cohortIds).in("status", ["active", "completed"]),
+  let cohortIds: string[] = [];
+  let activeCohorts: Array<{ id: string; name: string; school_id: string; grade: number; academic_year: number }> = [];
+
+  if (isPlatformAdmin) {
+    // Platform administrators can inspect all active cohorts; they do not need
+    // an artificial personal cohort_staff assignment to enter this workspace.
+    const { data, error } = await supabase
+      .from("cohorts")
+      .select("id,name,school_id,grade,academic_year")
+      .eq("status", "active")
+      .order("academic_year", { ascending: false })
+      .order("name");
+    if (error) throw error;
+    activeCohorts = data ?? [];
+    cohortIds = activeCohorts.map(row => row.id);
+  } else {
+    const { data: staff, error: staffError } = await supabase
+      .from("cohort_staff")
+      .select("cohort_id,role")
+      .eq("user_id", userId)
+      .eq("status", "active");
+    if (staffError) throw staffError;
+    cohortIds = [...new Set((staff ?? []).map(row => row.cohort_id))];
+    if (!cohortIds.length) return null;
+
+    const { data, error } = await supabase
+      .from("cohorts")
+      .select("id,name,school_id,grade,academic_year")
+      .in("id", cohortIds)
+      .eq("status", "active");
+    if (error) throw error;
+    activeCohorts = data ?? [];
+    cohortIds = activeCohorts.map(row => row.id);
+  }
+
+  const [enrolments, release] = await Promise.all([
+    cohortIds.length
+      ? supabase.from("cohort_enrolments").select("cohort_id,learner_id,status").in("cohort_id", cohortIds).in("status", ["active", "completed"])
+      : Promise.resolve({ data: [], error: null }),
     supabase.from("curriculum_releases").select("id").eq("release_key", RELEASE).single()
   ]);
-  if (cohorts.error) throw cohorts.error;
   if (enrolments.error) throw enrolments.error;
   if (release.error) throw release.error;
-
-  const activeCohorts = cohorts.data ?? [];
   const schoolIds = [...new Set(activeCohorts.map(row => row.school_id))];
   const schoolsResult = schoolIds.length
     ? await supabase.from("schools").select("id,name").in("id", schoolIds)
