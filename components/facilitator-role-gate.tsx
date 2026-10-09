@@ -13,7 +13,8 @@ export function FacilitatorRoleGate({ children }: { children: React.ReactNode })
   const [cohortIds, setCohortIds] = useState<string[]>([]);
   const [isPlatformAdmin, setIsPlatformAdmin] = useState(false);
   const [accessCheckFailed, setAccessCheckFailed] = useState(false);
-  const access = useMemo(() => user ? ({ userId: user.id, isPlatformAdmin, cohortIds }) : null, [user?.id, isPlatformAdmin, cohortIds]);
+  const userId = user?.id;
+  const access = useMemo(() => userId ? ({ userId, isPlatformAdmin, cohortIds }) : null, [userId, isPlatformAdmin, cohortIds]);
 
   useEffect(() => {
     if (authLoading || !user) return;
