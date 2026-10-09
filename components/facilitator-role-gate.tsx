@@ -42,6 +42,11 @@ export function FacilitatorRoleGate({ children }: { children: React.ReactNode })
       setCohortIds(assignedCohortIds);
       setAuthorizedUserId(!lookupFailed && (platformAdmin || assignedCohortIds.length > 0) ? user.id : null);
       setCheckedUserId(user.id);
+    }).catch(() => {
+      if (!active) return;
+      setAccessCheckFailed(true);
+      setAuthorizedUserId(null);
+      setCheckedUserId(user.id);
     });
 
     return () => {
