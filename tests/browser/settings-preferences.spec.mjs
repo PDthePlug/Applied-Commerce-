@@ -36,7 +36,7 @@ test("dark and system themes keep the learner menu and settings readable", async
   };
   const contrast = async (foreground, background) => page.evaluate(({ foreground, background }) => {
     const parse = (value) => {
-      const match = value.match(/[\\d.]+/g)?.map(Number) ?? [];
+      const match = value.match(/[\d.]+/g)?.map(Number) ?? [];
       if (match.length < 3) return null;
       const channels = match.slice(0, 3).map(channel => {
         const normalized = channel / 255;
