@@ -150,18 +150,27 @@ export async function loadCohortPeople(cohortId: string) {
   const learnerIds = [...new Set((enrolments.data ?? []).map((row) => row.learner_id))];
   const staffIds = [...new Set((staff.data ?? []).map((row) => row.user_id))];
 
-  const profiles = learnerIds.length
-    ? await supabase.from("profiles").select("id,display_name,status").in("id", learnerIds)
-    : { data: [], error: null };
+  const [learnerProfiles, staffProfiles] = await Promise.all([
+    learnerIds.length
+      ? supabase.from("profiles").select("id,display_name,status").in("id", learnerIds)
+      : Promise.resolve({ data: [], error: null }),
+    staffIds.length
+      ? supabase.from("profiles").select("id,display_name,status").in("id", staffIds)
+      : Promise.resolve({ data: [], error: null })
+  ]);
 
-  if (profiles.error) throw profiles.error;
+  if (learnerProfiles.error) throw learnerProfiles.error;
+  if (staffProfiles.error) throw staffProfiles.error;
 
   return {
     learners: (enrolments.data ?? []).map((row) => ({
       ...row,
-      profile: (profiles.data ?? []).find((profile) => profile.id === row.learner_id) ?? null
+      profile: (learnerProfiles.data ?? []).find((profile) => profile.id === row.learner_id) ?? null
     })),
-    staff: staff.data ?? [],
+    staff: (staff.data ?? []).map((row) => ({
+      ...row,
+      profile: (staffProfiles.data ?? []).find((profile) => profile.id === row.user_id) ?? null
+    })),
     staffIds
   };
 }
