@@ -10,7 +10,7 @@ test("learner local state survives reload and profile settings stay concise with
   await expect(page.locator(".profile-hub")).toContainText("Portfolio");
   await expect(page.locator(".profile-hub")).not.toContainText("Learning evidence");
   await expect(page.locator(".profile-hub")).not.toContainText("Personal notes");
-  await expect(page.locator(".profile-grid")).not.toContainText("Recent activity");
+  await expect(page.locator(".profile-hub")).not.toContainText("Recent activity");
   const persisted = await page.evaluate(key => JSON.parse(localStorage.getItem(key)), storageKey);
   expect(persisted.responses["g8-u2"]).toBe("Local recovery certification");
   expect(persisted.completedMeta["g8-u2"].term).toBe(1);
