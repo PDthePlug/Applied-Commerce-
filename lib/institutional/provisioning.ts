@@ -174,3 +174,64 @@ export async function loadCohortPeople(cohortId: string) {
     staffIds
   };
 }
+
+export type CohortLearningInsights = {
+  learnerCount: number;
+  suppressed: boolean;
+  completedLessons: number;
+  savedResponses: number;
+  evidenceRecords: number;
+  reviewedEvidence: number;
+  needsRevision: number;
+  reviewCoverage: number;
+};
+
+export async function loadCohortLearningInsights(cohortId: string): Promise<CohortLearningInsights> {
+  const supabase = createClient();
+  const { data: enrolments, error: enrolmentError } = await supabase
+    .from("cohort_enrolments")
+    .select("learner_id")
+    .eq("cohort_id", cohortId)
+    .in("status", ["active", "completed"]);
+  if (enrolmentError) throw enrolmentError;
+
+  const learnerIds = [...new Set((enrolments ?? []).map(row => row.learner_id))];
+  const base: CohortLearningInsights = {
+    learnerCount: learnerIds.length,
+    suppressed: learnerIds.length < 5,
+    completedLessons: 0,
+    savedResponses: 0,
+    evidenceRecords: 0,
+    reviewedEvidence: 0,
+    needsRevision: 0,
+    reviewCoverage: 0
+  };
+  // Small cohorts do not receive derived learning metrics that could reveal
+  // an individual learner's performance.
+  if (base.suppressed || !learnerIds.length) return base;
+
+  const [completed, responses, evidence] = await Promise.all([
+    supabase.from("lesson_progress").select("id", { count: "exact", head: true }).in("learner_id", learnerIds).eq("status", "completed"),
+    supabase.from("prompt_responses").select("id", { count: "exact", head: true }).in("learner_id", learnerIds),
+    supabase.from("evidence_records").select("id,learner_id").in("learner_id", learnerIds)
+  ]);
+  for (const result of [completed, responses, evidence]) if (result.error) throw result.error;
+
+  const evidenceIds = (evidence.data ?? []).map(row => row.id);
+  const reviews = evidenceIds.length
+    ? await supabase.from("evidence_reviews").select("status").in("evidence_record_id", evidenceIds)
+    : { data: [], error: null };
+  if (reviews.error) throw reviews.error;
+
+  const evidenceCount = evidence.data?.length ?? 0;
+  const reviewCount = reviews.data?.length ?? 0;
+  return {
+    ...base,
+    completedLessons: completed.count ?? 0,
+    savedResponses: responses.count ?? 0,
+    evidenceRecords: evidenceCount,
+    reviewedEvidence: reviewCount,
+    needsRevision: (reviews.data ?? []).filter(row => row.status === "needs-revision").length,
+    reviewCoverage: evidenceCount ? Math.round(reviewCount / evidenceCount * 100) : 0
+  };
+}
