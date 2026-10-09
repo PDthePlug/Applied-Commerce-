@@ -255,7 +255,7 @@ export function InstitutionalAdmin({ initialSection = "overview" }: { initialSec
           {(pageSection === "overview" || pageSection === "cohorts") && selectedCohort ? <section className="institution-admin-card" data-workspace-section="overview cohorts">
             <header><div><p className="eyebrow">Cohort learning pulse</p><h2>Learning and evidence coverage</h2></div><span>Aggregate view</span></header>
             {cohortInsightsLoading ? <p className="institution-admin-empty">Preparing cohort learning summary…</p> : cohortInsightsUnavailable ? <p className="institution-admin-empty">The cohort learning summary is temporarily unavailable. Refresh to try again.</p> : cohortInsights?.suppressed ? <p className="institution-admin-empty">Privacy protection is active. Learning metrics appear when at least five learners have contributed, so this view does not expose an individual learner’s activity.</p> : cohortInsights ? <>
-              <p>Summary across {cohortInsights.learnerCount} learners. Individual answers and learner-level scores are not shown here.</p>
+              <p>Summary across {cohortInsights.learnerCount} active learners. Individual answers and learner-level scores are not shown here.</p>
               <div className="institution-admin-metrics">
                 <article><GraduationCap /><strong>{cohortInsights.completedLessons}</strong><span>Lessons completed</span></article>
                 <article><CheckCircle2 /><strong>{cohortInsights.savedResponses}</strong><span>Saved activity responses</span></article>
