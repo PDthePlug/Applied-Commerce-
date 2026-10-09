@@ -35,6 +35,23 @@ test("one unreviewed response is evidence of participation, not competence or tr
   assert.match(sections.find(section => section.key === "edge").conclusion, /gap|not yet/i);
 });
 
+test("real staging-shaped case: nine saved responses across four contexts remain unconfirmed when none are reviewed", () => {
+  const units = ["g8-t1-l01-001", "g8-t1-l03-003", "g8-t1-l04-004", "g12-t2-l21-021"];
+  const records = Array.from({ length: 9 }, (_, index) => item(
+    "staging-response-" + index,
+    units[index % units.length],
+    undefined,
+    { createdAt: "2026-10-09T12:33:55.27137Z" }
+  ));
+  const sections = buildPortfolioSynthesis(records);
+  assert.match(sections.find(section => section.key === "evidence").conclusion, /9 saved response\(s\) across 4 learning context\(s\)/i);
+  assert.match(sections.find(section => section.key === "competency").conclusion, /not yet confirmed/i);
+  assert.equal(sections.find(section => section.key === "competency").confidence, "insufficient");
+  assert.match(sections.find(section => section.key === "growth").conclusion, /not yet enough dated, comparable reviewed evidence/i);
+  assert.match(sections.find(section => section.key === "progression").conclusion, /does not yet establish/i);
+  assert.match(sections.find(section => section.key === "edge").conclusion, /review is still missing/i);
+});
+
 test("accepted evidence in two contexts supports cautious progression and transfer", () => {
   const sections = buildPortfolioSynthesis([
     item("r1", "unit-a", "accepted"),
