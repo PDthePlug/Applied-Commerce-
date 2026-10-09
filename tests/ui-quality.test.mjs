@@ -179,5 +179,5 @@ test("platform-admin learning evidence sync respects exclusive operating roles",
   assert.match(persistence,/if\(!adminResult\.data\)/);
   assert.match(persistence,/Platform administrators are intentionally excluded from the learner role/);
   assert.match(persistence,/from\("prompt_responses"\)\.upsert\(promptRows/);
-  assert.match(persistence,/from\("lesson_progress"\)\.upsert\(progressRows/);
+  assert.match(persistence,/from\("lesson_progress"\)\.upsert\(progressRows/);\n  assert.match(persistence,/from\("lesson_notes"\)\.upsert\(noteRows,\{onConflict:"learner_id,curriculum_version,unit_id"\}\)/);
 });
