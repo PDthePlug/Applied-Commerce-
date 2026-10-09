@@ -14,6 +14,12 @@ export type Database = {
   }
   public: {
     Tables: {
+      account_preferences: {
+        Row: { accent: string; appearance: string; created_at: string; reading_width: string; text_size: string; updated_at: string; user_id: string }
+        Insert: { accent?: string; appearance?: string; created_at?: string; reading_width?: string; text_size?: string; updated_at?: string; user_id: string }
+        Update: { accent?: string; appearance?: string; created_at?: string; reading_width?: string; text_size?: string; updated_at?: string; user_id?: string }
+        Relationships: []
+      }
       assessment_attempts: {
         Row: {
           attempt_number: number

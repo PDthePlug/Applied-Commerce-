@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { ArrowRight, Archive, BookOpenCheck } from "lucide-react";
+import { ArrowRight, BookOpenCheck } from "lucide-react";
 import { curriculum } from "@/lib/curriculum";
 import type { CurriculumIndex } from "@/lib/types";
 import { useLearningStore } from "@/lib/learning-store";
@@ -92,14 +92,6 @@ export function HomeDashboard(){
         <Link className="home-primary-action" href={continueHref}>
           {state.lastOpened?"Continue learning":`Start Grade ${currentGrade}`} <ArrowRight/>
         </Link>
-      </article>
-
-      <article className="home-dashboard-card home-portfolio-card">
-        <Archive aria-hidden="true"/>
-        <p className="eyebrow">Your portfolio</p>
-        <h3>{captured} responses captured.</h3>
-        <p>Your portfolio grows as you complete activities, reflections and evidence across the curriculum.</p>
-        <Link className="home-secondary-action" href="/portfolio">Open portfolio <ArrowRight/></Link>
       </article>
     </section>
 

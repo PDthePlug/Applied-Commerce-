@@ -1,66 +1,116 @@
 "use client";
-import { useEffect, useMemo, useState } from "react";
+
 import Link from "next/link";
-import { ArrowRight, Archive, BookOpenCheck, Database, NotebookPen } from "lucide-react";
-import { curriculum } from "@/lib/curriculum";
-import type { CurriculumIndex, GradeIndex } from "@/lib/types";
-import { useLearningStore } from "@/lib/learning-store";
-import { completedCountForGrade, evidenceResponseCount, noteCount, buildRecentActivity } from "@/lib/learner-record";
-import { AuthPanel } from "@/components/auth-panel";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+import { Archive, BookOpen, Building2, ChevronRight, GraduationCap, Settings2, UserRound } from "lucide-react";
+import { createClient } from "@/lib/supabase/client";
 import { useAuth } from "@/lib/auth-context";
+import { useLearningStore } from "@/lib/learning-store";
 
-type UnitMeta={id:string;grade:number;term:number;label:string;title:string};
+export function ProfileDashboard() {
+  const { user, loading } = useAuth();
+  const { state } = useLearningStore();
+  const router = useRouter();
+  const [signingOut, setSigningOut] = useState(false);
+  const [signOutError, setSignOutError] = useState("");
+  const [workspaceAccess, setWorkspaceAccess] = useState({ facilitator: false, institution: false });
+  const [workspacesReady, setWorkspacesReady] = useState(false);
+  const userId = user?.id;
 
-export function ProfileDashboard(){
- const [index,setIndex]=useState<CurriculumIndex|null>(null);
- const [meta,setMeta]=useState<Record<string,UnitMeta>>({});
- const {state,setProfile,syncError}=useLearningStore();
- const {user}=useAuth();
+  useEffect(() => {
+    if (loading) return;
+    let active = true;
+    const timer = window.setTimeout(() => {
+      if (!userId) { setWorkspaceAccess({ facilitator: false, institution: false }); setWorkspacesReady(true); return; }
+      setWorkspacesReady(false);
+      void Promise.all([
+        createClient().rpc("is_platform_admin"),
+        createClient().from("cohort_staff").select("cohort_id").eq("user_id", userId).eq("status", "active"),
+        createClient().from("school_memberships").select("role").eq("user_id", userId).eq("status", "active"),
+      ]).then(([admin, facilitator, institution]) => {
+        if (!active) return;
+        if (admin.error || facilitator.error || institution.error) {
+          setWorkspaceAccess({ facilitator: false, institution: false });
+        } else {
+          const isAdmin = admin.data === true;
+          setWorkspaceAccess({
+            facilitator: isAdmin || (facilitator.data?.length ?? 0) > 0,
+            institution: isAdmin || (institution.data ?? []).some(item => item.role === "owner" || item.role === "admin"),
+          });
+        }
+        setWorkspacesReady(true);
+      }).catch(() => {
+        if (!active) return;
+        setWorkspaceAccess({ facilitator: false, institution: false });
+        setWorkspacesReady(true);
+      });
+    }, 0);
+    return () => { active = false; window.clearTimeout(timer); };
+  }, [loading, userId]);
 
- useEffect(()=>{curriculum.index().then(setIndex)},[]);
- useEffect(()=>{
-  if(!index)return;
-  Promise.all(index.grades.map(g=>curriculum.grade(g.grade))).then(grades=>{
-   const next:Record<string,UnitMeta>={};
-   grades.forEach((g:GradeIndex)=>g.terms.forEach(t=>[...t.units,...t.assessments].forEach(u=>{next[u.id]={id:u.id,grade:g.grade,term:t.term,label:u.label,title:u.title};})));
-   setMeta(next);
-  });
- },[index]);
+  const displayName = state.profile?.displayName?.trim()
+    || (typeof user?.user_metadata?.full_name === "string" ? user.user_metadata.full_name : "")
+    || (typeof user?.user_metadata?.name === "string" ? user.user_metadata.name : "")
+    || user?.email?.split("@")[0]
+    || "Learner";
+  const grade = state.profile?.grade ?? state.activeGrade ?? 8;
 
- const grade=state.profile?.grade??state.activeGrade??8;
- const gradeMeta=index?.grades.find(item=>item.grade===grade);
- const completed=completedCountForGrade(state,grade);
- const responseCount=evidenceResponseCount(state);
- const noteCountValue=noteCount(state);
- const pct=gradeMeta?.unitCount?Math.round(completed/gradeMeta.unitCount*100):0;
- const continueHref=state.lastOpened?"/learn/"+state.lastOpened.grade+"/term/"+state.lastOpened.term+"/"+state.lastOpened.unitId:"/learn/"+grade;
- const name=state.profile?.displayName?.trim()||"Learner";
- const gradeOptions=useMemo(()=>index?.grades.map(item=>item.grade)??[8,9,10,11,12],[index]);
- const recent=useMemo(()=>buildRecentActivity(state,6),[state]);
+  async function signOut() {
+    setSigningOut(true); setSignOutError("");
+    try {
+      const result = await createClient().auth.signOut();
+      if (result.error) throw result.error;
+      router.push("/auth");
+      router.refresh();
+    } catch {
+      setSignOutError("Sign out could not be completed. Please try again.");
+    } finally { setSigningOut(false); }
+  }
 
- return <div className="profile-page">
-  <section className="profile-hero">
-   <div><p className="eyebrow">Profile</p><h1>{name}</h1><p>Your learning record at a glance.</p></div>
-   <div className="profile-identity">
-    <label>Name<input value={state.profile?.displayName??""} onChange={event=>setProfile({displayName:event.target.value})} placeholder="Add your name"/></label>
-    <label>Current grade<select value={grade} onChange={event=>setProfile({grade:Number(event.target.value)})}>{gradeOptions.map(value=><option key={value} value={value}>Grade {value}</option>)}</select></label>
-   </div>
-  </section>
+  const rows = [
+    { href: "/settings", title: "Settings", detail: "Profile, appearance, reading and account security", Icon: Settings2 },
+    { href: "/learn", title: "Learning", detail: `Continue your Grade ${grade} learning journey`, Icon: BookOpen },
+    { href: "/portfolio", title: "Portfolio", detail: "Review saved learning evidence", Icon: Archive },
+  ];
 
-  <section className="profile-grid">
-   <article className="profile-card"><div className="profile-card-icon"><BookOpenCheck aria-hidden="true"/></div><div><p className="eyebrow">Learning progress</p><h2>Grade {grade}</h2></div><strong className="metric">{pct}%</strong><p>{completed} of {gradeMeta?.unitCount??0} lessons complete.</p><Link href={continueHref}>Continue learning <ArrowRight/></Link></article>
-   <article className="profile-card"><div className="profile-card-icon"><Archive aria-hidden="true"/></div><div><p className="eyebrow">Learning evidence</p><h2>Responses captured</h2></div><strong className="metric">{responseCount}</strong><p>Saved activity responses.</p><Link href="/portfolio">Open portfolio <ArrowRight/></Link></article>
-   <article className="profile-card"><div className="profile-card-icon"><NotebookPen aria-hidden="true"/></div><div><p className="eyebrow">Personal notes</p><h2>Lesson notes</h2></div><strong className="metric">{noteCountValue}</strong><p>Notes saved during lessons.</p><Link href="/portfolio">Review notes <ArrowRight/></Link></article>
+  return <main className="profile-hub">
+    <section className="profile-hub-identity">
+      <div className="profile-hub-avatar" aria-hidden="true">{displayName.split(/\s+/).slice(0,2).map(part => part[0]?.toUpperCase() ?? "").join("") || "AC"}</div>
+      <div className="profile-hub-title">
+        <p className="eyebrow">My Applied Commerce</p>
+        <h1>{displayName}</h1>
+        <p>{user?.email ?? `Grade ${grade} learner`}</p>
+      </div>
+    </section>
 
-   <section className="profile-history" aria-labelledby="learning-history-title">
-    <div className="profile-history-heading"><div><p className="eyebrow">Learning history</p><h2 id="learning-history-title">Recent activity</h2></div><Link href="/portfolio">View evidence <ArrowRight/></Link></div>
-    {recent.length===0?<p className="profile-history-empty">Recent learning activity appears here.</p>:
-     <div className="profile-history-list">{recent.map(item=>{const unit=meta[item.unitId];const href=unit?"/learn/"+unit.grade+"/term/"+unit.term+"/"+unit.id:continueHref;const label=item.kind==="completed"?"Lesson completed":item.kind==="response"?"Activity response saved":"Lesson note saved";return <Link className="profile-history-item" href={href} key={item.key}><span><strong>{label}</strong><small>{unit?unit.label+" · "+unit.title:"Learning record"}</small></span><time dateTime={item.at}>{new Date(item.at).toLocaleDateString(undefined,{day:"numeric",month:"short",year:"numeric"})}</time><ArrowRight/></Link>})}</div>}
-   </section>
+    <section className="profile-hub-section" aria-labelledby="profile-hub-learning">
+      <h2 id="profile-hub-learning">Your learning space</h2>
+      <div className="profile-hub-list">
+        {rows.map(({href,title,detail,Icon}) => <Link href={href} className="profile-hub-row" key={href}>
+          <span className="profile-hub-row-icon"><Icon aria-hidden="true"/></span>
+          <span className="profile-hub-row-copy"><strong>{title}</strong><small>{detail}</small></span>
+          <ChevronRight aria-hidden="true" className="profile-hub-chevron"/>
+        </Link>)}
+      </div>
+    </section>
 
-   <AuthPanel compact />
-   {syncError&&<p role="alert" className="auth-error">{syncError}</p>}
-   <aside className="profile-record-note"><Database aria-hidden="true"/><div><strong>{user?"Your learning record is linked to this account.":"Your learning record currently stays on this device."}</strong><p>{user?"Changes save on this device and sync to your account.":"Sign in to sync your learning across devices."}</p></div></aside>
-  </section>
- </div>;
+    {workspacesReady && (workspaceAccess.facilitator || workspaceAccess.institution) ? <section className="profile-hub-section" aria-labelledby="profile-hub-workspaces">
+      <h2 id="profile-hub-workspaces">Workspaces</h2>
+      <div className="profile-hub-list">
+        {workspaceAccess.facilitator ? <Link href="/facilitator" className="profile-hub-row"><span className="profile-hub-row-icon"><GraduationCap aria-hidden="true"/></span><span className="profile-hub-row-copy"><strong>Facilitator workspace</strong><small>Review learner progress and evidence</small></span><ChevronRight aria-hidden="true" className="profile-hub-chevron"/></Link> : null}
+        {workspaceAccess.institution ? <Link href="/institutions/manage" className="profile-hub-row"><span className="profile-hub-row-icon"><Building2 aria-hidden="true"/></span><span className="profile-hub-row-copy"><strong>Institution operations</strong><small>Manage assigned institution access</small></span><ChevronRight aria-hidden="true" className="profile-hub-chevron"/></Link> : null}
+      </div>
+    </section> : null}
+
+    <section className="profile-hub-section" aria-labelledby="profile-hub-account">
+      <h2 id="profile-hub-account">Account</h2>
+      <div className="profile-hub-account">
+        <div><span>Email address</span><strong>{user?.email ?? (loading ? "Checking account…" : "Not signed in")}</strong></div>
+        {user ? <button type="button" onClick={() => void signOut()} disabled={signingOut}>{signingOut ? "Signing out…" : "Sign out"}</button> : <Link href="/auth">Sign in</Link>}
+      </div>
+      {signOutError ? <p className="profile-hub-error" role="alert">{signOutError}</p> : null}
+    </section>
+    <p className="profile-hub-footnote"><UserRound aria-hidden="true"/> Your saved responses and lesson completion are not changed by presentation settings.</p>
+  </main>;
 }

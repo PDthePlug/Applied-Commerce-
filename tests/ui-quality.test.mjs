@@ -18,8 +18,11 @@ test("profile is part of the learner shell",()=>{
   const shell=read("components/app-shell.tsx");
   const profile=read("components/profile-dashboard.tsx");
   assert.match(shell,/href:"\/profile"/);
-  assert.match(profile,/Your learning record at a glance/);
+  assert.match(profile,/profile-hub-identity/);
+  assert.match(profile,/href: "\/settings"/);
   assert.ok(fs.existsSync("app/profile/page.tsx"));
+  assert.ok(fs.existsSync("app/settings/page.tsx"));
+  assert.ok(fs.existsSync("components/settings-dashboard.tsx"));
 });
 
 test("book-era platform language does not leak into product chrome",()=>{
@@ -189,4 +192,29 @@ test("local learning records are isolated by authenticated account",()=>{
   assert.match(store,/adminResult\.data===true/);
   assert.match(store,/never copy one account's local answers into another account/i);
   assert.match(store,/localStorage\.setItem\(storageKey,legacy\)/);
+});
+
+
+test("profile settings persist account presentation preferences with owner-only access",()=>{
+  const provider=read("components/personalisation-provider.tsx");
+  const settings=read("components/settings-dashboard.tsx");
+  const migration=read("supabase/migrations/20261009200000_account_personalisation_preferences.sql");
+  const api=read("app/api/preferences/route.ts");
+  const styles=read("app/personalisation.css");
+  assert.match(provider,/\/api\/preferences/);
+  assert.match(api,/account_preferences/);
+  assert.match(api,/onConflict: "user_id"/);
+  assert.match(api,/ALLOWED_KEYS/);
+  assert.match(api,/auth\.getUser\(\)/);
+  assert.match(settings,/Account & security/);
+  assert.match(settings,/Change password/);
+  assert.match(settings,/Accent colour/);
+  assert.match(settings,/Reading width/);
+  assert.match(migration,/enable row level security/i);
+  assert.match(migration,/account_preferences_select_own/);
+  assert.match(migration,/account_preferences_insert_own/);
+  assert.match(migration,/account_preferences_update_own/);
+  assert.match(migration,/auth\.uid\(\)/);
+  assert.match(styles,/data-ac-appearance/);
+  assert.match(styles,/data-ac-reading-width/);
 });
