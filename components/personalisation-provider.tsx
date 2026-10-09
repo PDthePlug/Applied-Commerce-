@@ -42,6 +42,7 @@ export function PersonalisationProvider({ children }: { children: React.ReactNod
   const reload = useCallback(async () => {
     if (authLoading) return;
     const generation = ++requestGeneration.current;
+    setSaving(false);
     const userId = user?.id;
     const local = readLocal(userId) ?? DEFAULT_PERSONALISATION;
     setPersonalisation(local);
