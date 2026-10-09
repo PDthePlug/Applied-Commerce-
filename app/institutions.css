@@ -303,3 +303,25 @@
   .institution-admin-card{padding:20px}
   .institution-admin-people{grid-template-columns:1fr}
 }
+
+
+/* Role-specific workspace pages: menu choices render focused task surfaces instead of one long dashboard. */
+.institution-admin-page[data-workspace-section="cohorts"] [data-workspace-section]:not([data-workspace-section~="cohorts"]),
+.institution-admin-page[data-workspace-section="learners"] [data-workspace-section]:not([data-workspace-section~="learners"]),
+.institution-admin-page[data-workspace-section="facilitators"] [data-workspace-section]:not([data-workspace-section~="facilitators"]),
+.institution-admin-page[data-workspace-section="team"] [data-workspace-section]:not([data-workspace-section~="team"]) {
+  display: none !important;
+}
+.institution-admin-page[data-workspace-section="cohorts"] .institution-admin-grid,
+.institution-admin-page[data-workspace-section="learners"] .institution-admin-grid,
+.institution-admin-page[data-workspace-section="facilitators"] .institution-admin-grid {
+  grid-template-columns: minmax(0, 1fr);
+}
+.institution-admin-page[data-workspace-section="cohorts"] .institution-admin-grid > [data-workspace-section="overview learners facilitators"],
+.institution-admin-page[data-workspace-section="learners"] .institution-admin-grid > [data-workspace-section="overview cohorts"],
+.institution-admin-page[data-workspace-section="facilitators"] .institution-admin-grid > [data-workspace-section="overview cohorts"] {
+  display: none !important;
+}
+.institution-admin-toolbar {
+  flex-wrap: wrap;
+}
