@@ -254,7 +254,7 @@ export async function saveSupabaseFacilitatorReview(learnerId: string, record: E
 export function useSupabaseFacilitatorWorkspace() {
   const { user } = useAuth();
   const verifiedAccess = useFacilitatorAccess();
-  const [workspace, setWorkspace = useState<SupabaseFacilitatorWorkspace | null>(null);
+  const [workspace, setWorkspace] = useState<SupabaseFacilitatorWorkspace | null>(null);
   const [loadedUserId, setLoadedUserId] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
