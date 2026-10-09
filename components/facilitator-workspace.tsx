@@ -434,6 +434,8 @@ function EvidenceReviewPanel({record,existing,onSave,onAdvance}:{record:Evidence
   const [status,setStatus]=useState<ReviewStatus>(existing?.status??"pending");
   const [criteria,setCriteria]=useState<Record<string,1|2|3|4>>(existing?.criteria??{});
   const [feedback,setFeedback]=useState(existing?.feedback??"");
+  const [portfolioInterpretation,setPortfolioInterpretation]=useState(existing?.portfolioInterpretation??"");
+  const [nextPathway,setNextPathway]=useState(existing?.nextPathway??"");
   const [saved,setSaved]=useState(false);
   const scored=rubric?.criteria.filter(criterion=>criteria[criterion.key]).length??0;
   const rubricComplete=!rubric||scored===rubric.criteria.length;
@@ -441,7 +443,7 @@ function EvidenceReviewPanel({record,existing,onSave,onAdvance}:{record:Evidence
   const average=scoreValues.length?Number((scoreValues.reduce((sum,value)=>sum+value,0)/scoreValues.length).toFixed(1)):null;
 
   const persist=(nextStatus:ReviewStatus,moveNext=false)=>{
-    onSave({responseKey:record.responseKey,rubricKey:rubric?.key,status:nextStatus,criteria,feedback:feedback.trim(),reviewedAt:new Date().toISOString()});
+    onSave({responseKey:record.responseKey,rubricKey:rubric?.key,status:nextStatus,criteria,feedback:feedback.trim(),portfolioInterpretation:portfolioInterpretation.trim(),nextPathway:nextPathway.trim(),reviewedAt:new Date().toISOString()});
     setStatus(nextStatus);setSaved(true);
     window.setTimeout(()=>{setSaved(false);if(moveNext)onAdvance();},500);
   };
@@ -473,6 +475,10 @@ function EvidenceReviewPanel({record,existing,onSave,onAdvance}:{record:Evidence
         </article>;
       })}</div>
     </section>:null}
+
+    <label className="fac-feedback"><span>Portfolio interpretation — validate or correct</span><textarea rows={3} value={portfolioInterpretation} onChange={event=>setPortfolioInterpretation(event.target.value)} placeholder="What does this work support? Correct any conclusion that goes beyond the evidence."/><small>Keep the claim proportional to the evidence. Note uncertainty or what is still missing.</small></label>
+
+    <label className="fac-feedback"><span>Recommended next learning experience</span><textarea rows={3} value={nextPathway} onChange={event=>setNextPathway(event.target.value)} placeholder="Recommend a suitable next activity, application or revision."/><small>Choose a next step that addresses the evidence gap or tests the same capability in another context.</small></label>
 
     <label className="fac-feedback"><span>Facilitator feedback</span><textarea rows={5} value={feedback} onChange={event=>setFeedback(event.target.value)} placeholder="Name what is working, what is missing, and the learner next step."/><small>Feedback is part of the evidence history and should help the learner act, not simply explain a score.</small></label>
 
