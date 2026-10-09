@@ -66,7 +66,6 @@ export function useLearningStore() {
     let cancelled = false;
     if (!user) {
       remoteReady.current=true;
-      setSyncError(null);
       return;
     }
     remoteReady.current=false;
