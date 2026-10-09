@@ -135,3 +135,63 @@ test("presentation architecture v2 preserves semantic hierarchy and mobile table
   assert.match(styles,/\.responsive-row-table tbody td::before/);
   assert.ok(fs.existsSync("docs/APPLIED_COMMERCE_PRESENTATION_ARCHITECTURE_V2.md"));
 });
+
+
+test("account creation confirms both email and password and keeps role assignment separate",()=>{
+  const auth=read("components/auth-panel.tsx");
+  assert.match(auth,/Confirm email address/);
+  assert.match(auth,/Confirm password/);
+  assert.match(auth,/email\.trim\(\)\.toLowerCase\(\) !== confirmEmail\.trim\(\)\.toLowerCase\(\)/);
+  assert.match(auth,/password !== confirmPassword/);
+  assert.match(auth,/creating an account does not grant staff permissions/i);
+});
+
+test("account access has Applied Commerce identity and explains role-specific workspaces",()=>{
+  const page=read("app/auth/page.tsx");
+  const styles=read("app/auth.css");
+  assert.match(page,/Learning & evidence platform/);
+  assert.match(page,/Learner workspace/);
+  assert.match(page,/Facilitator workspace/);
+  assert.match(page,/Workspace administration/);
+  assert.match(page,/Explore Workspace/);
+  assert.match(styles,/\.auth-story/);
+  assert.match(styles,/@media\(max-width:560px\)/);
+});
+
+test("primary navigation labels the institutional destination Workspace",()=>{
+  const shell=read("components/app-shell.tsx");
+  assert.match(shell,/<Link className="topbar-institution-link" href="\/institutions">Workspace<\/Link>/);
+  assert.match(shell,/<Link className="topbar-auth-link" href="\/auth">Staff sign in<\/Link>/);
+  assert.match(shell,/<Link className="topbar-mobile-auth" href="\/auth">Staff sign in<\/Link>/);
+  assert.match(read("app/responsive.css"),/\.topbar-mobile-auth\{display:inline-flex/);
+  assert.doesNotMatch(shell,/<Link className="topbar-institution-link" href="\/institutions">For institutions<\/Link>/);
+});
+
+test("legacy auth profile repair is additive and does not assign application roles",()=>{
+  const migration=read("supabase/migrations/20261009170533_backfill_missing_auth_profiles.sql");
+  assert.match(migration,/from auth\.users u/);
+  assert.match(migration,/where coalesce\(u\.is_anonymous, false\) = false/);
+  assert.match(migration,/on conflict \(id\) do nothing/);
+  assert.match(migration,/does not grant any learner, facilitator, institution or admin role/i);
+});
+
+
+test("platform-admin learning evidence sync respects exclusive operating roles",()=>{
+  const persistence=read("lib/supabase/persistence.ts");
+  assert.match(persistence,/supabase\.rpc\("is_platform_admin"\)/);
+  assert.match(persistence,/if\(!adminResult\.data\)/);
+  assert.match(persistence,/Platform administrators are intentionally excluded from the learner role/);
+  assert.match(persistence,/from\("prompt_responses"\)\.upsert\(promptRows/);
+  assert.match(persistence,/from\("lesson_progress"\)\.upsert\(progressRows/);
+  assert.match(persistence,/from\("lesson_notes"\)\.upsert\(noteRows/);
+  assert.match(persistence,/onConflict:"learner_id,curriculum_version,unit_id"/);
+});
+
+
+test("local learning records are isolated by authenticated account",()=>{
+  const store=read("lib/learning-store.ts");
+  assert.match(store,/storageKeyFor=\(userId:string\|null\|undefined\)=>userId\?\`\$\{KEY\}:user:\$\{userId\}\`:KEY/);
+  assert.match(store,/adminResult\.data===true/);
+  assert.match(store,/never copy one account's local answers into another account/i);
+  assert.match(store,/localStorage\.setItem\(storageKey,legacy\)/);
+});

@@ -54,9 +54,16 @@ export async function syncLearningState(userId:string,state:LearningState){
  if(releaseResult.error)throw releaseResult.error;
  const releaseId=releaseResult.data.id;
  const now=new Date().toISOString();
- const profile:TablesInsert<"learner_profiles">={user_id:userId,preferred_name:state.profile?.displayName?.trim()||null,current_grade:state.profile?.grade??state.activeGrade??null};
- const profileResult=await supabase.from("learner_profiles").upsert(profile,{onConflict:"user_id"});
- if(profileResult.error)throw profileResult.error;
+ const adminResult=await supabase.rpc("is_platform_admin");
+ if(adminResult.error)throw adminResult.error;
+ // Platform administrators are intentionally excluded from the learner role.
+ // Keep their personal lesson evidence in their own account without attempting
+ // to create a learner_profiles row, which the database correctly rejects.
+ if(!adminResult.data){
+  const profile:TablesInsert<"learner_profiles">={user_id:userId,preferred_name:state.profile?.displayName?.trim()||null,current_grade:state.profile?.grade??state.activeGrade??null};
+  const profileResult=await supabase.from("learner_profiles").upsert(profile,{onConflict:"user_id"});
+  if(profileResult.error)throw profileResult.error;
+ }
 
  const progressRows:TablesInsert<"lesson_progress">[]=Object.entries(state.completed).map(([unitId,completedAt])=>{
   const meta=state.completedMeta?.[unitId];
@@ -68,7 +75,7 @@ export async function syncLearningState(userId:string,state:LearningState){
   const context=unitContext(unitId);
   return {learner_id:userId,curriculum_version:CURRICULUM_RUNTIME_RELEASE,curriculum_release_id:releaseId,grade:context?.grade??state.activeGrade??8,term:context?.term??(state.lastOpened?.unitId===unitId?state.lastOpened.term:1),unit_id:unitId,note,updated_at:state.responseUpdatedAt?.[unitId]??now};
  });
- if(noteRows.length){const result=await supabase.from("lesson_notes").upsert(noteRows,{onConflict:"learner_id,curriculum_release_id,unit_id"});if(result.error)throw result.error;}
+ if(noteRows.length){const result=await supabase.from("lesson_notes").upsert(noteRows,{onConflict:"learner_id,curriculum_version,unit_id"});if(result.error)throw result.error;}
 
  const promptRows:TablesInsert<"prompt_responses">[]=Object.entries(state.promptResponses).map(([promptKey,response])=>{
   const unitId=promptKey.split("::")[0];
