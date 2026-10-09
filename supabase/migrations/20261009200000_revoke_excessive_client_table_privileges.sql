@@ -1,9 +1,9 @@
 -- Tighten client table privileges and fail closed for future app objects.
 -- RLS controls row access; it does not make TRUNCATE safe, and table-level
 -- TRIGGER / REFERENCES grants are not needed by learner-facing clients.
-revoke truncate, trigger, references on all tables in schema public
+revoke maintain, truncate, trigger, references on all tables in schema public
   from public, anon, authenticated;
-revoke truncate, trigger, references on all tables in schema private
+revoke maintain, truncate, trigger, references on all tables in schema private
   from public, anon, authenticated;
 
 -- Migrations run as postgres. Do not automatically grant broad table, sequence,
@@ -26,10 +26,17 @@ do $$
 begin
   if exists (
     select 1
-    from information_schema.table_privileges
-    where table_schema in ('public', 'private')
-      and grantee in ('PUBLIC', 'anon', 'authenticated')
-      and privilege_type in ('TRUNCATE', 'TRIGGER', 'REFERENCES')
+    from pg_class c
+    join pg_namespace n on n.oid = c.relnamespace
+    cross join lateral aclexplode(coalesce(c.relacl, acldefault('r', c.relowner))) a
+    where n.nspname in ('public', 'private')
+      and c.relkind in ('r', 'p')
+      and a.grantee in (
+        0,
+        (select oid from pg_roles where rolname = 'anon'),
+        (select oid from pg_roles where rolname = 'authenticated')
+      )
+      and a.privilege_type in ('MAINTAIN', 'TRUNCATE', 'TRIGGER', 'REFERENCES')
   ) then
     raise exception 'AC client roles retain excessive table privileges';
   end if;
