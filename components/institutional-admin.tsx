@@ -13,8 +13,10 @@ import {
   createInstitutionCohort,
   enrolLearner,
   loadCohortPeople,
+  loadCohortLearningInsights,
   loadInstitutionalContext,
   type Cohort,
+  type CohortLearningInsights,
   type School
 } from "@/lib/institutional/provisioning";
 
@@ -42,6 +44,9 @@ export function InstitutionalAdmin({ initialSection = "overview" }: { initialSec
   const [schoolId, setSchoolId] = useState("");
   const [cohortId, setCohortId] = useState("");
   const [people, setPeople] = useState<{ learners: Array<{ learner_id: string; status: string; profile: { id: string; display_name: string | null; status: string } | null }>; staff: StaffPerson[]; staffIds: string[] } | null>(null);
+  const [cohortInsights, setCohortInsights] = useState<CohortLearningInsights | null>(null);
+  const [cohortInsightsLoading, setCohortInsightsLoading] = useState(false);
+  const [cohortInsightsUnavailable, setCohortInsightsUnavailable] = useState(false);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
   const [notice, setNotice] = useState("");
@@ -134,6 +139,22 @@ export function InstitutionalAdmin({ initialSection = "overview" }: { initialSec
 
     return () => { cancelled = true; };
   }, [cohortId]);
+
+  useEffect(() => {
+    if (!cohortId || (pageSection !== "overview" && pageSection !== "cohorts")) {
+      setCohortInsights(null);
+      setCohortInsightsUnavailable(false);
+      return;
+    }
+    let cancelled = false;
+    setCohortInsightsLoading(true);
+    setCohortInsightsUnavailable(false);
+    void loadCohortLearningInsights(cohortId)
+      .then(value => { if (!cancelled) setCohortInsights(value); })
+      .catch(() => { if (!cancelled) { setCohortInsights(null); setCohortInsightsUnavailable(true); } })
+      .finally(() => { if (!cancelled) setCohortInsightsLoading(false); });
+    return () => { cancelled = true; };
+  }, [cohortId, pageSection]);
 
   const schoolCohorts = cohorts.filter((item) => item.school_id === schoolId);
 
@@ -234,6 +255,20 @@ export function InstitutionalAdmin({ initialSection = "overview" }: { initialSec
             <article><GraduationCap /><strong>{people?.learners.length ?? 0}</strong><span>Learners in selected cohort</span></article>
             <article><UserPlus /><strong>{people?.staff.length ?? 0}</strong><span>Cohort staff</span></article>
           </section>
+
+          {(pageSection === "overview" || pageSection === "cohorts") && selectedCohort ? <section className="institution-admin-card" data-workspace-section="overview cohorts">
+            <header><div><p className="eyebrow">Cohort learning pulse</p><h2>Learning and evidence coverage</h2></div><span>Aggregate view</span></header>
+            {cohortInsightsLoading ? <p className="institution-admin-empty">Preparing cohort learning summary…</p> : cohortInsightsUnavailable ? <p className="institution-admin-empty">The cohort learning summary is temporarily unavailable. Refresh to try again.</p> : cohortInsights?.suppressed ? <p className="institution-admin-empty">Privacy protection is active. Learning metrics appear when at least five learners have contributed, so this view does not expose an individual learner’s activity.</p> : cohortInsights ? <>
+              <p>Summary across {cohortInsights.learnerCount} learners. Individual answers and learner-level scores are not shown here.</p>
+              <div className="institution-admin-metrics">
+                <article><GraduationCap /><strong>{cohortInsights.completedLessons}</strong><span>Lessons completed</span></article>
+                <article><CheckCircle2 /><strong>{cohortInsights.savedResponses}</strong><span>Saved activity responses</span></article>
+                <article><ShieldCheck /><strong>{cohortInsights.reviewCoverage}%</strong><span>Evidence review coverage</span></article>
+                <article><UsersRound /><strong>{cohortInsights.needsRevision}</strong><span>Items needing revision</span></article>
+              </div>
+              <p className="institution-admin-empty">These are coverage indicators, not a ranking of learners or a claim of competency. Capability conclusions require reviewed evidence across contexts.</p>
+            </> : <p className="institution-admin-empty">Select a cohort to see its learning summary.</p>}
+          </section> : null}
 
           <div className="institution-admin-grid">
             <section className="institution-admin-card" data-workspace-section="overview cohorts">
