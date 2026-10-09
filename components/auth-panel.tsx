@@ -1,7 +1,6 @@
 "use client";
 
 import { FormEvent, useState } from "react";
-import Link from "next/link";
 import { createClient } from "@/lib/supabase/client";
 import { isSupabaseConfigured, useAuth } from "@/lib/auth-context";
 import { friendlyAuthError } from "@/lib/customer-errors";
@@ -10,7 +9,6 @@ export function AuthPanel({ compact = false }: { compact?: boolean }) {
   const { user, loading } = useAuth();
   const [mode, setMode] = useState<"signin" | "signup">("signin");
   const [email, setEmail] = useState("");
-  const [confirmEmail, setConfirmEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [message, setMessage] = useState<string | null>(null);
@@ -28,10 +26,6 @@ export function AuthPanel({ compact = false }: { compact?: boolean }) {
     setMessage(null);
     try {
       if (mode === "signup") {
-        if (email.trim().toLowerCase() !== confirmEmail.trim().toLowerCase()) {
-          setError("The email addresses do not match. Check both entries and try again.");
-          return;
-        }
         if (password !== confirmPassword) {
           setError("The passwords do not match. Please enter the same password twice.");
           return;
@@ -55,7 +49,6 @@ export function AuthPanel({ compact = false }: { compact?: boolean }) {
   function switchMode() {
     setMode(mode === "signin" ? "signup" : "signin");
     setPassword("");
-    setConfirmEmail("");
     setConfirmPassword("");
     setError(null);
     setMessage(null);
@@ -65,11 +58,10 @@ export function AuthPanel({ compact = false }: { compact?: boolean }) {
     <div>
       <span className="eyebrow">{mode === "signin" ? "Welcome back" : "Get started"}</span>
       <h2>{mode === "signin" ? "Sign in to Applied Commerce" : "Create your account"}</h2>
-      <p>One account identifies a person across Applied Commerce. Learner, facilitator and workspace-administrator access is assigned separately; creating an account does not grant staff permissions.</p>
+      <p>{mode === "signin" ? "Use your Applied Commerce account to continue." : "Create your account. Staff access is assigned separately."}</p>
     </div>
     <form onSubmit={submit} className="auth-form">
       <label>Email address<input required type="email" autoComplete="email" value={email} onChange={e => setEmail(e.target.value)} /></label>
-      {mode === "signup" && <label>Confirm email address<input required type="email" autoComplete="email" value={confirmEmail} onChange={e => setConfirmEmail(e.target.value)} /></label>}
       <label>Password<input required minLength={8} type="password" autoComplete={mode === "signin" ? "current-password" : "new-password"} value={password} onChange={e => setPassword(e.target.value)} /></label>
       {mode === "signup" && <label>Confirm password<input required minLength={8} type="password" autoComplete="new-password" value={confirmPassword} onChange={e => setConfirmPassword(e.target.value)} /></label>}
       <button type="submit" disabled={busy}>{busy ? "Working…" : mode === "signin" ? "Sign in" : "Create account"}</button>
@@ -77,6 +69,5 @@ export function AuthPanel({ compact = false }: { compact?: boolean }) {
     {message && <p role="status" className="auth-success">{message}</p>}
     {error && <p role="alert" className="auth-error">{error}</p>}
     <button type="button" className="auth-mode-switch" onClick={switchMode}>{mode === "signin" ? "New to Applied Commerce? Create an account" : "Already have an account? Sign in"}</button>
-    {!compact && <Link href="/">Back to learner home</Link>}
   </div>;
 }
