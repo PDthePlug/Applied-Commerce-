@@ -263,14 +263,14 @@ export function InstitutionalAdmin() {
                 </div>
                 {canManageLearners ? <form className="institution-admin-form compact" onSubmit={(event) => {
                   event.preventDefault();
-                  void run(async () => { await enrolLearner(selectedCohort.id, learnerEmail); setLearnerEmail(""); await refresh(schoolId, selectedCohort.id); }, "Learner enrolled.");
+                  void run(async () => { await enrolLearner(selectedCohort.id, learnerEmail); setLearnerEmail(""); await refresh(schoolId, selectedCohort.id); }, "Learner assignment saved. If this email is not registered yet, access activates after the person signs up.");
                 }}>
                   <p className="eyebrow">Add learner</p>
                   <div className="institution-admin-inline"><input type="email" required value={learnerEmail} onChange={(event) => setLearnerEmail(event.target.value)} placeholder="learner@example.com" /><button className="institutional-primary" disabled={busy}><UserPlus /> Enrol</button></div>
                 </form> : null}
                 {isAdmin ? <form className="institution-admin-form compact" onSubmit={(event) => {
                   event.preventDefault();
-                  void run(async () => { await addCohortStaff(selectedCohort.id, staffEmail, staffRole); setStaffEmail(""); await refresh(schoolId, selectedCohort.id); }, "Cohort staff added.");
+                  void run(async () => { await addCohortStaff(selectedCohort.id, staffEmail, staffRole); setStaffEmail(""); await refresh(schoolId, selectedCohort.id); }, "Facilitator assignment saved. If this email is not registered yet, access activates after the person signs up.");
                 }}>
                   <p className="eyebrow">Assign cohort staff</p>
                   <div className="institution-admin-inline"><input type="email" required value={staffEmail} onChange={(event) => setStaffEmail(event.target.value)} placeholder="educator@example.com" /><select value={staffRole} onChange={(event) => setStaffRole(event.target.value as typeof staffRole)}><option value="lead">Lead</option><option value="educator">Educator</option><option value="assistant">Assistant</option></select><button className="institutional-primary" disabled={busy}><UserPlus /> Assign</button></div>
@@ -280,10 +280,10 @@ export function InstitutionalAdmin() {
           </div>
 
           {isAdmin ? <section className="institution-admin-card institution-admin-member-card">
-            <header><div><p className="eyebrow">Institution team</p><h2>School-level access</h2><p>Add an existing Applied Commerce account to this institution. Invitations/authentication remain handled by the existing account system.</p></div></header>
+            <header><div><p className="eyebrow">Institution team</p><h2>School-level access</h2><p>Assign access by email, even before registration. New accounts inherit the pending assignment after sign-up; platform administrator access is never granted through this form.</p></div></header>
             <form className="institution-admin-form" onSubmit={(event) => {
               event.preventDefault();
-              void run(async () => { await addInstitutionMember(schoolId, memberEmail, memberRole); setMemberEmail(""); }, "Institution member added.");
+              void run(async () => { await addInstitutionMember(schoolId, memberEmail, memberRole); setMemberEmail(""); }, "Institution role assignment saved. If this email is not registered yet, access activates after the person signs up.");
             }}>
               <div className="institution-admin-inline"><input type="email" required value={memberEmail} onChange={(event) => setMemberEmail(event.target.value)} placeholder="colleague@example.com" /><select value={memberRole} onChange={(event) => setMemberRole(event.target.value as typeof memberRole)}><option value="educator">Educator</option><option value="admin">Administrator</option></select><button className="institutional-primary" disabled={busy}><UserPlus /> Add member</button></div>
             </form>
