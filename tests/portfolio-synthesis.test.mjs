@@ -1,0 +1,58 @@
+import test from "node:test";
+import assert from "node:assert/strict";
+import { readFile } from "node:fs/promises";
+import ts from "typescript";
+
+const source = await readFile(new URL("../lib/portfolio-synthesis.ts", import.meta.url), "utf8");
+const javascript = ts.transpileModule(source, {
+  compilerOptions: { module: ts.ModuleKind.ESNext, target: ts.ScriptTarget.ES2022 }
+}).outputText;
+const { buildPortfolioSynthesis } = await import("data:text/javascript;base64," + Buffer.from(javascript).toString("base64"));
+
+const item = (id, unitId, status, extras = {}) => ({
+  id,
+  title: "Activity " + unitId,
+  href: "/learn/9/term/1/" + unitId,
+  unitId,
+  domain: ["decision-making"],
+  response: "A saved learner response",
+  reviewedStatus: status,
+  ...extras,
+});
+
+test("missing evidence is explicitly insufficient and never claims competency", () => {
+  const sections = buildPortfolioSynthesis([]);
+  assert.equal(sections.length, 6);
+  assert.match(sections.find(section => section.key === "competency").conclusion, /not yet confirmed/i);
+  assert.equal(sections.find(section => section.key === "competency").confidence, "insufficient");
+  assert.match(sections.find(section => section.key === "growth").conclusion, /not yet enough/i);
+});
+
+test("one unreviewed response is evidence of participation, not competence or transfer", () => {
+  const sections = buildPortfolioSynthesis([item("r1", "unit-a", undefined)]);
+  assert.match(sections.find(section => section.key === "competency").conclusion, /not yet confirmed/i);
+  assert.match(sections.find(section => section.key === "progression").conclusion, /does not yet establish/i);
+  assert.match(sections.find(section => section.key === "edge").conclusion, /gap|not yet/i);
+});
+
+test("accepted evidence in two contexts supports cautious progression and transfer", () => {
+  const sections = buildPortfolioSynthesis([
+    item("r1", "unit-a", "accepted"),
+    item("r2", "unit-b", "verified"),
+  ]);
+  assert.match(sections.find(section => section.key === "progression").conclusion, /multiple contexts/i);
+  assert.match(sections.find(section => section.key === "pathway").conclusion, /new problem/i);
+  assert.equal(sections.find(section => section.key === "competency").confidence, "low");
+});
+
+test("revision feedback and facilitator guidance take precedence over generic pathways", () => {
+  const sections = buildPortfolioSynthesis([
+    item("r1", "unit-a", "needs-revision", {
+      portfolioInterpretation: "The learner identifies the issue but has not justified the choice.",
+      nextPathway: "Rework the comparison table, then explain the trade-off in a new example.",
+    }),
+  ]);
+  assert.equal(sections.find(section => section.key === "competency").conclusion, "The learner identifies the issue but has not justified the choice.");
+  assert.equal(sections.find(section => section.key === "pathway").conclusion, "Rework the comparison table, then explain the trade-off in a new example.");
+  assert.match(sections.find(section => section.key === "edge").conclusion, /need revision/i);
+});
