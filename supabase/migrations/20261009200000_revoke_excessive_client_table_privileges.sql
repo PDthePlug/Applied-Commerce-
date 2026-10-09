@@ -1,10 +1,16 @@
 -- Tighten client table privileges and fail closed for future app objects.
 -- RLS controls row access; it does not make TRUNCATE safe, and table-level
 -- TRIGGER / REFERENCES grants are not needed by learner-facing clients.
+-- No AC application table is intended for anonymous Data API access; the
+-- learner curriculum itself is served from application assets, not anon table grants.
+revoke all privileges on all tables in schema public from public, anon;
+revoke all privileges on all tables in schema private from public, anon;
 revoke maintain, truncate, trigger, references on all tables in schema public
-  from public, anon, authenticated;
+  from authenticated;
 revoke maintain, truncate, trigger, references on all tables in schema private
-  from public, anon, authenticated;
+  from authenticated;
+revoke all privileges on all sequences in schema public from public, anon, authenticated;
+revoke all privileges on all sequences in schema private from public, anon, authenticated;
 
 -- Migrations run as postgres. Do not automatically grant broad table, sequence,
 -- or function privileges to clients on objects created by future migrations.
@@ -24,6 +30,15 @@ alter default privileges for role postgres in schema private
 
 do $$
 begin
+  if exists (
+    select 1
+    from information_schema.table_privileges
+    where table_schema in ('public', 'private')
+      and grantee in ('PUBLIC', 'anon')
+  ) then
+    raise exception 'AC application tables still grant anonymous/public access';
+  end if;
+
   if exists (
     select 1
     from pg_class c
