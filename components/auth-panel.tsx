@@ -54,6 +54,7 @@ export function AuthPanel({ compact = false }: { compact?: boolean }) {
 
   function switchMode() {
     setMode(mode === "signin" ? "signup" : "signin");
+    setPassword("");
     setConfirmEmail("");
     setConfirmPassword("");
     setError(null);
