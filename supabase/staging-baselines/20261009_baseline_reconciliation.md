@@ -19,7 +19,7 @@ Verified after applying the snapshot to staging:
 - All 22 tables have RLS enabled.
 - Application tables were empty immediately after baseline application.
 - A post-build fingerprint comparison checked 478 catalog objects across columns, constraints, indexes, functions, triggers, and existing policies: definitions matched production, with only the expected staging-only deny policy as an extra object.
-- After revoking inherited Supabase default grants and restoring catalog-derived ACLs, table grant counts and routine EXECUTE grants match production. Staging security advisor findings are now clear.
+- After revoking inherited Supabase default grants and restoring catalog-derived ACLs, table grant counts and routine EXECUTE grants matched the reconstructed production catalog at baseline time. This does not mean every Supabase Auth advisor is clear: the current security advisor still reports leaked-password protection disabled on both projects.
 
 ## Migration comparison
 
@@ -54,3 +54,20 @@ Verified after applying the snapshot to staging:
 - Direct SQL insertion into `auth.users` was not used because it bypasses Supabase Auth's supported account-creation path.
 - Therefore authenticated identities for platform admin, institution admin, facilitator, and learner, plus real browser direct-URL tests, remain a gate. The existing CI signed-out route checks are not proof of authenticated authorization.
 - Next: provision four synthetic accounts through Supabase Auth Admin in staging, add only staging role fixtures, then test cross-school/cohort reads and attempted unauthorized writes through authenticated sessions and RLS. Do not promote the staging-only hardening or snapshot to production without review.
+
+
+## Post-baseline reconciliation delta — verified 2026-10-09
+
+The current live catalogs were compared again after staging-only migrations and role-assignment work:
+
+- The 21 public application tables retain the same column definitions except for two intentional staging additions on `public.evidence_reviews`: `portfolio_interpretation` and `next_pathway`.
+- Staging has the additional private `pending_role_assignments` table, with RLS enabled, no client table grants, and an explicit deny-all policy for `anon` and `authenticated`.
+- Staging enables RLS on `private.platform_admins` and adds an explicit deny-all client policy; production's current catalog still has RLS disabled on that table.
+- The three cohort-enrolment staff INSERT/UPDATE/DELETE policies now call `private.is_cohort_staff_member(cohort_id)` directly in staging, avoiding the recursive policy subquery found in production. The production versions still query `public.cohorts` inside the policy expression.
+- Staging replaces the original `on_auth_user_created` trigger with `on_auth_user_created_apply_pending_roles`. The new trigger inserts the profile and applies queued assignments; signup-trigger behavior still needs a real Auth-created identity test before claiming end-to-end validation.
+- Staging contains three additional indexes associated with `private.pending_role_assignments`. Other compared index definitions were present.
+- The `ac-runtime-3` release row exists in both projects, but its metadata differs: production has `releaseManifest=public/curriculum/release.json`, while staging's current row lacked that key. A corrective, forward-only migration has been added to PR #20 to preserve the manifest pointer and validate the row. It has been transaction-simulated against staging and rolled back; the live staging row was not changed by that simulation.
+
+## Reconciliation decision
+
+Staging is the stronger candidate for the eventual canonical production project because it contains the role-assignment functionality and targeted security fixes absent from the current production catalog. It is not yet approved for cutover: the repository's original core-table and core-security migration source files remain missing, migration histories are not identical, Auth signup-trigger behavior has not been verified with a real signup, and leaked-password protection remains disabled under the current Free-plan constraint. Do not wipe test data or repoint production Vercel configuration until the migration path and release checks are complete.
