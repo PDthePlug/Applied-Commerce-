@@ -66,7 +66,7 @@ The current live catalogs were compared again after staging-only migrations and 
 - The three cohort-enrolment staff INSERT/UPDATE/DELETE policies now call `private.is_cohort_staff_member(cohort_id)` directly in staging, avoiding the recursive policy subquery found in production. The production versions still query `public.cohorts` inside the policy expression.
 - Staging replaces the original `on_auth_user_created` trigger with `on_auth_user_created_apply_pending_roles`. The new trigger inserts the profile and applies queued assignments; signup-trigger behavior still needs a real Auth-created identity test before claiming end-to-end validation.
 - Staging contains three additional indexes associated with `private.pending_role_assignments`. Other compared index definitions were present.
-- The `ac-runtime-3` release row exists in both projects, but its metadata differs: production has `releaseManifest=public/curriculum/release.json`, while staging's current row lacked that key. A corrective, forward-only migration has been added to PR #20 to preserve the manifest pointer and validate the row. It has been transaction-simulated against staging and rolled back; the live staging row was not changed by that simulation.
+- The `ac-runtime-3` release row exists in both projects, but its metadata differs: production has `releaseManifest=public/curriculum/release.json`, while staging's current row lacked that key. A corrective, forward-only migration has been added to the canonical reconciliation branch to preserve the manifest pointer and validate the row. It has been transaction-simulated against staging and rolled back; the live staging row was not changed by that simulation.
 
 ## Reconciliation decision
 
