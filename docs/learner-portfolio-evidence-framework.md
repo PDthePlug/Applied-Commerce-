@@ -38,6 +38,22 @@ These labels describe the strength of the available evidence, not the learner’
 
 Institution administrators receive aggregate cohort indicators only. The aggregate loader considers active cohort enrolments only and suppresses derived learning metrics for cohorts with fewer than five active learners. It returns counts and coverage (completion, saved responses, review coverage and revision workload), not learner names, individual answers or learner-level scores. These metrics are operational signals, not rankings or competency conclusions.
 
+## Current staging case check (2026-10-09)
+
+The existing staging learner has 9 saved prompt responses across four unit IDs and 5 lesson-progress records. The nine response rows share the same recorded update timestamp. The assigned facilitator and learner are linked to the same active test cohort, which currently has only one active learner. There are no persisted assessment attempts, evidence records, evidence reviews, or portfolio artifact links.
+
+Expected synthesis for this real staging state:
+
+- **Evidence:** report the nine saved responses across four learning contexts, with direct links to the originating activities.
+- **Competency:** not yet confirmed; none of the responses has a persisted facilitator review.
+- **Growth:** insufficient dated/comparable reviewed observations; the shared timestamp cannot show change over time.
+- **Progression and transfer:** not established; multiple completed or saved contexts are not a substitute for reviewed application.
+- **Remaining edge:** unknown until a facilitator reviews the work; do not label a learner weakness from missing review records.
+- **Next pathway:** a cautious suggestion to review the existing work and then apply a method in another context; a facilitator should replace this with a specific recommendation after review.
+- **Institution view:** the cohort learning summary must remain suppressed because there is only one active learner, below the privacy threshold of five.
+
+A synthetic regression test mirrors these counts and timestamp limitations. It is a rule test, not a claim that the test fixture is an actual learner record. No review has been inserted on behalf of a facilitator; that validation requires the assigned facilitator to authenticate and make a real professional judgement.
+
 ## Validation boundary
 
 The synthesis is deterministic and evidence-linked, but staging currently has no persisted facilitator reviews or portfolio links. Therefore reviewed competency and transfer logic must be rechecked after real facilitator reviews exist. Browser validation must include learner, facilitator and institution-admin roles; no production schema changes or PR merge are implied by the staging implementation.
