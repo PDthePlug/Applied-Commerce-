@@ -19,6 +19,6 @@ test("learner local state survives reload and account surface is available witho
     await expect(authPanel).toContainText("Sign in");
     await expect(emailInput).toBeVisible();
   } else {
-    await expect(authPanel).toContainText("Account sync is staged for certification.");
+    await expect(authPanel).toContainText("Account access is temporarily unavailable.");
   }
 });
