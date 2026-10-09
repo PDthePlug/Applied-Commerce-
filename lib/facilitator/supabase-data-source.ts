@@ -255,31 +255,32 @@ export async function saveSupabaseFacilitatorReview(learnerId: string, record: E
 export function useSupabaseFacilitatorWorkspace() {
   const { user } = useAuth();
   const verifiedAccess = useFacilitatorAccess();
+  const userId = user?.id;
   const [workspace, setWorkspace] = useState<SupabaseFacilitatorWorkspace | null>(null);
   const [loadedUserId, setLoadedUserId] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     let cancelled = false;
-    if (!user) return;
-    void loadSupabaseFacilitatorWorkspace(user.id, verifiedAccess ?? undefined).then(value => {
+    if (!userId) return;
+    void loadSupabaseFacilitatorWorkspace(userId, verifiedAccess ?? undefined).then(value => {
       if (!cancelled) {
         setWorkspace(value);
-        setLoadedUserId(user.id);
+        setLoadedUserId(userId);
         setError(null);
       }
     }).catch(() => {
       if (!cancelled) {
         setWorkspace(null);
-        setLoadedUserId(user.id);
+        setLoadedUserId(userId);
         setError("We couldn’t load your shared workspace. Please refresh and try again. If the problem continues, contact your institution administrator.");
       }
     });
     return () => { cancelled = true; };
-  }, [user, verifiedAccess]);
+  }, [userId, verifiedAccess]);
 
-  const activeWorkspace = user && loadedUserId === user.id ? workspace : null;
-  const activeLoading = Boolean(user) && loadedUserId !== user.id;
-  const activeError = user && loadedUserId === user.id ? error : null;
+  const activeWorkspace = userId && loadedUserId === userId ? workspace : null;
+  const activeLoading = Boolean(userId) && loadedUserId !== userId;
+  const activeError = userId && loadedUserId === userId ? error : null;
   return { workspace: activeWorkspace, loading: activeLoading, error: activeError };
 }
