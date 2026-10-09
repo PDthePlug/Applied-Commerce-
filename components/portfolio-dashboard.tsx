@@ -21,8 +21,7 @@ export function PortfolioDashboard(){
  const {user}=useAuth();
  const [remoteReviews,setRemoteReviews]=useState<Record<string,EvidenceReview>>({});
  const [remoteReviewUserId,setRemoteReviewUserId]=useState<string|null>(null);
- const activeRemoteReviews=remoteReviewUserId===user?.id?remoteReviews:{};
- const reviews=useMemo(()=>({...localReviews,...activeRemoteReviews}),[localReviews,activeRemoteReviews]);
+ const reviews=useMemo(()=>({...localReviews,...(remoteReviewUserId===user?.id?remoteReviews:{})}),[localReviews,remoteReviews,remoteReviewUserId,user?.id]);
  const [meta,setMeta]=useState<Record<string,Meta>>({});
  const [units,setUnits]=useState<Record<string,UnitContent>>({});
 
