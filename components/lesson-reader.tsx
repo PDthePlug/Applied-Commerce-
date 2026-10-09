@@ -15,7 +15,7 @@ export function LessonReader({grade,term,unitId}:{grade:number;term:number;unitI
  const {state,saveError,completedIds,markComplete,saveResponse,savePromptResponse,setLastOpened}=useLearningStore();
  useEffect(()=>{
   let cancelled=false;
-  const unitContext=unitId.match(/^g(\\d+)-t(\\d+)-/);
+  const unitContext=unitId.match(/^g(\d+)-t(\d+)-/);
   const inferredGrade=unitContext?Number(unitContext[1]):grade;
   const inferredTerm=unitContext?Number(unitContext[2]):term;
   const candidates=inferredGrade===grade&&inferredTerm===term ? [{grade,term}] : [{grade,term},{grade:inferredGrade,term:inferredTerm}];
