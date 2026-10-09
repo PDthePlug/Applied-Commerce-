@@ -5,37 +5,40 @@ import { emptyLearningState, parseLearningState } from "./response-identity";
 import type { LearnerProfile, LearningState } from "./types";
 import { useAuth } from "./auth-context";
 import { reconcileLearningState, syncLearningState } from "./supabase/persistence";
+import { createClient } from "./supabase/client";
 
 const KEY = "applied-commerce-learning-state-v1";
 const EVENT = "applied-commerce-learning-state-change";
+const LEGACY_MIGRATION_KEY = `${KEY}-legacy-migrated-to-account`;
 const emptyState=emptyLearningState;
 const emptyRaw=JSON.stringify(emptyState);
+const storageKeyFor=(userId:string|null|undefined)=>userId?`${KEY}:user:${userId}`:KEY;
 
-function readRaw():string{
+function readRaw(key:string):string{
   if(typeof window==="undefined") return emptyRaw;
-  return localStorage.getItem(KEY)??emptyRaw;
+  return localStorage.getItem(key)??emptyRaw;
 }
 function parse(raw:string):LearningState{
   try{return parseLearningState(raw);}catch{return emptyState;}
 }
 
-function write(state: LearningState) {
-  const existing=localStorage.getItem(KEY);
+function write(state: LearningState, key:string) {
+  const existing=localStorage.getItem(key);
   if(existing){
     // Validate before overwriting, and retain an untouched pre-migration backup.
     const parsed=JSON.parse(existing);
     parseLearningState(existing);
-    if(parsed.version===1&&!localStorage.getItem(`${KEY}-before-stable-prompts`)){
-      localStorage.setItem(`${KEY}-before-stable-prompts`,existing);
+    if(parsed.version===1&&!localStorage.getItem(`${key}-before-stable-prompts`)){
+      localStorage.setItem(`${key}-before-stable-prompts`,existing);
     }
   }
-  localStorage.setItem(KEY, JSON.stringify(state));
+  localStorage.setItem(key, JSON.stringify(state));
   window.dispatchEvent(new Event(EVENT));
 }
 
-function subscribe(onStoreChange: () => void) {
+function subscribe(onStoreChange: () => void, key:string) {
   const onStorage = (event: StorageEvent) => {
-    if (event.key === KEY) onStoreChange();
+    if (event.key === key) onStoreChange();
   };
   window.addEventListener("storage", onStorage);
   window.addEventListener(EVENT, onStoreChange);
@@ -52,28 +55,53 @@ export function useLearningStore() {
   const [syncError,setSyncError]=useState<string|null>(null);
   const remoteReady=useRef(false);
   const { user } = useAuth();
-  const raw = useSyncExternalStore(subscribe, readRaw, () => emptyRaw);
+  const storageKey=storageKeyFor(user?.id);
+  const readCurrentRaw=useCallback(()=>readRaw(storageKey),[storageKey]);
+  const subscribeCurrent=useCallback((onStoreChange:()=>void)=>subscribe(onStoreChange,storageKey),[storageKey]);
+  const raw = useSyncExternalStore(subscribeCurrent, readCurrentRaw, () => emptyRaw);
   const hydrated = useSyncExternalStore(subscribeHydration, () => true, () => false);
   const state = useMemo(() => parse(raw), [raw]);
 
   useEffect(() => {
     let cancelled = false;
-    if (!user) { remoteReady.current=true; return; }
+    if (!user) {
+      remoteReady.current=true;
+      setSyncError(null);
+      return;
+    }
     remoteReady.current=false;
-    void reconcileLearningState(user.id, state).then(merged => {
-      if (cancelled) return;
-      write(merged);
+    void (async()=>{
+      const supabase=createClient();
+      const adminResult=await supabase.rpc("is_platform_admin");
+      if(adminResult.error)throw adminResult.error;
+
+      // The pre-account local store was shared by every login on this device.
+      // Preserve it, but claim it only for the platform administrator's own
+      // account; never copy one account's local answers into another account.
+      if(adminResult.data===true&&!localStorage.getItem(LEGACY_MIGRATION_KEY)&&!localStorage.getItem(storageKey)){
+        const legacy=localStorage.getItem(KEY);
+        if(legacy){
+          parseLearningState(legacy);
+          localStorage.setItem(storageKey,legacy);
+          localStorage.setItem(LEGACY_MIGRATION_KEY,user.id);
+        }
+      }
+
+      const accountState=parse(readRaw(storageKey));
+      const merged=await reconcileLearningState(user.id,accountState);
+      if(cancelled)return;
+      write(merged,storageKey);
       setSyncError(null);
       remoteReady.current=true;
-    }).catch(() => {
-      if (cancelled) return;
+    })().catch(()=>{
+      if(cancelled)return;
       setSyncError("We couldn’t sync your account just now. Your work is still saved on this device; check your connection and try again.");
       remoteReady.current=true;
     });
     return () => { cancelled = true; };
-  // Reconcile only when the authenticated learner changes; state changes are synced by the debounced adapter below.
+  // Reconcile only when the authenticated account changes; state changes are synced by the debounced adapter below.
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [user?.id]);
+  }, [user?.id,storageKey]);
 
   useEffect(() => {
     if (!user || !remoteReady.current) return;
@@ -83,18 +111,18 @@ export function useLearningStore() {
       });
     }, 700);
     return () => window.clearTimeout(timer);
-  }, [state, user]);
+  }, [state, user, storageKey]);
 
   const update = useCallback((fn: (current: LearningState) => LearningState) => {
     try{
-      write(fn(parseLearningState(readRaw())));
+      write(fn(parseLearningState(readRaw(storageKey))),storageKey);
       setSaveError(null);
       return true;
     }catch{
       setSaveError("Your latest change could not be saved on this device. Keep this page open and copy your work before leaving.");
       return false;
     }
-  }, []);
+  }, [storageKey]);
 
   const markComplete = useCallback((unitId: string, complete=true, context?: {grade:number;term:number}) => update(current => {
     const completed={...current.completed};
