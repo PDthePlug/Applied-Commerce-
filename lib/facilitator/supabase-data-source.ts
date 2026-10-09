@@ -75,6 +75,7 @@ export async function loadSupabaseFacilitatorWorkspace(userId: string, verifiedA
     if (error) throw error;
     activeCohorts = data ?? [];
     cohortIds = activeCohorts.map(row => row.id);
+    if (!activeCohorts.length) return null;
   }
 
   const [enrolments, release] = await Promise.all([
@@ -263,13 +264,14 @@ export function useSupabaseFacilitatorWorkspace() {
     let cancelled = false;
     if (!user) return;
     setLoading(true);
+    setError(null);
     void loadSupabaseFacilitatorWorkspace(user.id, verifiedAccess ?? undefined).then(value => {
       if (!cancelled) {
         setWorkspace(value);
         setLoadedUserId(user.id);
         setError(null);
       }
-    }).catch(err => {
+    }).catch(() => {
       if (!cancelled) {
         setWorkspace(null);
         setLoadedUserId(user.id);
