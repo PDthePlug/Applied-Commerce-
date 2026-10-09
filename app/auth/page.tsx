@@ -16,7 +16,7 @@ export default function AuthPage() {
       <span className="auth-secure-label"><ShieldCheck aria-hidden="true" /> Secure account access</span>
     </header>
 
-    <main className="auth-layout">
+    <section className="auth-layout">
       <section className="auth-story">
         <p className="eyebrow">Applied Commerce · One account, distinct roles</p>
         <h1>Learning that connects to <em>real life.</em></h1>
@@ -47,7 +47,7 @@ export default function AuthPage() {
           <Link href="/institutions">Explore Workspace <ArrowRight aria-hidden="true" /></Link>
         </div>
       </section>
-    </main>
+    </section>
 
     <footer className="auth-footer">
       <span>Applied Commerce</span>
