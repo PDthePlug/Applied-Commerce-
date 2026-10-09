@@ -69,6 +69,6 @@ export function ProfileDashboard() {
       </div>
       {signOutError ? <p className="profile-hub-error" role="alert">{signOutError}</p> : null}
     </section>
-    <p className="profile-hub-footnote"><UserRound aria-hidden="true"/> Account preferences are private to this account. Learning evidence and progress remain separate from presentation settings.</p>
+    <p className="profile-hub-footnote"><UserRound aria-hidden="true"/> Your saved responses and lesson completion are not changed by presentation settings.</p>
   </main>;
 }
