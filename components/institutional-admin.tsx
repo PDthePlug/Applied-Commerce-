@@ -38,6 +38,7 @@ export function InstitutionalAdmin({ initialSection = "overview" }: { initialSec
   const [memberships, setMemberships] = useState<Membership[]>([]);
   const [isPlatformAdmin, setIsPlatformAdmin] = useState(false);
   const [contextLoading, setContextLoading] = useState(true);
+  const [contextLoadFailed, setContextLoadFailed] = useState(false);
   const [schoolId, setSchoolId] = useState("");
   const [cohortId, setCohortId] = useState("");
   const [people, setPeople] = useState<{ learners: Array<{ learner_id: string; status: string; profile: { id: string; display_name: string | null; status: string } | null }>; staff: StaffPerson[]; staffIds: string[] } | null>(null);
@@ -66,6 +67,7 @@ export function InstitutionalAdmin({ initialSection = "overview" }: { initialSec
   async function refresh(preferredSchoolId?: string, preferredCohortId?: string) {
     if (!user) return;
     const context = await loadInstitutionalContext(user.id);
+    setContextLoadFailed(false);
     setIsPlatformAdmin(context.isPlatformAdmin);
     setContextLoading(false);
     setSchools(context.schools);
@@ -100,6 +102,7 @@ export function InstitutionalAdmin({ initialSection = "overview" }: { initialSec
       try {
         const context = await loadInstitutionalContext(authenticatedUserId);
         if (cancelled) return;
+        setContextLoadFailed(false);
         setIsPlatformAdmin(context.isPlatformAdmin);
         setContextLoading(false);
         setSchools(context.schools);
@@ -109,7 +112,7 @@ export function InstitutionalAdmin({ initialSection = "overview" }: { initialSec
         const firstCohort = context.cohorts.find((item) => item.school_id === context.selectedSchoolId);
         setCohortId(firstCohort?.id ?? "");
       } catch (err) {
-        if (!cancelled) { setError(messageFor(err)); setContextLoading(false); }
+        if (!cancelled) { setError(messageFor(err)); setContextLoadFailed(true); setContextLoading(false); }
       }
     }
 
@@ -168,6 +171,10 @@ export function InstitutionalAdmin({ initialSection = "overview" }: { initialSec
 
   if (contextLoading) {
     return <main className="institution-admin-page"><div className="institution-admin-state">Getting your institution workspace ready…</div></main>;
+  }
+
+  if (contextLoadFailed) {
+    return <main className="institution-admin-page"><section className="institution-admin-hero"><p className="eyebrow">Institution workspace</p><h1>We couldn’t confirm your access just now.</h1><p>Please refresh and try again. If the problem continues, contact your platform administrator.</p><button type="button" className="institutional-primary" onClick={() => window.location.reload()}>Try again <ArrowRight /></button></section></main>;
   }
 
   if (!hasInstitutionAdminAccess) {
