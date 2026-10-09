@@ -31,7 +31,7 @@ export function LessonReader({grade,term,unitId}:{grade:number;term:number;unitI
         return;
       }catch(error){lastError=error;}
     }
-    if(!cancelled)setLoadError(lastError instanceof Error?lastError.message:"Lesson could not be opened.");
+    if(!cancelled)setLoadError("We couldn’t open this lesson. Check your connection and try again.");
   })();
   return ()=>{cancelled=true;};
  },[grade,term,unitId,setLastOpened,router]);
