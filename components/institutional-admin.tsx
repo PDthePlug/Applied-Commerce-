@@ -141,11 +141,7 @@ export function InstitutionalAdmin({ initialSection = "overview" }: { initialSec
   }, [cohortId]);
 
   useEffect(() => {
-    if (!cohortId || (pageSection !== "overview" && pageSection !== "cohorts")) {
-      setCohortInsights(null);
-      setCohortInsightsUnavailable(false);
-      return;
-    }
+    if (!cohortId || (pageSection !== "overview" && pageSection !== "cohorts")) return;
     let cancelled = false;
     setCohortInsightsLoading(true);
     setCohortInsightsUnavailable(false);
