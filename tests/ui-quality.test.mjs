@@ -181,3 +181,12 @@ test("platform-admin learning evidence sync respects exclusive operating roles",
   assert.match(persistence,/from\("prompt_responses"\)\.upsert\(promptRows/);
   assert.match(persistence,/from\("lesson_progress"\)\.upsert\(progressRows/);\n  assert.match(persistence,/from\("lesson_notes"\)\.upsert\(noteRows,\{onConflict:"learner_id,curriculum_version,unit_id"\}\)/);
 });
+
+
+test("local learning records are isolated by authenticated account",()=>{
+  const store=read("lib/learning-store.ts");
+  assert.match(store,/storageKeyFor=\(userId:string\|null\|undefined\)=>userId\?\`\$\{KEY\}:user:\$\{userId\}\`:KEY/);
+  assert.match(store,/adminResult\.data===true/);
+  assert.match(store,/never copy one account's local answers into another account/i);
+  assert.match(store,/localStorage\.setItem\(storageKey,legacy\)/);
+});
