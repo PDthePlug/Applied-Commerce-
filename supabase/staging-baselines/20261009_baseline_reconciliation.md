@@ -48,7 +48,7 @@ Verified after applying the snapshot to staging:
 
 ## Identity and acceptance-test status
 
-- Database negative checks on staging passed: an `authenticated` role without the platform-admin registry grant was denied direct SELECT on `private.platform_admins`, and an unassigned JWT subject calling `public.create_school` was rejected with `Only platform administrators can create institutions`. Neither operation created data.
+- Database negative checks on staging passed using simulated JWT subjects under the `authenticated` database role: direct SELECT on `private.platform_admins` was denied; an unassigned subject received `false` from `private.can_view_learner` for another learner; cross-user evidence INSERT was rejected by RLS; `public.upsert_facilitator_evidence_record` rejected an out-of-scope learner; and `public.create_school` rejected an unassigned subject. No probe rows were written.
 - No production identity or credential was copied.
 - The available connected Supabase actions do not expose an Auth Admin create-user/invite operation, and no signed-in browser session is available through the current tool surface.
 - Direct SQL insertion into `auth.users` was not used because it bypasses Supabase Auth's supported account-creation path.
