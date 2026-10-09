@@ -18,7 +18,7 @@ test("profile is part of the learner shell",()=>{
   const shell=read("components/app-shell.tsx");
   const profile=read("components/profile-dashboard.tsx");
   assert.match(shell,/href:"\/profile"/);
-  assert.match(profile,/Your Applied Commerce learning record/);
+  assert.match(profile,/Your learning record at a glance/);
   assert.ok(fs.existsSync("app/profile/page.tsx"));
 });
 
@@ -137,34 +137,29 @@ test("presentation architecture v2 preserves semantic hierarchy and mobile table
 });
 
 
-test("account creation confirms both email and password and keeps role assignment separate",()=>{
+test("account creation confirms password and keeps role assignment separate",()=>{
   const auth=read("components/auth-panel.tsx");
-  assert.match(auth,/Confirm email address/);
+  assert.doesNotMatch(auth,/Confirm email address/);
   assert.match(auth,/Confirm password/);
-  assert.match(auth,/email\.trim\(\)\.toLowerCase\(\) !== confirmEmail\.trim\(\)\.toLowerCase\(\)/);
   assert.match(auth,/password !== confirmPassword/);
-  assert.match(auth,/creating an account does not grant staff permissions/i);
+  assert.match(auth,/Staff access is assigned separately/i);
 });
 
-test("account access has Applied Commerce identity and explains role-specific workspaces",()=>{
+test("account access keeps Applied Commerce identity without an explanatory panel",()=>{
   const page=read("app/auth/page.tsx");
   const styles=read("app/auth.css");
-  assert.match(page,/Learning & evidence platform/);
-  assert.match(page,/Learner workspace/);
-  assert.match(page,/Facilitator workspace/);
-  assert.match(page,/Workspace administration/);
-  assert.match(page,/Explore Workspace/);
-  assert.match(styles,/\.auth-story/);
+  assert.match(page,/Secure sign-in/);
+  assert.match(page,/AuthPanel/);
+  assert.doesNotMatch(page,/Learner workspace|Facilitator workspace|Workspace administration|Explore Workspace/);
+  assert.doesNotMatch(styles,/\.auth-story/);
   assert.match(styles,/@media\(max-width:560px\)/);
 });
 
-test("primary navigation labels the institutional destination Workspace",()=>{
+test("primary navigation keeps only one staff sign-in link",()=>{
   const shell=read("components/app-shell.tsx");
-  assert.match(shell,/<Link className="topbar-institution-link" href="\/institutions">Workspace<\/Link>/);
   assert.match(shell,/<Link className="topbar-auth-link" href="\/auth">Staff sign in<\/Link>/);
-  assert.match(shell,/<Link className="topbar-mobile-auth" href="\/auth">Staff sign in<\/Link>/);
-  assert.match(read("app/responsive.css"),/\.topbar-mobile-auth\{display:inline-flex/);
-  assert.doesNotMatch(shell,/<Link className="topbar-institution-link" href="\/institutions">For institutions<\/Link>/);
+  assert.doesNotMatch(shell,/topbar-institution-link|topbar-mobile-auth|>Workspace</);
+  assert.match(read("app/responsive.css"),/\.topbar-note\{display:flex\}/);
 });
 
 test("legacy auth profile repair is additive and does not assign application roles",()=>{
