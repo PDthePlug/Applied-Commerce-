@@ -27,3 +27,160 @@ html[data-ac-appearance="dark"] .eyebrow,html[data-ac-appearance="warm"] .eyebro
 .app-shell :is(a,button,input,select,textarea):focus-visible{outline-color:var(--ac-user-accent)}
 html[data-ac-text-size] :is(.lesson-reader,.content-blocks,.home-page,.profile-page,.settings-page,.portfolio-page,.progress-page,.grade-map,.learn-library) :is(p,li,label,td,th,input,textarea,select,button){font-size:calc(1em * var(--ac-text-scale))}
 html[data-ac-reading-width] :is(.lesson-reader,.reader-content,.reader-main,.lesson-body,.lesson-content,.content-blocks,.learner-document-content){max-width:var(--ac-reading-max)}
+
+
+/* Theme hardening: keep component surfaces, foregrounds and accent text in the same colour system. */
+:root{
+  --ac-user-accent-text:var(--ac-user-accent);
+  --ac-surface:var(--paper);
+  --ac-surface-raised:var(--paper);
+  --ac-menu-text:var(--ink);
+  --ac-menu-muted:var(--muted);
+}
+html[data-ac-accent="commerce"]{--ac-user-accent-text:#2c726d}
+html[data-ac-accent="blue"]{--ac-user-accent-text:#2f5f92}
+html[data-ac-accent="amber"]{--ac-user-accent-text:#80500e}
+html[data-ac-accent="sage"]{--ac-user-accent-text:#42634b}
+html[data-ac-appearance="dark"]{
+  --ac-user-accent-text:#a2e0d6;
+  --ac-surface:#202522;
+  --ac-surface-raised:#252c28;
+  --ac-menu-text:#f4f5f1;
+  --ac-menu-muted:#c0c9c3;
+}
+@media(prefers-color-scheme:dark){
+  html[data-ac-appearance="system"]{
+    --ac-user-accent-text:#a2e0d6;
+    --ac-surface:#202522;
+    --ac-surface-raised:#252c28;
+    --ac-menu-text:#f4f5f1;
+    --ac-menu-muted:#c0c9c3;
+  }
+}
+
+/* Keep the fixed mobile menu legible; its original component used light-only literals. */
+html[data-ac-appearance="dark"] .app-menu-sheet,
+html[data-ac-appearance="dark"] .app-menu-sheet>header,
+html[data-ac-appearance="dark"] .app-menu-sheet header button,
+html[data-ac-appearance="dark"] .app-menu-items a,
+html[data-ac-appearance="dark"] .app-menu-items a:hover,
+html[data-ac-appearance="dark"] .app-menu-items a.active{
+  background:var(--ac-surface-raised);
+  color:var(--ac-menu-text);
+  border-color:var(--line);
+}
+html[data-ac-appearance="dark"] .app-menu-sheet header small,
+html[data-ac-appearance="dark"] .app-menu-items a small{color:var(--ac-menu-muted)}
+html[data-ac-appearance="dark"] .app-menu-items a:hover,
+html[data-ac-appearance="dark"] .app-menu-items a.active{background:#303b35;color:#fff}
+html[data-ac-appearance="dark"] .app-menu-items a em{color:#a2e0d6}
+html[data-ac-appearance="dark"] .app-menu-sheet header button{border:1px solid var(--line)}
+html[data-ac-appearance="dark"] .app-menu-trigger{background:#e4eee8;color:#17313b;border-color:#87958d}
+html[data-ac-appearance="dark"] .app-menu-scrim{background:rgba(0,0,0,.64)}
+@media(prefers-color-scheme:dark){
+  html[data-ac-appearance="system"] .app-menu-sheet,
+  html[data-ac-appearance="system"] .app-menu-sheet>header,
+  html[data-ac-appearance="system"] .app-menu-sheet header button,
+  html[data-ac-appearance="system"] .app-menu-items a,
+  html[data-ac-appearance="system"] .app-menu-items a:hover,
+  html[data-ac-appearance="system"] .app-menu-items a.active{
+    background:var(--ac-surface-raised);color:var(--ac-menu-text);border-color:var(--line);
+  }
+  html[data-ac-appearance="system"] .app-menu-sheet header small,
+  html[data-ac-appearance="system"] .app-menu-items a small{color:var(--ac-menu-muted)}
+  html[data-ac-appearance="system"] .app-menu-items a:hover,
+  html[data-ac-appearance="system"] .app-menu-items a.active{background:#303b35;color:#fff}
+  html[data-ac-appearance="system"] .app-menu-items a em{color:#a2e0d6}
+  html[data-ac-appearance="system"] .app-menu-sheet header button{border:1px solid var(--line)}
+  html[data-ac-appearance="system"] .app-menu-trigger{background:#e4eee8;color:#17313b;border-color:#87958d}
+  html[data-ac-appearance="system"] .app-menu-scrim{background:rgba(0,0,0,.64)}
+}
+
+/* Dark/system surfaces across learner, reader, profile and settings routes. */
+html[data-ac-appearance="dark"] :is(
+  .home-dashboard-card,.profile-card,.profile-list,.profile-account-card,.profile-row,
+  .settings-content,.settings-surface,.settings-nav button[aria-current="page"],
+  .portfolio-card,.progress-card,.grade-card,.learn-card,.term-card,.term-preview,
+  .reader-rail,.reader-topbar,.reader-progress,.reader-footer>a,.workbook-panel,
+  .response-surface,.learning-notice,.thinking-equation-notice,.deepening-insight,
+  .source-callout,.source-table-wrap,.previous-combined-response,.reading-preview,
+  .profile-hub-list,.profile-hub-account
+){background:var(--ac-surface);color:var(--ink);border-color:var(--line)}
+html[data-ac-appearance="dark"] :is(
+  .settings-row select,.settings-row input,.settings-row textarea,.settings-status button,
+  .reader-rail button,.rail-head button,.reader-menu-button,.workbook-table input,
+  .workbook-table textarea,.response-surface textarea,.response-surface input,
+  .response-surface select
+){background:var(--ac-surface-raised);color:var(--ink);border-color:var(--line)}
+html[data-ac-appearance="dark"] :is(
+  .settings-nav button[aria-current="page"] span,.settings-password-form h3 svg,
+  .settings-reset:hover,.profile-hub-row-icon,.profile-hub-footnote svg,
+  .profile-hub-account>a,.profile-hub-account>button
+){color:var(--ac-user-accent-text)}
+html[data-ac-appearance="dark"] :is(
+  .home-dashboard-card>p:not(.eyebrow),.settings-section-heading p,
+  .settings-status,.settings-feedback,.settings-row>span,.settings-account-row span,
+  .reading-preview small,.profile-hub-row-copy small,.profile-hub-footnote,
+  .profile-hub-account span,.reader-rail p,.reader-rail small,.reader-progress,
+  .term-stats span,.term-preview-row,.source-callout p
+){color:var(--muted)}
+html[data-ac-appearance="dark"] .settings-primary,
+html[data-ac-appearance="dark"] .home-primary-action{background:var(--ac-user-accent);color:#fff}
+html[data-ac-appearance="dark"] .settings-reset{color:var(--muted)}
+html[data-ac-appearance="dark"] .settings-nav button[aria-current="page"]{background:var(--ac-surface-raised)}
+html[data-ac-appearance="dark"] .reading-preview{border-color:var(--line)}
+html[data-ac-appearance="dark"] .reading-preview>span{color:var(--ac-user-accent-text)}
+html[data-ac-appearance="dark"] .profile-hub-row:hover{background:#303b35}
+html[data-ac-appearance="dark"] .profile-hub-row{color:var(--ink);border-color:var(--line)}
+html[data-ac-appearance="dark"] .profile-hub-row-icon{background:#303b35}
+html[data-ac-appearance="dark"] .settings-error{color:#ffb4a8}
+html[data-ac-appearance="dark"] :is(.equation-reference,.previous-combined-response>p){color:var(--ink)!important}
+html[data-ac-appearance="dark"] .app-shell :is(a,button,input,select,textarea,summary):focus-visible,
+html[data-ac-appearance="dark"] .settings-page :is(a,button,input,select):focus-visible{outline-color:#a2e0d6}
+@media(prefers-color-scheme:dark){
+  html[data-ac-appearance="system"] :is(
+    .home-dashboard-card,.profile-card,.profile-list,.profile-account-card,.profile-row,
+    .settings-content,.settings-surface,.settings-nav button[aria-current="page"],
+    .portfolio-card,.progress-card,.grade-card,.learn-card,.term-card,.term-preview,
+    .reader-rail,.reader-topbar,.reader-progress,.reader-footer>a,.workbook-panel,
+    .response-surface,.learning-notice,.thinking-equation-notice,.deepening-insight,
+    .source-callout,.source-table-wrap,.previous-combined-response,.reading-preview,
+    .profile-hub-list,.profile-hub-account
+  ){background:var(--ac-surface);color:var(--ink);border-color:var(--line)}
+  html[data-ac-appearance="system"] :is(
+    .settings-row select,.settings-row input,.settings-row textarea,.settings-status button,
+    .reader-rail button,.rail-head button,.reader-menu-button,.workbook-table input,
+    .workbook-table textarea,.response-surface textarea,.response-surface input,
+    .response-surface select
+  ){background:var(--ac-surface-raised);color:var(--ink);border-color:var(--line)}
+  html[data-ac-appearance="system"] :is(
+    .settings-nav button[aria-current="page"] span,.settings-password-form h3 svg,
+    .settings-reset:hover,.profile-hub-row-icon,.profile-hub-footnote svg,
+    .profile-hub-account>a,.profile-hub-account>button
+  ){color:var(--ac-user-accent-text)}
+  html[data-ac-appearance="system"] :is(
+    .home-dashboard-card>p:not(.eyebrow),.settings-section-heading p,
+    .settings-status,.settings-feedback,.settings-row>span,.settings-account-row span,
+    .reading-preview small,.profile-hub-row-copy small,.profile-hub-footnote,
+    .profile-hub-account span,.reader-rail p,.reader-rail small,.reader-progress,
+    .term-stats span,.term-preview-row,.source-callout p
+  ){color:var(--muted)}
+  html[data-ac-appearance="system"] .settings-primary,
+  html[data-ac-appearance="system"] .home-primary-action{background:var(--ac-user-accent);color:#fff}
+  html[data-ac-appearance="system"] .settings-reset{color:var(--muted)}
+  html[data-ac-appearance="system"] .settings-nav button[aria-current="page"]{background:var(--ac-surface-raised)}
+  html[data-ac-appearance="system"] .reading-preview{border-color:var(--line)}
+  html[data-ac-appearance="system"] .reading-preview>span{color:var(--ac-user-accent-text)}
+  html[data-ac-appearance="system"] .profile-hub-row:hover{background:#303b35}
+  html[data-ac-appearance="system"] .profile-hub-row{color:var(--ink);border-color:var(--line)}
+  html[data-ac-appearance="system"] .profile-hub-row-icon{background:#303b35}
+  html[data-ac-appearance="system"] .settings-error{color:#ffb4a8}
+  html[data-ac-appearance="system"] :is(.equation-reference,.previous-combined-response>p){color:var(--ink)!important}
+  html[data-ac-appearance="system"] .app-shell :is(a,button,input,select,textarea,summary):focus-visible,
+  html[data-ac-appearance="system"] .settings-page :is(a,button,input,select):focus-visible{outline-color:#a2e0d6}
+}
+
+/* Accent colour is decorative; text links use a contrast-safe token. */
+html[data-ac-appearance="light"] :is(.settings-nav button[aria-current="page"] span,.settings-password-form h3 svg,.profile-hub-row-icon,.profile-hub-footnote svg){color:var(--ac-user-accent-text)}
+html[data-ac-appearance="warm"] :is(.settings-nav button[aria-current="page"] span,.settings-password-form h3 svg,.profile-hub-row-icon,.profile-hub-footnote svg){color:var(--ac-user-accent-text)}
+html[data-ac-appearance="system"] :is(.settings-nav button[aria-current="page"] span,.settings-password-form h3 svg,.profile-hub-row-icon,.profile-hub-footnote svg){color:var(--ac-user-accent-text)}
