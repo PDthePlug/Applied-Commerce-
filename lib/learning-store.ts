@@ -65,7 +65,7 @@ export function useLearningStore() {
       write(merged);
       setSyncError(null);
       remoteReady.current=true;
-    }).catch(error => {
+    }).catch(() => {
       if (cancelled) return;
       setSyncError("We couldn’t sync your account just now. Your work is still saved on this device; check your connection and try again.");
       remoteReady.current=true;
@@ -78,7 +78,7 @@ export function useLearningStore() {
   useEffect(() => {
     if (!user || !remoteReady.current) return;
     const timer = window.setTimeout(() => {
-      void syncLearningState(user.id, state).then(() => setSyncError(null)).catch(error => {
+      void syncLearningState(user.id, state).then(() => setSyncError(null)).catch(() => {
         setSyncError("Your latest change is saved on this device but hasn’t reached your account yet. Check your connection and try again.");
       });
     }, 700);
