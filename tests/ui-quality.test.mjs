@@ -165,7 +165,7 @@ test("primary navigation labels the institutional destination Workspace",()=>{
 });
 
 test("legacy auth profile repair is additive and does not assign application roles",()=>{
-  const migration=read("supabase/migrations/20261009190500_backfill_missing_auth_profiles.sql");
+  const migration=read("supabase/migrations/20261009170533_backfill_missing_auth_profiles.sql");
   assert.match(migration,/from auth\.users u/);
   assert.match(migration,/where coalesce\(u\.is_anonymous, false\) = false/);
   assert.match(migration,/on conflict \(id\) do nothing/);
