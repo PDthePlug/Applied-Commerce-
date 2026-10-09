@@ -81,3 +81,15 @@ A second ACL inspection found excessive table privileges on several application 
 - The exact SQL was transaction-simulated against staging; the verification returned zero remaining risky current table privileges and zero broad `postgres` default-ACL entries, then rolled back. No live ACL changes were made by that simulation.
 - The current SQL role cannot change the separate `supabase_admin` default-privilege ACLs; application migrations must continue to run as `postgres` and explicitly grant only the privileges required by each object. This limitation remains documented for platform-owner review.
 - These excessive grants were also present in the original production catalog. The baseline's ACL reconciliation is retained for reproducibility, followed by the new tightening migration; matching production alone would have preserved an avoidable privilege risk.
+
+
+## Forward migrations applied to staging — verified 2026-10-09
+
+After the transaction simulations, both corrective migrations were applied to AC staging and recorded in the live migration ledger:
+
+- `20261009151548_reconcile_runtime_release_metadata`: the `ac-runtime-3` row now includes `releaseManifest=public/curriculum/release.json` and the expected `curriculumSourceStatus` value.
+- `20261009151609_revoke_excessive_client_table_privileges`: current application tables no longer grant table privileges to `PUBLIC` or `anon`; `authenticated` has no `MAINTAIN`, `TRUNCATE`, `TRIGGER`, or `REFERENCES` table privileges; and broad default table/sequence/function grants for objects created by the `postgres` migration role are removed.
+- Post-application catalog verification: 23 application tables, zero tables without RLS, 62 policies, 23 public/private functions, zero `PUBLIC`/`anon` table grants, zero risky authenticated table privileges, and zero broad `postgres` default ACL entries.
+- The security advisor now reports only the outstanding leaked-password-protection warning. No Auth users or learner-generated rows were changed by these migrations.
+
+The separate `supabase_admin` default ACLs remain outside the current SQL role's authority to change. The application migration chain must continue to run as `postgres`, with explicit grants for any new public API object.
