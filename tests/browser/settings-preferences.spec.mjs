@@ -82,6 +82,19 @@ test("all appearance, accent, text size and reading width settings update the do
     await page.getByRole("button", { name: /Appearance/ }).click();
     await page.getByRole("button", { name: accent, exact: true }).click();
     await expect(page.locator("html")).toHaveAttribute("data-ac-accent", accent.toLowerCase());
+    const activeAccentContrast = await page.locator(".settings-nav button[aria-current='page']").evaluate(el => {
+      const luminance = (color) => {
+        const channels = (color.match(/[\\d.]+/g) ?? []).slice(0, 3).map(value => {
+          const channel = Number(value) / 255;
+          return channel <= 0.04045 ? channel / 12.92 : ((channel + 0.055) / 1.055) ** 2.4;
+        });
+        return channels.length === 3 ? 0.2126 * channels[0] + 0.7152 * channels[1] + 0.0722 * channels[2] : null;
+      };
+      const foreground = luminance(getComputedStyle(el.querySelector("span")).color);
+      const background = luminance(getComputedStyle(el).backgroundColor);
+      return foreground === null || background === null ? 0 : (Math.max(foreground, background) + 0.05) / (Math.min(foreground, background) + 0.05);
+    });
+    expect(activeAccentContrast).toBeGreaterThanOrEqual(4.5);
   }
 
   await page.getByRole("button", { name: /Reading/ }).click();
