@@ -84,7 +84,7 @@ test("all appearance, accent, text size and reading width settings update the do
     await expect(page.locator("html")).toHaveAttribute("data-ac-accent", accent.toLowerCase());
     const activeAccentContrast = await page.locator(".settings-nav button[aria-current='page']").evaluate(el => {
       const luminance = (color) => {
-        const channels = (color.match(/[\\d.]+/g) ?? []).slice(0, 3).map(value => {
+        const channels = (color.match(/[\d.]+/g) ?? []).slice(0, 3).map(value => {
           const channel = Number(value) / 255;
           return channel <= 0.04045 ? channel / 12.92 : ((channel + 0.055) / 1.055) ** 2.4;
         });
