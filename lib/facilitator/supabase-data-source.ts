@@ -181,7 +181,7 @@ export async function loadSupabaseFacilitatorWorkspace(userId: string): Promise<
     const records: EvidenceRecord[] = [];
     for (const [unitId, gradeTerm] of unitsByLearner.get(learnerId)!) {
       const [storedGrade, storedTerm] = gradeTerm.split(":").map(Number);
-      const unitContext = unitId.match(/^g(\\d+)-t(\\d+)-/);
+      const unitContext = unitId.match(/^g(\d+)-t(\d+)-/);
       const inferredGrade = unitContext ? Number(unitContext[1]) : storedGrade;
       const inferredTerm = unitContext ? Number(unitContext[2]) : storedTerm;
       let unit;
