@@ -16,35 +16,38 @@ export function ProfileDashboard() {
   const [signOutError, setSignOutError] = useState("");
   const [workspaceAccess, setWorkspaceAccess] = useState({ facilitator: false, institution: false });
   const [workspacesReady, setWorkspacesReady] = useState(false);
+  const userId = user?.id;
 
   useEffect(() => {
     if (loading) return;
-    if (!user) { setWorkspaceAccess({ facilitator: false, institution: false }); setWorkspacesReady(true); return; }
     let active = true;
-    setWorkspacesReady(false);
-    void Promise.all([
-      createClient().rpc("is_platform_admin"),
-      createClient().from("cohort_staff").select("cohort_id").eq("user_id", user.id).eq("status", "active"),
-      createClient().from("school_memberships").select("role").eq("user_id", user.id).eq("status", "active"),
-    ]).then(([admin, facilitator, institution]) => {
-      if (!active) return;
-      if (admin.error || facilitator.error || institution.error) {
+    const timer = window.setTimeout(() => {
+      if (!userId) { setWorkspaceAccess({ facilitator: false, institution: false }); setWorkspacesReady(true); return; }
+      setWorkspacesReady(false);
+      void Promise.all([
+        createClient().rpc("is_platform_admin"),
+        createClient().from("cohort_staff").select("cohort_id").eq("user_id", userId).eq("status", "active"),
+        createClient().from("school_memberships").select("role").eq("user_id", userId).eq("status", "active"),
+      ]).then(([admin, facilitator, institution]) => {
+        if (!active) return;
+        if (admin.error || facilitator.error || institution.error) {
+          setWorkspaceAccess({ facilitator: false, institution: false });
+        } else {
+          const isAdmin = admin.data === true;
+          setWorkspaceAccess({
+            facilitator: isAdmin || (facilitator.data?.length ?? 0) > 0,
+            institution: isAdmin || (institution.data ?? []).some(item => item.role === "owner" || item.role === "admin"),
+          });
+        }
+        setWorkspacesReady(true);
+      }).catch(() => {
+        if (!active) return;
         setWorkspaceAccess({ facilitator: false, institution: false });
-      } else {
-        const isAdmin = admin.data === true;
-        setWorkspaceAccess({
-          facilitator: isAdmin || (facilitator.data?.length ?? 0) > 0,
-          institution: isAdmin || (institution.data ?? []).some(item => item.role === "owner" || item.role === "admin"),
-        });
-      }
-      setWorkspacesReady(true);
-    }).catch(() => {
-      if (!active) return;
-      setWorkspaceAccess({ facilitator: false, institution: false });
-      setWorkspacesReady(true);
-    });
-    return () => { active = false; };
-  }, [loading, user?.id]);
+        setWorkspacesReady(true);
+      });
+    }, 0);
+    return () => { active = false; window.clearTimeout(timer); };
+  }, [loading, userId]);
 
   const displayName = state.profile?.displayName?.trim()
     || (typeof user?.user_metadata?.full_name === "string" ? user.user_metadata.full_name : "")
