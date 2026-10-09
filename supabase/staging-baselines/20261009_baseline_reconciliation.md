@@ -40,9 +40,9 @@ Verified after applying the snapshot to staging:
 1. Production has RLS disabled on `private.platform_admins`; staging enables RLS and uses an explicit deny-all policy for `anon` and `authenticated`. No client policy grants access to the registry.
 2. The live `private.create_school_impl` definition differs textually from the repository source (including audit metadata and the unique-violation message). Both check platform-admin authorization, but the drift must be resolved explicitly before production migration reconciliation.
 3. The live `private.add_school_member_by_email_impl` removes the `learner_profiles` role row as part of an explicit learner-to-staff conversion and records `converted_from_learner`; the repository migration contains the same conversion intent. This is not treated as loss of learning history, and it must be tested as a role conversion. It is distinct from bootstrap-time cleanup DML, which must not be replayed blindly.
-3. `public.evidence_records` has overlapping permissive INSERT and UPDATE policies for learner-owned and assigned-staff access. PostgreSQL combines permissive policies with OR semantics; policy overlap must be tested against intended cross-role access.
-4. Duplicate unique indexes exist on the same key columns in `cohort_enrolments`, `cohort_staff`, and `school_memberships`. They were retained in the baseline to reproduce the catalog rather than silently alter production semantics.
-5. The platform-admin `granted_by` foreign key lacks a covering index. Unused-index advisor findings on empty staging are not sufficient evidence to drop indexes.
+4. `public.evidence_records` has overlapping permissive INSERT and UPDATE policies for learner-owned and assigned-staff access. PostgreSQL combines permissive policies with OR semantics; policy overlap must be tested against intended cross-role access.
+5. Duplicate unique indexes exist on the same key columns in `cohort_enrolments`, `cohort_staff`, and `school_memberships`. They were retained in the baseline to reproduce the catalog rather than silently alter production semantics.
+6. The platform-admin `granted_by` foreign key lacks a covering index. Unused-index advisor findings on empty staging are not sufficient evidence to drop indexes.
 
 ## Identity and acceptance-test status
 
