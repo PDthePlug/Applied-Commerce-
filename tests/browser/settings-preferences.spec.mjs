@@ -25,6 +25,7 @@ test("appearance and reading preferences apply immediately and survive reload", 
 });
 
 test("dark and system themes keep the learner menu and settings readable", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
   await page.emulateMedia({ colorScheme: "dark" });
   await page.goto("/settings");
   await expect(page.getByRole("heading", { name: "Settings" })).toBeVisible();
