@@ -8,6 +8,7 @@ export type PortfolioEvidence = {
   domain: string[];
   createdAt?: string;
   response: string;
+  feedback?: string;
   reviewedStatus?: "pending" | "accepted" | "needs-revision" | "verified";
   portfolioInterpretation?: string;
   nextPathway?: string;
