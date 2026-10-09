@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState, type FormEvent } from "react";
 import { ArrowLeft, Check, ChevronRight, LockKeyhole, RotateCcw } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
 import { useAuth } from "@/lib/auth-context";
@@ -30,13 +30,18 @@ export function SettingsDashboard() {
   const [passwordMessage, setPasswordMessage] = useState("");
   const [passwordError, setPasswordError] = useState("");
 
-  function saveProfile(event: React.FormEvent<HTMLFormElement>) {
+  useEffect(() => {
+    setName(state.profile?.displayName ?? "");
+    setGrade(state.profile?.grade ?? state.activeGrade ?? 8);
+  }, [state.profile?.displayName, state.profile?.grade, state.activeGrade]);
+
+  function saveProfile(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const ok = setProfile({ displayName: name.trim(), grade });
-    setProfileMessage(ok ? "Profile updated. Learning record sync will continue in the background." : "The profile could not be saved on this device. Please try again.");
+    setProfileMessage(ok ? "Profile updated. Learner accounts sync these details with their learning record." : "The profile could not be saved on this device. Please try again.");
   }
 
-  async function changePassword(event: React.FormEvent<HTMLFormElement>) {
+  async function changePassword(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setPasswordMessage(""); setPasswordError("");
     if (!user) { setPasswordError("Sign in before changing account security settings."); return; }
