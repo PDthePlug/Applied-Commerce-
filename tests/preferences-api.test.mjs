@@ -17,7 +17,7 @@ globalThis.__preferencesMocks = {
 const moduleText = source.replace(/^import .*;\n/gm, "");
 const moduleUrl = "data:text/javascript;base64," + Buffer.from("const {createClient}=globalThis.__preferencesMocks;\n" + stripTypeScriptTypes(moduleText)).toString("base64");
 const { GET, PATCH } = await import(moduleUrl);
-const patch = body => PATCH(new Request("https://ac.invalid/api/preferences", { method: "PATCH", headers: { "content-type": "application/json" }, body: JSON.stringify(body) }));
+const patch = (body, expectedUserId) => PATCH(new Request("https://ac.invalid/api/preferences", { method: "PATCH", headers: { "content-type": "application/json", ...(expectedUserId ? { "x-ac-expected-user-id": expectedUserId } : {}) }, body: JSON.stringify(body) }));
 
 test("signed-out preference reads and writes are denied", async () => {
   state.user = null;
@@ -41,6 +41,10 @@ test("updates validate preference values and only write the authenticated accoun
   assert.equal(state.upserted.row.user_id, "learner-1");
   assert.equal(state.upserted.row.appearance, "dark");
   assert.equal(state.upserted.options.onConflict, "user_id");
+  state.upserted = null;
+  const staleAccount = await patch({ appearance: "warm" }, "another-account");
+  assert.equal(staleAccount.status, 409);
+  assert.equal(state.upserted, null);
   for (const body of [{ appearance: "flashy" }, { accent: "not-a-colour" }, { textSize: "tiny" }, { readingWidth: "infinite" }, { user_id: "another-user", appearance: "warm" }, {}]) {
     assert.equal((await patch(body)).status, 400);
   }
