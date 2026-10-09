@@ -194,3 +194,24 @@ html[data-ac-appearance="dark"][data-ac-accent="amber"],
 html[data-ac-appearance="system"][data-ac-accent="amber"]{--ac-user-accent-text:#f1c97c}
 html[data-ac-appearance="dark"][data-ac-accent="sage"],
 html[data-ac-appearance="system"][data-ac-accent="sage"]{--ac-user-accent-text:#b3d9b4}
+
+
+/* Accent-coloured copy must use the light contrast token in dark surfaces, never the deep button colour. */
+html[data-ac-appearance="dark"] :is(
+  .eyebrow,.home-today-status>span,.term-card header p,.topbar-note a,
+  .home-continue-card>small svg,.home-portfolio-card>svg,.term-open,
+  .home-curriculum-link,.home-curriculum-link:hover,.structured-response-heading>strong,
+  .structured-part-label,.thinking-equation-copy>span,.term-preview-row svg,
+  .app-menu-items a em,.profile-hub-footnote svg,.profile-hub-row-icon,
+  .settings-nav button[aria-current="page"] span
+){color:var(--ac-user-accent-text)}
+@media(prefers-color-scheme:dark){
+  html[data-ac-appearance="system"] :is(
+    .eyebrow,.home-today-status>span,.term-card header p,.topbar-note a,
+    .home-continue-card>small svg,.home-portfolio-card>svg,.term-open,
+    .home-curriculum-link,.home-curriculum-link:hover,.structured-response-heading>strong,
+    .structured-part-label,.thinking-equation-copy>span,.term-preview-row svg,
+    .app-menu-items a em,.profile-hub-footnote svg,.profile-hub-row-icon,
+    .settings-nav button[aria-current="page"] span
+  ){color:var(--ac-user-accent-text)}
+}
