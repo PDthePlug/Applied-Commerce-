@@ -18,6 +18,7 @@ import {
 } from "@/lib/institutional/provisioning";
 
 type Membership = { school_id: string; role: string; status: string };
+type StaffPerson = { user_id: string; role: string; status: string; profile: { id: string; display_name: string | null; status: string } | null };
 type InstitutionSection = "overview" | "cohorts" | "learners" | "facilitators" | "team";
 
 function slugify(value: string) {
@@ -39,7 +40,7 @@ export function InstitutionalAdmin({ initialSection = "overview" }: { initialSec
   const [contextLoading, setContextLoading] = useState(true);
   const [schoolId, setSchoolId] = useState("");
   const [cohortId, setCohortId] = useState("");
-  const [people, setPeople] = useState<{ learners: Array<{ learner_id: string; status: string; profile: { id: string; display_name: string | null; status: string } | null }>; staff: Array<{ user_id: string; role: string; status: string }>; staffIds: string[] } | null>(null);
+  const [people, setPeople] = useState<{ learners: Array<{ learner_id: string; status: string; profile: { id: string; display_name: string | null; status: string } | null }>; staff: StaffPerson[]; staffIds: string[] } | null>(null);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
   const [notice, setNotice] = useState("");
@@ -216,7 +217,7 @@ export function InstitutionalAdmin({ initialSection = "overview" }: { initialSec
         <>
           <section className="institution-admin-toolbar">
             <label><span>Institution</span><select value={schoolId} onChange={(event) => { setSchoolId(event.target.value); const next = cohorts.filter((item) => item.school_id === event.target.value)[0]; setCohortId(next?.id ?? ""); }}>{schools.map((school) => <option value={school.id} key={school.id}>{school.name}</option>)}</select></label>
-            {(pageSection === "learners" || pageSection === "facilitators") ? <label><span>Cohort</span><select value={cohortId} onChange={(event) => setCohortId(event.target.value)}>{schoolCohorts.map((cohort) => <option value={cohort.id} key={cohort.id}>{cohort.name}</option>)}</select></label> : null}
+            {(pageSection === "learners" || pageSection === "facilitators") ? <label><span>Course / cohort</span><select value={cohortId} onChange={(event) => setCohortId(event.target.value)}>{schoolCohorts.map((cohort) => <option value={cohort.id} key={cohort.id}>{cohort.name}</option>)}</select></label> : null}
             <div className="institution-admin-role"><ShieldCheck /><span>{isPlatformAdmin ? "System administrator" : membership?.role ?? "member"}</span></div>
           </section>
 
@@ -260,7 +261,11 @@ export function InstitutionalAdmin({ initialSection = "overview" }: { initialSec
               {selectedCohort ? <>
                 <div className="institution-admin-people">
                   <div><GraduationCap /><span><strong>{people?.learners.length ?? 0}</strong> learners</span></div>
-                  <div><UsersRound /><span><strong>{people?.staff.length ?? 0}</strong> staff</span></div>
+                  <div><UsersRound /><span><strong>{people?.staff.length ?? 0}</strong> facilitators / staff</span></div>
+                </div>
+                <div className="institution-admin-person-list" data-workspace-section="overview facilitators">
+                  {people?.staff.map((person) => <article key={person.user_id}><i>{(person.profile?.display_name || "F").slice(0, 1).toUpperCase()}</i><span><strong>{person.profile?.display_name || "Assigned facilitator"}</strong><small>{person.role === "educator" ? "Facilitator" : person.role === "lead" ? "Lead facilitator" : "Assistant facilitator"} · {person.status}</small></span></article>)}
+                  {!people?.staff.length ? <p className="institution-admin-empty">No active facilitators are assigned to this course / cohort yet.</p> : null}
                 </div>
                 <div className="institution-admin-person-list" data-workspace-section="overview learners">
                   {people?.learners.map((learner) => <article key={learner.learner_id}><i>{(learner.profile?.display_name || "L").slice(0, 1).toUpperCase()}</i><span><strong>{learner.profile?.display_name || "Learner"}</strong><small>{learner.status}</small></span></article>)}
@@ -277,8 +282,8 @@ export function InstitutionalAdmin({ initialSection = "overview" }: { initialSec
                   event.preventDefault();
                   void run(async () => { await addCohortStaff(selectedCohort.id, staffEmail, staffRole); setStaffEmail(""); await refresh(schoolId, selectedCohort.id); }, "Facilitator assignment saved. If this email is not registered yet, access activates after the person signs up.");
                 }}>
-                  <p className="eyebrow">Assign cohort staff</p>
-                  <div className="institution-admin-inline"><input type="email" required value={staffEmail} onChange={(event) => setStaffEmail(event.target.value)} placeholder="educator@example.com" /><select value={staffRole} onChange={(event) => setStaffRole(event.target.value as typeof staffRole)}><option value="lead">Lead</option><option value="educator">Educator</option><option value="assistant">Assistant</option></select><button className="institutional-primary" disabled={busy}><UserPlus /> Assign</button></div>
+                  <p className="eyebrow">Assign facilitator to this course / cohort</p>
+                  <div className="institution-admin-inline"><input type="email" required value={staffEmail} onChange={(event) => setStaffEmail(event.target.value)} placeholder="facilitator@example.com" /><select aria-label="Facilitator assignment type" value={staffRole} onChange={(event) => setStaffRole(event.target.value as typeof staffRole)}><option value="lead">Lead facilitator</option><option value="educator">Facilitator (educator)</option><option value="assistant">Assistant facilitator</option></select><button className="institutional-primary" disabled={busy}><UserPlus /> Assign</button></div>
                 </form> : null}
               </> : <p className="institution-admin-empty">Select a cohort to manage its learners and staff.</p>}
             </section>
