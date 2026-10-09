@@ -40,7 +40,7 @@ export function ProfileDashboard(){
 
  return <div className="profile-page">
   <section className="profile-hero">
-   <div><p className="eyebrow">Profile</p><h1>{name}</h1><p>Your Applied Commerce learning record, current grade and evidence at a glance.</p></div>
+   <div><p className="eyebrow">Profile</p><h1>{name}</h1><p>Your learning record at a glance.</p></div>
    <div className="profile-identity">
     <label>Name<input value={state.profile?.displayName??""} onChange={event=>setProfile({displayName:event.target.value})} placeholder="Add your name"/></label>
     <label>Current grade<select value={grade} onChange={event=>setProfile({grade:Number(event.target.value)})}>{gradeOptions.map(value=><option key={value} value={value}>Grade {value}</option>)}</select></label>
@@ -49,18 +49,18 @@ export function ProfileDashboard(){
 
   <section className="profile-grid">
    <article className="profile-card"><div className="profile-card-icon"><BookOpenCheck aria-hidden="true"/></div><div><p className="eyebrow">Learning progress</p><h2>Grade {grade}</h2></div><strong className="metric">{pct}%</strong><p>{completed} of {gradeMeta?.unitCount??0} lessons complete.</p><Link href={continueHref}>Continue learning <ArrowRight/></Link></article>
-   <article className="profile-card"><div className="profile-card-icon"><Archive aria-hidden="true"/></div><div><p className="eyebrow">Learning evidence</p><h2>Responses captured</h2></div><strong className="metric">{responseCount}</strong><p>Responses completed inside activities, reflections, tables, choices and portfolio work.</p><Link href="/portfolio">Open portfolio <ArrowRight/></Link></article>
-   <article className="profile-card"><div className="profile-card-icon"><NotebookPen aria-hidden="true"/></div><div><p className="eyebrow">Personal notes</p><h2>Lesson notes</h2></div><strong className="metric">{noteCountValue}</strong><p>Extra notes you chose to keep while learning.</p><Link href="/portfolio">Review notes <ArrowRight/></Link></article>
+   <article className="profile-card"><div className="profile-card-icon"><Archive aria-hidden="true"/></div><div><p className="eyebrow">Learning evidence</p><h2>Responses captured</h2></div><strong className="metric">{responseCount}</strong><p>Saved activity responses.</p><Link href="/portfolio">Open portfolio <ArrowRight/></Link></article>
+   <article className="profile-card"><div className="profile-card-icon"><NotebookPen aria-hidden="true"/></div><div><p className="eyebrow">Personal notes</p><h2>Lesson notes</h2></div><strong className="metric">{noteCountValue}</strong><p>Notes saved during lessons.</p><Link href="/portfolio">Review notes <ArrowRight/></Link></article>
 
    <section className="profile-history" aria-labelledby="learning-history-title">
     <div className="profile-history-heading"><div><p className="eyebrow">Learning history</p><h2 id="learning-history-title">Recent activity</h2></div><Link href="/portfolio">View evidence <ArrowRight/></Link></div>
-    {recent.length===0?<p className="profile-history-empty">Activity will appear here as lessons are completed and learning evidence is captured.</p>:
+    {recent.length===0?<p className="profile-history-empty">Recent learning activity appears here.</p>:
      <div className="profile-history-list">{recent.map(item=>{const unit=meta[item.unitId];const href=unit?"/learn/"+unit.grade+"/term/"+unit.term+"/"+unit.id:continueHref;const label=item.kind==="completed"?"Lesson completed":item.kind==="response"?"Activity response saved":"Lesson note saved";return <Link className="profile-history-item" href={href} key={item.key}><span><strong>{label}</strong><small>{unit?unit.label+" · "+unit.title:"Learning record"}</small></span><time dateTime={item.at}>{new Date(item.at).toLocaleDateString(undefined,{day:"numeric",month:"short",year:"numeric"})}</time><ArrowRight/></Link>})}</div>}
    </section>
 
    <AuthPanel compact />
    {syncError&&<p role="alert" className="auth-error">{syncError}</p>}
-   <aside className="profile-record-note"><Database aria-hidden="true"/><div><strong>{user?"Your learning record is linked to this account.":"Your learning record currently stays on this device."}</strong><p>{user?"Changes continue to save locally first and sync to the account in the background.":"Create or sign in to an account to add cross-device recovery without losing the local record."}</p></div></aside>
+   <aside className="profile-record-note"><Database aria-hidden="true"/><div><strong>{user?"Your learning record is linked to this account.":"Your learning record currently stays on this device."}</strong><p>{user?"Changes save on this device and sync to your account.":"Sign in to sync your learning across devices."}</p></div></aside>
   </section>
  </div>;
 }
