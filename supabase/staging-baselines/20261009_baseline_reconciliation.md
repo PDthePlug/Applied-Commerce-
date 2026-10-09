@@ -18,6 +18,8 @@ Verified after applying the snapshot to staging:
 - 60 policies recovered from the production catalog; one additional staging-only deny policy protects `private.platform_admins`.
 - All 22 tables have RLS enabled.
 - Application tables were empty immediately after baseline application.
+- A post-build fingerprint comparison checked 478 catalog objects across columns, constraints, indexes, functions, triggers, and existing policies: definitions matched production, with only the expected staging-only deny policy as an extra object.
+- After revoking inherited Supabase default grants and restoring catalog-derived ACLs, table grant counts and routine EXECUTE grants match production. Staging security advisor findings are now clear.
 
 ## Migration comparison
 
