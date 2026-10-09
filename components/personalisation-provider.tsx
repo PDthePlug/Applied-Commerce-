@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
+import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from "react";
 import { useAuth } from "@/lib/auth-context";
 import { applyPersonalisation, DEFAULT_PERSONALISATION, normalisePersonalisation, type Personalisation } from "@/lib/personalisation";
 
@@ -37,9 +37,11 @@ export function PersonalisationProvider({ children }: { children: React.ReactNod
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState("");
   const [message, setMessage] = useState("");
+  const requestGeneration = useRef(0);
 
   const reload = useCallback(async () => {
     if (authLoading) return;
+    const generation = ++requestGeneration.current;
     const userId = user?.id;
     const local = readLocal(userId) ?? DEFAULT_PERSONALISATION;
     setPersonalisation(local);
@@ -52,13 +54,14 @@ export function PersonalisationProvider({ children }: { children: React.ReactNod
       const response = await fetch("/api/preferences", { cache: "no-store" });
       const payload = await response.json().catch(() => null);
       if (!response.ok || !payload || typeof payload !== "object" || !("preferences" in payload)) throw new Error("Preferences are unavailable.");
+      if (generation !== requestGeneration.current) return;
       const next = normalisePersonalisation(payload.preferences as Partial<Personalisation>);
       setPersonalisation(next);
       applyPersonalisation(next);
       writeLocal(next, userId);
     } catch {
-      setError("Settings could not be loaded from this account. Retry to check the saved preferences.");
-    } finally { setLoading(false); }
+      if (generation === requestGeneration.current) setError("Settings could not be loaded from this account. Retry to check the saved preferences.");
+    } finally { if (generation === requestGeneration.current) setLoading(false); }
   }, [authLoading, user?.id]);
 
   useEffect(() => {
@@ -68,6 +71,7 @@ export function PersonalisationProvider({ children }: { children: React.ReactNod
 
   const update = useCallback(async (patch: Partial<Personalisation>) => {
     if (loading || saving || error) return;
+    const generation = ++requestGeneration.current;
     const userId = user?.id;
     const previous = personalisation;
     const next = normalisePersonalisation({ ...previous, ...patch });
@@ -86,17 +90,20 @@ export function PersonalisationProvider({ children }: { children: React.ReactNod
       });
       const payload = await response.json().catch(() => null);
       if (!response.ok || !payload || typeof payload !== "object" || !("preferences" in payload)) throw new Error("Preferences could not be saved.");
+      if (generation !== requestGeneration.current) return;
       const saved = normalisePersonalisation(payload.preferences as Partial<Personalisation>);
       setPersonalisation(saved);
       applyPersonalisation(saved);
       writeLocal(saved, userId);
       setMessage("Saved to your account");
     } catch {
-      setPersonalisation(previous);
-      applyPersonalisation(previous);
-      writeLocal(previous, userId);
-      setError("That setting could not be saved. Your previous preferences have been restored.");
-    } finally { setSaving(false); }
+      if (generation === requestGeneration.current) {
+        setPersonalisation(previous);
+        applyPersonalisation(previous);
+        writeLocal(previous, userId);
+        setError("That setting could not be saved. Your previous preferences have been restored.");
+      }
+    } finally { if (generation === requestGeneration.current) setSaving(false); }
   }, [error, loading, personalisation, saving, user?.id]);
 
   const value = useMemo(() => ({ personalisation, loading: loading || authLoading, saving, error, message, update, reload }), [personalisation, loading, authLoading, saving, error, message, update, reload]);
