@@ -5,12 +5,16 @@ import { ArrowRight, Archive, NotebookPen } from "lucide-react";
 import { curriculum } from "@/lib/curriculum";
 import type { GradeIndex, UnitContent, UnitSummary } from "@/lib/types";
 import { buildPortfolioDefinitions, responsesForPortfolio } from "@/lib/portfolio-model";
+import { buildEvidenceRecords } from "@/lib/evidence/engine";
+import { useEvidenceReviewStore } from "@/lib/evidence/review-store";
+import { PortfolioSynthesis } from "@/components/portfolio-synthesis";
 import { useLearningStore } from "@/lib/learning-store";
 
 type Meta = UnitSummary & {grade:number;term:number};
 
 export function PortfolioDashboard(){
  const {state}=useLearningStore();
+ const {reviews}=useEvidenceReviewStore();
  const [meta,setMeta]=useState<Record<string,Meta>>({});
  const [units,setUnits]=useState<Record<string,UnitContent>>({});
 
@@ -43,6 +47,33 @@ export function PortfolioDashboard(){
   });
  },[units,meta,state.promptResponses]);
 
+ const synthesisEvidence=useMemo(()=>{
+  const items=Object.values(units).flatMap(unit=>{
+   const item=meta[unit.id];
+   if(!item) return [];
+   return buildEvidenceRecords(unit,state.promptResponses).map(record=>({
+    id:record.responseKey,
+    title:item.title,
+    href:`/learn/${item.grade}/term/${item.term}/${unit.id}`,
+    unitId:unit.id,
+    domain:record.definition.domains,
+    response:record.responseValue,
+    reviewedStatus:reviews[record.responseKey]?.status,
+   }));
+  });
+  const covered=new Set(items.map(item=>item.id));
+  const portfolioItems=artifacts.flatMap(entry=>entry.responses.map(response=>({
+   id:response.key,
+   title:entry.meta.title,
+   href:`/learn/${entry.meta.grade}/term/${entry.meta.term}/${entry.meta.id}`,
+   unitId:entry.meta.id,
+   domain:[] as string[],
+   response:response.value,
+   reviewedStatus:reviews[response.key]?.status,
+  })).filter(item=>!covered.has(item.id)));
+  return [...items,...portfolioItems].sort((a,b)=>a.id.localeCompare(b.id));
+ },[units,meta,state.promptResponses,artifacts,reviews]);
+
  const orphaned=Object.fromEntries(Object.entries(state.promptResponses).filter(([key])=>{
   const unit=units[key.split("::")[0]];
   return unit&&!unit.blocks.some(block=>block.id&&key.startsWith(`${unit.id}::prompt-${block.id}::`));
@@ -59,6 +90,8 @@ export function PortfolioDashboard(){
    <h1>Your evidence builds itself as you learn.</h1>
    <p>When the curriculum marks work as portfolio evidence, Applied Commerce captures the relevant responses automatically. There is nothing extra to file or submit.</p>
   </section>
+
+  <PortfolioSynthesis evidence={synthesisEvidence} />
 
   {artifacts.length===0
    ? <section className="empty-state"><Archive/><h2>Your portfolio is ready.</h2><p>Complete a portfolio-marked activity in the curriculum. The relevant evidence will appear here automatically.</p><Link className="primary-button" href="/learn">Open curriculum <ArrowRight/></Link></section>
