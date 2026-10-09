@@ -59,6 +59,8 @@ export function PortfolioDashboard(){
     domain:record.definition.domains,
     response:record.responseValue,
     reviewedStatus:reviews[record.responseKey]?.status,
+    portfolioInterpretation:reviews[record.responseKey]?.portfolioInterpretation,
+    nextPathway:reviews[record.responseKey]?.nextPathway,
    }));
   });
   const covered=new Set(items.map(item=>item.id));
@@ -70,6 +72,8 @@ export function PortfolioDashboard(){
    domain:[] as string[],
    response:response.value,
    reviewedStatus:reviews[response.key]?.status,
+   portfolioInterpretation:reviews[response.key]?.portfolioInterpretation,
+   nextPathway:reviews[response.key]?.nextPathway,
   })).filter(item=>!covered.has(item.id)));
   return [...items,...portfolioItems].sort((a,b)=>a.id.localeCompare(b.id));
  },[units,meta,state.promptResponses,artifacts,reviews]);
