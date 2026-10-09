@@ -1,43 +1,74 @@
 "use client";
-import { useEffect, useMemo, useState } from "react";
+
 import Link from "next/link";
-import { ArrowRight, BookOpenCheck, Database } from "lucide-react";
-import { curriculum } from "@/lib/curriculum";
-import type { CurriculumIndex } from "@/lib/types";
-import { useLearningStore } from "@/lib/learning-store";
-import { completedCountForGrade } from "@/lib/learner-record";
-import { AuthPanel } from "@/components/auth-panel";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { Archive, BookOpen, ChevronRight, Settings2, UserRound } from "lucide-react";
+import { createClient } from "@/lib/supabase/client";
 import { useAuth } from "@/lib/auth-context";
+import { useLearningStore } from "@/lib/learning-store";
 
-export function ProfileDashboard(){
- const [index,setIndex]=useState<CurriculumIndex|null>(null);
- const {state,setProfile,syncError}=useLearningStore();
- const {user}=useAuth();
+export function ProfileDashboard() {
+  const { user, loading } = useAuth();
+  const { state } = useLearningStore();
+  const router = useRouter();
+  const [signingOut, setSigningOut] = useState(false);
+  const [signOutError, setSignOutError] = useState("");
 
- useEffect(()=>{curriculum.index().then(setIndex)},[]);
+  const displayName = state.profile?.displayName?.trim()
+    || (typeof user?.user_metadata?.full_name === "string" ? user.user_metadata.full_name : "")
+    || (typeof user?.user_metadata?.name === "string" ? user.user_metadata.name : "")
+    || user?.email?.split("@")[0]
+    || "Learner";
+  const grade = state.profile?.grade ?? state.activeGrade ?? 8;
 
- const grade=state.profile?.grade??state.activeGrade??8;
- const gradeMeta=index?.grades.find(item=>item.grade===grade);
- const completed=completedCountForGrade(state,grade);
- const pct=gradeMeta?.unitCount?Math.round(completed/gradeMeta.unitCount*100):0;
- const continueHref=state.lastOpened?"/learn/"+state.lastOpened.grade+"/term/"+state.lastOpened.term+"/"+state.lastOpened.unitId:"/learn/"+grade;
- const name=state.profile?.displayName?.trim()||"Learner";
- const gradeOptions=useMemo(()=>index?.grades.map(item=>item.grade)??[8,9,10,11,12],[index]);
+  async function signOut() {
+    setSigningOut(true); setSignOutError("");
+    try {
+      const result = await createClient().auth.signOut();
+      if (result.error) throw result.error;
+      router.push("/auth");
+      router.refresh();
+    } catch {
+      setSignOutError("Sign out could not be completed. Please try again.");
+    } finally { setSigningOut(false); }
+  }
 
- return <div className="profile-page">
-  <section className="profile-hero">
-   <div><p className="eyebrow">Profile</p><h1>{name}</h1><p>Your learning record at a glance.</p></div>
-   <div className="profile-identity">
-    <label>Name<input value={state.profile?.displayName??""} onChange={event=>setProfile({displayName:event.target.value})} placeholder="Add your name"/></label>
-    <label>Current grade<select value={grade} onChange={event=>setProfile({grade:Number(event.target.value)})}>{gradeOptions.map(value=><option key={value} value={value}>Grade {value}</option>)}</select></label>
-   </div>
-  </section>
+  const rows = [
+    { href: "/settings", title: "Settings", detail: "Profile, appearance, reading and account security", Icon: Settings2 },
+    { href: "/learn", title: "Learning", detail: `Continue your Grade ${grade} learning journey`, Icon: BookOpen },
+    { href: "/portfolio", title: "Portfolio", detail: "Review saved learning evidence", Icon: Archive },
+  ];
 
-  <section className="profile-grid">
-   <article className="profile-card"><div className="profile-card-icon"><BookOpenCheck aria-hidden="true"/></div><div><p className="eyebrow">Learning progress</p><h2>Grade {grade}</h2></div><strong className="metric">{pct}%</strong><p>{completed} of {gradeMeta?.unitCount??0} lessons complete.</p><Link href={continueHref}>Continue learning <ArrowRight/></Link></article>
-   {syncError&&<p role="alert" className="auth-error">{syncError}</p>}
-   <AuthPanel compact />
-   <aside className="profile-record-note"><Database aria-hidden="true"/><div><strong>{user?"Your learning record is linked to this account.":"Your learning record currently stays on this device."}</strong><p>{user?"Changes save on this device and sync to your account.":"Sign in to sync your learning across devices."}</p></div></aside>
-  </section>
- </div>;
+  return <main className="profile-hub">
+    <section className="profile-hub-identity">
+      <div className="profile-hub-avatar" aria-hidden="true">{displayName.split(/\s+/).slice(0,2).map(part => part[0]?.toUpperCase() ?? "").join("") || "AC"}</div>
+      <div className="profile-hub-title">
+        <p className="eyebrow">My Applied Commerce</p>
+        <h1>{displayName}</h1>
+        <p>{user?.email ?? `Grade ${grade} learner`}</p>
+      </div>
+    </section>
+
+    <section className="profile-hub-section" aria-labelledby="profile-hub-learning">
+      <h2 id="profile-hub-learning">Your learning space</h2>
+      <div className="profile-hub-list">
+        {rows.map(({href,title,detail,Icon}) => <Link href={href} className="profile-hub-row" key={href}>
+          <span className="profile-hub-row-icon"><Icon aria-hidden="true"/></span>
+          <span className="profile-hub-row-copy"><strong>{title}</strong><small>{detail}</small></span>
+          <ChevronRight aria-hidden="true" className="profile-hub-chevron"/>
+        </Link>)}
+      </div>
+    </section>
+
+    <section className="profile-hub-section" aria-labelledby="profile-hub-account">
+      <h2 id="profile-hub-account">Account</h2>
+      <div className="profile-hub-account">
+        <div><span>Email address</span><strong>{user?.email ?? (loading ? "Checking account…" : "Not signed in")}</strong></div>
+        {user ? <button type="button" onClick={() => void signOut()} disabled={signingOut}>{signingOut ? "Signing out…" : "Sign out"}</button> : <Link href="/auth">Sign in</Link>}
+      </div>
+      {signOutError ? <p className="profile-hub-error" role="alert">{signOutError}</p> : null}
+    </section>
+    <p className="profile-hub-footnote"><UserRound aria-hidden="true"/> Account preferences are private to this account. Learning evidence and progress remain separate from presentation settings.</p>
+  </main>;
 }
