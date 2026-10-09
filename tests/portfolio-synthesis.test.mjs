@@ -25,6 +25,7 @@ test("missing evidence is explicitly insufficient and never claims competency", 
   assert.equal(sections.length, 6);
   assert.match(sections.find(section => section.key === "competency").conclusion, /not yet confirmed/i);
   assert.equal(sections.find(section => section.key === "competency").confidence, "insufficient");
+  assert.equal(sections.find(section => section.key === "edge").confidence, "insufficient");
   assert.match(sections.find(section => section.key === "growth").conclusion, /not yet enough/i);
 });
 
@@ -68,6 +69,7 @@ test("growth requires dated accepted observations in the same evidence domain", 
     item("r2", "unit-b", "verified", { createdAt: "2026-09-12T10:00:00Z", domain: ["attention management"] }),
   ]);
   assert.match(insufficient.find(section => section.key === "growth").conclusion, /not yet enough dated, comparable reviewed evidence/i);
+  assert.match(insufficient.find(section => section.key === "progression").conclusion, /does not yet establish/i);
 
   const comparable = buildPortfolioSynthesis([
     item("r1", "unit-a", "accepted", { createdAt: "2026-09-01T10:00:00Z", domain: ["cost reasoning"] }),
