@@ -101,6 +101,8 @@ export type EvidenceReview = {
   status:ReviewStatus;
   criteria:Record<string,1|2|3|4>;
   feedback:string;
+  portfolioInterpretation?:string;
+  nextPathway?:string;
   reviewerName?:string;
   reviewedAt:string;
 };

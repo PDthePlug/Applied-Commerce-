@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { createClient } from "@/lib/supabase/client";
 import { useAuth } from "@/lib/auth-context";
+import { useFacilitatorAccess, type FacilitatorAccess } from "@/lib/facilitator/access-context";
 import { curriculum } from "@/lib/curriculum";
 import { buildEvidenceRecords } from "@/lib/evidence/engine";
 import type { EvidenceRecord, EvidenceReview } from "@/lib/evidence/types";
@@ -29,23 +30,62 @@ function emptyState(): LearningState {
   return { version: 2, previousResponses: {}, completed: {}, completedMeta: {}, responses: {}, responseUpdatedAt: {}, promptResponses: {}, promptResponseUpdatedAt: {} };
 }
 
-export async function loadSupabaseFacilitatorWorkspace(userId: string): Promise<SupabaseFacilitatorWorkspace | null> {
+export async function loadSupabaseFacilitatorWorkspace(userId: string, verifiedAccess?: FacilitatorAccess): Promise<SupabaseFacilitatorWorkspace | null> {
   const supabase = createClient();
-  const { data: staff, error: staffError } = await supabase.from("cohort_staff").select("cohort_id,role").eq("user_id", userId).eq("status", "active");
-  if (staffError) throw staffError;
-  const cohortIds = [...new Set((staff ?? []).map(row => row.cohort_id))];
-  if (!cohortIds.length) return null;
+  const sharedAccess = verifiedAccess?.userId === userId ? verifiedAccess : null;
+  let isPlatformAdmin = sharedAccess?.isPlatformAdmin ?? false;
+  let cohortIds: string[] = sharedAccess ? [...sharedAccess.cohortIds] : [];
+  if (!sharedAccess) {
+    const { data, error } = await supabase.rpc("is_platform_admin");
+    if (error) throw error;
+    isPlatformAdmin = data === true;
+    if (!isPlatformAdmin) {
+      const { data: staff, error: staffError } = await supabase
+        .from("cohort_staff")
+        .select("cohort_id")
+        .eq("user_id", userId)
+        .eq("status", "active");
+      if (staffError) throw staffError;
+      cohortIds = [...new Set((staff ?? []).map(row => row.cohort_id))];
+      if (!cohortIds.length) return null;
+    }
+  }
 
-  const [cohorts, enrolments, release] = await Promise.all([
-    supabase.from("cohorts").select("id,name,school_id,grade,academic_year").in("id", cohortIds).eq("status", "active"),
-    supabase.from("cohort_enrolments").select("cohort_id,learner_id,status").in("cohort_id", cohortIds).in("status", ["active", "completed"]),
+  let activeCohorts: Array<{ id: string; name: string; school_id: string; grade: number; academic_year: number }> = [];
+
+  if (isPlatformAdmin) {
+    // Platform administrators can inspect all active cohorts; they do not need
+    // an artificial personal cohort_staff assignment to enter this workspace.
+    const { data, error } = await supabase
+      .from("cohorts")
+      .select("id,name,school_id,grade,academic_year")
+      .eq("status", "active")
+      .order("academic_year", { ascending: false })
+      .order("name");
+    if (error) throw error;
+    activeCohorts = data ?? [];
+    cohortIds = activeCohorts.map(row => row.id);
+  } else {
+    if (!cohortIds.length) return null;
+    const { data, error } = await supabase
+      .from("cohorts")
+      .select("id,name,school_id,grade,academic_year")
+      .in("id", cohortIds)
+      .eq("status", "active");
+    if (error) throw error;
+    activeCohorts = data ?? [];
+    cohortIds = activeCohorts.map(row => row.id);
+    if (!activeCohorts.length) return null;
+  }
+
+  const [enrolments, release] = await Promise.all([
+    cohortIds.length
+      ? supabase.from("cohort_enrolments").select("cohort_id,learner_id,status").in("cohort_id", cohortIds).in("status", ["active", "completed"])
+      : Promise.resolve({ data: [], error: null }),
     supabase.from("curriculum_releases").select("id").eq("release_key", RELEASE).single()
   ]);
-  if (cohorts.error) throw cohorts.error;
   if (enrolments.error) throw enrolments.error;
   if (release.error) throw release.error;
-
-  const activeCohorts = cohorts.data ?? [];
   const schoolIds = [...new Set(activeCohorts.map(row => row.school_id))];
   const schoolsResult = schoolIds.length
     ? await supabase.from("schools").select("id,name").in("id", schoolIds)
@@ -72,7 +112,7 @@ export async function loadSupabaseFacilitatorWorkspace(userId: string): Promise<
   for (const result of [profiles, learnerProfiles, progress, prompts, notes, evidence]) if (result.error) throw result.error;
 
   const reviewResult = evidence.data?.length
-    ? await supabase.from("evidence_reviews").select("evidence_record_id,reviewer_id,rubric_key,status,criteria_scores,feedback,reviewed_at").in("evidence_record_id", evidence.data.map(row => row.id))
+    ? await supabase.from("evidence_reviews").select("evidence_record_id,reviewer_id,rubric_key,status,criteria_scores,feedback,portfolio_interpretation,next_pathway,reviewed_at").in("evidence_record_id", evidence.data.map(row => row.id))
     : { data: [], error: null };
   if (reviewResult.error) throw reviewResult.error;
 
@@ -91,6 +131,8 @@ export async function loadSupabaseFacilitatorWorkspace(userId: string): Promise<
       status: review.status as EvidenceReview["status"],
       criteria: (review.criteria_scores ?? {}) as Record<string, 1 | 2 | 3 | 4>,
       feedback: review.feedback,
+      portfolioInterpretation: review.portfolio_interpretation ?? "",
+      nextPathway: review.next_pathway ?? "",
       reviewedAt: review.reviewed_at
     };
     reviewsByLearner.set(evidenceRef.learnerId, reviews);
@@ -150,7 +192,7 @@ export async function loadSupabaseFacilitatorWorkspace(userId: string): Promise<
     const records: EvidenceRecord[] = [];
     for (const [unitId, gradeTerm] of unitsByLearner.get(learnerId)!) {
       const [storedGrade, storedTerm] = gradeTerm.split(":").map(Number);
-      const unitContext = unitId.match(/^g(\\d+)-t(\\d+)-/);
+      const unitContext = unitId.match(/^g(\d+)-t(\d+)-/);
       const inferredGrade = unitContext ? Number(unitContext[1]) : storedGrade;
       const inferredTerm = unitContext ? Number(unitContext[2]) : storedTerm;
       let unit;
@@ -196,6 +238,8 @@ export async function saveSupabaseFacilitatorReview(learnerId: string, record: E
     status: review.status,
     criteria_scores: review.criteria,
     feedback: review.feedback,
+    portfolio_interpretation: review.portfolioInterpretation ?? "",
+    next_pathway: review.nextPathway ?? "",
     reviewed_at: review.reviewedAt,
     updated_at: new Date().toISOString()
   };
@@ -214,34 +258,33 @@ export async function saveSupabaseFacilitatorReview(learnerId: string, record: E
 
 export function useSupabaseFacilitatorWorkspace() {
   const { user } = useAuth();
+  const verifiedAccess = useFacilitatorAccess();
+  const userId = user?.id;
   const [workspace, setWorkspace] = useState<SupabaseFacilitatorWorkspace | null>(null);
   const [loadedUserId, setLoadedUserId] = useState<string | null>(null);
-  const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     let cancelled = false;
-    if (!user) return;
-    void loadSupabaseFacilitatorWorkspace(user.id).then(value => {
+    if (!userId) return;
+    void loadSupabaseFacilitatorWorkspace(userId, verifiedAccess ?? undefined).then(value => {
       if (!cancelled) {
         setWorkspace(value);
-        setLoadedUserId(user.id);
+        setLoadedUserId(userId);
         setError(null);
       }
-    }).catch(err => {
+    }).catch(() => {
       if (!cancelled) {
         setWorkspace(null);
-        setLoadedUserId(user.id);
-        setError(err instanceof Error ? err.message : "Unable to load facilitator data.");
+        setLoadedUserId(userId);
+        setError("We couldn’t load your shared workspace. Please refresh and try again. If the problem continues, contact your institution administrator.");
       }
-    }).finally(() => {
-      if (!cancelled) setLoading(false);
     });
     return () => { cancelled = true; };
-  }, [user]);
+  }, [userId, verifiedAccess]);
 
-  const activeWorkspace = user && loadedUserId === user.id ? workspace : null;
-  const activeLoading = Boolean(user) && (loading || loadedUserId !== user?.id);
-  const activeError = user && loadedUserId === user.id ? error : null;
+  const activeWorkspace = userId && loadedUserId === userId ? workspace : null;
+  const activeLoading = Boolean(userId) && loadedUserId !== userId;
+  const activeError = userId && loadedUserId === userId ? error : null;
   return { workspace: activeWorkspace, loading: activeLoading, error: activeError };
 }

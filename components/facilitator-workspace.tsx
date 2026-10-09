@@ -49,14 +49,14 @@ function formatLastActivity(at?:string){
   return new Intl.DateTimeFormat("en-ZA",{day:"numeric",month:"short",hour:"2-digit",minute:"2-digit"}).format(date);
 }
 
-export function FacilitatorWorkspace(){
+export function FacilitatorWorkspace({initialSection="overview"}:{initialSection?:Section}={}){
   const {state,hydrated}=useLearningStore();
   const {reviews:localReviews,saveReview:saveLocalReview}=useEvidenceReviewStore();
   const {workspace:remoteWorkspace,loading:remoteLoading,error:remoteError}=useSupabaseFacilitatorWorkspace();
   const [records,setRecords]=useState<EvidenceRecord[]>([]);
   const [selectedLearnerId,setSelectedLearnerId]=useState("");
   const [loading,setLoading]=useState(true);
-  const [section,setSection]=useState<Section>("overview");
+  const [section]=useState<Section>(initialSection);
   const [selectedKey,setSelectedKey]=useState("");
   const [termFilter,setTermFilter]=useState<number|0>(0);
   const [statusFilter,setStatusFilter]=useState<ReviewFilter>("all");
@@ -64,6 +64,7 @@ export function FacilitatorWorkspace(){
   const [learnerSearch,setLearnerSearch]=useState("");
   const [gradeLessonTotal,setGradeLessonTotal]=useState(0);
   const [facMenuOpen,setFacMenuOpen]=useState(false);
+  const navigateToSection=(next:Section)=>{window.location.assign(next==="overview"?"/facilitator":`/facilitator/${next}`);};
 
   const effectiveSelectedLearnerId=remoteWorkspace?.learners.some(item=>item.id===selectedLearnerId)?selectedLearnerId:(remoteWorkspace?.learners[0]?.id??"");
   const remoteLearner=remoteWorkspace?.learners.find(item=>item.id===effectiveSelectedLearnerId)??remoteWorkspace?.learners[0]??null;
@@ -157,10 +158,10 @@ export function FacilitatorWorkspace(){
   };
 
   if (remoteLoading && !remoteWorkspace) {
-    return <main className="institution-admin-page"><div className="institution-admin-state">Loading the assigned facilitator workspace…</div></main>;
+    return <main className="institution-admin-page"><div className="institution-admin-state">Getting your facilitator workspace ready…</div></main>;
   }
   if (remoteError) {
-    return <main className="institution-admin-page"><section className="institution-admin-hero"><p className="eyebrow">Facilitator workspace</p><h1>Shared facilitator data is unavailable.</h1><p>{remoteError}</p><p>For safety, local learner data is not shown as a substitute for an assigned shared cohort.</p></section></main>;
+    return <main className="institution-admin-page"><section className="institution-admin-hero"><p className="eyebrow">Facilitator workspace</p><h1>We couldn’t load your facilitator workspace.</h1><p>{remoteError}</p><p>Your learner records were not loaded. Please refresh and try again.</p></section></main>;
   }
   if (!remoteWorkspace) {
     return <main className="institution-admin-page"><section className="institution-admin-hero"><p className="eyebrow">Facilitator workspace</p><h1>No active facilitator workspace is assigned.</h1><p>Ask an institution administrator to assign this account to an active cohort.</p></section></main>;
@@ -175,14 +176,14 @@ export function FacilitatorWorkspace(){
       <nav aria-label="Facilitator dashboard">
         {nav.map(item=>{
           const Icon=item.icon;
-          return <button key={item.id} type="button" className={section===item.id?"active":""} onClick={()=>setSection(item.id)} aria-current={section===item.id?"page":undefined}>
+          return <button key={item.id} type="button" className={section===item.id?"active":""} onClick={()=>navigateToSection(item.id)} aria-current={section===item.id?"page":undefined}>
             <Icon/><span>{copy[item.id].label}</span>{item.id==="review"&&cohort.pendingCount>0?<em>{cohort.pendingCount}</em>:null}
           </button>;
         })}
       </nav>
       <div className="fac-backend-state">
-        <div><span/><strong>{remoteWorkspace?"Shared Supabase cohort":"Local learner record"}</strong></div>
-        <p>{remoteWorkspace?"Authenticated cohort data, durable learner records and facilitator reviews are now connected through the existing Supabase security model.":"Sign in with an assigned facilitator account to load the shared cohort workspace."}</p>
+        <div><span/><strong>{remoteWorkspace?"Shared cohort workspace":"No cohort selected"}</strong></div>
+        <p>{remoteWorkspace?"Your assigned learners, saved work and reviews are connected.":"Sign in with an account assigned by your institution to access learner records."}</p>
       </div>
     </aside>
 
@@ -200,7 +201,7 @@ export function FacilitatorWorkspace(){
               key={item.id}
               type="button"
               className={section===item.id?"active":""}
-              onClick={()=>{setSection(item.id);setFacMenuOpen(false);}}
+              onClick={()=>navigateToSection(item.id)}
               aria-current={section===item.id?"page":undefined}
             >
               <Icon/>
@@ -228,17 +229,17 @@ export function FacilitatorWorkspace(){
         <div><p className="eyebrow">Evidence & Assessment Engine</p><h1>{copy[section].title}</h1><p>{copy[section].description}</p></div>
         <div className="fac-header-context">
           <small>Current workspace</small>
-          <strong>{remoteWorkspace?.schoolName ?? (grade?"Grade "+grade+" · "+titleCase(stageForGrade(grade)):"Local learner record")}</strong>
-          <span>{remoteWorkspace?.cohortName ?? "Local learner record"} </span>
+          <strong>{remoteWorkspace?.schoolName ?? (grade?"Grade "+grade+" · "+titleCase(stageForGrade(grade)):"No cohort selected")}</strong>
+          <span>{remoteWorkspace?.cohortName ?? "No cohort selected"} </span>
           <span>{cohort.learnerCount} learners · {cohort.evidenceCount} evidence records</span>
         </div>
       </header>
 
       {!grade?<NoGradeState/>:null}
-      {grade&&section==="overview"?<Overview learnerName={learnerName} cohort={cohort} learner={learner} priorities={priorities} domains={domains} completionRate={completionRate} gradeLessonTotal={gradeLessonTotal} pendingTotal={pendingTotal} onOpenReview={()=>setSection("review")} onOpenLearner={()=>setSection("learners")} onOpenCoverage={()=>setSection("coverage")}/>:null}
-      {remoteError?<section className="fac-card"><strong>Shared facilitator data unavailable</strong><p>{remoteError}</p><small>Showing the local learner record until the shared cohort can be loaded.</small></section>:null}
-      {remoteLoading&&!remoteWorkspace?<section className="fac-card"><strong>Loading shared cohort…</strong><p>Checking the authenticated facilitator scope and learner records.</p></section>:null}
-      {grade&&section==="learners"?<LearnersView learner={learner} learners={remoteLearnerSummaries} selectedLearnerId={effectiveSelectedLearnerId} onSelectLearner={setSelectedLearnerId} learnerSearch={learnerSearch} setLearnerSearch={setLearnerSearch} gradeLessonTotal={gradeLessonTotal} completionRate={completionRate} domains={domains} terms={terms} onReview={()=>setSection("review")} onReport={()=>setSection("reports")}/>:null}
+      {grade&&section==="overview"?<Overview learnerName={learnerName} cohort={cohort} learner={learner} priorities={priorities} domains={domains} completionRate={completionRate} gradeLessonTotal={gradeLessonTotal} pendingTotal={pendingTotal} onOpenReview={()=>navigateToSection("review")} onOpenLearner={()=>navigateToSection("learners")} onOpenCoverage={()=>navigateToSection("coverage")}/>:null}
+      {remoteError?<section className="fac-card"><strong>We couldn’t load the shared cohort</strong><p>{remoteError}</p><small>Refresh the page to try again.</small></section>:null}
+      {remoteLoading&&!remoteWorkspace?<section className="fac-card"><strong>Loading your cohort…</strong><p>Getting your assigned learners and their saved work.</p></section>:null}
+      {grade&&section==="learners"?<LearnersView learner={learner} learners={remoteLearnerSummaries} selectedLearnerId={effectiveSelectedLearnerId} onSelectLearner={setSelectedLearnerId} learnerSearch={learnerSearch} setLearnerSearch={setLearnerSearch} gradeLessonTotal={gradeLessonTotal} completionRate={completionRate} domains={domains} terms={terms} onReview={()=>navigateToSection("review")} onReport={()=>navigateToSection("reports")}/>:null}
       {grade&&section==="review"?<ReviewView loading={loading} records={filtered} selected={selected} selectedKey={selectedKey} setSelectedKey={setSelectedKey} reviews={reviews} search={search} setSearch={setSearch} termFilter={termFilter} setTermFilter={setTermFilter} statusFilter={statusFilter} setStatusFilter={setStatusFilter} saveReview={saveReview} advance={advance}/>:null}
       {grade&&section==="coverage"?<CoverageView learner={learner} domains={domains} terms={terms} kinds={kinds} gradeLessonTotal={gradeLessonTotal} completionRate={completionRate}/>:null}
       {grade&&section==="reports"?<ReportsView report={report} learner={learner} gradeLessonTotal={gradeLessonTotal} completionRate={completionRate}/>:null}
@@ -268,7 +269,7 @@ type OverviewProps={
 function Overview({learnerName,cohort,learner,priorities,domains,completionRate,gradeLessonTotal,pendingTotal,onOpenReview,onOpenLearner,onOpenCoverage}:OverviewProps){
   return <div className="fac-section-stack">
     <section className="fac-metrics">
-      <Metric icon={UsersRound} value={cohort.learnerCount} label="Learners in view" hint="Local mode currently exposes one learner record."/>
+      <Metric icon={UsersRound} value={cohort.learnerCount} label="Learners in view" hint="Select a learner to view their saved work."/>
       <Metric icon={FileCheck2} value={cohort.evidenceCount} label="Evidence captured" hint={cohort.portfolioCount+" portfolio candidates"}/>
       <Metric icon={ClipboardCheck} value={cohort.pendingCount} label="Waiting for review" hint={cohort.reviewRate+"% review coverage"}/>
       <Metric icon={TriangleAlert} value={cohort.needsRevisionCount} label="Needs revision" hint={cohort.verifiedCount+" real-world evidence verified"}/>
@@ -410,7 +411,7 @@ function ReviewView({loading,records,selected,selectedKey,setSelectedKey,reviews
         </div>
       </div>
       <div className="fac-review-list">
-        {loading?<p className="fac-list-state">Mapping learner evidence…</p>:null}
+        {loading?<p className="fac-list-state">Loading learner evidence…</p>:null}
         {!loading&&!records.length?<p className="fac-list-state">No evidence matches this view.</p>:null}
         {records.map((record:EvidenceRecord)=>{
           const review=reviews[record.responseKey] as EvidenceReview|undefined;
@@ -433,6 +434,8 @@ function EvidenceReviewPanel({record,existing,onSave,onAdvance}:{record:Evidence
   const [status,setStatus]=useState<ReviewStatus>(existing?.status??"pending");
   const [criteria,setCriteria]=useState<Record<string,1|2|3|4>>(existing?.criteria??{});
   const [feedback,setFeedback]=useState(existing?.feedback??"");
+  const [portfolioInterpretation,setPortfolioInterpretation]=useState(existing?.portfolioInterpretation??"");
+  const [nextPathway,setNextPathway]=useState(existing?.nextPathway??"");
   const [saved,setSaved]=useState(false);
   const scored=rubric?.criteria.filter(criterion=>criteria[criterion.key]).length??0;
   const rubricComplete=!rubric||scored===rubric.criteria.length;
@@ -440,7 +443,7 @@ function EvidenceReviewPanel({record,existing,onSave,onAdvance}:{record:Evidence
   const average=scoreValues.length?Number((scoreValues.reduce((sum,value)=>sum+value,0)/scoreValues.length).toFixed(1)):null;
 
   const persist=(nextStatus:ReviewStatus,moveNext=false)=>{
-    onSave({responseKey:record.responseKey,rubricKey:rubric?.key,status:nextStatus,criteria,feedback:feedback.trim(),reviewedAt:new Date().toISOString()});
+    onSave({responseKey:record.responseKey,rubricKey:rubric?.key,status:nextStatus,criteria,feedback:feedback.trim(),portfolioInterpretation:portfolioInterpretation.trim(),nextPathway:nextPathway.trim(),reviewedAt:new Date().toISOString()});
     setStatus(nextStatus);setSaved(true);
     window.setTimeout(()=>{setSaved(false);if(moveNext)onAdvance();},500);
   };
@@ -472,6 +475,10 @@ function EvidenceReviewPanel({record,existing,onSave,onAdvance}:{record:Evidence
         </article>;
       })}</div>
     </section>:null}
+
+    <label className="fac-feedback"><span>Portfolio interpretation — validate or correct</span><textarea rows={3} value={portfolioInterpretation} onChange={event=>setPortfolioInterpretation(event.target.value)} placeholder="What does this work support? Correct any conclusion that goes beyond the evidence."/><small>Keep the claim proportional to the evidence. Note uncertainty or what is still missing.</small></label>
+
+    <label className="fac-feedback"><span>Recommended next learning experience</span><textarea rows={3} value={nextPathway} onChange={event=>setNextPathway(event.target.value)} placeholder="Recommend a suitable next activity, application or revision."/><small>Choose a next step that addresses the evidence gap or tests the same capability in another context.</small></label>
 
     <label className="fac-feedback"><span>Facilitator feedback</span><textarea rows={5} value={feedback} onChange={event=>setFeedback(event.target.value)} placeholder="Name what is working, what is missing, and the learner next step."/><small>Feedback is part of the evidence history and should help the learner act, not simply explain a score.</small></label>
 
@@ -540,7 +547,7 @@ function ReportsView({report,learner,gradeLessonTotal,completionRate}:ReportsVie
       </div>
       <footer>This report describes observable curriculum evidence. It does not claim to measure a learner internal identity, personality or character.</footer>
     </section>
-    <section className="fac-card fac-cohort-report-note"><Gauge/><div><p className="eyebrow">Prepared for activation</p><h2>Cohort and school reporting</h2><p>The report model is already structured to aggregate learners by cohort, grade, term, school and evidence domain. It will use shared Supabase records when the backend is reactivated; no redesign of this reporting layer is required.</p></div></section>
+    <section className="fac-card fac-cohort-report-note"><Gauge/><div><p className="eyebrow">Reporting</p><h2>Cohort and school reporting</h2><p>Reports can bring together learner progress by cohort, grade, term, school and learning area as shared records become available.</p></div></section>
   </div>;
 }
 

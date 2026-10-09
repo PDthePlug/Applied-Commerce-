@@ -19,14 +19,20 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     if (!isSupabaseConfigured()) return;
     const supabase = createClient();
     let active = true;
-    void supabase.auth.getSession().then(({ data }) => {
-      if (!active) return;
-      setSession(data.session);
-      setLoading(false);
-    });
+    let authEventReceived = false;
     const { data } = supabase.auth.onAuthStateChange((_event, nextSession) => {
       if (!active) return;
+      authEventReceived = true;
       setSession(nextSession);
+      setLoading(false);
+    });
+    void supabase.auth.getSession().then(({ data: sessionData }) => {
+      if (!active) return;
+      if (!authEventReceived) setSession(sessionData.session);
+      setLoading(false);
+    }).catch(() => {
+      if (!active) return;
+      if (!authEventReceived) setSession(null);
       setLoading(false);
     });
     return () => { active = false; data.subscription.unsubscribe(); };

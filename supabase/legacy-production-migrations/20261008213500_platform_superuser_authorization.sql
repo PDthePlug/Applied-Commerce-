@@ -11,6 +11,10 @@ create table if not exists private.platform_admins (
 
 revoke all on table private.platform_admins from public, anon, authenticated;
 
+-- Defense in depth: no direct role may read the global-admin registry.
+-- SECURITY DEFINER authorization helpers run as the trusted owner.
+alter table private.platform_admins enable row level security;
+
 create or replace function private.is_platform_admin()
 returns boolean
 language sql
@@ -215,18 +219,39 @@ $$;
 revoke execute on function private.create_school_impl(text,text) from public, anon;
 grant execute on function private.create_school_impl(text,text) to authenticated;
 
--- Provision the named platform administrator explicitly; never trust user-editable metadata.
+-- Provision the named platform administrator without changing an existing account's status.
+-- Never auto-convert or delete a learner/staff role during migration replay.
+-- If the account has not yet been registered as a platform admin and currently
+-- holds an operating role, stop for an explicit, audited role transition.
+do $$
+declare
+  v_uid uuid;
+begin
+  select u.id into v_uid
+  from auth.users u
+  where lower(u.email) = 'pdmpofu@gmail.com'
+  limit 1;
+
+  if v_uid is not null
+     and not exists (select 1 from private.platform_admins pa where pa.user_id = v_uid)
+     and (
+       exists (select 1 from public.learner_profiles lp where lp.user_id = v_uid)
+       or exists (select 1 from public.school_memberships sm where sm.user_id = v_uid and sm.status = 'active')
+       or exists (select 1 from public.cohort_staff cs where cs.user_id = v_uid and cs.status = 'active')
+     )
+  then
+    raise exception using
+      errcode = '23514',
+      message = 'Platform-admin bootstrap blocked: resolve the account operating-role conflict explicitly before migration.';
+  end if;
+end;
+$$;
+
 insert into private.platform_admins (user_id, status)
 select u.id, 'active'
 from auth.users u
 where lower(u.email) = 'pdmpofu@gmail.com'
-on conflict (user_id) do update set status = 'active', updated_at = now();
-
--- The account is not to operate as a learner. Historical learning records remain untouched.
-delete from public.learner_profiles
-where user_id = (
-  select id from auth.users where lower(email) = 'pdmpofu@gmail.com'
-);
+on conflict (user_id) do nothing;
 
 -- Create the requested AC platform institution if it does not already exist.
 insert into public.schools (name, slug, status, metadata)
@@ -237,13 +262,9 @@ where not exists (
 );
 
 
--- Enforce the operating-role boundary in the database, not only in UI navigation.
--- Learner progress and evidence remain attached to public.profiles; only the learner-role row is removed.
-delete from public.learner_profiles lp
-where exists (select 1 from private.platform_admins pa where pa.user_id=lp.user_id and pa.status='active')
-   or exists (select 1 from public.school_memberships sm where sm.user_id=lp.user_id and sm.status='active')
-   or exists (select 1 from public.cohort_staff cs where cs.user_id=lp.user_id and cs.status='active');
-
+-- Existing account-role conflicts are not silently repaired by migration replay.
+-- Authorized assignment RPCs below perform intentional role transitions while
+-- preserving profiles and learning history; the triggers enforce the boundary.
 create or replace function private.enforce_exclusive_operating_roles()
 returns trigger
 language plpgsql

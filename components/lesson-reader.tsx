@@ -15,13 +15,12 @@ export function LessonReader({grade,term,unitId}:{grade:number;term:number;unitI
  const {state,saveError,completedIds,markComplete,saveResponse,savePromptResponse,setLastOpened}=useLearningStore();
  useEffect(()=>{
   let cancelled=false;
-  const unitContext=unitId.match(/^g(\\d+)-t(\\d+)-/);
+  const unitContext=unitId.match(/^g(\d+)-t(\d+)-/);
   const inferredGrade=unitContext?Number(unitContext[1]):grade;
   const inferredTerm=unitContext?Number(unitContext[2]):term;
   const candidates=inferredGrade===grade&&inferredTerm===term ? [{grade,term}] : [{grade,term},{grade:inferredGrade,term:inferredTerm}];
   (async()=>{
     setTermData(null);setUnit(null);setLoadError(null);
-    let lastError:unknown;
     for(const context of candidates){
       try{
         const [t,u]=await Promise.all([curriculum.term(context.grade,context.term),curriculum.unit(context.grade,context.term,unitId)]);
@@ -29,9 +28,9 @@ export function LessonReader({grade,term,unitId}:{grade:number;term:number;unitI
         setTermData(t);setUnit(u);setLastOpened(context.grade,context.term,unitId);window.scrollTo(0,0);
         if(context.grade!==grade||context.term!==term) router.replace("/learn/"+context.grade+"/term/"+context.term+"/"+unitId);
         return;
-      }catch(error){lastError=error;}
+      }catch{}
     }
-    if(!cancelled)setLoadError(lastError instanceof Error?lastError.message:"Lesson could not be opened.");
+    if(!cancelled)setLoadError("We couldn’t open this lesson. Check your connection and try again.");
   })();
   return ()=>{cancelled=true;};
  },[grade,term,unitId,setLastOpened,router]);

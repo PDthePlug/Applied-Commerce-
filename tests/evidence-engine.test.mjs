@@ -58,10 +58,11 @@ test("paused backend is configured as an activation seam rather than a fake live
   assert.match(activation,/learner → cohort → facilitator → evidence → report/);
 });
 
-test("database migration separates definitions records reviews and reports",()=>{
-  const sql=read("supabase/migrations/20261008114756_evidence_assessment_engine.sql");
+test("canonical schema baseline contains separate evidence, rubric, review, and report tables",()=>{
+  const sql=read("supabase/migrations/20261009071512_verified_production_schema_baseline_20261009.sql");
   for(const table of ["evidence_definitions","rubric_templates","rubric_criteria","evidence_records","evidence_reviews","evidence_report_snapshots"]){
-    assert.match(sql,new RegExp("create table if not exists public\\."+table));
+    assert.match(sql,new RegExp("create table public\\."+table+"\\s*\\("));
   }
-  assert.match(sql,/enable row level security/);
+  assert.match(sql,/alter table public\.evidence_records enable row level security/i);
+  assert.match(sql,/alter table public\.evidence_reviews enable row level security/i);
 });

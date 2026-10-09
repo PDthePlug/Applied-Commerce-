@@ -150,18 +150,88 @@ export async function loadCohortPeople(cohortId: string) {
   const learnerIds = [...new Set((enrolments.data ?? []).map((row) => row.learner_id))];
   const staffIds = [...new Set((staff.data ?? []).map((row) => row.user_id))];
 
-  const profiles = learnerIds.length
-    ? await supabase.from("profiles").select("id,display_name,status").in("id", learnerIds)
-    : { data: [], error: null };
+  const [learnerProfiles, staffProfiles] = await Promise.all([
+    learnerIds.length
+      ? supabase.from("profiles").select("id,display_name,status").in("id", learnerIds)
+      : Promise.resolve({ data: [], error: null }),
+    staffIds.length
+      ? supabase.from("profiles").select("id,display_name,status").in("id", staffIds)
+      : Promise.resolve({ data: [], error: null })
+  ]);
 
-  if (profiles.error) throw profiles.error;
+  if (learnerProfiles.error) throw learnerProfiles.error;
+  if (staffProfiles.error) throw staffProfiles.error;
 
   return {
     learners: (enrolments.data ?? []).map((row) => ({
       ...row,
-      profile: (profiles.data ?? []).find((profile) => profile.id === row.learner_id) ?? null
+      profile: (learnerProfiles.data ?? []).find((profile) => profile.id === row.learner_id) ?? null
     })),
-    staff: staff.data ?? [],
+    staff: (staff.data ?? []).map((row) => ({
+      ...row,
+      profile: (staffProfiles.data ?? []).find((profile) => profile.id === row.user_id) ?? null
+    })),
     staffIds
+  };
+}
+
+export type CohortLearningInsights = {
+  learnerCount: number;
+  suppressed: boolean;
+  completedLessons: number;
+  savedResponses: number;
+  evidenceRecords: number;
+  reviewedEvidence: number;
+  needsRevision: number;
+  reviewCoverage: number;
+};
+
+export async function loadCohortLearningInsights(cohortId: string): Promise<CohortLearningInsights> {
+  const supabase = createClient();
+  const { data: enrolments, error: enrolmentError } = await supabase
+    .from("cohort_enrolments")
+    .select("learner_id")
+    .eq("cohort_id", cohortId)
+    .eq("status", "active");
+  if (enrolmentError) throw enrolmentError;
+
+  const learnerIds = [...new Set((enrolments ?? []).map(row => row.learner_id))];
+  const base: CohortLearningInsights = {
+    learnerCount: learnerIds.length,
+    suppressed: learnerIds.length < 5,
+    completedLessons: 0,
+    savedResponses: 0,
+    evidenceRecords: 0,
+    reviewedEvidence: 0,
+    needsRevision: 0,
+    reviewCoverage: 0
+  };
+  // Small cohorts do not receive derived learning metrics that could reveal
+  // an individual learner's performance.
+  if (base.suppressed || !learnerIds.length) return base;
+
+  const [completed, responses, evidence] = await Promise.all([
+    supabase.from("lesson_progress").select("id", { count: "exact", head: true }).in("learner_id", learnerIds).eq("status", "completed"),
+    supabase.from("prompt_responses").select("id", { count: "exact", head: true }).in("learner_id", learnerIds),
+    supabase.from("evidence_records").select("id,learner_id").in("learner_id", learnerIds)
+  ]);
+  for (const result of [completed, responses, evidence]) if (result.error) throw result.error;
+
+  const evidenceIds = (evidence.data ?? []).map(row => row.id);
+  const reviews = evidenceIds.length
+    ? await supabase.from("evidence_reviews").select("status").in("evidence_record_id", evidenceIds)
+    : { data: [], error: null };
+  if (reviews.error) throw reviews.error;
+
+  const evidenceCount = evidence.data?.length ?? 0;
+  const reviewCount = reviews.data?.length ?? 0;
+  return {
+    ...base,
+    completedLessons: completed.count ?? 0,
+    savedResponses: responses.count ?? 0,
+    evidenceRecords: evidenceCount,
+    reviewedEvidence: reviewCount,
+    needsRevision: (reviews.data ?? []).filter(row => row.status === "needs-revision").length,
+    reviewCoverage: evidenceCount ? Math.round(reviewCount / evidenceCount * 100) : 0
   };
 }

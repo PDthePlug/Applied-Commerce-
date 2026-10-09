@@ -436,6 +436,8 @@ export type Database = {
           evidence_record_id: string
           feedback: string
           id: string
+          next_pathway: string
+          portfolio_interpretation: string
           reviewed_at: string
           reviewer_id: string
           rubric_key: string | null
@@ -447,6 +449,8 @@ export type Database = {
           evidence_record_id: string
           feedback?: string
           id?: string
+          next_pathway?: string
+          portfolio_interpretation?: string
           reviewed_at?: string
           reviewer_id: string
           rubric_key?: string | null
@@ -458,6 +462,8 @@ export type Database = {
           evidence_record_id?: string
           feedback?: string
           id?: string
+          next_pathway?: string
+          portfolio_interpretation?: string
           reviewed_at?: string
           reviewer_id?: string
           rubric_key?: string | null

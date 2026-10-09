@@ -6,7 +6,7 @@ import { mergeLearningState } from "@/lib/learner-record";
 export const CURRICULUM_RUNTIME_RELEASE = "ac-runtime-3";
 
 function unitContext(unitId:string):{grade:number;term:number}|null{
- const match=unitId.match(/^g(\\d+)-t(\\d+)-/);
+ const match=unitId.match(/^g(\d+)-t(\d+)-/);
  if(!match)return null;
  const grade=Number(match[1]);
  const term=Number(match[2]);
