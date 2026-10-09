@@ -71,3 +71,13 @@ The current live catalogs were compared again after staging-only migrations and 
 ## Reconciliation decision
 
 Staging is the stronger candidate for the eventual canonical production project because it contains the role-assignment functionality and targeted security fixes absent from the current production catalog. It is not yet approved for cutover: the repository's original core-table and core-security migration source files remain missing, migration histories are not identical, Auth signup-trigger behavior has not been verified with a real signup, and leaked-password protection remains disabled under the current Free-plan constraint. Do not wipe test data or repoint production Vercel configuration until the migration path and release checks are complete.
+
+
+## Additional privilege hardening — verified 2026-10-09
+
+A second ACL inspection found excessive table privileges on several application tables in both the source production project and staging. Some `anon` and `authenticated` ACLs included `MAINTAIN`, `TRUNCATE`, `TRIGGER`, and `REFERENCES`. PostgreSQL row-level security does not constrain all of these table-level operations. Staging also had broad default privileges for objects created by the `postgres` migration role.
+
+- A forward migration, `20261009200000_revoke_excessive_client_table_privileges.sql`, now revokes those current client privileges and removes broad default table, sequence, and function grants for future objects created by the `postgres` migration role.
+- The exact SQL was transaction-simulated against staging; the verification returned zero remaining risky current table privileges and zero broad `postgres` default-ACL entries, then rolled back. No live ACL changes were made by that simulation.
+- The current SQL role cannot change the separate `supabase_admin` default-privilege ACLs; application migrations must continue to run as `postgres` and explicitly grant only the privileges required by each object. This limitation remains documented for platform-owner review.
+- These excessive grants were also present in the original production catalog. The baseline's ACL reconciliation is retained for reproducibility, followed by the new tightening migration; matching production alone would have preserved an avoidable privilege risk.
