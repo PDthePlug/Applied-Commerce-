@@ -9,7 +9,7 @@ test("profile omits evidence, notes and recent activity sections",()=>{
   assert.match(profile,/profile-hub-identity/);
   assert.match(profile,/Settings/);
   assert.doesNotMatch(profile,/Learning evidence|Responses captured|Personal notes|Lesson notes|Learning history|Recent activity|profile-history/);
-  assert.match(profile,/href: "\\/settings"/);
+  assert.match(profile,/href: "\/settings"/);
 });
 
 test("learner home keeps the learning action without a duplicate portfolio card",()=>{
