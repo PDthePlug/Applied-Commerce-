@@ -75,7 +75,7 @@ export async function syncLearningState(userId:string,state:LearningState){
   const context=unitContext(unitId);
   return {learner_id:userId,curriculum_version:CURRICULUM_RUNTIME_RELEASE,curriculum_release_id:releaseId,grade:context?.grade??state.activeGrade??8,term:context?.term??(state.lastOpened?.unitId===unitId?state.lastOpened.term:1),unit_id:unitId,note,updated_at:state.responseUpdatedAt?.[unitId]??now};
  });
- if(noteRows.length){const result=await supabase.from("lesson_notes").upsert(noteRows,{onConflict:"learner_id,curriculum_release_id,unit_id"});if(result.error)throw result.error;}
+ if(noteRows.length){const result=await supabase.from("lesson_notes").upsert(noteRows,{onConflict:"learner_id,curriculum_version,unit_id"});if(result.error)throw result.error;}
 
  const promptRows:TablesInsert<"prompt_responses">[]=Object.entries(state.promptResponses).map(([promptKey,response])=>{
   const unitId=promptKey.split("::")[0];
