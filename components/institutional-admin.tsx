@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import { ArrowRight, Building2, CheckCircle2, GraduationCap, Plus, ShieldCheck, UserPlus, UsersRound } from "lucide-react";
 import Link from "next/link";
 import { useAuth } from "@/lib/auth-context";
+import { friendlyActionError } from "@/lib/customer-errors";
 import { InstitutionWorkspaceMenu } from "./institution-workspace-menu";
 import {
   addCohortStaff,
@@ -26,8 +27,7 @@ function slugify(value: string) {
 }
 
 function messageFor(error: unknown) {
-  if (error instanceof Error) return error.message;
-  return "Something went wrong. Try again.";
+  return friendlyActionError(error);
 }
 
 export function InstitutionalAdmin({ initialSection = "overview" }: { initialSection?: InstitutionSection } = {}) {
