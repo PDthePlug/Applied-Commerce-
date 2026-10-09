@@ -45,6 +45,21 @@ test("accepted evidence in two contexts supports cautious progression and transf
   assert.equal(sections.find(section => section.key === "competency").confidence, "low");
 });
 
+test("growth requires dated accepted observations in the same evidence domain", () => {
+  const insufficient = buildPortfolioSynthesis([
+    item("r1", "unit-a", "accepted", { createdAt: "2026-09-01T10:00:00Z", domain: ["cost reasoning"] }),
+    item("r2", "unit-b", "verified", { createdAt: "2026-09-12T10:00:00Z", domain: ["attention management"] }),
+  ]);
+  assert.match(insufficient.find(section => section.key === "growth").conclusion, /not yet enough dated, comparable reviewed evidence/i);
+
+  const comparable = buildPortfolioSynthesis([
+    item("r1", "unit-a", "accepted", { createdAt: "2026-09-01T10:00:00Z", domain: ["cost reasoning"] }),
+    item("r2", "unit-b", "verified", { createdAt: "2026-09-12T10:00:00Z", domain: ["cost reasoning"] }),
+  ]);
+  assert.match(comparable.find(section => section.key === "growth").conclusion, /dated, reviewed observations in the same evidence domain/i);
+  assert.equal(comparable.find(section => section.key === "growth").evidence.length, 2);
+});
+
 test("revision feedback and facilitator guidance take precedence over generic pathways", () => {
   const sections = buildPortfolioSynthesis([
     item("r1", "unit-a", "needs-revision", {
