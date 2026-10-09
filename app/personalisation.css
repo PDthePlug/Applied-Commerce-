@@ -184,3 +184,13 @@ html[data-ac-appearance="dark"] .settings-page :is(a,button,input,select):focus-
 html[data-ac-appearance="light"] :is(.settings-nav button[aria-current="page"] span,.settings-password-form h3 svg,.profile-hub-row-icon,.profile-hub-footnote svg){color:var(--ac-user-accent-text)}
 html[data-ac-appearance="warm"] :is(.settings-nav button[aria-current="page"] span,.settings-password-form h3 svg,.profile-hub-row-icon,.profile-hub-footnote svg){color:var(--ac-user-accent-text)}
 html[data-ac-appearance="system"] :is(.settings-nav button[aria-current="page"] span,.settings-password-form h3 svg,.profile-hub-row-icon,.profile-hub-footnote svg){color:var(--ac-user-accent-text)}
+
+/* Preserve each selected accent in dark mode without using low-contrast deep tones for text. */
+html[data-ac-appearance="dark"][data-ac-accent="commerce"],
+html[data-ac-appearance="system"][data-ac-accent="commerce"]{--ac-user-accent-text:#a2e0d6}
+html[data-ac-appearance="dark"][data-ac-accent="blue"],
+html[data-ac-appearance="system"][data-ac-accent="blue"]{--ac-user-accent-text:#a8ccff}
+html[data-ac-appearance="dark"][data-ac-accent="amber"],
+html[data-ac-appearance="system"][data-ac-accent="amber"]{--ac-user-accent-text:#f1c97c}
+html[data-ac-appearance="dark"][data-ac-accent="sage"],
+html[data-ac-appearance="system"][data-ac-accent="sage"]{--ac-user-accent-text:#b3d9b4}
