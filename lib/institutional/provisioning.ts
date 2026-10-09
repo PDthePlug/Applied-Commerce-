@@ -192,7 +192,7 @@ export async function loadCohortLearningInsights(cohortId: string): Promise<Coho
     .from("cohort_enrolments")
     .select("learner_id")
     .eq("cohort_id", cohortId)
-    .in("status", ["active", "completed"]);
+    .eq("status", "active");
   if (enrolmentError) throw enrolmentError;
 
   const learnerIds = [...new Set((enrolments ?? []).map(row => row.learner_id))];
