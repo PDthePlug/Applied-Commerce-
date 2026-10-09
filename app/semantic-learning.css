@@ -57,7 +57,7 @@
 .lesson-complete-continue:disabled{opacity:.4}
 .lesson-complete-continue:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
 /* Keep product navigation inside reserved chrome while the reader owns the page. */
-.focused-reader .app-menu-trigger{top:12px;right:70px;bottom:auto;left:auto;transform:none;height:44px;min-width:100px;padding:0 12px;border-radius:10px;box-shadow:none}
+.focused-reader .app-menu-trigger{top:auto;right:auto;bottom:max(14px,env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);z-index:110;min-width:122px;height:48px;padding:0 20px;border-radius:999px;box-shadow:0 14px 36px rgba(23,49,59,.24)}
 .focused-reader .reader-topbar{grid-template-columns:235px minmax(0,1fr) 180px}
 @media(min-width:821px) and (max-width:1040px){.focused-reader .reader-topbar{grid-template-columns:210px minmax(0,1fr) 180px}}
 .focused-reader .reader-menu-button{justify-self:end;margin-right:10px}
@@ -77,6 +77,6 @@
 }
 @media(max-width:820px){
   .focused-reader .reader-topbar{grid-template-columns:minmax(0,1fr) 160px}
-  .focused-reader .app-menu-trigger{top:10px;right:60px;min-width:90px;height:44px}
+  .focused-reader .app-menu-trigger{top:auto;right:auto;bottom:max(12px,env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);min-width:118px;height:46px}
   .focused-reader .reader-progress{right:0}
 }
