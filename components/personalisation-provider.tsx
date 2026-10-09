@@ -62,7 +62,10 @@ export function PersonalisationProvider({ children }: { children: React.ReactNod
     } finally { setLoading(false); }
   }, [authLoading, user?.id]);
 
-  useEffect(() => { void reload(); }, [reload]);
+  useEffect(() => {
+    const timer = window.setTimeout(() => { void reload(); }, 0);
+    return () => window.clearTimeout(timer);
+  }, [reload]);
 
   const update = useCallback(async (patch: Partial<Personalisation>) => {
     if (loading || saving || error) return;
