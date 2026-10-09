@@ -13,6 +13,7 @@ export function FacilitatorRoleGate({ children }: { children: React.ReactNode })
   const [cohortIds, setCohortIds] = useState<string[]>([]);
   const [isPlatformAdmin, setIsPlatformAdmin] = useState(false);
   const [accessCheckFailed, setAccessCheckFailed] = useState(false);
+  const access = useMemo(() => user ? ({ userId: user.id, isPlatformAdmin, cohortIds }) : null, [user?.id, isPlatformAdmin, cohortIds]);
 
   useEffect(() => {
     if (authLoading || !user) return;
@@ -64,6 +65,5 @@ export function FacilitatorRoleGate({ children }: { children: React.ReactNode })
     return <main className="institution-admin-page"><section className="institution-admin-hero"><p className="eyebrow">Restricted workspace</p><h1>Facilitator access has not been assigned.</h1><p>This account can sign in, but it cannot review learner evidence or open facilitator tools until an institution administrator assigns it to a cohort.</p><Link className="institutional-text-link" href="/institutions">Back to institutions <span aria-hidden="true">→</span></Link></section></main>;
   }
 
-  const access = useMemo(() => ({ userId: user.id, isPlatformAdmin, cohortIds }), [user.id, isPlatformAdmin, cohortIds]);
-  return <FacilitatorAccessProvider value={access}>{children}</FacilitatorAccessProvider>;
+  return access ? <FacilitatorAccessProvider value={access}>{children}</FacilitatorAccessProvider> : <>{children}</>;
 }
