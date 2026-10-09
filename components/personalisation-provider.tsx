@@ -86,7 +86,7 @@ export function PersonalisationProvider({ children }: { children: React.ReactNod
     try {
       const response = await fetch("/api/preferences", {
         method: "PATCH",
-        headers: { "content-type": "application/json" },
+        headers: { "content-type": "application/json", "x-ac-expected-user-id": userId },
         body: JSON.stringify(next),
       });
       const payload = await response.json().catch(() => null);
