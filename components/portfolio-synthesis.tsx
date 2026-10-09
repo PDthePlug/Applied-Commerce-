@@ -28,6 +28,7 @@ export function PortfolioSynthesis({ evidence }: { evidence: PortfolioEvidence[]
             <small>{item.domain.join(" · ") || "Learning evidence"}{item.reviewedStatus ? ` · ${item.reviewedStatus.replace("-", " ")}` : " · Not yet reviewed"}</small>
             <span aria-hidden="true">↗</span>
             <p>{item.response.length > 240 ? item.response.slice(0, 240) + "…" : item.response}</p>
+            {item.feedback ? <small>Facilitator feedback: {item.feedback}</small> : null}
             {item.portfolioInterpretation ? <small>Facilitator interpretation: {item.portfolioInterpretation}</small> : null}
             {item.nextPathway ? <small>Next pathway: {item.nextPathway}</small> : null}
           </Link>)}
