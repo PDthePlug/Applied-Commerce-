@@ -69,7 +69,7 @@ export function AppShell({children}:{children:React.ReactNode}) {
         ? <div className="topbar-note institutional-topbar-note"><Link href="/">Learner platform</Link><span>For institutions</span></div>
         : facilitator
           ? <div className="topbar-note"><Link href="/">Learner platform</Link><span>Evidence & assessment</span></div>
-          : <div className="topbar-note"><span>Grades 8–12</span><Link className="topbar-institution-link" href="/institutions">Workspace</Link></div>}
+          : <div className="topbar-note"><span>Grades 8–12</span><Link className="topbar-auth-link" href="/auth">Staff sign in</Link><Link className="topbar-institution-link" href="/institutions">Workspace</Link></div>}
     </header>}
     <main>{children}</main>
 
