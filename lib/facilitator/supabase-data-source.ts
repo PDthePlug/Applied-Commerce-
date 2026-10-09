@@ -257,14 +257,11 @@ export function useSupabaseFacilitatorWorkspace() {
   const verifiedAccess = useFacilitatorAccess();
   const [workspace, setWorkspace] = useState<SupabaseFacilitatorWorkspace | null>(null);
   const [loadedUserId, setLoadedUserId] = useState<string | null>(null);
-  const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     let cancelled = false;
     if (!user) return;
-    setLoading(true);
-    setError(null);
     void loadSupabaseFacilitatorWorkspace(user.id, verifiedAccess ?? undefined).then(value => {
       if (!cancelled) {
         setWorkspace(value);
@@ -277,14 +274,12 @@ export function useSupabaseFacilitatorWorkspace() {
         setLoadedUserId(user.id);
         setError("We couldn’t load your shared workspace. Please refresh and try again. If the problem continues, contact your institution administrator.");
       }
-    }).finally(() => {
-      if (!cancelled) setLoading(false);
     });
     return () => { cancelled = true; };
   }, [user, verifiedAccess]);
 
   const activeWorkspace = user && loadedUserId === user.id ? workspace : null;
-  const activeLoading = Boolean(user) && (loading || loadedUserId !== user?.id);
+  const activeLoading = Boolean(user) && loadedUserId !== user.id;
   const activeError = user && loadedUserId === user.id ? error : null;
   return { workspace: activeWorkspace, loading: activeLoading, error: activeError };
 }
