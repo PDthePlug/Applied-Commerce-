@@ -150,7 +150,7 @@ export function InstitutionalAdmin({ initialSection = "overview" }: { initialSec
   }
 
   if (authLoading) {
-    return <main className="institution-admin-page"><div className="institution-admin-state">Checking account access…</div></main>;
+    return <main className="institution-admin-page"><div className="institution-admin-state">Getting your account ready…</div></main>;
   }
 
   if (!user) {
@@ -167,7 +167,7 @@ export function InstitutionalAdmin({ initialSection = "overview" }: { initialSec
   }
 
   if (contextLoading) {
-    return <main className="institution-admin-page"><div className="institution-admin-state">Checking institution permissions…</div></main>;
+    return <main className="institution-admin-page"><div className="institution-admin-state">Getting your institution workspace ready…</div></main>;
   }
 
   if (!hasInstitutionAdminAccess) {
