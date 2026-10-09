@@ -53,7 +53,7 @@ export function PersonalisationProvider({ children }: { children: React.ReactNod
       const supabase = createClient();
       const result = await supabase.from("account_preferences").select("appearance,accent,text_size,reading_width").eq("user_id", userId).maybeSingle();
       if (result.error) throw result.error;
-      const next = result.data ? normalisePersonalisation({ appearance: result.data.appearance, accent: result.data.accent, textSize: result.data.text_size, readingWidth: result.data.reading_width }) : local;
+      const next = result.data ? normalisePersonalisation({ appearance: result.data.appearance, accent: result.data.accent, textSize: result.data.text_size, readingWidth: result.data.reading_width } as Partial<Personalisation>) : local;
       setPersonalisation(next);
       applyPersonalisation(next);
       writeLocal(next, userId);
