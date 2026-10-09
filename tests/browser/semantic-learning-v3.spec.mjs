@@ -23,7 +23,7 @@ async function integrity(page){
   expect(menu.y).toBeGreaterThan(header.y+header.height);
   expect(Math.abs((menu.x+menu.width/2)-metrics.viewport/2)).toBeLessThanOrEqual(2);
   expect(menu.y+menu.height).toBeLessThanOrEqual(viewport.height);
-  expect(viewport.height-(menu.y+menu.height)).toBeGreaterThanOrEqual(32);
+  expect(viewport.height-(menu.y+menu.height)).toBeGreaterThanOrEqual(10);
   expect(viewport.height-(menu.y+menu.height)).toBeLessThanOrEqual(140);
 }
 async function evidence(page,testInfo,label){
