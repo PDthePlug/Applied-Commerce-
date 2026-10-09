@@ -1,7 +1,6 @@
 "use client";
 
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
-import { createClient } from "@/lib/supabase/client";
 import { useAuth } from "@/lib/auth-context";
 import { applyPersonalisation, DEFAULT_PERSONALISATION, normalisePersonalisation, type Personalisation } from "@/lib/personalisation";
 
@@ -50,10 +49,10 @@ export function PersonalisationProvider({ children }: { children: React.ReactNod
     setMessage("");
     if (!userId) { setLoading(false); return; }
     try {
-      const supabase = createClient();
-      const result = await supabase.from("account_preferences").select("appearance,accent,text_size,reading_width").eq("user_id", userId).maybeSingle();
-      if (result.error) throw result.error;
-      const next = result.data ? normalisePersonalisation({ appearance: result.data.appearance, accent: result.data.accent, textSize: result.data.text_size, readingWidth: result.data.reading_width } as Partial<Personalisation>) : local;
+      const response = await fetch("/api/preferences", { cache: "no-store" });
+      const payload = await response.json().catch(() => null);
+      if (!response.ok || !payload || typeof payload !== "object" || !("preferences" in payload)) throw new Error("Preferences are unavailable.");
+      const next = normalisePersonalisation(payload.preferences as Partial<Personalisation>);
       setPersonalisation(next);
       applyPersonalisation(next);
       writeLocal(next, userId);
@@ -80,16 +79,17 @@ export function PersonalisationProvider({ children }: { children: React.ReactNod
     setSaving(true);
     setError("");
     try {
-      const supabase = createClient();
-      const result = await supabase.from("account_preferences").upsert({
-        user_id: userId,
-        appearance: next.appearance,
-        accent: next.accent,
-        text_size: next.textSize,
-        reading_width: next.readingWidth,
-        updated_at: new Date().toISOString(),
-      }, { onConflict: "user_id" });
-      if (result.error) throw result.error;
+      const response = await fetch("/api/preferences", {
+        method: "PATCH",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify(next),
+      });
+      const payload = await response.json().catch(() => null);
+      if (!response.ok || !payload || typeof payload !== "object" || !("preferences" in payload)) throw new Error("Preferences could not be saved.");
+      const saved = normalisePersonalisation(payload.preferences as Partial<Personalisation>);
+      setPersonalisation(saved);
+      applyPersonalisation(saved);
+      writeLocal(saved, userId);
       setMessage("Saved to your account");
     } catch {
       setPersonalisation(previous);
