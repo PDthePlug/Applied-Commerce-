@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { createClient } from "@/lib/supabase/client";
 import { useAuth } from "@/lib/auth-context";
+import { useFacilitatorAccess, type FacilitatorAccess } from "@/lib/facilitator/access-context";
 import { curriculum } from "@/lib/curriculum";
 import { buildEvidenceRecords } from "@/lib/evidence/engine";
 import type { EvidenceRecord, EvidenceReview } from "@/lib/evidence/types";
@@ -29,12 +30,27 @@ function emptyState(): LearningState {
   return { version: 2, previousResponses: {}, completed: {}, completedMeta: {}, responses: {}, responseUpdatedAt: {}, promptResponses: {}, promptResponseUpdatedAt: {} };
 }
 
-export async function loadSupabaseFacilitatorWorkspace(userId: string): Promise<SupabaseFacilitatorWorkspace | null> {
+export async function loadSupabaseFacilitatorWorkspace(userId: string, verifiedAccess?: FacilitatorAccess): Promise<SupabaseFacilitatorWorkspace | null> {
   const supabase = createClient();
-  const { data: isPlatformAdmin, error: adminError } = await supabase.rpc("is_platform_admin");
-  if (adminError) throw adminError;
+  const sharedAccess = verifiedAccess?.userId === userId ? verifiedAccess : null;
+  let isPlatformAdmin = sharedAccess?.isPlatformAdmin ?? false;
+  let cohortIds: string[] = sharedAccess ? [...sharedAccess.cohortIds] : [];
+  if (!sharedAccess) {
+    const { data, error } = await supabase.rpc("is_platform_admin");
+    if (error) throw error;
+    isPlatformAdmin = data === true;
+    if (!isPlatformAdmin) {
+      const { data: staff, error: staffError } = await supabase
+        .from("cohort_staff")
+        .select("cohort_id")
+        .eq("user_id", userId)
+        .eq("status", "active");
+      if (staffError) throw staffError;
+      cohortIds = [...new Set((staff ?? []).map(row => row.cohort_id))];
+      if (!cohortIds.length) return null;
+    }
+  }
 
-  let cohortIds: string[] = [];
   let activeCohorts: Array<{ id: string; name: string; school_id: string; grade: number; academic_year: number }> = [];
 
   if (isPlatformAdmin) {
@@ -50,15 +66,7 @@ export async function loadSupabaseFacilitatorWorkspace(userId: string): Promise<
     activeCohorts = data ?? [];
     cohortIds = activeCohorts.map(row => row.id);
   } else {
-    const { data: staff, error: staffError } = await supabase
-      .from("cohort_staff")
-      .select("cohort_id,role")
-      .eq("user_id", userId)
-      .eq("status", "active");
-    if (staffError) throw staffError;
-    cohortIds = [...new Set((staff ?? []).map(row => row.cohort_id))];
     if (!cohortIds.length) return null;
-
     const { data, error } = await supabase
       .from("cohorts")
       .select("id,name,school_id,grade,academic_year")
@@ -245,7 +253,8 @@ export async function saveSupabaseFacilitatorReview(learnerId: string, record: E
 
 export function useSupabaseFacilitatorWorkspace() {
   const { user } = useAuth();
-  const [workspace, setWorkspace] = useState<SupabaseFacilitatorWorkspace | null>(null);
+  const verifiedAccess = useFacilitatorAccess();
+  const [workspace, setWorkspace = useState<SupabaseFacilitatorWorkspace | null>(null);
   const [loadedUserId, setLoadedUserId] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -253,7 +262,8 @@ export function useSupabaseFacilitatorWorkspace() {
   useEffect(() => {
     let cancelled = false;
     if (!user) return;
-    void loadSupabaseFacilitatorWorkspace(user.id).then(value => {
+    setLoading(true);
+    void loadSupabaseFacilitatorWorkspace(user.id, verifiedAccess ?? undefined).then(value => {
       if (!cancelled) {
         setWorkspace(value);
         setLoadedUserId(user.id);
@@ -263,13 +273,13 @@ export function useSupabaseFacilitatorWorkspace() {
       if (!cancelled) {
         setWorkspace(null);
         setLoadedUserId(user.id);
-        setError(err instanceof Error ? err.message : "Unable to load facilitator data.");
+        setError("We couldn’t load your shared workspace. Please refresh and try again. If the problem continues, contact your institution administrator.");
       }
     }).finally(() => {
       if (!cancelled) setLoading(false);
     });
     return () => { cancelled = true; };
-  }, [user]);
+  }, [user, verifiedAccess]);
 
   const activeWorkspace = user && loadedUserId === user.id ? workspace : null;
   const activeLoading = Boolean(user) && (loading || loadedUserId !== user?.id);
