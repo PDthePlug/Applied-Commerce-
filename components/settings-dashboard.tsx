@@ -1,11 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState, type FormEvent } from "react";
+import { useState, type FormEvent } from "react";
 import { ArrowLeft, Check, ChevronRight, LockKeyhole, RotateCcw } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
 import { useAuth } from "@/lib/auth-context";
 import { useLearningStore } from "@/lib/learning-store";
+import type { LearnerProfile } from "@/lib/types";
 import { DEFAULT_PERSONALISATION, type Personalisation } from "@/lib/personalisation";
 import { usePersonalisation } from "@/components/personalisation-provider";
 
@@ -16,30 +17,43 @@ const accents: Array<{ value: Personalisation["accent"]; label: string }> = [
 
 type Section = "profile" | "appearance" | "reading" | "account";
 
+function ProfileSettingsForm({ initialName, initialGrade, saveProfile, syncError }: {
+  initialName: string;
+  initialGrade: number;
+  saveProfile: (patch: Partial<LearnerProfile>) => boolean;
+  syncError: string | null;
+}) {
+  const [name, setName] = useState(initialName);
+  const [grade, setGrade] = useState(initialGrade);
+  const [message, setMessage] = useState("");
+
+  function submit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const ok = saveProfile({ displayName: name.trim(), grade });
+    setMessage(ok ? "Profile updated. Learner accounts sync these details with their learning record." : "The profile could not be saved on this device. Please try again.");
+  }
+
+  return <>
+    <form className="settings-form" onSubmit={submit}>
+      <label className="settings-row"><span>Preferred name</span><input maxLength={80} value={name} onChange={event => setName(event.target.value)} placeholder="Add your name" autoComplete="name"/></label>
+      <label className="settings-row"><span>Current grade</span><select value={grade} onChange={event => setGrade(Number(event.target.value))}>{grades.map(value => <option key={value} value={value}>Grade {value}</option>)}</select></label>
+      <button className="settings-primary" type="submit">Save profile <Check aria-hidden="true"/></button>
+    </form>
+    {message ? <p className="settings-feedback" role="status">{message}</p> : null}
+    {syncError ? <p className="settings-feedback settings-error" role="alert">{syncError}</p> : null}
+  </>;
+}
+
 export function SettingsDashboard() {
   const { user } = useAuth();
   const { state, setProfile, syncError } = useLearningStore();
   const preferences = usePersonalisation();
   const [section, setSection] = useState<Section>("profile");
-  const [name, setName] = useState(state.profile?.displayName ?? "");
-  const [grade, setGrade] = useState(state.profile?.grade ?? state.activeGrade ?? 8);
-  const [profileMessage, setProfileMessage] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [passwordBusy, setPasswordBusy] = useState(false);
   const [passwordMessage, setPasswordMessage] = useState("");
   const [passwordError, setPasswordError] = useState("");
-
-  useEffect(() => {
-    setName(state.profile?.displayName ?? "");
-    setGrade(state.profile?.grade ?? state.activeGrade ?? 8);
-  }, [state.profile?.displayName, state.profile?.grade, state.activeGrade]);
-
-  function saveProfile(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    const ok = setProfile({ displayName: name.trim(), grade });
-    setProfileMessage(ok ? "Profile updated. Learner accounts sync these details with their learning record." : "The profile could not be saved on this device. Please try again.");
-  }
 
   async function changePassword(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -84,13 +98,7 @@ export function SettingsDashboard() {
       <section className="settings-content" aria-label={sectionLabels.find(item => item.value === section)?.label}>
         {section === "profile" ? <>
           <div className="settings-section-heading"><h2>Learning profile</h2><p>These details help Applied Commerce return you to the right learning context.</p></div>
-          <form className="settings-form" onSubmit={saveProfile}>
-            <label className="settings-row"><span>Preferred name</span><input maxLength={80} value={name} onChange={event => setName(event.target.value)} placeholder="Add your name" autoComplete="name"/></label>
-            <label className="settings-row"><span>Current grade</span><select value={grade} onChange={event => setGrade(Number(event.target.value))}>{grades.map(value => <option key={value} value={value}>Grade {value}</option>)}</select></label>
-            <button className="settings-primary" type="submit">Save profile <Check aria-hidden="true"/></button>
-          </form>
-          {profileMessage ? <p className="settings-feedback" role="status">{profileMessage}</p> : null}
-          {syncError ? <p className="settings-feedback settings-error" role="alert">{syncError}</p> : null}
+          <ProfileSettingsForm key={state.profile ? "profile-ready" : "profile-empty"} initialName={state.profile?.displayName ?? ""} initialGrade={state.profile?.grade ?? state.activeGrade ?? 8} saveProfile={setProfile} syncError={syncError}/>
         </> : null}
 
         {section === "appearance" ? <>
