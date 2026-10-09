@@ -36,7 +36,7 @@ These labels describe the strength of the available evidence, not the learner’
 
 ## Privacy for institution administrators
 
-Institution administrators receive aggregate cohort indicators only. The aggregate loader suppresses derived learning metrics for cohorts with fewer than five enrolled learners. It returns counts and coverage (completion, saved responses, review coverage and revision workload), not learner names, individual answers or learner-level scores. These metrics are operational signals, not rankings or competency conclusions.
+Institution administrators receive aggregate cohort indicators only. The aggregate loader considers active cohort enrolments only and suppresses derived learning metrics for cohorts with fewer than five active learners. It returns counts and coverage (completion, saved responses, review coverage and revision workload), not learner names, individual answers or learner-level scores. These metrics are operational signals, not rankings or competency conclusions.
 
 ## Validation boundary
 
