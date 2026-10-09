@@ -158,7 +158,7 @@ export function FacilitatorWorkspace({initialSection="overview"}:{initialSection
   };
 
   if (remoteLoading && !remoteWorkspace) {
-    return <main className="institution-admin-page"><div className="institution-admin-state">Loading the assigned facilitator workspace…</div></main>;
+    return <main className="institution-admin-page"><div className="institution-admin-state">Getting your facilitator workspace ready…</div></main>;
   }
   if (remoteError) {
     return <main className="institution-admin-page"><section className="institution-admin-hero"><p className="eyebrow">Facilitator workspace</p><h1>We couldn’t load your facilitator workspace.</h1><p>{remoteError}</p><p>Your learner records were not loaded. Please refresh and try again.</p></section></main>;
@@ -182,7 +182,7 @@ export function FacilitatorWorkspace({initialSection="overview"}:{initialSection
         })}
       </nav>
       <div className="fac-backend-state">
-        <div><span/><strong>{remoteWorkspace?"Shared cohort workspace":"Local learner record"}</strong></div>
+        <div><span/><strong>{remoteWorkspace?"Shared cohort workspace":"No cohort selected"}</strong></div>
         <p>{remoteWorkspace?"Your assigned learners, saved work and reviews are connected.":"Sign in with an account assigned by your institution to access learner records."}</p>
       </div>
     </aside>
@@ -230,7 +230,7 @@ export function FacilitatorWorkspace({initialSection="overview"}:{initialSection
         <div className="fac-header-context">
           <small>Current workspace</small>
           <strong>{remoteWorkspace?.schoolName ?? (grade?"Grade "+grade+" · "+titleCase(stageForGrade(grade)):"No cohort selected")}</strong>
-          <span>{remoteWorkspace?.cohortName ?? "Local learner record"} </span>
+          <span>{remoteWorkspace?.cohortName ?? "No cohort selected"} </span>
           <span>{cohort.learnerCount} learners · {cohort.evidenceCount} evidence records</span>
         </div>
       </header>
@@ -541,7 +541,7 @@ function ReportsView({report,learner,gradeLessonTotal,completionRate}:ReportsVie
       </div>
       <footer>This report describes observable curriculum evidence. It does not claim to measure a learner internal identity, personality or character.</footer>
     </section>
-    <section className="fac-card fac-cohort-report-note"><Gauge/><div><p className="eyebrow">Prepared for activation</p><h2>Cohort and school reporting</h2><p>Reports can bring together learner progress by cohort, grade, term, school and learning area as shared records become available.</p></div></section>
+    <section className="fac-card fac-cohort-report-note"><Gauge/><div><p className="eyebrow">Reporting</p><h2>Cohort and school reporting</h2><p>Reports can bring together learner progress by cohort, grade, term, school and learning area as shared records become available.</p></div></section>
   </div>;
 }
 
