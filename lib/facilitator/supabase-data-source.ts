@@ -112,7 +112,7 @@ export async function loadSupabaseFacilitatorWorkspace(userId: string, verifiedA
   for (const result of [profiles, learnerProfiles, progress, prompts, notes, evidence]) if (result.error) throw result.error;
 
   const reviewResult = evidence.data?.length
-    ? await supabase.from("evidence_reviews").select("evidence_record_id,reviewer_id,rubric_key,status,criteria_scores,feedback,reviewed_at").in("evidence_record_id", evidence.data.map(row => row.id))
+    ? await supabase.from("evidence_reviews").select("evidence_record_id,reviewer_id,rubric_key,status,criteria_scores,feedback,portfolio_interpretation,next_pathway,reviewed_at").in("evidence_record_id", evidence.data.map(row => row.id))
     : { data: [], error: null };
   if (reviewResult.error) throw reviewResult.error;
 
@@ -131,6 +131,8 @@ export async function loadSupabaseFacilitatorWorkspace(userId: string, verifiedA
       status: review.status as EvidenceReview["status"],
       criteria: (review.criteria_scores ?? {}) as Record<string, 1 | 2 | 3 | 4>,
       feedback: review.feedback,
+      portfolioInterpretation: review.portfolio_interpretation ?? "",
+      nextPathway: review.next_pathway ?? "",
       reviewedAt: review.reviewed_at
     };
     reviewsByLearner.set(evidenceRef.learnerId, reviews);
@@ -236,6 +238,8 @@ export async function saveSupabaseFacilitatorReview(learnerId: string, record: E
     status: review.status,
     criteria_scores: review.criteria,
     feedback: review.feedback,
+    portfolio_interpretation: review.portfolioInterpretation ?? "",
+    next_pathway: review.nextPathway ?? "",
     reviewed_at: review.reviewedAt,
     updated_at: new Date().toISOString()
   };
