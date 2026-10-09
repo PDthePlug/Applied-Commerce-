@@ -199,9 +199,13 @@ test("profile settings persist account presentation preferences with owner-only 
   const provider=read("components/personalisation-provider.tsx");
   const settings=read("components/settings-dashboard.tsx");
   const migration=read("supabase/migrations/20261009200000_account_personalisation_preferences.sql");
+  const api=read("app/api/preferences/route.ts");
   const styles=read("app/personalisation.css");
-  assert.match(provider,/account_preferences/);
-  assert.match(provider,/onConflict: "user_id"/);
+  assert.match(provider,/\/api\/preferences/);
+  assert.match(api,/account_preferences/);
+  assert.match(api,/onConflict: "user_id"/);
+  assert.match(api,/ALLOWED_KEYS/);
+  assert.match(api,/auth\.getUser\(\)/);
   assert.match(settings,/Account & security/);
   assert.match(settings,/Change password/);
   assert.match(settings,/Accent colour/);
