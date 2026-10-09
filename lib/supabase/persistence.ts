@@ -54,9 +54,16 @@ export async function syncLearningState(userId:string,state:LearningState){
  if(releaseResult.error)throw releaseResult.error;
  const releaseId=releaseResult.data.id;
  const now=new Date().toISOString();
- const profile:TablesInsert<"learner_profiles">={user_id:userId,preferred_name:state.profile?.displayName?.trim()||null,current_grade:state.profile?.grade??state.activeGrade??null};
- const profileResult=await supabase.from("learner_profiles").upsert(profile,{onConflict:"user_id"});
- if(profileResult.error)throw profileResult.error;
+ const adminResult=await supabase.rpc("is_platform_admin");
+ if(adminResult.error)throw adminResult.error;
+ // Platform administrators are intentionally excluded from the learner role.
+ // Keep their personal lesson evidence in their own account without attempting
+ // to create a learner_profiles row, which the database correctly rejects.
+ if(!adminResult.data){
+  const profile:TablesInsert<"learner_profiles">={user_id:userId,preferred_name:state.profile?.displayName?.trim()||null,current_grade:state.profile?.grade??state.activeGrade??null};
+  const profileResult=await supabase.from("learner_profiles").upsert(profile,{onConflict:"user_id"});
+  if(profileResult.error)throw profileResult.error;
+ }
 
  const progressRows:TablesInsert<"lesson_progress">[]=Object.entries(state.completed).map(([unitId,completedAt])=>{
   const meta=state.completedMeta?.[unitId];
