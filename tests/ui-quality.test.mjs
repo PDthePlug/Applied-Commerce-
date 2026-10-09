@@ -162,6 +162,8 @@ test("primary navigation labels the institutional destination Workspace",()=>{
   const shell=read("components/app-shell.tsx");
   assert.match(shell,/<Link className="topbar-institution-link" href="\/institutions">Workspace<\/Link>/);
   assert.match(shell,/<Link className="topbar-auth-link" href="\/auth">Staff sign in<\/Link>/);
+  assert.match(shell,/<Link className="topbar-mobile-auth" href="\/auth">Staff sign in<\/Link>/);
+  assert.match(read("app/responsive.css"),/\.topbar-mobile-auth\{display:inline-flex/);
   assert.doesNotMatch(shell,/<Link className="topbar-institution-link" href="\/institutions">For institutions<\/Link>/);
 });
 
