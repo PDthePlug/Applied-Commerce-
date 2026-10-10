@@ -680,3 +680,14 @@
 .profile-hub-error{margin:10px 0 0;color:#b34c34;font-size:12px}
 .profile-hub :is(a,button):focus-visible{outline:3px solid color-mix(in srgb,var(--ac-user-accent) 50%,white);outline-offset:3px}
 @media(max-width:520px){.profile-hub{width:calc(100% - 32px);padding-top:26px}.profile-hub-avatar{width:52px;height:52px}.profile-hub-row{grid-template-columns:34px minmax(0,1fr) 16px;gap:10px;padding:12px}.profile-hub-row-icon{width:32px;height:32px}.profile-hub-row-copy small{font-size:10px}.profile-hub-account>div{display:grid;gap:6px}.profile-hub-account strong{max-width:100%;text-align:left}}
+
+/* Repeated portfolio notices in lesson reading sessions stay quiet until requested. */
+.portfolio-capture-disclosure{margin:12px 0 18px;border:1px solid #e5dac2;border-radius:12px;background:#fbf7ef;overflow:hidden}
+.portfolio-capture-disclosure>summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 14px;cursor:pointer;list-style:none;color:var(--ink);font-size:12px;font-weight:700}
+.portfolio-capture-disclosure>summary::-webkit-details-marker{display:none}
+.portfolio-capture-disclosure>summary>svg{width:16px;flex:none;color:var(--muted);transition:transform .18s ease}
+.portfolio-capture-disclosure[open]>summary>svg{transform:rotate(180deg)}
+.portfolio-capture-body{padding:0 14px 12px;border-top:1px solid #eee4d2}
+.portfolio-capture-body>p{margin:10px 0 0!important;color:var(--muted)!important;font-size:11px!important;line-height:1.55!important}
+.portfolio-capture-disclosure>summary:focus-visible{outline:3px solid color-mix(in srgb,var(--ac-user-accent,#8b713e) 50%,white);outline-offset:-3px}
+@media(max-width:520px){.portfolio-capture-disclosure>summary{padding:11px}.portfolio-capture-body{padding:0 11px 11px}}

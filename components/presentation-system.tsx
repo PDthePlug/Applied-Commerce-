@@ -86,9 +86,12 @@ export function ResponseSurface({
 }
 
 export function PortfolioCaptureNotice({instruction}:{instruction?:string}){
-  return <LearningNotice
-    tone="portfolio"
-    title="This work is added to your portfolio automatically."
-    body={instruction?`${instruction.replace(/^Portfolio:\s*/i,"")} Your responses stay with this lesson on this device.`:"Your responses stay with this lesson on this device."}
-  />;
+  const body=instruction ? `${instruction.replace(/^Portfolio:\s*/i,"")} Your responses stay with this lesson on this device.` : "Your responses stay with this lesson on this device.";
+  return <details className="portfolio-capture-disclosure">
+    <summary>
+      <span>Portfolio evidence</span>
+      <ChevronDown aria-hidden="true"/>
+    </summary>
+    <div className="portfolio-capture-body"><p>{body}</p></div>
+  </details>;
 }

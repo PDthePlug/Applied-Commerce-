@@ -52,7 +52,10 @@ test("rankings are ordered, confirmed, persistent and visible in portfolio",asyn
   expect(saved[key].split("\n")).toHaveLength(8);
   await integrity(page);await evidence(page,info,"insurance-ranking");
   await page.goto("/portfolio");
-  await expect(page.locator(".portfolio-evidence").filter({hasText:"Funeral cover"}).first()).toBeVisible();
+  const capturedResponses=page.locator(".portfolio-artifact-responses").filter({hasText:"Funeral cover"}).first();
+  await expect(capturedResponses).not.toHaveAttribute("open","");
+  await capturedResponses.locator("summary").click();
+  await expect(capturedResponses.locator(".portfolio-evidence").filter({hasText:"Funeral cover"}).first()).toBeVisible();
 });
 
 test("rating controls retain their scale and written action fields",async({page},info)=>{
