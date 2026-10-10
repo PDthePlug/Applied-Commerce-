@@ -142,10 +142,23 @@ test("dark and system themes keep lesson text and response cards readable", asyn
 
   for (const appearance of ["dark", "system"]) {
     await page.evaluate(value => document.documentElement.setAttribute("data-ac-appearance", value), appearance);
-    const lessonText = await page.locator(".lesson-document p").first().evaluate(el => ({
-      color: getComputedStyle(el).color,
-      background: getComputedStyle(document.querySelector(".reader-shell")).backgroundColor,
-    }));
+    const lessonText = await page.locator(".lesson-document p").first().evaluate(el => {
+      const effectiveBackground = (node) => {
+        for (let current = node; current && current !== document.documentElement; current = current.parentElement) {
+          const value = getComputedStyle(current).backgroundColor;
+          const match = value.match(/rgba?\\(([^)]+)\\)/i);
+          if (!match) continue;
+          const channels = match[1].split(",").map(part => Number.parseFloat(part.trim()));
+          const alpha = channels.length > 3 ? channels[3] : 1;
+          if (alpha > 0) return value;
+        }
+        return getComputedStyle(document.documentElement).backgroundColor;
+      };
+      return {
+        color: getComputedStyle(el).color,
+        background: effectiveBackground(el),
+      };
+    });
     expect(await ratio(lessonText.color, lessonText.background)).toBeGreaterThanOrEqual(4.5);
 
     const response = page.locator(".response-surface").first();
