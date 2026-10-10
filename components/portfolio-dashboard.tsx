@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import { ArrowRight, Archive, NotebookPen } from "lucide-react";
+import { ArrowRight, Archive, NotebookPen, ChevronDown } from "lucide-react";
 import { curriculum } from "@/lib/curriculum";
 import type { GradeIndex, UnitContent, UnitSummary } from "@/lib/types";
 import { buildPortfolioDefinitions, responsesForPortfolio } from "@/lib/portfolio-model";
@@ -141,39 +141,49 @@ export function PortfolioDashboard(){
 
   {artifacts.length===0
    ? <section className="empty-state"><Archive/><h2>Your portfolio is ready.</h2><p>Complete a portfolio-marked activity in the curriculum. The relevant evidence will appear here automatically.</p><Link className="primary-button" href="/learn">Open curriculum <ArrowRight/></Link></section>
-   : <div className="portfolio-artifacts">
-      {artifacts.map(entry=><article className="portfolio-artifact" key={entry.definition.id}>
-       <header>
-        <div>
-         <p>Grade {entry.meta.grade} · Term {entry.meta.term} · {entry.meta.label}</p>
-         <h2>{entry.definition.title}</h2>
-         <span>{entry.definition.instruction}</span>
-        </div>
-        <Link href={`/learn/${entry.meta.grade}/term/${entry.meta.term}/${entry.meta.id}`}>Open lesson <ArrowRight/></Link>
-       </header>
-       <div className="portfolio-evidence">
-        {entry.responses.map(response=><div key={response.key}><small>{response.label}</small><p>{response.value}</p></div>)}
-       </div>
-      </article>)}
-     </div>}
+   : <section className="portfolio-artifacts-section" aria-labelledby="portfolio-artifacts-title">
+      <div className="portfolio-section-heading"><Archive/><div><p className="eyebrow">Captured evidence</p><h2 id="portfolio-artifacts-title">Your portfolio work</h2></div></div>
+      <div className="portfolio-artifacts">
+       {artifacts.map(entry=><article className="portfolio-artifact" key={entry.definition.id}>
+        <header>
+         <div>
+          <p>Grade {entry.meta.grade} · Term {entry.meta.term} · {entry.meta.label}</p>
+          <h3>{entry.definition.title}</h3>
+          <span>{entry.definition.instruction}</span>
+         </div>
+         <Link href={`/learn/${entry.meta.grade}/term/${entry.meta.term}/${entry.meta.id}`}>Open lesson <ArrowRight/></Link>
+        </header>
+        <details className="portfolio-artifact-responses">
+         <summary><span>View captured responses</span><span>{entry.responses.length} {entry.responses.length===1?"response":"responses"}</span><ChevronDown aria-hidden="true"/></summary>
+         <div className="portfolio-evidence">
+          {entry.responses.map(response=><div key={response.key}><small>{response.label}</small><p>{response.value}</p></div>)}
+         </div>
+        </details>
+       </article>)}
+      </div>
+     </section>}
 
   {previous.length>0&&<section className="portfolio-notes-section">
-   <h2>Earlier answers kept for review</h2>
-   <p>These answers belong to an earlier layout or a task that has changed. They are kept separately because their match to the current question cannot be verified. You can copy an answer into the matching activity after reviewing it.</p>
-   <div className="portfolio-list">{previous.map(([key,value])=>{
-    const lesson=meta[key.split("::")[0]];
-    return <article key={key}><h3>{lesson?`${lesson.label} · ${lesson.title}`:"Earlier learning record"}</h3><p>{value}</p>{lesson&&<Link href={`/learn/${lesson.grade}/term/${lesson.term}/${lesson.id}`}>Review lesson <ArrowRight/></Link>}</article>;
-   })}</div>
+   <details className="portfolio-secondary-details">
+    <summary><div><p className="eyebrow">History</p><h2>Earlier answers kept for review</h2><span>{previous.length} saved {previous.length===1?"answer":"answers"}</span></div><ChevronDown aria-hidden="true"/></summary>
+    <p>These answers belong to an earlier layout or a task that has changed. They are kept separately because their match to the current question cannot be verified. You can copy an answer into the matching activity after reviewing it.</p>
+    <div className="portfolio-list">{previous.map(([key,value])=>{
+     const lesson=meta[key.split("::")[0]];
+     return <article key={key}><h3>{lesson?`${lesson.label} · ${lesson.title}`:"Earlier learning record"}</h3><p>{value}</p>{lesson&&<Link href={`/learn/${lesson.grade}/term/${lesson.term}/${lesson.id}`}>Review lesson <ArrowRight/></Link>}</article>;
+    })}</div>
+   </details>
   </section>}
 
   {notes.length>0 && <section className="portfolio-notes-section">
-   <div className="portfolio-section-heading"><NotebookPen/><div><p className="eyebrow">Personal notes</p><h2>Notes you chose to keep</h2></div></div>
-   <div className="portfolio-list">
-    {notes.map(entry=><article key={entry.id}>
-     <header><div><p>Grade {entry.meta.grade} · Term {entry.meta.term} · {entry.meta.label}</p><h2>{entry.meta.title}</h2></div><Link href={`/learn/${entry.meta.grade}/term/${entry.meta.term}/${entry.id}`}>Open <ArrowRight/></Link></header>
-     <p>{entry.value}</p>
-    </article>)}
-   </div>
+   <details className="portfolio-secondary-details">
+    <summary><div className="portfolio-section-heading"><NotebookPen/><div><p className="eyebrow">Personal notes</p><h2>Notes you chose to keep</h2><span>{notes.length} saved {notes.length===1?"note":"notes"}</span></div></div><ChevronDown aria-hidden="true"/></summary>
+    <div className="portfolio-list">
+     {notes.map(entry=><article key={entry.id}>
+      <header><div><p>Grade {entry.meta.grade} · Term {entry.meta.term} · {entry.meta.label}</p><h3>{entry.meta.title}</h3></div><Link href={`/learn/${entry.meta.grade}/term/${entry.meta.term}/${entry.id}`}>Open <ArrowRight/></Link></header>
+      <p>{entry.value}</p>
+     </article>)}
+    </div>
+   </details>
   </section>}
  </div>;
 }
