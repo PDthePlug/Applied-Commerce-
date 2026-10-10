@@ -123,7 +123,12 @@ test("dark and system themes keep lesson text and response cards readable", asyn
 
   const ratio = async (foreground, background) => page.evaluate(({ foreground, background }) => {
     const luminance = (color) => {
-      const values = color.match(/[\\d.]+/g)?.slice(0, 3).map(Number) ?? [];
+      const canvas = document.createElement("canvas");
+      const context = canvas.getContext("2d");
+      if (!context) return null;
+      context.fillStyle = color;
+      const normalized = context.fillStyle;
+      const values = normalized.match(/[\\d.]+/g)?.slice(0, 3).map(Number) ?? [];
       if (values.length !== 3) return null;
       const channels = values.map(value => {
         const c = value / 255;
