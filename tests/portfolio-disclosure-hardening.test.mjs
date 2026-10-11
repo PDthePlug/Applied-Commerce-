@@ -7,7 +7,6 @@ const read=(path)=>fs.readFileSync(path,"utf8");
 test("portfolio disclosures stay collapsed by default without removing evidence",()=>{
   const portfolio=read("components/portfolio-dashboard.tsx");
   const synthesis=read("components/portfolio-synthesis.tsx");
-  const presentation=read("components/presentation-system.tsx");
   assert.match(portfolio,/<details className="portfolio-artifact-responses">/);
   assert.match(portfolio,/<summary><span>View captured responses<\/span>/);
   assert.match(portfolio,/<details className="portfolio-secondary-details">/);
@@ -31,7 +30,7 @@ test("lesson portfolio notice has only the requested compact label and preserves
   assert.match(presentation,/instruction\.replace\(\/\^Portfolio:/);
   assert.match(presentation,/Your responses stay with this lesson on this device/);
   assert.doesNotMatch(presentation,/Saved with this lesson automatically|Tap to view details/);
-  assert.match(styles,/\.portfolio-capture-disclosure summary:focus-visible/);
+  assert.match(styles,/\.portfolio-capture-disclosure>?summary:focus-visible/);
   assert.match(styles,/\.portfolio-capture-disclosure\[open\]/);
 });
 
