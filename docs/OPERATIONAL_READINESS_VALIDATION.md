@@ -2,9 +2,11 @@
 
 This milestone adds repeatable evidence gathering. It does not certify production or provision paid infrastructure. Production remains `upvbxplswxhoqzbvgdxv`; Zimbabwe (`hkarxzjmttjetotduvyx`) is excluded from South African validation.
 
-## Current infrastructure gap
+## Isolated infrastructure
 
-Inspection on 12 October 2026 found no development branches, a Free Supabase organization (`AutobodyConnect`), production-backed South African previews, and a Vercel project named `applied-commerce-staging` using Zimbabwe. Do not use those previews for destructive tests, bulk fixtures, restoration or load generation. Create a separate South African database/branch and Vercel staging target after confirming the organization and provisioning cost. Preserve the existing Zimbabwe target.
+The approved isolated Supabase project is `inxshlumnhcgiahxqewe` in AutobodyConnect, paired with Vercel project `applied-commerce-sa-staging` at `https://applied-commerce-sa-staging.vercel.app`. All 17 repository migrations were replayed on the empty project and its migration versions reconciled to their repository identities. Production-backed South African previews and `applied-commerce-staging` (Zimbabwe) remain unsuitable for South African restore/load work.
+
+The user authorized Free-plan slot rotation: keep South African Production Main active, pause Zimbabwe while staging is active, then pause staging before resuming Zimbabwe. Verify final provider states; a pause request is not completed pausing and a restore request is not completed recovery. No paid upgrade was authorized.
 
 The canonical alias serves PR #33 (`13d43f8`). PR #34 (`635b5dd`) contains identical runtime source plus migration/test alignment; Vercel's latest deployment of that revision failed before building with `git_info_fail`. A READY canonical release is not evidence that later deployment automation works.
 
@@ -35,6 +37,8 @@ Both private files must identify the same explicit `projectRef`:
 - `fixtures.json`: `projectRef`, unique `run` beginning `audit-`, and six dedicated users: `learner`, `other`, `facilitator`, `unassigned`, `schoolAdmin`, `platformAdmin`. Each has id/email/password; emails begin with the run identifier. Existing school/cohort IDs may be retained for reruns.
 
 Production is rejected by default; Zimbabwe and service-role/secret keys are always rejected. `AC_ALLOW_PRODUCTION_ROLE_TESTS=1` enables only an explicitly authorized bounded production role check, never bulk seeding, load or restore work. It is absent from the staging workflow.
+
+For a completely empty, approved isolated project, `AC_ROLE_FIXTURES=/private/dedicated-fixtures node scripts/prepare-role-fixtures.mjs` creates random passwords, bcrypt hashes and six dedicated identities offline. Supply `public-config.json` first. Apply the generated private `bootstrap.sql` only to that project through an authorized operator connection. The transaction refuses a database with any existing Auth users. Existing `fixtures.json` is never overwritten. Keep both generated files outside Git; the SQL contains password hashes. This confirmation bootstrap permits role testing and does not demonstrate signup or email delivery.
 
 Set public Supabase variables **when building Next.js**, not only when running `next start`. The browser bundle embeds those values. The health identity preflight also checks the server configuration; keep both build and runtime settings aligned. Real browser writes/readback then verify the browser uses the same fixture backend.
 

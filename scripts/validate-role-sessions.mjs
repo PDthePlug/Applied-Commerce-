@@ -57,7 +57,7 @@ check('revision feedback is visible to the learner',()=>{assert.equal(review.dat
 const revised=winner.value+' revised';const resubmitted=await save('learner',[change('prompt',key,revised,winner.revision)]);
 check('learner revision persists',()=>assert.equal(resubmitted[0].conflict,false));
 const stale=await request('facilitator','/rest/v1/rpc/save_facilitator_review','POST',{p_learner_id:learner,p_response_key:key,p_response_value:winner.value,p_auto_result:{},p_review:{status:'accepted',criteria:{},feedback:'stale'}});
-check('stale review cannot approve a revised answer',()=>assert.ok(stale.status>=400));
+check('stale review returns a non-retryable rejection without approving the revised answer',()=>{assert.equal(stale.status,400);assert.equal(stale.data.code,'P0001');});
 await rpc('facilitator','save_facilitator_review',{p_learner_id:learner,p_response_key:key,p_response_value:revised,p_auto_result:{},p_review:{status:'accepted',criteria:{},feedback:'Dedicated test: revised example accepted'}});
 review=await request('learner','/rest/v1/evidence_records?select=status,evidence_reviews(status,response_value_at_review)&learner_id=eq.'+learner+'&response_key=eq.'+key);
 check('approval follows the revised answer and reaches learner',()=>{assert.equal(review.data[0].status,'accepted');assert.equal(review.data[0].evidence_reviews[0].response_value_at_review,revised);});

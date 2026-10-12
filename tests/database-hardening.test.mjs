@@ -25,7 +25,7 @@ async function save(actor,answer,decision){return asUser(actor,'select public.sa
 
 before(async()=>{
  await db.exec(AUTH_FIXTURE_SQL);
- for(const file of fs.readdirSync('supabase/migrations').filter(f=>f.endsWith('.sql')&&!f.includes('protect_assessment_decisions')&&!f.includes('learning_revision_sync')&&!f.includes('active_role_sessions')&&!f.includes('require_revision_checked_writes')&&!f.includes('account_bound_learning_saves')).sort()) await db.exec(fs.readFileSync('supabase/migrations/'+file,'utf8'));
+ for(const file of fs.readdirSync('supabase/migrations').filter(f=>f.endsWith('.sql')&&!f.includes('protect_assessment_decisions')&&!f.includes('learning_revision_sync')&&!f.includes('active_role_sessions')&&!f.includes('require_revision_checked_writes')&&!f.includes('account_bound_learning_saves')&&!f.includes('reject_stale_reviews_without_retry_loop')).sort()) await db.exec(fs.readFileSync('supabase/migrations/'+file,'utf8'));
  release=(await db.query("select id from public.curriculum_releases where release_key='ac-runtime-3'")).rows[0].id;
  for(const [id,name] of [[learner,'learner'],[other,'other'],[staff,'staff'],[unassigned,'unassigned'],[admin,'admin']]) await db.query('insert into auth.users(id,email) values($1,$2)',[id,name+'@audit.invalid']);
  for(const id of [learner,other,staff,unassigned,admin])await db.query('insert into auth.sessions(id,user_id) values($1,$1)',[id]);
@@ -47,6 +47,7 @@ before(async()=>{
  await db.exec(fs.readFileSync('supabase/migrations/20261012095157_active_role_sessions.sql','utf8'));
  await db.exec(fs.readFileSync('supabase/migrations/20261012102159_account_bound_learning_saves.sql','utf8'));
  await db.exec(fs.readFileSync('supabase/migrations/20261012103733_require_revision_checked_writes.sql','utf8'));
+ await db.exec(fs.readFileSync('supabase/migrations/20261012165126_reject_stale_reviews_without_retry_loop.sql','utf8'));
 });
 after(async()=>{await db.close();});
 
@@ -87,7 +88,7 @@ test('revision request reaches the owner, preserves a snapshot, and records hist
 });
 test('a stale review is rejected after learner revision',async()=>{
  await asUser(learner,'select public.save_learning_changes_for_account($1,$2)',[learner,JSON.stringify([{kind:'prompt',key,value:'revised answer',expected:1}])]);
- await assert.rejects(save(staff,'original answer',review('accepted')),/answer changed/);
+ await assert.rejects(save(staff,'original answer',review('accepted')),error=>error.code==='P0001'&&/answer changed/.test(error.message));
  assert.equal((await db.query('select status from public.evidence_records')).rows[0].status,'needs-revision');
 });
 test('review retry is idempotent and approval follows the revised answer',async()=>{
