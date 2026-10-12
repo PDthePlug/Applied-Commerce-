@@ -111,3 +111,77 @@ test("all appearance, accent, text size and reading width settings update the do
     await expect(page.locator("html")).toHaveAttribute("data-ac-reading-width", value);
   }
 });
+
+
+test("dark and system themes keep lesson text and response cards readable", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.emulateMedia({ colorScheme: "dark" });
+  await page.goto("/learn/8");
+  await expect(page.locator(".term-card").first()).toBeVisible({ timeout: 15000 });
+  await page.getByRole("link", { name: /Open Term 1/ }).click();
+  await expect(page.locator(".lesson-document h1")).toBeVisible({ timeout: 15000 });
+
+  const ratio = async (foreground, background) => page.evaluate(({ foreground, background }) => {
+    const luminance = (color) => {
+      const canvas = document.createElement("canvas");
+      const context = canvas.getContext("2d");
+      if (!context) return null;
+      context.fillStyle = color;
+      const normalized = context.fillStyle;
+      const values = normalized.match(/[\d.]+/g)?.slice(0, 3).map(Number) ?? [];
+      if (values.length !== 3) return null;
+      const channels = values.map(value => {
+        const c = value / 255;
+        return c <= 0.04045 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4;
+      });
+      return 0.2126 * channels[0] + 0.7152 * channels[1] + 0.0722 * channels[2];
+    };
+    const a = luminance(foreground), b = luminance(background);
+    return a === null || b === null ? 0 : (Math.max(a, b) + 0.05) / (Math.min(a, b) + 0.05);
+  }, { foreground, background });
+
+  for (const appearance of ["dark", "system"]) {
+    await page.evaluate(value => document.documentElement.setAttribute("data-ac-appearance", value), appearance);
+    const lessonText = await page.locator(".lesson-document p").first().evaluate(el => {
+      const effectiveBackground = (node) => {
+        for (let current = node; current && current !== document.documentElement; current = current.parentElement) {
+          const value = getComputedStyle(current).backgroundColor;
+          const match = value.match(/rgba?\\(([^)]+)\\)/i);
+          if (!match) continue;
+          const channels = match[1].split(",").map(part => Number.parseFloat(part.trim()));
+          const alpha = channels.length > 3 ? channels[3] : 1;
+          if (alpha > 0) return value;
+        }
+        return getComputedStyle(document.documentElement).backgroundColor;
+      };
+      return {
+        color: getComputedStyle(el).color,
+        background: effectiveBackground(el),
+      };
+    });
+    expect(await ratio(lessonText.color, lessonText.background)).toBeGreaterThanOrEqual(4.5);
+
+    const response = page.locator(".response-surface").first();
+    if (await response.count()) {
+      const colors = await response.evaluate(el => {
+        const text = el.querySelector("p, label, strong");
+        return { foreground: getComputedStyle(text ?? el).color, background: getComputedStyle(el).backgroundColor };
+      });
+      expect(await ratio(colors.foreground, colors.background)).toBeGreaterThanOrEqual(4.5);
+    }
+
+    await page.goto("/profile");
+    const profileCard = page.locator(".profile-card").first();
+    if (await profileCard.count()) {
+      const colors = await profileCard.evaluate(el => {
+        const text = el.querySelector("h2, p, strong");
+        return { foreground: getComputedStyle(text ?? el).color, background: getComputedStyle(el).backgroundColor };
+      });
+      expect(await ratio(colors.foreground, colors.background)).toBeGreaterThanOrEqual(4.5);
+    }
+    await page.goto("/learn/8");
+    await expect(page.locator(".term-card").first()).toBeVisible({ timeout: 15000 });
+    await page.getByRole("link", { name: /Open Term 1/ }).click();
+    await expect(page.locator(".lesson-document h1")).toBeVisible({ timeout: 15000 });
+  }
+});
