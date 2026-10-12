@@ -53,7 +53,7 @@ before(async()=>{
  await db.exec(fs.readFileSync('supabase/migrations/20261012095153_learning_revision_sync.sql','utf8'));
  await db.exec(fs.readFileSync('supabase/migrations/20261012095157_active_role_sessions.sql','utf8'));
  await db.exec(fs.readFileSync('supabase/migrations/20261012102159_account_bound_learning_saves.sql','utf8'));
- await db.exec(fs.readFileSync('supabase/migrations/20261012101914_require_revision_checked_writes.sql','utf8'));
+ await db.exec(fs.readFileSync('supabase/migrations/20261012103733_require_revision_checked_writes.sql','utf8'));
 });
 after(async()=>{await db.close();});
 
