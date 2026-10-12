@@ -1,8 +1,10 @@
-import {test,expect} from '@playwright/test';import fs from 'node:fs';
+import {test,expect} from '@playwright/test';
+import {loadRoleFixtures,verifyHostedTarget} from '../../scripts/lib/validation-target.mjs';
 const directory=process.env.AC_ROLE_FIXTURES;
-if(!directory)throw new Error('AC_ROLE_FIXTURES must name dedicated private test accounts');
-const fixtures=JSON.parse(fs.readFileSync(directory+'/fixtures.json'));
-const config=JSON.parse(fs.readFileSync(directory+'/public-config.json'));
+const {config,fixtures}=loadRoleFixtures(directory);
+// NEXT_PUBLIC values are compiled into the client: start-time env alone cannot
+// change a previously built frontend. Verify the running build before sign-in.
+test.beforeAll(async({baseURL})=>{await verifyHostedTarget(baseURL,config,process.env.AC_EXPECTED_COMMIT);});
 const storage='applied-commerce-learning-state-v1:user:'+fixtures.users.learner.id;
 const lesson='/learn/8/term/1/g8-t1-l01-001';
 async function login(page,name){page.setDefaultTimeout(15000);page.on('requestfailed',r=>{const u=new URL(r.url());if(u.hostname.endsWith('.supabase.co'))console.log('SUPABASE_NETWORK '+u.pathname+' '+r.failure()?.errorText);});await page.goto('/auth');await expect(page.locator('.auth-panel .auth-form')).toBeVisible();await page.locator('.auth-form').getByLabel('Email address',{exact:true}).fill(fixtures.users[name].email);await page.locator('.auth-form').getByLabel('Password',{exact:true}).fill(fixtures.users[name].password);await page.locator('.auth-form').getByRole('button',{name:'Sign in',exact:true}).click();await expect(page.locator('.auth-panel')).toContainText(fixtures.users[name].email,{timeout:60000});await expect(page.locator('.auth-panel').getByRole('button',{name:'Sign out',exact:true})).toBeVisible();}

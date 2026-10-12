@@ -35,6 +35,9 @@ jobs:
       - name: Curriculum tests
         run: npm test
 
+      - name: Synthetic database restore and volume drill
+        run: npm run verify:operations
+
       - name: Typecheck
         run: |
           set -o pipefail
