@@ -13,6 +13,8 @@
     "lint": "eslint . --ignore-pattern .next",
     "test": "node --test tests/*.test.mjs",
     "verify:runtime": "node scripts/verify-runtime.mjs",
+    "verify:operations": "node scripts/operational-database-drill.mjs",
+    "verify:roles": "node scripts/validate-role-sessions.mjs",
     "census:presentation": "node scripts/presentation-census.mjs",
     "verify": "npm run verify:runtime && npm test && npm run typecheck && npm run lint && npm run build"
   },

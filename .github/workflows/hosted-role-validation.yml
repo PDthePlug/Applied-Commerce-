@@ -1,0 +1,82 @@
+name: Applied Commerce hosted role validation
+
+on:
+  workflow_dispatch:
+    inputs:
+      expected_commit:
+        description: Exact 40-character commit deployed to isolated South African staging
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  roles:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    environment: staging
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: 22
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - name: Prepare private dedicated fixtures
+        env:
+          AC_PRIVATE_FIXTURES: ${{ secrets.AC_ROLE_FIXTURES_JSON }}
+          AC_PUBLIC_URL: ${{ vars.AC_STAGING_SUPABASE_URL }}
+          AC_PUBLIC_KEY: ${{ vars.AC_STAGING_SUPABASE_PUBLISHABLE_KEY }}
+          AC_PROJECT_REF: ${{ vars.AC_STAGING_PROJECT_REF }}
+          AC_BASE_URL: ${{ vars.AC_STAGING_BASE_URL }}
+          AC_COMMIT: ${{ inputs.expected_commit }}
+        run: |
+          node --input-type=module <<'JS'
+          import fs from 'node:fs';
+          import assert from 'node:assert/strict';
+          import {loadRoleFixtures,verifyHostedTarget} from './scripts/lib/validation-target.mjs';
+          assert.match(process.env.AC_COMMIT ?? '', /^[a-f0-9]{40}$/);
+          const directory = fs.mkdtempSync(process.env.RUNNER_TEMP + '/ac-role-fixtures-');
+          fs.chmodSync(directory, 0o700);
+          fs.writeFileSync(directory + '/fixtures.json', process.env.AC_PRIVATE_FIXTURES, {mode: 0o600});
+          fs.writeFileSync(directory + '/public-config.json', JSON.stringify({url:process.env.AC_PUBLIC_URL,key:process.env.AC_PUBLIC_KEY,projectRef:process.env.AC_PROJECT_REF}), {mode:0o600});
+          const {config} = loadRoleFixtures(directory);
+          await verifyHostedTarget(process.env.AC_BASE_URL, config, process.env.AC_COMMIT);
+          fs.appendFileSync(process.env.GITHUB_ENV, 'AC_ROLE_FIXTURES=' + directory + '\n');
+          JS
+      - name: Real Auth and Data API boundaries
+        env:
+          AC_ROLE_BASE_URL: ${{ vars.AC_STAGING_BASE_URL }}
+          AC_EXPECTED_COMMIT: ${{ inputs.expected_commit }}
+        run: npm run verify:roles
+      - name: Desktop and mobile authenticated workflows
+        env:
+          AC_ROLE_BASE_URL: ${{ vars.AC_STAGING_BASE_URL }}
+          AC_EXPECTED_COMMIT: ${{ inputs.expected_commit }}
+        run: npx playwright test --config=playwright.roles.config.mjs
+      - name: Retain sanitized HTTP results
+        if: success()
+        run: |
+          mkdir -p test-results/hosted
+          cp "$AC_ROLE_FIXTURES/http-results.json" test-results/hosted/http-results.json
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        if: success()
+        with:
+          name: hosted-role-checks-${{ inputs.expected_commit }}
+          path: test-results/hosted/http-results.json
+          retention-days: 14
+      - name: Remove private fixture material
+        if: always()
+        run: |
+          node --input-type=module <<'JS'
+          import fs from 'node:fs';
+          import path from 'node:path';
+          const root = process.env.RUNNER_TEMP;
+          for (const name of fs.readdirSync(root)) {
+            if (/^ac-role-fixtures-[a-zA-Z0-9]+$/.test(name)) fs.rmSync(path.join(root,name),{recursive:true,force:true});
+          }
+          JS

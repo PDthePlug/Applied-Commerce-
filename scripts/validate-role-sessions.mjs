@@ -2,11 +2,10 @@
 // file outside the repository; this runner never logs tokens or passwords.
 import fs from 'node:fs';
 import assert from 'node:assert/strict';
+import { loadRoleFixtures, verifyHostedTarget } from './lib/validation-target.mjs';
 const directory=process.env.AC_ROLE_FIXTURES;
-if(!directory)throw new Error('Set AC_ROLE_FIXTURES to a private test-fixture directory');
-const config=JSON.parse(fs.readFileSync(directory+'/public-config.json'));
-const fixtures=JSON.parse(fs.readFileSync(directory+'/fixtures.json'));
-if(!fixtures.run?.startsWith('audit-')||Object.values(fixtures.users).some(u=>!u.email?.startsWith(fixtures.run+'-')))throw new Error('Dedicated audit fixtures required');
+const {config,fixtures}=loadRoleFixtures(directory);
+if(process.env.AC_ROLE_BASE_URL)await verifyHostedTarget(process.env.AC_ROLE_BASE_URL,config,process.env.AC_EXPECTED_COMMIT);
 const sessions={},checks=[];
 async function request(actor,path,method='GET',body){
  const result=await fetch(config.url+path,{signal:AbortSignal.timeout(30000),method,headers:{apikey:config.key,'Content-Type':'application/json',...(actor?{Authorization:'Bearer '+sessions[actor].access_token}:{}),Prefer:'return=representation'},body:body===undefined?undefined:JSON.stringify(body)});
