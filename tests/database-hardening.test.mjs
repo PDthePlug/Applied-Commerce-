@@ -44,7 +44,7 @@ before(async()=>{
  await asUser(learner,"insert into public.assessment_attempts(learner_id,curriculum_release_id,unit_id,attempt_number,status,score,result) values($1,$2,'exploit-fixture',1,'reviewed',100,'{\"passed\":true}')",[learner,release]);
  baselineExploitsReproduced=true;
  await db.exec('delete from public.evidence_records; delete from public.assessment_attempts;');
- await db.exec(fs.readFileSync('supabase/migrations/20261012082954_protect_assessment_decisions.sql','utf8'));
+ await db.exec(fs.readFileSync('supabase/migrations/20261012091449_protect_assessment_decisions.sql','utf8'));
 });
 after(async()=>{await db.close();});
 

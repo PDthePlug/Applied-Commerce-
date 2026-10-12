@@ -19,7 +19,7 @@ The test suite replays migrations in a disposable PGlite database with fixture A
 
 1. Provision or identify an isolated South African Supabase test project and preview host.
 2. Replay the repository migrations. Compare migration history and schema with the intended release; the production preferences migration history has different timestamps and duplicate entries. Do not repair migration history blindly.
-3. Apply `20261012082954_protect_assessment_decisions.sql` to the isolated target. It preserves rows, seeds the existing authored rubrics, protects review decisions, and adds an atomic review RPC plus answer snapshots and audit history.
+3. Apply `20261012091449_protect_assessment_decisions.sql` to the isolated target. It preserves rows, seeds the existing authored rubrics, protects review decisions, and adds an atomic review RPC plus answer snapshots and audit history.
 4. Regenerate database types against that target and compare with the migration-aware types in the repository.
 5. Configure the isolated app with `NEXT_PUBLIC_APPLIED_COMMERCE_BACKEND_MODE=supabase`, its URL, and its publishable key. Add `/auth/callback` and `/auth/callback?next=/auth/reset` URLs to its Auth redirect allowlist; verify email templates and delivery.
 6. Use dedicated learner, second learner, assigned facilitator, unassigned facilitator, and administrator accounts. Test learner → cohort → facilitator → evidence → report, including revision, retries, revocation, two devices, offline recovery, and more than 1,000 responses.
