@@ -9,8 +9,8 @@ Private-data policies AND the existing ownership/role rules with an active Auth 
 ## Controlled rollout
 
 1. Replay all migrations in a disposable PostgreSQL environment and run `npm run verify`.
-2. Apply `learning_revision_sync` and `active_role_sessions`. They add metadata/functions/policies while leaving old clients' table-write grants in place during rollout.
-3. Build and test the revised frontend against dedicated accounts; publish and verify the exact source commit in production.
+2. Apply `learning_revision_sync`, `active_role_sessions` and `account_bound_learning_saves`. They add metadata/functions/policies while leaving old clients' table-write grants in place during rollout.
+3. The account-bound facade checks the originating account against the bearer token at dispatch. Build and test the revised frontend against dedicated accounts; publish and verify the exact source commit in production.
 4. Apply `require_revision_checked_writes` after the frontend switches. It revokes unconditional client mutations and places elevated RPC implementations in the private schema behind invoker wrappers.
 5. Re-run session authorization probes after the final migration. Old open clients must reload to use the revision protocol; their local edits remain intact.
 

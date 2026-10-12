@@ -7,6 +7,14 @@ import { pgcrypto } from '@electric-sql/pglite/contrib/pgcrypto';
 
 // Real PostgreSQL engine with RLS roles, using a minimal Auth fixture.
 // This does not test Supabase Auth HTTP sessions, email delivery, or storage.
+const AUTH_FIXTURE_SQL = `create role anon; create role authenticated; create role service_role bypassrls;
+ create schema auth; grant usage on schema auth,public to anon,authenticated,service_role;
+ create table auth.users(id uuid primary key,email text,is_anonymous boolean default false,raw_user_meta_data jsonb default '{}',email_confirmed_at timestamptz,deleted_at timestamptz,banned_until timestamptz);
+ create table auth.sessions(id uuid primary key,user_id uuid references auth.users(id),not_after timestamptz);
+ create function auth.jwt() returns jsonb language sql stable as $$ select coalesce(nullif(current_setting('request.jwt.claims',true),''),'{}')::jsonb $$;
+ grant execute on function auth.jwt() to authenticated;
+ create function auth.uid() returns uuid language sql stable as $$ select nullif(current_setting('request.jwt.claim.sub',true),'')::uuid $$;
+ grant execute on function auth.uid() to anon,authenticated,service_role;`;
 const db = new PGlite({ extensions: { pgcrypto } });
 const uid = n => `00000000-0000-4000-8000-${String(n).padStart(12,'0')}`;
 const learner=uid(1), other=uid(2), staff=uid(3), unassigned=uid(4), admin=uid(5);
@@ -23,15 +31,8 @@ const review=(status,feedback='',criteria={})=>({status,feedback,criteria});
 async function save(actor,answer,decision){return asUser(actor,'select public.save_facilitator_review($1,$2,$3,$4,$5) as id',[learner,key,answer,{},decision]);}
 
 before(async()=>{
- await db.exec(`create role anon; create role authenticated; create role service_role bypassrls;
- create schema auth; grant usage on schema auth,public to anon,authenticated,service_role;
- create table auth.users(id uuid primary key,email text,is_anonymous boolean default false,raw_user_meta_data jsonb default '{}',email_confirmed_at timestamptz,deleted_at timestamptz,banned_until timestamptz);
- create table auth.sessions(id uuid primary key,user_id uuid references auth.users(id),not_after timestamptz);
- create function auth.jwt() returns jsonb language sql stable as $$ select coalesce(nullif(current_setting('request.jwt.claims',true),''),'{}')::jsonb $$;
- grant execute on function auth.jwt() to authenticated;
- create function auth.uid() returns uuid language sql stable as $$ select nullif(current_setting('request.jwt.claim.sub',true),'')::uuid $$;
- grant execute on function auth.uid() to anon,authenticated,service_role;`);
- for(const file of fs.readdirSync('supabase/migrations').filter(f=>f.endsWith('.sql')&&!f.includes('protect_assessment_decisions')&&!f.includes('learning_revision_sync')&&!f.includes('active_role_sessions')&&!f.includes('require_revision_checked_writes')).sort()) await db.exec(fs.readFileSync('supabase/migrations/'+file,'utf8'));
+ await db.exec(AUTH_FIXTURE_SQL);
+ for(const file of fs.readdirSync('supabase/migrations').filter(f=>f.endsWith('.sql')&&!f.includes('protect_assessment_decisions')&&!f.includes('learning_revision_sync')&&!f.includes('active_role_sessions')&&!f.includes('require_revision_checked_writes')&&!f.includes('account_bound_learning_saves')).sort()) await db.exec(fs.readFileSync('supabase/migrations/'+file,'utf8'));
  release=(await db.query("select id from public.curriculum_releases where release_key='ac-runtime-3'")).rows[0].id;
  for(const [id,name] of [[learner,'learner'],[other,'other'],[staff,'staff'],[unassigned,'unassigned'],[admin,'admin']]) await db.query('insert into auth.users(id,email) values($1,$2)',[id,name+'@audit.invalid']);
  for(const id of [learner,other,staff,unassigned,admin])await db.query('insert into auth.sessions(id,user_id) values($1,$1)',[id]);
@@ -51,7 +52,8 @@ before(async()=>{
  await db.exec(fs.readFileSync('supabase/migrations/20261012091449_protect_assessment_decisions.sql','utf8'));
  await db.exec(fs.readFileSync('supabase/migrations/20261012095153_learning_revision_sync.sql','utf8'));
  await db.exec(fs.readFileSync('supabase/migrations/20261012095157_active_role_sessions.sql','utf8'));
- await db.exec(fs.readFileSync('supabase/migrations/20261012095239_require_revision_checked_writes.sql','utf8'));
+ await db.exec(fs.readFileSync('supabase/migrations/20261012102159_account_bound_learning_saves.sql','utf8'));
+ await db.exec(fs.readFileSync('supabase/migrations/20261012101914_require_revision_checked_writes.sql','utf8'));
 });
 after(async()=>{await db.close();});
 
@@ -91,7 +93,7 @@ test('revision request reaches the owner, preserves a snapshot, and records hist
  assert.equal((await db.query("select * from public.audit_events where event_type='evidence.review_saved'")).rows.length,1);
 });
 test('a stale review is rejected after learner revision',async()=>{
- await asUser(learner,'select public.save_learning_changes($1)',[JSON.stringify([{kind:'prompt',key,value:'revised answer',expected:1}])]);
+ await asUser(learner,'select public.save_learning_changes_for_account($1,$2)',[learner,JSON.stringify([{kind:'prompt',key,value:'revised answer',expected:1}])]);
  await assert.rejects(save(staff,'original answer',review('accepted')),/answer changed/);
  assert.equal((await db.query('select status from public.evidence_records')).rows[0].status,'needs-revision');
 });
@@ -137,7 +139,7 @@ test('platform administrator can provision a school while an ordinary learner ca
  assert.equal((await db.query("select * from public.audit_events where event_type='school.created'")).rows.length,1);
 });
 
-async function changes(actor,items,opened=null){return (await asUser(actor,'select public.save_learning_changes($1,$2) as result',[JSON.stringify(items),opened])).rows[0].result;}
+async function changes(actor,items,opened=null){return (await asUser(actor,'select public.save_learning_changes_for_account($1,$2,$3) as result',[actor,JSON.stringify(items),opened])).rows[0].result;}
 const change=(kind,key,value,expected=0)=>({kind,key,value,expected});
 test('competing devices cannot overwrite a saved answer with an old revision',async()=>{const k='g8-t1-l01-002::prompt-conflict::response';const first=await changes(learner,[change('prompt',k,'device A')]);assert.equal(first[0].revision,1);const stale=await changes(learner,[change('prompt',k,'device B')]);assert.equal(stale[0].conflict,true);assert.equal(stale[0].value,'device A');const accepted=await changes(learner,[change('prompt',k,'device B',1)]);assert.equal(accepted[0].revision,2);});
 test('equal value retry is idempotent even with a stale expected revision',async()=>{const k='g8-t1-l01-002::prompt-conflict::response';const result=await changes(learner,[change('prompt',k,'device B')]);assert.equal(result[0].conflict,false);assert.equal(result[0].revision,2);});
@@ -150,7 +152,10 @@ test('invalid, duplicate and oversized batches are rejected',async()=>{await ass
 test('profile updates participate in revision conflict detection',async()=>{const first=await changes(other,[change('profile','self',{displayName:'First',grade:8},1)]);assert.equal(first[0].revision,2);const stale=await changes(other,[change('profile','self',{displayName:'Second',grade:9},1)]);assert.equal(stale[0].conflict,true);});
 test('save RPC derives ownership from the caller, ignoring supplied learner identifiers',async()=>{const k='g8-t1-l01-007::prompt-owner::response';await changes(other,[{...change('prompt',k,'other owns this'),learner_id:learner}]);assert.equal((await asUser(learner,'select * from public.prompt_responses where prompt_key=$1',[k])).rows.length,0);});
 
+test('dispatch-time account changes cannot persist a different account snapshot',async()=>{await assert.rejects(asUser(other,'select public.save_learning_changes_for_account($1,$2)',[learner,JSON.stringify([change('note','g8-t1-l01-008','wrong account')])]),/active account changed/);assert.equal((await db.query('select * from public.lesson_notes where unit_id=$1',['g8-t1-l01-008'])).rows.length,0);});
 test('settings patches preserve unrelated fields from another device',async()=>{await asUser(other,'select public.save_account_preferences($1)',[JSON.stringify({appearance:'dark'})]);await asUser(other,'select public.save_account_preferences($1)',[JSON.stringify({accent:'sage'})]);const row=(await asUser(other,'select appearance,accent from public.account_preferences')).rows[0];assert.deepEqual(row,{appearance:'dark',accent:'sage'});});
 test('logged-out JWT claims cannot read private rows or save new work',async()=>{await db.query('delete from auth.sessions where user_id=$1',[other]);assert.equal((await asUser(other,'select * from public.prompt_responses')).rows.length,0);await assert.rejects(changes(other,[change('note','g8-t1-l01-008','revoked')]),/Sign in/);});
 test('revoked administrator session cannot use privileged provisioning RPCs',async()=>{await db.query('delete from auth.sessions where user_id=$1',[admin]);assert.equal((await asUser(admin,'select public.is_platform_admin() as allowed')).rows[0].allowed,false);await assert.rejects(asUser(admin,"select public.create_school('Revoked','revoked')"),/administrators/);});
 test('session belongs to its user, and expired sessions deny private access',async()=>{await db.query("update auth.sessions set not_after=now()-interval '1 second' where user_id=$1",[learner]);assert.equal((await asUser(learner,'select * from public.prompt_responses')).rows.length,0);await assert.rejects(changes(learner,[change('note','g8-t1-l01-009','expired')]),/Sign in/);});
+
+test('fresh timestamp-ordered migrations support the account-bound save facade',async()=>{const fresh=new PGlite({extensions:{pgcrypto}});try{await fresh.exec(AUTH_FIXTURE_SQL);for(const file of fs.readdirSync('supabase/migrations').filter(x=>x.endsWith('.sql')).sort())await fresh.exec(fs.readFileSync('supabase/migrations/'+file,'utf8'));await fresh.query('insert into auth.users(id,email) values($1,$2)',[learner,'fresh@audit.invalid']);await fresh.query('insert into auth.sessions(id,user_id) values($1,$1)',[learner]);await fresh.exec('begin;set local role authenticated;');await fresh.query("select set_config('request.jwt.claim.sub',$1,true),set_config('request.jwt.claims',json_build_object('session_id',$1)::text,true)",[learner]);const result=await fresh.query('select public.save_learning_changes_for_account($1,$2) as result',[learner,JSON.stringify([change('note','g8-t1-l01-001','fresh save')])]);assert.equal(result.rows[0].result[0].conflict,false);await fresh.exec('commit');}finally{await fresh.close();}});

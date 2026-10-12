@@ -31,7 +31,7 @@ if(!fixtures.schoolId){
 check('administrator provisioning through real sessions',()=>assert.ok(fixtures.schoolId&&fixtures.cohortId));
 const learner=fixtures.users.learner.id;
 const unit='g8-t1-l01-001',key=unit+'::prompt-audit-session::response';
-const save=(actor,items,opened)=>rpc(actor,'save_learning_changes',{p_changes:items,...(opened?{p_opened_unit:opened}:{})});
+const save=(actor,items,opened)=>rpc(actor,'save_learning_changes_for_account',{p_account_id:fixtures.users[actor].id,p_changes:items,...(opened?{p_opened_unit:opened}:{})});
 const change=(kind,key,value,expected=0)=>({kind,key,value,expected});
 const prior=await request('learner','/rest/v1/prompt_responses?select=sync_revision,response&learner_id=eq.'+learner+'&prompt_key=eq.'+key);
 const expected=prior.data[0]?.sync_revision??0;
@@ -71,15 +71,17 @@ await rpc('schoolAdmin','add_cohort_staff_by_email',{p_cohort_id:fixtures.cohort
 await rpc('learner','save_account_preferences',{p_patch:{appearance:'dark'}});await rpc('learner','save_account_preferences',{p_patch:{accent:'sage'}});
 const preferences=await request('learner','/rest/v1/account_preferences?select=appearance,accent&user_id=eq.'+learner);
 check('settings patches retain independent changes',()=>assert.deepEqual(preferences.data[0],{appearance:'dark',accent:'sage'}));
-const invalid=await request('learner','/rest/v1/rpc/save_learning_changes','POST',{p_changes:[change('note','invalid','bad')]});
+const invalid=await request('learner','/rest/v1/rpc/save_learning_changes_for_account','POST',{p_account_id:learner,p_changes:[change('note','invalid','bad')]});
 check('invalid identities are rejected through HTTP',()=>assert.ok(invalid.status>=400));
-const anonymous=await request(null,'/rest/v1/rpc/save_learning_changes','POST',{p_changes:[]});check('anonymous mutation is denied',()=>assert.ok(anonymous.status>=400));
+const anonymous=await request(null,'/rest/v1/rpc/save_learning_changes_for_account','POST',{p_account_id:learner,p_changes:[]});check('anonymous mutation is denied',()=>assert.ok(anonymous.status>=400));
 const release=await request('learner','/rest/v1/curriculum_releases?select=id&release_key=eq.ac-runtime-3');
 const selfGrade=await request('learner','/rest/v1/assessment_attempts','POST',{learner_id:learner,curriculum_release_id:release.data[0].id,unit_id:'audit-assessment',attempt_number:1,status:'reviewed',score:100,result:{passed:true}});
 check('learner cannot self-grade through the Data API',()=>assert.ok(selfGrade.status>=400));
 const selfApproval=await request('learner','/rest/v1/evidence_records','POST',{learner_id:learner,response_key:'g8-t1-l01-001::prompt-audit-approval::response',response_value:'cannot certify this',status:'accepted'});
 check('learner cannot self-approve through the Data API',()=>assert.ok(selfApproval.status>=400));
-const crossed=await request('other','/rest/v1/rpc/save_learning_changes','POST',{p_changes:[{...change('note','g8-t1-l01-009','ownership probe'),learner_id:learner}]});
+const accountMismatch=await request('other','/rest/v1/rpc/save_learning_changes_for_account','POST',{p_account_id:learner,p_changes:[change('note','g8-t1-l01-008','wrong originating account')]});
+check('account switch during dispatch cannot save into the new account',()=>assert.ok(accountMismatch.status>=400));
+const crossed=await request('other','/rest/v1/rpc/save_learning_changes_for_account','POST',{p_account_id:fixtures.users.other.id,p_changes:[{...change('note','g8-t1-l01-009','ownership probe'),learner_id:learner}]});
 check('supplied learner identifier cannot change RPC ownership',()=>assert.equal(crossed.status,200));
 const ownerRead=await request('learner','/rest/v1/lesson_notes?select=id&learner_id=eq.'+learner+'&unit_id=eq.g8-t1-l01-009');
 check('ownership probe did not write the targeted learner account',()=>assert.equal(ownerRead.data.length,0));
@@ -89,7 +91,7 @@ await save('unassigned',[change('note','g8-t1-l01-002','private logout fixture')
 const oldToken=sessions.unassigned.access_token;const logout=await request('unassigned','/auth/v1/logout','POST');assert.equal(logout.status,204);
 const ended=await rpc('unassigned','has_active_session');check('logged-out JWT fails active-session check',()=>assert.equal(ended,false));
 const after=await request('unassigned','/rest/v1/lesson_notes?select=id&learner_id=eq.'+fixtures.users.unassigned.id);check('logged-out JWT cannot read its own private data',()=>assert.equal(after.data.length,0));
-const rejected=await request('unassigned','/rest/v1/rpc/save_learning_changes','POST',{p_changes:[change('note','g8-t1-l01-003','cannot write')]});check('logged-out JWT cannot persist new data',()=>assert.ok(rejected.status>=400));
+const rejected=await request('unassigned','/rest/v1/rpc/save_learning_changes_for_account','POST',{p_account_id:fixtures.users.unassigned.id,p_changes:[change('note','g8-t1-l01-003','cannot write')]});check('logged-out JWT cannot persist new data',()=>assert.ok(rejected.status>=400));
 const refresh=await request(null,'/auth/v1/token?grant_type=refresh_token','POST',{refresh_token:sessions.unassigned.refresh_token});check('revoked refresh token cannot restore the session',()=>assert.ok(refresh.status>=400));
 // JWT signature tampering cannot impersonate another role or fake expiry.
 const parts=sessions.learner.access_token.split('.');const claims=JSON.parse(Buffer.from(parts[1],'base64url'));claims.sub=fixtures.users.platformAdmin.id;parts[1]=Buffer.from(JSON.stringify(claims)).toString('base64url');

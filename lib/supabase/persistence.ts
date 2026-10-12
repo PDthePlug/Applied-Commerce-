@@ -51,7 +51,7 @@ export async function syncLearningState(userId:string,state:LearningState):Promi
  const sent=pendingChanges(state).filter(x=>x.kind!=="profile"||state.sync?.profileAllowed===true).slice(0,200);
  const opened=state.lastOpened&&state.lastOpened.at!==state.sync?.openedAt?state.lastOpened.unitId:undefined;
  if(!sent.length&&!opened)return {sent,results:[]};
- const result=await supabase.rpc("save_learning_changes",{p_changes:sent as unknown as Json,p_opened_unit:opened});
+ const result=await supabase.rpc("save_learning_changes_for_account",{p_account_id:userId,p_changes:sent as unknown as Json,p_opened_unit:opened});
  if(result.error)throw result.error;
  return {sent,results:result.data as unknown as SyncResult[]};
 }

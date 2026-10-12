@@ -181,7 +181,7 @@ test("platform-admin learning evidence sync respects exclusive operating roles",
   assert.match(persistence,/supabase\.rpc\("is_platform_admin"\)/);
   assert.match(persistence,/profileAllowed=!admin.data/);
   assert.match(persistence,/x.kind!=="profile"\|\|state.sync\?.profileAllowed===true/);
-  assert.match(persistence,/supabase\.rpc\("save_learning_changes"/);
+  assert.match(persistence,/supabase\.rpc\("save_learning_changes_for_account"/);
   assert.doesNotMatch(persistence,/\.upsert\(/);
 });
 

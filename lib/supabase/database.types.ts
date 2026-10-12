@@ -1012,8 +1012,10 @@ export type Database = {
     Functions: {
       save_account_preferences: { Args: {p_patch: Json}; Returns: Database["public"]["Tables"]["account_preferences"]["Row"] }
       has_active_session: { Args: Record<PropertyKey, never>; Returns: boolean }
-      save_learning_changes: {
-        Args: { p_changes: Json; p_opened_unit?: string }; Returns: Json
+      /** Compatibility facade; browser saves use the account-bound operation. */
+      save_learning_changes: { Args:{p_changes:Json;p_opened_unit?:string}; Returns:Json }
+      save_learning_changes_for_account: {
+        Args: { p_account_id: string; p_changes: Json; p_opened_unit?: string }; Returns: Json
       }
       save_facilitator_review: {
         Args: { p_learner_id: string; p_response_key: string; p_response_value: string; p_auto_result: Json; p_review: Json }
