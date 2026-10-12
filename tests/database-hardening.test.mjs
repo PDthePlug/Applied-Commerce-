@@ -16,7 +16,7 @@ let release;
 let baselineExploitsReproduced=false;
 async function asUser(id,sql,params=[]){
  await db.exec('begin; set local role authenticated;');
- try{await db.query("select set_config('request.jwt.claim.sub',$1,true)",[id]);const result=await db.query(sql,params);await db.exec('commit');return result;}
+ try{await db.query("select set_config('request.jwt.claim.sub',$1,true),set_config('request.jwt.claims',json_build_object('session_id',$1)::text,true)",[id]);const result=await db.query(sql,params);await db.exec('commit');return result;}
  catch(e){await db.exec('rollback');throw e;}
 }
 const review=(status,feedback='',criteria={})=>({status,feedback,criteria});
@@ -25,12 +25,16 @@ async function save(actor,answer,decision){return asUser(actor,'select public.sa
 before(async()=>{
  await db.exec(`create role anon; create role authenticated; create role service_role bypassrls;
  create schema auth; grant usage on schema auth,public to anon,authenticated,service_role;
- create table auth.users(id uuid primary key,email text,is_anonymous boolean default false,raw_user_meta_data jsonb default '{}',email_confirmed_at timestamptz);
+ create table auth.users(id uuid primary key,email text,is_anonymous boolean default false,raw_user_meta_data jsonb default '{}',email_confirmed_at timestamptz,deleted_at timestamptz,banned_until timestamptz);
+ create table auth.sessions(id uuid primary key,user_id uuid references auth.users(id),not_after timestamptz);
+ create function auth.jwt() returns jsonb language sql stable as $$ select coalesce(nullif(current_setting('request.jwt.claims',true),''),'{}')::jsonb $$;
+ grant execute on function auth.jwt() to authenticated;
  create function auth.uid() returns uuid language sql stable as $$ select nullif(current_setting('request.jwt.claim.sub',true),'')::uuid $$;
  grant execute on function auth.uid() to anon,authenticated,service_role;`);
- for(const file of fs.readdirSync('supabase/migrations').filter(f=>f.endsWith('.sql')&&!f.includes('protect_assessment_decisions')).sort()) await db.exec(fs.readFileSync('supabase/migrations/'+file,'utf8'));
+ for(const file of fs.readdirSync('supabase/migrations').filter(f=>f.endsWith('.sql')&&!f.includes('protect_assessment_decisions')&&!f.includes('learning_revision_sync')&&!f.includes('active_role_sessions')&&!f.includes('require_revision_checked_writes')).sort()) await db.exec(fs.readFileSync('supabase/migrations/'+file,'utf8'));
  release=(await db.query("select id from public.curriculum_releases where release_key='ac-runtime-3'")).rows[0].id;
  for(const [id,name] of [[learner,'learner'],[other,'other'],[staff,'staff'],[unassigned,'unassigned'],[admin,'admin']]) await db.query('insert into auth.users(id,email) values($1,$2)',[id,name+'@audit.invalid']);
+ for(const id of [learner,other,staff,unassigned,admin])await db.query('insert into auth.sessions(id,user_id) values($1,$1)',[id]);
  await db.query('insert into private.platform_admins(user_id) values($1)',[admin]);
  await db.query('insert into public.schools(id,name,slug) values($1,$2,$3)',[school,'Audit school','audit-school']);
  await db.query('insert into public.cohorts(id,school_id,name,grade,academic_year) values($1,$2,$3,8,2026)',[cohort,school,'Audit cohort']);
@@ -45,6 +49,9 @@ before(async()=>{
  baselineExploitsReproduced=true;
  await db.exec('delete from public.evidence_records; delete from public.assessment_attempts;');
  await db.exec(fs.readFileSync('supabase/migrations/20261012091449_protect_assessment_decisions.sql','utf8'));
+ await db.exec(fs.readFileSync('supabase/migrations/20261012095153_learning_revision_sync.sql','utf8'));
+ await db.exec(fs.readFileSync('supabase/migrations/20261012095157_active_role_sessions.sql','utf8'));
+ await db.exec(fs.readFileSync('supabase/migrations/20261012095239_require_revision_checked_writes.sql','utf8'));
 });
 after(async()=>{await db.close();});
 
@@ -84,7 +91,7 @@ test('revision request reaches the owner, preserves a snapshot, and records hist
  assert.equal((await db.query("select * from public.audit_events where event_type='evidence.review_saved'")).rows.length,1);
 });
 test('a stale review is rejected after learner revision',async()=>{
- await asUser(learner,'update public.prompt_responses set response=$1 where prompt_key=$2',[JSON.stringify('revised answer'),key]);
+ await asUser(learner,'select public.save_learning_changes($1)',[JSON.stringify([{kind:'prompt',key,value:'revised answer',expected:1}])]);
  await assert.rejects(save(staff,'original answer',review('accepted')),/answer changed/);
  assert.equal((await db.query('select status from public.evidence_records')).rows[0].status,'needs-revision');
 });
@@ -109,9 +116,9 @@ test('revoked cohort assignment denies subsequent review access',async()=>{
  await assert.rejects(save(staff,'revised answer',review('accepted')),/Authorized facilitator/);
 });
 test('account preferences are isolated and constrain supported values',async()=>{
- await asUser(learner,"insert into public.account_preferences(user_id,appearance) values($1,'dark')",[learner]);
+ await asUser(learner,'select public.save_account_preferences($1)',[JSON.stringify({appearance:"dark"})]);
  assert.equal((await asUser(other,'select * from public.account_preferences')).rows.length,0);
- await assert.rejects(asUser(other,"insert into public.account_preferences(user_id,appearance) values($1,'invalid')",[other]),/check constraint/);
+ await assert.rejects(asUser(other,'select public.save_account_preferences($1)',[JSON.stringify({appearance:"invalid"})]),/Invalid preferences/);
 });
 test('seeded rubric criteria match the existing product contract',async()=>{
  const code=ts.transpileModule(fs.readFileSync('lib/evidence/taxonomy.ts','utf8'),{compilerOptions:{module:ts.ModuleKind.ESNext}}).outputText;
@@ -129,3 +136,21 @@ test('platform administrator can provision a school while an ordinary learner ca
  assert.ok(result.rows[0].id);
  assert.equal((await db.query("select * from public.audit_events where event_type='school.created'")).rows.length,1);
 });
+
+async function changes(actor,items,opened=null){return (await asUser(actor,'select public.save_learning_changes($1,$2) as result',[JSON.stringify(items),opened])).rows[0].result;}
+const change=(kind,key,value,expected=0)=>({kind,key,value,expected});
+test('competing devices cannot overwrite a saved answer with an old revision',async()=>{const k='g8-t1-l01-002::prompt-conflict::response';const first=await changes(learner,[change('prompt',k,'device A')]);assert.equal(first[0].revision,1);const stale=await changes(learner,[change('prompt',k,'device B')]);assert.equal(stale[0].conflict,true);assert.equal(stale[0].value,'device A');const accepted=await changes(learner,[change('prompt',k,'device B',1)]);assert.equal(accepted[0].revision,2);});
+test('equal value retry is idempotent even with a stale expected revision',async()=>{const k='g8-t1-l01-002::prompt-conflict::response';const result=await changes(learner,[change('prompt',k,'device B')]);assert.equal(result[0].conflict,false);assert.equal(result[0].revision,2);});
+test('completion reversal and blank note persist with revision checks',async()=>{const unit='g8-t1-l01-003';await changes(learner,[change('note',unit,'note'),change('completion',unit,true)]);const result=await changes(learner,[change('note',unit,'',1),change('completion',unit,false,1)]);assert.ok(result.every(x=>!x.conflict&&x.revision===2));const row=(await asUser(learner,'select status,completed_at from public.lesson_progress where unit_id=$1',[unit])).rows[0];assert.equal(row.status,'in_progress');assert.equal(row.completed_at,null);});
+test('navigation does not conflict with completion and returns its current baseline',async()=>{const unit='g8-t1-l01-003';const result=await changes(learner,[],unit);assert.equal(result[0].revision,2);await changes(learner,[change('completion',unit,true,2)],unit);assert.equal((await changes(learner,[],unit))[0].revision,3);});
+test('malformed later changes roll back earlier writes in the same batch',async()=>{const unit='g8-t1-l01-004';await assert.rejects(changes(learner,[change('note',unit,'must roll back'),change('prompt','invalid','bad')]),/identity/);assert.equal((await db.query('select * from public.lesson_notes where unit_id=$1',[unit])).rows.length,0);});
+test('unchanged conflicting fields do not block an unrelated authorized save',async()=>{const k='g8-t1-l01-002::prompt-conflict::response';const result=await changes(learner,[change('prompt',k,'stale',0),change('note','g8-t1-l01-005','independent')]);assert.equal(result.find(x=>x.kind==='prompt').conflict,true);assert.equal(result.find(x=>x.kind==='note').conflict,false);});
+test('stale clients cannot bypass revision checks or delete saved work',async()=>{await assert.rejects(asUser(learner,"update public.prompt_responses set response='\"bypass\"'"),/permission denied/);await assert.rejects(asUser(learner,'delete from public.lesson_notes'),/permission denied/);});
+test('invalid, duplicate and oversized batches are rejected',async()=>{await assert.rejects(changes(learner,[change('note','g8-t1-l01-006','x'),change('note','g8-t1-l01-006','y')]),/Duplicate/);await assert.rejects(changes(learner,[change('note','g8-t1-l01-006','x'.repeat(100001))]),/value/);await assert.rejects(changes(learner,Array(501).fill(change('note','g8-t1-l01-006','x'))),/batch/);});
+test('profile updates participate in revision conflict detection',async()=>{const first=await changes(other,[change('profile','self',{displayName:'First',grade:8},1)]);assert.equal(first[0].revision,2);const stale=await changes(other,[change('profile','self',{displayName:'Second',grade:9},1)]);assert.equal(stale[0].conflict,true);});
+test('save RPC derives ownership from the caller, ignoring supplied learner identifiers',async()=>{const k='g8-t1-l01-007::prompt-owner::response';await changes(other,[{...change('prompt',k,'other owns this'),learner_id:learner}]);assert.equal((await asUser(learner,'select * from public.prompt_responses where prompt_key=$1',[k])).rows.length,0);});
+
+test('settings patches preserve unrelated fields from another device',async()=>{await asUser(other,'select public.save_account_preferences($1)',[JSON.stringify({appearance:'dark'})]);await asUser(other,'select public.save_account_preferences($1)',[JSON.stringify({accent:'sage'})]);const row=(await asUser(other,'select appearance,accent from public.account_preferences')).rows[0];assert.deepEqual(row,{appearance:'dark',accent:'sage'});});
+test('logged-out JWT claims cannot read private rows or save new work',async()=>{await db.query('delete from auth.sessions where user_id=$1',[other]);assert.equal((await asUser(other,'select * from public.prompt_responses')).rows.length,0);await assert.rejects(changes(other,[change('note','g8-t1-l01-008','revoked')]),/Sign in/);});
+test('revoked administrator session cannot use privileged provisioning RPCs',async()=>{await db.query('delete from auth.sessions where user_id=$1',[admin]);assert.equal((await asUser(admin,'select public.is_platform_admin() as allowed')).rows[0].allowed,false);await assert.rejects(asUser(admin,"select public.create_school('Revoked','revoked')"),/administrators/);});
+test('session belongs to its user, and expired sessions deny private access',async()=>{await db.query("update auth.sessions set not_after=now()-interval '1 second' where user_id=$1",[learner]);assert.equal((await asUser(learner,'select * from public.prompt_responses')).rows.length,0);await assert.rejects(changes(learner,[change('note','g8-t1-l01-009','expired')]),/Sign in/);});

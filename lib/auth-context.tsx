@@ -21,22 +21,38 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     const supabase = createClient();
     let active = true;
     let authEventReceived = false;
+    let generation=0;
+    const verify=(nextSession:Session|null)=>{
+      const attempt=++generation;
+      // Run outside onAuthStateChange: awaiting Auth operations inside that
+      // callback can deadlock the Supabase client lock.
+      queueMicrotask(()=>{void (async()=>{
+        if(!nextSession)return;
+        const result=await supabase.rpc("has_active_session");
+        if(!active||attempt!==generation)return;
+        if(!result.error&&!result.data){setSession(null);await supabase.auth.signOut({scope:"local"});}
+      })().catch(()=>{});});
+    };
+    const checkCurrent=()=>{void supabase.auth.getSession().then(({data})=>verify(data.session));};
+    window.addEventListener("focus",checkCurrent);
+    window.addEventListener("online",checkCurrent);
     const { data } = supabase.auth.onAuthStateChange((_event, nextSession) => {
       if (!active) return;
       authEventReceived = true;
       setSession(nextSession);
+      verify(nextSession);
       setLoading(false);
     });
     void supabase.auth.getSession().then(({ data: sessionData }) => {
       if (!active) return;
-      if (!authEventReceived) setSession(sessionData.session);
+      if (!authEventReceived) {setSession(sessionData.session);verify(sessionData.session);}
       setLoading(false);
     }).catch(() => {
       if (!active) return;
       if (!authEventReceived) setSession(null);
       setLoading(false);
     });
-    return () => { active = false; data.subscription.unsubscribe(); };
+    return () => { active = false;generation++;window.removeEventListener("focus",checkCurrent);window.removeEventListener("online",checkCurrent);data.subscription.unsubscribe(); };
   }, []);
 
   const value = useMemo(() => ({ user: session?.user ?? null, session, loading }), [session, loading]);

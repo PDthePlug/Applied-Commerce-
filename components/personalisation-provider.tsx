@@ -87,7 +87,7 @@ export function PersonalisationProvider({ children }: { children: React.ReactNod
       const response = await fetch("/api/preferences", {
         method: "PATCH",
         headers: { "content-type": "application/json", "x-ac-expected-user-id": userId },
-        body: JSON.stringify(next),
+        body: JSON.stringify(patch),
       });
       const payload = await response.json().catch(() => null);
       if (!response.ok || !payload || typeof payload !== "object" || !("preferences" in payload)) throw new Error("Preferences could not be saved.");

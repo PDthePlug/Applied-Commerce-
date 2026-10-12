@@ -1,18 +1,11 @@
 import { readAllRows } from "@/lib/supabase/read-all";
 import type { LearningState } from "@/lib/types";
-import type { TablesInsert } from "./database.types";
+import { pendingChanges, syncId, type SyncChange, type SyncResult } from "@/lib/learning-sync";
+import type { Json } from "./database.types";
 import { createClient } from "./client";
-import { mergeLearningState } from "@/lib/learner-record";
+import { reconcileRemote } from "@/lib/learning-sync";
 
 export const CURRICULUM_RUNTIME_RELEASE = "ac-runtime-3";
-
-function unitContext(unitId:string):{grade:number;term:number}|null{
- const match=unitId.match(/^g(\d+)-t(\d+)-/);
- if(!match)return null;
- const grade=Number(match[1]);
- const term=Number(match[2]);
- return Number.isInteger(grade)&&Number.isInteger(term)&&grade>=8&&grade<=12&&term>=1&&term<=4?{grade,term}:null;
-}
 
 function emptyState():LearningState{
  return {version:2,previousResponses:{},completed:{},completedMeta:{},responses:{},responseUpdatedAt:{},promptResponses:{},promptResponseUpdatedAt:{}};
@@ -24,80 +17,42 @@ export async function loadRemoteLearningState(userId:string):Promise<LearningSta
  if(releaseResult.error)throw releaseResult.error;
  const releaseId=releaseResult.data.id;
  const [profileResult,progressResult,promptResult,notesResult]=await Promise.all([
-  supabase.from("learner_profiles").select("preferred_name,current_grade").eq("user_id",userId).maybeSingle(),
-  readAllRows(supabase.from("lesson_progress").select("grade,term,unit_id,status,last_opened_at,completed_at,updated_at").eq("learner_id",userId).eq("curriculum_release_id",releaseId).order("id")),
-  readAllRows(supabase.from("prompt_responses").select("unit_id,prompt_key,response,updated_at").eq("learner_id",userId).eq("curriculum_release_id",releaseId).order("id")),
-  readAllRows(supabase.from("lesson_notes").select("unit_id,note,updated_at").eq("learner_id",userId).eq("curriculum_release_id",releaseId).order("id")),
+  supabase.from("learner_profiles").select("preferred_name,current_grade,sync_revision").eq("user_id",userId).maybeSingle(),
+  readAllRows(supabase.from("lesson_progress").select("grade,term,unit_id,status,last_opened_at,completed_at,updated_at,sync_revision").eq("learner_id",userId).eq("curriculum_release_id",releaseId).order("id")),
+  readAllRows(supabase.from("prompt_responses").select("unit_id,prompt_key,response,updated_at,sync_revision").eq("learner_id",userId).eq("curriculum_release_id",releaseId).order("id")),
+  readAllRows(supabase.from("lesson_notes").select("unit_id,note,updated_at,sync_revision").eq("learner_id",userId).eq("curriculum_release_id",releaseId).order("id")),
  ]);
  for(const result of [profileResult,progressResult,promptResult,notesResult])if(result.error)throw result.error;
  const remote=emptyState();
+ remote.sync={baseline:{},conflicts:{}};
+ const [admin,membership,staff]=await Promise.all([supabase.rpc("is_platform_admin"),supabase.from("school_memberships").select("id").eq("user_id",userId).eq("status","active").limit(1),supabase.from("cohort_staff").select("id").eq("user_id",userId).eq("status","active").limit(1)]);
+ for(const result of [admin,membership,staff])if(result.error)throw result.error;
+ remote.sync.profileAllowed=!admin.data&&!membership.data?.length&&!staff.data?.length;
  if(profileResult.data){remote.profile={displayName:profileResult.data.preferred_name??undefined,grade:profileResult.data.current_grade??undefined};remote.activeGrade=profileResult.data.current_grade??undefined;}
+ if(profileResult.data){remote.sync.baseline["profile:self"]={kind:"profile",key:"self",revision:profileResult.data.sync_revision,value:{displayName:profileResult.data.preferred_name??"",grade:profileResult.data.current_grade}};}
  for(const row of progressResult.data??[]){
+  remote.sync.baseline[syncId("completion",row.unit_id)]={kind:"completion",key:row.unit_id,value:row.status==="completed",revision:row.sync_revision};
   remote.completionUpdatedAt??={};
   remote.completionUpdatedAt[row.unit_id]=row.updated_at;
   if(row.status==="completed")remote.completed[row.unit_id]=row.completed_at??row.updated_at;
   remote.completedMeta![row.unit_id]={grade:row.grade,term:row.term};
   if(row.last_opened_at&&(!remote.lastOpened||row.last_opened_at>remote.lastOpened.at)){remote.lastOpened={grade:row.grade,term:row.term,unitId:row.unit_id,at:row.last_opened_at};remote.activeGrade=row.grade;}
  }
- for(const row of promptResult.data??[]){remote.promptResponses[row.prompt_key]=typeof row.response==="string"?row.response:JSON.stringify(row.response);remote.promptResponseUpdatedAt![row.prompt_key]=row.updated_at;}
- for(const row of notesResult.data??[]){remote.responses[row.unit_id]=row.note;remote.responseUpdatedAt![row.unit_id]=row.updated_at;}
+ for(const row of promptResult.data??[]){remote.sync.baseline[syncId("prompt",row.prompt_key)]={kind:"prompt",key:row.prompt_key,value:typeof row.response==="string"?row.response:JSON.stringify(row.response),revision:row.sync_revision};remote.promptResponses[row.prompt_key]=typeof row.response==="string"?row.response:JSON.stringify(row.response);remote.promptResponseUpdatedAt![row.prompt_key]=row.updated_at;}
+ for(const row of notesResult.data??[]){remote.sync.baseline[syncId("note",row.unit_id)]={kind:"note",key:row.unit_id,value:row.note,revision:row.sync_revision};remote.responses[row.unit_id]=row.note;remote.responseUpdatedAt![row.unit_id]=row.updated_at;}
  return remote;
 }
 
-export async function reconcileLearningState(userId:string,local:LearningState){
- const remote=await loadRemoteLearningState(userId);
- const merged=mergeLearningState(local,remote);
- await syncLearningState(userId,merged);
- return merged;
-}
-
-export async function syncLearningState(userId:string,state:LearningState){
+export async function syncLearningState(userId:string,state:LearningState):Promise<{sent:SyncChange[];results:SyncResult[]}> {
  const supabase=createClient();
- const releaseResult=await supabase.from("curriculum_releases").select("id").eq("release_key",CURRICULUM_RUNTIME_RELEASE).single();
- if(releaseResult.error)throw releaseResult.error;
- const releaseId=releaseResult.data.id;
- const now=new Date().toISOString();
- const adminResult=await supabase.rpc("is_platform_admin");
- if(adminResult.error)throw adminResult.error;
- // Platform administrators are intentionally excluded from the learner role.
- // Keep their personal lesson evidence in their own account without attempting
- // to create a learner_profiles row, which the database correctly rejects.
- if(!adminResult.data){
-  const [membership,staff]=await Promise.all([
-   supabase.from("school_memberships").select("id").eq("user_id",userId).eq("status","active").limit(1),
-   supabase.from("cohort_staff").select("id").eq("user_id",userId).eq("status","active").limit(1),
-  ]);
-  if(membership.error)throw membership.error;
-  if(staff.error)throw staff.error;
-  if(!membership.data?.length&&!staff.data?.length){
-  const profile:TablesInsert<"learner_profiles">={user_id:userId,preferred_name:state.profile?.displayName?.trim()||null,current_grade:state.profile?.grade??state.activeGrade??null};
-  const profileResult=await supabase.from("learner_profiles").upsert(profile,{onConflict:"user_id"});
-  if(profileResult.error)throw profileResult.error;
-  }
- }
-
- const progressIds=new Set([...Object.keys(state.completed),...Object.keys(state.completionUpdatedAt??{}),...(state.lastOpened?[state.lastOpened.unitId]:[])]);
- const progressRows:TablesInsert<"lesson_progress">[]=[...progressIds].map(unitId=>{
-  const completedAt=state.completed[unitId];
-  const changedAt=state.completionUpdatedAt?.[unitId]??completedAt??state.lastOpened?.at??now;
-  const meta=state.completedMeta?.[unitId];
-  const context=unitContext(unitId);
-  return {learner_id:userId,curriculum_version:CURRICULUM_RUNTIME_RELEASE,curriculum_release_id:releaseId,grade:meta?.grade??context?.grade??state.activeGrade??8,term:meta?.term??context?.term??(state.lastOpened?.unitId===unitId?state.lastOpened.term:1),unit_id:unitId,status:completedAt?"completed":"in_progress",completed_at:completedAt??null,last_opened_at:state.lastOpened?.unitId===unitId?state.lastOpened.at:changedAt,updated_at:changedAt};
- });
- if(progressRows.length){const result=await supabase.from("lesson_progress").upsert(progressRows,{onConflict:"learner_id,curriculum_version,unit_id"});if(result.error)throw result.error;}
-
- const noteRows:TablesInsert<"lesson_notes">[]=Object.entries(state.responses).map(([unitId,note])=>{
-  const context=unitContext(unitId);
-  return {learner_id:userId,curriculum_version:CURRICULUM_RUNTIME_RELEASE,curriculum_release_id:releaseId,grade:context?.grade??state.activeGrade??8,term:context?.term??(state.lastOpened?.unitId===unitId?state.lastOpened.term:1),unit_id:unitId,note,updated_at:state.responseUpdatedAt?.[unitId]??now};
- });
- if(noteRows.length){const result=await supabase.from("lesson_notes").upsert(noteRows,{onConflict:"learner_id,curriculum_version,unit_id"});if(result.error)throw result.error;}
-
- const promptRows:TablesInsert<"prompt_responses">[]=Object.entries(state.promptResponses).map(([promptKey,response])=>{
-  const unitId=promptKey.split("::")[0];
-  const context=unitContext(unitId);
-  return {learner_id:userId,curriculum_version:CURRICULUM_RUNTIME_RELEASE,curriculum_release_id:releaseId,grade:context?.grade??state.activeGrade??8,term:context?.term??(state.lastOpened?.unitId===unitId?state.lastOpened.term:1),unit_id:unitId,prompt_key:promptKey,response,response_kind:"text",answered_at:state.promptResponseUpdatedAt?.[promptKey]??now,updated_at:state.promptResponseUpdatedAt?.[promptKey]??now};
- });
- if(promptRows.length){const result=await supabase.from("prompt_responses").upsert(promptRows,{onConflict:"learner_id,curriculum_version,unit_id,prompt_key"});if(result.error)throw result.error;}
+ // Verify the client account before dispatch as well as deriving ownership in SQL.
+ const session=await supabase.auth.getSession();
+ if(session.error||session.data.session?.user.id!==userId)throw new Error("Account changed before save");
+ const sent=pendingChanges(state).filter(x=>x.kind!=="profile"||state.sync?.profileAllowed===true).slice(0,200);
+ const opened=state.lastOpened&&state.lastOpened.at!==state.sync?.openedAt?state.lastOpened.unitId:undefined;
+ if(!sent.length&&!opened)return {sent,results:[]};
+ const result=await supabase.rpc("save_learning_changes",{p_changes:sent as unknown as Json,p_opened_unit:opened});
+ if(result.error)throw result.error;
+ return {sent,results:result.data as unknown as SyncResult[]};
 }
-
-export function mergeForTest(local:LearningState,remote:LearningState){return mergeLearningState(local,remote);}
+export function mergeForTest(local:LearningState,remote:LearningState){return reconcileRemote(local,remote);}

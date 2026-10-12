@@ -1,3 +1,4 @@
+import { LearningSyncStatus } from "@/components/learning-sync-status";
 import type { Metadata } from "next";
 import "./globals.css";
 import "./personalisation.css";
@@ -12,5 +13,5 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({children}:{children:React.ReactNode}) {
-  return <html lang="en"><body><AuthProvider><LearningStoreProvider><PersonalisationProvider><AppShell>{children}</AppShell></PersonalisationProvider></LearningStoreProvider></AuthProvider></body></html>;
+  return <html lang="en"><body><AuthProvider><LearningStoreProvider><PersonalisationProvider><AppShell><LearningSyncStatus/>{children}</AppShell></PersonalisationProvider></LearningStoreProvider></AuthProvider></body></html>;
 }
