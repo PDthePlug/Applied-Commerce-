@@ -52,7 +52,7 @@ function formatLastActivity(at?:string){
 export function FacilitatorWorkspace({initialSection="overview"}:{initialSection?:Section}={}){
   const {state,hydrated}=useLearningStore();
   const {reviews:localReviews,saveReview:saveLocalReview}=useEvidenceReviewStore();
-  const {workspace:remoteWorkspace,loading:remoteLoading,error:remoteError}=useSupabaseFacilitatorWorkspace();
+  const {workspace:remoteWorkspace,loading:remoteLoading,error:remoteError,reload:reloadWorkspace}=useSupabaseFacilitatorWorkspace();
   const [records,setRecords]=useState<EvidenceRecord[]>([]);
   const [selectedLearnerId,setSelectedLearnerId]=useState("");
   const [loading,setLoading]=useState(true);
@@ -79,10 +79,11 @@ export function FacilitatorWorkspace({initialSection="overview"}:{initialSection
       const record=records.find(item=>item.responseKey===review.responseKey);
       if(!record)throw new Error("Evidence record is no longer available.");
       await saveSupabaseFacilitatorReview(remoteLearner.id,record,review);
+      await reloadWorkspace();
       return;
     }
     saveLocalReview(review);
-  },[records,remoteLearner,saveLocalReview]);
+  },[records,remoteLearner,saveLocalReview,reloadWorkspace]);
 
   useEffect(()=>{
     let cancelled=false;
@@ -146,7 +147,7 @@ export function FacilitatorWorkspace({initialSection="overview"}:{initialSection
     return true;
   }),[records,reviews,search,statusFilter,termFilter]);
 
-  const selected=filtered.find(record=>record.responseKey===selectedKey)??filtered[0]??records[0];
+  const selected=filtered.find(record=>record.responseKey===selectedKey)??filtered[0];
   const report=useMemo(()=>buildEvidenceReport({learnerName,grade,records,reviews}),[grade,records,reviews,learnerName]);
   const completionRate=gradeLessonTotal?Math.round(learner.completedLessons/gradeLessonTotal*100):0;
   const pendingTotal=priorities.reduce((sum,item)=>sum+item.count,0);
@@ -393,7 +394,7 @@ type ReviewViewProps={
   setTermFilter:Dispatch<SetStateAction<number>>;
   statusFilter:ReviewFilter;
   setStatusFilter:Dispatch<SetStateAction<ReviewFilter>>;
-  saveReview:(review:EvidenceReview)=>void;
+  saveReview:(review:EvidenceReview)=>Promise<void>;
   advance:()=>void;
 };
 
@@ -429,7 +430,7 @@ function ReviewView({loading,records,selected,selectedKey,setSelectedKey,reviews
   </section>;
 }
 
-function EvidenceReviewPanel({record,existing,onSave,onAdvance}:{record:EvidenceRecord;existing?:EvidenceReview;onSave:(review:EvidenceReview)=>void;onAdvance:()=>void}){
+function EvidenceReviewPanel({record,existing,onSave,onAdvance}:{record:EvidenceRecord;existing?:EvidenceReview;onSave:(review:EvidenceReview)=>Promise<void>;onAdvance:()=>void}){
   const rubric=rubricByKey(record.definition.rubricKey);
   const [status,setStatus]=useState<ReviewStatus>(existing?.status??"pending");
   const [criteria,setCriteria]=useState<Record<string,1|2|3|4>>(existing?.criteria??{});
@@ -437,18 +438,26 @@ function EvidenceReviewPanel({record,existing,onSave,onAdvance}:{record:Evidence
   const [portfolioInterpretation,setPortfolioInterpretation]=useState(existing?.portfolioInterpretation??"");
   const [nextPathway,setNextPathway]=useState(existing?.nextPathway??"");
   const [saved,setSaved]=useState(false);
+  const [saving,setSaving]=useState(false);
+  const [saveFailure,setSaveFailure]=useState("");
   const scored=rubric?.criteria.filter(criterion=>criteria[criterion.key]).length??0;
   const rubricComplete=!rubric||scored===rubric.criteria.length;
   const scoreValues=Object.values(criteria);
   const average=scoreValues.length?Number((scoreValues.reduce((sum,value)=>sum+value,0)/scoreValues.length).toFixed(1)):null;
 
-  const persist=(nextStatus:ReviewStatus,moveNext=false)=>{
-    onSave({responseKey:record.responseKey,rubricKey:rubric?.key,status:nextStatus,criteria,feedback:feedback.trim(),portfolioInterpretation:portfolioInterpretation.trim(),nextPathway:nextPathway.trim(),reviewedAt:new Date().toISOString()});
-    setStatus(nextStatus);setSaved(true);
-    window.setTimeout(()=>{setSaved(false);if(moveNext)onAdvance();},500);
+  const persist=async(nextStatus:ReviewStatus,moveNext=false)=>{
+    if(saving)return;
+    setSaving(true);setSaved(false);setSaveFailure("");
+    try{
+      await onSave({responseKey:record.responseKey,rubricKey:rubric?.key,status:nextStatus,criteria,feedback:feedback.trim(),portfolioInterpretation:portfolioInterpretation.trim(),nextPathway:nextPathway.trim(),reviewedAt:new Date().toISOString()});
+      setStatus(nextStatus);setSaved(true);
+      if(moveNext)onAdvance();
+    }catch{setSaveFailure("The review could not be saved. Your feedback is still here; try again.");}
+    finally{setSaving(false);}
   };
 
-  return <article className="fac-evidence-card">
+  return <article className="fac-evidence-card" aria-busy={saving}>
+    {saveFailure&&<p role="alert">{saveFailure}</p>}
     <header>
       <div><p className="eyebrow">Grade {record.definition.grade} · Term {record.definition.term}{record.definition.lessonNumber?" · Lesson "+record.definition.lessonNumber:""}</p><h2>{record.definition.unitTitle}</h2>
         <div className="fac-evidence-flags"><span>{titleCase(record.definition.kind)}</span><span>{titleCase(record.definition.assessmentMode)}</span>{record.definition.portfolioEligible?<span className="portfolio">Portfolio candidate</span>:null}</div>
@@ -483,8 +492,8 @@ function EvidenceReviewPanel({record,existing,onSave,onAdvance}:{record:Evidence
     <label className="fac-feedback"><span>Facilitator feedback</span><textarea rows={5} value={feedback} onChange={event=>setFeedback(event.target.value)} placeholder="Name what is working, what is missing, and the learner next step."/><small>Feedback is part of the evidence history and should help the learner act, not simply explain a score.</small></label>
 
     <footer className="fac-review-actions">
-      <button className="needs-revision" type="button" disabled={!feedback.trim()} onClick={()=>persist("needs-revision")}>Needs revision</button>
-      <button className="accept" type="button" disabled={!rubricComplete} onClick={()=>persist(record.definition.assessmentMode==="verification"?"verified":"accepted",true)}>{record.definition.assessmentMode==="verification"?"Verify & next":"Accept & next"}</button>
+      <button className="needs-revision" type="button" disabled={saving||!feedback.trim()} onClick={()=>void persist("needs-revision")}>Needs revision</button>
+      <button className="accept" type="button" disabled={saving||!rubricComplete} onClick={()=>void persist(record.definition.assessmentMode==="verification"?"verified":"accepted",true)}>{saving?"Saving…":record.definition.assessmentMode==="verification"?"Verify & next":"Accept & next"}</button>
       {!rubricComplete?<span>Score all rubric criteria before accepting.</span>:null}
       {feedback.trim()===""?<span>Add feedback before returning work for revision.</span>:null}
       {saved?<span className="saved"><CheckCircle2/>Saved</span>:null}

@@ -16,6 +16,7 @@ export type LearnerProfile = { displayName?:string; grade?:number };
 export type LearningState = {
   version:2; previousResponses:Record<string,string>; activeGrade?:number;
   completed:Record<string,string>; completedMeta?:Record<string,{grade:number;term:number}>;
+  completionUpdatedAt?:Record<string,string>;
   responses:Record<string,string>; responseUpdatedAt?:Record<string,string>;
   promptResponses:Record<string,string>; promptResponseUpdatedAt?:Record<string,string>;
   profile?:LearnerProfile; lastOpened?:{grade:number;term:number;unitId:string;at:string};

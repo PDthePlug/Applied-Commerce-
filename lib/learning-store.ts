@@ -1,10 +1,11 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useRef, useState, useSyncExternalStore } from "react";
+import { createContext, createElement, useContext, useCallback, useEffect, useMemo, useRef, useState, useSyncExternalStore } from "react";
 import { emptyLearningState, parseLearningState } from "./response-identity";
 import type { LearnerProfile, LearningState } from "./types";
 import { useAuth } from "./auth-context";
-import { reconcileLearningState, syncLearningState } from "./supabase/persistence";
+import { loadRemoteLearningState, syncLearningState } from "./supabase/persistence";
+import { mergeLearningState } from "./learner-record";
 import { createClient } from "./supabase/client";
 
 const KEY = "applied-commerce-learning-state-v1";
@@ -50,11 +51,13 @@ function subscribe(onStoreChange: () => void, key:string) {
 
 const subscribeHydration = () => () => {};
 
-export function useLearningStore() {
+function useLearningStoreState() {
   const [saveError,setSaveError]=useState<string|null>(null);
   const [syncError,setSyncError]=useState<string|null>(null);
   const remoteReady=useRef(false);
-  const { user } = useAuth();
+  const { user, loading: authLoading } = useAuth();
+  const [readyAccount,setReadyAccount]=useState<string|null>(null);
+  const syncQueue=useRef<Promise<unknown>>(Promise.resolve());
   const storageKey=storageKeyFor(user?.id);
   const readCurrentRaw=useCallback(()=>readRaw(storageKey),[storageKey]);
   const subscribeCurrent=useCallback((onStoreChange:()=>void)=>subscribe(onStoreChange,storageKey),[storageKey]);
@@ -64,6 +67,7 @@ export function useLearningStore() {
 
   useEffect(() => {
     let cancelled = false;
+    if (authLoading) return;
     if (!user) {
       remoteReady.current=true;
       return;
@@ -86,33 +90,43 @@ export function useLearningStore() {
         }
       }
 
-      const accountState=parse(readRaw(storageKey));
-      const merged=await reconcileLearningState(user.id,accountState);
+      const remote=await loadRemoteLearningState(user.id);
       if(cancelled)return;
+      // Read again after the request: answers typed while loading must survive.
+      const merged=mergeLearningState(parseLearningState(readRaw(storageKey)),remote);
       write(merged,storageKey);
       setSyncError(null);
       remoteReady.current=true;
+      setReadyAccount(user.id);
     })().catch(()=>{
       if(cancelled)return;
       setSyncError("We couldn’t sync your account just now. Your work is still saved on this device; check your connection and try again.");
       remoteReady.current=true;
+      setReadyAccount(user.id);
     });
     return () => { cancelled = true; };
   // Reconcile only when the authenticated account changes; state changes are synced by the debounced adapter below.
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [user?.id,storageKey]);
+  }, [user?.id,storageKey,authLoading]);
 
   useEffect(() => {
-    if (!user || !remoteReady.current) return;
+    if (!user || authLoading || readyAccount!==user.id || !remoteReady.current) return;
+    let active=true;
     const timer = window.setTimeout(() => {
-      void syncLearningState(user.id, state).then(() => setSyncError(null)).catch(() => {
-        setSyncError("Your latest change is saved on this device but hasn’t reached your account yet. Check your connection and try again.");
+      // One queue per provider prevents overlapping snapshots arriving out of order.
+      syncQueue.current=syncQueue.current.catch(()=>{}).then(async()=>{
+        if(!active)return;
+        await syncLearningState(user.id,parseLearningState(readRaw(storageKey)));
+        if(active)setSyncError(null);
+      }).catch(()=>{
+        if(active)setSyncError("Your latest change is saved on this device but hasn’t reached your account yet. Check your connection and try again.");
       });
     }, 700);
-    return () => window.clearTimeout(timer);
-  }, [state, user, storageKey]);
+    return () => {active=false;window.clearTimeout(timer);};
+  }, [state, user, storageKey,authLoading,readyAccount]);
 
   const update = useCallback((fn: (current: LearningState) => LearningState) => {
+    if(authLoading)return false;
     try{
       write(fn(parseLearningState(readRaw(storageKey))),storageKey);
       setSaveError(null);
@@ -121,22 +135,24 @@ export function useLearningStore() {
       setSaveError("Your latest change could not be saved on this device. Keep this page open and copy your work before leaving.");
       return false;
     }
-  }, [storageKey]);
+  }, [storageKey,authLoading]);
 
   const markComplete = useCallback((unitId: string, complete=true, context?: {grade:number;term:number}) => update(current => {
     const completed={...current.completed};
     const completedMeta={...(current.completedMeta ?? {})};
-    if (complete) { completed[unitId]=new Date().toISOString(); if (context) completedMeta[unitId]=context; }
-    else { delete completed[unitId]; delete completedMeta[unitId]; }
-    return {...current, completed, completedMeta};
+    const at=new Date().toISOString();
+    if(context)completedMeta[unitId]=context;
+    if (complete) completed[unitId]=at;
+    else delete completed[unitId];
+    return {...current, completed, completedMeta,completionUpdatedAt:{...current.completionUpdatedAt,[unitId]:at}};
   }), [update]);
 
   const saveResponse = useCallback((unitId:string, value:string) => update(current => ({
-    ...current, responses:{...current.responses,[unitId]:value}
+    ...current, responses:{...current.responses,[unitId]:value},responseUpdatedAt:{...current.responseUpdatedAt,[unitId]:new Date().toISOString()}
   })), [update]);
 
   const savePromptResponse = useCallback((promptId:string, value:string) => update(current => ({
-    ...current, promptResponses:{...current.promptResponses,[promptId]:value}
+    ...current, promptResponses:{...current.promptResponses,[promptId]:value},promptResponseUpdatedAt:{...current.promptResponseUpdatedAt,[promptId]:new Date().toISOString()}
   })), [update]);
 
   const setProfile = useCallback((patch:Partial<LearnerProfile>) => update(current => {
@@ -150,4 +166,15 @@ export function useLearningStore() {
 
   const completedIds = useMemo(() => new Set(Object.keys(state.completed)), [state.completed]);
   return {state, hydrated, saveError, syncError: user ? syncError : null, completedIds, markComplete, saveResponse, savePromptResponse, setProfile, setLastOpened, signedIn: Boolean(user)};
+}
+
+const LearningStoreContext=createContext<ReturnType<typeof useLearningStoreState>|null>(null);
+export function LearningStoreProvider({children}:{children:React.ReactNode}){
+  const value=useLearningStoreState();
+  return createElement(LearningStoreContext.Provider,{value},children);
+}
+export function useLearningStore(){
+  const store=useContext(LearningStoreContext);
+  if(!store)throw new Error("LearningStoreProvider is required.");
+  return store;
 }

@@ -13,7 +13,7 @@ The first production-shaped milestone includes:
 - focused lesson reader with previous/next navigation and a term map;
 - source-faithful rendering of paragraphs, lists, tables, activities, reflections, checkpoints, stories, equations and portfolio cues;
 - learner notes/responses attached to each lesson;
-- completion tracking and a learner portfolio stored locally for the prototype milestone;
+- completion tracking and a learner portfolio with account-scoped local recovery and Supabase persistence;
 - responsive desktop/mobile shell;
 - curriculum compiler that converts the five DOCX learner books into structured runtime JSON.
 
@@ -63,9 +63,11 @@ npm run lint
 npm run build
 ```
 
-## Next system milestone
+## Backend and hardening status
 
-The current learner-state layer is deliberately isolated behind `lib/learning-store.ts`. It is ready to be replaced with a dedicated Applied Commerce Supabase schema for authentication, learner enrolment, school/cohort membership, educator visibility, durable responses, portfolio evidence and progress sync. No BIS database should be shared with this product.
+The platform uses Next.js 16, React 19, and a dedicated Supabase backend for account-owned responses, notes, progress, preferences, institution/cohort management, and facilitator review. The South African production project is `upvbxplswxhoqzbvgdxv`; setup instructions for the inactive predecessor are obsolete.
+
+The 2026-10-12 audit changes are a release candidate for further validation, not a production certification. The security migration must be validated remotely and applied before releasing the updated review client. Use [supabase/ACTIVATION.md](supabase/ACTIVATION.md). Local tests never write to production.
 
 ## October 2026 manuscript checkpoint
 

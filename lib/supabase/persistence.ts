@@ -1,3 +1,4 @@
+import { readAllRows } from "@/lib/supabase/read-all";
 import type { LearningState } from "@/lib/types";
 import type { TablesInsert } from "./database.types";
 import { createClient } from "./client";
@@ -24,16 +25,18 @@ export async function loadRemoteLearningState(userId:string):Promise<LearningSta
  const releaseId=releaseResult.data.id;
  const [profileResult,progressResult,promptResult,notesResult]=await Promise.all([
   supabase.from("learner_profiles").select("preferred_name,current_grade").eq("user_id",userId).maybeSingle(),
-  supabase.from("lesson_progress").select("grade,term,unit_id,status,last_opened_at,completed_at,updated_at").eq("learner_id",userId).eq("curriculum_release_id",releaseId),
-  supabase.from("prompt_responses").select("unit_id,prompt_key,response,updated_at").eq("learner_id",userId).eq("curriculum_release_id",releaseId),
-  supabase.from("lesson_notes").select("unit_id,note,updated_at").eq("learner_id",userId).eq("curriculum_release_id",releaseId),
+  readAllRows(supabase.from("lesson_progress").select("grade,term,unit_id,status,last_opened_at,completed_at,updated_at").eq("learner_id",userId).eq("curriculum_release_id",releaseId).order("id")),
+  readAllRows(supabase.from("prompt_responses").select("unit_id,prompt_key,response,updated_at").eq("learner_id",userId).eq("curriculum_release_id",releaseId).order("id")),
+  readAllRows(supabase.from("lesson_notes").select("unit_id,note,updated_at").eq("learner_id",userId).eq("curriculum_release_id",releaseId).order("id")),
  ]);
  for(const result of [profileResult,progressResult,promptResult,notesResult])if(result.error)throw result.error;
  const remote=emptyState();
  if(profileResult.data){remote.profile={displayName:profileResult.data.preferred_name??undefined,grade:profileResult.data.current_grade??undefined};remote.activeGrade=profileResult.data.current_grade??undefined;}
  for(const row of progressResult.data??[]){
+  remote.completionUpdatedAt??={};
+  remote.completionUpdatedAt[row.unit_id]=row.updated_at;
   if(row.status==="completed")remote.completed[row.unit_id]=row.completed_at??row.updated_at;
-  if(row.status==="completed")remote.completedMeta![row.unit_id]={grade:row.grade,term:row.term};
+  remote.completedMeta![row.unit_id]={grade:row.grade,term:row.term};
   if(row.last_opened_at&&(!remote.lastOpened||row.last_opened_at>remote.lastOpened.at)){remote.lastOpened={grade:row.grade,term:row.term,unitId:row.unit_id,at:row.last_opened_at};remote.activeGrade=row.grade;}
  }
  for(const row of promptResult.data??[]){remote.promptResponses[row.prompt_key]=typeof row.response==="string"?row.response:JSON.stringify(row.response);remote.promptResponseUpdatedAt![row.prompt_key]=row.updated_at;}
@@ -60,18 +63,30 @@ export async function syncLearningState(userId:string,state:LearningState){
  // Keep their personal lesson evidence in their own account without attempting
  // to create a learner_profiles row, which the database correctly rejects.
  if(!adminResult.data){
+  const [membership,staff]=await Promise.all([
+   supabase.from("school_memberships").select("id").eq("user_id",userId).eq("status","active").limit(1),
+   supabase.from("cohort_staff").select("id").eq("user_id",userId).eq("status","active").limit(1),
+  ]);
+  if(membership.error)throw membership.error;
+  if(staff.error)throw staff.error;
+  if(!membership.data?.length&&!staff.data?.length){
   const profile:TablesInsert<"learner_profiles">={user_id:userId,preferred_name:state.profile?.displayName?.trim()||null,current_grade:state.profile?.grade??state.activeGrade??null};
   const profileResult=await supabase.from("learner_profiles").upsert(profile,{onConflict:"user_id"});
   if(profileResult.error)throw profileResult.error;
+  }
  }
 
- const progressRows:TablesInsert<"lesson_progress">[]=Object.entries(state.completed).map(([unitId,completedAt])=>{
+ const progressIds=new Set([...Object.keys(state.completed),...Object.keys(state.completionUpdatedAt??{}),...(state.lastOpened?[state.lastOpened.unitId]:[])]);
+ const progressRows:TablesInsert<"lesson_progress">[]=[...progressIds].map(unitId=>{
+  const completedAt=state.completed[unitId];
+  const changedAt=state.completionUpdatedAt?.[unitId]??completedAt??state.lastOpened?.at??now;
   const meta=state.completedMeta?.[unitId];
-  return {learner_id:userId,curriculum_version:CURRICULUM_RUNTIME_RELEASE,curriculum_release_id:releaseId,grade:meta?.grade??state.activeGrade??8,term:meta?.term??(state.lastOpened?.unitId===unitId?state.lastOpened.term:1),unit_id:unitId,status:"completed",started_at:completedAt,completed_at:completedAt,last_opened_at:state.lastOpened?.unitId===unitId?state.lastOpened.at:completedAt,updated_at:completedAt};
+  const context=unitContext(unitId);
+  return {learner_id:userId,curriculum_version:CURRICULUM_RUNTIME_RELEASE,curriculum_release_id:releaseId,grade:meta?.grade??context?.grade??state.activeGrade??8,term:meta?.term??context?.term??(state.lastOpened?.unitId===unitId?state.lastOpened.term:1),unit_id:unitId,status:completedAt?"completed":"in_progress",completed_at:completedAt??null,last_opened_at:state.lastOpened?.unitId===unitId?state.lastOpened.at:changedAt,updated_at:changedAt};
  });
  if(progressRows.length){const result=await supabase.from("lesson_progress").upsert(progressRows,{onConflict:"learner_id,curriculum_version,unit_id"});if(result.error)throw result.error;}
 
- const noteRows:TablesInsert<"lesson_notes">[]=Object.entries(state.responses).filter(([,note])=>note.trim()).map(([unitId,note])=>{
+ const noteRows:TablesInsert<"lesson_notes">[]=Object.entries(state.responses).map(([unitId,note])=>{
   const context=unitContext(unitId);
   return {learner_id:userId,curriculum_version:CURRICULUM_RUNTIME_RELEASE,curriculum_release_id:releaseId,grade:context?.grade??state.activeGrade??8,term:context?.term??(state.lastOpened?.unitId===unitId?state.lastOpened.term:1),unit_id:unitId,note,updated_at:state.responseUpdatedAt?.[unitId]??now};
  });

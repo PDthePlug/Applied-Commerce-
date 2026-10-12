@@ -12,7 +12,7 @@ import { useLearningStore } from "@/lib/learning-store";
 export function LessonReader({grade,term,unitId}:{grade:number;term:number;unitId:string}){
  const router=useRouter();
  const [termData,setTermData]=useState<TermIndex|null>(null); const [unit,setUnit]=useState<UnitContent|null>(null); const [loadError,setLoadError]=useState<string|null>(null); const [menu,setMenu]=useState(false);
- const {state,saveError,completedIds,markComplete,saveResponse,savePromptResponse,setLastOpened}=useLearningStore();
+ const {state,saveError,syncError,completedIds,markComplete,saveResponse,savePromptResponse,setLastOpened}=useLearningStore();
  useEffect(()=>{
   let cancelled=false;
   const unitContext=unitId.match(/^g(\d+)-t(\d+)-/);
@@ -55,6 +55,7 @@ export function LessonReader({grade,term,unitId}:{grade:number;term:number;unitI
   {menu&&<button className="reader-scrim" onClick={()=>setMenu(false)} aria-label="Close menu"/>}
   <main className="reader-stage">
     {saveError&&<p role="alert" className="save-error">{saveError}</p>}
+    {syncError&&<p role="alert" className="save-error">{syncError}</p>}
     <article className="lesson-document">
       <header className="lesson-heading"><p className="eyebrow">Grade {grade} · Term {term} · {unit.label}</p><h1>{unit.title}</h1>
         <nav className="lesson-outline" aria-label="In this lesson"><p className="eyebrow">In this lesson</p>

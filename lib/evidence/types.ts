@@ -105,6 +105,7 @@ export type EvidenceReview = {
   nextPathway?:string;
   reviewerName?:string;
   reviewedAt:string;
+  responseValueAtReview?:string;
 };
 
 export type EvidenceReport = {

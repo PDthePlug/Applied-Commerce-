@@ -1,0 +1,131 @@
+import test, { before, after } from 'node:test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import ts from 'typescript';
+import { PGlite } from '@electric-sql/pglite';
+import { pgcrypto } from '@electric-sql/pglite/contrib/pgcrypto';
+
+// Real PostgreSQL engine with RLS roles, using a minimal Auth fixture.
+// This does not test Supabase Auth HTTP sessions, email delivery, or storage.
+const db = new PGlite({ extensions: { pgcrypto } });
+const uid = n => `00000000-0000-4000-8000-${String(n).padStart(12,'0')}`;
+const learner=uid(1), other=uid(2), staff=uid(3), unassigned=uid(4), admin=uid(5);
+const school=uid(10), cohort=uid(11);
+const key='g8-t1-l01-001::prompt-test::response';
+let release;
+let baselineExploitsReproduced=false;
+async function asUser(id,sql,params=[]){
+ await db.exec('begin; set local role authenticated;');
+ try{await db.query("select set_config('request.jwt.claim.sub',$1,true)",[id]);const result=await db.query(sql,params);await db.exec('commit');return result;}
+ catch(e){await db.exec('rollback');throw e;}
+}
+const review=(status,feedback='',criteria={})=>({status,feedback,criteria});
+async function save(actor,answer,decision){return asUser(actor,'select public.save_facilitator_review($1,$2,$3,$4,$5) as id',[learner,key,answer,{},decision]);}
+
+before(async()=>{
+ await db.exec(`create role anon; create role authenticated; create role service_role bypassrls;
+ create schema auth; grant usage on schema auth,public to anon,authenticated,service_role;
+ create table auth.users(id uuid primary key,email text,is_anonymous boolean default false,raw_user_meta_data jsonb default '{}',email_confirmed_at timestamptz);
+ create function auth.uid() returns uuid language sql stable as $$ select nullif(current_setting('request.jwt.claim.sub',true),'')::uuid $$;
+ grant execute on function auth.uid() to anon,authenticated,service_role;`);
+ for(const file of fs.readdirSync('supabase/migrations').filter(f=>f.endsWith('.sql')&&!f.includes('protect_assessment_decisions')).sort()) await db.exec(fs.readFileSync('supabase/migrations/'+file,'utf8'));
+ release=(await db.query("select id from public.curriculum_releases where release_key='ac-runtime-3'")).rows[0].id;
+ for(const [id,name] of [[learner,'learner'],[other,'other'],[staff,'staff'],[unassigned,'unassigned'],[admin,'admin']]) await db.query('insert into auth.users(id,email) values($1,$2)',[id,name+'@audit.invalid']);
+ await db.query('insert into private.platform_admins(user_id) values($1)',[admin]);
+ await db.query('insert into public.schools(id,name,slug) values($1,$2,$3)',[school,'Audit school','audit-school']);
+ await db.query('insert into public.cohorts(id,school_id,name,grade,academic_year) values($1,$2,$3,8,2026)',[cohort,school,'Audit cohort']);
+ for(const id of [learner,other]){await db.query('insert into public.learner_profiles(user_id) values($1)',[id]);await db.query('insert into public.cohort_enrolments(cohort_id,learner_id) values($1,$2)',[cohort,id]);}
+ await db.query("insert into public.school_memberships(school_id,user_id,role) values($1,$2,'educator')",[school,staff]);
+ await db.query('insert into public.cohort_staff(cohort_id,user_id) values($1,$2)',[cohort,staff]);
+ await asUser(learner,'insert into public.prompt_responses(learner_id,curriculum_release_id,curriculum_version,grade,term,unit_id,prompt_key,response) values($1,$2,$3,8,1,$4,$5,$6)',[learner,release,'ac-runtime-3',key.split('::')[0],key,JSON.stringify('original answer')]);
+ // Reproduce the field-authorization defects against the unmodified baseline,
+ // only in this disposable database; then clear these exploit fixtures.
+ await asUser(learner,"insert into public.evidence_records(learner_id,response_key,response_value,status) values($1,$2,'original answer','accepted')",[learner,key]);
+ await asUser(learner,"insert into public.assessment_attempts(learner_id,curriculum_release_id,unit_id,attempt_number,status,score,result) values($1,$2,'exploit-fixture',1,'reviewed',100,'{\"passed\":true}')",[learner,release]);
+ baselineExploitsReproduced=true;
+ await db.exec('delete from public.evidence_records; delete from public.assessment_attempts;');
+ await db.exec(fs.readFileSync('supabase/migrations/20261012091449_protect_assessment_decisions.sql','utf8'));
+});
+after(async()=>{await db.close();});
+
+test('baseline learner self-approval and self-grading defects are reproduced safely',()=>{assert.equal(baselineExploitsReproduced,true);});
+
+test('all migrations replay and every application table has RLS',async()=>{
+ const {rows}=await db.query("select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname in ('public','private') and c.relkind='r' and not c.relrowsecurity");assert.deepEqual(rows,[]);
+});
+test('learners cannot read another learner answer or escalate platform roles',async()=>{
+ assert.equal((await asUser(other,'select * from public.prompt_responses where learner_id=$1',[learner])).rows.length,0);
+ await assert.rejects(asUser(learner,'insert into private.platform_admins(user_id) values($1)',[learner]),/permission denied/);
+});
+test('assigned staff can read answers; unassigned staff cannot',async()=>{
+ assert.equal((await asUser(staff,'select * from public.prompt_responses where learner_id=$1',[learner])).rows.length,1);
+ assert.equal((await asUser(unassigned,'select * from public.prompt_responses where learner_id=$1',[learner])).rows.length,0);
+});
+test('learner cannot self-approve or self-verify evidence',async()=>{
+ for(const status of ['accepted','verified','needs-revision'])await assert.rejects(asUser(learner,'insert into public.evidence_records(learner_id,response_key,response_value,status) values($1,$2,$3,$4)',[learner,key,'original answer',status]),/facilitator/);
+});
+test('learner cannot self-grade or create reviewed assessment attempts',async()=>{
+ for(const [status,score,result] of [['reviewed',null,{}],['submitted',100,{}],['submitted',null,{passed:true}]]) await assert.rejects(asUser(learner,'insert into public.assessment_attempts(learner_id,curriculum_release_id,unit_id,attempt_number,status,score,result) values($1,$2,$3,1,$4,$5,$6)',[learner,release,'assessment-a',status,score,result]),/facilitator/);
+ await asUser(learner,"insert into public.assessment_attempts(learner_id,curriculum_release_id,unit_id,attempt_number,status) values($1,$2,'assessment-a',1,'submitted')",[learner,release]);
+});
+test('unauthorized reviewer cannot invoke the atomic review operation',async()=>{
+ await assert.rejects(save(unassigned,'original answer',review('accepted')),/Authorized facilitator/);
+ await assert.rejects(save(learner,'original answer',review('accepted')),/Authorized facilitator/);
+});
+test('invalid review fails atomically without creating evidence',async()=>{
+ await assert.rejects(save(staff,'original answer',review('needs-revision')),/Revision feedback/);
+ assert.equal((await db.query('select * from public.evidence_records')).rows.length,0);
+ assert.equal((await db.query('select * from public.evidence_reviews')).rows.length,0);
+});
+test('revision request reaches the owner, preserves a snapshot, and records history',async()=>{
+ await save(staff,'original answer',review('needs-revision','Explain the example'));
+ const rows=(await asUser(learner,'select status,feedback,response_value_at_review from public.evidence_reviews')).rows;
+ assert.equal(rows.length,1);assert.equal(rows[0].feedback,'Explain the example');assert.equal(rows[0].response_value_at_review,'original answer');
+ assert.equal((await db.query("select * from public.audit_events where event_type='evidence.review_saved'")).rows.length,1);
+});
+test('a stale review is rejected after learner revision',async()=>{
+ await asUser(learner,'update public.prompt_responses set response=$1 where prompt_key=$2',[JSON.stringify('revised answer'),key]);
+ await assert.rejects(save(staff,'original answer',review('accepted')),/answer changed/);
+ assert.equal((await db.query('select status from public.evidence_records')).rows[0].status,'needs-revision');
+});
+test('review retry is idempotent and approval follows the revised answer',async()=>{
+ await save(staff,'revised answer',review('accepted','Good example'));
+ await save(staff,'revised answer',review('accepted','Good example'));
+ assert.equal((await db.query('select * from public.evidence_records')).rows.length,1);
+ assert.equal((await db.query('select * from public.evidence_reviews')).rows.length,1);
+ const row=(await asUser(learner,'select status,response_value_at_review from public.evidence_reviews')).rows[0];assert.equal(row.status,'accepted');assert.equal(row.response_value_at_review,'revised answer');
+ const audit=(await db.query("select metadata from public.audit_events where event_type='evidence.review_saved' and metadata->'previous' <> 'null'::jsonb")).rows;assert.equal(audit.length,2);
+});
+test('review identity and evidence ownership are immutable',async()=>{
+ await assert.rejects(asUser(staff,'update public.evidence_records set learner_id=$1 where learner_id=$2',[other,learner]),/identity/);
+ await assert.rejects(asUser(staff,'update public.evidence_reviews set reviewer_id=$1',[unassigned]),/reviewer|identity/);
+});
+test('invalid rubric scores roll back review and evidence status',async()=>{
+ await assert.rejects(save(staff,'revised answer',review('needs-revision','Try again',{reasoning:99})),/Rubric scores/);
+ assert.equal((await db.query('select status from public.evidence_records')).rows[0].status,'accepted');
+});
+test('revoked cohort assignment denies subsequent review access',async()=>{
+ await db.query("update public.cohort_staff set status='disabled' where user_id=$1",[staff]);
+ await assert.rejects(save(staff,'revised answer',review('accepted')),/Authorized facilitator/);
+});
+test('account preferences are isolated and constrain supported values',async()=>{
+ await asUser(learner,"insert into public.account_preferences(user_id,appearance) values($1,'dark')",[learner]);
+ assert.equal((await asUser(other,'select * from public.account_preferences')).rows.length,0);
+ await assert.rejects(asUser(other,"insert into public.account_preferences(user_id,appearance) values($1,'invalid')",[other]),/check constraint/);
+});
+test('seeded rubric criteria match the existing product contract',async()=>{
+ const code=ts.transpileModule(fs.readFileSync('lib/evidence/taxonomy.ts','utf8'),{compilerOptions:{module:ts.ModuleKind.ESNext}}).outputText;
+ const {RUBRICS}=await import('data:text/javascript;base64,'+Buffer.from(code).toString('base64'));
+ for(const rubric of RUBRICS){const rows=(await db.query('select criterion_key,label,levels from public.rubric_criteria where rubric_key=$1 order by position',[rubric.key])).rows;assert.equal(rows.length,rubric.criteria.length);for(let i=0;i<rows.length;i++){assert.equal(rows[i].criterion_key,rubric.criteria[i].key);assert.deepEqual(rows[i].levels,rubric.criteria[i].levels);}}
+});
+test('anonymous clients cannot execute review RPC or read private learner data',async()=>{
+ await db.exec('begin; set local role anon;');try{await assert.rejects(db.query('select * from public.prompt_responses'),/permission denied/);}finally{await db.exec('rollback');}
+ await db.exec('begin; set local role anon;');try{await assert.rejects(db.query('select public.save_facilitator_review($1,$2,$3,$4,$5)',[learner,key,'revised answer',{},review('accepted')]),/permission denied/);}finally{await db.exec('rollback');}
+});
+
+test('platform administrator can provision a school while an ordinary learner cannot',async()=>{
+ await assert.rejects(asUser(learner,"select public.create_school('Unauthorized','unauthorized')"),/administrators/);
+ const result=await asUser(admin,"select (public.create_school('Provisioned school','provisioned-school')).id as id");
+ assert.ok(result.rows[0].id);
+ assert.equal((await db.query("select * from public.audit_events where event_type='school.created'")).rows.length,1);
+});

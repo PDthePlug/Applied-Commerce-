@@ -438,6 +438,7 @@ export type Database = {
       }
       evidence_reviews: {
         Row: {
+          response_value_at_review: string | null
           criteria_scores: Json
           evidence_record_id: string
           feedback: string
@@ -451,6 +452,7 @@ export type Database = {
           updated_at: string
         }
         Insert: {
+          response_value_at_review?: string | null
           criteria_scores?: Json
           evidence_record_id: string
           feedback?: string
@@ -464,6 +466,7 @@ export type Database = {
           updated_at?: string
         }
         Update: {
+          response_value_at_review?: string | null
           criteria_scores?: Json
           evidence_record_id?: string
           feedback?: string
@@ -995,6 +998,10 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      save_facilitator_review: {
+        Args: { p_learner_id: string; p_response_key: string; p_response_value: string; p_auto_result: Json; p_review: Json }
+        Returns: string
+      }
       is_platform_admin: { Args: Record<PropertyKey, never>; Returns: boolean }
       add_cohort_staff_by_email: {
         Args: { p_cohort_id: string; p_email: string; p_role?: string }

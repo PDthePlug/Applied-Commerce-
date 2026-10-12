@@ -48,13 +48,13 @@ test("facilitator model supports class-scale aggregation without seeded learners
   assert.match(model,/reviewRate/);
 });
 
-test("paused backend is configured as an activation seam rather than a fake live connection",()=>{
+test("backend activation documents the canonical target and safe release boundary",()=>{
   const config=read("lib/backend/config.ts");
   const env=read(".env.example");
   const activation=read("supabase/ACTIVATION.md");
   assert.match(config,/NEXT_PUBLIC_APPLIED_COMMERCE_BACKEND_MODE/);
   assert.match(env,/NEXT_PUBLIC_APPLIED_COMMERCE_BACKEND_MODE=local/);
-  assert.match(activation,/cannot be queried or migrated/i);
+  assert.match(activation,/Do not use it for South African database tests/);
   assert.match(activation,/learner → cohort → facilitator → evidence → report/);
 });
 
