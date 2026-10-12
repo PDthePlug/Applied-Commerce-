@@ -74,6 +74,17 @@ check('settings patches retain independent changes',()=>assert.deepEqual(prefere
 const invalid=await request('learner','/rest/v1/rpc/save_learning_changes','POST',{p_changes:[change('note','invalid','bad')]});
 check('invalid identities are rejected through HTTP',()=>assert.ok(invalid.status>=400));
 const anonymous=await request(null,'/rest/v1/rpc/save_learning_changes','POST',{p_changes:[]});check('anonymous mutation is denied',()=>assert.ok(anonymous.status>=400));
+const release=await request('learner','/rest/v1/curriculum_releases?select=id&release_key=eq.ac-runtime-3');
+const selfGrade=await request('learner','/rest/v1/assessment_attempts','POST',{learner_id:learner,curriculum_release_id:release.data[0].id,unit_id:'audit-assessment',attempt_number:1,status:'reviewed',score:100,result:{passed:true}});
+check('learner cannot self-grade through the Data API',()=>assert.ok(selfGrade.status>=400));
+const selfApproval=await request('learner','/rest/v1/evidence_records','POST',{learner_id:learner,response_key:'g8-t1-l01-001::prompt-audit-approval::response',response_value:'cannot certify this',status:'accepted'});
+check('learner cannot self-approve through the Data API',()=>assert.ok(selfApproval.status>=400));
+const crossed=await request('other','/rest/v1/rpc/save_learning_changes','POST',{p_changes:[{...change('note','g8-t1-l01-009','ownership probe'),learner_id:learner}]});
+check('supplied learner identifier cannot change RPC ownership',()=>assert.equal(crossed.status,200));
+const ownerRead=await request('learner','/rest/v1/lesson_notes?select=id&learner_id=eq.'+learner+'&unit_id=eq.g8-t1-l01-009');
+check('ownership probe did not write the targeted learner account',()=>assert.equal(ownerRead.data.length,0));
+const crossArtifact=await request('other','/rest/v1/portfolio_artifacts','POST',{learner_id:learner,grade:8,term:1,unit_id:'g8-t1-l01-001',marker_key:'audit-marker',title:'Unauthorized portfolio'});
+check('learner cannot create another learner portfolio artifact',()=>assert.ok(crossArtifact.status>=400));
 await save('unassigned',[change('note','g8-t1-l01-002','private logout fixture')]);
 const oldToken=sessions.unassigned.access_token;const logout=await request('unassigned','/auth/v1/logout','POST');assert.equal(logout.status,204);
 const ended=await rpc('unassigned','has_active_session');check('logged-out JWT fails active-session check',()=>assert.equal(ended,false));
