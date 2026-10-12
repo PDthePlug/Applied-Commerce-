@@ -1,3 +1,4 @@
+import type { Json } from "@/lib/supabase/database.types";
 import { createClient } from "@/lib/supabase/server";
 
 const DEFAULTS = { appearance: "system", accent: "commerce", textSize: "standard", readingWidth: "standard" } as const;
@@ -18,6 +19,9 @@ async function authenticatedClient() {
   const supabase = await createClient();
   const { data, error } = await supabase.auth.getUser();
   if (error || !data.user) return { response: responseError("Sign in is required to sync settings.", 401) } as const;
+  const active = await supabase.rpc("has_active_session");
+  if(active.error)throw active.error;
+  if(!active.data)return { response:responseError("Your session ended. Sign in again to sync settings.",401) } as const;
   return { supabase, user: data.user } as const;
 }
 
@@ -58,19 +62,9 @@ export async function PATCH(request: Request) {
     if (body.textSize !== undefined && (typeof body.textSize !== "string" || !TEXT_SIZES.has(body.textSize))) return responseError("Choose a valid text size.", 400);
     if (body.readingWidth !== undefined && (typeof body.readingWidth !== "string" || !READING_WIDTHS.has(body.readingWidth))) return responseError("Choose a valid reading width.", 400);
 
-    const currentResult = await auth.supabase.from("account_preferences").select("appearance,accent,text_size,reading_width").eq("user_id", auth.user.id).maybeSingle();
-    if (currentResult.error) throw currentResult.error;
-    const current = fromRow(currentResult.data);
-    const preferences: Preferences = { ...current, ...body } as Preferences;
-    const saved = await auth.supabase.from("account_preferences").upsert({
-      user_id: auth.user.id,
-      appearance: preferences.appearance,
-      accent: preferences.accent,
-      text_size: preferences.textSize,
-      reading_width: preferences.readingWidth,
-      updated_at: new Date().toISOString(),
-    }, { onConflict: "user_id" });
-    if (saved.error) throw saved.error;
+    const saved = await auth.supabase.rpc("save_account_preferences",{p_patch:body as Json});
+    if(saved.error)throw saved.error;
+    const preferences=fromRow(saved.data);
     return Response.json({ preferences }, { headers: PRIVATE_HEADERS });
   } catch (cause) {
     console.error("Applied Commerce preferences write failed", cause);

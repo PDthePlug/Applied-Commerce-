@@ -179,12 +179,10 @@ test("legacy auth profile repair is additive and does not assign application rol
 test("platform-admin learning evidence sync respects exclusive operating roles",()=>{
   const persistence=read("lib/supabase/persistence.ts");
   assert.match(persistence,/supabase\.rpc\("is_platform_admin"\)/);
-  assert.match(persistence,/if\(!adminResult\.data\)/);
-  assert.match(persistence,/Platform administrators are intentionally excluded from the learner role/);
-  assert.match(persistence,/from\("prompt_responses"\)\.upsert\(promptRows/);
-  assert.match(persistence,/from\("lesson_progress"\)\.upsert\(progressRows/);
-  assert.match(persistence,/from\("lesson_notes"\)\.upsert\(noteRows/);
-  assert.match(persistence,/onConflict:"learner_id,curriculum_version,unit_id"/);
+  assert.match(persistence,/profileAllowed=!admin.data/);
+  assert.match(persistence,/x.kind!=="profile"\|\|state.sync\?.profileAllowed===true/);
+  assert.match(persistence,/supabase\.rpc\("save_learning_changes_for_account"/);
+  assert.doesNotMatch(persistence,/\.upsert\(/);
 });
 
 
@@ -205,7 +203,7 @@ test("profile settings persist account presentation preferences with owner-only 
   const styles=read("app/personalisation.css");
   assert.match(provider,/\/api\/preferences/);
   assert.match(api,/account_preferences/);
-  assert.match(api,/onConflict: "user_id"/);
+  assert.match(api,/supabase.rpc\("save_account_preferences"/);
   assert.match(api,/ALLOWED_KEYS/);
   assert.match(api,/auth\.getUser\(\)/);
   assert.match(settings,/Account & security/);

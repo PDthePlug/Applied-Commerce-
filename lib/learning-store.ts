@@ -5,7 +5,7 @@ import { emptyLearningState, parseLearningState } from "./response-identity";
 import type { LearnerProfile, LearningState } from "./types";
 import { useAuth } from "./auth-context";
 import { loadRemoteLearningState, syncLearningState } from "./supabase/persistence";
-import { mergeLearningState } from "./learner-record";
+import { reconcileRemote, acknowledge, resolveConflict, pendingChanges } from "./learning-sync";
 import { createClient } from "./supabase/client";
 
 const KEY = "applied-commerce-learning-state-v1";
@@ -93,7 +93,7 @@ function useLearningStoreState() {
       const remote=await loadRemoteLearningState(user.id);
       if(cancelled)return;
       // Read again after the request: answers typed while loading must survive.
-      const merged=mergeLearningState(parseLearningState(readRaw(storageKey)),remote);
+      const merged=reconcileRemote(parseLearningState(readRaw(storageKey)),remote);
       write(merged,storageKey);
       setSyncError(null);
       remoteReady.current=true;
@@ -101,7 +101,7 @@ function useLearningStoreState() {
     })().catch(()=>{
       if(cancelled)return;
       setSyncError("We couldn’t sync your account just now. Your work is still saved on this device; check your connection and try again.");
-      remoteReady.current=true;
+      remoteReady.current=false;
       setReadyAccount(user.id);
     });
     return () => { cancelled = true; };
@@ -116,14 +116,37 @@ function useLearningStoreState() {
       // One queue per provider prevents overlapping snapshots arriving out of order.
       syncQueue.current=syncQueue.current.catch(()=>{}).then(async()=>{
         if(!active)return;
-        await syncLearningState(user.id,parseLearningState(readRaw(storageKey)));
-        if(active)setSyncError(null);
+        const sentState=parseLearningState(readRaw(storageKey));
+        const result=await syncLearningState(user.id,sentState);
+        // Cancellation from a new keystroke must not discard the acknowledgement.
+        const next=acknowledge(parseLearningState(readRaw(storageKey)),result.sent,result.results);
+        if(sentState.lastOpened)next.sync!.openedAt=sentState.lastOpened.at;
+        if(JSON.stringify(next)!==readRaw(storageKey))write(next,storageKey);
+        setSyncError(null);
       }).catch(()=>{
-        if(active)setSyncError("Your latest change is saved on this device but hasn’t reached your account yet. Check your connection and try again.");
+        setSyncError("Your latest change is saved on this device but hasn’t reached your account yet. Check your connection and try again.");
       });
     }, 700);
     return () => {active=false;window.clearTimeout(timer);};
   }, [state, user, storageKey,authLoading,readyAccount]);
+
+  const refresh=useCallback(async()=>{
+    if(!user||authLoading)return;
+    syncQueue.current=syncQueue.current.catch(()=>{}).then(async()=>{
+      const remote=await loadRemoteLearningState(user.id);
+      const next=reconcileRemote(parseLearningState(readRaw(storageKey)),remote);
+      if(JSON.stringify(next)!==readRaw(storageKey))write(next,storageKey);
+      remoteReady.current=true;setReadyAccount(user.id);setSyncError(null);
+    }).catch(()=>setSyncError("Your work is saved on this device. Reconnect and retry account sync."));
+    await syncQueue.current;
+  },[user,authLoading,storageKey]);
+  useEffect(()=>{
+    if(!user)return;
+    const retry=()=>{void refresh();};
+    window.addEventListener("online",retry);window.addEventListener("focus",retry);
+    const timer=window.setInterval(retry,30000);
+    return()=>{window.removeEventListener("online",retry);window.removeEventListener("focus",retry);window.clearInterval(timer);};
+  },[user,refresh]);
 
   const update = useCallback((fn: (current: LearningState) => LearningState) => {
     if(authLoading)return false;
@@ -164,8 +187,9 @@ function useLearningStoreState() {
     ...current, activeGrade:grade, lastOpened:{grade,term,unitId,at:new Date().toISOString()}
   })), [update]);
 
+  const chooseConflict=useCallback((id:string,choice:"local"|"remote")=>update(current=>resolveConflict(current,id,choice)),[update]);
   const completedIds = useMemo(() => new Set(Object.keys(state.completed)), [state.completed]);
-  return {state, hydrated, saveError, syncError: user ? syncError : null, completedIds, markComplete, saveResponse, savePromptResponse, setProfile, setLastOpened, signedIn: Boolean(user)};
+  return {state, hydrated, chooseConflict, retrySync:refresh, pendingCount:pendingChanges(state).filter(x=>x.kind!=="profile"||state.sync?.profileAllowed).length, saveError, syncError: user ? syncError : null, completedIds, markComplete, saveResponse, savePromptResponse, setProfile, setLastOpened, signedIn: Boolean(user)};
 }
 
 const LearningStoreContext=createContext<ReturnType<typeof useLearningStoreState>|null>(null);

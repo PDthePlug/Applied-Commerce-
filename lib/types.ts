@@ -14,6 +14,7 @@ export type TermIndex = { term:number; intro:ContentBlock[]; units:UnitSummary[]
 export type UnitContent = UnitSummary & { grade:number; term:number; position:number; blocks:ContentBlock[] };
 export type LearnerProfile = { displayName?:string; grade?:number };
 export type LearningState = {
+  sync?:import("./learning-sync").LearningSync;
   version:2; previousResponses:Record<string,string>; activeGrade?:number;
   completed:Record<string,string>; completedMeta?:Record<string,{grade:number;term:number}>;
   completionUpdatedAt?:Record<string,string>;

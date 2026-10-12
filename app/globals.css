@@ -8,3 +8,9 @@
 @import "./auth.css";
 
 @import "./learner-record.css";
+
+.learning-sync-status{margin:16px auto;padding:20px;max-width:1100px;border:1px solid var(--border,#ccc);border-radius:12px;background:var(--surface,#fff);color:var(--text,#222)}
+.learning-sync-status h2{font-size:1.15rem}.learning-sync-status details{padding:12px 0;border-top:1px solid var(--border,#ccc)}
+.learning-sync-status summary{cursor:pointer;overflow-wrap:anywhere}.sync-versions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.sync-versions p{white-space:pre-wrap;overflow-wrap:anywhere;max-height:300px;overflow:auto}.sync-versions h3{font-size:1rem}.sync-actions{display:flex;flex-wrap:wrap;gap:12px}.learning-sync-status button{padding:8px 12px;border:1px solid currentColor;border-radius:6px;background:transparent;color:inherit;cursor:pointer}@media(max-width:600px){.sync-versions{grid-template-columns:1fr}.learning-sync-status{margin:12px}}
+.focused-reader .learning-sync-status{position:relative;z-index:91;margin:118px 24px 0 259px;max-width:calc(100% - 283px);border-color:var(--line);background:var(--cream);color:var(--ink)}
+@media(max-width:820px){.focused-reader .learning-sync-status{margin:118px 12px 0;max-width:calc(100% - 24px)}}
