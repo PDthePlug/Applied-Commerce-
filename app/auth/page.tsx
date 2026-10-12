@@ -8,13 +8,15 @@ export const metadata: Metadata = {
   description: "Sign in or create an Applied Commerce account.",
 };
 
-export default function AuthPage() {
+export default async function AuthPage({searchParams}:{searchParams:Promise<{link?:string}>}) {
+  const {link}=await searchParams;
   return <div className="auth-page">
     <header className="auth-header">
       <Brand subtitle="Learning platform" />
       <span className="auth-secure-label"><ShieldCheck aria-hidden="true" /> Secure sign-in</span>
     </header>
     <main className="auth-entry" aria-label="Sign in or create an account">
+      {link==="expired"&&<p role="alert">That account link could not be used. Request a new link and open it in the browser where you started.</p>}
       <AuthPanel />
     </main>
     <footer className="auth-footer">

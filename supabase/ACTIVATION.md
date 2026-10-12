@@ -1,62 +1,30 @@
-# Applied Commerce backend activation
+# Applied Commerce environment and release activation
 
-**Project:** Applied Commerce Production  
-**Project ref:** `vxmcykmrqubwlysrqjyt`
+Verified 2026-10-12: South African production uses `upvbxplswxhoqzbvgdxv` (Applied Commerce Production Main). The former `vxmcykmrqubwlysrqjyt` project is inactive. Do not reactivate it to complete this audit.
 
-The project is currently paused because the Supabase account already has the maximum number of active free projects. The application therefore remains in `local` backend mode.
+Vercel `applied-commerce` has production, preview, and development credentials for the canonical production database. Those preview/development values do not provide test isolation. Vercel `applied-commerce-staging` is now configured for the Zimbabwe backend. Do not use it for South African database tests.
 
-## What is already prepared while paused
+## Safe local checks
 
-- evidence definitions, evidence records, reviews and report snapshot schema;
-- rubric schema and v1 rubric definitions;
-- facilitator cohort aggregation model;
-- local facilitator review store;
-- class-scale facilitator dashboard and reporting surfaces;
-- frontend backend-mode contract;
-- environment variable contract;
-- migration file `20261004193000_evidence_assessment_engine.sql`.
+```sh
+npm ci
+npm run verify
+npx playwright install --with-deps chromium
+npx playwright test --workers=2
+```
 
-## What cannot be truthfully completed while paused
+The test suite replays migrations in a disposable PGlite database with fixture Auth identities and PostgreSQL roles. It does not contact a remote database. PGlite uses PostgreSQL 18; the live project uses PostgreSQL 17. Live Auth sessions, email callbacks, provider configuration, storage, backups, and deployment access still require separate verification.
 
-A paused database cannot be queried or migrated. Therefore the following must wait until activation:
+## Release sequence
 
-1. inspect the live core table columns and private authorization helpers;
-2. apply the evidence migration;
-3. generate fresh database TypeScript types;
-4. add educator/cohort RLS policies against the **actual** existing helper functions and column names;
-5. run learner, educator and school-admin authorization tests;
-6. migrate browser-local learner responses into `prompt_responses` / evidence records;
-7. enable Supabase mode in Vercel.
+1. Provision or identify an isolated South African Supabase test project and preview host.
+2. Replay the repository migrations. Compare migration history and schema with the intended release; the production preferences migration history has different timestamps and duplicate entries. Do not repair migration history blindly.
+3. Apply `20261012082954_protect_assessment_decisions.sql` to the isolated target. It preserves rows, seeds the existing authored rubrics, protects review decisions, and adds an atomic review RPC plus answer snapshots and audit history.
+4. Regenerate database types against that target and compare with the migration-aware types in the repository.
+5. Configure the isolated app with `NEXT_PUBLIC_APPLIED_COMMERCE_BACKEND_MODE=supabase`, its URL, and its publishable key. Add `/auth/callback` and `/auth/callback?next=/auth/reset` URLs to its Auth redirect allowlist; verify email templates and delivery.
+6. Use dedicated learner, second learner, assigned facilitator, unassigned facilitator, and administrator accounts. Test learner → cohort → facilitator → evidence → report, including revision, retries, revocation, two devices, offline recovery, and more than 1,000 responses.
+7. Run security/performance advisors, verify backups and restoration, and review the engineering report's unresolved risks.
+8. Obtain production deployment authorization. Apply the compatible migration before deploying the new client; the old client can continue using its existing RPC. Deploying the new client first will fail closed because the new review RPC and snapshot column are absent.
+9. Run production smoke checks with explicitly approved safe accounts and inspect logs. Keep the migration when rolling back the app; reverting it would remove protection/history.
 
-No migration in this repository should guess unknown live column names merely to appear complete.
-
-## Activation sequence
-
-When an active Supabase slot becomes available:
-
-1. restore `vxmcykmrqubwlysrqjyt`;
-2. list migrations and inspect `public` tables plus `private` helper functions;
-3. compare the live schema with `supabase/README.md`;
-4. apply `20261004193000_evidence_assessment_engine.sql`;
-5. add the cohort-aware evidence authorization migration using the verified core schema;
-6. run Supabase security/performance advisors;
-7. generate TypeScript database types;
-8. add the Supabase client dependency and shared persistence adapter;
-9. configure Vercel:
-   - `NEXT_PUBLIC_APPLIED_COMMERCE_BACKEND_MODE=supabase`
-   - `NEXT_PUBLIC_SUPABASE_URL`
-   - `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`
-10. migrate the current learner browser record without changing stable prompt identities;
-11. test learner → cohort → facilitator → evidence → report end to end;
-12. only then expose authenticated facilitator navigation.
-
-## Acceptance conditions
-
-Activation is complete only when:
-
-- a learner response saved on one device appears for an assigned facilitator on another device;
-- an unassigned educator cannot read it;
-- facilitator feedback and rubric scores persist;
-- a revision returns to the learner without destroying the original evidence history;
-- verified real-world evidence is distinguishable from ordinary reviewed responses;
-- learner and cohort reports are generated from shared persisted records, not seeded demo data.
+The product currently captures authored text responses automatically. No upload bucket or upload lifecycle exists. Do not invent submission or approval criteria without a product decision. Local-only browser answers are retained; guest answers are not silently transferred to unrelated accounts.

@@ -3,12 +3,13 @@
 import { createContext, useContext, useEffect, useMemo, useState } from "react";
 import type { Session, User } from "@supabase/supabase-js";
 import { createClient } from "@/lib/supabase/client";
+import { appliedCommerceBackendMode } from "@/lib/backend/config";
 
 type AuthContextValue = { user: User | null; session: Session | null; loading: boolean };
 const AuthContext = createContext<AuthContextValue>({ user: null, session: null, loading: true });
 
 export function isSupabaseConfigured() {
-  return Boolean(process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY);
+  return appliedCommerceBackendMode()==="supabase";
 }
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {

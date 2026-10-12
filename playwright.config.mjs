@@ -13,6 +13,7 @@ export default defineConfig({
     actionTimeout: 10_000,
     navigationTimeout: 20_000,
     trace: "retain-on-failure",
+    launchOptions: process.env.AC_BROWSER_EXECUTABLE ? { executablePath: process.env.AC_BROWSER_EXECUTABLE, args: ["--no-sandbox", "--disable-dev-shm-usage"] } : undefined,
   },
   webServer: {
     command: "npm run start -- -H 127.0.0.1 -p 3100",

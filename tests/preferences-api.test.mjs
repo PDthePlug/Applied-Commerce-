@@ -59,3 +59,8 @@ test("storage failures return private service errors rather than claiming succes
     assert.equal(response.headers.get("cache-control"), "private, no-store");
   } finally { state.failRead = false; state.failWrite = false; console.error = original; }
 });
+
+test("cross-origin settings writes are rejected", async () => {
+  const response = await PATCH(new Request("https://ac.invalid/api/preferences", { method: "PATCH", headers: { "origin": "https://other.invalid", "content-type": "application/json" }, body: JSON.stringify({ appearance: "dark" }) }));
+  assert.equal(response.status, 403);
+});

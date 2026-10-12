@@ -18,6 +18,10 @@ export async function updateSession(request: NextRequest) {
       },
     },
   });
-  await supabase.auth.getClaims();
+  // Public lessons and locally saved work remain available during an Auth
+  // outage. APIs still verify getUser(), and database authorization uses RLS.
+  try{await supabase.auth.getClaims();}catch{
+    response.headers.set("Cache-Control","private, no-store");
+  }
   return response;
 }

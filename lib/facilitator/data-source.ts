@@ -29,8 +29,8 @@ export interface FacilitatorDataSource{
 }
 
 /**
- * The production dashboard currently uses the local browser stores directly.
+ * The authenticated dashboard uses the Supabase adapter; browser-local records are for device recovery.
  * This interface is the activation seam for the shared Supabase implementation.
  * The Supabase adapter must satisfy this contract rather than changing the
- * facilitator components when the backend is restored.
+ * facilitator components as the backend evolves.
  */

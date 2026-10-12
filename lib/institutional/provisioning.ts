@@ -1,5 +1,10 @@
 "use client";
 
+import { readAllRows } from "@/lib/supabase/read-all";
+import { curriculum } from "@/lib/curriculum";
+import { buildEvidenceRecords } from "@/lib/evidence/engine";
+import { currentReviews } from "@/lib/evidence/current-reviews";
+import type { EvidenceReview } from "@/lib/evidence/types";
 import { createClient } from "@/lib/supabase/client";
 import type { Tables } from "@/lib/supabase/database.types";
 
@@ -210,28 +215,43 @@ export async function loadCohortLearningInsights(cohortId: string): Promise<Coho
   // an individual learner's performance.
   if (base.suppressed || !learnerIds.length) return base;
 
+  const release=await supabase.from("curriculum_releases").select("id").eq("release_key","ac-runtime-3").single();
+  if(release.error)throw release.error;
   const [completed, responses, evidence] = await Promise.all([
-    supabase.from("lesson_progress").select("id", { count: "exact", head: true }).in("learner_id", learnerIds).eq("status", "completed"),
-    supabase.from("prompt_responses").select("id", { count: "exact", head: true }).in("learner_id", learnerIds),
-    supabase.from("evidence_records").select("id,learner_id").in("learner_id", learnerIds)
+    supabase.from("lesson_progress").select("id", { count: "exact", head: true }).in("learner_id", learnerIds).eq("curriculum_release_id",release.data.id).eq("status", "completed"),
+    readAllRows(supabase.from("prompt_responses").select("learner_id,prompt_key,response,grade,term,unit_id").in("learner_id", learnerIds).eq("curriculum_release_id",release.data.id).order("id")),
+    readAllRows(supabase.from("evidence_records").select("id,learner_id,response_key").in("learner_id", learnerIds).order("id"))
   ]);
   for (const result of [completed, responses, evidence]) if (result.error) throw result.error;
-
-  const evidenceIds = (evidence.data ?? []).map(row => row.id);
+  const evidenceIds = evidence.data.map(row => row.id);
   const reviews = evidenceIds.length
-    ? await supabase.from("evidence_reviews").select("status").in("evidence_record_id", evidenceIds)
+    ? await readAllRows(supabase.from("evidence_reviews").select("evidence_record_id,status,response_value_at_review,reviewed_at").in("evidence_record_id", evidenceIds).order("id"))
     : { data: [], error: null };
   if (reviews.error) throw reviews.error;
 
-  const evidenceCount = evidence.data?.length ?? 0;
-  const reviewCount = reviews.data?.length ?? 0;
-  return {
-    ...base,
-    completedLessons: completed.count ?? 0,
-    savedResponses: responses.count ?? 0,
-    evidenceRecords: evidenceCount,
-    reviewedEvidence: reviewCount,
-    needsRevision: (reviews.data ?? []).filter(row => row.status === "needs-revision").length,
-    reviewCoverage: evidenceCount ? Math.round(reviewCount / evidenceCount * 100) : 0
-  };
+  const evidenceById=new Map(evidence.data.map(row=>[row.id,row]));
+  const reviewsByLearner=new Map<string,Record<string,EvidenceReview>>();
+  for(const row of reviews.data){
+    const record=evidenceById.get(row.evidence_record_id);
+    if(!record)continue;
+    const map=reviewsByLearner.get(record.learner_id)??{};
+    map[record.response_key]={responseKey:record.response_key,status:row.status as EvidenceReview["status"],responseValueAtReview:row.response_value_at_review??undefined,reviewedAt:row.reviewed_at,criteria:{},feedback:""};
+    reviewsByLearner.set(record.learner_id,map);
+  }
+  let evidenceCount=0,reviewCount=0,needsRevision=0;
+  for(const learnerId of learnerIds){
+    const rows=responses.data.filter(row=>row.learner_id===learnerId);
+    const answers=Object.fromEntries(rows.map(row=>[row.prompt_key,typeof row.response==="string"?row.response:JSON.stringify(row.response)]));
+    const current=currentReviews(reviewsByLearner.get(learnerId)??{},answers);
+    const refs=new Map(rows.map(row=>[row.unit_id,{grade:row.grade,term:row.term}]));
+    for(const [unitId,context] of refs){
+      const unit=await curriculum.unit(context.grade,context.term,unitId);
+      const records=buildEvidenceRecords(unit,answers);
+      evidenceCount+=records.length;
+      for(const record of records){const decision=current[record.responseKey];if(decision){reviewCount++;if(decision.status==="needs-revision")needsRevision++;}}
+    }
+  }
+  return {...base,completedLessons:completed.count??0,savedResponses:responses.data.length,
+    evidenceRecords:evidenceCount,reviewedEvidence:reviewCount,needsRevision,
+    reviewCoverage:evidenceCount?Math.round(reviewCount/evidenceCount*100):0};
 }

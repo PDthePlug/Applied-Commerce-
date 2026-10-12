@@ -40,6 +40,7 @@ export function InstitutionalAdmin({ initialSection = "overview" }: { initialSec
   const [memberships, setMemberships] = useState<Membership[]>([]);
   const [isPlatformAdmin, setIsPlatformAdmin] = useState(false);
   const [contextLoading, setContextLoading] = useState(true);
+  const [contextUserId,setContextUserId]=useState<string|null>(null);
   const [contextLoadFailed, setContextLoadFailed] = useState(false);
   const [schoolId, setSchoolId] = useState("");
   const [cohortId, setCohortId] = useState("");
@@ -72,6 +73,7 @@ export function InstitutionalAdmin({ initialSection = "overview" }: { initialSec
   async function refresh(preferredSchoolId?: string, preferredCohortId?: string) {
     if (!user) return;
     const context = await loadInstitutionalContext(user.id);
+    setContextUserId(user.id);
     setContextLoadFailed(false);
     setIsPlatformAdmin(context.isPlatformAdmin);
     setContextLoading(false);
@@ -110,6 +112,8 @@ export function InstitutionalAdmin({ initialSection = "overview" }: { initialSec
         setContextLoadFailed(false);
         setIsPlatformAdmin(context.isPlatformAdmin);
         setContextLoading(false);
+        setContextUserId(authenticatedUserId);
+        setPeople(null);
         setSchools(context.schools);
         setMemberships(context.memberships as Membership[]);
         setCohorts(context.cohorts);
@@ -117,7 +121,7 @@ export function InstitutionalAdmin({ initialSection = "overview" }: { initialSec
         const firstCohort = context.cohorts.find((item) => item.school_id === context.selectedSchoolId);
         setCohortId(firstCohort?.id ?? "");
       } catch (err) {
-        if (!cancelled) { setError(messageFor(err)); setContextLoadFailed(true); setContextLoading(false); }
+        if (!cancelled) { setError(messageFor(err)); setContextLoadFailed(true); setContextLoading(false);setContextUserId(authenticatedUserId); }
       }
     }
 
@@ -186,7 +190,7 @@ export function InstitutionalAdmin({ initialSection = "overview" }: { initialSec
     );
   }
 
-  if (contextLoading) {
+  if (contextLoading||contextUserId!==user.id) {
     return <main className="institution-admin-page"><div className="institution-admin-state">Getting your institution workspace ready…</div></main>;
   }
 

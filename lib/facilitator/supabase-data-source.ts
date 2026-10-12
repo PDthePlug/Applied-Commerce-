@@ -1,6 +1,8 @@
 "use client";
+import { currentReviews } from "@/lib/evidence/current-reviews";
+import { readAllRows } from "@/lib/supabase/read-all";
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { createClient } from "@/lib/supabase/client";
 import { useAuth } from "@/lib/auth-context";
 import { useFacilitatorAccess, type FacilitatorAccess } from "@/lib/facilitator/access-context";
@@ -104,15 +106,15 @@ export async function loadSupabaseFacilitatorWorkspace(userId: string, verifiedA
   const [profiles, learnerProfiles, progress, prompts, notes, evidence] = await Promise.all([
     supabase.from("profiles").select("id,display_name").in("id", learnerIds),
     supabase.from("learner_profiles").select("user_id,preferred_name,current_grade").in("user_id", learnerIds),
-    supabase.from("lesson_progress").select("learner_id,grade,term,unit_id,status,last_opened_at,completed_at,updated_at").eq("curriculum_release_id", releaseId).in("learner_id", learnerIds),
-    supabase.from("prompt_responses").select("learner_id,grade,term,unit_id,prompt_key,response,updated_at").eq("curriculum_release_id", releaseId).in("learner_id", learnerIds),
-    supabase.from("lesson_notes").select("learner_id,unit_id,note,updated_at").eq("curriculum_release_id", releaseId).in("learner_id", learnerIds),
-    supabase.from("evidence_records").select("id,learner_id,response_key").in("learner_id", learnerIds)
+  readAllRows(supabase.from("lesson_progress").select("learner_id,grade,term,unit_id,status,last_opened_at,completed_at,updated_at").eq("curriculum_release_id", releaseId).in("learner_id", learnerIds).order("id")),
+  readAllRows(supabase.from("prompt_responses").select("learner_id,grade,term,unit_id,prompt_key,response,updated_at").eq("curriculum_release_id", releaseId).in("learner_id", learnerIds).order("id")),
+  readAllRows(supabase.from("lesson_notes").select("learner_id,unit_id,note,updated_at").eq("curriculum_release_id", releaseId).in("learner_id", learnerIds).order("id")),
+  readAllRows(supabase.from("evidence_records").select("id,learner_id,response_key").in("learner_id", learnerIds).order("id"))
   ]);
   for (const result of [profiles, learnerProfiles, progress, prompts, notes, evidence]) if (result.error) throw result.error;
 
   const reviewResult = evidence.data?.length
-    ? await supabase.from("evidence_reviews").select("evidence_record_id,reviewer_id,rubric_key,status,criteria_scores,feedback,portfolio_interpretation,next_pathway,reviewed_at").in("evidence_record_id", evidence.data.map(row => row.id))
+    ? await readAllRows(supabase.from("evidence_reviews").select("evidence_record_id,reviewer_id,rubric_key,status,criteria_scores,feedback,portfolio_interpretation,next_pathway,response_value_at_review,reviewed_at").in("evidence_record_id", evidence.data.map(row => row.id)).order("id"))
     : { data: [], error: null };
   if (reviewResult.error) throw reviewResult.error;
 
@@ -133,7 +135,8 @@ export async function loadSupabaseFacilitatorWorkspace(userId: string, verifiedA
       feedback: review.feedback,
       portfolioInterpretation: review.portfolio_interpretation ?? "",
       nextPathway: review.next_pathway ?? "",
-      reviewedAt: review.reviewed_at
+      reviewedAt: review.reviewed_at,
+      responseValueAtReview:review.response_value_at_review??undefined
     };
     reviewsByLearner.set(evidenceRef.learnerId, reviews);
   }
@@ -204,7 +207,7 @@ export async function loadSupabaseFacilitatorWorkspace(userId: string, verifiedA
       }
       records.push(...buildEvidenceRecords(unit, promptResponses));
     }
-    learners.push({ id: learnerId, state, records, reviews: reviewsByLearner.get(learnerId) ?? {} });
+    learners.push({ id: learnerId, state, records, reviews: currentReviews(reviewsByLearner.get(learnerId) ?? {},state.promptResponses) });
   }
 
   return {
@@ -218,42 +221,15 @@ export async function loadSupabaseFacilitatorWorkspace(userId: string, verifiedA
 
 export async function saveSupabaseFacilitatorReview(learnerId: string, record: EvidenceRecord, review: EvidenceReview) {
   const supabase = createClient();
-  const { data: recordId, error: recordError } = await supabase.rpc("upsert_facilitator_evidence_record", {
+  const { error } = await supabase.rpc("save_facilitator_review", {
     p_learner_id: learnerId,
     p_response_key: record.responseKey,
     p_response_value: record.responseValue,
     p_auto_result: record.autoCheck,
-    p_status: review.status
+    p_review: { status: review.status, rubricKey: review.rubricKey ?? null, criteria: review.criteria,
+      feedback: review.feedback, portfolioInterpretation: review.portfolioInterpretation ?? "", nextPathway: review.nextPathway ?? "" }
   });
-  if (recordError) throw recordError;
-  if (!recordId) throw new Error("Unable to persist the evidence record.");
-
-  const { data: userData, error: userError } = await supabase.auth.getUser();
-  if (userError || !userData.user) throw userError ?? new Error("Authentication required");
-
-  const payload = {
-    evidence_record_id: recordId,
-    reviewer_id: userData.user.id,
-    rubric_key: review.rubricKey ?? null,
-    status: review.status,
-    criteria_scores: review.criteria,
-    feedback: review.feedback,
-    portfolio_interpretation: review.portfolioInterpretation ?? "",
-    next_pathway: review.nextPathway ?? "",
-    reviewed_at: review.reviewedAt,
-    updated_at: new Date().toISOString()
-  };
-
-  const existing = await supabase.from("evidence_reviews").select("id,reviewer_id").eq("evidence_record_id", recordId).maybeSingle();
-  if (existing.error) throw existing.error;
-  if (existing.data) {
-    if (existing.data.reviewer_id !== payload.reviewer_id) throw new Error("Evidence has already been reviewed by another facilitator.");
-    const result = await supabase.from("evidence_reviews").update(payload).eq("id", existing.data.id);
-    if (result.error) throw result.error;
-  } else {
-    const result = await supabase.from("evidence_reviews").insert(payload);
-    if (result.error) throw result.error;
-  }
+  if (error) throw error;
 }
 
 export function useSupabaseFacilitatorWorkspace() {
@@ -263,6 +239,11 @@ export function useSupabaseFacilitatorWorkspace() {
   const [workspace, setWorkspace] = useState<SupabaseFacilitatorWorkspace | null>(null);
   const [loadedUserId, setLoadedUserId] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const reload=useCallback(async()=>{
+    if(!userId)return;
+    const value=await loadSupabaseFacilitatorWorkspace(userId,verifiedAccess??undefined);
+    setWorkspace(value);setLoadedUserId(userId);setError(null);
+  },[userId,verifiedAccess]);
 
   useEffect(() => {
     let cancelled = false;
@@ -286,5 +267,5 @@ export function useSupabaseFacilitatorWorkspace() {
   const activeWorkspace = userId && loadedUserId === userId ? workspace : null;
   const activeLoading = Boolean(userId) && loadedUserId !== userId;
   const activeError = userId && loadedUserId === userId ? error : null;
-  return { workspace: activeWorkspace, loading: activeLoading, error: activeError };
+  return { workspace: activeWorkspace, loading: activeLoading, error: activeError,reload };
 }

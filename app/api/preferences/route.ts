@@ -40,6 +40,8 @@ export async function GET() {
 
 export async function PATCH(request: Request) {
   try {
+    const origin=request.headers.get("origin");
+    if(origin&&origin!==new URL(request.url).origin)return responseError("Settings must be updated from this application.",403);
     const auth = await authenticatedClient();
     if ("response" in auth) return auth.response;
     const expectedUserId = request.headers.get("x-ac-expected-user-id");

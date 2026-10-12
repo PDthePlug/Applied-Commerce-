@@ -3,6 +3,7 @@ import "./globals.css";
 import "./personalisation.css";
 import { AppShell } from "@/components/app-shell";
 import { AuthProvider } from "@/lib/auth-context";
+import { LearningStoreProvider } from "@/lib/learning-store";
 import { PersonalisationProvider } from "@/components/personalisation-provider";
 
 export const metadata: Metadata = {
@@ -11,5 +12,5 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({children}:{children:React.ReactNode}) {
-  return <html lang="en"><body><AuthProvider><PersonalisationProvider><AppShell>{children}</AppShell></PersonalisationProvider></AuthProvider></body></html>;
+  return <html lang="en"><body><AuthProvider><LearningStoreProvider><PersonalisationProvider><AppShell>{children}</AppShell></PersonalisationProvider></LearningStoreProvider></AuthProvider></body></html>;
 }

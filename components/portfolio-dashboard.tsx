@@ -12,6 +12,8 @@ import { createClient } from "@/lib/supabase/client";
 import { useAuth } from "@/lib/auth-context";
 import type { EvidenceReview } from "@/lib/evidence/types";
 import { useLearningStore } from "@/lib/learning-store";
+import { currentReviews } from "@/lib/evidence/current-reviews";
+import { readAllRows } from "@/lib/supabase/read-all";
 
 type Meta = UnitSummary & {grade:number;term:number};
 
@@ -21,7 +23,8 @@ export function PortfolioDashboard(){
  const {user}=useAuth();
  const [remoteReviews,setRemoteReviews]=useState<Record<string,EvidenceReview>>({});
  const [remoteReviewUserId,setRemoteReviewUserId]=useState<string|null>(null);
- const reviews=useMemo(()=>({...localReviews,...(remoteReviewUserId===user?.id?remoteReviews:{})}),[localReviews,remoteReviews,remoteReviewUserId,user?.id]);
+ const [reviewLoadError,setReviewLoadError]=useState("");
+ const reviews=useMemo(()=>user?currentReviews(remoteReviewUserId===user.id?remoteReviews:{},state.promptResponses):localReviews,[localReviews,remoteReviews,remoteReviewUserId,user,state.promptResponses]);
  const [meta,setMeta]=useState<Record<string,Meta>>({});
  const [units,setUnits]=useState<Record<string,UnitContent>>({});
 
@@ -30,30 +33,33 @@ export function PortfolioDashboard(){
   let cancelled=false;
   const userId=user.id;
   const supabase=createClient();
-  void (async()=>{
+  const load=async()=>{
    try{
-    const result=await supabase.from("evidence_records").select("id,response_key").eq("learner_id",userId);
+    const result=await readAllRows(supabase.from("evidence_records").select("id,response_key").eq("learner_id",userId).order("id"));
     if(result.error)throw result.error;
     const rows=result.data??[];
     if(!rows.length){
-     if(!cancelled){setRemoteReviews({});setRemoteReviewUserId(userId);}
+     if(!cancelled){setRemoteReviews({});setRemoteReviewUserId(userId);setReviewLoadError("");}
      return;
     }
-    const reviewsResult=await supabase.from("evidence_reviews").select("evidence_record_id,status,criteria_scores,feedback,portfolio_interpretation,next_pathway,reviewed_at,rubric_key").in("evidence_record_id",rows.map(row=>row.id));
+    const reviewsResult=await readAllRows(supabase.from("evidence_reviews").select("evidence_record_id,status,criteria_scores,feedback,portfolio_interpretation,next_pathway,response_value_at_review,reviewed_at,rubric_key").in("evidence_record_id",rows.map(row=>row.id)).order("id"));
     if(reviewsResult.error)throw reviewsResult.error;
     const keyById=new Map(rows.map(row=>[row.id,row.response_key]));
     const next:Record<string,EvidenceReview>={};
     for(const review of reviewsResult.data??[]){
      const responseKey=keyById.get(review.evidence_record_id);
      if(!responseKey)continue;
-     next[responseKey]={responseKey,rubricKey:review.rubric_key??undefined,status:review.status as EvidenceReview["status"],criteria:(review.criteria_scores??{}) as Record<string,1|2|3|4>,feedback:review.feedback,portfolioInterpretation:review.portfolio_interpretation??"",nextPathway:review.next_pathway??"",reviewedAt:review.reviewed_at};
+     next[responseKey]={responseKey,rubricKey:review.rubric_key??undefined,status:review.status as EvidenceReview["status"],criteria:(review.criteria_scores??{}) as Record<string,1|2|3|4>,feedback:review.feedback,portfolioInterpretation:review.portfolio_interpretation??"",nextPathway:review.next_pathway??"",reviewedAt:review.reviewed_at,responseValueAtReview:review.response_value_at_review??undefined};
     }
-    if(!cancelled){setRemoteReviews(next);setRemoteReviewUserId(userId);}
+    if(!cancelled){setRemoteReviews(next);setRemoteReviewUserId(userId);setReviewLoadError("");}
    }catch{
-    if(!cancelled){setRemoteReviews({});setRemoteReviewUserId(userId);}
+    if(!cancelled)setReviewLoadError("Facilitator feedback could not be loaded. Your work is preserved. Refresh to try again.");
    }
-  })();
-  return ()=>{cancelled=true;};
+  };
+  void load();
+  const refresh=()=>{void load();};
+  window.addEventListener("focus",refresh);
+  return ()=>{cancelled=true;window.removeEventListener("focus",refresh);};
  },[user?.id]);
 
  useEffect(()=>{
@@ -118,7 +124,7 @@ export function PortfolioDashboard(){
    nextPathway:reviews[response.key]?.nextPathway,
   })).filter(item=>!covered.has(item.id)));
   return [...items,...portfolioItems].sort((a,b)=>a.id.localeCompare(b.id));
- },[units,meta,state.promptResponses,artifacts,reviews]);
+ },[units,meta,state.promptResponses,state.promptResponseUpdatedAt,artifacts,reviews]);
 
  const orphaned=Object.fromEntries(Object.entries(state.promptResponses).filter(([key])=>{
   const unit=units[key.split("::")[0]];
@@ -131,6 +137,7 @@ export function PortfolioDashboard(){
   .filter(item=>item.meta),[state.responses,meta]);
 
  return <div className="page portfolio-page">
+  {user&&reviewLoadError&&<p role="alert">{reviewLoadError}</p>}
   <section className="page-intro">
    <p className="eyebrow">Learner portfolio</p>
    <h1>Your evidence builds itself as you learn.</h1>
