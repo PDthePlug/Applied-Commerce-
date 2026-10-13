@@ -35,19 +35,19 @@ test('real cohort metrics follow pending, revision and acceptance; switches and 
  const selected=page.locator('.institution-admin-card').filter({has:page.locator('p.eyebrow').filter({hasText:'Selected cohort'})});
  const metric=label=>pulse.locator('article').filter({has:page.locator('span').filter({hasText:label})}).locator('strong');
  async function showMetrics(coverage,revision){await cohortButton('Reporting five').click();await expect(metric('Saved activity responses')).toHaveText('5');await expect(metric('Evidence review coverage')).toHaveText(coverage+'%');await expect(metric('Items needing revision')).toHaveText(String(revision));}
- await showMetrics(0,0);
- expect((await review('pending')).status).toBe(200);await page.reload();await showMetrics(0,0);
- expect((await review('needs-revision')).status).toBe(200);await page.reload();await showMetrics(20,1);
+ await showMetrics(0,0);console.log('REPORTING five answers: 0%');
+ expect((await review('pending')).status).toBe(200);await page.reload();await showMetrics(0,0);console.log('REPORTING pending decision: 0%');
+ expect((await review('needs-revision')).status).toBe(200);await page.reload();await showMetrics(20,1);console.log('REPORTING needs revision: 20%');
  const old=values[0];values[0]+=' revised';await save(0,values[0]);await page.reload();await showMetrics(0,0);
  const stale=await review('accepted',old);expect(stale.status).toBe(400);expect(stale.data.code).toBe('P0001');
- expect((await review('accepted')).status).toBe(200);await page.reload();await showMetrics(20,0);
+ expect((await review('accepted')).status).toBe(200);await page.reload();await showMetrics(20,0);console.log('REPORTING current acceptance: 20%');
  let unblock;const gate=new Promise(resolve=>{unblock=resolve;});let intercepted=0;
  const delay=async route=>{if(new URL(route.request().url()).searchParams.get('cohort_id')==='eq.'+fixtures.emptyCohortId){intercepted++;await gate;}await route.continue();};
  await page.route('**/rest/v1/cohort_enrolments?**',delay);
  await cohortButton('Empty switch').click();await expect.poll(()=>intercepted).toBeGreaterThan(0);
  await expect(selected).toContainText('Loading the selected cohort');await expect(selected.locator('.institution-admin-person-list article')).toHaveCount(0);await expect(pulse).toContainText('Preparing cohort learning summary');
  // Finish an older cohort request after returning to the five-learner cohort.
- await showMetrics(20,0);unblock();await page.unroute('**/rest/v1/cohort_enrolments?**',delay);await expect(selected.locator('.institution-admin-person-list article')).toHaveCount(6);await expect(metric('Saved activity responses')).toHaveText('5');
+ await showMetrics(20,0);unblock();await page.unrouteAll({behavior:'wait'});await expect(selected.locator('.institution-admin-person-list article')).toHaveCount(6);await expect(metric('Saved activity responses')).toHaveText('5');
  await cohortButton('Empty switch').click();await expect(selected).toContainText('No learners enrolled yet.');await expect(pulse).toContainText('at least five learners are actively enrolled');
  const failure=async route=>{if(new URL(route.request().url()).searchParams.get('cohort_id')==='eq.'+fixtures.reportingCohortId)await route.fulfill({status:400,contentType:'application/json',body:JSON.stringify({message:'Injected isolated test failure',code:'TEST'})});else await route.continue();};
  await page.route('**/rest/v1/cohort_enrolments?**',failure);await cohortButton('Reporting five').click();await expect(selected).toContainText('could not be loaded');await expect(selected.locator('.institution-admin-person-list article')).toHaveCount(0);await expect(pulse).toContainText('temporarily unavailable');await expect(page.locator('.institution-admin-metrics').first().locator('strong').nth(2)).toHaveText('—');
