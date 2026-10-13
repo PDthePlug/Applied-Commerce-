@@ -1,5 +1,11 @@
+function errorMessage(error: unknown) {
+  if (typeof error === "string") return error.toLowerCase();
+  if (error && typeof error === "object" && "message" in error && typeof error.message === "string") return error.message.toLowerCase();
+  return "";
+}
+
 export function friendlyAuthError(error: unknown, fallback = "We couldn’t complete that request. Please check your details and try again.") {
-  const message = (error instanceof Error ? error.message : typeof error === "string" ? error : "").toLowerCase();
+  const message = errorMessage(error);
   if (message.includes("invalid login credentials") || message.includes("invalid email or password")) {
     return "The email or password doesn’t match our records. Please try again.";
   }
@@ -22,7 +28,16 @@ export function friendlyAuthError(error: unknown, fallback = "We couldn’t comp
 }
 
 export function friendlyActionError(error: unknown, fallback = "We couldn’t complete that change. Please review the details and try again.") {
-  const message = (error instanceof Error ? error.message : typeof error === "string" ? error : "").toLowerCase();
+  const message = errorMessage(error);
+  if (message.includes("learner answer changed")) {
+    return "The learner updated this answer. Reload it before saving your review.";
+  }
+  if (message.includes("reviewed by another facilitator")) {
+    return "This evidence belongs to another reviewer. Ask your institution administrator to check the assignment.";
+  }
+  if (message.includes("must first be an active member of this school")) {
+    return "Add this facilitator to the institution team before assigning them to a cohort.";
+  }
   if (message.includes("permission denied") || message.includes("row-level security") || message.includes("not authorized") || message.includes("insufficient privilege")) {
     return "This account doesn’t have permission to make that change.";
   }

@@ -21,7 +21,7 @@ import {
 } from "@/lib/institutional/provisioning";
 
 type Membership = { school_id: string; role: string; status: string };
-type StaffPerson = { user_id: string; role: string; status: string; profile: { id: string; display_name: string | null; status: string } | null };
+type CohortPeople = Awaited<ReturnType<typeof loadCohortPeople>>;
 type InstitutionSection = "overview" | "cohorts" | "learners" | "facilitators" | "team";
 
 function slugify(value: string) {
@@ -44,10 +44,9 @@ export function InstitutionalAdmin({ initialSection = "overview" }: { initialSec
   const [contextLoadFailed, setContextLoadFailed] = useState(false);
   const [schoolId, setSchoolId] = useState("");
   const [cohortId, setCohortId] = useState("");
-  const [people, setPeople] = useState<{ learners: Array<{ learner_id: string; status: string; profile: { id: string; display_name: string | null; status: string } | null }>; staff: StaffPerson[]; staffIds: string[] } | null>(null);
-  const [cohortInsights, setCohortInsights] = useState<CohortLearningInsights | null>(null);
-  const [cohortInsightsLoading, setCohortInsightsLoading] = useState(false);
-  const [cohortInsightsUnavailable, setCohortInsightsUnavailable] = useState(false);
+  const [cohortData, setCohortData] = useState<{ key: string; people: CohortPeople | null; status: "ready" | "failed" } | null>(null);
+  const [insightsData, setInsightsData] = useState<{ key: string; value: CohortLearningInsights | null; status: "ready" | "failed" } | null>(null);
+  const [cohortRevision, setCohortRevision] = useState(0);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
   const [notice, setNotice] = useState("");
@@ -62,6 +61,16 @@ export function InstitutionalAdmin({ initialSection = "overview" }: { initialSec
   const [staffEmail, setStaffEmail] = useState("");
   const [staffRole, setStaffRole] = useState<"lead" | "educator" | "assistant">("educator");
   const [learnerEmail, setLearnerEmail] = useState("");
+
+  // Bind fetched data to the account, selection and refresh that requested it.
+  // A new heading must never display the previous cohort's people or totals.
+  const cohortKey = `${user?.id ?? ""}:${cohortId}:${cohortRevision}`;
+  const people = cohortData?.key === cohortKey ? cohortData.people : null;
+  const peopleLoading = Boolean(cohortId && cohortData?.key !== cohortKey);
+  const peopleUnavailable = cohortData?.key === cohortKey && cohortData.status === "failed";
+  const cohortInsights = insightsData?.key === cohortKey ? insightsData.value : null;
+  const cohortInsightsLoading = Boolean(cohortId && insightsData?.key !== cohortKey);
+  const cohortInsightsUnavailable = insightsData?.key === cohortKey && insightsData.status === "failed";
 
   const membership = useMemo(() => memberships.find((item) => item.school_id === schoolId), [memberships, schoolId]);
   const isAdmin = isPlatformAdmin || membership?.role === "owner" || membership?.role === "admin";
@@ -93,11 +102,7 @@ export function InstitutionalAdmin({ initialSection = "overview" }: { initialSec
         ? cohortId
         : schoolCohorts[0]?.id ?? "";
     setCohortId(nextCohortId);
-    if (nextCohortId) {
-      setPeople(await loadCohortPeople(nextCohortId));
-    } else {
-      setPeople(null);
-    }
+    setCohortRevision(value => value + 1);
   }
 
   useEffect(() => {
@@ -113,7 +118,6 @@ export function InstitutionalAdmin({ initialSection = "overview" }: { initialSec
         setIsPlatformAdmin(context.isPlatformAdmin);
         setContextLoading(false);
         setContextUserId(authenticatedUserId);
-        setPeople(null);
         setSchools(context.schools);
         setMemberships(context.memberships as Membership[]);
         setCohorts(context.cohorts);
@@ -130,31 +134,28 @@ export function InstitutionalAdmin({ initialSection = "overview" }: { initialSec
   }, [user]);
 
   useEffect(() => {
-    if (!cohortId) return;
+    if (!user?.id || !cohortId) return;
     let cancelled = false;
 
     void loadCohortPeople(cohortId)
       .then((value) => {
-        if (!cancelled) setPeople(value);
+        if (!cancelled) setCohortData({ key: cohortKey, people: value, status: "ready" });
       })
       .catch((err) => {
-        if (!cancelled) setError(messageFor(err));
+        if (!cancelled) { setCohortData({ key: cohortKey, people: null, status: "failed" }); setError(messageFor(err)); }
       });
 
     return () => { cancelled = true; };
-  }, [cohortId]);
+  }, [user?.id, cohortId, cohortKey]);
 
   useEffect(() => {
-    if (!cohortId || (pageSection !== "overview" && pageSection !== "cohorts")) return;
+    if (!user?.id || !cohortId || (pageSection !== "overview" && pageSection !== "cohorts")) return;
     let cancelled = false;
-    void Promise.resolve().then(() => {
-      if (!cancelled) { setCohortInsightsLoading(true); setCohortInsightsUnavailable(false); }
-      return loadCohortLearningInsights(cohortId);
-    }).then(value => { if (!cancelled) setCohortInsights(value); })
-      .catch(() => { if (!cancelled) { setCohortInsights(null); setCohortInsightsUnavailable(true); } })
-      .finally(() => { if (!cancelled) setCohortInsightsLoading(false); });
+    void loadCohortLearningInsights(cohortId)
+      .then(value => { if (!cancelled) setInsightsData({ key: cohortKey, value, status: "ready" }); })
+      .catch(() => { if (!cancelled) setInsightsData({ key: cohortKey, value: null, status: "failed" }); });
     return () => { cancelled = true; };
-  }, [cohortId, pageSection]);
+  }, [user?.id, cohortId, cohortKey, pageSection]);
 
   const schoolCohorts = cohorts.filter((item) => item.school_id === schoolId);
 
@@ -252,13 +253,13 @@ export function InstitutionalAdmin({ initialSection = "overview" }: { initialSec
           <section className="institution-admin-metrics" data-workspace-section="overview">
             <article><Building2 /><strong>{schools.length}</strong><span>Institution{schools.length === 1 ? "" : "s"}</span></article>
             <article><UsersRound /><strong>{schoolCohorts.length}</strong><span>Active cohorts</span></article>
-            <article><GraduationCap /><strong>{people?.learners.length ?? 0}</strong><span>Learners in selected cohort</span></article>
-            <article><UserPlus /><strong>{people?.staff.length ?? 0}</strong><span>Cohort staff</span></article>
+            <article><GraduationCap /><strong>{people ? people.learners.length : cohortId ? "—" : 0}</strong><span>Learners in selected cohort</span></article>
+            <article><UserPlus /><strong>{people ? people.staff.length : cohortId ? "—" : 0}</strong><span>Cohort staff</span></article>
           </section>
 
           {(pageSection === "overview" || pageSection === "cohorts") && selectedCohort ? <section className="institution-admin-card" data-workspace-section="overview cohorts">
             <header><div><p className="eyebrow">Cohort learning pulse</p><h2>Learning and evidence coverage</h2></div><span>Aggregate view</span></header>
-            {cohortInsightsLoading ? <p className="institution-admin-empty">Preparing cohort learning summary…</p> : cohortInsightsUnavailable ? <p className="institution-admin-empty">The cohort learning summary is temporarily unavailable. Refresh to try again.</p> : cohortInsights?.suppressed ? <p className="institution-admin-empty">Privacy protection is active. Learning metrics appear when at least five learners have contributed, so this view does not expose an individual learner’s activity.</p> : cohortInsights ? <>
+            {cohortInsightsLoading ? <p className="institution-admin-empty">Preparing cohort learning summary…</p> : cohortInsightsUnavailable ? <p className="institution-admin-empty">The cohort learning summary is temporarily unavailable. Refresh to try again.</p> : cohortInsights?.suppressed ? <p className="institution-admin-empty">Privacy protection is active. Learning metrics appear when at least five learners are actively enrolled, so this view does not expose an individual learner’s activity.</p> : cohortInsights ? <>
               <p>Summary across {cohortInsights.learnerCount} active learners. Individual answers and learner-level scores are not shown here.</p>
               <div className="institution-admin-metrics">
                 <article><GraduationCap /><strong>{cohortInsights.completedLessons}</strong><span>Lessons completed</span></article>
@@ -301,6 +302,7 @@ export function InstitutionalAdmin({ initialSection = "overview" }: { initialSec
             <section className="institution-admin-card" data-workspace-section="overview learners facilitators">
               <header><div><p className="eyebrow">Selected cohort</p><h2>{selectedCohort?.name ?? "Choose a cohort"}</h2></div>{selectedCohort ? <span>Grade {selectedCohort.grade}</span> : null}</header>
               {selectedCohort ? <>
+                {peopleLoading ? <p className="institution-admin-empty" role="status">Loading the selected cohort’s learners and staff…</p> : peopleUnavailable ? <p className="institution-admin-empty" role="alert">The selected cohort’s learners and staff could not be loaded. <button type="button" className="institutional-text-link" onClick={() => setCohortRevision(value => value + 1)}>Try again</button></p> : <>
                 <div className="institution-admin-people">
                   <div><GraduationCap /><span><strong>{people?.learners.length ?? 0}</strong> learners</span></div>
                   <div><UsersRound /><span><strong>{people?.staff.length ?? 0}</strong> facilitators / staff</span></div>
@@ -313,6 +315,7 @@ export function InstitutionalAdmin({ initialSection = "overview" }: { initialSec
                   {people?.learners.map((learner) => <article key={learner.learner_id}><i>{(learner.profile?.display_name || "L").slice(0, 1).toUpperCase()}</i><span><strong>{learner.profile?.display_name || "Learner"}</strong><small>{learner.status}</small></span></article>)}
                   {!people?.learners.length ? <p className="institution-admin-empty">No learners enrolled yet.</p> : null}
                 </div>
+                </>}
                 {canManageLearners ? <form data-workspace-section="overview learners" className="institution-admin-form compact" onSubmit={(event) => {
                   event.preventDefault();
                   void run(async () => { await enrolLearner(selectedCohort.id, learnerEmail); setLearnerEmail(""); await refresh(schoolId, selectedCohort.id); }, "Learner assignment saved. If this email is not registered yet, access activates after the person signs up.");

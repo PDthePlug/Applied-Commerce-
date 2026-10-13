@@ -1,4 +1,6 @@
 "use client";
+import { currentReviews, hasReviewDecision } from "@/lib/evidence/current-reviews";
+import { friendlyActionError } from "@/lib/customer-errors";
 
 import {useCallback,useEffect,useMemo,useState,type Dispatch,type SetStateAction} from "react";
 import {
@@ -70,7 +72,7 @@ export function FacilitatorWorkspace({initialSection="overview"}:{initialSection
   const remoteLearner=remoteWorkspace?.learners.find(item=>item.id===effectiveSelectedLearnerId)??remoteWorkspace?.learners[0]??null;
   const activeState=remoteLearner?.state??state;
   const localPromptResponses=state.promptResponses;
-  const reviews=remoteLearner?.reviews??localReviews;
+  const reviews=useMemo(()=>remoteLearner?.reviews??currentReviews(localReviews,state.promptResponses),[remoteLearner?.reviews,localReviews,state.promptResponses]);
   const grade=activeState.profile?.grade??activeState.activeGrade;
   const learnerName=activeState.profile?.displayName?.trim()||"Current learner";
 
@@ -138,10 +140,10 @@ export function FacilitatorWorkspace({initialSection="overview"}:{initialSection
   const filtered=useMemo(()=>records.filter(record=>{
     if(termFilter&&record.definition.term!==termFilter)return false;
     const review=reviews[record.responseKey];
-    if(statusFilter==="unreviewed"&&review)return false;
-    if(statusFilter==="reviewed"&&!review)return false;
+    if(statusFilter==="unreviewed"&&hasReviewDecision(review))return false;
+    if(statusFilter==="reviewed"&&!hasReviewDecision(review))return false;
     if(statusFilter==="revision"&&review?.status!=="needs-revision")return false;
-    if(statusFilter==="verification"&&!(record.definition.assessmentMode==="verification"&&!review))return false;
+    if(statusFilter==="verification"&&!(record.definition.assessmentMode==="verification"&&!hasReviewDecision(review)))return false;
     const query=search.trim().toLowerCase();
     if(query&&![record.definition.unitTitle,record.definition.prompt,record.responseValue,...record.definition.domains].join(" ").toLowerCase().includes(query))return false;
     return true;
@@ -449,10 +451,10 @@ function EvidenceReviewPanel({record,existing,onSave,onAdvance}:{record:Evidence
     if(saving)return;
     setSaving(true);setSaved(false);setSaveFailure("");
     try{
-      await onSave({responseKey:record.responseKey,rubricKey:rubric?.key,status:nextStatus,criteria,feedback:feedback.trim(),portfolioInterpretation:portfolioInterpretation.trim(),nextPathway:nextPathway.trim(),reviewedAt:new Date().toISOString()});
+      await onSave({responseKey:record.responseKey,rubricKey:rubric?.key,status:nextStatus,criteria,feedback:feedback.trim(),portfolioInterpretation:portfolioInterpretation.trim(),nextPathway:nextPathway.trim(),reviewedAt:new Date().toISOString(),responseValueAtReview:record.responseValue});
       setStatus(nextStatus);setSaved(true);
       if(moveNext)onAdvance();
-    }catch{setSaveFailure("The review could not be saved. Your feedback is still here; try again.");}
+    }catch(error){setSaveFailure(friendlyActionError(error,"The review could not be saved. Your feedback is still here; try again."));}
     finally{setSaving(false);}
   };
 

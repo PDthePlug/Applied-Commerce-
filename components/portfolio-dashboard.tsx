@@ -24,9 +24,10 @@ export function PortfolioDashboard(){
  const [remoteReviews,setRemoteReviews]=useState<Record<string,EvidenceReview>>({});
  const [remoteReviewUserId,setRemoteReviewUserId]=useState<string|null>(null);
  const [reviewLoadError,setReviewLoadError]=useState("");
- const reviews=useMemo(()=>user?currentReviews(remoteReviewUserId===user.id?remoteReviews:{},state.promptResponses):localReviews,[localReviews,remoteReviews,remoteReviewUserId,user,state.promptResponses]);
+ const reviews=useMemo(()=>user?currentReviews(remoteReviewUserId===user.id?remoteReviews:{},state.promptResponses):currentReviews(localReviews,state.promptResponses),[localReviews,remoteReviews,remoteReviewUserId,user,state.promptResponses]);
  const [meta,setMeta]=useState<Record<string,Meta>>({});
  const [units,setUnits]=useState<Record<string,UnitContent>>({});
+ const [portfolioLoadError,setPortfolioLoadError]=useState("");
 
  useEffect(()=>{
   if(!user?.id)return;
@@ -63,20 +64,21 @@ export function PortfolioDashboard(){
  },[user?.id]);
 
  useEffect(()=>{
+  let cancelled=false;
   (async()=>{
    const idx=await curriculum.index();
    const grades=await Promise.all(idx.grades.map(g=>curriculum.grade(g.grade)));
    const m:Record<string,Meta>={};
    grades.forEach((g:GradeIndex)=>g.terms.forEach(t=>[...t.units,...t.assessments].forEach(u=>m[u.id]={...u,grade:g.grade,term:t.term})));
-   setMeta(m);
 
    const ids=[...new Set(Object.keys(state.promptResponses).map(key=>key.split("::")[0]))].filter(id=>m[id]);
    const loaded=await Promise.all(ids.map(async id=>{
     const item=m[id];
     return [id,await curriculum.unit(item.grade,item.term,id)] as const;
    }));
-   setUnits(Object.fromEntries(loaded));
-  })();
+   if(!cancelled){setMeta(m);setUnits(Object.fromEntries(loaded));setPortfolioLoadError("");}
+  })().catch(()=>{if(!cancelled)setPortfolioLoadError("Your saved work is preserved, but portfolio content could not be loaded. Refresh to try again.");});
+  return ()=>{cancelled=true;};
  },[state.promptResponses]);
 
  const artifacts=useMemo(()=>{
@@ -137,6 +139,7 @@ export function PortfolioDashboard(){
   .filter(item=>item.meta),[state.responses,meta]);
 
  return <div className="page portfolio-page">
+  {portfolioLoadError&&<p role="alert">{portfolioLoadError}</p>}
   {user&&reviewLoadError&&<p role="alert">{reviewLoadError}</p>}
   <section className="page-intro">
    <p className="eyebrow">Learner portfolio</p>

@@ -32,13 +32,17 @@ export function loadRoleFixtures(directory) {
   assert.match(fixtures.run ?? '', /^audit-[a-z0-9-]+$/);
   const roles = ['learner', 'other', 'facilitator', 'unassigned', 'schoolAdmin', 'platformAdmin'];
   assert.deepEqual(Object.keys(fixtures.users ?? {}).sort(), [...roles].sort(), 'Exactly the six dedicated fixture roles are required');
-  for (const name of roles) {
-    const user = fixtures.users?.[name];
+  const extra = fixtures.reportingLearners ?? [];
+  assert.ok(Array.isArray(extra), 'Reporting fixtures must be an array');
+  if (extra.length) assert.equal(extra.length, 5, 'Exactly five dedicated reporting learners are required');
+  const accounts = [...roles.map(name => fixtures.users[name]), ...extra];
+  for (const user of accounts) {
     assert.match(user?.id ?? '', /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i);
     assert.ok(user?.email?.startsWith(fixtures.run + '-'), 'Dedicated audit accounts required');
+    assert.ok(user.email.endsWith('@example.invalid'), 'Dedicated fixture email domain required');
     assert.ok(typeof user.password === 'string' && user.password.length >= 8);
   }
-  assert.equal(new Set(Object.values(fixtures.users).map(user => user.id)).size, Object.keys(fixtures.users).length, 'Fixture identities must be distinct');
+  assert.equal(new Set(accounts.map(user => user.id)).size, accounts.length, 'Fixture identities must be distinct');
   return { config, fixtures };
 }
 

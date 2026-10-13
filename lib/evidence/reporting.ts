@@ -1,3 +1,4 @@
+import { currentReview, hasReviewDecision } from "./current-reviews";
 import type { EvidenceRecord, EvidenceReport, EvidenceReview } from "./types";
 
 export function buildEvidenceReport({
@@ -17,25 +18,25 @@ export function buildEvidenceReport({
   const levels:number[]=[];
 
   records.forEach(record=>{
-    const review=reviews[record.responseKey];
+    const review=currentReview(reviews[record.responseKey],record.responseValue);
     record.definition.domains.forEach(domain=>{
       const current=byDomain.get(domain)??{count:0,reviewed:0};
       current.count+=1;
-      if(review) current.reviewed+=1;
+      if(hasReviewDecision(review)) current.reviewed+=1;
       byDomain.set(domain,current);
     });
     byKind.set(record.definition.kind,(byKind.get(record.definition.kind)??0)+1);
     const term=byTerm.get(record.definition.term)??{count:0,reviewed:0};
     term.count+=1;
-    if(review) term.reviewed+=1;
+    if(hasReviewDecision(review)) term.reviewed+=1;
     byTerm.set(record.definition.term,term);
-    if(review){
+    if(hasReviewDecision(review)){
       const values=Object.values(review.criteria);
       if(values.length) levels.push(values.reduce((sum,value)=>sum+value,0)/values.length);
     }
   });
 
-  const recordReviews=records.map(record=>reviews[record.responseKey]).filter(Boolean);
+  const recordReviews=records.map(record=>currentReview(reviews[record.responseKey],record.responseValue)).filter(hasReviewDecision);
   return {
     generatedAt:new Date().toISOString(),
     learnerName,
