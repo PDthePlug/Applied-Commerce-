@@ -27,7 +27,9 @@ export function PortfolioDashboard(){
  const reviews=useMemo(()=>user?currentReviews(remoteReviewUserId===user.id?remoteReviews:{},state.promptResponses):currentReviews(localReviews,state.promptResponses),[localReviews,remoteReviews,remoteReviewUserId,user,state.promptResponses]);
  const [meta,setMeta]=useState<Record<string,Meta>>({});
  const [units,setUnits]=useState<Record<string,UnitContent>>({});
- const [portfolioLoadError,setPortfolioLoadError]=useState("");
+ const [portfolioLoad,setPortfolioLoad]=useState<{responses:Record<string,string>;error:string}|null>(null);
+ const portfolioLoading=portfolioLoad?.responses!==state.promptResponses;
+ const portfolioLoadError=!portfolioLoading?portfolioLoad?.error:"";
 
  useEffect(()=>{
   if(!user?.id)return;
@@ -76,8 +78,8 @@ export function PortfolioDashboard(){
     const item=m[id];
     return [id,await curriculum.unit(item.grade,item.term,id)] as const;
    }));
-   if(!cancelled){setMeta(m);setUnits(Object.fromEntries(loaded));setPortfolioLoadError("");}
-  })().catch(()=>{if(!cancelled)setPortfolioLoadError("Your saved work is preserved, but portfolio content could not be loaded. Refresh to try again.");});
+   if(!cancelled){setMeta(m);setUnits(Object.fromEntries(loaded));setPortfolioLoad({responses:state.promptResponses,error:""});}
+  })().catch(()=>{if(!cancelled)setPortfolioLoad({responses:state.promptResponses,error:"Your saved work is preserved, but portfolio content could not be loaded. Refresh to try again."});});
   return ()=>{cancelled=true;};
  },[state.promptResponses]);
 
@@ -147,10 +149,10 @@ export function PortfolioDashboard(){
    <p>When the curriculum marks work as portfolio evidence, Applied Commerce captures the relevant responses automatically. There is nothing extra to file or submit.</p>
   </section>
 
-  <PortfolioSynthesis evidence={synthesisEvidence} />
+  {portfolioLoading?<p role="status">Preparing your portfolio from saved work…</p>:!portfolioLoadError&&<PortfolioSynthesis evidence={synthesisEvidence} />}
 
   {artifacts.length===0
-   ? <section className="empty-state"><Archive/><h2>Your portfolio is ready.</h2><p>Complete a portfolio-marked activity in the curriculum. The relevant evidence will appear here automatically.</p><Link className="primary-button" href="/learn">Open curriculum <ArrowRight/></Link></section>
+   ? !portfolioLoading&&!portfolioLoadError&&<section className="empty-state"><Archive/><h2>Your portfolio is ready.</h2><p>Complete a portfolio-marked activity in the curriculum. The relevant evidence will appear here automatically.</p><Link className="primary-button" href="/learn">Open curriculum <ArrowRight/></Link></section>
    : <section className="portfolio-artifacts-section" aria-labelledby="portfolio-artifacts-title">
       <div className="portfolio-section-heading"><Archive/><div><p className="eyebrow">Captured evidence</p><h2 id="portfolio-artifacts-title">Your portfolio work</h2></div></div>
       <div className="portfolio-artifacts">
