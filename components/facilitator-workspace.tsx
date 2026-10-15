@@ -1,6 +1,7 @@
 "use client";
 import { currentReviews, hasReviewDecision } from "@/lib/evidence/current-reviews";
 import { friendlyActionError } from "@/lib/customer-errors";
+import { facilitatorSectionHref, selectedRosterLearner } from "@/lib/facilitator/navigation";
 
 import {useCallback,useEffect,useMemo,useState,type Dispatch,type SetStateAction} from "react";
 import {
@@ -51,12 +52,12 @@ function formatLastActivity(at?:string){
   return new Intl.DateTimeFormat("en-ZA",{day:"numeric",month:"short",hour:"2-digit",minute:"2-digit"}).format(date);
 }
 
-export function FacilitatorWorkspace({initialSection="overview"}:{initialSection?:Section}={}){
+export function FacilitatorWorkspace({initialSection="overview",initialLearnerId=""}:{initialSection?:Section;initialLearnerId?:string}={}){
   const {state,hydrated}=useLearningStore();
   const {reviews:localReviews,saveReview:saveLocalReview}=useEvidenceReviewStore();
   const {workspace:remoteWorkspace,loading:remoteLoading,error:remoteError,reload:reloadWorkspace}=useSupabaseFacilitatorWorkspace();
   const [records,setRecords]=useState<EvidenceRecord[]>([]);
-  const [selectedLearnerId,setSelectedLearnerId]=useState("");
+  const [selectedLearnerId,setSelectedLearnerId]=useState(initialLearnerId);
   const [loading,setLoading]=useState(true);
   const [section]=useState<Section>(initialSection);
   const [selectedKey,setSelectedKey]=useState("");
@@ -66,9 +67,13 @@ export function FacilitatorWorkspace({initialSection="overview"}:{initialSection
   const [learnerSearch,setLearnerSearch]=useState("");
   const [gradeLessonTotal,setGradeLessonTotal]=useState(0);
   const [facMenuOpen,setFacMenuOpen]=useState(false);
-  const navigateToSection=(next:Section)=>{window.location.assign(next==="overview"?"/facilitator":`/facilitator/${next}`);};
-
-  const effectiveSelectedLearnerId=remoteWorkspace?.learners.some(item=>item.id===selectedLearnerId)?selectedLearnerId:(remoteWorkspace?.learners[0]?.id??"");
+  const effectiveSelectedLearnerId=selectedRosterLearner(remoteWorkspace?.learners??[],selectedLearnerId);
+  const navigateToSection=(next:Section)=>{window.location.assign(facilitatorSectionHref(next,effectiveSelectedLearnerId));};
+  const selectLearner=(learnerId:string)=>{
+    const nextId=selectedRosterLearner(remoteWorkspace?.learners??[],learnerId);
+    setSelectedLearnerId(nextId);
+    window.history.replaceState(window.history.state,"",facilitatorSectionHref(section,nextId));
+  };
   const remoteLearner=remoteWorkspace?.learners.find(item=>item.id===effectiveSelectedLearnerId)??remoteWorkspace?.learners[0]??null;
   const activeState=remoteLearner?.state??state;
   const localPromptResponses=state.promptResponses;
@@ -242,7 +247,7 @@ export function FacilitatorWorkspace({initialSection="overview"}:{initialSection
       {grade&&section==="overview"?<Overview learnerName={learnerName} cohort={cohort} learner={learner} priorities={priorities} domains={domains} completionRate={completionRate} gradeLessonTotal={gradeLessonTotal} pendingTotal={pendingTotal} onOpenReview={()=>navigateToSection("review")} onOpenLearner={()=>navigateToSection("learners")} onOpenCoverage={()=>navigateToSection("coverage")}/>:null}
       {remoteError?<section className="fac-card"><strong>We couldn’t load the shared cohort</strong><p>{remoteError}</p><small>Refresh the page to try again.</small></section>:null}
       {remoteLoading&&!remoteWorkspace?<section className="fac-card"><strong>Loading your cohort…</strong><p>Getting your assigned learners and their saved work.</p></section>:null}
-      {grade&&section==="learners"?<LearnersView learner={learner} learners={remoteLearnerSummaries} selectedLearnerId={effectiveSelectedLearnerId} onSelectLearner={setSelectedLearnerId} learnerSearch={learnerSearch} setLearnerSearch={setLearnerSearch} gradeLessonTotal={gradeLessonTotal} completionRate={completionRate} domains={domains} terms={terms} onReview={()=>navigateToSection("review")} onReport={()=>navigateToSection("reports")}/>:null}
+      {grade&&section==="learners"?<LearnersView learner={learner} learners={remoteLearnerSummaries} selectedLearnerId={effectiveSelectedLearnerId} onSelectLearner={selectLearner} learnerSearch={learnerSearch} setLearnerSearch={setLearnerSearch} gradeLessonTotal={gradeLessonTotal} completionRate={completionRate} domains={domains} terms={terms} onReview={()=>navigateToSection("review")} onReport={()=>navigateToSection("reports")}/>:null}
       {grade&&section==="review"?<ReviewView loading={loading} records={filtered} selected={selected} selectedKey={selectedKey} setSelectedKey={setSelectedKey} reviews={reviews} search={search} setSearch={setSearch} termFilter={termFilter} setTermFilter={setTermFilter} statusFilter={statusFilter} setStatusFilter={setStatusFilter} saveReview={saveReview} advance={advance}/>:null}
       {grade&&section==="coverage"?<CoverageView learner={learner} domains={domains} terms={terms} kinds={kinds} gradeLessonTotal={gradeLessonTotal} completionRate={completionRate}/>:null}
       {grade&&section==="reports"?<ReportsView report={report} learner={learner} gradeLessonTotal={gradeLessonTotal} completionRate={completionRate}/>:null}

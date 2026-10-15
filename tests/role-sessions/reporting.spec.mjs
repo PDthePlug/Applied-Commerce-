@@ -13,9 +13,9 @@ const key=unit.id+'::prompt-'+block.id+'::response';
 const sessions={};
 async function request(actor,path,method='GET',body){const r=await fetch(config.url+path,{method,signal:AbortSignal.timeout(30000),headers:{apikey:config.key,'Content-Type':'application/json',...(actor?{Authorization:'Bearer '+sessions[actor].access_token}:{}),Prefer:'return=representation'},body:body===undefined?undefined:JSON.stringify(body)});return {status:r.status,data:await r.json().catch(()=>null)};}
 async function rpc(actor,name,body){const r=await request(actor,'/rest/v1/rpc/'+name,'POST',body);expect(r.status,`${name}: HTTP ${r.status}`).toBe(200);return r.data;}
-async function login(page){await page.goto('/auth');await page.locator('.auth-form').getByLabel('Email address',{exact:true}).fill(fixtures.users.schoolAdmin.email);await page.locator('.auth-form').getByLabel('Password',{exact:true}).fill(fixtures.users.schoolAdmin.password);await page.locator('.auth-form').getByRole('button',{name:'Sign in',exact:true}).click();await expect(page.locator('.auth-panel')).toContainText(fixtures.users.schoolAdmin.email,{timeout:60000});}
+async function login(page,actor='schoolAdmin'){await page.goto('/auth');await page.locator('.auth-form').getByLabel('Email address',{exact:true}).fill(fixtures.users[actor].email);await page.locator('.auth-form').getByLabel('Password',{exact:true}).fill(fixtures.users[actor].password);await page.locator('.auth-form').getByRole('button',{name:'Sign in',exact:true}).click();await expect(page.locator('.auth-panel')).toContainText(fixtures.users[actor].email,{timeout:60000});}
 test.beforeAll(async({baseURL})=>{await verifyHostedTarget(baseURL,config,process.env.AC_EXPECTED_COMMIT);expect(fixtures.reportingLearners?.length,'Prepare append fixtures with five dedicated reporting learners').toBe(5);});
-test('real cohort metrics follow pending, revision and acceptance; switches and failed loads cannot show another cohort',async({page})=>{
+test('real cohort metrics follow pending, revision and acceptance; switches and failed loads cannot show another cohort',async({page,browser,baseURL})=>{
  const actors={schoolAdmin:fixtures.users.schoolAdmin,facilitator:fixtures.users.facilitator,...Object.fromEntries(fixtures.reportingLearners.map((user,i)=>['report'+i,user]))};
  for(const [actor,user] of Object.entries(actors)){const r=await request(null,'/auth/v1/token?grant_type=password','POST',{email:user.email,password:user.password});expect(r.status).toBe(200);sessions[actor]=r.data;}
  if(!fixtures.reportingCohortId){
@@ -52,5 +52,18 @@ test('real cohort metrics follow pending, revision and acceptance; switches and 
  const failure=async route=>{if(new URL(route.request().url()).searchParams.get('cohort_id')==='eq.'+fixtures.reportingCohortId)await route.fulfill({status:400,contentType:'application/json',body:JSON.stringify({message:'Injected isolated test failure',code:'TEST'})});else await route.continue();};
  await page.route('**/rest/v1/cohort_enrolments?**',failure);await cohortButton('Reporting five').click();await expect(selected).toContainText('could not be loaded');await expect(selected.locator('.institution-admin-person-list article')).toHaveCount(0);await expect(pulse).toContainText('temporarily unavailable');await expect(page.locator('.institution-admin-metrics').first().locator('strong').nth(2)).toHaveText('—');
  await page.unroute('**/rest/v1/cohort_enrolments?**',failure);await selected.getByRole('button',{name:'Try again',exact:true}).click();await expect(metric('Evidence review coverage')).toHaveText('20%');await expect(selected.locator('.institution-admin-person-list article')).toHaveCount(6);
+ // Select a non-first learner, then follow the real review/report controls.
+ const facilitatorContext=await browser.newContext({baseURL,viewport:page.viewportSize()});
+ try{
+  const facilitator=await facilitatorContext.newPage();await login(facilitator,'facilitator');await facilitator.goto('/facilitator/learners');
+  const name=fixtures.run+' reportLearner4';
+  await facilitator.locator('.fac-roster-row').filter({hasText:name}).click();await expect(facilitator.locator('.fac-learner-detail h2')).toHaveText(name);await facilitator.reload();await expect(facilitator.locator('.fac-learner-detail h2')).toHaveText(name);
+  await facilitator.getByRole('button',{name:'Review evidence',exact:true}).click();await expect(facilitator).toHaveURL(new RegExp('learner='+fixtures.reportingLearners[4].id));await expect(facilitator.locator('.fac-evidence-card')).toContainText(values[4]);
+  await facilitator.reload();await expect(facilitator.locator('.fac-evidence-card')).toContainText(values[4]);
+  await facilitator.goto('/facilitator/learners?learner='+fixtures.reportingLearners[4].id);await expect(facilitator.locator('.fac-learner-detail h2')).toHaveText(name);
+  await facilitator.getByRole('button',{name:'Open report',exact:true}).click();await expect(facilitator).toHaveURL(new RegExp('learner='+fixtures.reportingLearners[4].id));await expect(facilitator.locator('.fac-report-actions')).toContainText(name);
+  await facilitator.goto('/facilitator/learners?learner='+fixtures.users.unassigned.id);await expect(facilitator.locator('.fac-roster-row.active')).toHaveCount(1);await expect(facilitator.locator('.fac-roster-row.active')).not.toContainText(fixtures.run+' unassigned');
+  console.log('REPORTING roster selection survives review, report and refresh; unrelated IDs stay outside the roster');
+ }finally{await facilitatorContext.close();}
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true);
 });

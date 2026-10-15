@@ -7,6 +7,7 @@ export const metadata:Metadata={
   description:"Review learner evidence, apply rubrics and generate Applied Commerce evidence reports.",
 };
 
-export default function FacilitatorPage(){
-  return <FacilitatorRoleGate><FacilitatorWorkspace/></FacilitatorRoleGate>;
+export default async function FacilitatorPage({searchParams}:{searchParams:Promise<{learner?:string|string[]}>}){
+  const {learner}=await searchParams;
+  return <FacilitatorRoleGate><FacilitatorWorkspace initialLearnerId={typeof learner==="string"?learner:""}/></FacilitatorRoleGate>;
 }
