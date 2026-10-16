@@ -71,5 +71,6 @@ test('real cohort metrics follow pending, revision and acceptance; switches and 
   await facilitator.goto('/facilitator/learners?learner='+fixtures.users.unassigned.id);await expect(facilitator.locator('.fac-roster-row.active')).toHaveCount(1);await expect(facilitator.locator('.fac-roster-row.active')).not.toContainText(fixtures.run+' unassigned');
   console.log('REPORTING roster selection survives review, report and refresh; unrelated IDs stay outside the roster');
  }finally{await facilitatorContext.close();}
- expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true);
+ const dimensions=await page.evaluate(()=>({document:document.documentElement.scrollWidth,viewport:innerWidth}));
+ expect(dimensions.document,'Institution cards must fit the viewport with real cohort and learner names').toBeLessThanOrEqual(dimensions.viewport+1);
 });
