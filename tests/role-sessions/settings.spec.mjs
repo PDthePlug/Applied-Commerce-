@@ -1,6 +1,9 @@
 import {test,expect} from '@playwright/test';
 import {loadRoleFixtures,verifyHostedTarget} from '../../scripts/lib/validation-target.mjs';
 const {config,fixtures}=loadRoleFixtures(process.env.AC_ROLE_FIXTURES);
+const proxyUrl=process.env.HTTPS_PROXY?new URL(process.env.HTTPS_PROXY):null;
+// APIRequestContext uses context proxy settings independently of Chromium's launch proxy.
+const proxy=proxyUrl?{server:proxyUrl.origin,username:decodeURIComponent(proxyUrl.username),password:decodeURIComponent(proxyUrl.password),bypass:'127.0.0.1,localhost'}:undefined;
 test.beforeAll(async({baseURL})=>{await verifyHostedTarget(baseURL,config,process.env.AC_EXPECTED_COMMIT);});
 
 async function login(page,user){
@@ -10,7 +13,7 @@ async function login(page,user){
  await page.locator('.auth-form').getByRole('button',{name:'Sign in',exact:true}).click();
  await expect(page.locator('.auth-panel').getByRole('button',{name:'Sign out',exact:true})).toBeVisible({timeout:60000});
 }
-async function prefs(context){const response=await context.request.get('/api/preferences');expect(response.status()).toBe(200);return (await response.json()).preferences;}
+async function prefs(context){const response=await context.request.get('/api/preferences',{timeout:30000});expect(response.status()).toBe(200);return (await response.json()).preferences;}
 async function saved(page){await expect(page.locator('.settings-status').filter({hasText:'Saved to your account'})).toBeVisible();}
 async function settings(page,category='Appearance'){
  await page.goto('/settings',{waitUntil:'domcontentloaded'});
@@ -20,11 +23,12 @@ async function settings(page,category='Appearance'){
 
 test('account preferences persist across devices, recover failed writes and enforce account-switch boundaries',async({browser,baseURL},testInfo)=>{
  const contexts=[];
- const context=async()=>{const result=await browser.newContext({baseURL,viewport:testInfo.project.use.viewport});contexts.push(result);return result;};
+ const context=async()=>{const result=await browser.newContext({baseURL,proxy,viewport:testInfo.project.use.viewport});contexts.push(result);return result;};
  try{
   const a=await context(),b=await context(),pa=await a.newPage(),pb=await b.newPage();
   await Promise.all([login(pa,fixtures.users.learner),login(pb,fixtures.users.learner)]);
-  const reset=await a.request.patch('/api/preferences',{headers:{origin:baseURL,'x-ac-expected-user-id':fixtures.users.learner.id},data:{appearance:'light',accent:'commerce',textSize:'standard',readingWidth:'standard'}});expect(reset.status()).toBe(200);
+  console.log('SETTINGS two learner browser sessions established');
+  const reset=await a.request.patch('/api/preferences',{timeout:30000,headers:{origin:baseURL,'x-ac-expected-user-id':fixtures.users.learner.id},data:{appearance:'light',accent:'commerce',textSize:'standard',readingWidth:'standard'}});expect(reset.status()).toBe(200);
   await Promise.all([settings(pa),settings(pb)]);
   await pa.getByLabel('Theme').selectOption('warm');await saved(pa);expect((await prefs(a)).appearance).toBe('warm');
   await pb.reload();await expect(pb.locator('html')).toHaveAttribute('data-ac-appearance','warm');
@@ -42,9 +46,9 @@ test('account preferences persist across devices, recover failed writes and enfo
   console.log('SETTINGS failed write rolled back and retry persisted');
   await pa.goto('/auth',{waitUntil:'domcontentloaded'});await pa.getByRole('button',{name:'Sign out',exact:true}).click();await expect(pa.getByLabel('Email address',{exact:true})).toBeVisible();
   // Supabase's global sign-out also invalidates the second device's session.
-  expect((await b.request.get('/api/preferences')).status()).toBe(401);
+  expect((await b.request.get('/api/preferences',{timeout:30000})).status()).toBe(401);
   await login(pa,fixtures.users.other);const before=await prefs(a);
-  const mismatch=await a.request.patch('/api/preferences',{headers:{origin:baseURL,'x-ac-expected-user-id':fixtures.users.learner.id},data:{appearance:'dark'}});
+  const mismatch=await a.request.patch('/api/preferences',{timeout:30000,headers:{origin:baseURL,'x-ac-expected-user-id':fixtures.users.learner.id},data:{appearance:'dark'}});
   expect(mismatch.status()).toBe(409);expect(await prefs(a)).toEqual(before);
   await settings(pa);const otherTheme=before.appearance==='light'?'warm':'light';await pa.getByLabel('Theme').selectOption(otherTheme);await saved(pa);
   const fresh=await context(),freshPage=await fresh.newPage();await login(freshPage,fixtures.users.learner);await settings(freshPage);await expect(freshPage.locator('html')).toHaveAttribute('data-ac-appearance','dark');
@@ -53,15 +57,23 @@ test('account preferences persist across devices, recover failed writes and enfo
  }finally{await Promise.all(contexts.map(context=>context.close()));}
 });
 
-test('facilitator and both administrator roles persist their own reading preferences',async({browser,baseURL},testInfo)=>{
+test('facilitator and both administrator roles persist preferences and render readable dark workspaces',async({browser,baseURL},testInfo)=>{
  await Promise.all(['facilitator','schoolAdmin','platformAdmin'].map(async actor=>{
-  const context=await browser.newContext({baseURL,viewport:testInfo.project.use.viewport});
+  const context=await browser.newContext({baseURL,proxy,viewport:testInfo.project.use.viewport});
   try{
    const page=await context.newPage();await login(page,fixtures.users[actor]);await settings(page,'Reading');
    const select=page.getByLabel('Reading width');const value=await select.inputValue()==='wide'?'narrow':'wide';
    await select.selectOption(value);await saved(page);expect((await prefs(context)).readingWidth).toBe(value);
    await page.reload();await expect(page.locator('html')).toHaveAttribute('data-ac-reading-width',value);
-   console.log('SETTINGS '+actor+' reading preference persisted');
+   await page.getByRole('button',{name:/Appearance/}).click();await page.getByLabel('Theme').selectOption('dark');await saved(page);
+   await page.goto(actor==='facilitator'?'/facilitator':'/institutions/manage',{waitUntil:'domcontentloaded'});
+   const heading=page.locator(actor==='facilitator'?'.fac-card h2':'.institution-admin-card h2').first();await expect(heading).toBeVisible();
+   const ratio=await heading.evaluate(el=>{
+    const luminance=color=>{const [r,g,b]=(color.match(/[\d.]+/g)??[]).slice(0,3).map(Number).map(x=>x/255).map(x=>x<=.04045?x/12.92:((x+.055)/1.055)**2.4);return .2126*r+.7152*g+.0722*b;};
+    const card=el.closest('.fac-card,.institution-admin-card'),a=luminance(getComputedStyle(el).color),b=luminance(getComputedStyle(card).backgroundColor);return (Math.max(a,b)+.05)/(Math.min(a,b)+.05);
+   });expect(ratio,actor+' signed workspace heading').toBeGreaterThanOrEqual(4.5);
+   expect((await prefs(context)).appearance).toBe('dark');
+   console.log('SETTINGS '+actor+' reading/theme persisted; workspace contrast '+ratio.toFixed(2));
   }finally{await context.close();}
  }));
 });
@@ -74,7 +86,7 @@ test('a refreshed account profile updates untouched fields without discarding an
  const path='/rest/v1/learner_profiles?select=preferred_name,current_grade,sync_revision&user_id=eq.'+user.id;
  const original=(await owner(path))[0];expect(original).toBeTruthy();
  try{
-  const a=await browser.newContext({baseURL,viewport:testInfo.project.use.viewport}),b=await browser.newContext({baseURL,viewport:testInfo.project.use.viewport});contexts.push(a,b);
+  const a=await browser.newContext({baseURL,proxy,viewport:testInfo.project.use.viewport}),b=await browser.newContext({baseURL,proxy,viewport:testInfo.project.use.viewport});contexts.push(a,b);
   const pa=await a.newPage(),pb=await b.newPage();await Promise.all([login(pa,user),login(pb,user)]);
   await Promise.all([pa.goto('/settings',{waitUntil:'domcontentloaded'}),pb.goto('/settings',{waitUntil:'domcontentloaded'})]);
   await expect(pa.getByLabel('Preferred name')).toHaveValue(original.preferred_name);await expect(pb.getByLabel('Preferred name')).toHaveValue(original.preferred_name);
