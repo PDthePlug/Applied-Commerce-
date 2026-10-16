@@ -62,3 +62,5 @@ The expanded browser regression exposed a fixture mismatch: Auth profile creatio
 The first named multi-learner browser execution then exposed a second selection root cause: `buildLearnerSummary` assigned every remote learner the same local placeholder ID. Remote roster/detail summaries now carry each authorized learner UUID; the local placeholder remains only for the local workspace. A distinct-ID regression covers both remote learners and the local fallback.
 
 The mobile reporting case also exposed intrinsic grid-card width overflow with real cohort names: a 360px viewport produced a 366px document. Institution cards now allow their grid track to shrink, headings and names wrap, and header badges can move onto a new line. The existing signed reporting regression retains its viewport assertion; the diagnostic probe measured 360px after the correction without clipping page overflow.
+
+A separate 320px probe exposed the institution selector's native minimum width. Toolbar labels and selectors now stay within the available width; native selection behavior and complete option text are preserved.
