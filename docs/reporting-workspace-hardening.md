@@ -54,3 +54,7 @@ A fresh npm audit reports five high-severity dependency findings along the devel
 - Free-plan constraint: leaked-password protection remains unavailable at the current plan; do not enable paid services without a separate decision.
 
 Do not infer global gate PASS from a passing build, small synthetic cohort, or advisor scan.
+
+## 16 October validation correction
+
+The expanded browser regression exposed a fixture mismatch: Auth profile creation reads `full_name`, while the generator supplied `display_name`. New fixtures now use the supported field. Existing dedicated reporting learners receive preferred names through the normal revision-checked account RPC; no existing credentials are reset. Explicit browser action/navigation timeouts make missing controls fail at the affected boundary. An unrelated old generic cohort error also persisted after retry; load failures are now shown only in the account/cohort-bound error state, so a successful retry clears that state. The expanded browser test asserts the stale alert is absent after recovery.

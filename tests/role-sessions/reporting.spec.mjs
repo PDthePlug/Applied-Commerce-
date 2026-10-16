@@ -13,7 +13,7 @@ const key=unit.id+'::prompt-'+block.id+'::response';
 const sessions={};
 async function request(actor,path,method='GET',body){const r=await fetch(config.url+path,{method,signal:AbortSignal.timeout(30000),headers:{apikey:config.key,'Content-Type':'application/json',...(actor?{Authorization:'Bearer '+sessions[actor].access_token}:{}),Prefer:'return=representation'},body:body===undefined?undefined:JSON.stringify(body)});return {status:r.status,data:await r.json().catch(()=>null)};}
 async function rpc(actor,name,body){const r=await request(actor,'/rest/v1/rpc/'+name,'POST',body);expect(r.status,`${name}: HTTP ${r.status}`).toBe(200);return r.data;}
-async function login(page,actor='schoolAdmin'){await page.goto('/auth');await page.locator('.auth-form').getByLabel('Email address',{exact:true}).fill(fixtures.users[actor].email);await page.locator('.auth-form').getByLabel('Password',{exact:true}).fill(fixtures.users[actor].password);await page.locator('.auth-form').getByRole('button',{name:'Sign in',exact:true}).click();await expect(page.locator('.auth-panel')).toContainText(fixtures.users[actor].email,{timeout:60000});}
+async function login(page,actor='schoolAdmin'){await page.goto('/auth',{waitUntil:'domcontentloaded'});await page.locator('.auth-form').getByLabel('Email address',{exact:true}).fill(fixtures.users[actor].email);await page.locator('.auth-form').getByLabel('Password',{exact:true}).fill(fixtures.users[actor].password);await page.locator('.auth-form').getByRole('button',{name:'Sign in',exact:true}).click();await expect(page.locator('.auth-panel')).toContainText(fixtures.users[actor].email,{timeout:60000});}
 test.beforeAll(async({baseURL})=>{await verifyHostedTarget(baseURL,config,process.env.AC_EXPECTED_COMMIT);expect(fixtures.reportingLearners?.length,'Prepare append fixtures with five dedicated reporting learners').toBe(5);});
 test('real cohort metrics follow pending, revision and acceptance; switches and failed loads cannot show another cohort',async({page,browser,baseURL})=>{
  const actors={schoolAdmin:fixtures.users.schoolAdmin,facilitator:fixtures.users.facilitator,...Object.fromEntries(fixtures.reportingLearners.map((user,i)=>['report'+i,user]))};
@@ -27,7 +27,13 @@ test('real cohort metrics follow pending, revision and acceptance; switches and 
  }
  const values=[];
  async function save(i,value){const user=fixtures.reportingLearners[i];const prior=await request('report'+i,'/rest/v1/prompt_responses?select=sync_revision&prompt_key=eq.'+encodeURIComponent(key)+'&learner_id=eq.'+user.id);expect(prior.status).toBe(200);const saved=await rpc('report'+i,'save_learning_changes_for_account',{p_account_id:user.id,p_changes:[{kind:'prompt',key,value,expected:prior.data[0]?.sync_revision??0}]});expect(saved[0].conflict).toBe(false);}
- for(let i=0;i<5;i++){values[i]='Dedicated reporting answer '+Date.now()+' '+i;await save(i,values[i]);}
+ for(let i=0;i<5;i++){
+  const user=fixtures.reportingLearners[i];
+  const profile=await request('report'+i,'/rest/v1/learner_profiles?select=sync_revision&user_id=eq.'+user.id);expect(profile.status).toBe(200);
+  const saved=await rpc('report'+i,'save_learning_changes_for_account',{p_account_id:user.id,p_changes:[{kind:'profile',key:'self',value:{displayName:fixtures.run+' reportLearner'+i,grade:8},expected:profile.data[0]?.sync_revision??0}]});expect(saved[0].conflict).toBe(false);
+  values[i]='Dedicated reporting answer '+Date.now()+' '+i;await save(i,values[i]);
+ }
+ console.log('REPORTING five named learners provisioned through account APIs');
  async function review(status,value=values[0]){return request('facilitator','/rest/v1/rpc/save_facilitator_review','POST',{p_learner_id:fixtures.reportingLearners[0].id,p_response_key:key,p_response_value:value,p_auto_result:{},p_review:{status,criteria:{},feedback:'Dedicated reporting '+status}});}
  await login(page);await page.goto('/institutions/manage');
  const cohortButton=name=>page.locator('.institution-admin-list button').filter({hasText:name});
@@ -51,11 +57,11 @@ test('real cohort metrics follow pending, revision and acceptance; switches and 
  await cohortButton('Empty switch').click();await expect(selected).toContainText('No learners enrolled yet.');await expect(pulse).toContainText('at least five learners are actively enrolled');
  const failure=async route=>{if(new URL(route.request().url()).searchParams.get('cohort_id')==='eq.'+fixtures.reportingCohortId)await route.fulfill({status:400,contentType:'application/json',body:JSON.stringify({message:'Injected isolated test failure',code:'TEST'})});else await route.continue();};
  await page.route('**/rest/v1/cohort_enrolments?**',failure);await cohortButton('Reporting five').click();await expect(selected).toContainText('could not be loaded');await expect(selected.locator('.institution-admin-person-list article')).toHaveCount(0);await expect(pulse).toContainText('temporarily unavailable');await expect(page.locator('.institution-admin-metrics').first().locator('strong').nth(2)).toHaveText('—');
- await page.unroute('**/rest/v1/cohort_enrolments?**',failure);await selected.getByRole('button',{name:'Try again',exact:true}).click();await expect(metric('Evidence review coverage')).toHaveText('20%');await expect(selected.locator('.institution-admin-person-list article')).toHaveCount(6);
+ await page.unroute('**/rest/v1/cohort_enrolments?**',failure);await selected.getByRole('button',{name:'Try again',exact:true}).click();await expect(metric('Evidence review coverage')).toHaveText('20%');await expect(selected.locator('.institution-admin-person-list article')).toHaveCount(6);await expect(page.locator('.institution-admin-alert.error')).toHaveCount(0);console.log('REPORTING cohort delay, failure and retry recovered');
  // Select a non-first learner, then follow the real review/report controls.
  const facilitatorContext=await browser.newContext({baseURL,viewport:page.viewportSize()});
  try{
-  const facilitator=await facilitatorContext.newPage();await login(facilitator,'facilitator');await facilitator.goto('/facilitator/learners');
+  console.log('REPORTING checking non-first learner navigation');const facilitator=await facilitatorContext.newPage();await login(facilitator,'facilitator');await facilitator.goto('/facilitator/learners');
   const name=fixtures.run+' reportLearner4';
   await facilitator.locator('.fac-roster-row').filter({hasText:name}).click();await expect(facilitator.locator('.fac-learner-detail h2')).toHaveText(name);await facilitator.reload();await expect(facilitator.locator('.fac-learner-detail h2')).toHaveText(name);
   await facilitator.getByRole('button',{name:'Review evidence',exact:true}).click();await expect(facilitator).toHaveURL(new RegExp('learner='+fixtures.reportingLearners[4].id));await expect(facilitator.locator('.fac-evidence-card')).toContainText(values[4]);

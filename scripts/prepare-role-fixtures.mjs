@@ -26,7 +26,7 @@ try {
     const hash=(await cryptoDB.query("select crypt($1,gen_salt('bf',10)) as hash",[password])).rows[0].hash;
     if(role.startsWith('reportLearner'))reportingLearners.push({id,email,password});
     else users[role]={id,email,password};
-    const metadata=JSON.stringify({display_name:run+' '+role});
+    const metadata=JSON.stringify({full_name:run+' '+role});
     values.push(`(${quoted(id)},'00000000-0000-0000-0000-000000000000','authenticated','authenticated',${quoted(email)},${quoted(hash)},now(),'{"provider":"email","providers":["email"]}'::jsonb,${quoted(metadata)}::jsonb,now(),now(),'','','','',false)`);
     identities.push(`(${quoted(id)},${quoted(id)},${quoted(JSON.stringify({sub:id,email,email_verified:true,phone_verified:false}))}::jsonb,'email',now(),now(),now())`);
   }

@@ -141,8 +141,8 @@ export function InstitutionalAdmin({ initialSection = "overview" }: { initialSec
       .then((value) => {
         if (!cancelled) setCohortData({ key: cohortKey, people: value, status: "ready" });
       })
-      .catch((err) => {
-        if (!cancelled) { setCohortData({ key: cohortKey, people: null, status: "failed" }); setError(messageFor(err)); }
+      .catch(() => {
+        if (!cancelled) setCohortData({ key: cohortKey, people: null, status: "failed" });
       });
 
     return () => { cancelled = true; };
