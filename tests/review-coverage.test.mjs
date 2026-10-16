@@ -45,3 +45,11 @@ test('a decision tied to an earlier answer cannot count as current review covera
  assert.equal(model.buildLearnerSummary({state,records,reviews}).reviewedCount,0);
  assert.equal(buildEvidenceReport({learnerName:'Dedicated learner',records,reviews}).totals.accepted,0);
 });
+
+
+test('authorized roster summaries keep distinct real learner IDs rather than the local placeholder',()=>{
+ const first=model.buildLearnerSummary({state:{...state,profile:{displayName:'First learner',grade:8}},records:[],reviews:{},learnerId:'learner-first'});
+ const second=model.buildLearnerSummary({state:{...state,profile:{displayName:'Second learner',grade:8}},records:[],reviews:{},learnerId:'learner-second'});
+ assert.deepEqual([first.id,second.id],['learner-first','learner-second']);assert.equal(second.name,'Second learner');
+ assert.equal(model.buildLearnerSummary({state,records:[],reviews:{}}).id,'local-current-learner');
+});

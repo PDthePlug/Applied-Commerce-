@@ -132,10 +132,10 @@ export function FacilitatorWorkspace({initialSection="overview",initialLearnerId
   },[activeState.promptResponses,activeState,grade,hydrated,localPromptResponses,remoteLearner,remoteWorkspace]);
 
   const learner=useMemo(()=>{
-    if(remoteLearner)return buildLearnerSummary({state:remoteLearner.state,records:remoteLearner.records,reviews:remoteLearner.reviews});
+    if(remoteLearner)return buildLearnerSummary({state:remoteLearner.state,records:remoteLearner.records,reviews:remoteLearner.reviews,learnerId:remoteLearner.id});
     return buildLearnerSummary({state:activeState,records,reviews});
   },[activeState,records,reviews,remoteLearner]);
-  const remoteLearnerSummaries=useMemo(()=>remoteWorkspace?.learners.map(item=>buildLearnerSummary({state:item.state,records:item.records,reviews:item.reviews}))??[],[remoteWorkspace]);
+  const remoteLearnerSummaries=useMemo(()=>remoteWorkspace?.learners.map(item=>buildLearnerSummary({state:item.state,records:item.records,reviews:item.reviews,learnerId:item.id}))??[],[remoteWorkspace]);
   const cohort=useMemo(()=>remoteLearnerSummaries.length?buildCohortSummary(remoteLearnerSummaries):buildCohortSummary([learner]),[learner,remoteLearnerSummaries]);
   const priorities=useMemo(()=>buildReviewPriorities(records,reviews),[records,reviews]);
   const domains=useMemo(()=>buildDomainCoverage(records,reviews),[records,reviews]);

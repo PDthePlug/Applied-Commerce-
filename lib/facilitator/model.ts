@@ -21,14 +21,14 @@ const isReviewedRecord=(record:EvidenceRecord,reviews:Record<string,EvidenceRevi
 
 const percentage=(part:number,total:number)=>total?Math.round(part/total*100):0;
 
-export function buildLearnerSummary({state,records,reviews}:{state:LearningState;records:EvidenceRecord[];reviews:Record<string,EvidenceReview>}):FacilitatorLearnerSummary{
+export function buildLearnerSummary({state,records,reviews,learnerId}:{state:LearningState;records:EvidenceRecord[];reviews:Record<string,EvidenceReview>;learnerId?:string}):FacilitatorLearnerSummary{
   const reviewedCount=records.filter(record=>isReviewedRecord(record,reviews)).length;
   const needsRevisionCount=records.filter(record=>reviewFor(record,reviews)?.status==="needs-revision").length;
   const verifiedCount=records.filter(record=>reviewFor(record,reviews)?.status==="verified").length;
   const pendingCount=records.length-reviewedCount;
   const status:FacilitatorLearnerStatus=records.length===0?"no-evidence":needsRevisionCount>0?"needs-support":pendingCount>0?"review-needed":"on-track";
   return {
-    id:"local-current-learner",
+    id:learnerId??"local-current-learner",
     name:state.profile?.displayName?.trim()||"Current learner",
     grade:state.profile?.grade??state.activeGrade,
     completedLessons:Object.keys(state.completed).length,
