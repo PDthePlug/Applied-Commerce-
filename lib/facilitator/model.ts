@@ -1,3 +1,4 @@
+import { currentReview, hasReviewDecision } from "../evidence/current-reviews";
 import type {LearningState} from "../types";
 import type {EvidenceDomain,EvidenceKind,EvidenceRecord,EvidenceReview} from "../evidence/types";
 
@@ -15,16 +16,19 @@ export type ReviewPriority="revision"|"verification"|"rubric";
 export type FacilitatorPriorityItem={key:string;priority:ReviewPriority;label:string;count:number;description:string};
 export type CoverageRow<T extends string|number>={key:T;count:number;reviewed:number;rate:number};
 
+const reviewFor=(record:EvidenceRecord,reviews:Record<string,EvidenceReview>)=>currentReview(reviews[record.responseKey],record.responseValue);
+const isReviewedRecord=(record:EvidenceRecord,reviews:Record<string,EvidenceReview>)=>hasReviewDecision(reviewFor(record,reviews));
+
 const percentage=(part:number,total:number)=>total?Math.round(part/total*100):0;
 
-export function buildLearnerSummary({state,records,reviews}:{state:LearningState;records:EvidenceRecord[];reviews:Record<string,EvidenceReview>}):FacilitatorLearnerSummary{
-  const reviewedCount=records.filter(record=>Boolean(reviews[record.responseKey])).length;
-  const needsRevisionCount=records.filter(record=>reviews[record.responseKey]?.status==="needs-revision").length;
-  const verifiedCount=records.filter(record=>reviews[record.responseKey]?.status==="verified").length;
+export function buildLearnerSummary({state,records,reviews,learnerId}:{state:LearningState;records:EvidenceRecord[];reviews:Record<string,EvidenceReview>;learnerId?:string}):FacilitatorLearnerSummary{
+  const reviewedCount=records.filter(record=>isReviewedRecord(record,reviews)).length;
+  const needsRevisionCount=records.filter(record=>reviewFor(record,reviews)?.status==="needs-revision").length;
+  const verifiedCount=records.filter(record=>reviewFor(record,reviews)?.status==="verified").length;
   const pendingCount=records.length-reviewedCount;
   const status:FacilitatorLearnerStatus=records.length===0?"no-evidence":needsRevisionCount>0?"needs-support":pendingCount>0?"review-needed":"on-track";
   return {
-    id:"local-current-learner",
+    id:learnerId??"local-current-learner",
     name:state.profile?.displayName?.trim()||"Current learner",
     grade:state.profile?.grade??state.activeGrade,
     completedLessons:Object.keys(state.completed).length,
@@ -45,9 +49,9 @@ export function buildCohortSummary(learners:FacilitatorLearnerSummary[]):Facilit
 }
 
 export function buildReviewPriorities(records:EvidenceRecord[],reviews:Record<string,EvidenceReview>):FacilitatorPriorityItem[]{
-  const revision=records.filter(record=>reviews[record.responseKey]?.status==="needs-revision").length;
-  const verification=records.filter(record=>record.definition.assessmentMode==="verification"&&!reviews[record.responseKey]).length;
-  const rubric=records.filter(record=>record.definition.assessmentMode==="rubric"&&!reviews[record.responseKey]).length;
+  const revision=records.filter(record=>reviewFor(record,reviews)?.status==="needs-revision").length;
+  const verification=records.filter(record=>record.definition.assessmentMode==="verification"&&!isReviewedRecord(record,reviews)).length;
+  const rubric=records.filter(record=>record.definition.assessmentMode==="rubric"&&!isReviewedRecord(record,reviews)).length;
   return [
     {key:"revision",priority:"revision",label:"Learner revisions",count:revision,description:"Evidence already reviewed but returned for another attempt."},
     {key:"verification",priority:"verification",label:"Real-world verification",count:verification,description:"Interviews, observations or actions waiting for facilitator verification."},
@@ -58,19 +62,19 @@ export function buildReviewPriorities(records:EvidenceRecord[],reviews:Record<st
 export function buildDomainCoverage(records:EvidenceRecord[],reviews:Record<string,EvidenceReview>):CoverageRow<EvidenceDomain>[]{
   const map=new Map<EvidenceDomain,{count:number;reviewed:number}>();
   records.forEach(record=>record.definition.domains.forEach(domain=>{
-    const row=map.get(domain)??{count:0,reviewed:0};row.count+=1;if(reviews[record.responseKey])row.reviewed+=1;map.set(domain,row);
+    const row=map.get(domain)??{count:0,reviewed:0};row.count+=1;if(isReviewedRecord(record,reviews))row.reviewed+=1;map.set(domain,row);
   }));
   return [...map.entries()].map(([key,row])=>({...row,key,rate:percentage(row.reviewed,row.count)})).sort((a,b)=>b.count-a.count);
 }
 
 export function buildKindCoverage(records:EvidenceRecord[],reviews:Record<string,EvidenceReview>):CoverageRow<EvidenceKind>[]{
   const map=new Map<EvidenceKind,{count:number;reviewed:number}>();
-  records.forEach(record=>{const row=map.get(record.definition.kind)??{count:0,reviewed:0};row.count+=1;if(reviews[record.responseKey])row.reviewed+=1;map.set(record.definition.kind,row);});
+  records.forEach(record=>{const row=map.get(record.definition.kind)??{count:0,reviewed:0};row.count+=1;if(isReviewedRecord(record,reviews))row.reviewed+=1;map.set(record.definition.kind,row);});
   return [...map.entries()].map(([key,row])=>({...row,key,rate:percentage(row.reviewed,row.count)})).sort((a,b)=>b.count-a.count);
 }
 
 export function buildTermCoverage(records:EvidenceRecord[],reviews:Record<string,EvidenceReview>):CoverageRow<number>[]{
-  return [1,2,3,4].map(term=>{const inTerm=records.filter(record=>record.definition.term===term);const reviewed=inTerm.filter(record=>Boolean(reviews[record.responseKey])).length;return {key:term,count:inTerm.length,reviewed,rate:percentage(reviewed,inTerm.length)};});
+  return [1,2,3,4].map(term=>{const inTerm=records.filter(record=>record.definition.term===term);const reviewed=inTerm.filter(record=>isReviewedRecord(record,reviews)).length;return {key:term,count:inTerm.length,reviewed,rate:percentage(reviewed,inTerm.length)};});
 }
 
 export function statusLabel(status:FacilitatorLearnerStatus){

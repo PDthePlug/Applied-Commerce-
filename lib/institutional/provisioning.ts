@@ -3,7 +3,7 @@
 import { readAllRows } from "@/lib/supabase/read-all";
 import { curriculum } from "@/lib/curriculum";
 import { buildEvidenceRecords } from "@/lib/evidence/engine";
-import { currentReviews } from "@/lib/evidence/current-reviews";
+import { currentReviews, hasReviewDecision } from "@/lib/evidence/current-reviews";
 import type { EvidenceReview } from "@/lib/evidence/types";
 import { createClient } from "@/lib/supabase/client";
 import type { Tables } from "@/lib/supabase/database.types";
@@ -16,11 +16,11 @@ export async function loadInstitutionalContext(userId: string) {
   const [{ data: isPlatformAdmin, error: platformAdminError }, { data: memberships, error: membershipError }] =
     await Promise.all([
       supabase.rpc("is_platform_admin"),
-      supabase
+      readAllRows(supabase
         .from("school_memberships")
         .select("school_id,role,status")
         .eq("user_id", userId)
-        .eq("status", "active")
+        .eq("status", "active").order("id"))
     ]);
 
   if (platformAdminError) throw platformAdminError;
@@ -37,10 +37,10 @@ export async function loadInstitutionalContext(userId: string) {
     .from("schools")
     .select("id,name,slug,status,metadata,created_at,updated_at")
     .eq("status", "active")
-    .order("name");
+    .order("name").order("id");
   if (schoolIds) schoolQuery = schoolQuery.in("id", schoolIds);
 
-  const { data: schools, error: schoolError } = await schoolQuery;
+  const { data: schools, error: schoolError } = await readAllRows(schoolQuery);
   if (schoolError) throw schoolError;
 
   const visibleSchoolIds = (schools ?? []).map((school) => school.id);
@@ -48,12 +48,12 @@ export async function loadInstitutionalContext(userId: string) {
     return { isPlatformAdmin: Boolean(isPlatformAdmin), schools: [], memberships: memberships ?? [], cohorts: [] as Cohort[], selectedSchoolId: "" };
   }
 
-  const { data: cohorts, error: cohortError } = await supabase
+  const { data: cohorts, error: cohortError } = await readAllRows(supabase
     .from("cohorts")
     .select("id,school_id,name,grade,academic_year,status,starts_on,ends_on,created_at,updated_at")
     .in("school_id", visibleSchoolIds)
     .order("academic_year", { ascending: false })
-    .order("name");
+    .order("name").order("id"));
 
   if (cohortError) throw cohortError;
 
@@ -135,18 +135,18 @@ export async function enrolLearner(cohortId: string, email: string) {
 export async function loadCohortPeople(cohortId: string) {
   const supabase = createClient();
   const [enrolments, staff] = await Promise.all([
-    supabase
+    readAllRows(supabase
       .from("cohort_enrolments")
       .select("learner_id,status,enrolled_at,completed_at")
       .eq("cohort_id", cohortId)
       .in("status", ["active", "completed"])
-      .order("enrolled_at"),
-    supabase
+      .order("enrolled_at").order("id")),
+    readAllRows(supabase
       .from("cohort_staff")
       .select("user_id,role,status,created_at")
       .eq("cohort_id", cohortId)
       .eq("status", "active")
-      .order("created_at")
+      .order("created_at").order("id"))
   ]);
 
   if (enrolments.error) throw enrolments.error;
@@ -155,26 +155,25 @@ export async function loadCohortPeople(cohortId: string) {
   const learnerIds = [...new Set((enrolments.data ?? []).map((row) => row.learner_id))];
   const staffIds = [...new Set((staff.data ?? []).map((row) => row.user_id))];
 
-  const [learnerProfiles, staffProfiles] = await Promise.all([
-    learnerIds.length
-      ? supabase.from("profiles").select("id,display_name,status").in("id", learnerIds)
-      : Promise.resolve({ data: [], error: null }),
-    staffIds.length
-      ? supabase.from("profiles").select("id,display_name,status").in("id", staffIds)
-      : Promise.resolve({ data: [], error: null })
-  ]);
-
-  if (learnerProfiles.error) throw learnerProfiles.error;
-  if (staffProfiles.error) throw staffProfiles.error;
+  // Keep UUID filters below URL limits as well as paginating the result set.
+  async function loadProfiles(ids: string[]) {
+    const profiles: Array<Pick<Tables<"profiles">, "id" | "display_name" | "status">> = [];
+    for (let offset = 0; offset < ids.length; offset += 100) {
+      const result = await readAllRows(supabase.from("profiles").select("id,display_name,status").in("id", ids.slice(offset, offset + 100)).order("id"));
+      profiles.push(...result.data);
+    }
+    return new Map(profiles.map(profile => [profile.id, profile]));
+  }
+  const [learnerProfiles, staffProfiles] = await Promise.all([loadProfiles(learnerIds), loadProfiles(staffIds)]);
 
   return {
     learners: (enrolments.data ?? []).map((row) => ({
       ...row,
-      profile: (learnerProfiles.data ?? []).find((profile) => profile.id === row.learner_id) ?? null
+      profile: learnerProfiles.get(row.learner_id) ?? null
     })),
     staff: (staff.data ?? []).map((row) => ({
       ...row,
-      profile: (staffProfiles.data ?? []).find((profile) => profile.id === row.user_id) ?? null
+      profile: staffProfiles.get(row.user_id) ?? null
     })),
     staffIds
   };
@@ -193,11 +192,11 @@ export type CohortLearningInsights = {
 
 export async function loadCohortLearningInsights(cohortId: string): Promise<CohortLearningInsights> {
   const supabase = createClient();
-  const { data: enrolments, error: enrolmentError } = await supabase
+  const { data: enrolments, error: enrolmentError } = await readAllRows(supabase
     .from("cohort_enrolments")
     .select("learner_id")
     .eq("cohort_id", cohortId)
-    .eq("status", "active");
+    .eq("status", "active").order("id"));
   if (enrolmentError) throw enrolmentError;
 
   const learnerIds = [...new Set((enrolments ?? []).map(row => row.learner_id))];
@@ -248,7 +247,7 @@ export async function loadCohortLearningInsights(cohortId: string): Promise<Coho
       const unit=await curriculum.unit(context.grade,context.term,unitId);
       const records=buildEvidenceRecords(unit,answers);
       evidenceCount+=records.length;
-      for(const record of records){const decision=current[record.responseKey];if(decision){reviewCount++;if(decision.status==="needs-revision")needsRevision++;}}
+      for(const record of records){const decision=current[record.responseKey];if(hasReviewDecision(decision)){reviewCount++;if(decision.status==="needs-revision")needsRevision++;}}
     }
   }
   return {...base,completedLessons:completed.count??0,savedResponses:responses.data.length,

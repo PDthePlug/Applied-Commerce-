@@ -1,0 +1,7 @@
+import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';import ts from 'typescript';
+const code=ts.transpileModule(fs.readFileSync('lib/facilitator/navigation.ts','utf8'),{compilerOptions:{module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022}}).outputText;
+const {selectedRosterLearner,facilitatorSectionHref}=await import('data:text/javascript;base64,'+Buffer.from(code).toString('base64'));
+const roster=[{id:'first'},{id:'selected'}];
+test('a selected non-first learner is retained across every facilitator task route',()=>{for(const section of ['overview','learners','review','coverage','reports','rubrics']){const href=facilitatorSectionHref(section,selectedRosterLearner(roster,'selected'));assert.equal(new URL(href,'https://example.invalid').searchParams.get('learner'),'selected');assert.equal(new URL(href,'https://example.invalid').pathname,section==='overview'?'/facilitator':'/facilitator/'+section);}});
+test('unrelated, revoked or missing learner IDs cannot become a selection',()=>{for(const id of ['unassigned','revoked',''])assert.equal(selectedRosterLearner(roster,id),'first');assert.equal(selectedRosterLearner([],'selected'),'');assert.equal(facilitatorSectionHref('review',''),'/facilitator/review');});
+test('selection is encoded as one URL value rather than new parameters',()=>{const url=new URL(facilitatorSectionHref('reports','id&learner=other'),'https://example.invalid');assert.deepEqual([...url.searchParams],[['learner','id&learner=other']]);});

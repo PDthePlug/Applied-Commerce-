@@ -111,6 +111,14 @@ test('revoked cohort assignment denies subsequent review access',async()=>{
  await db.query("update public.cohort_staff set status='disabled' where user_id=$1",[staff]);
  await assert.rejects(save(staff,'revised answer',review('accepted')),/Authorized facilitator/);
 });
+test('existing review ownership currently blocks an authorized replacement after reassignment',async()=>{
+ await asUser(admin,'select public.add_school_member_by_email($1,$2,$3)',[school,'unassigned@audit.invalid','educator']);
+ await asUser(admin,'select public.add_cohort_staff_by_email($1,$2,$3)',[cohort,'unassigned@audit.invalid','educator']);
+ await assert.rejects(save(unassigned,'revised answer',review('accepted')),/another facilitator/);
+ assert.equal((await db.query('select reviewer_id from public.evidence_reviews')).rows[0].reviewer_id,staff);
+ await db.query('delete from public.cohort_staff where user_id=$1',[unassigned]);
+ await db.query('delete from public.school_memberships where user_id=$1',[unassigned]);
+});
 test('account preferences are isolated and constrain supported values',async()=>{
  await asUser(learner,'select public.save_account_preferences($1)',[JSON.stringify({appearance:"dark"})]);
  assert.equal((await asUser(other,'select * from public.account_preferences')).rows.length,0);

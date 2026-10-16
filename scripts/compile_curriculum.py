@@ -166,7 +166,7 @@ for path in sorted(SOURCE_DIR.glob('APPLIED COMMERCE Grade *.docx')):
     parts=[encoded[i:i+PART_SIZE] for i in range(0,len(encoded),PART_SIZE)]
     for i,part in enumerate(parts,1):
         (OUT/f'grade-{grade}.part-{i}.b64').write_text(part,encoding='ascii')
-    catalogue['grades'].append({'grade':grade,'title':title,'bookTitle':book_title,'unitCount':total_lessons,'assessmentCount':total_assessments,'bundleParts':len(parts),'terms':term_catalogue})
+    catalogue['grades'].append({'grade':grade,'title':title,'bookTitle':book_title,'unitCount':total_lessons,'lessonIds':[u['id'] for t in bundle['terms'] for u in t['units'] if u['type']=='lesson'],'assessmentCount':total_assessments,'bundleParts':len(parts),'terms':term_catalogue})
 
 catalogue['grades'].sort(key=lambda g:g['grade'])
 (OUT/'index.json').write_text(json.dumps(catalogue,ensure_ascii=False,separators=(',',':')),encoding='utf-8')

@@ -50,3 +50,14 @@ test('private fixture manifests require six distinct accounts in the same projec
     delete fixtures.users.other; write(); assert.throws(() => loadRoleFixtures(directory), /six dedicated/);
   } finally { fs.rmSync(directory, { recursive: true }); }
 });
+
+test('reporting sessions require five distinct dedicated identities and reject real email accounts',()=>{
+ const directory=fs.mkdtempSync(path.join(os.tmpdir(),'ac-report-target-'));
+ const run='audit-reporting-test';
+ const identity=i=>({id:'00000000-0000-4000-8000-'+String(i).padStart(12,'0'),email:run+'-'+i+'@example.invalid',password:'synthetic-test-only'});
+ const roles=['learner','other','facilitator','unassigned','schoolAdmin','platformAdmin'];
+ const fixtures={projectRef,run,users:Object.fromEntries(roles.map((role,i)=>[role,identity(i+1)])),reportingLearners:Array.from({length:5},(_,i)=>identity(i+7))};
+ const write=()=>fs.writeFileSync(directory+'/fixtures.json',JSON.stringify(fixtures));
+ fs.writeFileSync(directory+'/public-config.json',JSON.stringify(target()));
+ try{write();loadRoleFixtures(directory);fixtures.reportingLearners[0].id=fixtures.users.learner.id;write();assert.throws(()=>loadRoleFixtures(directory),/distinct/);fixtures.reportingLearners[0]=identity(7);fixtures.reportingLearners[0].email=run+'-7@real.invalid';write();assert.throws(()=>loadRoleFixtures(directory),/fixture email domain/);fixtures.reportingLearners.pop();write();assert.throws(()=>loadRoleFixtures(directory),/five dedicated/);}finally{fs.rmSync(directory,{recursive:true});}
+});
