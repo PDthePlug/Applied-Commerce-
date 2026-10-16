@@ -1,5 +1,24 @@
 import { expect, test } from "@playwright/test";
 
+test("profile refresh preserves unsaved fields and updates untouched fields across tabs",async({page,context})=>{
+  await page.goto('/settings');
+  await page.getByLabel('Preferred name').fill('Unsaved name on first tab');
+  const other=await context.newPage();
+  await other.goto('/settings');
+  await other.getByLabel('Preferred name').fill('Saved on the other tab');
+  await other.getByLabel('Current grade').selectOption('9');
+  await other.getByRole('button',{name:'Save profile',exact:true}).click();
+  await expect(page.getByLabel('Preferred name')).toHaveValue('Unsaved name on first tab');
+  await expect(page.getByLabel('Current grade')).toHaveValue('9');
+  await page.getByRole('button',{name:'Save profile',exact:true}).click();
+  await expect(other.getByLabel('Preferred name')).toHaveValue('Unsaved name on first tab');
+  await other.getByLabel('Preferred name').fill('A newer saved name');
+  await other.getByLabel('Current grade').selectOption('10');
+  await other.getByRole('button',{name:'Save profile',exact:true}).click();
+  await expect(page.getByLabel('Preferred name')).toHaveValue('A newer saved name');
+  await expect(page.getByLabel('Current grade')).toHaveValue('10');
+});
+
 test("appearance and reading preferences apply immediately and survive reload", async ({ page }) => {
   await page.goto("/settings");
   await expect(page.getByRole("heading", { name: "Settings" })).toBeVisible();

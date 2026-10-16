@@ -9,20 +9,31 @@ const responses=Array.from({length:5},(_,n)=>keys.map((prompt_key,i)=>({learner_
 const fixture={cohort_enrolments:Array.from({length:5},(_,n)=>({learner_id:'learner-'+n})),curriculum_releases:{id:'release'},lesson_progress:[],prompt_responses:responses,evidence_records:[{id:'evidence-1',learner_id:'learner-0',response_key:keys[0]}],evidence_reviews:[{evidence_record_id:'evidence-1',status:'accepted',response_value_at_review:'answer-0',reviewed_at:'2026-10-12T12:00:00Z'}]};
 globalThis.__institutionClient={from:table=>{const builder={select:()=>builder,eq:()=>builder,in:()=>builder,order:()=>builder,single:async()=>({data:fixture[table],error:null}),range:async(a,b)=>({data:fixture[table].slice(a,b+1),error:null}),then:resolve=>resolve({data:fixture[table],count:0,error:null})};return builder;}};
 const curriculum=await import(moduleUrl('lib/curriculum.ts'));curriculum.curriculum.unit=async()=>content;
+const catalogue=JSON.parse(fs.readFileSync('public/curriculum/index.json','utf8'));curriculum.curriculum.index=async()=>catalogue;
 test('institution review coverage includes unreviewed authored evidence, rather than only database review rows',async()=>{const summary=await loadCohortLearningInsights('cohort');assert.equal(summary.evidenceRecords,10);assert.equal(summary.reviewedEvidence,1);assert.equal(summary.reviewCoverage,10);});
 test('institution reporting no longer counts approvals of revised answers',async()=>{fixture.evidence_reviews[0].response_value_at_review='old answer';const summary=await loadCohortLearningInsights('cohort');assert.equal(summary.reviewedEvidence,0);assert.equal(summary.reviewCoverage,0);});
 
 test('a saved pending review does not inflate administrator coverage',async()=>{fixture.evidence_reviews[0].response_value_at_review='answer-0';fixture.evidence_reviews[0].status='pending';const summary=await loadCohortLearningInsights('cohort');assert.equal(summary.evidenceRecords,10);assert.equal(summary.reviewedEvidence,0);assert.equal(summary.reviewCoverage,0);assert.equal(summary.needsRevision,0);});
+
+test('administrator lesson totals exclude assessments and retired IDs while retaining current lessons across grades',async()=>{
+ fixture.lesson_progress=[
+  {learner_id:'learner-0',unit_id:catalogue.grades[0].lessonIds[0]},
+  {learner_id:'learner-0',unit_id:catalogue.grades[1].lessonIds[0]},
+  {learner_id:'learner-1',unit_id:'g9-t1-assessment-1'},
+  {learner_id:'learner-2',unit_id:'g8-t1-l99-999'}
+ ];
+ try{assert.equal((await loadCohortLearningInsights('cohort')).completedLessons,2);}finally{fixture.lesson_progress=[];}
+});
 
 
 test('institution loaders cross API row limits and bound profile filters without losing names',async()=>{
  const people=Array.from({length:1201},(_,i)=>({learner_id:'learner-'+i,status:'active'}));
  const profiles=people.map(row=>({id:row.learner_id,display_name:row.learner_id,status:'active'}));
  const schools=Array.from({length:1001},(_,i)=>({id:'school-'+i,name:'School '+i}));
- const tables={cohort_enrolments:people,cohort_staff:[],profiles,schools,cohorts:schools.map(row=>({id:'cohort-'+row.id,school_id:row.id})),school_memberships:schools.map(row=>({school_id:row.id,role:'admin',status:'active'}))};
+ const tables={cohort_enrolments:people,cohort_staff:[],profiles,schools,cohorts:schools.map(row=>({id:'cohort-'+row.id,school_id:row.id,name:row.name+' cohort',academic_year:2026})),school_memberships:schools.map(row=>({school_id:row.id,role:'admin',status:'active'}))};
  const filters=[];
  globalThis.__institutionClient={rpc:async()=>({data:false,error:null}),from:table=>{
-  let ids;const builder={select:()=>builder,eq:()=>builder,order:()=>builder,in:(column,values)=>{if(table==='profiles'){filters.push(values.length);ids=values;}return builder;},range:async(a,b)=>({data:tables[table].filter(row=>!ids||ids.includes(row.id)).slice(a,b+1),error:null}),then:resolve=>resolve({data:tables[table].slice(0,1000),error:null})};return builder;
+  const selections=new Map();const builder={select:()=>builder,eq:()=>builder,order:()=>builder,in:(column,values)=>{filters.push(values.length);selections.set(column,values);return builder;},range:async(a,b)=>({data:tables[table].filter(row=>[...selections].every(([column,values])=>values.includes(row[column]))).slice(a,b+1),error:null}),then:resolve=>resolve({data:tables[table].slice(0,1000),error:null})};return builder;
  }};
  const cohort=await loadCohortPeople('cohort');assert.equal(cohort.learners.length,1201);assert.ok(cohort.learners.every(row=>row.profile?.display_name===row.learner_id));assert.ok(filters.every(size=>size<=100));
  const context=await loadInstitutionalContext('admin');assert.equal(context.memberships.length,1001);assert.equal(context.schools.length,1001);assert.equal(context.cohorts.length,1001);

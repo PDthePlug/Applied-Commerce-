@@ -124,7 +124,14 @@ function applyPatch(bundle:GradeBundle,patch:GradePatch){
 }
 
 let indexPromise: Promise<CurriculumIndex> | null = null;
-const loadIndex=()=>indexPromise ??= getJson<CurriculumIndex>("/curriculum/index.json");
+function loadIndex(){
+  if(!indexPromise){
+    const pending=getJson<CurriculumIndex>("/curriculum/index.json");
+    indexPromise=pending;
+    void pending.catch(()=>{if(indexPromise===pending)indexPromise=null;});
+  }
+  return indexPromise;
+}
 const bundleCache=new Map<number,Promise<GradeBundle>>();
 
 async function loadBundle(grade:number):Promise<GradeBundle>{
@@ -153,7 +160,9 @@ async function loadBundle(grade:number):Promise<GradeBundle>{
 
     return bundle;
   })();
-  bundleCache.set(grade,promise); return promise;
+  bundleCache.set(grade,promise);
+  void promise.catch(()=>{if(bundleCache.get(grade)===promise)bundleCache.delete(grade);});
+  return promise;
 }
 
 function summary(u:UnitContent):UnitSummary{

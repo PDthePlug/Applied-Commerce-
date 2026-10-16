@@ -1,6 +1,6 @@
 "use client";
 import { currentReviews } from "@/lib/evidence/current-reviews";
-import { readAllRows } from "@/lib/supabase/read-all";
+import { readAllRows, readRowsByIds } from "@/lib/supabase/read-all";
 
 import { useCallback, useEffect, useState } from "react";
 import { createClient } from "@/lib/supabase/client";
@@ -42,11 +42,11 @@ export async function loadSupabaseFacilitatorWorkspace(userId: string, verifiedA
     if (error) throw error;
     isPlatformAdmin = data === true;
     if (!isPlatformAdmin) {
-      const { data: staff, error: staffError } = await supabase
+      const { data: staff, error: staffError } = await readAllRows(supabase
         .from("cohort_staff")
         .select("cohort_id")
         .eq("user_id", userId)
-        .eq("status", "active");
+        .eq("status", "active").order("id"));
       if (staffError) throw staffError;
       cohortIds = [...new Set((staff ?? []).map(row => row.cohort_id))];
       if (!cohortIds.length) return null;
@@ -58,22 +58,22 @@ export async function loadSupabaseFacilitatorWorkspace(userId: string, verifiedA
   if (isPlatformAdmin) {
     // Platform administrators can inspect all active cohorts; they do not need
     // an artificial personal cohort_staff assignment to enter this workspace.
-    const { data, error } = await supabase
+    const { data, error } = await readAllRows(supabase
       .from("cohorts")
       .select("id,name,school_id,grade,academic_year")
       .eq("status", "active")
       .order("academic_year", { ascending: false })
-      .order("name");
+      .order("name").order("id"));
     if (error) throw error;
     activeCohorts = data ?? [];
     cohortIds = activeCohorts.map(row => row.id);
   } else {
     if (!cohortIds.length) return null;
-    const { data, error } = await supabase
+    const { data, error } = await readRowsByIds(cohortIds,ids=>supabase
       .from("cohorts")
       .select("id,name,school_id,grade,academic_year")
-      .in("id", cohortIds)
-      .eq("status", "active");
+      .in("id", ids)
+      .eq("status", "active").order("id"));
     if (error) throw error;
     activeCohorts = data ?? [];
     cohortIds = activeCohorts.map(row => row.id);
@@ -82,7 +82,7 @@ export async function loadSupabaseFacilitatorWorkspace(userId: string, verifiedA
 
   const [enrolments, release] = await Promise.all([
     cohortIds.length
-      ? supabase.from("cohort_enrolments").select("cohort_id,learner_id,status").in("cohort_id", cohortIds).in("status", ["active", "completed"])
+      ? readRowsByIds(cohortIds,ids=>supabase.from("cohort_enrolments").select("cohort_id,learner_id,status").in("cohort_id", ids).in("status", ["active", "completed"]).order("id"))
       : Promise.resolve({ data: [], error: null }),
     supabase.from("curriculum_releases").select("id").eq("release_key", RELEASE).single()
   ]);
@@ -90,7 +90,7 @@ export async function loadSupabaseFacilitatorWorkspace(userId: string, verifiedA
   if (release.error) throw release.error;
   const schoolIds = [...new Set(activeCohorts.map(row => row.school_id))];
   const schoolsResult = schoolIds.length
-    ? await supabase.from("schools").select("id,name").in("id", schoolIds)
+    ? await readRowsByIds(schoolIds,ids=>supabase.from("schools").select("id,name").in("id", ids).order("id"))
     : { data: [], error: null };
   if (schoolsResult.error) throw schoolsResult.error;
   const schoolNames = (schoolsResult.data ?? []).map(row => row.name);
@@ -104,17 +104,17 @@ export async function loadSupabaseFacilitatorWorkspace(userId: string, verifiedA
 
   const releaseId = release.data.id;
   const [profiles, learnerProfiles, progress, prompts, notes, evidence] = await Promise.all([
-    supabase.from("profiles").select("id,display_name").in("id", learnerIds),
-    supabase.from("learner_profiles").select("user_id,preferred_name,current_grade").in("user_id", learnerIds),
-  readAllRows(supabase.from("lesson_progress").select("learner_id,grade,term,unit_id,status,last_opened_at,completed_at,updated_at").eq("curriculum_release_id", releaseId).in("learner_id", learnerIds).order("id")),
-  readAllRows(supabase.from("prompt_responses").select("learner_id,grade,term,unit_id,prompt_key,response,updated_at").eq("curriculum_release_id", releaseId).in("learner_id", learnerIds).order("id")),
-  readAllRows(supabase.from("lesson_notes").select("learner_id,unit_id,note,updated_at").eq("curriculum_release_id", releaseId).in("learner_id", learnerIds).order("id")),
-  readAllRows(supabase.from("evidence_records").select("id,learner_id,response_key").in("learner_id", learnerIds).order("id"))
+    readRowsByIds(learnerIds,ids=>supabase.from("profiles").select("id,display_name").in("id", ids).order("id")),
+    readRowsByIds(learnerIds,ids=>supabase.from("learner_profiles").select("user_id,preferred_name,current_grade").in("user_id", ids).order("user_id")),
+    readRowsByIds(learnerIds,ids=>supabase.from("lesson_progress").select("learner_id,grade,term,unit_id,status,last_opened_at,completed_at,updated_at").eq("curriculum_release_id", releaseId).in("learner_id", ids).order("id")),
+    readRowsByIds(learnerIds,ids=>supabase.from("prompt_responses").select("learner_id,grade,term,unit_id,prompt_key,response,updated_at").eq("curriculum_release_id", releaseId).in("learner_id", ids).order("id")),
+    readRowsByIds(learnerIds,ids=>supabase.from("lesson_notes").select("learner_id,unit_id,note,updated_at").eq("curriculum_release_id", releaseId).in("learner_id", ids).order("id")),
+    readRowsByIds(learnerIds,ids=>supabase.from("evidence_records").select("id,learner_id,response_key").in("learner_id", ids).order("id"))
   ]);
   for (const result of [profiles, learnerProfiles, progress, prompts, notes, evidence]) if (result.error) throw result.error;
 
   const reviewResult = evidence.data?.length
-    ? await readAllRows(supabase.from("evidence_reviews").select("evidence_record_id,reviewer_id,rubric_key,status,criteria_scores,feedback,portfolio_interpretation,next_pathway,response_value_at_review,reviewed_at").in("evidence_record_id", evidence.data.map(row => row.id)).order("id"))
+    ? await readRowsByIds(evidence.data.map(row=>row.id),ids=>supabase.from("evidence_reviews").select("evidence_record_id,reviewer_id,rubric_key,status,criteria_scores,feedback,portfolio_interpretation,next_pathway,response_value_at_review,reviewed_at").in("evidence_record_id", ids).order("id"))
     : { data: [], error: null };
   if (reviewResult.error) throw reviewResult.error;
 
