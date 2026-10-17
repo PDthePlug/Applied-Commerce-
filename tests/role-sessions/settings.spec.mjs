@@ -13,7 +13,13 @@ async function login(page,user){
  await page.locator('.auth-form').getByRole('button',{name:'Sign in',exact:true}).click();
  await expect(page.locator('.auth-panel').getByRole('button',{name:'Sign out',exact:true})).toBeVisible({timeout:60000});
 }
-async function prefs(context){const response=await context.request.get('/api/preferences',{timeout:30000});expect(response.status()).toBe(200);return (await response.json()).preferences;}
+async function accountApi(context,method='GET',data,expectedUserId){
+ return context.pages()[0].evaluate(async({method,data,expectedUserId})=>{
+  const response=await fetch('/api/preferences',{method,signal:AbortSignal.timeout(30000),headers:{...(data?{'Content-Type':'application/json'}:{}),...(expectedUserId?{'x-ac-expected-user-id':expectedUserId}:{})},body:data?JSON.stringify(data):undefined});
+  return {status:response.status,body:await response.json()};
+ },{method,data,expectedUserId});
+}
+async function prefs(context){const response=await accountApi(context);expect(response.status).toBe(200);return response.body.preferences;}
 async function saved(page){await expect(page.locator('.settings-status').filter({hasText:'Saved to your account'})).toBeVisible();}
 async function settings(page,category='Appearance'){
  await page.goto('/settings',{waitUntil:'domcontentloaded'});
@@ -28,7 +34,7 @@ test('account preferences persist across devices, recover failed writes and enfo
   const a=await context(),b=await context(),pa=await a.newPage(),pb=await b.newPage();
   await Promise.all([login(pa,fixtures.users.learner),login(pb,fixtures.users.learner)]);
   console.log('SETTINGS two learner browser sessions established');
-  const reset=await a.request.patch('/api/preferences',{timeout:30000,headers:{origin:baseURL,'x-ac-expected-user-id':fixtures.users.learner.id},data:{appearance:'light',accent:'commerce',textSize:'standard',readingWidth:'standard'}});expect(reset.status()).toBe(200);
+  const reset=await accountApi(a,'PATCH',{appearance:'light',accent:'commerce',textSize:'standard',readingWidth:'standard'},fixtures.users.learner.id);expect(reset.status).toBe(200);
   await Promise.all([settings(pa),settings(pb)]);
   await pa.getByLabel('Theme').selectOption('warm');await saved(pa);expect((await prefs(a)).appearance).toBe('warm');
   await pb.reload();await expect(pb.locator('html')).toHaveAttribute('data-ac-appearance','warm');
@@ -46,10 +52,10 @@ test('account preferences persist across devices, recover failed writes and enfo
   console.log('SETTINGS failed write rolled back and retry persisted');
   await pa.goto('/auth',{waitUntil:'domcontentloaded'});await pa.getByRole('button',{name:'Sign out',exact:true}).click();await expect(pa.getByLabel('Email address',{exact:true})).toBeVisible();
   // Supabase's global sign-out also invalidates the second device's session.
-  expect((await b.request.get('/api/preferences',{timeout:30000})).status()).toBe(401);
+  expect((await accountApi(b)).status).toBe(401);
   await login(pa,fixtures.users.other);const before=await prefs(a);
-  const mismatch=await a.request.patch('/api/preferences',{timeout:30000,headers:{origin:baseURL,'x-ac-expected-user-id':fixtures.users.learner.id},data:{appearance:'dark'}});
-  expect(mismatch.status()).toBe(409);expect(await prefs(a)).toEqual(before);
+  const mismatch=await accountApi(a,'PATCH',{appearance:'dark'},fixtures.users.learner.id);
+  expect(mismatch.status).toBe(409);expect(await prefs(a)).toEqual(before);
   await settings(pa);const otherTheme=before.appearance==='light'?'warm':'light';await pa.getByLabel('Theme').selectOption(otherTheme);await saved(pa);
   const fresh=await context(),freshPage=await fresh.newPage();await login(freshPage,fixtures.users.learner);await settings(freshPage);await expect(freshPage.locator('html')).toHaveAttribute('data-ac-appearance','dark');
   expect((await prefs(a)).appearance).toBe(otherTheme);
