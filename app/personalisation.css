@@ -215,3 +215,26 @@ html[data-ac-appearance="dark"] :is(
     .settings-nav button[aria-current="page"] span
   ){color:var(--ac-user-accent-text)}
 }
+
+/* Staff workspaces share dark surfaces with account preferences. Fallbacks in
+   their component rules preserve the existing light palette and print rules. */
+@media screen{
+  html[data-ac-appearance="dark"]{
+    --ac-staff-page:var(--cream);
+    --ac-staff-surface:var(--ac-surface);
+    --ac-staff-raised:var(--ac-surface-raised);
+    --ac-staff-copy:var(--ink);
+    --ac-staff-accent:var(--ac-user-accent-text);
+    --ac-staff-avatar-text:#17313b;
+  }
+}
+@media screen and (prefers-color-scheme:dark){
+  html[data-ac-appearance="system"]{
+    --ac-staff-page:var(--cream);
+    --ac-staff-surface:var(--ac-surface);
+    --ac-staff-raised:var(--ac-surface-raised);
+    --ac-staff-copy:var(--ink);
+    --ac-staff-accent:var(--ac-user-accent-text);
+    --ac-staff-avatar-text:#17313b;
+  }
+}

@@ -23,13 +23,16 @@ function ProfileSettingsForm({ initialName, initialGrade, saveProfile, syncError
   saveProfile: (patch: Partial<LearnerProfile>) => boolean;
   syncError: string | null;
 }) {
-  const [name, setName] = useState(initialName);
-  const [grade, setGrade] = useState(initialGrade);
+  const [nameDraft, setName] = useState<string>();
+  const [gradeDraft, setGrade] = useState<number>();
+  const name = nameDraft ?? initialName;
+  const grade = gradeDraft ?? initialGrade;
   const [message, setMessage] = useState("");
 
   function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const ok = saveProfile({ displayName: name.trim(), grade });
+    if(ok){setName(undefined);setGrade(undefined);}
     setMessage(ok ? "Profile updated. Learner accounts sync these details with their learning record." : "The profile could not be saved on this device. Please try again.");
   }
 
@@ -98,7 +101,7 @@ export function SettingsDashboard() {
       <section className="settings-content" aria-label={sectionLabels.find(item => item.value === section)?.label}>
         {section === "profile" ? <>
           <div className="settings-section-heading"><h2>Learning profile</h2><p>These details help Applied Commerce return you to the right learning context.</p></div>
-          <ProfileSettingsForm key={state.profile ? "profile-ready" : "profile-empty"} initialName={state.profile?.displayName ?? ""} initialGrade={state.profile?.grade ?? state.activeGrade ?? 8} saveProfile={setProfile} syncError={syncError}/>
+          <ProfileSettingsForm key={user?.id ?? "guest"} initialName={state.profile?.displayName ?? ""} initialGrade={state.profile?.grade ?? state.activeGrade ?? 8} saveProfile={setProfile} syncError={syncError}/>
         </> : null}
 
         {section === "appearance" ? <>

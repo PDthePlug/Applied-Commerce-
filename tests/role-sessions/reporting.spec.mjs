@@ -6,8 +6,10 @@ const directory=process.env.AC_ROLE_FIXTURES;
 const {config,fixtures}=loadRoleFixtures(directory);
 const index=JSON.parse(fs.readFileSync('public/curriculum/index.json','utf8'));
 const grade=index.grades.find(g=>g.grade===8);
-const encoded=Array.from({length:grade.bundleParts},(_,i)=>fs.readFileSync(`public/curriculum/grade-8.part-${i+1}.b64`,'utf8').trim()).join('');
-const unit=JSON.parse(zlib.gunzipSync(Buffer.from(encoded,'base64'))).terms[0].units.find(u=>u.id==='g8-t1-l01-001');
+function bundle(meta){const encoded=Array.from({length:meta.bundleParts},(_,i)=>fs.readFileSync(`public/curriculum/grade-${meta.grade}.part-${i+1}.b64`,'utf8').trim()).join('');return JSON.parse(zlib.gunzipSync(Buffer.from(encoded,'base64')));}
+const grade9=index.grades.find(g=>g.grade===9);
+const assessment=bundle(grade9).terms.flatMap(term=>term.units).find(unit=>unit.type==='assessment');
+const unit=bundle(grade).terms[0].units.find(u=>u.id==='g8-t1-l01-001');
 const block=unit.blocks.find(b=>b.kind==='text'&&b.type==='activity');
 const key=unit.id+'::prompt-'+block.id+'::response';
 const sessions={};
@@ -30,17 +32,23 @@ test('real cohort metrics follow pending, revision and acceptance; switches and 
  for(let i=0;i<5;i++){
   const user=fixtures.reportingLearners[i];
   const profile=await request('report'+i,'/rest/v1/learner_profiles?select=sync_revision&user_id=eq.'+user.id);expect(profile.status).toBe(200);
-  const saved=await rpc('report'+i,'save_learning_changes_for_account',{p_account_id:user.id,p_changes:[{kind:'profile',key:'self',value:{displayName:fixtures.run+' reportLearner'+i,grade:8},expected:profile.data[0]?.sync_revision??0}]});expect(saved[0].conflict).toBe(false);
+  const saved=await rpc('report'+i,'save_learning_changes_for_account',{p_account_id:user.id,p_changes:[{kind:'profile',key:'self',value:{displayName:fixtures.run+' reportLearner'+i,grade:i===1?9:8},expected:profile.data[0]?.sync_revision??0}]});expect(saved[0].conflict).toBe(false);
   values[i]='Dedicated reporting answer '+Date.now()+' '+i;await save(i,values[i]);
  }
  console.log('REPORTING five named learners provisioned through account APIs');
+ // Retain two real lessons, an assessment and a historical ID on one account.
+ const completionIds=[grade.lessonIds[0],grade9.lessonIds[0],assessment.id,'g8-t1-l99-999'];
+ const progress=await request('report1','/rest/v1/lesson_progress?select=unit_id,sync_revision&learner_id=eq.'+fixtures.reportingLearners[1].id+'&unit_id=in.('+completionIds.join(',')+')');expect(progress.status).toBe(200);
+ const revisions=new Map(progress.data.map(row=>[row.unit_id,row.sync_revision]));
+ const completions=await rpc('report1','save_learning_changes_for_account',{p_account_id:fixtures.reportingLearners[1].id,p_changes:completionIds.map(key=>({kind:'completion',key,value:true,expected:revisions.get(key)??0}))});expect(completions.every(row=>!row.conflict)).toBe(true);
+ const retained=await request('report1','/rest/v1/lesson_progress?select=unit_id&status=eq.completed&learner_id=eq.'+fixtures.reportingLearners[1].id+'&unit_id=in.('+completionIds.join(',')+')');expect(retained.data).toHaveLength(4);
  async function review(status,value=values[0]){return request('facilitator','/rest/v1/rpc/save_facilitator_review','POST',{p_learner_id:fixtures.reportingLearners[0].id,p_response_key:key,p_response_value:value,p_auto_result:{},p_review:{status,criteria:{},feedback:'Dedicated reporting '+status}});}
  await login(page);await page.goto('/institutions/manage');
  const cohortButton=name=>page.locator('.institution-admin-list button').filter({hasText:name});
  const pulse=page.locator('.institution-admin-card').filter({has:page.getByRole('heading',{name:'Learning and evidence coverage',exact:true})});
  const selected=page.locator('.institution-admin-card').filter({has:page.locator('p.eyebrow').filter({hasText:'Selected cohort'})});
  const metric=label=>pulse.locator('article').filter({has:page.locator('span').filter({hasText:label})}).locator('strong');
- async function showMetrics(coverage,revision){await cohortButton('Reporting five').click();await expect(metric('Saved activity responses')).toHaveText('5');await expect(metric('Evidence review coverage')).toHaveText(coverage+'%');await expect(metric('Items needing revision')).toHaveText(String(revision));}
+ async function showMetrics(coverage,revision){await cohortButton('Reporting five').click();await expect(metric('Saved activity responses')).toHaveText('5');await expect(metric('Lessons completed')).toHaveText('2');await expect(metric('Evidence review coverage')).toHaveText(coverage+'%');await expect(metric('Items needing revision')).toHaveText(String(revision));}
  await showMetrics(0,0);console.log('REPORTING five answers: 0%');
  expect((await review('pending')).status).toBe(200);await page.reload();await showMetrics(0,0);console.log('REPORTING pending decision: 0%');
  expect((await review('needs-revision')).status).toBe(200);await page.reload();await showMetrics(20,1);console.log('REPORTING needs revision: 20%');
@@ -62,6 +70,11 @@ test('real cohort metrics follow pending, revision and acceptance; switches and 
  const facilitatorContext=await browser.newContext({baseURL,viewport:page.viewportSize()});
  try{
   console.log('REPORTING checking non-first learner navigation');const facilitator=await facilitatorContext.newPage();await login(facilitator,'facilitator');await facilitator.goto('/facilitator/learners');
+  const mixed=facilitator.locator('.fac-roster-row').filter({hasText:fixtures.run+' reportLearner1'});
+  await expect(mixed).toContainText('1/'+grade9.lessonIds.length);await mixed.click();
+  await expect(facilitator.locator('.fac-roster-row').filter({hasText:fixtures.run+' reportLearner4'})).toContainText('0/'+grade.lessonIds.length);
+  await facilitator.getByRole('button',{name:'Open report',exact:true}).click();await expect(facilitator.getByText('1/'+grade9.lessonIds.length+' lessons',{exact:true})).toBeVisible();
+  await facilitator.goto('/facilitator/learners');console.log('REPORTING mixed-grade progress agrees across administrator, roster and learner report');
   const name=fixtures.run+' reportLearner4';
   await facilitator.locator('.fac-roster-row').filter({hasText:name}).click();await expect(facilitator.locator('.fac-learner-detail h2')).toHaveText(name);await facilitator.reload();await expect(facilitator.locator('.fac-learner-detail h2')).toHaveText(name);
   await facilitator.getByRole('button',{name:'Review evidence',exact:true}).click();await expect(facilitator).toHaveURL(new RegExp('learner='+fixtures.reportingLearners[4].id));await expect(facilitator.locator('.fac-evidence-card')).toContainText(values[4]);

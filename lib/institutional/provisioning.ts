@@ -1,6 +1,6 @@
 "use client";
 
-import { readAllRows } from "@/lib/supabase/read-all";
+import { readAllRows, readRowsByIds } from "@/lib/supabase/read-all";
 import { curriculum } from "@/lib/curriculum";
 import { buildEvidenceRecords } from "@/lib/evidence/engine";
 import { currentReviews, hasReviewDecision } from "@/lib/evidence/current-reviews";
@@ -33,29 +33,31 @@ export async function loadInstitutionalContext(userId: string) {
     return { isPlatformAdmin: Boolean(isPlatformAdmin), schools: [] as School[], memberships: memberships ?? [], cohorts: [] as Cohort[], selectedSchoolId: "" };
   }
 
-  let schoolQuery = supabase
+  const schoolQuery = () => supabase
     .from("schools")
     .select("id,name,slug,status,metadata,created_at,updated_at")
     .eq("status", "active")
     .order("name").order("id");
-  if (schoolIds) schoolQuery = schoolQuery.in("id", schoolIds);
-
-  const { data: schools, error: schoolError } = await readAllRows(schoolQuery);
+  const { data: schools, error: schoolError } = schoolIds
+    ? await readRowsByIds(schoolIds,ids=>schoolQuery().in("id",ids))
+    : await readAllRows(schoolQuery());
   if (schoolError) throw schoolError;
+  schools.sort((a,b)=>a.name.localeCompare(b.name)||a.id.localeCompare(b.id));
 
   const visibleSchoolIds = (schools ?? []).map((school) => school.id);
   if (!visibleSchoolIds.length) {
     return { isPlatformAdmin: Boolean(isPlatformAdmin), schools: [], memberships: memberships ?? [], cohorts: [] as Cohort[], selectedSchoolId: "" };
   }
 
-  const { data: cohorts, error: cohortError } = await readAllRows(supabase
+  const { data: cohorts, error: cohortError } = await readRowsByIds(visibleSchoolIds,ids=>supabase
     .from("cohorts")
     .select("id,school_id,name,grade,academic_year,status,starts_on,ends_on,created_at,updated_at")
-    .in("school_id", visibleSchoolIds)
+    .in("school_id", ids)
     .order("academic_year", { ascending: false })
     .order("name").order("id"));
 
   if (cohortError) throw cohortError;
+  cohorts.sort((a,b)=>b.academic_year-a.academic_year||a.name.localeCompare(b.name)||a.id.localeCompare(b.id));
 
   return {
     isPlatformAdmin: Boolean(isPlatformAdmin),
@@ -157,12 +159,8 @@ export async function loadCohortPeople(cohortId: string) {
 
   // Keep UUID filters below URL limits as well as paginating the result set.
   async function loadProfiles(ids: string[]) {
-    const profiles: Array<Pick<Tables<"profiles">, "id" | "display_name" | "status">> = [];
-    for (let offset = 0; offset < ids.length; offset += 100) {
-      const result = await readAllRows(supabase.from("profiles").select("id,display_name,status").in("id", ids.slice(offset, offset + 100)).order("id"));
-      profiles.push(...result.data);
-    }
-    return new Map(profiles.map(profile => [profile.id, profile]));
+    const result = await readRowsByIds(ids,batch=>supabase.from("profiles").select("id,display_name,status").in("id",batch).order("id"));
+    return new Map(result.data.map(profile => [profile.id, profile]));
   }
   const [learnerProfiles, staffProfiles] = await Promise.all([loadProfiles(learnerIds), loadProfiles(staffIds)]);
 
@@ -216,15 +214,16 @@ export async function loadCohortLearningInsights(cohortId: string): Promise<Coho
 
   const release=await supabase.from("curriculum_releases").select("id").eq("release_key","ac-runtime-3").single();
   if(release.error)throw release.error;
-  const [completed, responses, evidence] = await Promise.all([
-    supabase.from("lesson_progress").select("id", { count: "exact", head: true }).in("learner_id", learnerIds).eq("curriculum_release_id",release.data.id).eq("status", "completed"),
-    readAllRows(supabase.from("prompt_responses").select("learner_id,prompt_key,response,grade,term,unit_id").in("learner_id", learnerIds).eq("curriculum_release_id",release.data.id).order("id")),
-    readAllRows(supabase.from("evidence_records").select("id,learner_id,response_key").in("learner_id", learnerIds).order("id"))
+  const [completed, responses, evidence, catalogue] = await Promise.all([
+    readRowsByIds(learnerIds,ids=>supabase.from("lesson_progress").select("learner_id,unit_id").in("learner_id",ids).eq("curriculum_release_id",release.data.id).eq("status","completed").order("id")),
+    readRowsByIds(learnerIds,ids=>supabase.from("prompt_responses").select("learner_id,prompt_key,response,grade,term,unit_id").in("learner_id", ids).eq("curriculum_release_id",release.data.id).order("id")),
+    readRowsByIds(learnerIds,ids=>supabase.from("evidence_records").select("id,learner_id,response_key").in("learner_id", ids).order("id")),
+    curriculum.index()
   ]);
   for (const result of [completed, responses, evidence]) if (result.error) throw result.error;
   const evidenceIds = evidence.data.map(row => row.id);
   const reviews = evidenceIds.length
-    ? await readAllRows(supabase.from("evidence_reviews").select("evidence_record_id,status,response_value_at_review,reviewed_at").in("evidence_record_id", evidenceIds).order("id"))
+    ? await readRowsByIds(evidenceIds,ids=>supabase.from("evidence_reviews").select("evidence_record_id,status,response_value_at_review,reviewed_at").in("evidence_record_id", ids).order("id"))
     : { data: [], error: null };
   if (reviews.error) throw reviews.error;
 
@@ -250,7 +249,9 @@ export async function loadCohortLearningInsights(cohortId: string): Promise<Coho
       for(const record of records){const decision=current[record.responseKey];if(hasReviewDecision(decision)){reviewCount++;if(decision.status==="needs-revision")needsRevision++;}}
     }
   }
-  return {...base,completedLessons:completed.count??0,savedResponses:responses.data.length,
+  const lessonIds=new Set(catalogue.grades.flatMap(grade=>grade.lessonIds??[]));
+  const completedLessons=new Set(completed.data.filter(row=>lessonIds.has(row.unit_id)).map(row=>`${row.learner_id}:${row.unit_id}`)).size;
+  return {...base,completedLessons,savedResponses:responses.data.length,
     evidenceRecords:evidenceCount,reviewedEvidence:reviewCount,needsRevision,
     reviewCoverage:evidenceCount?Math.round(reviewCount/evidenceCount*100):0};
 }

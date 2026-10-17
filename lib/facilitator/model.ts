@@ -1,10 +1,11 @@
 import { currentReview, hasReviewDecision } from "../evidence/current-reviews";
-import type {LearningState} from "../types";
+import { lessonProgress } from "../learning-progress";
+import type {CurriculumIndex,LearningState} from "../types";
 import type {EvidenceDomain,EvidenceKind,EvidenceRecord,EvidenceReview} from "../evidence/types";
 
 export type FacilitatorLearnerStatus="on-track"|"review-needed"|"needs-support"|"no-evidence";
 export type FacilitatorLearnerSummary={
-  id:string;name:string;grade?:number;completedLessons:number;evidenceCount:number;
+  id:string;name:string;grade?:number;completedLessons:number;lessonTotal:number;completionRate:number;evidenceCount:number;
   reviewedCount:number;pendingCount:number;needsRevisionCount:number;verifiedCount:number;
   portfolioCount:number;reviewRate:number;status:FacilitatorLearnerStatus;lastOpened?:LearningState["lastOpened"];
 };
@@ -21,7 +22,9 @@ const isReviewedRecord=(record:EvidenceRecord,reviews:Record<string,EvidenceRevi
 
 const percentage=(part:number,total:number)=>total?Math.round(part/total*100):0;
 
-export function buildLearnerSummary({state,records,reviews,learnerId}:{state:LearningState;records:EvidenceRecord[];reviews:Record<string,EvidenceReview>;learnerId?:string}):FacilitatorLearnerSummary{
+export function buildLearnerSummary({state,records,reviews,learnerId,curriculumIndex}:{state:LearningState;records:EvidenceRecord[];reviews:Record<string,EvidenceReview>;learnerId?:string;curriculumIndex:CurriculumIndex|null}):FacilitatorLearnerSummary{
+  const grade=state.profile?.grade??state.activeGrade;
+  const progress=curriculumIndex?lessonProgress(curriculumIndex,state.completed).grades.find(item=>item.grade===grade):undefined;
   const reviewedCount=records.filter(record=>isReviewedRecord(record,reviews)).length;
   const needsRevisionCount=records.filter(record=>reviewFor(record,reviews)?.status==="needs-revision").length;
   const verifiedCount=records.filter(record=>reviewFor(record,reviews)?.status==="verified").length;
@@ -30,8 +33,8 @@ export function buildLearnerSummary({state,records,reviews,learnerId}:{state:Lea
   return {
     id:learnerId??"local-current-learner",
     name:state.profile?.displayName?.trim()||"Current learner",
-    grade:state.profile?.grade??state.activeGrade,
-    completedLessons:Object.keys(state.completed).length,
+    grade,
+    completedLessons:progress?.done??0,lessonTotal:progress?.total??0,completionRate:progress?.percent??0,
     evidenceCount:records.length,reviewedCount,pendingCount,needsRevisionCount,verifiedCount,
     portfolioCount:records.filter(record=>record.definition.portfolioEligible).length,
     reviewRate:percentage(reviewedCount,records.length),status,lastOpened:state.lastOpened

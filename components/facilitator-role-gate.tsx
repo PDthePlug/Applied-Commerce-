@@ -5,6 +5,7 @@ import Link from "next/link";
 import { createClient } from "@/lib/supabase/client";
 import { useAuth } from "@/lib/auth-context";
 import { FacilitatorAccessProvider } from "@/lib/facilitator/access-context";
+import { readAllRows } from "@/lib/supabase/read-all";
 
 export function FacilitatorRoleGate({ children }: { children: React.ReactNode }) {
   const { user, loading: authLoading } = useAuth();
@@ -24,11 +25,11 @@ export function FacilitatorRoleGate({ children }: { children: React.ReactNode })
 
     void Promise.all([
       supabase.rpc("is_platform_admin"),
-      supabase
+      readAllRows(supabase
         .from("cohort_staff")
         .select("cohort_id")
         .eq("user_id", user.id)
-        .eq("status", "active"),
+        .eq("status", "active").order("id")),
     ]).then(([adminResult, staffResult]) => {
       if (!active) return;
       // Fail closed on either authorization lookup error. The global bypass is

@@ -23,6 +23,7 @@ import type {
   CoverageRow,FacilitatorCohortSummary,FacilitatorLearnerSummary,FacilitatorPriorityItem
 } from "@/lib/facilitator/model";
 import {useLearningStore} from "@/lib/learning-store";
+import type {CurriculumIndex} from "@/lib/types";
 import {saveSupabaseFacilitatorReview,useSupabaseFacilitatorWorkspace} from "@/lib/facilitator/supabase-data-source";
 
 type Section="overview"|"learners"|"review"|"coverage"|"reports"|"rubrics";
@@ -56,16 +57,19 @@ export function FacilitatorWorkspace({initialSection="overview",initialLearnerId
   const {state,hydrated}=useLearningStore();
   const {reviews:localReviews,saveReview:saveLocalReview}=useEvidenceReviewStore();
   const {workspace:remoteWorkspace,loading:remoteLoading,error:remoteError,reload:reloadWorkspace}=useSupabaseFacilitatorWorkspace();
-  const [records,setRecords]=useState<EvidenceRecord[]>([]);
+  const [localRecords,setRecords]=useState<EvidenceRecord[]>([]);
   const [selectedLearnerId,setSelectedLearnerId]=useState(initialLearnerId);
-  const [loading,setLoading]=useState(true);
+  const [localLoading,setLoading]=useState(true);
   const [section]=useState<Section>(initialSection);
   const [selectedKey,setSelectedKey]=useState("");
   const [termFilter,setTermFilter]=useState<number|0>(0);
   const [statusFilter,setStatusFilter]=useState<ReviewFilter>("all");
   const [search,setSearch]=useState("");
   const [learnerSearch,setLearnerSearch]=useState("");
-  const [gradeLessonTotal,setGradeLessonTotal]=useState(0);
+  const [curriculumIndex,setCurriculumIndex]=useState<CurriculumIndex|null>(null);
+  const [catalogueError,setCatalogueError]=useState("");
+  const [contentError,setContentError]=useState("");
+  const [contentRevision,setContentRevision]=useState(0);
   const [facMenuOpen,setFacMenuOpen]=useState(false);
   const effectiveSelectedLearnerId=selectedRosterLearner(remoteWorkspace?.learners??[],selectedLearnerId);
   const navigateToSection=(next:Section)=>{window.location.assign(facilitatorSectionHref(next,effectiveSelectedLearnerId));};
@@ -75,11 +79,21 @@ export function FacilitatorWorkspace({initialSection="overview",initialLearnerId
     window.history.replaceState(window.history.state,"",facilitatorSectionHref(section,nextId));
   };
   const remoteLearner=remoteWorkspace?.learners.find(item=>item.id===effectiveSelectedLearnerId)??remoteWorkspace?.learners[0]??null;
+  const records=useMemo(()=>remoteWorkspace?(remoteLearner?.records??[]):localRecords,[remoteWorkspace,remoteLearner?.records,localRecords]);
+  const loading=remoteWorkspace?false:localLoading;
   const activeState=remoteLearner?.state??state;
   const localPromptResponses=state.promptResponses;
   const reviews=useMemo(()=>remoteLearner?.reviews??currentReviews(localReviews,state.promptResponses),[remoteLearner?.reviews,localReviews,state.promptResponses]);
   const grade=activeState.profile?.grade??activeState.activeGrade;
   const learnerName=activeState.profile?.displayName?.trim()||"Current learner";
+
+  useEffect(()=>{
+    let cancelled=false;
+    void curriculum.index().then(index=>{
+      if(!cancelled){setCurriculumIndex(index);setCatalogueError("");}
+    }).catch(()=>{if(!cancelled)setCatalogueError("The lesson map could not be loaded. Your saved work has not changed.");});
+    return ()=>{cancelled=true;};
+  },[contentRevision]);
 
   const saveReview=useCallback(async(review:EvidenceReview)=>{
     if(remoteLearner){
@@ -95,25 +109,19 @@ export function FacilitatorWorkspace({initialSection="overview",initialLearnerId
   useEffect(()=>{
     let cancelled=false;
     async function load(){
-      if(remoteWorkspace){
-        if(!cancelled){
-          setRecords(remoteLearner?.records??[]);
-          setGradeLessonTotal(grade?((await curriculum.grade(grade)).unitCount):0);
-          setSelectedKey(current=>(remoteLearner?.records??[]).some(record=>record.responseKey===current)?current:(remoteLearner?.records[0]?.responseKey??""));
-          setLoading(false);
-        }
+      if(remoteWorkspace||remoteLoading){
         return;
       }
       if(!hydrated)return;
       if(!grade){
-        if(!cancelled){setRecords([]);setGradeLessonTotal(0);setLoading(false);}
+        if(!cancelled){setRecords([]);setLoading(false);}
         return;
       }
       setLoading(true);
+      setContentError("");
       try{
         const gradeIndex=await curriculum.grade(grade);
         if(cancelled)return;
-        setGradeLessonTotal(gradeIndex.unitCount);
         const unitIds=new Set(Object.keys(localPromptResponses).map(key=>key.split("::prompt-")[0]).filter(Boolean));
         if(!unitIds.size){setRecords([]);setLoading(false);return;}
         const refs:UnitRef[]=gradeIndex.terms.flatMap(term=>
@@ -125,17 +133,18 @@ export function FacilitatorWorkspace({initialSection="overview",initialLearnerId
           setRecords(next);
           setSelectedKey(current=>next.some(record=>record.responseKey===current)?current:(next[0]?.responseKey??""));
         }
-      }finally{if(!cancelled)setLoading(false);}
+      }catch{if(!cancelled)setContentError("The learner content could not be loaded. Your saved work has not changed.");}
+      finally{if(!cancelled)setLoading(false);}
     }
     void load();
     return ()=>{cancelled=true;};
-  },[activeState.promptResponses,activeState,grade,hydrated,localPromptResponses,remoteLearner,remoteWorkspace]);
+  },[activeState.promptResponses,activeState,grade,hydrated,localPromptResponses,remoteWorkspace,remoteLoading,contentRevision]);
 
   const learner=useMemo(()=>{
-    if(remoteLearner)return buildLearnerSummary({state:remoteLearner.state,records:remoteLearner.records,reviews:remoteLearner.reviews,learnerId:remoteLearner.id});
-    return buildLearnerSummary({state:activeState,records,reviews});
-  },[activeState,records,reviews,remoteLearner]);
-  const remoteLearnerSummaries=useMemo(()=>remoteWorkspace?.learners.map(item=>buildLearnerSummary({state:item.state,records:item.records,reviews:item.reviews,learnerId:item.id}))??[],[remoteWorkspace]);
+    if(remoteLearner)return buildLearnerSummary({state:remoteLearner.state,records:remoteLearner.records,reviews:remoteLearner.reviews,learnerId:remoteLearner.id,curriculumIndex});
+    return buildLearnerSummary({state:activeState,records,reviews,curriculumIndex});
+  },[activeState,records,reviews,remoteLearner,curriculumIndex]);
+  const remoteLearnerSummaries=useMemo(()=>remoteWorkspace?.learners.map(item=>buildLearnerSummary({state:item.state,records:item.records,reviews:item.reviews,learnerId:item.id,curriculumIndex}))??[],[remoteWorkspace,curriculumIndex]);
   const cohort=useMemo(()=>remoteLearnerSummaries.length?buildCohortSummary(remoteLearnerSummaries):buildCohortSummary([learner]),[learner,remoteLearnerSummaries]);
   const priorities=useMemo(()=>buildReviewPriorities(records,reviews),[records,reviews]);
   const domains=useMemo(()=>buildDomainCoverage(records,reviews),[records,reviews]);
@@ -156,7 +165,8 @@ export function FacilitatorWorkspace({initialSection="overview",initialLearnerId
 
   const selected=filtered.find(record=>record.responseKey===selectedKey)??filtered[0];
   const report=useMemo(()=>buildEvidenceReport({learnerName,grade,records,reviews}),[grade,records,reviews,learnerName]);
-  const completionRate=gradeLessonTotal?Math.round(learner.completedLessons/gradeLessonTotal*100):0;
+  const gradeLessonTotal=learner.lessonTotal;
+  const completionRate=learner.completionRate;
   const pendingTotal=priorities.reduce((sum,item)=>sum+item.count,0);
   const currentIndex=selected?filtered.findIndex(record=>record.responseKey===selected.responseKey):-1;
   const advance=()=>{
@@ -165,11 +175,14 @@ export function FacilitatorWorkspace({initialSection="overview",initialLearnerId
     setSelectedKey(next.responseKey);
   };
 
-  if (remoteLoading && !remoteWorkspace) {
+  if ((remoteLoading && !remoteWorkspace) || (!curriculumIndex && !catalogueError)) {
     return <main className="institution-admin-page"><div className="institution-admin-state">Getting your facilitator workspace ready…</div></main>;
   }
   if (remoteError) {
     return <main className="institution-admin-page"><section className="institution-admin-hero"><p className="eyebrow">Facilitator workspace</p><h1>We couldn’t load your facilitator workspace.</h1><p>{remoteError}</p><p>Your learner records were not loaded. Please refresh and try again.</p></section></main>;
+  }
+  if (catalogueError || (!remoteWorkspace && contentError)) {
+    return <main className="institution-admin-page"><section className="institution-admin-hero" role="alert"><h1>Learning information is temporarily unavailable.</h1><p>{catalogueError||contentError}</p><button type="button" className="institutional-primary" onClick={()=>setContentRevision(value=>value+1)}>Try again</button></section></main>;
   }
   if (!remoteWorkspace) {
     return <main className="institution-admin-page"><section className="institution-admin-hero"><p className="eyebrow">Facilitator workspace</p><h1>No active facilitator workspace is assigned.</h1><p>Ask an institution administrator to assign this account to an active cohort.</p></section></main>;
@@ -361,7 +374,7 @@ function LearnersView({learner,learners,selectedLearnerId,onSelectLearner,learne
           <div className="fac-roster-head"><span>Learner</span><span>Lessons</span><span>Evidence</span><span>Review</span><span>Status</span></div>
           {learners.filter(item=>item.name.toLowerCase().includes(learnerSearch.trim().toLowerCase())).map(item=><button key={item.id} type="button" className={"fac-roster-row "+(item.id===selectedLearnerId?"active":"")} onClick={()=>onSelectLearner(item.id)}>
             <span className="fac-person"><i>{item.name.slice(0,1).toUpperCase()}</i><b>{item.name}</b><small>Grade {item.grade??"—"}</small></span>
-            <span>{item.completedLessons}/{gradeLessonTotal||"—"}</span><span>{item.evidenceCount}</span><span>{item.reviewRate}%</span>
+            <span>{item.completedLessons}/{item.lessonTotal||"—"}</span><span>{item.evidenceCount}</span><span>{item.reviewRate}%</span>
             <span><em className={"learner-status "+item.status}>{statusLabel(item.status)}</em></span>
           </button>)}
           {!learners.some(item=>item.name.toLowerCase().includes(learnerSearch.trim().toLowerCase()))?<EmptyInline title="No learner matches that search" text="Clear the search to return to the current cohort."/>:null}
