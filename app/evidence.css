@@ -465,14 +465,6 @@
   .fac-rubric-library ol{grid-template-columns:1fr}
 }
 
-@media print{
-  .topbar,.fac-sidebar,.fac-header,.fac-report-actions,.fac-cohort-report-note{display:none!important}
-  .fac-console,.fac-main{display:block;background:white;padding:0}
-  .fac-section-stack>*:not(.fac-report-sheet){display:none!important}
-  .fac-report-sheet{display:block!important;border:0;box-shadow:none;padding:0}
-}
-
-
 /* Compact facilitator navigation uses the same centred-menu interaction as the learner workspace. */
 .fac-menu-trigger,.fac-menu-scrim,.fac-menu-sheet{display:none}
 
@@ -595,4 +587,34 @@
     font-style:normal;
     font-weight:900;
   }
+}
+
+/* Printed reports use an ink-on-paper palette independent of screen appearance. */
+@media print{
+  html:has(.fac-report-sheet),body:has(.fac-report-sheet){background:#fff!important}
+  .facilitator-shell{
+    --ink:#17313b;
+    --ink-2:#29444d;
+    --muted:#53646a;
+    --paper:#fff;
+    --cream:#fff;
+    --warm:#f5f3ee;
+    --line:#d8ddd8;
+    --ac-staff-page:#fff;
+    --ac-staff-surface:#fff;
+    --ac-staff-raised:#f5f3ee;
+    --ac-staff-copy:#17313b;
+    --ac-user-accent-text:var(--ac-user-accent);
+    min-height:0;
+    padding:12mm;
+    background:#fff!important;
+    color:var(--ink);
+    color-scheme:light;
+  }
+  .topbar,.fac-sidebar,.fac-header,.fac-report-actions,.fac-cohort-report-note,
+  .fac-menu-trigger,.fac-menu-sheet,.fac-menu-scrim{display:none!important}
+  .fac-console,.fac-main{display:block;min-height:0;background:#fff;padding:0}
+  .fac-section-stack{display:block;margin-top:0}
+  .fac-section-stack>*:not(.fac-report-sheet){display:none!important}
+  .fac-report-sheet{display:block!important;border:0;background:#fff;box-shadow:none;padding:0}
 }

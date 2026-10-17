@@ -5,22 +5,31 @@ import { ArrowRight, BookOpenCheck } from "lucide-react";
 import { curriculum } from "@/lib/curriculum";
 import type { CurriculumIndex } from "@/lib/types";
 import { useLearningStore } from "@/lib/learning-store";
+import { lessonProgress } from "@/lib/learning-progress";
 
 type ActiveLesson = {
   grade:number;
   term:number;
   label:string;
   title:string;
+  unitId:string;
 };
 
 export function HomeDashboard(){
   const [index,setIndex]=useState<CurriculumIndex|null>(null);
   const [activeLesson,setActiveLesson]=useState<ActiveLesson|null>(null);
+  const [catalogueError,setCatalogueError]=useState(false);
+  const [catalogueAttempt,setCatalogueAttempt]=useState(0);
   const {state,hydrated}=useLearningStore();
 
   useEffect(()=>{
-    curriculum.index().then(setIndex).catch(()=>setIndex(null));
-  },[]);
+    let cancelled=false;
+    void curriculum.index().then(value=>{
+      if(value.grades.some(grade=>!Array.isArray(grade.lessonIds)))throw new Error('Lesson catalogue unavailable');
+      if(!cancelled)setIndex(value);
+    }).catch(()=>{if(!cancelled)setCatalogueError(true);});
+    return ()=>{cancelled=true;};
+  },[catalogueAttempt]);
 
   useEffect(()=>{
     const last=state.lastOpened;
@@ -33,6 +42,7 @@ export function HomeDashboard(){
           term:last.term,
           label:unit.label,
           title:unit.title,
+          unitId:last.unitId,
         });
       })
       .catch(()=>{ if(!cancelled) setActiveLesson(null); });
@@ -40,14 +50,14 @@ export function HomeDashboard(){
   },[state.lastOpened]);
 
   const currentGrade=state.profile?.grade ?? state.activeGrade ?? 8;
-  const gradeMeta=index?.grades.find(item=>item.grade===currentGrade);
-  const completed=Object.keys(state.completed).filter(id=>id.startsWith(`g${currentGrade}-`)).length;
-  const progress=gradeMeta?.unitCount?Math.round(completed/gradeMeta.unitCount*100):0;
+  const progress=index?lessonProgress(index,state.completed).grades.find(item=>item.grade===currentGrade):null;
   const captured=Object.values(state.promptResponses).filter(value=>value.trim()).length;
   const displayName=state.profile?.displayName?.trim();
   const firstName=displayName?.split(/\s+/)[0];
 
-  const lesson=state.lastOpened?activeLesson:null;
+  const last=state.lastOpened;
+  const continueGrade=last?.grade??currentGrade;
+  const lesson=last&&activeLesson?.unitId===last.unitId&&activeLesson.grade===last.grade&&activeLesson.term===last.term?activeLesson:null;
   const continueHref=state.lastOpened
     ? `/learn/${state.lastOpened.grade}/term/${state.lastOpened.term}/${state.lastOpened.unitId}`
     : `/learn/${currentGrade}`;
@@ -73,20 +83,21 @@ export function HomeDashboard(){
 
       <aside className="home-today-status" aria-label="Current grade progress">
         <span>Grade {currentGrade}</span>
-        <strong>{hydrated?`${progress}% complete`:"Loading progress"}</strong>
-        <div className="home-progress-track" aria-hidden="true"><i style={{width:`${progress}%`}}/></div>
-        <small>{hydrated?`${completed} of ${gradeMeta?.unitCount ?? 0} lessons complete`:"Preparing your learning record"}</small>
+        <strong>{hydrated&&progress?`${progress.percent}% complete`:catalogueError?"Progress unavailable":"Loading progress"}</strong>
+        <div className="home-progress-track" aria-hidden="true"><i style={{width:`${hydrated&&progress?progress.percent:0}%`}}/></div>
+        <small>{hydrated&&progress?`${progress.done} of ${progress.total} lessons complete`:"Preparing your learning record"}</small>
       </aside>
     </section>
+    {catalogueError?<p role="alert">Your saved work is preserved, but the lesson catalogue could not be loaded. <button type="button" className="text-link" onClick={()=>{setCatalogueError(false);setCatalogueAttempt(value=>value+1);}}>Try again</button></p>:null}
 
     <section className="home-dashboard-grid" aria-label="Your learning today">
       <article className="home-dashboard-card home-continue-card">
         <p className="eyebrow">{state.lastOpened?"Continue your learning":"Start your learning"}</p>
-        <h2>{lesson?lesson.title:`Grade ${currentGrade}`}</h2>
+        <h2>{lesson?lesson.title:`Grade ${continueGrade}`}</h2>
         <p>
           {lesson
             ? `Grade ${lesson.grade} · Term ${lesson.term} · ${lesson.label}. Pick up exactly where you left off.`
-            : `Your Grade ${currentGrade} Applied Commerce journey is ready.`}
+            : `Your Grade ${continueGrade} Applied Commerce journey is ready.`}
         </p>
         <small><BookOpenCheck/> {captured} responses captured so far</small>
         <Link className="home-primary-action" href={continueHref}>

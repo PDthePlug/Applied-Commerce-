@@ -29,6 +29,5 @@ export function mergeLearningState(local:LearningState,remote:LearningState):Lea
  return merged;
 }
 
-export function completedCountForGrade(state:LearningState,grade:number){return Object.entries(state.completed).filter(([unitId])=>state.completedMeta?.[unitId]?.grade===grade||unitId.startsWith("g"+grade+"-")).length;}
 export function evidenceResponseCount(state:LearningState){return Object.values(state.promptResponses).filter(value=>value.trim()).length;}
 export function noteCount(state:LearningState){return Object.values(state.responses).filter(value=>value.trim()).length;}
