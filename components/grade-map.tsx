@@ -7,11 +7,19 @@ import type { GradeIndex } from "@/lib/types";
 import { useLearningStore } from "@/lib/learning-store";
 
 export function GradeMap({grade}:{grade:number}){
- const [data,setData]=useState<GradeIndex|null>(null); const {completedIds}=useLearningStore();
- useEffect(()=>{curriculum.grade(grade).then(setData)},[grade]);
+ const [loaded,setLoaded]=useState<{grade:number;attempt:number;data?:GradeIndex;error?:boolean}|null>(null);
+ const [attempt,setAttempt]=useState(0);const {completedIds}=useLearningStore();
+ const current=loaded?.grade===grade&&loaded.attempt===attempt?loaded:null;
+ const data=current?.data;
+ useEffect(()=>{
+  let cancelled=false;
+  void curriculum.grade(grade).then(data=>{if(!cancelled)setLoaded({grade,attempt,data});})
+   .catch(()=>{if(!cancelled)setLoaded({grade,attempt,error:true});});
+  return ()=>{cancelled=true;};
+ },[grade,attempt]);
  const completed=useMemo(()=>data?data.terms.flatMap(t=>t.units).filter(u=>completedIds.has(u.id)).length:0,[data,completedIds]);
  const pct=data?.unitCount?Math.round(completed/data.unitCount*100):0;
- if(!data) return <div className="page loading-page">Opening Grade {grade}…</div>;
+ if(!data) return <div className="page loading-page"><Link className="back-link" href="/learn"><ArrowLeft/> All grades</Link>{current?.error?<p role="alert">Your saved work is preserved, but Grade {grade} could not be loaded. <button type="button" className="text-link" onClick={()=>setAttempt(value=>value+1)}>Try again</button></p>:<p role="status">Opening Grade {grade}…</p>}</div>;
  return <div className="page grade-map-page">
   <Link className="back-link" href="/learn"><ArrowLeft/> All grades</Link>
   <section className="grade-hero">

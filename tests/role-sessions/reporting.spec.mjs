@@ -15,9 +15,9 @@ const key=unit.id+'::prompt-'+block.id+'::response';
 const sessions={};
 async function request(actor,path,method='GET',body){const r=await fetch(config.url+path,{method,signal:AbortSignal.timeout(30000),headers:{apikey:config.key,'Content-Type':'application/json',...(actor?{Authorization:'Bearer '+sessions[actor].access_token}:{}),Prefer:'return=representation'},body:body===undefined?undefined:JSON.stringify(body)});return {status:r.status,data:await r.json().catch(()=>null)};}
 async function rpc(actor,name,body){const r=await request(actor,'/rest/v1/rpc/'+name,'POST',body);expect(r.status,`${name}: HTTP ${r.status}`).toBe(200);return r.data;}
-async function login(page,actor='schoolAdmin'){await page.goto('/auth',{waitUntil:'domcontentloaded'});await page.locator('.auth-form').getByLabel('Email address',{exact:true}).fill(fixtures.users[actor].email);await page.locator('.auth-form').getByLabel('Password',{exact:true}).fill(fixtures.users[actor].password);await page.locator('.auth-form').getByRole('button',{name:'Sign in',exact:true}).click();await expect(page.locator('.auth-panel')).toContainText(fixtures.users[actor].email,{timeout:60000});}
+async function login(page,actor='schoolAdmin'){const user=typeof actor==='string'?fixtures.users[actor]:actor;await page.goto('/auth',{waitUntil:'domcontentloaded'});await page.locator('.auth-form').getByLabel('Email address',{exact:true}).fill(user.email);await page.locator('.auth-form').getByLabel('Password',{exact:true}).fill(user.password);await page.locator('.auth-form').getByRole('button',{name:'Sign in',exact:true}).click();await expect(page.locator('.auth-panel')).toContainText(user.email,{timeout:60000});}
 test.beforeAll(async({baseURL})=>{await verifyHostedTarget(baseURL,config,process.env.AC_EXPECTED_COMMIT);expect(fixtures.reportingLearners?.length,'Prepare append fixtures with five dedicated reporting learners').toBe(5);});
-test('real cohort metrics follow pending, revision and acceptance; switches and failed loads cannot show another cohort',async({page,browser,baseURL})=>{
+test('real cohort metrics follow pending, revision and acceptance; switches and failed loads cannot show another cohort',async({page,browser,baseURL},testInfo)=>{
  const actors={schoolAdmin:fixtures.users.schoolAdmin,facilitator:fixtures.users.facilitator,...Object.fromEntries(fixtures.reportingLearners.map((user,i)=>['report'+i,user]))};
  for(const [actor,user] of Object.entries(actors)){const r=await request(null,'/auth/v1/token?grant_type=password','POST',{email:user.email,password:user.password});expect(r.status).toBe(200);sessions[actor]=r.data;}
  if(!fixtures.reportingCohortId){
@@ -55,6 +55,16 @@ test('real cohort metrics follow pending, revision and acceptance; switches and 
  const old=values[0];values[0]+=' revised';await save(0,values[0]);await page.reload();await showMetrics(0,0);
  const stale=await review('accepted',old);expect(stale.status).toBe(400);expect(stale.data.code).toBe('P0001');
  expect((await review('accepted')).status).toBe(200);await page.reload();await showMetrics(20,0);console.log('REPORTING current acceptance: 20%');
+ const learnerContext=await browser.newContext({baseURL,viewport:page.viewportSize()});
+ try{
+  const learner=await learnerContext.newPage();await login(learner,fixtures.reportingLearners[1]);await learner.goto('/');
+  await expect(learner.locator('.home-today-status')).toContainText('1 of '+grade9.lessonIds.length+' lessons complete');
+  await learner.goto('/learn');await expect(learner.locator('.grade-card.grade-9')).toContainText('1%');await expect(learner.locator('.grade-card.grade-8')).toContainText('1%');
+  await learner.goto('/learn/9');await expect(learner.locator('.grade-progress')).toContainText('1 of '+grade9.lessonIds.length+' lessons complete');
+  await learner.goto('/progress');await expect(learner.locator('.progress-grade-list a[href="/learn/9"]')).toContainText('1 of '+grade9.lessonIds.length+' completed');
+  console.log('REPORTING authenticated learner home, library, grade map and progress agree; retained assessment and historical IDs do not inflate lesson progress');
+ }finally{await learnerContext.close();}
+
  let unblock;const gate=new Promise(resolve=>{unblock=resolve;});let intercepted=0;
  const delay=async route=>{if(new URL(route.request().url()).searchParams.get('cohort_id')==='eq.'+fixtures.emptyCohortId){intercepted++;await gate;}await route.continue();};
  await page.route('**/rest/v1/cohort_enrolments?**',delay);
@@ -81,6 +91,23 @@ test('real cohort metrics follow pending, revision and acceptance; switches and 
   await facilitator.reload();await expect(facilitator.locator('.fac-evidence-card')).toContainText(values[4]);
   await facilitator.goto('/facilitator/learners?learner='+fixtures.reportingLearners[4].id);await expect(facilitator.locator('.fac-learner-detail h2')).toHaveText(name);
   await facilitator.getByRole('button',{name:'Open report',exact:true}).click();await expect(facilitator).toHaveURL(new RegExp('learner='+fixtures.reportingLearners[4].id));await expect(facilitator.locator('.fac-report-actions')).toContainText(name);
+  const reportUrl=facilitator.url();await facilitator.goto('/settings');await facilitator.getByRole('button',{name:/Appearance/}).click();
+  const theme=facilitator.getByLabel('Theme');await expect(theme).toBeEnabled();const priorTheme=await theme.inputValue();
+  try{
+   await theme.selectOption('dark');await expect(facilitator.locator('.settings-status').filter({hasText:'Saved to your account'})).toBeVisible();
+   await facilitator.goto(reportUrl);await expect(facilitator.locator('.fac-report-sheet header strong')).toHaveText(name);
+   if(testInfo.project.name==='roles-mobile')await facilitator.locator('.fac-menu-trigger').click();
+   await facilitator.emulateMedia({media:'print',colorScheme:'dark'});
+   for(const selector of ['.fac-menu-trigger','.fac-menu-sheet','.fac-menu-scrim','.fac-report-actions'])await expect(facilitator.locator(selector)).toBeHidden();
+   const ratio=await facilitator.locator('.fac-report-sheet header h2').evaluate(el=>{
+    const luminance=color=>{const [r,g,b]=color.match(/[\d.]+/g).slice(0,3).map(Number).map(x=>x/255).map(x=>x<=.04045?x/12.92:((x+.055)/1.055)**2.4);return .2126*r+.7152*g+.0722*b;};
+    const a=luminance(getComputedStyle(el).color),b=luminance(getComputedStyle(el.closest('.fac-report-sheet')).backgroundColor);return (Math.max(a,b)+.05)/(Math.min(a,b)+.05);
+   });expect(ratio,'authenticated dark-mode report print contrast').toBeGreaterThanOrEqual(4.5);
+   await facilitator.pdf({path:testInfo.outputPath('learner-report.pdf'),format:'A4',printBackground:true});
+   console.log('REPORTING actual learner report PDF generated; print heading contrast '+ratio.toFixed(2)+':1 and mobile navigation excluded');
+  }finally{
+   await facilitator.emulateMedia({media:'screen'});await facilitator.goto('/settings');await facilitator.getByRole('button',{name:/Appearance/}).click();await expect(facilitator.getByLabel('Theme')).toBeEnabled();await facilitator.getByLabel('Theme').selectOption(priorTheme);await expect(facilitator.locator('.settings-status').filter({hasText:'Saved to your account'})).toBeVisible();
+  }
   await facilitator.goto('/facilitator/learners?learner='+fixtures.users.unassigned.id);await expect(facilitator.locator('.fac-roster-row.active')).toHaveCount(1);await expect(facilitator.locator('.fac-roster-row.active')).not.toContainText(fixtures.run+' unassigned');
   console.log('REPORTING roster selection survives review, report and refresh; unrelated IDs stay outside the roster');
  }finally{await facilitatorContext.close();}
