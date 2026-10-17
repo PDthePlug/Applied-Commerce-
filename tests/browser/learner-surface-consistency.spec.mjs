@@ -30,8 +30,13 @@ for(const [name,path,ready] of [['home','/','.home-today-status'],['library','/l
  });
 }
 test('home does not label a newly selected lesson with the previous lesson title',async({page,context})=>{
- await seed(page,{}, {grade:8,term:1,unitId:'g8-t1-l01-001',at:'2026-10-17T18:00:00Z'});await page.goto('/');
- const heading=page.locator('.home-continue-card h2');await expect(heading).not.toHaveText('Grade 9');const old=await heading.textContent();
+ await seed(page,{}, {grade:8,term:1,unitId:'g8-t1-l01-001',at:'2026-10-17T18:00:00Z'});
+ let releaseInitial;const initialGate=new Promise(resolve=>{releaseInitial=resolve;});let initialRequests=0;
+ await page.route('**/curriculum/grade-8.part-*.b64',async route=>{initialRequests++;await initialGate;await route.continue();});
+ await page.goto('/');const heading=page.locator('.home-continue-card h2');
+ try{await expect.poll(()=>initialRequests).toBeGreaterThan(0);await expect(heading).toHaveText('Grade 8');await expect(page.locator('.home-primary-action')).toHaveAttribute('href','/learn/8/term/1/g8-t1-l01-001');}
+ finally{releaseInitial();await page.unrouteAll({behavior:'wait'});}
+ await expect(heading).not.toHaveText('Grade 8');const old=await heading.textContent();
  let release;const gate=new Promise(resolve=>{release=resolve;});let intercepted=0;
  await page.route('**/curriculum/grade-9.part-*.b64',async route=>{intercepted++;await gate;await route.continue();});
  const other=await context.newPage();await other.goto('/profile');

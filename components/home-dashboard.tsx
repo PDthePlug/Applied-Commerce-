@@ -56,6 +56,7 @@ export function HomeDashboard(){
   const firstName=displayName?.split(/\s+/)[0];
 
   const last=state.lastOpened;
+  const continueGrade=last?.grade??currentGrade;
   const lesson=last&&activeLesson?.unitId===last.unitId&&activeLesson.grade===last.grade&&activeLesson.term===last.term?activeLesson:null;
   const continueHref=state.lastOpened
     ? `/learn/${state.lastOpened.grade}/term/${state.lastOpened.term}/${state.lastOpened.unitId}`
@@ -92,11 +93,11 @@ export function HomeDashboard(){
     <section className="home-dashboard-grid" aria-label="Your learning today">
       <article className="home-dashboard-card home-continue-card">
         <p className="eyebrow">{state.lastOpened?"Continue your learning":"Start your learning"}</p>
-        <h2>{lesson?lesson.title:`Grade ${currentGrade}`}</h2>
+        <h2>{lesson?lesson.title:`Grade ${continueGrade}`}</h2>
         <p>
           {lesson
             ? `Grade ${lesson.grade} · Term ${lesson.term} · ${lesson.label}. Pick up exactly where you left off.`
-            : `Your Grade ${currentGrade} Applied Commerce journey is ready.`}
+            : `Your Grade ${continueGrade} Applied Commerce journey is ready.`}
         </p>
         <small><BookOpenCheck/> {captured} responses captured so far</small>
         <Link className="home-primary-action" href={continueHref}>
