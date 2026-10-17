@@ -103,7 +103,10 @@ test('real cohort metrics follow pending, revision and acceptance; switches and 
     const luminance=color=>{const [r,g,b]=color.match(/[\d.]+/g).slice(0,3).map(Number).map(x=>x/255).map(x=>x<=.04045?x/12.92:((x+.055)/1.055)**2.4);return .2126*r+.7152*g+.0722*b;};
     const a=luminance(getComputedStyle(el).color),b=luminance(getComputedStyle(el.closest('.fac-report-sheet')).backgroundColor);return (Math.max(a,b)+.05)/(Math.min(a,b)+.05);
    });expect(ratio,'authenticated dark-mode report print contrast').toBeGreaterThanOrEqual(4.5);
-   await facilitator.pdf({path:testInfo.outputPath('learner-report.pdf'),format:'A4',printBackground:true});
+   const pdf=await facilitator.pdf({path:testInfo.outputPath('learner-report.pdf'),format:'A4',printBackground:true});
+   // Chromium emits an uncompressed dictionary for each PDF page. This small,
+   // single-response fixture must not acquire a blank page from viewport sizing.
+   expect([...pdf.toString('latin1').matchAll(/\/Type\s*\/Page\b/g)],'single-response report PDF pages').toHaveLength(1);
    console.log('REPORTING actual learner report PDF generated; print heading contrast '+ratio.toFixed(2)+':1 and mobile navigation excluded');
   }finally{
    await facilitator.emulateMedia({media:'screen'});await facilitator.goto('/settings');await facilitator.getByRole('button',{name:/Appearance/}).click();await expect(facilitator.getByLabel('Theme')).toBeEnabled();await facilitator.getByLabel('Theme').selectOption(priorTheme);await expect(facilitator.locator('.settings-status').filter({hasText:'Saved to your account'})).toBeVisible();
