@@ -31,7 +31,7 @@ export default defineConfig({
     command: "npm run start -- -H 127.0.0.1 -p 3100",
     url: "http://127.0.0.1:3100",
     timeout: 120_000,
-    reuseExistingServer: !process.env.CI,
+    reuseExistingServer: false,
     env: {
       NEXT_PUBLIC_APPLIED_COMMERCE_BACKEND_MODE: "local",
       NEXT_PUBLIC_SUPABASE_URL: "",
