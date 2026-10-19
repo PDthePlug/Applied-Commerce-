@@ -6,7 +6,7 @@ Primary repository: `PDthePlug/Applied-Commerce-` (Next.js 16 / React 19). Exist
 ## Configure Codex Cloud
 1. On desktop or web: `Settings > Codex Cloud > Environments > Create environment`, or `Work in > Cloud > Select environment > Create environment`.
 2. Name it **Applied Commerce — UI/UX E2E Hardening**, select only `PDthePlug/Applied-Commerce-` and use this branch (or `main` after merging the PR).
-3. Use Node 22 (>=22.13) or 24, npm, Python 3. Install script: `bash scripts/codex-e2e-setup.sh`.
+3. Use Node 22 (>=22.13) or 24, npm, Python 3. Install script: `bash scripts/codex-e2e-setup.sh`. This setup does not request root access: when `AC_BROWSER_EXECUTABLE` points to an existing executable Chromium it reuses that browser, otherwise it downloads user-scoped Playwright Chromium without `--with-deps`. If browser system libraries are missing in a different image, ask the environment administrator to provision them rather than using privileged installation.
 4. Start skill: `Use local backend mode; check the npm install, Chromium and Next.js build. Playwright starts the local server at http://127.0.0.1:3100. Run the existing browser suite, then the UI audit sweep. Never target production Supabase. Record tests actually executed and untested workflows.`
 5. Set `NEXT_PUBLIC_APPLIED_COMMERCE_BACKEND_MODE=local`. Keep Supabase URL and publishable key **unset** in this environment. No production service-role keys, passwords, or learner credentials.
 6. Internet: choose Package managers. If needed for Playwright Chromium downloads, add `cdn.playwright.dev`; only add further verified download hosts.
