@@ -60,13 +60,24 @@ export function InstitutionalDemo() {
           onClick={()=>setRole(item.id)}
           role="tab"
           aria-selected={active}
+          id={`perspective-${item.id}`}
+          aria-controls="demo-perspective-panel"
+          tabIndex={active?0:-1}
+          onKeyDown={event=>{
+            const index=roles.findIndex(option=>option.id===item.id);
+            const next=event.key==="Home"?0:event.key==="End"?roles.length-1:event.key==="ArrowRight"?(index+1)%roles.length:event.key==="ArrowLeft"?(index+roles.length-1)%roles.length:null;
+            if(next===null)return;
+            event.preventDefault();
+            setRole(roles[next].id);
+            document.getElementById(`perspective-${roles[next].id}`)?.focus();
+          }}
         >
           <Icon/><span><strong>{item.label}</strong><small>{item.detail}</small></span>
         </button>;
       })}
     </div>
 
-    <section className="institutional-demo-frame">
+    <section className="institutional-demo-frame" id="demo-perspective-panel" role="tabpanel" aria-labelledby={`perspective-${role}`} tabIndex={0}>
       <header className="institutional-demo-programme">
         <div>
           <span>Illustrative programme</span>
@@ -104,7 +115,7 @@ function LearnerView(){
         <p className="eyebrow">Your next step</p>
         <h3>Module 4 · Test the value proposition</h3>
         <p>Speak to two potential customers, record what they actually say, then update your offer.</p>
-        <button type="button">Continue learning <ArrowRight/></button>
+        <Link href="/learn">Open learner platform <ArrowRight/></Link>
       </div>
       <div className="demo-progress-ring"><strong>68%</strong><span>programme complete</span></div>
     </section>

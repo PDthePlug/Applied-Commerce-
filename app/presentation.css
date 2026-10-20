@@ -474,7 +474,7 @@
 .learning-notice-copy>span{
   font-size:9px;
 }
-.learning-notice-copy>h3,
+.learning-notice-copy>h2,
 .learning-notice-copy>strong{
   margin:0;
   color:var(--ink);
@@ -609,7 +609,7 @@
     margin:34px 0 16px;
     padding:20px 0 0!important;
   }
-  .learning-notice-copy>h3,
+  .learning-notice-copy>h2,
   .learning-notice-copy>strong{
     font-size:17px;
   }

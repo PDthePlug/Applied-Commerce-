@@ -2,6 +2,7 @@ import { LearningSyncStatus } from "@/components/learning-sync-status";
 import type { Metadata } from "next";
 import "./globals.css";
 import "./personalisation.css";
+import "./uiux-hardening.css";
 import { AppShell } from "@/components/app-shell";
 import { AuthProvider } from "@/lib/auth-context";
 import { LearningStoreProvider } from "@/lib/learning-store";

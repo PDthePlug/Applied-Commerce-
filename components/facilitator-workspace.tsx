@@ -176,16 +176,16 @@ export function FacilitatorWorkspace({initialSection="overview",initialLearnerId
   };
 
   if ((remoteLoading && !remoteWorkspace) || (!curriculumIndex && !catalogueError)) {
-    return <main className="institution-admin-page"><div className="institution-admin-state">Getting your facilitator workspace ready…</div></main>;
+    return <div className="institution-admin-page"><div className="institution-admin-state">Getting your facilitator workspace ready…</div></div>;
   }
   if (remoteError) {
-    return <main className="institution-admin-page"><section className="institution-admin-hero"><p className="eyebrow">Facilitator workspace</p><h1>We couldn’t load your facilitator workspace.</h1><p>{remoteError}</p><p>Your learner records were not loaded. Please refresh and try again.</p></section></main>;
+    return <div className="institution-admin-page"><section className="institution-admin-hero"><p className="eyebrow">Facilitator workspace</p><h1>We couldn’t load your facilitator workspace.</h1><p>{remoteError}</p><p>Your learner records were not loaded. Please refresh and try again.</p></section></div>;
   }
   if (catalogueError || (!remoteWorkspace && contentError)) {
-    return <main className="institution-admin-page"><section className="institution-admin-hero" role="alert"><h1>Learning information is temporarily unavailable.</h1><p>{catalogueError||contentError}</p><button type="button" className="institutional-primary" onClick={()=>setContentRevision(value=>value+1)}>Try again</button></section></main>;
+    return <div className="institution-admin-page"><section className="institution-admin-hero" role="alert"><h1>Learning information is temporarily unavailable.</h1><p>{catalogueError||contentError}</p><button type="button" className="institutional-primary" onClick={()=>setContentRevision(value=>value+1)}>Try again</button></section></div>;
   }
   if (!remoteWorkspace) {
-    return <main className="institution-admin-page"><section className="institution-admin-hero"><p className="eyebrow">Facilitator workspace</p><h1>No active facilitator workspace is assigned.</h1><p>Ask an institution administrator to assign this account to an active cohort.</p></section></main>;
+    return <div className="institution-admin-page"><section className="institution-admin-hero"><p className="eyebrow">Facilitator workspace</p><h1>No active facilitator workspace is assigned.</h1><p>Ask an institution administrator to assign this account to an active cohort.</p></section></div>;
   }
 
   return <div className="fac-console">
@@ -245,7 +245,7 @@ export function FacilitatorWorkspace({initialSection="overview",initialLearnerId
       <Menu/><span>Menu</span>
     </button>
 
-    <main className="fac-main">
+    <div className="fac-main">
       <header className="fac-header">
         <div><p className="eyebrow">Evidence & Assessment Engine</p><h1>{copy[section].title}</h1><p>{copy[section].description}</p></div>
         <div className="fac-header-context">
@@ -265,7 +265,7 @@ export function FacilitatorWorkspace({initialSection="overview",initialLearnerId
       {grade&&section==="coverage"?<CoverageView learner={learner} domains={domains} terms={terms} kinds={kinds} gradeLessonTotal={gradeLessonTotal} completionRate={completionRate}/>:null}
       {grade&&section==="reports"?<ReportsView report={report} learner={learner} gradeLessonTotal={gradeLessonTotal} completionRate={completionRate}/>:null}
       {grade&&section==="rubrics"?<RubricLibrary/>:null}
-    </main>
+    </div>
   </div>;
 }
 

@@ -68,7 +68,7 @@ async function attachEvidence(page, testInfo, name) {
   const directory = "test-results/presentation-v2";
   await mkdir(directory, { recursive: true });
   const path = `${directory}/${name}-${testInfo.project.name}.png`;
-  await page.screenshot({ path, fullPage: true, animations: "disabled" });
+  await page.screenshot({ path, fullPage: true, animations: "disabled", timeout: 30_000 });
   await testInfo.attach(`${name}-${testInfo.project.name}`, {
     path,
     contentType: "image/png",

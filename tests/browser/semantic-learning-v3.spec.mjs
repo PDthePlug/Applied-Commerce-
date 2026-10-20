@@ -30,7 +30,7 @@ async function evidence(page,testInfo,label){
   const dir="test-results/semantic-v3";
   await mkdir(dir,{recursive:true});
   const path=`${dir}/${label}-${testInfo.project.name}.png`;
-  await page.screenshot({path,fullPage:true,animations:"disabled"});
+  await page.screenshot({path,fullPage:true,animations:"disabled",timeout:30_000});
   await testInfo.attach(label,{path,contentType:"image/png"});
 }
 

@@ -1,0 +1,3111 @@
+{
+  "fullAcceptance": {
+    "startTime": "2026-10-19T22:13:30.803Z",
+    "duration": 870531.015,
+    "expected": 198,
+    "skipped": 0,
+    "unexpected": 3,
+    "flaky": 0
+  },
+  "acceptanceTargetedRecheck": {
+    "startTime": "2026-10-20T11:38:45.503Z",
+    "duration": 53328.849,
+    "expected": 11,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "resolvedAcceptanceChecks": 204,
+  "newLoadingRegressionChecks": 3,
+  "fullDiscovery": {
+    "startTime": "2026-10-19T21:51:24.337Z",
+    "duration": 1223594.768,
+    "expected": 383,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  },
+  "postFixDiscoveryRetest": {
+    "startTime": "2026-10-19T22:13:31.008Z",
+    "duration": 1052951.4719999998,
+    "expected": 198,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "resolvedDiscoveryChecks": 384,
+  "discoveryTests": [
+    {
+      "title": "grade 9 map has labelled, responsive content and no browser or network errors",
+      "project": "phone-320",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 10419
+    },
+    {
+      "title": "grade 10 map has labelled, responsive content and no browser or network errors",
+      "project": "phone-320",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 9542
+    },
+    {
+      "title": "grade 11 map has labelled, responsive content and no browser or network errors",
+      "project": "phone-320",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 8733
+    },
+    {
+      "title": "deployment offer has labelled, responsive content and no browser or network errors",
+      "project": "phone-320",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 7370
+    },
+    {
+      "title": "digitisation offer has labelled, responsive content and no browser or network errors",
+      "project": "phone-320",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 7289
+    },
+    {
+      "title": "institution demo has labelled, responsive content and no browser or network errors",
+      "project": "phone-320",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 7184
+    },
+    {
+      "title": "institution cohorts gate has labelled, responsive content and no browser or network errors",
+      "project": "phone-320",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 6213
+    },
+    {
+      "title": "institution learners gate has labelled, responsive content and no browser or network errors",
+      "project": "phone-320",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 5050
+    },
+    {
+      "title": "institution facilitators gate has labelled, responsive content and no browser or network errors",
+      "project": "phone-320",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 6211
+    },
+    {
+      "title": "institution team gate has labelled, responsive content and no browser or network errors",
+      "project": "phone-320",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 4884
+    },
+    {
+      "title": "facilitator learners gate has labelled, responsive content and no browser or network errors",
+      "project": "phone-320",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 10715
+    },
+    {
+      "title": "facilitator review gate has labelled, responsive content and no browser or network errors",
+      "project": "phone-320",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 5308
+    },
+    {
+      "title": "facilitator coverage gate has labelled, responsive content and no browser or network errors",
+      "project": "phone-320",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 6030
+    },
+    {
+      "title": "facilitator reports gate has labelled, responsive content and no browser or network errors",
+      "project": "phone-320",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 6648
+    },
+    {
+      "title": "facilitator rubrics gate has labelled, responsive content and no browser or network errors",
+      "project": "phone-320",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 7503
+    },
+    {
+      "title": "legacy administrator redirect has labelled, responsive content and no browser or network errors",
+      "project": "phone-320",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 5322
+    },
+    {
+      "title": "reader grade 8 term 1 has labelled, responsive content and no browser or network errors",
+      "project": "phone-320",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 15408
+    },
+    {
+      "title": "reader grade 8 term 2 has labelled, responsive content and no browser or network errors",
+      "project": "phone-320",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 14015
+    },
+    {
+      "title": "reader grade 8 term 3 has labelled, responsive content and no browser or network errors",
+      "project": "phone-320",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 12820
+    },
+    {
+      "title": "reader grade 8 term 4 has labelled, responsive content and no browser or network errors",
+      "project": "phone-320",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 12873
+    },
+    {
+      "title": "reader grade 9 term 1 has labelled, responsive content and no browser or network errors",
+      "project": "phone-320",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 14661
+    },
+    {
+      "title": "reader grade 9 term 2 has labelled, responsive content and no browser or network errors",
+      "project": "phone-320",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 15801
+    },
+    {
+      "title": "reader grade 9 term 3 has labelled, responsive content and no browser or network errors",
+      "project": "phone-320",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 12163
+    },
+    {
+      "title": "reader grade 9 term 4 has labelled, responsive content and no browser or network errors",
+      "project": "phone-320",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 11351
+    },
+    {
+      "title": "reader grade 10 term 1 has labelled, responsive content and no browser or network errors",
+      "project": "phone-320",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 10768
+    },
+    {
+      "title": "reader grade 10 term 2 has labelled, responsive content and no browser or network errors",
+      "project": "phone-320",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 13779
+    },
+    {
+      "title": "reader grade 10 term 3 has labelled, responsive content and no browser or network errors",
+      "project": "phone-320",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 11893
+    },
+    {
+      "title": "reader grade 10 term 4 has labelled, responsive content and no browser or network errors",
+      "project": "phone-320",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 13042
+    },
+    {
+      "title": "reader grade 11 term 1 has labelled, responsive content and no browser or network errors",
+      "project": "phone-320",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 13232
+    },
+    {
+      "title": "reader grade 11 term 2 has labelled, responsive content and no browser or network errors",
+      "project": "phone-320",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 8429
+    },
+    {
+      "title": "reader grade 11 term 3 has labelled, responsive content and no browser or network errors",
+      "project": "phone-320",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 12323
+    },
+    {
+      "title": "reader grade 11 term 4 has labelled, responsive content and no browser or network errors",
+      "project": "phone-320",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 10836
+    },
+    {
+      "title": "reader grade 12 term 1 has labelled, responsive content and no browser or network errors",
+      "project": "phone-320",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 9974
+    },
+    {
+      "title": "reader grade 12 term 2 has labelled, responsive content and no browser or network errors",
+      "project": "phone-320",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 11319
+    },
+    {
+      "title": "reader grade 12 term 3 has labelled, responsive content and no browser or network errors",
+      "project": "phone-320",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 10543
+    },
+    {
+      "title": "reader grade 12 term 4 has labelled, responsive content and no browser or network errors",
+      "project": "phone-320",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 9049
+    },
+    {
+      "title": "assessment g9-t1-assessment-1 has labelled, responsive content and no browser or network errors",
+      "project": "phone-320",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 14043
+    },
+    {
+      "title": "assessment g9-t2-assessment-2 has labelled, responsive content and no browser or network errors",
+      "project": "phone-320",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 16052
+    },
+    {
+      "title": "assessment g9-t3-assessment-2 has labelled, responsive content and no browser or network errors",
+      "project": "phone-320",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 14525
+    },
+    {
+      "title": "assessment g9-t4-assessment-3 has labelled, responsive content and no browser or network errors",
+      "project": "phone-320",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 13998
+    },
+    {
+      "title": "complex controls grade 9 lesson 2 has labelled, responsive content and no browser or network errors",
+      "project": "phone-320",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 14206
+    },
+    {
+      "title": "complex controls grade 10 lesson 46 has labelled, responsive content and no browser or network errors",
+      "project": "phone-320",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 11940
+    },
+    {
+      "title": "complex controls grade 11 lesson 22 has labelled, responsive content and no browser or network errors",
+      "project": "phone-320",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 10616
+    },
+    {
+      "title": "complex controls grade 11 lesson 42 has labelled, responsive content and no browser or network errors",
+      "project": "phone-320",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 15420
+    },
+    {
+      "title": "complex controls grade 8 lesson 72 has labelled, responsive content and no browser or network errors",
+      "project": "phone-320",
+      "initialStatus": "failed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 10825
+    },
+    {
+      "title": "complex controls grade 10 lesson 33 has labelled, responsive content and no browser or network errors",
+      "project": "phone-320",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 10298
+    },
+    {
+      "title": "dark appearance supports enlarged reading across learner and institution surfaces",
+      "project": "phone-320",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 32503
+    },
+    {
+      "title": "system appearance supports enlarged reading across learner and institution surfaces",
+      "project": "phone-320",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 31851
+    },
+    {
+      "title": "compact landscape reader keeps navigation and response fields reachable",
+      "project": "phone-320",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 14109
+    },
+    {
+      "title": "invalid destinations offer a safe route back to learning",
+      "project": "phone-320",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 13634
+    },
+    {
+      "title": "grade 9 map has labelled, responsive content and no browser or network errors",
+      "project": "phone-360",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 9032
+    },
+    {
+      "title": "grade 10 map has labelled, responsive content and no browser or network errors",
+      "project": "phone-360",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 9810
+    },
+    {
+      "title": "grade 11 map has labelled, responsive content and no browser or network errors",
+      "project": "phone-360",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 8537
+    },
+    {
+      "title": "deployment offer has labelled, responsive content and no browser or network errors",
+      "project": "phone-360",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 6260
+    },
+    {
+      "title": "digitisation offer has labelled, responsive content and no browser or network errors",
+      "project": "phone-360",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 10796
+    },
+    {
+      "title": "institution demo has labelled, responsive content and no browser or network errors",
+      "project": "phone-360",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 6523
+    },
+    {
+      "title": "institution cohorts gate has labelled, responsive content and no browser or network errors",
+      "project": "phone-360",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 8636
+    },
+    {
+      "title": "institution learners gate has labelled, responsive content and no browser or network errors",
+      "project": "phone-360",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 5770
+    },
+    {
+      "title": "institution facilitators gate has labelled, responsive content and no browser or network errors",
+      "project": "phone-360",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 5766
+    },
+    {
+      "title": "institution team gate has labelled, responsive content and no browser or network errors",
+      "project": "phone-360",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 5991
+    },
+    {
+      "title": "facilitator learners gate has labelled, responsive content and no browser or network errors",
+      "project": "phone-360",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 6089
+    },
+    {
+      "title": "facilitator review gate has labelled, responsive content and no browser or network errors",
+      "project": "phone-360",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 6186
+    },
+    {
+      "title": "facilitator coverage gate has labelled, responsive content and no browser or network errors",
+      "project": "phone-360",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 6906
+    },
+    {
+      "title": "facilitator reports gate has labelled, responsive content and no browser or network errors",
+      "project": "phone-360",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 7108
+    },
+    {
+      "title": "facilitator rubrics gate has labelled, responsive content and no browser or network errors",
+      "project": "phone-360",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 6218
+    },
+    {
+      "title": "legacy administrator redirect has labelled, responsive content and no browser or network errors",
+      "project": "phone-360",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 7812
+    },
+    {
+      "title": "reader grade 8 term 1 has labelled, responsive content and no browser or network errors",
+      "project": "phone-360",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 18628
+    },
+    {
+      "title": "reader grade 8 term 2 has labelled, responsive content and no browser or network errors",
+      "project": "phone-360",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 14066
+    },
+    {
+      "title": "reader grade 8 term 3 has labelled, responsive content and no browser or network errors",
+      "project": "phone-360",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 13387
+    },
+    {
+      "title": "reader grade 8 term 4 has labelled, responsive content and no browser or network errors",
+      "project": "phone-360",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 11522
+    },
+    {
+      "title": "reader grade 9 term 1 has labelled, responsive content and no browser or network errors",
+      "project": "phone-360",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 13267
+    },
+    {
+      "title": "reader grade 9 term 2 has labelled, responsive content and no browser or network errors",
+      "project": "phone-360",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 16761
+    },
+    {
+      "title": "reader grade 9 term 3 has labelled, responsive content and no browser or network errors",
+      "project": "phone-360",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 13096
+    },
+    {
+      "title": "reader grade 9 term 4 has labelled, responsive content and no browser or network errors",
+      "project": "phone-360",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 11413
+    },
+    {
+      "title": "reader grade 10 term 1 has labelled, responsive content and no browser or network errors",
+      "project": "phone-360",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 12551
+    },
+    {
+      "title": "reader grade 10 term 2 has labelled, responsive content and no browser or network errors",
+      "project": "phone-360",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 13103
+    },
+    {
+      "title": "reader grade 10 term 3 has labelled, responsive content and no browser or network errors",
+      "project": "phone-360",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 13472
+    },
+    {
+      "title": "reader grade 10 term 4 has labelled, responsive content and no browser or network errors",
+      "project": "phone-360",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 14027
+    },
+    {
+      "title": "reader grade 11 term 1 has labelled, responsive content and no browser or network errors",
+      "project": "phone-360",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 13446
+    },
+    {
+      "title": "reader grade 11 term 2 has labelled, responsive content and no browser or network errors",
+      "project": "phone-360",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 13558
+    },
+    {
+      "title": "reader grade 11 term 3 has labelled, responsive content and no browser or network errors",
+      "project": "phone-360",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 11553
+    },
+    {
+      "title": "reader grade 11 term 4 has labelled, responsive content and no browser or network errors",
+      "project": "phone-360",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 12205
+    },
+    {
+      "title": "reader grade 12 term 1 has labelled, responsive content and no browser or network errors",
+      "project": "phone-360",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 10535
+    },
+    {
+      "title": "reader grade 12 term 2 has labelled, responsive content and no browser or network errors",
+      "project": "phone-360",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 11341
+    },
+    {
+      "title": "reader grade 12 term 3 has labelled, responsive content and no browser or network errors",
+      "project": "phone-360",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 11394
+    },
+    {
+      "title": "reader grade 12 term 4 has labelled, responsive content and no browser or network errors",
+      "project": "phone-360",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 11098
+    },
+    {
+      "title": "assessment g9-t1-assessment-1 has labelled, responsive content and no browser or network errors",
+      "project": "phone-360",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 17395
+    },
+    {
+      "title": "assessment g9-t2-assessment-2 has labelled, responsive content and no browser or network errors",
+      "project": "phone-360",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 15492
+    },
+    {
+      "title": "assessment g9-t3-assessment-2 has labelled, responsive content and no browser or network errors",
+      "project": "phone-360",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 12619
+    },
+    {
+      "title": "assessment g9-t4-assessment-3 has labelled, responsive content and no browser or network errors",
+      "project": "phone-360",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 14415
+    },
+    {
+      "title": "complex controls grade 9 lesson 2 has labelled, responsive content and no browser or network errors",
+      "project": "phone-360",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 10552
+    },
+    {
+      "title": "complex controls grade 10 lesson 46 has labelled, responsive content and no browser or network errors",
+      "project": "phone-360",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 13072
+    },
+    {
+      "title": "complex controls grade 11 lesson 22 has labelled, responsive content and no browser or network errors",
+      "project": "phone-360",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 13642
+    },
+    {
+      "title": "complex controls grade 11 lesson 42 has labelled, responsive content and no browser or network errors",
+      "project": "phone-360",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 12999
+    },
+    {
+      "title": "complex controls grade 8 lesson 72 has labelled, responsive content and no browser or network errors",
+      "project": "phone-360",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 10916
+    },
+    {
+      "title": "complex controls grade 10 lesson 33 has labelled, responsive content and no browser or network errors",
+      "project": "phone-360",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 11089
+    },
+    {
+      "title": "dark appearance supports enlarged reading across learner and institution surfaces",
+      "project": "phone-360",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 34974
+    },
+    {
+      "title": "system appearance supports enlarged reading across learner and institution surfaces",
+      "project": "phone-360",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 32384
+    },
+    {
+      "title": "compact landscape reader keeps navigation and response fields reachable",
+      "project": "phone-360",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 16138
+    },
+    {
+      "title": "invalid destinations offer a safe route back to learning",
+      "project": "phone-360",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 8678
+    },
+    {
+      "title": "grade 9 map has labelled, responsive content and no browser or network errors",
+      "project": "phone-430",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 3989
+    },
+    {
+      "title": "grade 10 map has labelled, responsive content and no browser or network errors",
+      "project": "phone-430",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 3537
+    },
+    {
+      "title": "grade 11 map has labelled, responsive content and no browser or network errors",
+      "project": "phone-430",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 2929
+    },
+    {
+      "title": "deployment offer has labelled, responsive content and no browser or network errors",
+      "project": "phone-430",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 2630
+    },
+    {
+      "title": "digitisation offer has labelled, responsive content and no browser or network errors",
+      "project": "phone-430",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 3393
+    },
+    {
+      "title": "institution demo has labelled, responsive content and no browser or network errors",
+      "project": "phone-430",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 2556
+    },
+    {
+      "title": "institution cohorts gate has labelled, responsive content and no browser or network errors",
+      "project": "phone-430",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 1932
+    },
+    {
+      "title": "institution learners gate has labelled, responsive content and no browser or network errors",
+      "project": "phone-430",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 2584
+    },
+    {
+      "title": "institution facilitators gate has labelled, responsive content and no browser or network errors",
+      "project": "phone-430",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 2282
+    },
+    {
+      "title": "institution team gate has labelled, responsive content and no browser or network errors",
+      "project": "phone-430",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 2035
+    },
+    {
+      "title": "facilitator learners gate has labelled, responsive content and no browser or network errors",
+      "project": "phone-430",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 2374
+    },
+    {
+      "title": "facilitator review gate has labelled, responsive content and no browser or network errors",
+      "project": "phone-430",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 2303
+    },
+    {
+      "title": "facilitator coverage gate has labelled, responsive content and no browser or network errors",
+      "project": "phone-430",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 2125
+    },
+    {
+      "title": "facilitator reports gate has labelled, responsive content and no browser or network errors",
+      "project": "phone-430",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 2035
+    },
+    {
+      "title": "facilitator rubrics gate has labelled, responsive content and no browser or network errors",
+      "project": "phone-430",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 2014
+    },
+    {
+      "title": "legacy administrator redirect has labelled, responsive content and no browser or network errors",
+      "project": "phone-430",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 2251
+    },
+    {
+      "title": "reader grade 8 term 1 has labelled, responsive content and no browser or network errors",
+      "project": "phone-430",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 13501
+    },
+    {
+      "title": "reader grade 8 term 2 has labelled, responsive content and no browser or network errors",
+      "project": "phone-430",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 12462
+    },
+    {
+      "title": "reader grade 8 term 3 has labelled, responsive content and no browser or network errors",
+      "project": "phone-430",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 13446
+    },
+    {
+      "title": "reader grade 8 term 4 has labelled, responsive content and no browser or network errors",
+      "project": "phone-430",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 13370
+    },
+    {
+      "title": "reader grade 9 term 1 has labelled, responsive content and no browser or network errors",
+      "project": "phone-430",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 12027
+    },
+    {
+      "title": "reader grade 9 term 2 has labelled, responsive content and no browser or network errors",
+      "project": "phone-430",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 12378
+    },
+    {
+      "title": "reader grade 9 term 3 has labelled, responsive content and no browser or network errors",
+      "project": "phone-430",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 12661
+    },
+    {
+      "title": "reader grade 9 term 4 has labelled, responsive content and no browser or network errors",
+      "project": "phone-430",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 9525
+    },
+    {
+      "title": "reader grade 10 term 1 has labelled, responsive content and no browser or network errors",
+      "project": "phone-430",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 13695
+    },
+    {
+      "title": "reader grade 10 term 2 has labelled, responsive content and no browser or network errors",
+      "project": "phone-430",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 14117
+    },
+    {
+      "title": "reader grade 10 term 3 has labelled, responsive content and no browser or network errors",
+      "project": "phone-430",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 17120
+    },
+    {
+      "title": "reader grade 10 term 4 has labelled, responsive content and no browser or network errors",
+      "project": "phone-430",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 10677
+    },
+    {
+      "title": "reader grade 11 term 1 has labelled, responsive content and no browser or network errors",
+      "project": "phone-430",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 14932
+    },
+    {
+      "title": "reader grade 11 term 2 has labelled, responsive content and no browser or network errors",
+      "project": "phone-430",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 11683
+    },
+    {
+      "title": "reader grade 11 term 3 has labelled, responsive content and no browser or network errors",
+      "project": "phone-430",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 11263
+    },
+    {
+      "title": "reader grade 11 term 4 has labelled, responsive content and no browser or network errors",
+      "project": "phone-430",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 10049
+    },
+    {
+      "title": "reader grade 12 term 1 has labelled, responsive content and no browser or network errors",
+      "project": "phone-430",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 7466
+    },
+    {
+      "title": "reader grade 12 term 2 has labelled, responsive content and no browser or network errors",
+      "project": "phone-430",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 11078
+    },
+    {
+      "title": "reader grade 12 term 3 has labelled, responsive content and no browser or network errors",
+      "project": "phone-430",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 7488
+    },
+    {
+      "title": "reader grade 12 term 4 has labelled, responsive content and no browser or network errors",
+      "project": "phone-430",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 8600
+    },
+    {
+      "title": "assessment g9-t1-assessment-1 has labelled, responsive content and no browser or network errors",
+      "project": "phone-430",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 7702
+    },
+    {
+      "title": "assessment g9-t2-assessment-2 has labelled, responsive content and no browser or network errors",
+      "project": "phone-430",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 8419
+    },
+    {
+      "title": "assessment g9-t3-assessment-2 has labelled, responsive content and no browser or network errors",
+      "project": "phone-430",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 6517
+    },
+    {
+      "title": "assessment g9-t4-assessment-3 has labelled, responsive content and no browser or network errors",
+      "project": "phone-430",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 6735
+    },
+    {
+      "title": "complex controls grade 9 lesson 2 has labelled, responsive content and no browser or network errors",
+      "project": "phone-430",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 6477
+    },
+    {
+      "title": "complex controls grade 10 lesson 46 has labelled, responsive content and no browser or network errors",
+      "project": "phone-430",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 5493
+    },
+    {
+      "title": "complex controls grade 11 lesson 22 has labelled, responsive content and no browser or network errors",
+      "project": "phone-430",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 9243
+    },
+    {
+      "title": "complex controls grade 11 lesson 42 has labelled, responsive content and no browser or network errors",
+      "project": "phone-430",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 11855
+    },
+    {
+      "title": "complex controls grade 8 lesson 72 has labelled, responsive content and no browser or network errors",
+      "project": "phone-430",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 7557
+    },
+    {
+      "title": "complex controls grade 10 lesson 33 has labelled, responsive content and no browser or network errors",
+      "project": "phone-430",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 5807
+    },
+    {
+      "title": "dark appearance supports enlarged reading across learner and institution surfaces",
+      "project": "phone-430",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 23879
+    },
+    {
+      "title": "system appearance supports enlarged reading across learner and institution surfaces",
+      "project": "phone-430",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 23559
+    },
+    {
+      "title": "compact landscape reader keeps navigation and response fields reachable",
+      "project": "phone-430",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 11229
+    },
+    {
+      "title": "invalid destinations offer a safe route back to learning",
+      "project": "phone-430",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 5102
+    },
+    {
+      "title": "grade 9 map has labelled, responsive content and no browser or network errors",
+      "project": "tablet-768",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 3028
+    },
+    {
+      "title": "grade 10 map has labelled, responsive content and no browser or network errors",
+      "project": "tablet-768",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 2755
+    },
+    {
+      "title": "grade 11 map has labelled, responsive content and no browser or network errors",
+      "project": "tablet-768",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 2695
+    },
+    {
+      "title": "deployment offer has labelled, responsive content and no browser or network errors",
+      "project": "tablet-768",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 2553
+    },
+    {
+      "title": "digitisation offer has labelled, responsive content and no browser or network errors",
+      "project": "tablet-768",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 2745
+    },
+    {
+      "title": "institution demo has labelled, responsive content and no browser or network errors",
+      "project": "tablet-768",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 2502
+    },
+    {
+      "title": "institution cohorts gate has labelled, responsive content and no browser or network errors",
+      "project": "tablet-768",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 2120
+    },
+    {
+      "title": "institution learners gate has labelled, responsive content and no browser or network errors",
+      "project": "tablet-768",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 2744
+    },
+    {
+      "title": "institution facilitators gate has labelled, responsive content and no browser or network errors",
+      "project": "tablet-768",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 2250
+    },
+    {
+      "title": "institution team gate has labelled, responsive content and no browser or network errors",
+      "project": "tablet-768",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 2082
+    },
+    {
+      "title": "facilitator learners gate has labelled, responsive content and no browser or network errors",
+      "project": "tablet-768",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 2481
+    },
+    {
+      "title": "facilitator review gate has labelled, responsive content and no browser or network errors",
+      "project": "tablet-768",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 1913
+    },
+    {
+      "title": "facilitator coverage gate has labelled, responsive content and no browser or network errors",
+      "project": "tablet-768",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 2213
+    },
+    {
+      "title": "facilitator reports gate has labelled, responsive content and no browser or network errors",
+      "project": "tablet-768",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 2772
+    },
+    {
+      "title": "facilitator rubrics gate has labelled, responsive content and no browser or network errors",
+      "project": "tablet-768",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 1995
+    },
+    {
+      "title": "legacy administrator redirect has labelled, responsive content and no browser or network errors",
+      "project": "tablet-768",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 2353
+    },
+    {
+      "title": "reader grade 8 term 1 has labelled, responsive content and no browser or network errors",
+      "project": "tablet-768",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 19870
+    },
+    {
+      "title": "reader grade 8 term 2 has labelled, responsive content and no browser or network errors",
+      "project": "tablet-768",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 12985
+    },
+    {
+      "title": "reader grade 8 term 3 has labelled, responsive content and no browser or network errors",
+      "project": "tablet-768",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 13896
+    },
+    {
+      "title": "reader grade 8 term 4 has labelled, responsive content and no browser or network errors",
+      "project": "tablet-768",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 13168
+    },
+    {
+      "title": "reader grade 9 term 1 has labelled, responsive content and no browser or network errors",
+      "project": "tablet-768",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 13888
+    },
+    {
+      "title": "reader grade 9 term 2 has labelled, responsive content and no browser or network errors",
+      "project": "tablet-768",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 14760
+    },
+    {
+      "title": "reader grade 9 term 3 has labelled, responsive content and no browser or network errors",
+      "project": "tablet-768",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 15482
+    },
+    {
+      "title": "reader grade 9 term 4 has labelled, responsive content and no browser or network errors",
+      "project": "tablet-768",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 15219
+    },
+    {
+      "title": "reader grade 10 term 1 has labelled, responsive content and no browser or network errors",
+      "project": "tablet-768",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 15225
+    },
+    {
+      "title": "reader grade 10 term 2 has labelled, responsive content and no browser or network errors",
+      "project": "tablet-768",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 16696
+    },
+    {
+      "title": "reader grade 10 term 3 has labelled, responsive content and no browser or network errors",
+      "project": "tablet-768",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 12574
+    },
+    {
+      "title": "reader grade 10 term 4 has labelled, responsive content and no browser or network errors",
+      "project": "tablet-768",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 10513
+    },
+    {
+      "title": "reader grade 11 term 1 has labelled, responsive content and no browser or network errors",
+      "project": "tablet-768",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 11973
+    },
+    {
+      "title": "reader grade 11 term 2 has labelled, responsive content and no browser or network errors",
+      "project": "tablet-768",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 9955
+    },
+    {
+      "title": "reader grade 11 term 3 has labelled, responsive content and no browser or network errors",
+      "project": "tablet-768",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 9744
+    },
+    {
+      "title": "reader grade 11 term 4 has labelled, responsive content and no browser or network errors",
+      "project": "tablet-768",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 9896
+    },
+    {
+      "title": "reader grade 12 term 1 has labelled, responsive content and no browser or network errors",
+      "project": "tablet-768",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 9769
+    },
+    {
+      "title": "reader grade 12 term 2 has labelled, responsive content and no browser or network errors",
+      "project": "tablet-768",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 10798
+    },
+    {
+      "title": "reader grade 12 term 3 has labelled, responsive content and no browser or network errors",
+      "project": "tablet-768",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 7192
+    },
+    {
+      "title": "reader grade 12 term 4 has labelled, responsive content and no browser or network errors",
+      "project": "tablet-768",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 7394
+    },
+    {
+      "title": "assessment g9-t1-assessment-1 has labelled, responsive content and no browser or network errors",
+      "project": "tablet-768",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 7138
+    },
+    {
+      "title": "assessment g9-t2-assessment-2 has labelled, responsive content and no browser or network errors",
+      "project": "tablet-768",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 10706
+    },
+    {
+      "title": "assessment g9-t3-assessment-2 has labelled, responsive content and no browser or network errors",
+      "project": "tablet-768",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 10675
+    },
+    {
+      "title": "assessment g9-t4-assessment-3 has labelled, responsive content and no browser or network errors",
+      "project": "tablet-768",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 9133
+    },
+    {
+      "title": "complex controls grade 9 lesson 2 has labelled, responsive content and no browser or network errors",
+      "project": "tablet-768",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 9226
+    },
+    {
+      "title": "complex controls grade 10 lesson 46 has labelled, responsive content and no browser or network errors",
+      "project": "tablet-768",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 7184
+    },
+    {
+      "title": "complex controls grade 11 lesson 22 has labelled, responsive content and no browser or network errors",
+      "project": "tablet-768",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 7847
+    },
+    {
+      "title": "complex controls grade 11 lesson 42 has labelled, responsive content and no browser or network errors",
+      "project": "tablet-768",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 11961
+    },
+    {
+      "title": "complex controls grade 8 lesson 72 has labelled, responsive content and no browser or network errors",
+      "project": "tablet-768",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 9381
+    },
+    {
+      "title": "complex controls grade 10 lesson 33 has labelled, responsive content and no browser or network errors",
+      "project": "tablet-768",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 8801
+    },
+    {
+      "title": "dark appearance supports enlarged reading across learner and institution surfaces",
+      "project": "tablet-768",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 17148
+    },
+    {
+      "title": "system appearance supports enlarged reading across learner and institution surfaces",
+      "project": "tablet-768",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 13309
+    },
+    {
+      "title": "compact landscape reader keeps navigation and response fields reachable",
+      "project": "tablet-768",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 5143
+    },
+    {
+      "title": "invalid destinations offer a safe route back to learning",
+      "project": "tablet-768",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 5357
+    },
+    {
+      "title": "grade 9 map has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1280",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 3726
+    },
+    {
+      "title": "grade 10 map has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1280",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 2809
+    },
+    {
+      "title": "grade 11 map has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1280",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 3494
+    },
+    {
+      "title": "deployment offer has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1280",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 3420
+    },
+    {
+      "title": "digitisation offer has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1280",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 2821
+    },
+    {
+      "title": "institution demo has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1280",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 3011
+    },
+    {
+      "title": "institution cohorts gate has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1280",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 2396
+    },
+    {
+      "title": "institution learners gate has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1280",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 3317
+    },
+    {
+      "title": "institution facilitators gate has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1280",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 2736
+    },
+    {
+      "title": "institution team gate has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1280",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 2637
+    },
+    {
+      "title": "facilitator learners gate has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1280",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 2910
+    },
+    {
+      "title": "facilitator review gate has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1280",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 2812
+    },
+    {
+      "title": "facilitator coverage gate has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1280",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 2456
+    },
+    {
+      "title": "facilitator reports gate has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1280",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 2089
+    },
+    {
+      "title": "facilitator rubrics gate has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1280",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 2168
+    },
+    {
+      "title": "legacy administrator redirect has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1280",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 2177
+    },
+    {
+      "title": "reader grade 8 term 1 has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1280",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 5928
+    },
+    {
+      "title": "reader grade 8 term 2 has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1280",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 5006
+    },
+    {
+      "title": "reader grade 8 term 3 has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1280",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 4309
+    },
+    {
+      "title": "reader grade 8 term 4 has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1280",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 3877
+    },
+    {
+      "title": "reader grade 9 term 1 has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1280",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 3583
+    },
+    {
+      "title": "reader grade 9 term 2 has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1280",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 3295
+    },
+    {
+      "title": "reader grade 9 term 3 has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1280",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 4812
+    },
+    {
+      "title": "reader grade 9 term 4 has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1280",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 3759
+    },
+    {
+      "title": "reader grade 10 term 1 has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1280",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 3310
+    },
+    {
+      "title": "reader grade 10 term 2 has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1280",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 3635
+    },
+    {
+      "title": "reader grade 10 term 3 has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1280",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 3365
+    },
+    {
+      "title": "reader grade 10 term 4 has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1280",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 4173
+    },
+    {
+      "title": "reader grade 11 term 1 has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1280",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 4296
+    },
+    {
+      "title": "reader grade 11 term 2 has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1280",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 3507
+    },
+    {
+      "title": "reader grade 11 term 3 has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1280",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 3565
+    },
+    {
+      "title": "reader grade 11 term 4 has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1280",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 3695
+    },
+    {
+      "title": "reader grade 12 term 1 has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1280",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 3404
+    },
+    {
+      "title": "reader grade 12 term 2 has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1280",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 4049
+    },
+    {
+      "title": "reader grade 12 term 3 has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1280",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 3176
+    },
+    {
+      "title": "reader grade 12 term 4 has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1280",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 3786
+    },
+    {
+      "title": "assessment g9-t1-assessment-1 has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1280",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 4686
+    },
+    {
+      "title": "assessment g9-t2-assessment-2 has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1280",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 4104
+    },
+    {
+      "title": "assessment g9-t3-assessment-2 has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1280",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 4477
+    },
+    {
+      "title": "assessment g9-t4-assessment-3 has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1280",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 4135
+    },
+    {
+      "title": "complex controls grade 9 lesson 2 has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1280",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 3684
+    },
+    {
+      "title": "complex controls grade 10 lesson 46 has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1280",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 3426
+    },
+    {
+      "title": "complex controls grade 11 lesson 22 has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1280",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 4614
+    },
+    {
+      "title": "complex controls grade 11 lesson 42 has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1280",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 5137
+    },
+    {
+      "title": "complex controls grade 8 lesson 72 has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1280",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 3903
+    },
+    {
+      "title": "complex controls grade 10 lesson 33 has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1280",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 4259
+    },
+    {
+      "title": "dark appearance supports enlarged reading across learner and institution surfaces",
+      "project": "desktop-1280",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 10121
+    },
+    {
+      "title": "system appearance supports enlarged reading across learner and institution surfaces",
+      "project": "desktop-1280",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 10787
+    },
+    {
+      "title": "compact landscape reader keeps navigation and response fields reachable",
+      "project": "desktop-1280",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 6325
+    },
+    {
+      "title": "invalid destinations offer a safe route back to learning",
+      "project": "desktop-1280",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 6415
+    },
+    {
+      "title": "grade 9 map has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1920",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 3594
+    },
+    {
+      "title": "grade 10 map has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1920",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 3802
+    },
+    {
+      "title": "grade 11 map has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1920",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 3008
+    },
+    {
+      "title": "deployment offer has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1920",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 3438
+    },
+    {
+      "title": "digitisation offer has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1920",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 3173
+    },
+    {
+      "title": "institution demo has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1920",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 2699
+    },
+    {
+      "title": "institution cohorts gate has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1920",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 2925
+    },
+    {
+      "title": "institution learners gate has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1920",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 2362
+    },
+    {
+      "title": "institution facilitators gate has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1920",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 2688
+    },
+    {
+      "title": "institution team gate has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1920",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 2829
+    },
+    {
+      "title": "facilitator learners gate has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1920",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 2299
+    },
+    {
+      "title": "facilitator review gate has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1920",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 2307
+    },
+    {
+      "title": "facilitator coverage gate has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1920",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 3000
+    },
+    {
+      "title": "facilitator reports gate has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1920",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 2380
+    },
+    {
+      "title": "facilitator rubrics gate has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1920",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 3124
+    },
+    {
+      "title": "legacy administrator redirect has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1920",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 3248
+    },
+    {
+      "title": "reader grade 8 term 1 has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1920",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 5911
+    },
+    {
+      "title": "reader grade 8 term 2 has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1920",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 3502
+    },
+    {
+      "title": "reader grade 8 term 3 has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1920",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 4078
+    },
+    {
+      "title": "reader grade 8 term 4 has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1920",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 4511
+    },
+    {
+      "title": "reader grade 9 term 1 has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1920",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 3893
+    },
+    {
+      "title": "reader grade 9 term 2 has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1920",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 4016
+    },
+    {
+      "title": "reader grade 9 term 3 has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1920",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 3693
+    },
+    {
+      "title": "reader grade 9 term 4 has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1920",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 4060
+    },
+    {
+      "title": "reader grade 10 term 1 has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1920",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 3945
+    },
+    {
+      "title": "reader grade 10 term 2 has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1920",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 4096
+    },
+    {
+      "title": "reader grade 10 term 3 has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1920",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 3701
+    },
+    {
+      "title": "reader grade 10 term 4 has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1920",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 3661
+    },
+    {
+      "title": "reader grade 11 term 1 has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1920",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 4386
+    },
+    {
+      "title": "reader grade 11 term 2 has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1920",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 4439
+    },
+    {
+      "title": "reader grade 11 term 3 has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1920",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 4407
+    },
+    {
+      "title": "reader grade 11 term 4 has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1920",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 5045
+    },
+    {
+      "title": "reader grade 12 term 1 has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1920",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 4871
+    },
+    {
+      "title": "reader grade 12 term 2 has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1920",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 5804
+    },
+    {
+      "title": "reader grade 12 term 3 has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1920",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 4667
+    },
+    {
+      "title": "reader grade 12 term 4 has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1920",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 4171
+    },
+    {
+      "title": "assessment g9-t1-assessment-1 has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1920",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 5988
+    },
+    {
+      "title": "assessment g9-t2-assessment-2 has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1920",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 5237
+    },
+    {
+      "title": "assessment g9-t3-assessment-2 has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1920",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 4584
+    },
+    {
+      "title": "assessment g9-t4-assessment-3 has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1920",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 5439
+    },
+    {
+      "title": "complex controls grade 9 lesson 2 has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1920",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 3682
+    },
+    {
+      "title": "complex controls grade 10 lesson 46 has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1920",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 3971
+    },
+    {
+      "title": "complex controls grade 11 lesson 22 has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1920",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 4930
+    },
+    {
+      "title": "complex controls grade 11 lesson 42 has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1920",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 4235
+    },
+    {
+      "title": "complex controls grade 8 lesson 72 has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1920",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 2702
+    },
+    {
+      "title": "complex controls grade 10 lesson 33 has labelled, responsive content and no browser or network errors",
+      "project": "desktop-1920",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 2307
+    },
+    {
+      "title": "dark appearance supports enlarged reading across learner and institution surfaces",
+      "project": "desktop-1920",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 6776
+    },
+    {
+      "title": "system appearance supports enlarged reading across learner and institution surfaces",
+      "project": "desktop-1920",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 7288
+    },
+    {
+      "title": "compact landscape reader keeps navigation and response fields reachable",
+      "project": "desktop-1920",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "post-fix retest",
+      "durationMs": 3726
+    },
+    {
+      "title": "invalid destinations offer a safe route back to learning",
+      "project": "desktop-1920",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 4289
+    },
+    {
+      "title": "home has stable shell, diagnostics and screenshots",
+      "project": "phone-320",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 5858
+    },
+    {
+      "title": "grade library has stable shell, diagnostics and screenshots",
+      "project": "phone-320",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 8253
+    },
+    {
+      "title": "grade 8 map has stable shell, diagnostics and screenshots",
+      "project": "phone-320",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 8709
+    },
+    {
+      "title": "grade 12 map has stable shell, diagnostics and screenshots",
+      "project": "phone-320",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 8379
+    },
+    {
+      "title": "progress has stable shell, diagnostics and screenshots",
+      "project": "phone-320",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 6908
+    },
+    {
+      "title": "portfolio has stable shell, diagnostics and screenshots",
+      "project": "phone-320",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 10685
+    },
+    {
+      "title": "profile has stable shell, diagnostics and screenshots",
+      "project": "phone-320",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 7992
+    },
+    {
+      "title": "settings has stable shell, diagnostics and screenshots",
+      "project": "phone-320",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 6650
+    },
+    {
+      "title": "sign in has stable shell, diagnostics and screenshots",
+      "project": "phone-320",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 7507
+    },
+    {
+      "title": "reset access has stable shell, diagnostics and screenshots",
+      "project": "phone-320",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 8130
+    },
+    {
+      "title": "institutions has stable shell, diagnostics and screenshots",
+      "project": "phone-320",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 9145
+    },
+    {
+      "title": "institution operations gate has stable shell, diagnostics and screenshots",
+      "project": "phone-320",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 6116
+    },
+    {
+      "title": "facilitator gate has stable shell, diagnostics and screenshots",
+      "project": "phone-320",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 6188
+    },
+    {
+      "title": "keyboard Tab exposes a focusable control on home",
+      "project": "phone-320",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 7936
+    },
+    {
+      "title": "home has stable shell, diagnostics and screenshots",
+      "project": "phone-360",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 4752
+    },
+    {
+      "title": "grade library has stable shell, diagnostics and screenshots",
+      "project": "phone-360",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 6573
+    },
+    {
+      "title": "grade 8 map has stable shell, diagnostics and screenshots",
+      "project": "phone-360",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 5902
+    },
+    {
+      "title": "grade 12 map has stable shell, diagnostics and screenshots",
+      "project": "phone-360",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 6427
+    },
+    {
+      "title": "progress has stable shell, diagnostics and screenshots",
+      "project": "phone-360",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 4796
+    },
+    {
+      "title": "portfolio has stable shell, diagnostics and screenshots",
+      "project": "phone-360",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 5689
+    },
+    {
+      "title": "profile has stable shell, diagnostics and screenshots",
+      "project": "phone-360",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 3044
+    },
+    {
+      "title": "settings has stable shell, diagnostics and screenshots",
+      "project": "phone-360",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 4263
+    },
+    {
+      "title": "sign in has stable shell, diagnostics and screenshots",
+      "project": "phone-360",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 4293
+    },
+    {
+      "title": "reset access has stable shell, diagnostics and screenshots",
+      "project": "phone-360",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 3196
+    },
+    {
+      "title": "institutions has stable shell, diagnostics and screenshots",
+      "project": "phone-360",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 3969
+    },
+    {
+      "title": "institution operations gate has stable shell, diagnostics and screenshots",
+      "project": "phone-360",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 4404
+    },
+    {
+      "title": "facilitator gate has stable shell, diagnostics and screenshots",
+      "project": "phone-360",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 2588
+    },
+    {
+      "title": "keyboard Tab exposes a focusable control on home",
+      "project": "phone-360",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 2159
+    },
+    {
+      "title": "home has stable shell, diagnostics and screenshots",
+      "project": "phone-430",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 2915
+    },
+    {
+      "title": "grade library has stable shell, diagnostics and screenshots",
+      "project": "phone-430",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 2817
+    },
+    {
+      "title": "grade 8 map has stable shell, diagnostics and screenshots",
+      "project": "phone-430",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 2534
+    },
+    {
+      "title": "grade 12 map has stable shell, diagnostics and screenshots",
+      "project": "phone-430",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 2660
+    },
+    {
+      "title": "progress has stable shell, diagnostics and screenshots",
+      "project": "phone-430",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 2842
+    },
+    {
+      "title": "portfolio has stable shell, diagnostics and screenshots",
+      "project": "phone-430",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 3767
+    },
+    {
+      "title": "profile has stable shell, diagnostics and screenshots",
+      "project": "phone-430",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 2237
+    },
+    {
+      "title": "settings has stable shell, diagnostics and screenshots",
+      "project": "phone-430",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 2301
+    },
+    {
+      "title": "sign in has stable shell, diagnostics and screenshots",
+      "project": "phone-430",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 2237
+    },
+    {
+      "title": "reset access has stable shell, diagnostics and screenshots",
+      "project": "phone-430",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 2077
+    },
+    {
+      "title": "institutions has stable shell, diagnostics and screenshots",
+      "project": "phone-430",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 2127
+    },
+    {
+      "title": "institution operations gate has stable shell, diagnostics and screenshots",
+      "project": "phone-430",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 2084
+    },
+    {
+      "title": "facilitator gate has stable shell, diagnostics and screenshots",
+      "project": "phone-430",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 2150
+    },
+    {
+      "title": "keyboard Tab exposes a focusable control on home",
+      "project": "phone-430",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 1425
+    },
+    {
+      "title": "home has stable shell, diagnostics and screenshots",
+      "project": "tablet-768",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 3312
+    },
+    {
+      "title": "grade library has stable shell, diagnostics and screenshots",
+      "project": "tablet-768",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 2930
+    },
+    {
+      "title": "grade 8 map has stable shell, diagnostics and screenshots",
+      "project": "tablet-768",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 2438
+    },
+    {
+      "title": "grade 12 map has stable shell, diagnostics and screenshots",
+      "project": "tablet-768",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 3964
+    },
+    {
+      "title": "progress has stable shell, diagnostics and screenshots",
+      "project": "tablet-768",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 2417
+    },
+    {
+      "title": "portfolio has stable shell, diagnostics and screenshots",
+      "project": "tablet-768",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 2850
+    },
+    {
+      "title": "profile has stable shell, diagnostics and screenshots",
+      "project": "tablet-768",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 2352
+    },
+    {
+      "title": "settings has stable shell, diagnostics and screenshots",
+      "project": "tablet-768",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 2351
+    },
+    {
+      "title": "sign in has stable shell, diagnostics and screenshots",
+      "project": "tablet-768",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 2292
+    },
+    {
+      "title": "reset access has stable shell, diagnostics and screenshots",
+      "project": "tablet-768",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 2135
+    },
+    {
+      "title": "institutions has stable shell, diagnostics and screenshots",
+      "project": "tablet-768",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 2477
+    },
+    {
+      "title": "institution operations gate has stable shell, diagnostics and screenshots",
+      "project": "tablet-768",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 2204
+    },
+    {
+      "title": "facilitator gate has stable shell, diagnostics and screenshots",
+      "project": "tablet-768",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 2207
+    },
+    {
+      "title": "keyboard Tab exposes a focusable control on home",
+      "project": "tablet-768",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 1866
+    },
+    {
+      "title": "home has stable shell, diagnostics and screenshots",
+      "project": "desktop-1280",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 3124
+    },
+    {
+      "title": "grade library has stable shell, diagnostics and screenshots",
+      "project": "desktop-1280",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 3100
+    },
+    {
+      "title": "grade 8 map has stable shell, diagnostics and screenshots",
+      "project": "desktop-1280",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 2932
+    },
+    {
+      "title": "grade 12 map has stable shell, diagnostics and screenshots",
+      "project": "desktop-1280",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 3361
+    },
+    {
+      "title": "progress has stable shell, diagnostics and screenshots",
+      "project": "desktop-1280",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 2626
+    },
+    {
+      "title": "portfolio has stable shell, diagnostics and screenshots",
+      "project": "desktop-1280",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 3079
+    },
+    {
+      "title": "profile has stable shell, diagnostics and screenshots",
+      "project": "desktop-1280",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 2685
+    },
+    {
+      "title": "settings has stable shell, diagnostics and screenshots",
+      "project": "desktop-1280",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 2453
+    },
+    {
+      "title": "sign in has stable shell, diagnostics and screenshots",
+      "project": "desktop-1280",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 1869
+    },
+    {
+      "title": "reset access has stable shell, diagnostics and screenshots",
+      "project": "desktop-1280",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 2194
+    },
+    {
+      "title": "institutions has stable shell, diagnostics and screenshots",
+      "project": "desktop-1280",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 2491
+    },
+    {
+      "title": "institution operations gate has stable shell, diagnostics and screenshots",
+      "project": "desktop-1280",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 2243
+    },
+    {
+      "title": "facilitator gate has stable shell, diagnostics and screenshots",
+      "project": "desktop-1280",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 2110
+    },
+    {
+      "title": "keyboard Tab exposes a focusable control on home",
+      "project": "desktop-1280",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 1643
+    },
+    {
+      "title": "home has stable shell, diagnostics and screenshots",
+      "project": "desktop-1920",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 4528
+    },
+    {
+      "title": "grade library has stable shell, diagnostics and screenshots",
+      "project": "desktop-1920",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 5128
+    },
+    {
+      "title": "grade 8 map has stable shell, diagnostics and screenshots",
+      "project": "desktop-1920",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 5137
+    },
+    {
+      "title": "grade 12 map has stable shell, diagnostics and screenshots",
+      "project": "desktop-1920",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 6100
+    },
+    {
+      "title": "progress has stable shell, diagnostics and screenshots",
+      "project": "desktop-1920",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 4721
+    },
+    {
+      "title": "portfolio has stable shell, diagnostics and screenshots",
+      "project": "desktop-1920",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 6292
+    },
+    {
+      "title": "profile has stable shell, diagnostics and screenshots",
+      "project": "desktop-1920",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 4087
+    },
+    {
+      "title": "settings has stable shell, diagnostics and screenshots",
+      "project": "desktop-1920",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 4611
+    },
+    {
+      "title": "sign in has stable shell, diagnostics and screenshots",
+      "project": "desktop-1920",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 3897
+    },
+    {
+      "title": "reset access has stable shell, diagnostics and screenshots",
+      "project": "desktop-1920",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 4166
+    },
+    {
+      "title": "institutions has stable shell, diagnostics and screenshots",
+      "project": "desktop-1920",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 5184
+    },
+    {
+      "title": "institution operations gate has stable shell, diagnostics and screenshots",
+      "project": "desktop-1920",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 4352
+    },
+    {
+      "title": "facilitator gate has stable shell, diagnostics and screenshots",
+      "project": "desktop-1920",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 5271
+    },
+    {
+      "title": "keyboard Tab exposes a focusable control on home",
+      "project": "desktop-1920",
+      "initialStatus": "passed",
+      "finalStatus": "passed",
+      "source": "full sweep",
+      "durationMs": 2370
+    }
+  ]
+}

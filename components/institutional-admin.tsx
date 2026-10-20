@@ -175,36 +175,36 @@ export function InstitutionalAdmin({ initialSection = "overview" }: { initialSec
   }
 
   if (authLoading) {
-    return <main className="institution-admin-page"><div className="institution-admin-state">Getting your account ready…</div></main>;
+    return <div className="institution-admin-page"><div className="institution-admin-state">Getting your account ready…</div></div>;
   }
 
   if (!user) {
     return (
-      <main className="institution-admin-page">
+      <div className="institution-admin-page">
         <section className="institution-admin-hero">
           <p className="eyebrow">Institution operations</p>
           <h1>Set up the delivery layer behind the learner experience.</h1>
           <p>Sign in to create or manage schools, cohorts, educators and learner enrolments.</p>
           <Link className="institutional-primary" href="/auth">Sign in to continue <ArrowRight /></Link>
         </section>
-      </main>
+      </div>
     );
   }
 
   if (contextLoading||contextUserId!==user.id) {
-    return <main className="institution-admin-page"><div className="institution-admin-state">Getting your institution workspace ready…</div></main>;
+    return <div className="institution-admin-page"><div className="institution-admin-state">Getting your institution workspace ready…</div></div>;
   }
 
   if (contextLoadFailed) {
-    return <main className="institution-admin-page"><section className="institution-admin-hero"><p className="eyebrow">Institution workspace</p><h1>We couldn’t confirm your access just now.</h1><p>Please refresh and try again. If the problem continues, contact your platform administrator.</p><button type="button" className="institutional-primary" onClick={() => window.location.reload()}>Try again <ArrowRight /></button></section></main>;
+    return <div className="institution-admin-page"><section className="institution-admin-hero"><p className="eyebrow">Institution workspace</p><h1>We couldn’t confirm your access just now.</h1><p>Please refresh and try again. If the problem continues, contact your platform administrator.</p><button type="button" className="institutional-primary" onClick={() => window.location.reload()}>Try again <ArrowRight /></button></section></div>;
   }
 
   if (!hasInstitutionAdminAccess) {
-    return <main className="institution-admin-page"><section className="institution-admin-hero"><p className="eyebrow">Restricted workspace</p><h1>Institution administrator access required.</h1><p>Signing in creates an account, but it does not grant institution-management permissions. Ask a platform or institution administrator to assign the appropriate role.</p><Link className="institutional-text-link" href="/institutions">Back to institutions <ArrowRight /></Link></section></main>;
+    return <div className="institution-admin-page"><section className="institution-admin-hero"><p className="eyebrow">Restricted workspace</p><h1>Institution administrator access required.</h1><p>Signing in creates an account, but it does not grant institution-management permissions. Ask a platform or institution administrator to assign the appropriate role.</p><Link className="institutional-text-link" href="/institutions">Back to institutions <ArrowRight /></Link></section></div>;
   }
 
   return (
-    <main className="institution-admin-page" data-workspace-section={pageSection}>
+    <div className="institution-admin-page" data-workspace-section={pageSection}>
       <header className="institution-admin-header">
         <div>
           <p className="eyebrow">Applied Commerce · Institutional operations</p>
@@ -345,6 +345,6 @@ export function InstitutionalAdmin({ initialSection = "overview" }: { initialSec
           </section> : null}
         </>
       )}
-    </main>
+    </div>
   );
 }

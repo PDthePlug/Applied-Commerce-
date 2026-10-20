@@ -1,7 +1,8 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useRef, useState } from "react";
+import { useModalFocus } from "@/lib/use-modal-focus";
 import { Archive, BarChart3, BookOpen, Home, Menu, UserRound, X } from "lucide-react";
 import { Brand } from "./brand";
 
@@ -22,44 +23,12 @@ export function AppShell({children}:{children:React.ReactNode}) {
   const staffSurface=institutional||facilitator;
   const [menuOpen,setMenuOpen]=useState(false);
   const triggerRef=useRef<HTMLButtonElement|null>(null);
-  const closeRef=useRef<HTMLButtonElement|null>(null);
-
-  useEffect(()=>{
-    if(!menuOpen) return;
-    const previousOverflow=document.body.style.overflow;
-    const trigger=triggerRef.current;
-    document.body.style.overflow="hidden";
-    requestAnimationFrame(()=>closeRef.current?.focus());
-    const onKeyDown=(event:KeyboardEvent)=>{
-      if(event.key==="Escape"){
-        event.preventDefault();
-        setMenuOpen(false);
-        return;
-      }
-      if(event.key!=="Tab") return;
-      const dialog=document.querySelector<HTMLElement>(".app-menu-sheet");
-      if(!dialog) return;
-      const focusable=[...dialog.querySelectorAll<HTMLElement>('a[href],button:not([disabled]),input,select,textarea,[tabindex]:not([tabindex="-1"])')];
-      if(!focusable.length) return;
-      const first=focusable[0];
-      const last=focusable[focusable.length-1];
-      if(event.shiftKey&&document.activeElement===first){
-        event.preventDefault();
-        last.focus();
-      }else if(!event.shiftKey&&document.activeElement===last){
-        event.preventDefault();
-        first.focus();
-      }
-    };
-    window.addEventListener("keydown",onKeyDown);
-    return ()=>{
-      document.body.style.overflow=previousOverflow;
-      window.removeEventListener("keydown",onKeyDown);
-      requestAnimationFrame(()=>trigger?.focus());
-    };
-  },[menuOpen]);
+  const menuRef=useRef<HTMLElement|null>(null);
+  const closeMenu=useCallback(()=>setMenuOpen(false),[]);
+  useModalFocus(menuOpen,menuRef,triggerRef,closeMenu);
 
   return <div className={"app-shell "+(focusedReader?"focused-reader ":"")+(institutional?"institutional-shell ":"")+(facilitator?"facilitator-shell":"")}>
+    <a className="skip-link" href={focusedReader?"#lesson-content":"#main-content"}>Skip to main content</a>
     {!focusedReader && !authPage && <header className="topbar">
       <Brand
         href={institutional?"/institutions":facilitator?"/facilitator":"/"}
@@ -71,14 +40,14 @@ export function AppShell({children}:{children:React.ReactNode}) {
           ? <div className="topbar-note"><Link href="/">Learner platform</Link><span>Evidence & assessment</span></div>
           : <div className="topbar-note"><Link className="topbar-auth-link" href="/auth">Staff sign in</Link></div>}
     </header>}
-    <main>{children}</main>
+    <main id="main-content" tabIndex={-1}>{children}</main>
 
     {!staffSurface && !authPage && menuOpen && <>
-      <button className="app-menu-scrim" type="button" onClick={()=>setMenuOpen(false)} aria-label="Close Applied Commerce menu"/>
-      <section className="app-menu-sheet" role="dialog" aria-modal="true" aria-label="Applied Commerce menu">
+      <button className="app-menu-scrim" data-modal-backdrop type="button" tabIndex={-1} onClick={closeMenu} aria-label="Close Applied Commerce menu"/>
+      <section ref={menuRef} className="app-menu-sheet" role="dialog" aria-modal="true" aria-label="Applied Commerce menu" tabIndex={-1}>
        <header>
         <div><span className="brand-mark">AC</span><div><strong>Applied Commerce</strong><small>Learner menu</small></div></div>
-        <button ref={closeRef} type="button" onClick={()=>setMenuOpen(false)} aria-label="Close menu"><X/></button>
+        <button type="button" onClick={closeMenu} aria-label="Close menu"><X/></button>
        </header>
        <nav className="app-menu-items">
         {nav.map(item=>{

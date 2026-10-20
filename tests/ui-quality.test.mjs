@@ -60,7 +60,7 @@ test("center menu keeps five learner destinations and accessible dialog behavior
     assert.match(shell,new RegExp(`href:"${href.replaceAll("/","\\/")}"`));
   }
   assert.match(shell,/aria-haspopup="dialog"/);
-  assert.match(shell,/event\.key!=="Tab"/);
+  assert.match(read("lib/use-modal-focus.ts"),/event\.key !== "Tab"/);
 });
 
 test("home is a learner welcome dashboard, not a duplicated curriculum index",()=>{

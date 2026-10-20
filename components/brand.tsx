@@ -5,7 +5,7 @@ export function Brand({
   href="/",
   subtitle="Learning Platform",
 }:{compact?:boolean;href?:string;subtitle?:string}) {
-  return <Link className="brand" href={href} aria-label="Applied Commerce home">
+  return <Link className="brand" href={href}>
     <span className="brand-mark" aria-hidden="true">AC</span>
     <span className="brand-type"><strong>Applied Commerce</strong>{!compact && <small>{subtitle}</small>}</span>
   </Link>;

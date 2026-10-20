@@ -8,10 +8,10 @@
 .semantic-learning-document .source-section{margin:38px 0 16px;font:500 30px/1.2 var(--serif);letter-spacing:-.02em}
 .semantic-learning-document .learning-notice{margin:40px 0 20px;padding:20px 0 0;grid-template-columns:28px minmax(0,1fr);border:0;border-top:1px solid var(--line);border-radius:0;background:transparent;box-shadow:none}
 .semantic-learning-document .learning-notice-copy>span{font-size:10px;line-height:1.4}
-.semantic-learning-document .learning-notice-copy>h3{margin:2px 0 0;font:500 28px/1.22 var(--serif);letter-spacing:-.02em;color:var(--ink)}
+.semantic-learning-document .learning-notice-copy>h2{margin:2px 0 0;font:500 28px/1.22 var(--serif);letter-spacing:-.02em;color:var(--ink)}
 .semantic-learning-document .learning-notice-copy>p{font-size:13px!important;line-height:1.6!important}
 .semantic-learning-document .learning-notice-portfolio{margin:20px 0 28px;padding:14px 0;border-top:0;border-bottom:1px solid var(--line)}
-.semantic-learning-document .learning-notice-portfolio .learning-notice-copy>h3{font:600 14px/1.5 var(--sans)}
+.semantic-learning-document .learning-notice-portfolio .learning-notice-copy>h2{font:600 14px/1.5 var(--sans)}
 .semantic-learning-document .learning-notice-portfolio .learning-notice-copy>p{font-size:12px!important}
 .semantic-learning-document .thinking-equation-notice{margin:30px 0;padding:20px;border-radius:12px;box-shadow:none}
 .semantic-learning-document .thinking-equation-copy>strong{font:500 25px/1.4 var(--serif)}
@@ -66,7 +66,7 @@
   .lesson-outline ul{display:grid;gap:6px}
   .lesson-outline a{font-size:12px}
   .semantic-learning-document .source-section{font-size:27px}
-  .semantic-learning-document .learning-notice-copy>h3{font-size:25px}
+  .semantic-learning-document .learning-notice-copy>h2{font-size:25px}
   .semantic-learning-document .response-surface{padding:14px}
   .semantic-learning-document .response-surface-prompt p{font-size:16px!important}
   .semantic-learning-document .thinking-equation-copy>strong{font-size:23px}

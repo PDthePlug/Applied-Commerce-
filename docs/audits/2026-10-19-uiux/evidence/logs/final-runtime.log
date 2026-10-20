@@ -1,0 +1,14 @@
+
+> applied-commerce-learning-platform@0.1.0 verify:runtime
+> node scripts/verify-runtime.mjs
+
+{
+  "ok": true,
+  "curriculumFormat": 3,
+  "runtimeRelease": "ac-runtime-3",
+  "grades": 5,
+  "lessons": 395,
+  "assessments": 4,
+  "blocks": 20766,
+  "stableBlocks": 20766
+}

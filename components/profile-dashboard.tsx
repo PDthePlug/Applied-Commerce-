@@ -74,7 +74,7 @@ export function ProfileDashboard() {
     { href: "/portfolio", title: "Portfolio", detail: "Review saved learning evidence", Icon: Archive },
   ];
 
-  return <main className="profile-hub">
+  return <div className="profile-hub">
     <section className="profile-hub-identity">
       <div className="profile-hub-avatar" aria-hidden="true">{displayName.split(/\s+/).slice(0,2).map(part => part[0]?.toUpperCase() ?? "").join("") || "AC"}</div>
       <div className="profile-hub-title">
@@ -112,5 +112,5 @@ export function ProfileDashboard() {
       {signOutError ? <p className="profile-hub-error" role="alert">{signOutError}</p> : null}
     </section>
     <p className="profile-hub-footnote"><UserRound aria-hidden="true"/> Your saved responses and lesson completion are not changed by presentation settings.</p>
-  </main>;
+  </div>;
 }

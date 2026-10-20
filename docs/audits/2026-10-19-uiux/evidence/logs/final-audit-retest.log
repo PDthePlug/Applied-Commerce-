@@ -1,0 +1,234 @@
+[WebServer] (node:46228) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+
+Running 198 tests using 2 workers
+
+(node:46278) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+(node:46277) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/198] [phone-360] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 8 term 1 has labelled, responsive content and no browser or network errors
+[2/198] [phone-320] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 8 term 1 has labelled, responsive content and no browser or network errors
+[3/198] [phone-320] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 8 term 2 has labelled, responsive content and no browser or network errors
+[4/198] [phone-360] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 8 term 2 has labelled, responsive content and no browser or network errors
+[5/198] [phone-320] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 8 term 3 has labelled, responsive content and no browser or network errors
+[6/198] [phone-360] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 8 term 3 has labelled, responsive content and no browser or network errors
+[7/198] [phone-320] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 8 term 4 has labelled, responsive content and no browser or network errors
+[8/198] [phone-360] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 8 term 4 has labelled, responsive content and no browser or network errors
+[9/198] [phone-320] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 9 term 1 has labelled, responsive content and no browser or network errors
+[10/198] [phone-360] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 9 term 1 has labelled, responsive content and no browser or network errors
+[11/198] [phone-320] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 9 term 2 has labelled, responsive content and no browser or network errors
+[12/198] [phone-360] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 9 term 2 has labelled, responsive content and no browser or network errors
+[13/198] [phone-320] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 9 term 3 has labelled, responsive content and no browser or network errors
+[14/198] [phone-360] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 9 term 3 has labelled, responsive content and no browser or network errors
+[15/198] [phone-320] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 9 term 4 has labelled, responsive content and no browser or network errors
+[16/198] [phone-360] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 9 term 4 has labelled, responsive content and no browser or network errors
+[17/198] [phone-320] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 10 term 1 has labelled, responsive content and no browser or network errors
+[18/198] [phone-360] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 10 term 1 has labelled, responsive content and no browser or network errors
+[19/198] [phone-320] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 10 term 2 has labelled, responsive content and no browser or network errors
+[20/198] [phone-360] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 10 term 2 has labelled, responsive content and no browser or network errors
+[21/198] [phone-320] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 10 term 3 has labelled, responsive content and no browser or network errors
+[22/198] [phone-360] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 10 term 3 has labelled, responsive content and no browser or network errors
+[23/198] [phone-320] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 10 term 4 has labelled, responsive content and no browser or network errors
+[24/198] [phone-360] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 10 term 4 has labelled, responsive content and no browser or network errors
+[25/198] [phone-320] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 11 term 1 has labelled, responsive content and no browser or network errors
+[26/198] [phone-360] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 11 term 1 has labelled, responsive content and no browser or network errors
+[27/198] [phone-320] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 11 term 2 has labelled, responsive content and no browser or network errors
+[28/198] [phone-360] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 11 term 2 has labelled, responsive content and no browser or network errors
+[29/198] [phone-320] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 11 term 3 has labelled, responsive content and no browser or network errors
+[30/198] [phone-320] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 11 term 4 has labelled, responsive content and no browser or network errors
+[31/198] [phone-360] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 11 term 3 has labelled, responsive content and no browser or network errors
+[32/198] [phone-320] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 12 term 1 has labelled, responsive content and no browser or network errors
+[33/198] [phone-360] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 11 term 4 has labelled, responsive content and no browser or network errors
+[34/198] [phone-320] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 12 term 2 has labelled, responsive content and no browser or network errors
+[35/198] [phone-360] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 12 term 1 has labelled, responsive content and no browser or network errors
+[36/198] [phone-320] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 12 term 3 has labelled, responsive content and no browser or network errors
+[37/198] [phone-360] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 12 term 2 has labelled, responsive content and no browser or network errors
+[38/198] [phone-320] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 12 term 4 has labelled, responsive content and no browser or network errors
+[39/198] [phone-360] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 12 term 3 has labelled, responsive content and no browser or network errors
+[40/198] [phone-320] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › assessment g9-t1-assessment-1 has labelled, responsive content and no browser or network errors
+[41/198] [phone-360] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 12 term 4 has labelled, responsive content and no browser or network errors
+[42/198] [phone-320] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › assessment g9-t2-assessment-2 has labelled, responsive content and no browser or network errors
+[43/198] [phone-360] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › assessment g9-t1-assessment-1 has labelled, responsive content and no browser or network errors
+[44/198] [phone-320] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › assessment g9-t3-assessment-2 has labelled, responsive content and no browser or network errors
+[45/198] [phone-360] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › assessment g9-t2-assessment-2 has labelled, responsive content and no browser or network errors
+[46/198] [phone-320] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › assessment g9-t4-assessment-3 has labelled, responsive content and no browser or network errors
+[47/198] [phone-360] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › assessment g9-t3-assessment-2 has labelled, responsive content and no browser or network errors
+[48/198] [phone-320] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › complex controls grade 9 lesson 2 has labelled, responsive content and no browser or network errors
+[49/198] [phone-360] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › assessment g9-t4-assessment-3 has labelled, responsive content and no browser or network errors
+[50/198] [phone-320] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › complex controls grade 10 lesson 46 has labelled, responsive content and no browser or network errors
+[51/198] [phone-360] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › complex controls grade 9 lesson 2 has labelled, responsive content and no browser or network errors
+[52/198] [phone-320] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › complex controls grade 11 lesson 22 has labelled, responsive content and no browser or network errors
+[53/198] [phone-360] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › complex controls grade 10 lesson 46 has labelled, responsive content and no browser or network errors
+[54/198] [phone-320] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › complex controls grade 11 lesson 42 has labelled, responsive content and no browser or network errors
+[55/198] [phone-360] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › complex controls grade 11 lesson 22 has labelled, responsive content and no browser or network errors
+[56/198] [phone-320] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › complex controls grade 8 lesson 72 has labelled, responsive content and no browser or network errors
+[57/198] [phone-360] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › complex controls grade 11 lesson 42 has labelled, responsive content and no browser or network errors
+[58/198] [phone-320] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › complex controls grade 10 lesson 33 has labelled, responsive content and no browser or network errors
+[59/198] [phone-360] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › complex controls grade 8 lesson 72 has labelled, responsive content and no browser or network errors
+[60/198] [phone-320] › tests/ui-audit/extended-workflows.spec.mjs:59:3 › dark appearance supports enlarged reading across learner and institution surfaces
+[61/198] [phone-360] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › complex controls grade 10 lesson 33 has labelled, responsive content and no browser or network errors
+[62/198] [phone-360] › tests/ui-audit/extended-workflows.spec.mjs:59:3 › dark appearance supports enlarged reading across learner and institution surfaces
+[63/198] [phone-320] › tests/ui-audit/extended-workflows.spec.mjs:59:3 › system appearance supports enlarged reading across learner and institution surfaces
+[64/198] [phone-360] › tests/ui-audit/extended-workflows.spec.mjs:59:3 › system appearance supports enlarged reading across learner and institution surfaces
+[65/198] [phone-320] › tests/ui-audit/extended-workflows.spec.mjs:71:1 › compact landscape reader keeps navigation and response fields reachable
+[66/198] [phone-360] › tests/ui-audit/extended-workflows.spec.mjs:71:1 › compact landscape reader keeps navigation and response fields reachable
+(node:54171) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[67/198] [phone-430] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 8 term 1 has labelled, responsive content and no browser or network errors
+(node:54615) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[68/198] [phone-430] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 8 term 2 has labelled, responsive content and no browser or network errors
+[69/198] [tablet-768] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 8 term 1 has labelled, responsive content and no browser or network errors
+[70/198] [phone-430] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 8 term 3 has labelled, responsive content and no browser or network errors
+[71/198] [phone-430] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 8 term 4 has labelled, responsive content and no browser or network errors
+[72/198] [tablet-768] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 8 term 2 has labelled, responsive content and no browser or network errors
+[73/198] [tablet-768] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 8 term 3 has labelled, responsive content and no browser or network errors
+[74/198] [phone-430] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 9 term 1 has labelled, responsive content and no browser or network errors
+[75/198] [phone-430] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 9 term 2 has labelled, responsive content and no browser or network errors
+[76/198] [tablet-768] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 8 term 4 has labelled, responsive content and no browser or network errors
+[77/198] [phone-430] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 9 term 3 has labelled, responsive content and no browser or network errors
+[78/198] [tablet-768] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 9 term 1 has labelled, responsive content and no browser or network errors
+[79/198] [phone-430] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 9 term 4 has labelled, responsive content and no browser or network errors
+[80/198] [tablet-768] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 9 term 2 has labelled, responsive content and no browser or network errors
+[81/198] [phone-430] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 10 term 1 has labelled, responsive content and no browser or network errors
+[82/198] [tablet-768] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 9 term 3 has labelled, responsive content and no browser or network errors
+[83/198] [phone-430] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 10 term 2 has labelled, responsive content and no browser or network errors
+[84/198] [tablet-768] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 9 term 4 has labelled, responsive content and no browser or network errors
+[85/198] [phone-430] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 10 term 3 has labelled, responsive content and no browser or network errors
+[86/198] [tablet-768] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 10 term 1 has labelled, responsive content and no browser or network errors
+[87/198] [phone-430] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 10 term 4 has labelled, responsive content and no browser or network errors
+[88/198] [tablet-768] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 10 term 2 has labelled, responsive content and no browser or network errors
+[89/198] [phone-430] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 11 term 1 has labelled, responsive content and no browser or network errors
+[90/198] [phone-430] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 11 term 2 has labelled, responsive content and no browser or network errors
+[91/198] [tablet-768] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 10 term 3 has labelled, responsive content and no browser or network errors
+[92/198] [phone-430] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 11 term 3 has labelled, responsive content and no browser or network errors
+[93/198] [tablet-768] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 10 term 4 has labelled, responsive content and no browser or network errors
+[94/198] [phone-430] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 11 term 4 has labelled, responsive content and no browser or network errors
+[95/198] [tablet-768] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 11 term 1 has labelled, responsive content and no browser or network errors
+[96/198] [phone-430] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 12 term 1 has labelled, responsive content and no browser or network errors
+[97/198] [tablet-768] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 11 term 2 has labelled, responsive content and no browser or network errors
+[98/198] [phone-430] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 12 term 2 has labelled, responsive content and no browser or network errors
+[99/198] [tablet-768] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 11 term 3 has labelled, responsive content and no browser or network errors
+[100/198] [phone-430] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 12 term 3 has labelled, responsive content and no browser or network errors
+[101/198] [tablet-768] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 11 term 4 has labelled, responsive content and no browser or network errors
+[102/198] [phone-430] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 12 term 4 has labelled, responsive content and no browser or network errors
+[103/198] [tablet-768] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 12 term 1 has labelled, responsive content and no browser or network errors
+[104/198] [phone-430] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › assessment g9-t1-assessment-1 has labelled, responsive content and no browser or network errors
+[105/198] [phone-430] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › assessment g9-t2-assessment-2 has labelled, responsive content and no browser or network errors
+[106/198] [tablet-768] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 12 term 2 has labelled, responsive content and no browser or network errors
+[107/198] [phone-430] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › assessment g9-t3-assessment-2 has labelled, responsive content and no browser or network errors
+[108/198] [tablet-768] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 12 term 3 has labelled, responsive content and no browser or network errors
+[109/198] [phone-430] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › assessment g9-t4-assessment-3 has labelled, responsive content and no browser or network errors
+[110/198] [tablet-768] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 12 term 4 has labelled, responsive content and no browser or network errors
+[111/198] [phone-430] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › complex controls grade 9 lesson 2 has labelled, responsive content and no browser or network errors
+[112/198] [tablet-768] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › assessment g9-t1-assessment-1 has labelled, responsive content and no browser or network errors
+[113/198] [phone-430] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › complex controls grade 10 lesson 46 has labelled, responsive content and no browser or network errors
+[114/198] [tablet-768] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › assessment g9-t2-assessment-2 has labelled, responsive content and no browser or network errors
+[115/198] [phone-430] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › complex controls grade 11 lesson 22 has labelled, responsive content and no browser or network errors
+[116/198] [phone-430] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › complex controls grade 11 lesson 42 has labelled, responsive content and no browser or network errors
+[117/198] [tablet-768] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › assessment g9-t3-assessment-2 has labelled, responsive content and no browser or network errors
+[118/198] [tablet-768] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › assessment g9-t4-assessment-3 has labelled, responsive content and no browser or network errors
+[119/198] [phone-430] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › complex controls grade 8 lesson 72 has labelled, responsive content and no browser or network errors
+[120/198] [phone-430] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › complex controls grade 10 lesson 33 has labelled, responsive content and no browser or network errors
+[121/198] [tablet-768] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › complex controls grade 9 lesson 2 has labelled, responsive content and no browser or network errors
+[122/198] [phone-430] › tests/ui-audit/extended-workflows.spec.mjs:59:3 › dark appearance supports enlarged reading across learner and institution surfaces
+[123/198] [tablet-768] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › complex controls grade 10 lesson 46 has labelled, responsive content and no browser or network errors
+[124/198] [tablet-768] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › complex controls grade 11 lesson 22 has labelled, responsive content and no browser or network errors
+[125/198] [tablet-768] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › complex controls grade 11 lesson 42 has labelled, responsive content and no browser or network errors
+[126/198] [phone-430] › tests/ui-audit/extended-workflows.spec.mjs:59:3 › system appearance supports enlarged reading across learner and institution surfaces
+[127/198] [tablet-768] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › complex controls grade 8 lesson 72 has labelled, responsive content and no browser or network errors
+[128/198] [tablet-768] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › complex controls grade 10 lesson 33 has labelled, responsive content and no browser or network errors
+[129/198] [phone-430] › tests/ui-audit/extended-workflows.spec.mjs:71:1 › compact landscape reader keeps navigation and response fields reachable
+[130/198] [tablet-768] › tests/ui-audit/extended-workflows.spec.mjs:59:3 › dark appearance supports enlarged reading across learner and institution surfaces
+(node:60330) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[131/198] [desktop-1280] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 8 term 1 has labelled, responsive content and no browser or network errors
+[132/198] [tablet-768] › tests/ui-audit/extended-workflows.spec.mjs:59:3 › system appearance supports enlarged reading across learner and institution surfaces
+[133/198] [desktop-1280] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 8 term 2 has labelled, responsive content and no browser or network errors
+[134/198] [desktop-1280] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 8 term 3 has labelled, responsive content and no browser or network errors
+[135/198] [desktop-1280] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 8 term 4 has labelled, responsive content and no browser or network errors
+[136/198] [tablet-768] › tests/ui-audit/extended-workflows.spec.mjs:71:1 › compact landscape reader keeps navigation and response fields reachable
+[137/198] [desktop-1280] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 9 term 1 has labelled, responsive content and no browser or network errors
+[138/198] [desktop-1280] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 9 term 2 has labelled, responsive content and no browser or network errors
+(node:60712) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[139/198] [desktop-1920] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 8 term 1 has labelled, responsive content and no browser or network errors
+[140/198] [desktop-1280] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 9 term 3 has labelled, responsive content and no browser or network errors
+[141/198] [desktop-1280] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 9 term 4 has labelled, responsive content and no browser or network errors
+[142/198] [desktop-1920] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 8 term 2 has labelled, responsive content and no browser or network errors
+[143/198] [desktop-1280] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 10 term 1 has labelled, responsive content and no browser or network errors
+[144/198] [desktop-1920] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 8 term 3 has labelled, responsive content and no browser or network errors
+[145/198] [desktop-1280] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 10 term 2 has labelled, responsive content and no browser or network errors
+[146/198] [desktop-1920] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 8 term 4 has labelled, responsive content and no browser or network errors
+[147/198] [desktop-1280] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 10 term 3 has labelled, responsive content and no browser or network errors
+[148/198] [desktop-1920] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 9 term 1 has labelled, responsive content and no browser or network errors
+[149/198] [desktop-1280] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 10 term 4 has labelled, responsive content and no browser or network errors
+[150/198] [desktop-1920] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 9 term 2 has labelled, responsive content and no browser or network errors
+[151/198] [desktop-1280] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 11 term 1 has labelled, responsive content and no browser or network errors
+[152/198] [desktop-1920] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 9 term 3 has labelled, responsive content and no browser or network errors
+[153/198] [desktop-1280] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 11 term 2 has labelled, responsive content and no browser or network errors
+[154/198] [desktop-1920] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 9 term 4 has labelled, responsive content and no browser or network errors
+[155/198] [desktop-1280] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 11 term 3 has labelled, responsive content and no browser or network errors
+[156/198] [desktop-1920] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 10 term 1 has labelled, responsive content and no browser or network errors
+[157/198] [desktop-1280] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 11 term 4 has labelled, responsive content and no browser or network errors
+[158/198] [desktop-1920] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 10 term 2 has labelled, responsive content and no browser or network errors
+[159/198] [desktop-1280] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 12 term 1 has labelled, responsive content and no browser or network errors
+[160/198] [desktop-1280] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 12 term 2 has labelled, responsive content and no browser or network errors
+[161/198] [desktop-1920] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 10 term 3 has labelled, responsive content and no browser or network errors
+[162/198] [desktop-1920] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 10 term 4 has labelled, responsive content and no browser or network errors
+[163/198] [desktop-1280] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 12 term 3 has labelled, responsive content and no browser or network errors
+[164/198] [desktop-1280] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 12 term 4 has labelled, responsive content and no browser or network errors
+[165/198] [desktop-1920] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 11 term 1 has labelled, responsive content and no browser or network errors
+[166/198] [desktop-1280] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › assessment g9-t1-assessment-1 has labelled, responsive content and no browser or network errors
+[167/198] [desktop-1920] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 11 term 2 has labelled, responsive content and no browser or network errors
+[168/198] [desktop-1280] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › assessment g9-t2-assessment-2 has labelled, responsive content and no browser or network errors
+[169/198] [desktop-1920] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 11 term 3 has labelled, responsive content and no browser or network errors
+[170/198] [desktop-1280] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › assessment g9-t3-assessment-2 has labelled, responsive content and no browser or network errors
+[171/198] [desktop-1920] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 11 term 4 has labelled, responsive content and no browser or network errors
+[172/198] [desktop-1280] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › assessment g9-t4-assessment-3 has labelled, responsive content and no browser or network errors
+[173/198] [desktop-1920] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 12 term 1 has labelled, responsive content and no browser or network errors
+[174/198] [desktop-1280] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › complex controls grade 9 lesson 2 has labelled, responsive content and no browser or network errors
+[175/198] [desktop-1920] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 12 term 2 has labelled, responsive content and no browser or network errors
+[176/198] [desktop-1280] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › complex controls grade 10 lesson 46 has labelled, responsive content and no browser or network errors
+[177/198] [desktop-1280] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › complex controls grade 11 lesson 22 has labelled, responsive content and no browser or network errors
+[178/198] [desktop-1920] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 12 term 3 has labelled, responsive content and no browser or network errors
+[179/198] [desktop-1280] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › complex controls grade 11 lesson 42 has labelled, responsive content and no browser or network errors
+[180/198] [desktop-1920] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › reader grade 12 term 4 has labelled, responsive content and no browser or network errors
+[181/198] [desktop-1280] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › complex controls grade 8 lesson 72 has labelled, responsive content and no browser or network errors
+[182/198] [desktop-1920] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › assessment g9-t1-assessment-1 has labelled, responsive content and no browser or network errors
+[183/198] [desktop-1280] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › complex controls grade 10 lesson 33 has labelled, responsive content and no browser or network errors
+[184/198] [desktop-1920] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › assessment g9-t2-assessment-2 has labelled, responsive content and no browser or network errors
+[185/198] [desktop-1280] › tests/ui-audit/extended-workflows.spec.mjs:59:3 › dark appearance supports enlarged reading across learner and institution surfaces
+[186/198] [desktop-1920] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › assessment g9-t3-assessment-2 has labelled, responsive content and no browser or network errors
+[187/198] [desktop-1920] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › assessment g9-t4-assessment-3 has labelled, responsive content and no browser or network errors
+[188/198] [desktop-1280] › tests/ui-audit/extended-workflows.spec.mjs:59:3 › system appearance supports enlarged reading across learner and institution surfaces
+[189/198] [desktop-1920] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › complex controls grade 9 lesson 2 has labelled, responsive content and no browser or network errors
+[190/198] [desktop-1920] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › complex controls grade 10 lesson 46 has labelled, responsive content and no browser or network errors
+[191/198] [desktop-1280] › tests/ui-audit/extended-workflows.spec.mjs:71:1 › compact landscape reader keeps navigation and response fields reachable
+[192/198] [desktop-1920] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › complex controls grade 11 lesson 22 has labelled, responsive content and no browser or network errors
+[193/198] [desktop-1920] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › complex controls grade 11 lesson 42 has labelled, responsive content and no browser or network errors
+[194/198] [desktop-1920] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › complex controls grade 8 lesson 72 has labelled, responsive content and no browser or network errors
+[195/198] [desktop-1920] › tests/ui-audit/extended-workflows.spec.mjs:53:3 › complex controls grade 10 lesson 33 has labelled, responsive content and no browser or network errors
+[196/198] [desktop-1920] › tests/ui-audit/extended-workflows.spec.mjs:59:3 › dark appearance supports enlarged reading across learner and institution surfaces
+[197/198] [desktop-1920] › tests/ui-audit/extended-workflows.spec.mjs:59:3 › system appearance supports enlarged reading across learner and institution surfaces
+[198/198] [desktop-1920] › tests/ui-audit/extended-workflows.spec.mjs:71:1 › compact landscape reader keeps navigation and response fields reachable
+  Slow test file: [phone-360] › tests/ui-audit/extended-workflows.spec.mjs (7.9m)
+  Slow test file: [phone-320] › tests/ui-audit/extended-workflows.spec.mjs (7.6m)
+  Slow test file: [tablet-768] › tests/ui-audit/extended-workflows.spec.mjs (6.3m)
+  Slow test file: [phone-430] › tests/ui-audit/extended-workflows.spec.mjs (6.2m)
+  Consider running tests from slow files in parallel. See: https://playwright.dev/docs/test-parallel
+  198 passed (17.5m)

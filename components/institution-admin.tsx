@@ -174,9 +174,9 @@ export function InstitutionAdmin() {
     },"Learner enrolled.");
   }
 
-  if(!user) return <main className={styles.page}><div className={styles.empty}><ShieldCheck/><h1>Institution administration</h1><p>Sign in with an Applied Commerce account to manage an institution.</p></div></main>;
+  if(!user) return <div className={styles.page}><div className={styles.empty}><ShieldCheck/><h1>Institution administration</h1><p>Sign in with an Applied Commerce account to manage an institution.</p></div></div>;
 
-  return <main className={styles.page}>
+  return <div className={styles.page}>
     <header className={styles.hero}>
       <div>
         <p className={styles.eyebrow}>Applied Commerce · Operations</p>
@@ -246,5 +246,5 @@ export function InstitutionAdmin() {
         </div>
       </section>}
     </>}
-  </main>;
+  </div>;
 }

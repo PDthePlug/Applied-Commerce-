@@ -109,8 +109,8 @@
 .demo-learner-hero{display:grid;grid-template-columns:1fr 180px;gap:30px;align-items:center;padding:30px;border-radius:20px;background:var(--ink);color:white}
 .demo-learner-hero h3{margin:8px 0 10px;font:500 34px var(--serif)}
 .demo-learner-hero p:not(.eyebrow){max-width:650px;margin:0;color:#d3ddda;font-size:12px;line-height:1.65}
-.demo-learner-hero button{display:inline-flex;align-items:center;gap:8px;min-height:43px;margin-top:20px;padding:0 14px;border:0;border-radius:11px;background:var(--accent);color:white;font-size:10px;font-weight:900}
-.demo-learner-hero button svg{width:14px}
+.demo-learner-hero :is(button,a){display:inline-flex;align-items:center;gap:8px;min-height:43px;margin-top:20px;padding:0 14px;border:0;border-radius:11px;background:var(--accent);color:white;font-size:10px;font-weight:900}
+.demo-learner-hero :is(button,a) svg{width:14px}
 .demo-progress-ring{display:grid;place-items:center;align-content:center;width:150px;height:150px;justify-self:end;border:10px solid rgba(255,255,255,.12);border-top-color:#dcb48e;border-radius:50%;text-align:center}
 .demo-progress-ring strong{font:500 30px var(--serif)}
 .demo-progress-ring span{max-width:90px;color:#ced9d6;font-size:8px;line-height:1.3}

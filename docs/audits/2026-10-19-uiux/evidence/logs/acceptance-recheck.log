@@ -1,0 +1,30 @@
+[WebServer] (node:731) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+
+Running 11 tests using 1 worker
+
+(node:757) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/11] [desktop-1280] › tests/browser/loading-skip.spec.mjs:3:1 › reader skip target keeps focus while its lesson bundle is loading
+[2/11] [desktop-1280] › tests/browser/presentation-v2.spec.mjs:132:3 › Applied Commerce Presentation Architecture 2.0 › authored choices remain usable and visibly selected
+[3/11] [desktop-1280] › tests/browser/semantic-learning-v3.spec.mjs:100:1 › equations and percentage fields retain meaning and outline avoids fixed chrome
+[4/11] [desktop-1280] › tests/browser/uiux-hardening.spec.mjs:75:1 › each workspace has one main landmark and a keyboard skip link
+[5/11] [desktop-1280] › tests/browser/uiux-hardening.spec.mjs:169:1 › lesson load failure offers retry in place without losing a saved answer
+(node:1093) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[6/11] [mobile-430] › tests/browser/loading-skip.spec.mjs:3:1 › reader skip target keeps focus while its lesson bundle is loading
+[7/11] [mobile-430] › tests/browser/uiux-hardening.spec.mjs:75:1 › each workspace has one main landmark and a keyboard skip link
+[8/11] [mobile-430] › tests/browser/uiux-hardening.spec.mjs:169:1 › lesson load failure offers retry in place without losing a saved answer
+(node:1385) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[9/11] [mobile-360] › tests/browser/loading-skip.spec.mjs:3:1 › reader skip target keeps focus while its lesson bundle is loading
+[10/11] [mobile-360] › tests/browser/uiux-hardening.spec.mjs:75:1 › each workspace has one main landmark and a keyboard skip link
+[11/11] [mobile-360] › tests/browser/uiux-hardening.spec.mjs:169:1 › lesson load failure offers retry in place without losing a saved answer
+  11 passed (53.3s)

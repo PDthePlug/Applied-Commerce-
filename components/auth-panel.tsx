@@ -14,10 +14,11 @@ export function AuthPanel({ compact = false }: { compact?: boolean }) {
   const [message, setMessage] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
+  const Heading=compact?"h2":"h1";
 
-  if (!isSupabaseConfigured()) return <div className={compact ? "auth-panel auth-panel-compact" : "auth-panel"}><div><span className="eyebrow">Account recovery</span><strong>Account access is temporarily unavailable.</strong><p>Your learning progress stays on this device. Please try again later.</p></div></div>;
+  if (!isSupabaseConfigured()) return <div className={compact ? "auth-panel auth-panel-compact" : "auth-panel"}><div><span className="eyebrow">Account recovery</span><Heading>Account access is temporarily unavailable.</Heading><p>Your learning progress stays on this device. Please try again later.</p></div></div>;
   if (loading) return <p className="auth-status">Getting your account ready…</p>;
-  if (user) return <div className={compact ? "auth-panel auth-panel-compact" : "auth-panel"}><div><span className="eyebrow">Account</span><strong>{user.email}</strong><p>Your account is signed in. Available workspaces depend on roles assigned to this account.</p></div><button type="button" disabled={busy} onClick={async () => { setBusy(true); setError(null); try { const { error } = await createClient().auth.signOut(); if (error) setError(friendlyAuthError(error, "We couldn’t sign you out. Please try again.")); } catch (err) { setError(friendlyAuthError(err, "We couldn’t sign you out. Please try again.")); } finally { setBusy(false); } }}>{busy ? "Signing out…" : "Sign out"}</button>{error && <p role="alert" className="auth-error">{error}</p>}</div>;
+  if (user) return <div className={compact ? "auth-panel auth-panel-compact" : "auth-panel"}><div><span className="eyebrow">Account</span><Heading>Your account</Heading><strong>{user.email}</strong><p>Your account is signed in. Available workspaces depend on roles assigned to this account.</p></div><button type="button" disabled={busy} onClick={async () => { setBusy(true); setError(null); try { const { error } = await createClient().auth.signOut(); if (error) setError(friendlyAuthError(error, "We couldn’t sign you out. Please try again.")); } catch (err) { setError(friendlyAuthError(err, "We couldn’t sign you out. Please try again.")); } finally { setBusy(false); } }}>{busy ? "Signing out…" : "Sign out"}</button>{error && <p role="alert" className="auth-error">{error}</p>}</div>;
 
   async function submit(event: FormEvent) {
     event.preventDefault();
@@ -63,7 +64,7 @@ export function AuthPanel({ compact = false }: { compact?: boolean }) {
   return <div className={compact ? "auth-panel auth-panel-compact" : "auth-panel"}>
     <div>
       <span className="eyebrow">{mode === "signin" ? "Welcome back" : "Get started"}</span>
-      <h2>{mode === "recovery"?"Reset your password":mode === "signin" ? "Sign in to Applied Commerce" : "Create your account"}</h2>
+      <Heading>{mode === "recovery"?"Reset your password":mode === "signin" ? "Sign in to Applied Commerce" : "Create your account"}</Heading>
       <p>{mode==="recovery"?"Enter your account email to receive a reset link.":mode === "signin" ? "Use your Applied Commerce account to continue." : "Create your account. Staff access is assigned separately."}</p>
     </div>
     <form onSubmit={submit} className="auth-form">
