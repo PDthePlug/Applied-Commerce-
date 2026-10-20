@@ -1,4 +1,6 @@
 import { test, expect } from "@playwright/test";
+import { surfaceReady } from "../helpers/surface-ready.mjs";
+import {requestFailure} from "../helpers/network-diagnostics.mjs";
 
 // Public/local-mode and safely gated shells only. Authenticated facilitator and
 // school-admin workflows are intentionally covered separately with isolated fixtures.
@@ -22,14 +24,18 @@ for (const [name, url] of pages) {
   test(name + " has stable shell, diagnostics and screenshots", async ({ page }, testInfo) => {
     const pageErrors = [];
     const consoleErrors = [];
+    const failedRequests = [];
+    const httpErrors = [];
     page.on("pageerror", error => pageErrors.push(error.message));
     page.on("console", event => {
       if (event.type() === "error") consoleErrors.push(event.text());
     });
+    page.on("requestfailed", request => failedRequests.push(requestFailure(request)));
+    page.on("response", response => { if(response.status()>=400)httpErrors.push({url:response.url(),status:response.status()}); });
 
     const response = await page.goto(url, { waitUntil: "domcontentloaded" });
     await expect(page.locator("body")).toBeVisible();
-    await page.waitForLoadState("networkidle", { timeout: 7_000 }).catch(() => {});
+    await surfaceReady(page,url);
 
     const diagnostics = await page.evaluate(() => {
       const elements = [...document.querySelectorAll("button, a, input, select, textarea")];
@@ -74,6 +80,7 @@ for (const [name, url] of pages) {
         bodyScrollWidth: document.body.scrollWidth,
         documentHeight: document.documentElement.scrollHeight,
         headings: [...document.querySelectorAll("h1")].map(node => node.textContent?.trim()).filter(Boolean),
+        mainCount: document.querySelectorAll("main").length,
         unlabeledButtons,
         unnamedFields,
         tinyTargets,
@@ -87,6 +94,8 @@ for (const [name, url] of pages) {
         ...diagnostics,
         consoleErrors,
         pageErrors,
+        failedRequests,
+        httpErrors,
       }, null, 2)),
       contentType: "application/json",
     });
@@ -97,6 +106,13 @@ for (const [name, url] of pages) {
 
     expect(response?.status(), "route should not return a server error").toBeLessThan(500);
     expect(pageErrors, "unexpected browser runtime exceptions").toEqual([]);
+    expect(consoleErrors, "unexpected browser console errors").toEqual([]);
+    expect(failedRequests.filter(request=>!request.cancelledPrefetch), "failed requests excluding identified speculative cancellations").toEqual([]);
+    expect(httpErrors, "HTTP errors").toEqual([]);
+    expect(diagnostics.mainCount).toBe(1);
+    expect(diagnostics.headings).toHaveLength(1);
+    expect(diagnostics.unnamedFields).toEqual([]);
+    expect(diagnostics.unlabeledButtons).toEqual([]);
     expect(diagnostics.scrollWidth, "horizontal page overflow at " + diagnostics.viewport.width + "px")
       .toBeLessThanOrEqual(diagnostics.viewport.width + 2);
     expect(diagnostics.bodyScrollWidth, "body overflow at " + diagnostics.viewport.width + "px")

@@ -250,7 +250,7 @@ function TextBlockView({block}:{block:Extract<ContentBlock,{kind:"text"}>}) {
   if(/^My Term\s+\d+\s+Portfolio Entry/i.test(text)) return <h3 className="module-section-heading">{text}</h3>;
   switch(block.type){
     case "list": return <li>{text}</li>;
-    case "section": return <h3 className="source-section">{text}</h3>;
+    case "section": return <h2 className="source-section">{text}</h2>;
     case "activity": return <LearningNotice tone="activity" title={text.replace(/^✍️\s*/,"")}/>;
     case "reflection": return <LearningNotice tone="reflection" title={text.replace(/^💭\s*/,"")}/>;
     case "checkpoint": return <LearningNotice tone="checkpoint" title={text.replace(/^✅\s*/,"")}/>;
@@ -282,13 +282,14 @@ function ResponseArea({
   if(compact){
     return <div className="short-response-wrap">
       <input
-        className="short-response"
+        className="short-response printable-response-input"
         aria-label={label}
         autoComplete="off"
         value={value}
         onChange={event=>onChange(event.target.value)}
         placeholder="Type your answer"
       />
+      <span className="printed-response">{value||"—"}</span>
       <ResponseStatus value={value}/>
     </div>;
   }
@@ -302,6 +303,7 @@ function ResponseArea({
       onChange={event=>onChange(event.target.value)}
       placeholder="Write your response here…"
     />
+    <span className="printed-response">{value||"—"}</span>
     <ResponseStatus value={value}/>
   </div>;
 }
@@ -464,7 +466,7 @@ function MultiBlankFields({
       {parsed.labels.map((label,index)=>{
         const id=promptId(unitId,blockIndex,`blank-${index}`);
         const value=promptResponses[id]??"";
-        return <label key={id}><span>{label}</span><input value={value} onChange={event=>onSavePromptResponse(id,event.target.value)} placeholder="Type your answer"/>{value.trim()&&<small>Saved</small>}</label>;
+        return <label key={id}><span>{label}</span><input className="printable-response-input" value={value} onChange={event=>onSavePromptResponse(id,event.target.value)} placeholder="Type your answer"/><span className="printed-response">{value||"—"}</span>{value.trim()&&<small>Saved</small>}</label>;
       })}
     </div>
   </div>;
@@ -495,12 +497,14 @@ function FillBlankLine({
       const value=promptResponses[id]??"";
       return <span className="fill-response-field" key={id}>
         <input
+          className="printable-response-input"
           aria-label={`Answer for: ${displayText(text).replace(/_{3,}/g,"blank")}`}
           autoComplete="off"
           value={value}
           onChange={event=>onSavePromptResponse(id,event.target.value)}
           placeholder="Type your answer"
         />
+        <span className="printed-response">{value||"—"}</span>
         {value.trim()&&<small>Saved</small>}
       </span>;
     })}
@@ -574,13 +578,13 @@ function ChoiceBlock({
             }}
             onClick={()=>toggle(option)}
           ><span aria-hidden="true">{active?"✓":""}</span><strong>{option}</strong></button>
-          {hasDetail&&active&&<input
-            className="choice-detail"
+          {hasDetail&&active&&<><input
+            className="choice-detail printable-response-input"
             value={promptResponses[detailId]??""}
             onChange={event=>onSavePromptResponse(detailId,event.target.value)}
             placeholder="Add details"
             aria-label={`Details for ${option}`}
-          />}
+          /><span className="printed-response">{promptResponses[detailId]||"—"}</span></>}
         </div>;
       })}
     </div>
@@ -750,6 +754,7 @@ function TableBlockView({
                     onChange={event=>onSavePromptResponse(id,event.target.value)}
                     placeholder="Type your answer"
                   />
+                  <span className="printed-response">{value||"—"}</span>
                   {value.trim()&&<small>Saved</small>}
                 </td>;
               }
@@ -797,7 +802,7 @@ export function ContentBlocks({blocks,unitId,unitType="lesson",promptResponses:s
     for(let position=0;position<items.length;position+=1){
       const {block,index}=items[position];
 
-      if(block.kind==="text"&&block.type==="list"&&!block.text.includes("☐")){
+      if(block.kind==="text"&&block.type==="list"&&!block.text.includes("☐")&&!BLANK_RE.test(block.text)){
         list.push({text:block.text,index});
         continue;
       }

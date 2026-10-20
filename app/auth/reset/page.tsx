@@ -10,8 +10,8 @@ export default function ResetPasswordPage(){
   const [confirmation,setConfirmation]=useState("");
   const [busy,setBusy]=useState(false);
   const [message,setMessage]=useState("");
-  if(loading)return <main className="page"><p>Checking your reset link…</p></main>;
-  return <main className="page"><section className="auth-panel"><h1>Choose a new password</h1>
+  if(loading)return <div className="page"><p>Checking your reset link…</p></div>;
+  return <div className="page"><section className="auth-panel"><h1>Choose a new password</h1>
     {user?<form className="auth-form" onSubmit={async event=>{
       event.preventDefault();if(busy)return;
       if(password!==confirmation){setMessage("The passwords do not match.");return;}
@@ -29,5 +29,5 @@ export default function ResetPasswordPage(){
     </form>:<p>Open the most recent password reset link from your email. If it has expired, request another link.</p>}
     {message&&<p role="status">{message}</p>}
     <Link href="/auth">Return to account access</Link>
-  </section></main>;
+  </section></div>;
 }

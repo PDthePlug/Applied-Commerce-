@@ -1,0 +1,67 @@
+.skip-link{position:fixed;z-index:300;top:8px;left:8px;transform:translateY(-160%);padding:12px 18px;border:2px solid currentColor;border-radius:8px;background:var(--paper,#fff);color:var(--ink,#17313b);font-size:16px;font-weight:700}
+.skip-link:focus{transform:none}
+#main-content:focus,#lesson-content:focus{outline:none}
+.printed-lesson-notes,.printed-response{display:none}
+[inert].app-menu-trigger{visibility:hidden}
+:root{--surface:var(--paper);--surface-muted:var(--warm);--border-subtle:var(--line)}
+.reader-shell .lesson-document,.reader-shell .workbook-panel{width:min(var(--ac-reading-max),100%)}
+.reader-shell .lesson-document :is(p,li){font-size:calc(16px * var(--ac-text-scale));overflow-wrap:anywhere}
+.reader-shell .semantic-learning-document .response-surface-prompt p{font-size:calc(18px * var(--ac-text-scale))!important}
+.reader-shell .lesson-document :is(input,textarea,select),.reader-shell .workbook-panel textarea{font-size:calc(15px * var(--ac-text-scale))}
+.reader-shell .source-table-wrap :is(td,th){font-size:calc(12px * var(--ac-text-scale))}
+@media(max-width:620px){.reader-shell .semantic-learning-document .response-surface-prompt p{font-size:calc(16px * var(--ac-text-scale))!important}}
+.response-status:not(.saved){color:var(--muted)}
+.topbar-note a,.auth-panel>a,.institutional-back{display:inline-flex;align-items:center;min-height:44px}
+.lesson-outline a{display:inline-flex;align-items:center;min-height:44px}
+html[data-ac-appearance] :is(.institutional-hero,.institutional-detail-hero,.demo-learner-hero) .eyebrow{color:#e5b894}
+:is(.institutional-hero,.institutional-detail-hero,.demo-learner-hero){background:#17313b;color:#fff}
+.brand-mark,.reader-brand>span,.term-card header>span,.progress-overview,
+.workbook-actions button:not(.completed),.lesson-complete-continue,.confirm-ranking,.custom-value button,
+.institutional-page .institutional-role-tabs button.active,.institutional-grade-journey strong{background:#17313b;color:#fff}
+.progress-grade-list>a,.empty-state,.portfolio-artifact,.portfolio-list article{background:var(--paper);color:var(--ink);border-color:var(--line)}
+.progress-grade-list p{color:var(--ac-user-accent-text)}
+.portfolio-evidence p,.portfolio-list article>p{color:var(--ink)}
+.reader-shell .lesson-outline a,.reader-shell .reader-footer>a,.reader-shell .reader-menu-button,
+.reader-shell .rail-head button,.reader-shell .deepening-insight,.reader-shell .source-table-wrap,
+.reader-shell .workbook-table .editable-cell,.reader-shell .workbook-table .editable-cell textarea,
+.reader-shell :is(.prompt-response-control textarea,.short-response,.fill-response-field input,.multi-field-grid input,.workbook-panel textarea,.rating-options button,.values-options button,.rank-actions button,.custom-value input,.choice-option,.choice-detail){background:var(--paper);color:var(--ink);border-color:var(--line)}
+.reader-shell .semantic-learning-document .response-surface{background:var(--paper);border-color:var(--line)}
+.reader-shell .lesson-document :is(p,li,td,th,.question-prompt,.fill-response-line,.multi-field-grid label>span){color:var(--ink)}
+.reader-shell .semantic-learning-document :is(.learning-notice-copy>span,.source-section,.structured-part-label){color:var(--ac-user-accent-text)}
+.reader-shell .workbook-table tr:first-child td,.reader-shell .source-table-wrap thead th{background:var(--warm);color:var(--ink)}
+.reader-shell .responsive-row-table tbody tr{background:var(--paper)}
+.reader-shell .portfolio-capture-disclosure{background:var(--warm);border-color:var(--line)}
+.reader-shell .reader-rail{background:var(--warm)}
+.reader-shell .reader-rail nav a{color:var(--muted)}
+.reader-shell .reader-rail nav a.current{background:var(--paper);color:var(--ink)}
+.reader-shell .reader-topbar,.reader-shell .reader-progress{background:var(--cream)}
+.reader-shell .choice-option[aria-checked="true"],.reader-shell :is(.rating-options,.values-options) button[aria-pressed="true"]{background:var(--warm);color:var(--ac-user-accent-text);border-color:var(--ac-user-accent-text)}
+.institutional-page :is(.institutional-offer-card,.institutional-layer-stack span,.institutional-final-cta,.institutional-detail-grid>article,.institutional-grade-journey,.institutional-ip-section,.institutional-pricing-grid article,.institutional-materials,.institutional-role-tabs button,.institutional-demo-frame,.institutional-demo-programme>small,.institutional-demo-explainer){background:var(--paper);color:var(--ink);border-color:var(--line)}
+.institutional-page :is(.institutional-evidence-section,.institutional-demo-programme,.demo-stat-grid article,.demo-evidence-card,.demo-manager-grid>article,.demo-sponsor-grid>article,.demo-attention-panel .needs-support){background:var(--warm);color:var(--ink);border-color:var(--line)}
+.institutional-page :is(.institutional-evidence-flow article,.institutional-conversion-grid article){background:var(--paper);border-color:var(--line)}
+.institutional-page :is(.institutional-offer-card li,.institutional-check-list span,.demo-evidence-card p){color:var(--ink)}
+.institutional-page .demo-signal-card{background:var(--warm)!important}
+.institutional-page .demo-evidence-card>span{color:var(--ink)}
+.institutional-page :is(.institutional-fit span,.institutional-evidence-flow span,.institutional-conversion-grid span,.institutional-demo-programme span,.demo-signal-card>span,.demo-panel-heading>span){color:var(--ac-user-accent-text)}
+
+@media(prefers-reduced-motion:reduce){
+  .reader-rail{transition:none}
+}
+
+@media print{
+  .skip-link,.app-menu-trigger,.app-menu-sheet,.app-menu-scrim,
+  .reader-topbar,.reader-rail,.reader-scrim,.reader-footer,.lesson-outline,
+  .workbook-actions,.lesson-complete-continue,.learning-sync-status{display:none!important}
+  .focused-reader,.focused-reader .reader-shell{min-height:0;background:#fff!important;color:#17313b!important;color-scheme:light}
+  .focused-reader .reader-shell *{color:#17313b!important;background:transparent!important;box-shadow:none!important;text-shadow:none!important}
+  .focused-reader .reader-stage{width:100%!important;max-width:none!important;margin:0!important;padding:0!important}
+  .focused-reader .lesson-document,.focused-reader .workbook-panel{width:100%;max-width:none}
+  .focused-reader .lesson-heading h1{font-size:28pt}
+  .focused-reader :is(h1,h2,h3,h4){break-after:avoid}
+  .focused-reader :is(p,li){orphans:3;widows:3}
+  .focused-reader :is(.source-table-wrap,.deepening-insight){overflow:visible}
+  .focused-reader :is(textarea,.printable-response-input){display:none!important}
+  .focused-reader .printed-lesson-notes,.focused-reader .printed-response{display:block;white-space:pre-wrap;overflow-wrap:anywhere;font-size:11pt;line-height:1.5}
+  .focused-reader :is(.response-status,.rank-actions,.confirm-ranking,.custom-value){display:none!important}
+  .focused-reader [aria-pressed="true"]::after,.focused-reader .choice-option[aria-checked="true"]::after,.focused-reader .assessment-choice-list .selected::after{content:" (selected)";font-weight:700}
+}

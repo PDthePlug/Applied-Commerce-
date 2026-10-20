@@ -1,0 +1,12 @@
+
+> applied-commerce-learning-platform@0.1.0 verify:operations
+> node scripts/operational-database-drill.mjs
+
+PASS complete migration replay
+PASS synthetic cohort, revision and review fixtures
+PASS role-specific volume queries and revision saves
+PASS physical restore preserves every table digest, RLS policy, grant and function
+PASS restored learner isolation, assigned review and write enforcement
+PASS restored save accepts current revision and rejects stale work
+PASS restored session revocation removes private visibility
+{"passed":7,"failed":0,"learners":500,"answers":10000,"timings":{"learnerAnswers":{"samples":20,"p50Ms":7.42,"p95Ms":26.69,"maxMs":40.05},"facilitatorPage":{"samples":20,"p50Ms":265.02,"p95Ms":437.18,"maxMs":519.64},"administratorCohort":{"samples":20,"p50Ms":103.26,"p95Ms":149.14,"maxMs":162.9},"revisionSave":{"samples":20,"p50Ms":3.69,"p95Ms":8,"maxMs":11.92}},"backup":{"bytes":7093356,"sha256":"f292815d31fa4b671affc3d48eacc580bc9cec30f015761dbf997c936d84c5cc","backupMs":1454,"restoreMs":1450,"tablesVerified":26}}

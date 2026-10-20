@@ -57,19 +57,19 @@ export function FacilitatorRoleGate({ children }: { children: React.ReactNode })
   }, [authLoading, user]);
 
   if (authLoading || (user && checkedUserId !== user.id)) {
-    return <main className="institution-admin-page"><div className="institution-admin-state">Getting your facilitator workspace ready…</div></main>;
+    return <div className="institution-admin-page"><div className="institution-admin-state">Getting your facilitator workspace ready…</div></div>;
   }
 
   if (!user) {
-    return <main className="institution-admin-page"><section className="institution-admin-hero"><p className="eyebrow">Facilitator workspace</p><h1>Sign in to continue.</h1><p>Facilitator access is granted through an institution or cohort assignment.</p><Link className="institutional-primary" href="/auth">Sign in <span aria-hidden="true">→</span></Link></section></main>;
+    return <div className="institution-admin-page"><section className="institution-admin-hero"><p className="eyebrow">Facilitator workspace</p><h1>Sign in to continue.</h1><p>Facilitator access is granted through an institution or cohort assignment.</p><Link className="institutional-primary" href="/auth">Sign in <span aria-hidden="true">→</span></Link></section></div>;
   }
 
   if (authorizedUserId !== user.id && accessCheckFailed) {
-    return <main className="institution-admin-page"><section className="institution-admin-hero"><p className="eyebrow">Facilitator workspace</p><h1>We couldn’t confirm access just now.</h1><p>Please refresh and try again. If the problem continues, contact your institution administrator.</p></section></main>;
+    return <div className="institution-admin-page"><section className="institution-admin-hero"><p className="eyebrow">Facilitator workspace</p><h1>We couldn’t confirm access just now.</h1><p>Please refresh and try again. If the problem continues, contact your institution administrator.</p></section></div>;
   }
 
   if (authorizedUserId !== user.id) {
-    return <main className="institution-admin-page"><section className="institution-admin-hero"><p className="eyebrow">Restricted workspace</p><h1>Facilitator access has not been assigned.</h1><p>This account can sign in, but it cannot review learner evidence or open facilitator tools until an institution administrator assigns it to a cohort.</p><Link className="institutional-text-link" href="/institutions">Back to institutions <span aria-hidden="true">→</span></Link></section></main>;
+    return <div className="institution-admin-page"><section className="institution-admin-hero"><p className="eyebrow">Restricted workspace</p><h1>Facilitator access has not been assigned.</h1><p>This account can sign in, but it cannot review learner evidence or open facilitator tools until an institution administrator assigns it to a cohort.</p><Link className="institutional-text-link" href="/institutions">Back to institutions <span aria-hidden="true">→</span></Link></section></div>;
   }
 
   return access ? <FacilitatorAccessProvider value={access}>{children}</FacilitatorAccessProvider> : <>{children}</>;

@@ -81,7 +81,7 @@ export function SettingsDashboard() {
     { value: "account", label: "Account & security", detail: "Email and password" },
   ];
 
-  return <main className="settings-page">
+  return <div className="settings-page">
     <header className="settings-header">
       <Link href="/profile" className="settings-back"><ArrowLeft aria-hidden="true"/> Profile</Link>
       <p className="eyebrow">Applied Commerce</p>
@@ -133,5 +133,5 @@ export function SettingsDashboard() {
         </> : null}
       </section>
     </div>
-  </main>;
+  </div>;
 }

@@ -31,7 +31,7 @@ export function LearningNotice({
     <div className="learning-notice-icon"><Icon aria-hidden="true"/></div>
     <div className="learning-notice-copy">
       <span>{meta.label}</span>
-      <h3>{title}</h3>
+      <h2>{title}</h2>
       {body?<p>{body}</p>:null}
     </div>
   </aside>;
@@ -40,7 +40,7 @@ export function LearningNotice({
 export function StoryHeading({title}:{title:string}){
   return <header className="story-heading-block" data-learning-mode="read">
     <span>Story</span>
-    <h3 className="story-heading">{title}</h3>
+    <h2 className="story-heading">{title}</h2>
   </header>;
 }
 

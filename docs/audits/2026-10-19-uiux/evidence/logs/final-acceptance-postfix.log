@@ -1,0 +1,361 @@
+[WebServer] (node:46216) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+
+Running 201 tests using 4 workers
+
+(node:46257) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+(node:46249) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/201] [desktop-1280] › tests/browser/learner-surface-consistency.spec.mjs:9:1 › home, library, grade map and progress agree without counting assessment or historical completions
+[2/201] [desktop-1280] › tests/browser/auth-persistence.spec.mjs:3:1 › learner local state survives reload and profile settings stay concise without altering the record
+(node:46252) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[3/201] [desktop-1280] › tests/browser/institutional-operations.spec.mjs:4:3 › Institutional operations › operations route is present and safely gates unauthenticated access
+(node:46250) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[4/201] [desktop-1280] › tests/browser/compact-list-reflow.spec.mjs:3:1 › authored list blanks wrap at 320px and keep saved choices
+[5/201] [desktop-1280] › tests/browser/institutional-operations.spec.mjs:19:3 › Institutional operations › public institution page exposes the live operations entry point
+[6/201] [desktop-1280] › tests/browser/portfolio-recovery.spec.mjs:2:1 › portfolio curriculum failure preserves saved answers and gives recovery instead of a false empty state
+[7/201] [desktop-1280] › tests/browser/presentation-v2.spec.mjs:79:3 › Applied Commerce Presentation Architecture 2.0 › hierarchy stays quiet for reading and strong at learning transitions
+[8/201] [desktop-1280] › tests/browser/learner-surface-consistency.spec.mjs:20:2 › home recovers a failed curriculum load without false progress or lost work
+[9/201] [desktop-1280] › tests/browser/compact-list-reflow.spec.mjs:20:1 › authored list response fields save under stable identities and reach portfolio
+[10/201] [desktop-1280] › tests/browser/learner-surface-consistency.spec.mjs:20:2 › library recovers a failed curriculum load without false progress or lost work
+[11/201] [desktop-1280] › tests/browser/presentation-v2.spec.mjs:100:3 › Applied Commerce Presentation Architecture 2.0 › simple tables become labelled mobile rows while wide tables retain geometry
+[12/201] [desktop-1280] › tests/browser/progress-accuracy.spec.mjs:2:1 › completing assessment content preserves that record without inflating the lesson progress map
+[13/201] [desktop-1280] › tests/browser/learner-surface-consistency.spec.mjs:20:2 › grade map recovers a failed curriculum load without false progress or lost work
+[14/201] [desktop-1280] › tests/browser/role-gates.spec.mjs:4:3 › Role-gated workspaces › facilitator workspace does not expose tools to a signed-out visitor
+[15/201] [desktop-1280] › tests/browser/presentation-v2.spec.mjs:132:3 › Applied Commerce Presentation Architecture 2.0 › authored choices remain usable and visibly selected
+[16/201] [desktop-1280] › tests/browser/role-gates.spec.mjs:13:3 › Role-gated workspaces › institution operations does not grant management access to a signed-out visitor
+[17/201] [desktop-1280] › tests/browser/learner-surface-consistency.spec.mjs:32:1 › home does not label a newly selected lesson with the previous lesson title
+[18/201] [desktop-1280] › tests/browser/settings-preferences.spec.mjs:3:1 › staff workspace surface fixtures keep readable text in dark and system themes
+[19/201] [desktop-1280] › tests/browser/semantic-learning-v3.spec.mjs:37:1 › rankings are ordered, confirmed, persistent and visible in portfolio
+[20/201] [desktop-1280] › tests/browser/settings-preferences.spec.mjs:26:1 › profile refresh preserves unsaved fields and updates untouched fields across tabs
+[21/201] [desktop-1280] › tests/browser/learner-surface-consistency.spec.mjs:49:1 › facilitator report CSS fixture prints readable copy without mobile navigation in dark and system modes
+  1) [desktop-1280] › tests/browser/presentation-v2.spec.mjs:132:3 › Applied Commerce Presentation Architecture 2.0 › authored choices remain usable and visibly selected 
+
+    TimeoutError: page.screenshot: Timeout 10000ms exceeded.
+    Call log:
+      - taking page screenshot
+        - disabled all CSS animations
+      - waiting for fonts to load...
+      - fonts loaded
+
+
+      69 |   await mkdir(directory, { recursive: true });
+      70 |   const path = `${directory}/${name}-${testInfo.project.name}.png`;
+    > 71 |   await page.screenshot({ path, fullPage: true, animations: "disabled" });
+         |              ^
+      72 |   await testInfo.attach(`${name}-${testInfo.project.name}`, {
+      73 |     path,
+      74 |     contentType: "image/png",
+        at attachEvidence (/workspace/Applied-Commerce-/tests/browser/presentation-v2.spec.mjs:71:14)
+        at /workspace/Applied-Commerce-/tests/browser/presentation-v2.spec.mjs:149:5
+
+    Error Context: work/hardening/final-acceptance-postfix-artifacts/presentation-v2-Applied-Co-a1790-usable-and-visibly-selected-desktop-1280/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    work/hardening/final-acceptance-postfix-artifacts/presentation-v2-Applied-Co-a1790-usable-and-visibly-selected-desktop-1280/trace.zip
+    Usage:
+
+        npx playwright show-trace work/hardening/final-acceptance-postfix-artifacts/presentation-v2-Applied-Co-a1790-usable-and-visibly-selected-desktop-1280/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+[22/201] [desktop-1280] › tests/browser/settings-preferences.spec.mjs:45:1 › appearance and reading preferences apply immediately and survive reload
+[23/201] [desktop-1280] › tests/browser/uiux-hardening.spec.mjs:7:1 › public learner, account and institution accessibility regressions
+(node:47992) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[24/201] [desktop-1280] › tests/browser/presentation-v2.spec.mjs:152:3 › Applied Commerce Presentation Architecture 2.0 › long lesson titles wrap without colliding with reader chrome
+[25/201] [desktop-1280] › tests/browser/semantic-learning-v3.spec.mjs:61:1 › rating controls retain their scale and written action fields
+[26/201] [desktop-1280] › tests/browser/settings-preferences.spec.mjs:69:1 › dark and system themes keep the learner menu and settings readable
+[27/201] [desktop-1280] › tests/browser/settings-preferences.spec.mjs:115:1 › all appearance, accent, text size and reading width settings update the document
+[28/201] [desktop-1280] › tests/browser/presentation-v2.spec.mjs:185:3 › Applied Commerce Presentation Architecture 2.0 › wide-table outlier preserves table geometry without creating page overflow
+[29/201] [desktop-1280] › tests/browser/semantic-learning-v3.spec.mjs:75:1 › values sort supports authored choices, custom values and five-three-one narrowing
+(node:48588) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[30/201] [mobile-430] › tests/browser/auth-persistence.spec.mjs:3:1 › learner local state survives reload and profile settings stay concise without altering the record
+[31/201] [desktop-1280] › tests/browser/presentation-v2.spec.mjs:207:3 › Applied Commerce Presentation Architecture 2.0 › formal assessment answers use assessment surfaces and real controls
+[32/201] [mobile-430] › tests/browser/compact-list-reflow.spec.mjs:3:1 › authored list blanks wrap at 320px and keep saved choices
+[33/201] [desktop-1280] › tests/browser/semantic-learning-v3.spec.mjs:91:1 › choices inside source lists remain interactive and keep stable identities
+[34/201] [mobile-430] › tests/browser/compact-list-reflow.spec.mjs:20:1 › authored list response fields save under stable identities and reach portfolio
+(node:49006) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[35/201] [mobile-430] › tests/browser/institutional-operations.spec.mjs:4:3 › Institutional operations › operations route is present and safely gates unauthenticated access
+[36/201] [mobile-430] › tests/browser/institutional-operations.spec.mjs:19:3 › Institutional operations › public institution page exposes the live operations entry point
+[37/201] [desktop-1280] › tests/browser/semantic-learning-v3.spec.mjs:100:1 › equations and percentage fields retain meaning and outline avoids fixed chrome
+[38/201] [mobile-430] › tests/browser/learner-surface-consistency.spec.mjs:9:1 › home, library, grade map and progress agree without counting assessment or historical completions
+[39/201] [mobile-430] › tests/browser/portfolio-recovery.spec.mjs:2:1 › portfolio curriculum failure preserves saved answers and gives recovery instead of a false empty state
+[40/201] [desktop-1280] › tests/browser/uiux-hardening.spec.mjs:18:3 › dark keeps core reading, progress, portfolio and institutional demo accessible
+[41/201] [mobile-430] › tests/browser/learner-surface-consistency.spec.mjs:20:2 › home recovers a failed curriculum load without false progress or lost work
+  2) [desktop-1280] › tests/browser/semantic-learning-v3.spec.mjs:100:1 › equations and percentage fields retain meaning and outline avoids fixed chrome 
+
+    TimeoutError: page.screenshot: Timeout 10000ms exceeded.
+    Call log:
+      - taking page screenshot
+        - disabled all CSS animations
+      - waiting for fonts to load...
+      - fonts loaded
+
+
+      31 |   await mkdir(dir,{recursive:true});
+      32 |   const path=`${dir}/${label}-${testInfo.project.name}.png`;
+    > 33 |   await page.screenshot({path,fullPage:true,animations:"disabled"});
+         |              ^
+      34 |   await testInfo.attach(label,{path,contentType:"image/png"});
+      35 | }
+      36 |
+        at evidence (/workspace/Applied-Commerce-/tests/browser/semantic-learning-v3.spec.mjs:33:14)
+        at /workspace/Applied-Commerce-/tests/browser/semantic-learning-v3.spec.mjs:113:25
+
+    Error Context: work/hardening/final-acceptance-postfix-artifacts/semantic-learning-v3-equat-62e6f-outline-avoids-fixed-chrome-desktop-1280/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    work/hardening/final-acceptance-postfix-artifacts/semantic-learning-v3-equat-62e6f-outline-avoids-fixed-chrome-desktop-1280/trace.zip
+    Usage:
+
+        npx playwright show-trace work/hardening/final-acceptance-postfix-artifacts/semantic-learning-v3-equat-62e6f-outline-avoids-fixed-chrome-desktop-1280/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+[42/201] [mobile-430] › tests/browser/learner-surface-consistency.spec.mjs:20:2 › library recovers a failed curriculum load without false progress or lost work
+[43/201] [mobile-430] › tests/browser/presentation-v2.spec.mjs:79:3 › Applied Commerce Presentation Architecture 2.0 › hierarchy stays quiet for reading and strong at learning transitions
+(node:49618) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[44/201] [mobile-430] › tests/browser/learner-surface-consistency.spec.mjs:20:2 › grade map recovers a failed curriculum load without false progress or lost work
+[45/201] [desktop-1280] › tests/browser/semantic-learning-v3.spec.mjs:116:1 › failed device save does not present an answer as captured
+[46/201] [mobile-430] › tests/browser/presentation-v2.spec.mjs:100:3 › Applied Commerce Presentation Architecture 2.0 › simple tables become labelled mobile rows while wide tables retain geometry
+[47/201] [mobile-430] › tests/browser/learner-surface-consistency.spec.mjs:32:1 › home does not label a newly selected lesson with the previous lesson title
+[48/201] [desktop-1280] › tests/browser/semantic-learning-v3.spec.mjs:125:1 › completion saves the lesson before moving forward
+[49/201] [mobile-430] › tests/browser/presentation-v2.spec.mjs:132:3 › Applied Commerce Presentation Architecture 2.0 › authored choices remain usable and visibly selected
+[50/201] [mobile-430] › tests/browser/learner-surface-consistency.spec.mjs:49:1 › facilitator report CSS fixture prints readable copy without mobile navigation in dark and system modes
+[51/201] [desktop-1280] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 8 Term 1 retains authored content and viewport integrity
+[52/201] [mobile-430] › tests/browser/progress-accuracy.spec.mjs:2:1 › completing assessment content preserves that record without inflating the lesson progress map
+[53/201] [mobile-430] › tests/browser/presentation-v2.spec.mjs:152:3 › Applied Commerce Presentation Architecture 2.0 › long lesson titles wrap without colliding with reader chrome
+[54/201] [desktop-1280] › tests/browser/uiux-hardening.spec.mjs:18:3 › system keeps core reading, progress, portfolio and institutional demo accessible
+[55/201] [desktop-1280] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 8 Term 2 retains authored content and viewport integrity
+[56/201] [mobile-430] › tests/browser/role-gates.spec.mjs:4:3 › Role-gated workspaces › facilitator workspace does not expose tools to a signed-out visitor
+[57/201] [mobile-430] › tests/browser/role-gates.spec.mjs:13:3 › Role-gated workspaces › institution operations does not grant management access to a signed-out visitor
+[58/201] [mobile-430] › tests/browser/presentation-v2.spec.mjs:185:3 › Applied Commerce Presentation Architecture 2.0 › wide-table outlier preserves table geometry without creating page overflow
+[59/201] [mobile-430] › tests/browser/semantic-learning-v3.spec.mjs:37:1 › rankings are ordered, confirmed, persistent and visible in portfolio
+[60/201] [desktop-1280] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 8 Term 3 retains authored content and viewport integrity
+[61/201] [mobile-430] › tests/browser/presentation-v2.spec.mjs:207:3 › Applied Commerce Presentation Architecture 2.0 › formal assessment answers use assessment surfaces and real controls
+[62/201] [desktop-1280] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 8 Term 4 retains authored content and viewport integrity
+[63/201] [mobile-430] › tests/browser/settings-preferences.spec.mjs:3:1 › staff workspace surface fixtures keep readable text in dark and system themes
+[64/201] [mobile-430] › tests/browser/semantic-learning-v3.spec.mjs:61:1 › rating controls retain their scale and written action fields
+[65/201] [mobile-430] › tests/browser/settings-preferences.spec.mjs:26:1 › profile refresh preserves unsaved fields and updates untouched fields across tabs
+[66/201] [desktop-1280] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 9 Term 1 retains authored content and viewport integrity
+[67/201] [mobile-430] › tests/browser/settings-preferences.spec.mjs:45:1 › appearance and reading preferences apply immediately and survive reload
+[68/201] [mobile-430] › tests/browser/semantic-learning-v3.spec.mjs:75:1 › values sort supports authored choices, custom values and five-three-one narrowing
+[69/201] [desktop-1280] › tests/browser/uiux-hardening.spec.mjs:35:1 › institution demo learner action opens the curriculum
+[70/201] [desktop-1280] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 9 Term 2 retains authored content and viewport integrity
+[71/201] [desktop-1280] › tests/browser/uiux-hardening.spec.mjs:42:1 › site icon resolves and header navigation offers a touch target
+[72/201] [mobile-430] › tests/browser/settings-preferences.spec.mjs:69:1 › dark and system themes keep the learner menu and settings readable
+[73/201] [desktop-1280] › tests/browser/uiux-hardening.spec.mjs:55:1 › reading preferences change actual lesson text size and measure
+[74/201] [mobile-430] › tests/browser/semantic-learning-v3.spec.mjs:91:1 › choices inside source lists remain interactive and keep stable identities
+[75/201] [mobile-430] › tests/browser/settings-preferences.spec.mjs:115:1 › all appearance, accent, text size and reading width settings update the document
+[76/201] [desktop-1280] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 9 Term 3 retains authored content and viewport integrity
+[77/201] [desktop-1280] › tests/browser/uiux-hardening.spec.mjs:75:1 › each workspace has one main landmark and a keyboard skip link
+[78/201] [desktop-1280] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 9 Term 4 retains authored content and viewport integrity
+[79/201] [mobile-430] › tests/browser/semantic-learning-v3.spec.mjs:100:1 › equations and percentage fields retain meaning and outline avoids fixed chrome
+[80/201] [mobile-430] › tests/browser/uiux-hardening.spec.mjs:7:1 › public learner, account and institution accessibility regressions
+[81/201] [desktop-1280] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 10 Term 1 retains authored content and viewport integrity
+[82/201] [mobile-430] › tests/browser/semantic-learning-v3.spec.mjs:116:1 › failed device save does not present an answer as captured
+[83/201] [desktop-1280] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 10 Term 2 retains authored content and viewport integrity
+[84/201] [mobile-430] › tests/browser/semantic-learning-v3.spec.mjs:125:1 › completion saves the lesson before moving forward
+  3) [desktop-1280] › tests/browser/uiux-hardening.spec.mjs:75:1 › each workspace has one main landmark and a keyboard skip link 
+
+    Error: expect(locator).toBeFocused() failed
+
+    Locator:  locator('#lesson-content')
+    Expected: focused
+    Received: inactive
+    Timeout:  12000ms
+
+    Call log:
+      - Expect "toBeFocused" locator('#lesson-content') with timeout 12000ms
+      - waiting for locator('#lesson-content')
+        20 × locator resolved to <div tabindex="-1" id="lesson-content" class="reader-stage">…</div>
+           - unexpected value "inactive"
+
+
+      81 |     await expect(skip).toBeFocused();
+      82 |     await page.keyboard.press('Enter');
+    > 83 |     await expect(path===lesson?page.locator('#lesson-content'):page.getByRole('main')).toBeFocused();
+         |                                                                                        ^
+      84 |   }
+      85 | });
+      86 |
+        at /workspace/Applied-Commerce-/tests/browser/uiux-hardening.spec.mjs:83:88
+
+    Error Context: work/hardening/final-acceptance-postfix-artifacts/uiux-hardening-each-worksp-072e4-rk-and-a-keyboard-skip-link-desktop-1280/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    work/hardening/final-acceptance-postfix-artifacts/uiux-hardening-each-worksp-072e4-rk-and-a-keyboard-skip-link-desktop-1280/trace.zip
+    Usage:
+
+        npx playwright show-trace work/hardening/final-acceptance-postfix-artifacts/uiux-hardening-each-worksp-072e4-rk-and-a-keyboard-skip-link-desktop-1280/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+(node:52412) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[85/201] [mobile-430] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 8 Term 1 retains authored content and viewport integrity
+[86/201] [desktop-1280] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 10 Term 3 retains authored content and viewport integrity
+[87/201] [desktop-1280] › tests/browser/uiux-hardening.spec.mjs:87:1 › lesson notes and position indicator have accessible names and notes survive reload
+[88/201] [mobile-430] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 8 Term 2 retains authored content and viewport integrity
+[89/201] [desktop-1280] › tests/browser/uiux-hardening.spec.mjs:96:1 › offline answers and notes survive reconnect under the same response identities
+[90/201] [desktop-1280] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 10 Term 4 retains authored content and viewport integrity
+[91/201] [mobile-430] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 8 Term 3 retains authored content and viewport integrity
+[92/201] [desktop-1280] › tests/browser/uiux-hardening.spec.mjs:113:1 › compact term map traps focus, closes on Escape, and restores focus
+[93/201] [desktop-1280] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 11 Term 1 retains authored content and viewport integrity
+[94/201] [mobile-430] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 8 Term 4 retains authored content and viewport integrity
+[95/201] [desktop-1280] › tests/browser/uiux-hardening.spec.mjs:141:1 › learner menu makes the background inert while open
+[96/201] [desktop-1280] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 11 Term 2 retains authored content and viewport integrity
+[97/201] [mobile-430] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 9 Term 1 retains authored content and viewport integrity
+[98/201] [desktop-1280] › tests/browser/uiux-hardening.spec.mjs:152:1 › institution demo perspective tabs support arrows, Home and End
+[99/201] [mobile-430] › tests/browser/uiux-hardening.spec.mjs:18:3 › dark keeps core reading, progress, portfolio and institutional demo accessible
+[100/201] [desktop-1280] › tests/browser/uiux-hardening.spec.mjs:169:1 › lesson load failure offers retry in place without losing a saved answer
+[101/201] [mobile-430] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 9 Term 2 retains authored content and viewport integrity
+[102/201] [desktop-1280] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 11 Term 3 retains authored content and viewport integrity
+[103/201] [desktop-1280] › tests/browser/uiux-hardening.spec.mjs:181:1 › reader print preserves lesson copy and saved notes without fixed navigation
+[104/201] [mobile-430] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 9 Term 3 retains authored content and viewport integrity
+[105/201] [desktop-1280] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 11 Term 4 retains authored content and viewport integrity
+(node:53639) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[106/201] [mobile-360] › tests/browser/auth-persistence.spec.mjs:3:1 › learner local state survives reload and profile settings stay concise without altering the record
+[107/201] [mobile-430] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 9 Term 4 retains authored content and viewport integrity
+[108/201] [desktop-1280] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 12 Term 1 retains authored content and viewport integrity
+[109/201] [mobile-360] › tests/browser/compact-list-reflow.spec.mjs:3:1 › authored list blanks wrap at 320px and keep saved choices
+[110/201] [mobile-430] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 10 Term 1 retains authored content and viewport integrity
+[111/201] [desktop-1280] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 12 Term 2 retains authored content and viewport integrity
+[112/201] [mobile-360] › tests/browser/compact-list-reflow.spec.mjs:20:1 › authored list response fields save under stable identities and reach portfolio
+[113/201] [mobile-430] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 10 Term 2 retains authored content and viewport integrity
+[114/201] [mobile-430] › tests/browser/uiux-hardening.spec.mjs:18:3 › system keeps core reading, progress, portfolio and institutional demo accessible
+[115/201] [mobile-430] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 10 Term 3 retains authored content and viewport integrity
+[116/201] [mobile-360] › tests/browser/institutional-operations.spec.mjs:4:3 › Institutional operations › operations route is present and safely gates unauthenticated access
+[117/201] [desktop-1280] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 12 Term 3 retains authored content and viewport integrity
+[118/201] [mobile-360] › tests/browser/institutional-operations.spec.mjs:19:3 › Institutional operations › public institution page exposes the live operations entry point
+[119/201] [mobile-360] › tests/browser/learner-surface-consistency.spec.mjs:9:1 › home, library, grade map and progress agree without counting assessment or historical completions
+[120/201] [mobile-430] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 10 Term 4 retains authored content and viewport integrity
+[121/201] [desktop-1280] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 12 Term 4 retains authored content and viewport integrity
+[122/201] [mobile-360] › tests/browser/learner-surface-consistency.spec.mjs:20:2 › home recovers a failed curriculum load without false progress or lost work
+[123/201] [mobile-430] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 11 Term 1 retains authored content and viewport integrity
+[124/201] [mobile-360] › tests/browser/learner-surface-consistency.spec.mjs:20:2 › library recovers a failed curriculum load without false progress or lost work
+[125/201] [mobile-430] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 11 Term 2 retains authored content and viewport integrity
+[126/201] [mobile-360] › tests/browser/learner-surface-consistency.spec.mjs:20:2 › grade map recovers a failed curriculum load without false progress or lost work
+[127/201] [mobile-430] › tests/browser/uiux-hardening.spec.mjs:35:1 › institution demo learner action opens the curriculum
+(node:54821) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[128/201] [mobile-360] › tests/browser/portfolio-recovery.spec.mjs:2:1 › portfolio curriculum failure preserves saved answers and gives recovery instead of a false empty state
+[129/201] [mobile-430] › tests/browser/uiux-hardening.spec.mjs:42:1 › site icon resolves and header navigation offers a touch target
+[130/201] [mobile-360] › tests/browser/learner-surface-consistency.spec.mjs:32:1 › home does not label a newly selected lesson with the previous lesson title
+[131/201] [mobile-430] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 11 Term 3 retains authored content and viewport integrity
+[132/201] [mobile-430] › tests/browser/uiux-hardening.spec.mjs:55:1 › reading preferences change actual lesson text size and measure
+[133/201] [mobile-360] › tests/browser/presentation-v2.spec.mjs:79:3 › Applied Commerce Presentation Architecture 2.0 › hierarchy stays quiet for reading and strong at learning transitions
+[134/201] [mobile-360] › tests/browser/learner-surface-consistency.spec.mjs:49:1 › facilitator report CSS fixture prints readable copy without mobile navigation in dark and system modes
+[135/201] [mobile-430] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 11 Term 4 retains authored content and viewport integrity
+[136/201] [mobile-360] › tests/browser/progress-accuracy.spec.mjs:2:1 › completing assessment content preserves that record without inflating the lesson progress map
+[137/201] [mobile-430] › tests/browser/uiux-hardening.spec.mjs:75:1 › each workspace has one main landmark and a keyboard skip link
+[138/201] [mobile-360] › tests/browser/presentation-v2.spec.mjs:100:3 › Applied Commerce Presentation Architecture 2.0 › simple tables become labelled mobile rows while wide tables retain geometry
+[139/201] [mobile-430] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 12 Term 1 retains authored content and viewport integrity
+[140/201] [mobile-360] › tests/browser/role-gates.spec.mjs:4:3 › Role-gated workspaces › facilitator workspace does not expose tools to a signed-out visitor
+[141/201] [mobile-360] › tests/browser/presentation-v2.spec.mjs:132:3 › Applied Commerce Presentation Architecture 2.0 › authored choices remain usable and visibly selected
+[142/201] [mobile-360] › tests/browser/role-gates.spec.mjs:13:3 › Role-gated workspaces › institution operations does not grant management access to a signed-out visitor
+[143/201] [mobile-430] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 12 Term 2 retains authored content and viewport integrity
+[144/201] [mobile-430] › tests/browser/uiux-hardening.spec.mjs:87:1 › lesson notes and position indicator have accessible names and notes survive reload
+[145/201] [mobile-360] › tests/browser/semantic-learning-v3.spec.mjs:37:1 › rankings are ordered, confirmed, persistent and visible in portfolio
+[146/201] [mobile-360] › tests/browser/presentation-v2.spec.mjs:152:3 › Applied Commerce Presentation Architecture 2.0 › long lesson titles wrap without colliding with reader chrome
+[147/201] [mobile-430] › tests/browser/uiux-hardening.spec.mjs:96:1 › offline answers and notes survive reconnect under the same response identities
+[148/201] [mobile-430] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 12 Term 3 retains authored content and viewport integrity
+[149/201] [mobile-430] › tests/browser/uiux-hardening.spec.mjs:113:1 › compact term map traps focus, closes on Escape, and restores focus
+[150/201] [mobile-360] › tests/browser/presentation-v2.spec.mjs:185:3 › Applied Commerce Presentation Architecture 2.0 › wide-table outlier preserves table geometry without creating page overflow
+[151/201] [mobile-360] › tests/browser/semantic-learning-v3.spec.mjs:61:1 › rating controls retain their scale and written action fields
+[152/201] [mobile-430] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 12 Term 4 retains authored content and viewport integrity
+[153/201] [mobile-430] › tests/browser/uiux-hardening.spec.mjs:141:1 › learner menu makes the background inert while open
+[154/201] [mobile-360] › tests/browser/presentation-v2.spec.mjs:207:3 › Applied Commerce Presentation Architecture 2.0 › formal assessment answers use assessment surfaces and real controls
+[155/201] [mobile-430] › tests/browser/uiux-hardening.spec.mjs:152:1 › institution demo perspective tabs support arrows, Home and End
+[156/201] [mobile-360] › tests/browser/semantic-learning-v3.spec.mjs:75:1 › values sort supports authored choices, custom values and five-three-one narrowing
+[157/201] [mobile-430] › tests/browser/uiux-hardening.spec.mjs:169:1 › lesson load failure offers retry in place without losing a saved answer
+(node:56866) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[158/201] [mobile-360] › tests/browser/settings-preferences.spec.mjs:3:1 › staff workspace surface fixtures keep readable text in dark and system themes
+[159/201] [mobile-360] › tests/browser/uiux-hardening.spec.mjs:7:1 › public learner, account and institution accessibility regressions
+[160/201] [mobile-360] › tests/browser/settings-preferences.spec.mjs:26:1 › profile refresh preserves unsaved fields and updates untouched fields across tabs
+[161/201] [mobile-430] › tests/browser/uiux-hardening.spec.mjs:181:1 › reader print preserves lesson copy and saved notes without fixed navigation
+[162/201] [mobile-360] › tests/browser/semantic-learning-v3.spec.mjs:91:1 › choices inside source lists remain interactive and keep stable identities
+[163/201] [mobile-360] › tests/browser/settings-preferences.spec.mjs:45:1 › appearance and reading preferences apply immediately and survive reload
+[164/201] [mobile-360] › tests/browser/settings-preferences.spec.mjs:69:1 › dark and system themes keep the learner menu and settings readable
+[165/201] [mobile-360] › tests/browser/semantic-learning-v3.spec.mjs:100:1 › equations and percentage fields retain meaning and outline avoids fixed chrome
+[166/201] [mobile-360] › tests/browser/settings-preferences.spec.mjs:115:1 › all appearance, accent, text size and reading width settings update the document
+[167/201] [mobile-360] › tests/browser/semantic-learning-v3.spec.mjs:116:1 › failed device save does not present an answer as captured
+[168/201] [mobile-360] › tests/browser/semantic-learning-v3.spec.mjs:125:1 › completion saves the lesson before moving forward
+[169/201] [mobile-360] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 8 Term 1 retains authored content and viewport integrity
+[170/201] [mobile-360] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 8 Term 2 retains authored content and viewport integrity
+[171/201] [mobile-360] › tests/browser/uiux-hardening.spec.mjs:18:3 › dark keeps core reading, progress, portfolio and institutional demo accessible
+[172/201] [mobile-360] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 8 Term 3 retains authored content and viewport integrity
+[173/201] [mobile-360] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 8 Term 4 retains authored content and viewport integrity
+[174/201] [mobile-360] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 9 Term 1 retains authored content and viewport integrity
+[175/201] [mobile-360] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 9 Term 2 retains authored content and viewport integrity
+[176/201] [mobile-360] › tests/browser/uiux-hardening.spec.mjs:18:3 › system keeps core reading, progress, portfolio and institutional demo accessible
+[177/201] [mobile-360] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 9 Term 3 retains authored content and viewport integrity
+[178/201] [mobile-360] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 9 Term 4 retains authored content and viewport integrity
+[179/201] [mobile-360] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 10 Term 1 retains authored content and viewport integrity
+[180/201] [mobile-360] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 10 Term 2 retains authored content and viewport integrity
+[181/201] [mobile-360] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 10 Term 3 retains authored content and viewport integrity
+[182/201] [mobile-360] › tests/browser/uiux-hardening.spec.mjs:35:1 › institution demo learner action opens the curriculum
+[183/201] [mobile-360] › tests/browser/uiux-hardening.spec.mjs:42:1 › site icon resolves and header navigation offers a touch target
+[184/201] [mobile-360] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 10 Term 4 retains authored content and viewport integrity
+[185/201] [mobile-360] › tests/browser/uiux-hardening.spec.mjs:55:1 › reading preferences change actual lesson text size and measure
+[186/201] [mobile-360] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 11 Term 1 retains authored content and viewport integrity
+[187/201] [mobile-360] › tests/browser/uiux-hardening.spec.mjs:75:1 › each workspace has one main landmark and a keyboard skip link
+[188/201] [mobile-360] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 11 Term 2 retains authored content and viewport integrity
+[189/201] [mobile-360] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 11 Term 3 retains authored content and viewport integrity
+[190/201] [mobile-360] › tests/browser/uiux-hardening.spec.mjs:87:1 › lesson notes and position indicator have accessible names and notes survive reload
+[191/201] [mobile-360] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 11 Term 4 retains authored content and viewport integrity
+[192/201] [mobile-360] › tests/browser/uiux-hardening.spec.mjs:96:1 › offline answers and notes survive reconnect under the same response identities
+[193/201] [mobile-360] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 12 Term 1 retains authored content and viewport integrity
+[194/201] [mobile-360] › tests/browser/uiux-hardening.spec.mjs:113:1 › compact term map traps focus, closes on Escape, and restores focus
+[195/201] [mobile-360] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 12 Term 2 retains authored content and viewport integrity
+[196/201] [mobile-360] › tests/browser/uiux-hardening.spec.mjs:141:1 › learner menu makes the background inert while open
+[197/201] [mobile-360] › tests/browser/uiux-hardening.spec.mjs:152:1 › institution demo perspective tabs support arrows, Home and End
+[198/201] [mobile-360] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 12 Term 3 retains authored content and viewport integrity
+[199/201] [mobile-360] › tests/browser/uiux-hardening.spec.mjs:169:1 › lesson load failure offers retry in place without losing a saved answer
+[200/201] [mobile-360] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 12 Term 4 retains authored content and viewport integrity
+[201/201] [mobile-360] › tests/browser/uiux-hardening.spec.mjs:181:1 › reader print preserves lesson copy and saved notes without fixed navigation
+  Slow test file: [mobile-430] › tests/browser/semantic-learning-v3.spec.mjs (6.2m)
+  Slow test file: [mobile-430] › tests/browser/uiux-hardening.spec.mjs (5.4m)
+  Consider running tests from slow files in parallel. See: https://playwright.dev/docs/test-parallel
+  3 failed
+    [desktop-1280] › tests/browser/presentation-v2.spec.mjs:132:3 › Applied Commerce Presentation Architecture 2.0 › authored choices remain usable and visibly selected 
+    [desktop-1280] › tests/browser/semantic-learning-v3.spec.mjs:100:1 › equations and percentage fields retain meaning and outline avoids fixed chrome 
+    [desktop-1280] › tests/browser/uiux-hardening.spec.mjs:75:1 › each workspace has one main landmark and a keyboard skip link 
+  198 passed (14.5m)
