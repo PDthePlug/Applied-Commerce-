@@ -4,6 +4,7 @@ const inventory=JSON.parse(fs.readFileSync('docs/classroom/educational-inventory
 test('reference screening distinguishes legal/financial terms from ordinary future tense and interpersonal trust',()=>{
  const unit={id:'synthetic',grade:8,term:1,startLesson:1,title:'Synthetic',blocks:[{kind:'text',type:'paragraph',id:'a',text:'We will discuss trust between friends.'}]};
  assert.ok(!inspectLesson(unit,null,null).educationalFindings.some(f=>f.code==='CURRENT_REFERENCE_REVIEW'));
+ unit.blocks[0].text='The fictional character will ask someone this week.';assert.equal(inspectLesson(unit,null,null).educationalFindings.find(f=>f.code==='OUTSIDE_PERIOD_ACTION').classification,'review-candidate');
  unit.blocks[0].text='Check the current SARS tax threshold before using the figure.';assert.ok(inspectLesson(unit,null,null).educationalFindings.some(f=>f.code==='CURRENT_REFERENCE_REVIEW'));
 });
 test('educational inventory covers all 395 existing lesson identities and four assessments exactly once',()=>{

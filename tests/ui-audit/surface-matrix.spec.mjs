@@ -101,7 +101,7 @@ for (const [name, url] of pages) {
       contentType: "application/json",
     });
     await testInfo.attach("screen", {
-      body: await page.screenshot({ fullPage: true, animations: "disabled" }),
+      body: await page.screenshot({ fullPage: true, animations: "disabled", timeout: 30_000 }),
       contentType: "image/png",
     });
 

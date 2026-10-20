@@ -33,7 +33,7 @@ async function inspect(page,testInfo,path,label){
       tinyTargets:[...document.querySelectorAll('a,button,input,select,textarea,summary')].filter(el=>!el.closest('[inert]')&&el.getClientRects().length).map(el=>({el,rect:el.getBoundingClientRect()})).filter(({rect})=>rect.width<24||rect.height<24).slice(0,25).map(({el,rect})=>({label:el.getAttribute('aria-label')||el.textContent?.slice(0,90),width:rect.width,height:rect.height})),
     }));
     await testInfo.attach(label+' diagnostics',{body:Buffer.from(JSON.stringify({requested:path,status:response.status(),...diagnostics,errors,consoleErrors,failedRequests,httpErrors},null,2)),contentType:'application/json'});
-    await testInfo.attach(label+' screenshot',{body:await page.screenshot({fullPage:true,animations:'disabled'}),contentType:'image/png'});
+    await testInfo.attach(label+' screenshot',{body:await page.screenshot({fullPage:true,animations:'disabled',timeout:30_000}),contentType:'image/png'});
     expect(response.status()).toBe(200);
     expect(errors).toEqual([]);
     expect(consoleErrors).toEqual([]);
