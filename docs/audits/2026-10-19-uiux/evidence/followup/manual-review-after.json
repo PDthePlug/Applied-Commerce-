@@ -1,0 +1,41 @@
+{
+  "phase": "after",
+  "viewport": {
+    "width": 360,
+    "height": 800
+  },
+  "radio": {
+    "radioBox": {
+      "x": 17,
+      "y": 691.640625,
+      "width": 13,
+      "height": 13
+    },
+    "labelBox": {
+      "x": 12,
+      "y": 688.640625,
+      "width": 336,
+      "height": 60
+    },
+    "labelIsTouchTarget": true,
+    "selectionWorks": true
+  },
+  "popupControls": {
+    "closed": {
+      "id": "term-map",
+      "exists": 1,
+      "inert": true
+    },
+    "open": {
+      "role": "dialog",
+      "inert": false
+    },
+    "valid": true
+  },
+  "alternativeSummary": {
+    "x": 25,
+    "y": 378.21875,
+    "width": 310,
+    "height": 44
+  }
+}

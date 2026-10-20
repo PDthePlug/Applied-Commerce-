@@ -1,0 +1,2348 @@
+2026-10-20T12:34:29.0287900Z Current runner version: '2.337.0'
+2026-10-20T12:34:29.0322583Z ##[group]Runner Image Provisioner
+2026-10-20T12:34:29.0323961Z Hosted Compute Agent
+2026-10-20T12:34:29.0324944Z Version: 20261012.601
+2026-10-20T12:34:29.0326094Z Commit: f3dc54e1fb89da6852db922499a0233137369e1d
+2026-10-20T12:34:29.0327362Z Build Date: 2026-10-12T17:48:21Z
+2026-10-20T12:34:29.0328570Z Worker ID: {1a415406-b040-4db6-8802-2e8f8e4246fa}
+2026-10-20T12:34:29.0329750Z Region: eastus
+2026-10-20T12:34:29.0331107Z Cloud: Azure
+2026-10-20T12:34:29.0332246Z ##[endgroup]
+2026-10-20T12:34:29.0334433Z ##[group]Operating System
+2026-10-20T12:34:29.0335602Z Ubuntu
+2026-10-20T12:34:29.0336471Z 24.04.5
+2026-10-20T12:34:29.0337259Z LTS
+2026-10-20T12:34:29.0338186Z ##[endgroup]
+2026-10-20T12:34:29.0339297Z ##[group]Runner Image
+2026-10-20T12:34:29.0340606Z Image: ubuntu-24.04
+2026-10-20T12:34:29.0341575Z Version: 20261012.334.1
+2026-10-20T12:34:29.0343684Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261012.334/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-20T12:34:29.0346398Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261012.334
+2026-10-20T12:34:29.0348164Z ##[endgroup]
+2026-10-20T12:34:29.0350444Z ##[group]GITHUB_TOKEN Permissions
+2026-10-20T12:34:29.0353123Z Contents: read
+2026-10-20T12:34:29.0354094Z Metadata: read
+2026-10-20T12:34:29.0355061Z ##[endgroup]
+2026-10-20T12:34:29.0358344Z Secret source: Actions
+2026-10-20T12:34:29.0359955Z Cache mode: write
+2026-10-20T12:34:29.0361395Z Prepare workflow directory
+2026-10-20T12:34:29.0828184Z Prepare all required actions
+2026-10-20T12:34:29.0899881Z Getting action download info
+2026-10-20T12:34:29.3033040Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-10-20T12:34:29.3923842Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+2026-10-20T12:34:29.4763926Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+2026-10-20T12:34:29.5644998Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-10-20T12:34:29.7707631Z Complete job name: verify
+2026-10-20T12:34:29.8524746Z ##[group]Run actions/checkout@v4
+2026-10-20T12:34:29.8525609Z with:
+2026-10-20T12:34:29.8526098Z   repository: PDthePlug/Applied-Commerce-
+2026-10-20T12:34:29.8529808Z   token: ***
+2026-10-20T12:34:29.8530473Z   ssh-strict: true
+2026-10-20T12:34:29.8530915Z   ssh-user: git
+2026-10-20T12:34:29.8531357Z   persist-credentials: true
+2026-10-20T12:34:29.8531842Z   clean: true
+2026-10-20T12:34:29.8532290Z   sparse-checkout-cone-mode: true
+2026-10-20T12:34:29.8532804Z   fetch-depth: 1
+2026-10-20T12:34:29.8533237Z   fetch-tags: false
+2026-10-20T12:34:29.8533676Z   show-progress: true
+2026-10-20T12:34:29.8534112Z   lfs: false
+2026-10-20T12:34:29.8534513Z   submodules: false
+2026-10-20T12:34:29.8534953Z   set-safe-directory: true
+2026-10-20T12:34:29.8535448Z   allow-unsafe-pr-checkout: false
+2026-10-20T12:34:29.8536243Z ##[endgroup]
+2026-10-20T12:34:29.9570992Z Syncing repository: PDthePlug/Applied-Commerce-
+2026-10-20T12:34:29.9572879Z ##[group]Getting Git version info
+2026-10-20T12:34:29.9652105Z Working directory is '/home/runner/work/Applied-Commerce-/Applied-Commerce-'
+2026-10-20T12:34:29.9654276Z [command]/usr/bin/git version
+2026-10-20T12:34:29.9655286Z git version 2.55.0
+2026-10-20T12:34:29.9658194Z ##[endgroup]
+2026-10-20T12:34:29.9669904Z Temporarily overriding HOME='/home/runner/work/_temp/058caaf7-7c80-4458-8a48-93935913dba3' before making global git config changes
+2026-10-20T12:34:29.9676709Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-20T12:34:29.9682017Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Applied-Commerce-/Applied-Commerce-
+2026-10-20T12:34:29.9730496Z Deleting the contents of '/home/runner/work/Applied-Commerce-/Applied-Commerce-'
+2026-10-20T12:34:29.9734783Z ##[group]Initializing the repository
+2026-10-20T12:34:29.9740245Z [command]/usr/bin/git init /home/runner/work/Applied-Commerce-/Applied-Commerce-
+2026-10-20T12:34:29.9851975Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-20T12:34:29.9854115Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-20T12:34:29.9856102Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-20T12:34:29.9858031Z hint: call:
+2026-10-20T12:34:29.9859164Z hint:
+2026-10-20T12:34:29.9860554Z hint: 	git config --global init.defaultBranch <name>
+2026-10-20T12:34:29.9861953Z hint:
+2026-10-20T12:34:29.9863170Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-20T12:34:29.9864666Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-20T12:34:29.9865549Z hint:
+2026-10-20T12:34:29.9866079Z hint: 	git branch -m <name>
+2026-10-20T12:34:29.9866659Z hint:
+2026-10-20T12:34:29.9867374Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-20T12:34:29.9868759Z Initialized empty Git repository in /home/runner/work/Applied-Commerce-/Applied-Commerce-/.git/
+2026-10-20T12:34:29.9872824Z [command]/usr/bin/git remote add origin https://github.com/PDthePlug/Applied-Commerce-
+2026-10-20T12:34:29.9930305Z ##[endgroup]
+2026-10-20T12:34:29.9931881Z ##[group]Disabling automatic garbage collection
+2026-10-20T12:34:29.9935011Z [command]/usr/bin/git config --local gc.auto 0
+2026-10-20T12:34:29.9993152Z ##[endgroup]
+2026-10-20T12:34:29.9994388Z ##[group]Setting up auth
+2026-10-20T12:34:29.9995142Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-20T12:34:30.0025151Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-20T12:34:30.0512623Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-20T12:34:30.0544102Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-20T12:34:30.0824069Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-20T12:34:30.0863378Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-20T12:34:30.1106161Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-20T12:34:30.1148712Z ##[endgroup]
+2026-10-20T12:34:30.1150537Z ##[group]Fetching the repository
+2026-10-20T12:34:30.1160646Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +c3f19276e83e1f1cd007c93021e60b20a62d1ffd:refs/remotes/pull/41/merge
+2026-10-20T12:34:30.5008301Z From https://github.com/PDthePlug/Applied-Commerce-
+2026-10-20T12:34:30.5010831Z  * [new ref]         c3f19276e83e1f1cd007c93021e60b20a62d1ffd -> pull/41/merge
+2026-10-20T12:34:30.5014995Z ##[endgroup]
+2026-10-20T12:34:30.5016795Z ##[group]Determining the checkout info
+2026-10-20T12:34:30.5018801Z ##[endgroup]
+2026-10-20T12:34:30.5026552Z [command]/usr/bin/git sparse-checkout disable
+2026-10-20T12:34:30.5085451Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-10-20T12:34:30.5130663Z ##[group]Checking out the ref
+2026-10-20T12:34:30.5132178Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/41/merge
+2026-10-20T12:34:30.5604632Z Note: switching to 'refs/remotes/pull/41/merge'.
+2026-10-20T12:34:30.5605574Z
+2026-10-20T12:34:30.5606242Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-10-20T12:34:30.5607722Z changes and commit them, and you can discard any commits you make in this
+2026-10-20T12:34:30.5609194Z state without impacting any branches by switching back to a branch.
+2026-10-20T12:34:30.5610822Z
+2026-10-20T12:34:30.5611521Z If you want to create a new branch to retain commits you create, you may
+2026-10-20T12:34:30.5613048Z do so (now or later) by using -c with the switch command. Example:
+2026-10-20T12:34:30.5614577Z
+2026-10-20T12:34:30.5615170Z   git switch -c <new-branch-name>
+2026-10-20T12:34:30.5615874Z
+2026-10-20T12:34:30.5616326Z Or undo this operation with:
+2026-10-20T12:34:30.5616952Z
+2026-10-20T12:34:30.5617342Z   git switch -
+2026-10-20T12:34:30.5617964Z
+2026-10-20T12:34:30.5618929Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-10-20T12:34:30.5620298Z
+2026-10-20T12:34:30.5621518Z HEAD is now at c3f1927 Merge 0e01cc924c15ef9b49bcd760b954a71b1fd0f204 into 66f56ca4ea56c7b9fd6df4f95ef1203315cf1e6c
+2026-10-20T12:34:30.5624973Z ##[endgroup]
+2026-10-20T12:34:30.5661918Z [command]/usr/bin/git log -1 --format=%H
+2026-10-20T12:34:30.5689475Z c3f19276e83e1f1cd007c93021e60b20a62d1ffd
+2026-10-20T12:34:30.6085460Z ##[group]Run actions/setup-node@v4
+2026-10-20T12:34:30.6086609Z with:
+2026-10-20T12:34:30.6087488Z   node-version: 22
+2026-10-20T12:34:30.6088433Z   always-auth: false
+2026-10-20T12:34:30.6089397Z   check-latest: false
+2026-10-20T12:34:30.6097983Z   token: ***
+2026-10-20T12:34:30.6098889Z ##[endgroup]
+2026-10-20T12:34:30.7552082Z (node:2321) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-20T12:34:30.7554712Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-20T12:34:30.7562063Z Found in cache @ /opt/hostedtoolcache/node/22.23.3/x64
+2026-10-20T12:34:30.7565165Z ##[group]Environment details
+2026-10-20T12:34:31.1459700Z node: v22.23.3
+2026-10-20T12:34:31.1460529Z npm: 10.9.9
+2026-10-20T12:34:31.1460899Z yarn: 1.22.22
+2026-10-20T12:34:31.1461864Z ##[endgroup]
+2026-10-20T12:34:31.1609389Z ##[group]Run npm ci
+2026-10-20T12:34:31.1609963Z [36;1mnpm ci[0m
+2026-10-20T12:34:31.1867811Z shell: /usr/bin/bash -e {0}
+2026-10-20T12:34:31.1868278Z ##[endgroup]
+2026-10-20T12:34:41.4930865Z npm warn deprecated eslint@9.39.4: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+2026-10-20T12:34:48.7545006Z
+2026-10-20T12:34:48.7545714Z added 367 packages, and audited 368 packages in 18s
+2026-10-20T12:34:48.7546070Z
+2026-10-20T12:34:48.7546282Z 145 packages are looking for funding
+2026-10-20T12:34:48.7546787Z   run `npm fund` for details
+2026-10-20T12:34:48.8057299Z
+2026-10-20T12:34:48.8058142Z 5 high severity vulnerabilities
+2026-10-20T12:34:48.8058981Z
+2026-10-20T12:34:48.8059624Z To address all issues (including breaking changes), run:
+2026-10-20T12:34:48.8060645Z   npm audit fix --force
+2026-10-20T12:34:48.8061226Z
+2026-10-20T12:34:48.8061848Z Run `npm audit` for details.
+2026-10-20T12:34:48.8781525Z ##[group]Run actions/setup-python@v5
+2026-10-20T12:34:48.8781852Z with:
+2026-10-20T12:34:48.8782056Z   python-version: 3.12
+2026-10-20T12:34:48.8782311Z   check-latest: false
+2026-10-20T12:34:48.8784700Z   token: ***
+2026-10-20T12:34:48.8784929Z   update-environment: true
+2026-10-20T12:34:48.8785180Z   allow-prereleases: false
+2026-10-20T12:34:48.8785416Z   freethreaded: false
+2026-10-20T12:34:48.8785677Z ##[endgroup]
+2026-10-20T12:34:49.0155345Z ##[group]Installed versions
+2026-10-20T12:34:49.0251164Z (node:2376) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-20T12:34:49.0252664Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-20T12:34:49.0253799Z Successfully set up CPython (3.12.15)
+2026-10-20T12:34:49.0254811Z ##[endgroup]
+2026-10-20T12:34:49.0464988Z ##[group]Run python scripts/test_block_identity.py
+2026-10-20T12:34:49.0465635Z [36;1mpython scripts/test_block_identity.py[0m
+2026-10-20T12:34:49.0555770Z shell: /usr/bin/bash -e {0}
+2026-10-20T12:34:49.0556070Z env:
+2026-10-20T12:34:49.0556360Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T12:34:49.0557134Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-10-20T12:34:49.0557615Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T12:34:49.0558023Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T12:34:49.0558423Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T12:34:49.0558829Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-10-20T12:34:49.0559164Z ##[endgroup]
+2026-10-20T12:34:49.2025853Z ..
+2026-10-20T12:34:49.2026749Z ----------------------------------------------------------------------
+2026-10-20T12:34:49.2027513Z Ran 2 tests in 0.000s
+2026-10-20T12:34:49.2027950Z
+2026-10-20T12:34:49.2028129Z OK
+2026-10-20T12:34:49.2166850Z ##[group]Run npm test
+2026-10-20T12:34:49.2167207Z [36;1mnpm test[0m
+2026-10-20T12:34:49.2233528Z shell: /usr/bin/bash -e {0}
+2026-10-20T12:34:49.2233808Z env:
+2026-10-20T12:34:49.2234118Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T12:34:49.2234626Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-10-20T12:34:49.2235102Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T12:34:49.2235531Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T12:34:49.2235957Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T12:34:49.2236383Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-10-20T12:34:49.2236739Z ##[endgroup]
+2026-10-20T12:34:49.3425697Z
+2026-10-20T12:34:49.3426317Z > applied-commerce-learning-platform@0.1.0 test
+2026-10-20T12:34:49.3427136Z > node --test tests/*.test.mjs
+2026-10-20T12:34:49.3427478Z
+2026-10-20T12:34:49.4011945Z TAP version 13
+2026-10-20T12:34:49.5812134Z # (node:2406) ExperimentalWarning: stripTypeScriptTypes is an experimental feature and might change at any time
+2026-10-20T12:34:49.5885375Z # (Use `node --trace-warnings ...` to show where the warning was created)
+2026-10-20T12:34:49.5900928Z # Subtest: auth callback exchanges the code and uses an allowed internal reset destination
+2026-10-20T12:34:49.5902424Z ok 1 - auth callback exchanges the code and uses an allowed internal reset destination
+2026-10-20T12:34:49.5903211Z   ---
+2026-10-20T12:34:49.5903692Z   duration_ms: 56.447092
+2026-10-20T12:34:49.5904101Z   type: 'test'
+2026-10-20T12:34:49.5904318Z   ...
+2026-10-20T12:34:49.5904665Z # Subtest: auth callback rejects external redirect targets
+2026-10-20T12:34:49.5905528Z ok 2 - auth callback rejects external redirect targets
+2026-10-20T12:34:49.5906036Z   ---
+2026-10-20T12:34:49.5906497Z   duration_ms: 0.55762
+2026-10-20T12:34:49.5907018Z   type: 'test'
+2026-10-20T12:34:49.5907367Z   ...
+2026-10-20T12:34:49.5907844Z # Subtest: expired or absent codes return to account access with a recovery indicator
+2026-10-20T12:34:49.5908939Z ok 3 - expired or absent codes return to account access with a recovery indicator
+2026-10-20T12:34:49.5909739Z   ---
+2026-10-20T12:34:49.5910361Z   duration_ms: 0.802938
+2026-10-20T12:34:49.5910747Z   type: 'test'
+2026-10-20T12:34:49.5911196Z   ...
+2026-10-20T12:34:50.1322063Z # Subtest: a failed catalogue request can recover without a full page reload
+2026-10-20T12:34:50.1371221Z ok 4 - a failed catalogue request can recover without a full page reload
+2026-10-20T12:34:50.1371993Z   ---
+2026-10-20T12:34:50.1401104Z   duration_ms: 28.136373
+2026-10-20T12:34:50.1401574Z   type: 'test'
+2026-10-20T12:34:50.1401933Z   ...
+2026-10-20T12:34:50.1521568Z # Subtest: failed grade bundle requests are evicted while successful catalogue data is retained
+2026-10-20T12:34:50.1538256Z ok 5 - failed grade bundle requests are evicted while successful catalogue data is retained
+2026-10-20T12:34:50.1563670Z   ---
+2026-10-20T12:34:50.1581440Z   duration_ms: 42.33013
+2026-10-20T12:34:50.1591058Z   type: 'test'
+2026-10-20T12:34:50.1621340Z   ...
+2026-10-20T12:34:50.1991375Z # Subtest: curriculum contains Grades 8 through 12
+2026-10-20T12:34:50.2081129Z ok 6 - curriculum contains Grades 8 through 12
+2026-10-20T12:34:50.2159405Z   ---
+2026-10-20T12:34:50.2200687Z   duration_ms: 2.252673
+2026-10-20T12:34:50.2220593Z   type: 'test'
+2026-10-20T12:34:50.2290621Z   ...
+2026-10-20T12:34:50.2370992Z # Subtest: every grade has four source-driven terms
+2026-10-20T12:34:50.2430945Z ok 7 - every grade has four source-driven terms
+2026-10-20T12:34:50.2470631Z   ---
+2026-10-20T12:34:50.2530678Z   duration_ms: 80.345489
+2026-10-20T12:34:50.2590520Z   type: 'test'
+2026-10-20T12:34:50.2620620Z   ...
+2026-10-20T12:34:50.2650867Z # Subtest: index counts match generated grade bundles
+2026-10-20T12:34:50.2680785Z ok 8 - index counts match generated grade bundles
+2026-10-20T12:34:50.2681361Z   ---
+2026-10-20T12:34:50.2731136Z   duration_ms: 69.831924
+2026-10-20T12:34:50.2741290Z   type: 'test'
+2026-10-20T12:34:50.2780786Z   ...
+2026-10-20T12:34:50.2811115Z # Subtest: source lesson structure is preserved with the Grade 9 Term 2 correction
+2026-10-20T12:34:50.2841138Z ok 9 - source lesson structure is preserved with the Grade 9 Term 2 correction
+2026-10-20T12:34:50.2870606Z   ---
+2026-10-20T12:34:50.2906202Z   duration_ms: 11.879079
+2026-10-20T12:34:50.2906715Z   type: 'test'
+2026-10-20T12:34:50.2916202Z   ...
+2026-10-20T12:34:50.2917158Z # Subtest: Grade 9 Term 2 restored lessons retain the supplied source content
+2026-10-20T12:34:50.2918440Z ok 10 - Grade 9 Term 2 restored lessons retain the supplied source content
+2026-10-20T12:34:50.2919233Z   ---
+2026-10-20T12:34:50.2919812Z   duration_ms: 8.010325
+2026-10-20T12:34:50.2920634Z   type: 'test'
+2026-10-20T12:34:50.2921090Z   ...
+2026-10-20T12:34:50.2921910Z # Subtest: representative lesson content retains authored learning blocks
+2026-10-20T12:34:50.2923101Z ok 11 - representative lesson content retains authored learning blocks
+2026-10-20T12:34:50.2923987Z   ---
+2026-10-20T12:34:50.2924441Z   duration_ms: 7.902493
+2026-10-20T12:34:50.2924947Z   type: 'test'
+2026-10-20T12:34:50.2925403Z   ...
+2026-10-20T12:34:50.2926274Z # Subtest: checkpoint books have continuous unique lessons and all Grade 9 exams
+2026-10-20T12:34:50.2927591Z ok 12 - checkpoint books have continuous unique lessons and all Grade 9 exams
+2026-10-20T12:34:50.2928459Z   ---
+2026-10-20T12:34:50.2928976Z   duration_ms: 72.413311
+2026-10-20T12:34:50.2929531Z   type: 'test'
+2026-10-20T12:34:50.2929993Z   ...
+2026-10-20T12:34:50.2931512Z # Subtest: existing lesson and assessment identities survive the source rebuild
+2026-10-20T12:34:50.2932782Z ok 13 - existing lesson and assessment identities survive the source rebuild
+2026-10-20T12:34:50.2933651Z   ---
+2026-10-20T12:34:50.2934162Z   duration_ms: 61.185082
+2026-10-20T12:34:50.2934743Z   type: 'test'
+2026-10-20T12:34:50.2935266Z   ...
+2026-10-20T12:34:50.2936237Z # Subtest: new workshops and clinics contain practical evidence and checkpoint prompts
+2026-10-20T12:34:50.2937634Z ok 14 - new workshops and clinics contain practical evidence and checkpoint prompts
+2026-10-20T12:34:50.2938544Z   ---
+2026-10-20T12:34:50.2939062Z   duration_ms: 27.259269
+2026-10-20T12:34:50.2939620Z   type: 'test'
+2026-10-20T12:34:50.2940591Z   ...
+2026-10-20T12:34:50.2941644Z # Subtest: every compiled mock exam retains both papers and answerable assessment prompts
+2026-10-20T12:34:50.2943139Z ok 15 - every compiled mock exam retains both papers and answerable assessment prompts
+2026-10-20T12:34:50.2944081Z   ---
+2026-10-20T12:34:50.2944570Z   duration_ms: 16.296234
+2026-10-20T12:34:50.2945105Z   type: 'test'
+2026-10-20T12:34:50.2945640Z   ...
+2026-10-20T12:34:50.3288771Z # Subtest: structured backend errors give the correct safe permission and duplicate guidance
+2026-10-20T12:34:50.3317818Z ok 16 - structured backend errors give the correct safe permission and duplicate guidance
+2026-10-20T12:34:50.3340752Z   ---
+2026-10-20T12:34:50.3367686Z   duration_ms: 1.379003
+2026-10-20T12:34:50.3390842Z   type: 'test'
+2026-10-20T12:34:50.3415382Z   ...
+2026-10-20T12:34:50.3441144Z # Subtest: stale review guidance requires reloading instead of retrying the same answer
+2026-10-20T12:34:50.3442740Z ok 17 - stale review guidance requires reloading instead of retrying the same answer
+2026-10-20T12:34:50.3470748Z   ---
+2026-10-20T12:34:50.3473210Z   duration_ms: 0.181548
+2026-10-20T12:34:50.3500736Z   type: 'test'
+2026-10-20T12:34:50.3530647Z   ...
+2026-10-20T12:34:50.3534123Z # Subtest: assignment prerequisites and existing review ownership have actionable guidance
+2026-10-20T12:34:50.3561131Z ok 18 - assignment prerequisites and existing review ownership have actionable guidance
+2026-10-20T12:34:50.3562246Z   ---
+2026-10-20T12:34:50.3621802Z   duration_ms: 0.182791
+2026-10-20T12:34:50.3641981Z   type: 'test'
+2026-10-20T12:34:50.3689065Z   ...
+2026-10-20T12:34:50.3701707Z # Subtest: malformed errors use a safe fallback and structured Auth errors are recognized
+2026-10-20T12:34:50.3731190Z ok 19 - malformed errors use a safe fallback and structured Auth errors are recognized
+2026-10-20T12:34:50.3734362Z   ---
+2026-10-20T12:34:50.3760741Z   duration_ms: 0.32734
+2026-10-20T12:34:50.3778019Z   type: 'test'
+2026-10-20T12:34:50.3800685Z   ...
+2026-10-20T12:34:55.0812251Z # Subtest: baseline learner self-approval and self-grading defects are reproduced safely
+2026-10-20T12:34:55.0871113Z ok 20 - baseline learner self-approval and self-grading defects are reproduced safely
+2026-10-20T12:34:55.0871926Z   ---
+2026-10-20T12:34:55.0872310Z   duration_ms: 3981.514566
+2026-10-20T12:34:55.0872742Z   type: 'test'
+2026-10-20T12:34:55.0873097Z   ...
+2026-10-20T12:34:55.0873786Z # Subtest: all migrations replay and every application table has RLS
+2026-10-20T12:34:55.0874763Z ok 21 - all migrations replay and every application table has RLS
+2026-10-20T12:34:55.0875380Z   ---
+2026-10-20T12:34:55.0875733Z   duration_ms: 2.927852
+2026-10-20T12:34:55.0876153Z   type: 'test'
+2026-10-20T12:34:55.0876537Z   ...
+2026-10-20T12:34:55.0877366Z # Subtest: learners cannot read another learner answer or escalate platform roles
+2026-10-20T12:34:55.0901183Z ok 22 - learners cannot read another learner answer or escalate platform roles
+2026-10-20T12:34:55.0960729Z   ---
+2026-10-20T12:34:55.0961166Z   duration_ms: 14.635033
+2026-10-20T12:34:55.0961616Z   type: 'test'
+2026-10-20T12:34:55.0961978Z   ...
+2026-10-20T12:34:55.0962663Z # Subtest: assigned staff can read answers; unassigned staff cannot
+2026-10-20T12:34:55.0963675Z ok 23 - assigned staff can read answers; unassigned staff cannot
+2026-10-20T12:34:55.0964342Z   ---
+2026-10-20T12:34:55.0964862Z   duration_ms: 15.113205
+2026-10-20T12:34:55.1060874Z   type: 'test'
+2026-10-20T12:34:55.1061919Z   ...
+2026-10-20T12:34:55.1071680Z # Subtest: learner cannot self-approve or self-verify evidence
+2026-10-20T12:34:55.1133481Z ok 24 - learner cannot self-approve or self-verify evidence
+2026-10-20T12:34:55.1160666Z   ---
+2026-10-20T12:34:55.1190773Z   duration_ms: 15.787372
+2026-10-20T12:34:55.1194909Z   type: 'test'
+2026-10-20T12:34:55.1196313Z   ...
+2026-10-20T12:34:55.1197542Z # Subtest: learner cannot self-grade or create reviewed assessment attempts
+2026-10-20T12:34:55.1198900Z ok 25 - learner cannot self-grade or create reviewed assessment attempts
+2026-10-20T12:34:55.1199919Z   ---
+2026-10-20T12:34:55.1201751Z   duration_ms: 18.735843
+2026-10-20T12:34:55.1202425Z   type: 'test'
+2026-10-20T12:34:55.1203024Z   ...
+2026-10-20T12:34:55.1204071Z # Subtest: unauthorized reviewer cannot invoke the atomic review operation
+2026-10-20T12:34:55.1205370Z ok 26 - unauthorized reviewer cannot invoke the atomic review operation
+2026-10-20T12:34:55.1206292Z   ---
+2026-10-20T12:34:55.1206872Z   duration_ms: 6.778877
+2026-10-20T12:34:55.1207514Z   type: 'test'
+2026-10-20T12:34:55.1208088Z   ...
+2026-10-20T12:34:55.1209008Z # Subtest: invalid review fails atomically without creating evidence
+2026-10-20T12:34:55.1210627Z ok 27 - invalid review fails atomically without creating evidence
+2026-10-20T12:34:55.1211568Z   ---
+2026-10-20T12:34:55.1212157Z   duration_ms: 17.039188
+2026-10-20T12:34:55.1212812Z   type: 'test'
+2026-10-20T12:34:55.1213401Z   ...
+2026-10-20T12:34:55.1214482Z # Subtest: revision request reaches the owner, preserves a snapshot, and records history
+2026-10-20T12:34:55.1216488Z ok 28 - revision request reaches the owner, preserves a snapshot, and records history
+2026-10-20T12:34:55.1217442Z   ---
+2026-10-20T12:34:55.1218023Z   duration_ms: 20.552532
+2026-10-20T12:34:55.1218715Z   type: 'test'
+2026-10-20T12:34:55.1219284Z   ...
+2026-10-20T12:34:55.1220389Z # Subtest: a stale review is rejected after learner revision
+2026-10-20T12:34:55.1221513Z ok 29 - a stale review is rejected after learner revision
+2026-10-20T12:34:55.1222348Z   ---
+2026-10-20T12:34:55.1222930Z   duration_ms: 15.105009
+2026-10-20T12:34:55.1223571Z   type: 'test'
+2026-10-20T12:34:55.1224168Z   ...
+2026-10-20T12:34:55.1225454Z # Subtest: review retry is idempotent and approval follows the revised answer
+2026-10-20T12:34:55.1226880Z ok 30 - review retry is idempotent and approval follows the revised answer
+2026-10-20T12:34:55.1227808Z   ---
+2026-10-20T12:34:55.1228390Z   duration_ms: 43.939713
+2026-10-20T12:34:55.1229062Z   type: 'test'
+2026-10-20T12:34:55.1229684Z   ...
+2026-10-20T12:34:55.1231094Z # Subtest: review identity and evidence ownership are immutable
+2026-10-20T12:34:55.1237355Z ok 31 - review identity and evidence ownership are immutable
+2026-10-20T12:34:55.1241558Z   ---
+2026-10-20T12:34:55.1245122Z   duration_ms: 7.964739
+2026-10-20T12:34:55.1254501Z   type: 'test'
+2026-10-20T12:34:55.1255187Z   ...
+2026-10-20T12:34:55.1256172Z # Subtest: invalid rubric scores roll back review and evidence status
+2026-10-20T12:34:55.1257410Z ok 32 - invalid rubric scores roll back review and evidence status
+2026-10-20T12:34:55.1258254Z   ---
+2026-10-20T12:34:55.1258878Z   duration_ms: 12.503497
+2026-10-20T12:34:55.1259553Z   type: 'test'
+2026-10-20T12:34:55.1260346Z   ...
+2026-10-20T12:34:55.1261277Z # Subtest: revoked cohort assignment denies subsequent review access
+2026-10-20T12:34:55.1262559Z ok 33 - revoked cohort assignment denies subsequent review access
+2026-10-20T12:34:55.1263518Z   ---
+2026-10-20T12:34:55.1264121Z   duration_ms: 4.226375
+2026-10-20T12:34:55.1264766Z   type: 'test'
+2026-10-20T12:34:55.1265361Z   ...
+2026-10-20T12:34:55.1266537Z # Subtest: existing review ownership currently blocks an authorized replacement after reassignment
+2026-10-20T12:34:55.1268221Z ok 34 - existing review ownership currently blocks an authorized replacement after reassignment
+2026-10-20T12:34:55.1269303Z   ---
+2026-10-20T12:34:55.1270273Z   duration_ms: 25.741723
+2026-10-20T12:34:55.1303629Z   type: 'test'
+2026-10-20T12:34:55.1330810Z   ...
+2026-10-20T12:34:55.1361040Z # Subtest: account preferences are isolated and constrain supported values
+2026-10-20T12:34:55.1362005Z ok 35 - account preferences are isolated and constrain supported values
+2026-10-20T12:34:55.1420700Z   ---
+2026-10-20T12:34:55.1421393Z   duration_ms: 9.626519
+2026-10-20T12:34:55.1421809Z   type: 'test'
+2026-10-20T12:34:55.1422139Z   ...
+2026-10-20T12:34:55.1422780Z # Subtest: seeded rubric criteria match the existing product contract
+2026-10-20T12:34:55.1423701Z ok 36 - seeded rubric criteria match the existing product contract
+2026-10-20T12:34:55.1424284Z   ---
+2026-10-20T12:34:55.1424618Z   duration_ms: 118.00754
+2026-10-20T12:34:55.1424996Z   type: 'test'
+2026-10-20T12:34:55.1425314Z   ...
+2026-10-20T12:34:55.1426076Z # Subtest: anonymous clients cannot execute review RPC or read private learner data
+2026-10-20T12:34:55.1427183Z ok 37 - anonymous clients cannot execute review RPC or read private learner data
+2026-10-20T12:34:55.1427850Z   ---
+2026-10-20T12:34:55.1428173Z   duration_ms: 3.000207
+2026-10-20T12:34:55.1428537Z   type: 'test'
+2026-10-20T12:34:55.1428852Z   ...
+2026-10-20T12:34:55.1429632Z # Subtest: platform administrator can provision a school while an ordinary learner cannot
+2026-10-20T12:34:55.1431177Z ok 38 - platform administrator can provision a school while an ordinary learner cannot
+2026-10-20T12:34:55.1431896Z   ---
+2026-10-20T12:34:55.1432210Z   duration_ms: 11.959902
+2026-10-20T12:34:55.1432579Z   type: 'test'
+2026-10-20T12:34:55.1432899Z   ...
+2026-10-20T12:34:55.1433605Z # Subtest: competing devices cannot overwrite a saved answer with an old revision
+2026-10-20T12:34:55.1435013Z ok 39 - competing devices cannot overwrite a saved answer with an old revision
+2026-10-20T12:34:55.1435679Z   ---
+2026-10-20T12:34:55.1435998Z   duration_ms: 10.550452
+2026-10-20T12:34:55.1436371Z   type: 'test'
+2026-10-20T12:34:55.1436687Z   ...
+2026-10-20T12:34:55.1437367Z # Subtest: equal value retry is idempotent even with a stale expected revision
+2026-10-20T12:34:55.1481324Z ok 40 - equal value retry is idempotent even with a stale expected revision
+2026-10-20T12:34:55.1490637Z   ---
+2026-10-20T12:34:55.1510789Z   duration_ms: 3.065078
+2026-10-20T12:34:55.1540844Z   type: 'test'
+2026-10-20T12:34:55.1570788Z   ...
+2026-10-20T12:34:55.1601928Z # Subtest: completion reversal and blank note persist with revision checks
+2026-10-20T12:34:55.1631049Z ok 41 - completion reversal and blank note persist with revision checks
+2026-10-20T12:34:55.1660686Z   ---
+2026-10-20T12:34:55.1661333Z   duration_ms: 20.425465
+2026-10-20T12:34:55.1690745Z   type: 'test'
+2026-10-20T12:34:55.1720737Z   ...
+2026-10-20T12:34:55.1721950Z # Subtest: navigation does not conflict with completion and returns its current baseline
+2026-10-20T12:34:55.1781138Z ok 42 - navigation does not conflict with completion and returns its current baseline
+2026-10-20T12:34:55.1840712Z   ---
+2026-10-20T12:34:55.1850977Z   duration_ms: 9.90578
+2026-10-20T12:34:55.1851916Z   type: 'test'
+2026-10-20T12:34:55.1852568Z   ...
+2026-10-20T12:34:55.1853560Z # Subtest: malformed later changes roll back earlier writes in the same batch
+2026-10-20T12:34:55.1854904Z ok 43 - malformed later changes roll back earlier writes in the same batch
+2026-10-20T12:34:55.1855862Z   ---
+2026-10-20T12:34:55.1856531Z   duration_ms: 4.425506
+2026-10-20T12:34:55.1857219Z   type: 'test'
+2026-10-20T12:34:55.1857824Z   ...
+2026-10-20T12:34:55.1858883Z # Subtest: unchanged conflicting fields do not block an unrelated authorized save
+2026-10-20T12:34:55.1860591Z ok 44 - unchanged conflicting fields do not block an unrelated authorized save
+2026-10-20T12:34:55.1861614Z   ---
+2026-10-20T12:34:55.1862188Z   duration_ms: 3.52714
+2026-10-20T12:34:55.1862799Z   type: 'test'
+2026-10-20T12:34:55.1863368Z   ...
+2026-10-20T12:34:55.1893825Z # Subtest: stale clients cannot bypass revision checks or delete saved work
+2026-10-20T12:34:55.1981019Z ok 45 - stale clients cannot bypass revision checks or delete saved work
+2026-10-20T12:34:55.1991039Z   ---
+2026-10-20T12:34:55.1991883Z   duration_ms: 6.26079
+2026-10-20T12:34:55.1992637Z   type: 'test'
+2026-10-20T12:34:55.1993280Z   ...
+2026-10-20T12:34:55.1994220Z # Subtest: invalid, duplicate and oversized batches are rejected
+2026-10-20T12:34:55.1995466Z ok 46 - invalid, duplicate and oversized batches are rejected
+2026-10-20T12:34:55.1996338Z   ---
+2026-10-20T12:34:55.1997007Z   duration_ms: 22.798361
+2026-10-20T12:34:55.1997730Z   type: 'test'
+2026-10-20T12:34:55.1998341Z   ...
+2026-10-20T12:34:55.1999303Z # Subtest: profile updates participate in revision conflict detection
+2026-10-20T12:34:55.2001120Z ok 47 - profile updates participate in revision conflict detection
+2026-10-20T12:34:55.2002767Z   ---
+2026-10-20T12:34:55.2021480Z   duration_ms: 7.418931
+2026-10-20T12:34:55.2022231Z   type: 'test'
+2026-10-20T12:34:55.2050775Z   ...
+2026-10-20T12:34:55.2081146Z # Subtest: save RPC derives ownership from the caller, ignoring supplied learner identifiers
+2026-10-20T12:34:55.2095374Z ok 48 - save RPC derives ownership from the caller, ignoring supplied learner identifiers
+2026-10-20T12:34:55.2110686Z   ---
+2026-10-20T12:34:55.2125659Z   duration_ms: 8.681906
+2026-10-20T12:34:55.2126297Z   type: 'test'
+2026-10-20T12:34:55.2126816Z   ...
+2026-10-20T12:34:55.2127805Z # Subtest: dispatch-time account changes cannot persist a different account snapshot
+2026-10-20T12:34:55.2129176Z ok 49 - dispatch-time account changes cannot persist a different account snapshot
+2026-10-20T12:34:55.2130355Z   ---
+2026-10-20T12:34:55.2130928Z   duration_ms: 5.502004
+2026-10-20T12:34:55.2131508Z   type: 'test'
+2026-10-20T12:34:55.2132567Z   ...
+2026-10-20T12:34:55.2133440Z # Subtest: settings patches preserve unrelated fields from another device
+2026-10-20T12:34:55.2134583Z ok 50 - settings patches preserve unrelated fields from another device
+2026-10-20T12:34:55.2160792Z   ---
+2026-10-20T12:34:55.2190647Z   duration_ms: 9.707029
+2026-10-20T12:34:55.2191403Z   type: 'test'
+2026-10-20T12:34:55.2220733Z   ...
+2026-10-20T12:34:55.2251138Z # Subtest: logged-out JWT claims cannot read private rows or save new work
+2026-10-20T12:34:55.2280983Z ok 51 - logged-out JWT claims cannot read private rows or save new work
+2026-10-20T12:34:55.2281990Z   ---
+2026-10-20T12:34:55.2310738Z   duration_ms: 5.285781
+2026-10-20T12:34:55.2341199Z   type: 'test'
+2026-10-20T12:34:55.2370675Z   ...
+2026-10-20T12:34:55.2371739Z # Subtest: revoked administrator session cannot use privileged provisioning RPCs
+2026-10-20T12:34:55.2401185Z ok 52 - revoked administrator session cannot use privileged provisioning RPCs
+2026-10-20T12:34:55.2420787Z   ---
+2026-10-20T12:34:55.2427645Z   duration_ms: 16.906181
+2026-10-20T12:34:55.2428353Z   type: 'test'
+2026-10-20T12:34:55.2428869Z   ...
+2026-10-20T12:34:55.2429776Z # Subtest: session belongs to its user, and expired sessions deny private access
+2026-10-20T12:34:55.2431495Z ok 53 - session belongs to its user, and expired sessions deny private access
+2026-10-20T12:34:55.2432397Z   ---
+2026-10-20T12:34:55.2432953Z   duration_ms: 7.452673
+2026-10-20T12:34:55.2433555Z   type: 'test'
+2026-10-20T12:34:55.2434106Z   ...
+2026-10-20T12:34:57.2509698Z # Subtest: fresh timestamp-ordered migrations support the account-bound save facade
+2026-10-20T12:34:57.2511134Z ok 54 - fresh timestamp-ordered migrations support the account-bound save facade
+2026-10-20T12:34:57.2511583Z   ---
+2026-10-20T12:34:57.2511797Z   duration_ms: 2178.687662
+2026-10-20T12:34:57.2512047Z   type: 'test'
+2026-10-20T12:34:57.2512241Z   ...
+2026-10-20T12:34:57.3016578Z # Subtest: evidence engine defines the five-year developmental spine
+2026-10-20T12:34:57.3017860Z ok 55 - evidence engine defines the five-year developmental spine
+2026-10-20T12:34:57.3018703Z   ---
+2026-10-20T12:34:57.3019276Z   duration_ms: 1.545012
+2026-10-20T12:34:57.3019844Z   type: 'test'
+2026-10-20T12:34:57.3020536Z   ...
+2026-10-20T12:34:57.3021288Z # Subtest: automatic marking exists but requires an authored answer rule
+2026-10-20T12:34:57.3022388Z ok 56 - automatic marking exists but requires an authored answer rule
+2026-10-20T12:34:57.3023102Z   ---
+2026-10-20T12:34:57.3023557Z   duration_ms: 0.587966
+2026-10-20T12:34:57.3023971Z   type: 'test'
+2026-10-20T12:34:57.3024326Z   ...
+2026-10-20T12:34:57.3025099Z # Subtest: facilitator dashboard is operational and uses real learner records
+2026-10-20T12:34:57.3026297Z ok 57 - facilitator dashboard is operational and uses real learner records
+2026-10-20T12:34:57.3027021Z   ---
+2026-10-20T12:34:57.3027375Z   duration_ms: 2.280214
+2026-10-20T12:34:57.3027787Z   type: 'test'
+2026-10-20T12:34:57.3028144Z   ...
+2026-10-20T12:34:57.3029035Z # Subtest: facilitator model supports class-scale aggregation without seeded learners
+2026-10-20T12:34:57.3030676Z ok 58 - facilitator model supports class-scale aggregation without seeded learners
+2026-10-20T12:34:57.3031458Z   ---
+2026-10-20T12:34:57.3031828Z   duration_ms: 0.271847
+2026-10-20T12:34:57.3032252Z   type: 'test'
+2026-10-20T12:34:57.3032632Z   ...
+2026-10-20T12:34:57.3033463Z # Subtest: backend activation documents the canonical target and safe release boundary
+2026-10-20T12:34:57.3034715Z ok 59 - backend activation documents the canonical target and safe release boundary
+2026-10-20T12:34:57.3035500Z   ---
+2026-10-20T12:34:57.3035890Z   duration_ms: 0.467823
+2026-10-20T12:34:57.3036342Z   type: 'test'
+2026-10-20T12:34:57.3036709Z   ...
+2026-10-20T12:34:57.3037656Z # Subtest: canonical schema baseline contains separate evidence, rubric, review, and report tables
+2026-10-20T12:34:57.3039102Z ok 60 - canonical schema baseline contains separate evidence, rubric, review, and report tables
+2026-10-20T12:34:57.3041801Z   ---
+2026-10-20T12:34:57.3042214Z   duration_ms: 1.094802
+2026-10-20T12:34:57.3042644Z   type: 'test'
+2026-10-20T12:34:57.3042998Z   ...
+2026-10-20T12:34:57.3043838Z # Subtest: a selected non-first learner is retained across every facilitator task route
+2026-10-20T12:34:57.3045173Z ok 61 - a selected non-first learner is retained across every facilitator task route
+2026-10-20T12:34:57.3045941Z   ---
+2026-10-20T12:34:57.3046297Z   duration_ms: 1.875469
+2026-10-20T12:34:57.3046701Z   type: 'test'
+2026-10-20T12:34:57.3047098Z   ...
+2026-10-20T12:34:57.3047873Z # Subtest: unrelated, revoked or missing learner IDs cannot become a selection
+2026-10-20T12:34:57.3049263Z ok 62 - unrelated, revoked or missing learner IDs cannot become a selection
+2026-10-20T12:34:57.3050004Z   ---
+2026-10-20T12:34:57.3050756Z   duration_ms: 0.286528
+2026-10-20T12:34:57.3051172Z   type: 'test'
+2026-10-20T12:34:57.3051530Z   ...
+2026-10-20T12:34:57.3052271Z # Subtest: selection is encoded as one URL value rather than new parameters
+2026-10-20T12:34:57.3053360Z ok 63 - selection is encoded as one URL value rather than new parameters
+2026-10-20T12:34:57.3054037Z   ---
+2026-10-20T12:34:57.3054409Z   duration_ms: 1.005617
+2026-10-20T12:34:57.3054815Z   type: 'test'
+2026-10-20T12:34:57.3055161Z   ...
+2026-10-20T12:34:57.3056167Z # Subtest: assigned facilitator workspace retains all 1,201 authorized learners and bounds every ID filter
+2026-10-20T12:34:57.3057703Z ok 64 - assigned facilitator workspace retains all 1,201 authorized learners and bounds every ID filter
+2026-10-20T12:34:57.3058577Z   ---
+2026-10-20T12:34:57.3058928Z   duration_ms: 172.135156
+2026-10-20T12:34:57.3059337Z   type: 'test'
+2026-10-20T12:34:57.3059695Z   ...
+2026-10-20T12:34:57.3060939Z # Subtest: platform administrator workspace retains all 1,201 authorized learners and bounds every ID filter
+2026-10-20T12:34:57.3062525Z ok 65 - platform administrator workspace retains all 1,201 authorized learners and bounds every ID filter
+2026-10-20T12:34:57.3063458Z   ---
+2026-10-20T12:34:57.3063828Z   duration_ms: 137.9556
+2026-10-20T12:34:57.3064238Z   type: 'test'
+2026-10-20T12:34:57.3064594Z   ...
+2026-10-20T12:34:57.3065661Z # (node:2472) ExperimentalWarning: stripTypeScriptTypes is an experimental feature and might change at any time
+2026-10-20T12:34:57.3066991Z # (Use `node --trace-warnings ...` to show where the warning was created)
+2026-10-20T12:34:57.3068129Z # Subtest: health is read-only, uncached and does not expose keys or upstream bodies
+2026-10-20T12:34:57.3069303Z ok 66 - health is read-only, uncached and does not expose keys or upstream bodies
+2026-10-20T12:34:57.3070275Z   ---
+2026-10-20T12:34:57.3070817Z   duration_ms: 42.668513
+2026-10-20T12:34:57.3071246Z   type: 'test'
+2026-10-20T12:34:57.3071603Z   ...
+2026-10-20T12:34:57.3072694Z # Subtest: institution review coverage includes unreviewed authored evidence, rather than only database review rows
+2026-10-20T12:34:57.3074285Z ok 67 - institution review coverage includes unreviewed authored evidence, rather than only database review rows
+2026-10-20T12:34:57.3075188Z   ---
+2026-10-20T12:34:57.3075529Z   duration_ms: 7.33807
+2026-10-20T12:34:57.3075938Z   type: 'test'
+2026-10-20T12:34:57.3076309Z   ...
+2026-10-20T12:34:57.3077144Z # Subtest: institution reporting no longer counts approvals of revised answers
+2026-10-20T12:34:57.3078300Z ok 68 - institution reporting no longer counts approvals of revised answers
+2026-10-20T12:34:57.3079011Z   ---
+2026-10-20T12:34:57.3079369Z   duration_ms: 1.424453
+2026-10-20T12:34:57.3079778Z   type: 'test'
+2026-10-20T12:34:57.3080395Z   ...
+2026-10-20T12:34:57.3081115Z # Subtest: a saved pending review does not inflate administrator coverage
+2026-10-20T12:34:57.3082168Z ok 69 - a saved pending review does not inflate administrator coverage
+2026-10-20T12:34:57.3082798Z   ---
+2026-10-20T12:34:57.3083134Z   duration_ms: 1.033068
+2026-10-20T12:34:57.3083514Z   type: 'test'
+2026-10-20T12:34:57.3083844Z   ...
+2026-10-20T12:34:57.3084937Z # Subtest: administrator lesson totals exclude assessments and retired IDs while retaining current lessons across grades
+2026-10-20T12:34:57.3086888Z ok 70 - administrator lesson totals exclude assessments and retired IDs while retaining current lessons across grades
+2026-10-20T12:34:57.3087841Z   ---
+2026-10-20T12:34:57.3088188Z   duration_ms: 0.894849
+2026-10-20T12:34:57.3088579Z   type: 'test'
+2026-10-20T12:34:57.3088916Z   ...
+2026-10-20T12:34:57.3089821Z # Subtest: institution loaders cross API row limits and bound profile filters without losing names
+2026-10-20T12:34:57.3091578Z ok 71 - institution loaders cross API row limits and bound profile filters without losing names
+2026-10-20T12:34:57.3092410Z   ---
+2026-10-20T12:34:57.3093138Z   duration_ms: 110.046282
+2026-10-20T12:34:57.3093618Z   type: 'test'
+2026-10-20T12:34:57.3093985Z   ...
+2026-10-20T12:34:57.3094691Z # Subtest: plain-language layer removes recurring authorial jargon
+2026-10-20T12:34:57.3095645Z ok 72 - plain-language layer removes recurring authorial jargon
+2026-10-20T12:34:57.3096279Z   ---
+2026-10-20T12:34:57.3096638Z   duration_ms: 36.580761
+2026-10-20T12:34:57.3097048Z   type: 'test'
+2026-10-20T12:34:57.3097391Z   ...
+2026-10-20T12:34:57.3097979Z # Subtest: internal production notes never reach learners
+2026-10-20T12:34:57.3098792Z ok 73 - internal production notes never reach learners
+2026-10-20T12:34:57.3099358Z   ---
+2026-10-20T12:34:57.3099726Z   duration_ms: 42.634901
+2026-10-20T12:34:57.3100538Z   type: 'test'
+2026-10-20T12:34:57.3100910Z   ...
+2026-10-20T12:34:57.3101558Z # Subtest: digital learner language replaces paper-only framing
+2026-10-20T12:34:57.3102458Z ok 74 - digital learner language replaces paper-only framing
+2026-10-20T12:34:57.3103033Z   ---
+2026-10-20T12:34:57.3103417Z   duration_ms: 24.624836
+2026-10-20T12:34:57.3103826Z   type: 'test'
+2026-10-20T12:34:57.3104176Z   ...
+2026-10-20T12:34:57.3104864Z # Subtest: lesson structure remains unchanged after the language pass
+2026-10-20T12:34:57.3105849Z ok 75 - lesson structure remains unchanged after the language pass
+2026-10-20T12:34:57.3106512Z   ---
+2026-10-20T12:34:57.3106863Z   duration_ms: 2.381749
+2026-10-20T12:34:57.3107277Z   type: 'test'
+2026-10-20T12:34:57.3107630Z   ...
+2026-10-20T12:34:57.3108519Z # Subtest: lesson completion excludes exams and historical or unknown IDs without deleting them
+2026-10-20T12:34:57.3109900Z ok 76 - lesson completion excludes exams and historical or unknown IDs without deleting them
+2026-10-20T12:34:57.3110987Z   ---
+2026-10-20T12:34:57.3111341Z   duration_ms: 2.075896
+2026-10-20T12:34:57.3111724Z   type: 'test'
+2026-10-20T12:34:57.3112063Z   ...
+2026-10-20T12:34:57.3112802Z # Subtest: complete current catalogue reaches exactly 100% and cannot exceed it
+2026-10-20T12:34:57.3113935Z ok 77 - complete current catalogue reaches exactly 100% and cannot exceed it
+2026-10-20T12:34:57.3114631Z   ---
+2026-10-20T12:34:57.3115001Z   duration_ms: 1.773197
+2026-10-20T12:34:57.3115421Z   type: 'test'
+2026-10-20T12:34:57.3115779Z   ...
+2026-10-20T12:34:57.3116715Z # Subtest: catalogue lesson IDs agree with grade and term denominators and ignore blank completion
+2026-10-20T12:34:57.3118148Z ok 78 - catalogue lesson IDs agree with grade and term denominators and ignore blank completion
+2026-10-20T12:34:57.3118988Z   ---
+2026-10-20T12:34:57.3119350Z   duration_ms: 1.106837
+2026-10-20T12:34:57.3119764Z   type: 'test'
+2026-10-20T12:34:57.3120414Z   ...
+2026-10-20T12:34:57.3121231Z # Subtest: idle stale devices adopt server revisions even with a future local clock
+2026-10-20T12:34:57.3122405Z ok 79 - idle stale devices adopt server revisions even with a future local clock
+2026-10-20T12:34:57.3123138Z   ---
+2026-10-20T12:34:57.3123493Z   duration_ms: 1.930672
+2026-10-20T12:34:57.3123902Z   type: 'test'
+2026-10-20T12:34:57.3124278Z   ...
+2026-10-20T12:34:57.3125107Z # Subtest: offline edit and remote edit preserve both values and stop automatic overwrite
+2026-10-20T12:34:57.3126373Z ok 80 - offline edit and remote edit preserve both values and stop automatic overwrite
+2026-10-20T12:34:57.3127446Z   ---
+2026-10-20T12:34:57.3127809Z   duration_ms: 1.030322
+2026-10-20T12:34:57.3128214Z   type: 'test'
+2026-10-20T12:34:57.3128574Z   ...
+2026-10-20T12:34:57.3129465Z # Subtest: legacy local differences require explicit reconciliation instead of timestamp wins
+2026-10-20T12:34:57.3131187Z ok 81 - legacy local differences require explicit reconciliation instead of timestamp wins
+2026-10-20T12:34:57.3132011Z   ---
+2026-10-20T12:34:57.3132377Z   duration_ms: 0.224779
+2026-10-20T12:34:57.3132763Z   type: 'test'
+2026-10-20T12:34:57.3133077Z   ...
+2026-10-20T12:34:57.3133842Z # Subtest: unrelated edits remain independent and unsaved work has expected revision zero
+2026-10-20T12:34:57.3135289Z ok 82 - unrelated edits remain independent and unsaved work has expected revision zero
+2026-10-20T12:34:57.3135979Z   ---
+2026-10-20T12:34:57.3136298Z   duration_ms: 0.358759
+2026-10-20T12:34:57.3136654Z   type: 'test'
+2026-10-20T12:34:57.3136979Z   ...
+2026-10-20T12:34:57.3137648Z # Subtest: acknowledgement preserves typing that occurs during a request
+2026-10-20T12:34:57.3138577Z ok 83 - acknowledgement preserves typing that occurs during a request
+2026-10-20T12:34:57.3139115Z   ---
+2026-10-20T12:34:57.3139414Z   duration_ms: 0.50397
+2026-10-20T12:34:57.3139776Z   type: 'test'
+2026-10-20T12:34:57.3140399Z   ...
+2026-10-20T12:34:57.3141145Z # Subtest: lost-response retry acknowledges equal data without a conflict
+2026-10-20T12:34:57.3142209Z ok 84 - lost-response retry acknowledges equal data without a conflict
+2026-10-20T12:34:57.3142887Z   ---
+2026-10-20T12:34:57.3143243Z   duration_ms: 0.296273
+2026-10-20T12:34:57.3143647Z   type: 'test'
+2026-10-20T12:34:57.3144026Z   ...
+2026-10-20T12:34:57.3145022Z # Subtest: keep local rebases explicitly and retains recovery history
+2026-10-20T12:34:57.3146241Z ok 85 - keep local rebases explicitly and retains recovery history
+2026-10-20T12:34:57.3147209Z   ---
+2026-10-20T12:34:57.3147742Z   duration_ms: 0.678847
+2026-10-20T12:34:57.3148346Z   type: 'test'
+2026-10-20T12:34:57.3149010Z   ...
+2026-10-20T12:34:57.3149918Z # Subtest: use account version preserves a copy of the rejected local edit
+2026-10-20T12:34:57.3151683Z ok 86 - use account version preserves a copy of the rejected local edit
+2026-10-20T12:34:57.3152485Z   ---
+2026-10-20T12:34:57.3152996Z   duration_ms: 0.298237
+2026-10-20T12:34:57.3153697Z   type: 'test'
+2026-10-20T12:34:57.3154213Z   ...
+2026-10-20T12:34:57.3155388Z # Subtest: cleared notes and completion reversal are dirty changes without clock comparisons
+2026-10-20T12:34:57.3156846Z ok 87 - cleared notes and completion reversal are dirty changes without clock comparisons
+2026-10-20T12:34:57.3175567Z   ---
+2026-10-20T12:34:57.3176006Z   duration_ms: 1.089232
+2026-10-20T12:34:57.3176417Z   type: 'test'
+2026-10-20T12:34:57.3176760Z   ...
+2026-10-20T12:34:57.3177518Z # Subtest: repeated reconciliation cannot acknowledge an unresolved local edit
+2026-10-20T12:34:57.3178616Z ok 88 - repeated reconciliation cannot acknowledge an unresolved local edit
+2026-10-20T12:34:57.3179302Z   ---
+2026-10-20T12:34:57.3179649Z   duration_ms: 0.642419
+2026-10-20T12:34:57.3180303Z   type: 'test'
+2026-10-20T12:34:57.3180654Z   ...
+2026-10-20T12:34:57.3181349Z # Subtest: JSONB profile key order cannot create an endless dirty-save loop
+2026-10-20T12:34:57.3182371Z ok 89 - JSONB profile key order cannot create an endless dirty-save loop
+2026-10-20T12:34:57.3183018Z   ---
+2026-10-20T12:34:57.3183354Z   duration_ms: 0.315629
+2026-10-20T12:34:57.3183738Z   type: 'test'
+2026-10-20T12:34:57.3184071Z   ...
+2026-10-20T12:34:57.3184690Z # Subtest: isolated validation accepts a matching public target
+2026-10-20T12:34:57.3185571Z ok 90 - isolated validation accepts a matching public target
+2026-10-20T12:34:57.3186161Z   ---
+2026-10-20T12:34:57.3186509Z   duration_ms: 1.796401
+2026-10-20T12:34:57.3186899Z   type: 'test'
+2026-10-20T12:34:57.3187241Z   ...
+2026-10-20T12:34:57.3188004Z # Subtest: validation rejects production by default, Zimbabwe, and mismatched URL
+2026-10-20T12:34:57.3189151Z ok 91 - validation rejects production by default, Zimbabwe, and mismatched URL
+2026-10-20T12:34:57.3198485Z   ---
+2026-10-20T12:34:57.3198899Z   duration_ms: 2.437217
+2026-10-20T12:34:57.3199300Z   type: 'test'
+2026-10-20T12:34:57.3199647Z   ...
+2026-10-20T12:34:57.3200593Z # Subtest: validation rejects secret and cross-project legacy keys
+2026-10-20T12:34:57.3201529Z ok 92 - validation rejects secret and cross-project legacy keys
+2026-10-20T12:34:57.3202148Z   ---
+2026-10-20T12:34:57.3202373Z   duration_ms: 1.318369
+2026-10-20T12:34:57.3202651Z   type: 'test'
+2026-10-20T12:34:57.3202853Z   ...
+2026-10-20T12:34:57.3203312Z # Subtest: validation rejects URL credentials, query strings and insecure hosted origins
+2026-10-20T12:34:57.3204192Z ok 93 - validation rejects URL credentials, query strings and insecure hosted origins
+2026-10-20T12:34:57.3204618Z   ---
+2026-10-20T12:34:57.3204816Z   duration_ms: 1.266032
+2026-10-20T12:34:57.3205036Z   type: 'test'
+2026-10-20T12:34:57.3205229Z   ...
+2026-10-20T12:34:57.3205718Z # Subtest: hosted target fails closed on wrong project, wrong release or unavailable dependencies
+2026-10-20T12:34:57.3206465Z ok 94 - hosted target fails closed on wrong project, wrong release or unavailable dependencies
+2026-10-20T12:34:57.3206917Z   ---
+2026-10-20T12:34:57.3207114Z   duration_ms: 51.416582
+2026-10-20T12:34:57.3207345Z   type: 'test'
+2026-10-20T12:34:57.3207535Z   ...
+2026-10-20T12:34:57.3207967Z # Subtest: private fixture manifests require six distinct accounts in the same project
+2026-10-20T12:34:57.3208622Z ok 95 - private fixture manifests require six distinct accounts in the same project
+2026-10-20T12:34:57.3209026Z   ---
+2026-10-20T12:34:57.3209217Z   duration_ms: 9.111068
+2026-10-20T12:34:57.3209439Z   type: 'test'
+2026-10-20T12:34:57.3209626Z   ...
+2026-10-20T12:34:57.3210450Z # Subtest: reporting sessions require five distinct dedicated identities and reject real email accounts
+2026-10-20T12:34:57.3211269Z ok 96 - reporting sessions require five distinct dedicated identities and reject real email accounts
+2026-10-20T12:34:57.3211761Z   ---
+2026-10-20T12:34:57.3211980Z   duration_ms: 5.416199
+2026-10-20T12:34:57.3212223Z   type: 'test'
+2026-10-20T12:34:57.3212427Z   ...
+2026-10-20T12:34:57.3212867Z # Subtest: completion reversal survives reconciliation with older remote completion
+2026-10-20T12:34:57.3213550Z ok 97 - completion reversal survives reconciliation with older remote completion
+2026-10-20T12:34:57.3213967Z   ---
+2026-10-20T12:34:57.3214176Z   duration_ms: 1.820186
+2026-10-20T12:34:57.3214421Z   type: 'test'
+2026-10-20T12:34:57.3214617Z   ...
+2026-10-20T12:34:57.3215039Z # Subtest: newer remote completion takes precedence over older local reversal
+2026-10-20T12:34:57.3215697Z ok 98 - newer remote completion takes precedence over older local reversal
+2026-10-20T12:34:57.3216101Z   ---
+2026-10-20T12:34:57.3216311Z   duration_ms: 0.338231
+2026-10-20T12:34:57.3216530Z   type: 'test'
+2026-10-20T12:34:57.3216742Z   ...
+2026-10-20T12:34:57.3217109Z # Subtest: cleared note with a newer timestamp stays cleared
+2026-10-20T12:34:57.3217626Z ok 99 - cleared note with a newer timestamp stays cleared
+2026-10-20T12:34:57.3217976Z   ---
+2026-10-20T12:34:57.3218169Z   duration_ms: 0.277678
+2026-10-20T12:34:57.3218402Z   type: 'test'
+2026-10-20T12:34:57.3218615Z   ...
+2026-10-20T12:34:57.3219071Z # Subtest: paginated reads return more than the default server result cap
+2026-10-20T12:34:57.3219665Z ok 100 - paginated reads return more than the default server result cap
+2026-10-20T12:34:57.3220378Z   ---
+2026-10-20T12:34:57.3220663Z   duration_ms: 0.62758
+2026-10-20T12:34:57.3220914Z   type: 'test'
+2026-10-20T12:34:57.3221127Z   ...
+2026-10-20T12:34:57.3221630Z # Subtest: pagination failures reject the entire read rather than returning partial success
+2026-10-20T12:34:57.3222384Z ok 101 - pagination failures reject the entire read rather than returning partial success
+2026-10-20T12:34:57.3222852Z   ---
+2026-10-20T12:34:57.3223060Z   duration_ms: 0.826823
+2026-10-20T12:34:57.3223297Z   type: 'test'
+2026-10-20T12:34:57.3223688Z   ...
+2026-10-20T12:34:57.3224115Z # Subtest: approval is tied to the reviewed answer, including after revision
+2026-10-20T12:34:57.3224739Z ok 102 - approval is tied to the reviewed answer, including after revision
+2026-10-20T12:34:57.3225114Z   ---
+2026-10-20T12:34:57.3225301Z   duration_ms: 1.073964
+2026-10-20T12:34:57.3225512Z   type: 'test'
+2026-10-20T12:34:57.3225693Z   ...
+2026-10-20T12:34:57.3226162Z # Subtest: ID-filtered reads bound URLs, paginate each batch and avoid duplicate IDs
+2026-10-20T12:34:57.3226810Z ok 103 - ID-filtered reads bound URLs, paginate each batch and avoid duplicate IDs
+2026-10-20T12:34:57.3227223Z   ---
+2026-10-20T12:34:57.3227410Z   duration_ms: 13.354194
+2026-10-20T12:34:57.3227778Z   type: 'test'
+2026-10-20T12:34:57.3228179Z   ...
+2026-10-20T12:34:57.3229176Z # Subtest: empty ID filters make no request and a failed later batch cannot return partial success
+2026-10-20T12:34:57.3230644Z ok 104 - empty ID filters make no request and a failed later batch cannot return partial success
+2026-10-20T12:34:57.3231137Z   ---
+2026-10-20T12:34:57.3231329Z   duration_ms: 0.570214
+2026-10-20T12:34:57.3231544Z   type: 'test'
+2026-10-20T12:34:57.3231729Z   ...
+2026-10-20T12:34:57.3232128Z # Subtest: archived platform-admin migration preserves disabled account state
+2026-10-20T12:34:57.3232727Z ok 105 - archived platform-admin migration preserves disabled account state
+2026-10-20T12:34:57.3233102Z   ---
+2026-10-20T12:34:57.3233288Z   duration_ms: 5.760287
+2026-10-20T12:34:57.3233503Z   type: 'test'
+2026-10-20T12:34:57.3233687Z   ...
+2026-10-20T12:34:57.3234152Z # Subtest: archived platform-admin migration retains the fail-closed role-conflict preflight
+2026-10-20T12:34:57.3234878Z ok 106 - archived platform-admin migration retains the fail-closed role-conflict preflight
+2026-10-20T12:34:57.3235306Z   ---
+2026-10-20T12:34:57.3235494Z   duration_ms: 2.039184
+2026-10-20T12:34:57.3235710Z   type: 'test'
+2026-10-20T12:34:57.3235899Z   ...
+2026-10-20T12:34:57.3236324Z # Subtest: canonical platform-admin registry has RLS and client-deny defense in depth
+2026-10-20T12:34:57.3236994Z ok 107 - canonical platform-admin registry has RLS and client-deny defense in depth
+2026-10-20T12:34:57.3237393Z   ---
+2026-10-20T12:34:57.3237579Z   duration_ms: 4.372206
+2026-10-20T12:34:57.3237791Z   type: 'test'
+2026-10-20T12:34:57.3237976Z   ...
+2026-10-20T12:34:57.3238388Z # Subtest: missing evidence is explicitly insufficient and never claims competency
+2026-10-20T12:34:57.3239010Z ok 108 - missing evidence is explicitly insufficient and never claims competency
+2026-10-20T12:34:57.3239395Z   ---
+2026-10-20T12:34:57.3239584Z   duration_ms: 1.721582
+2026-10-20T12:34:57.3239798Z   type: 'test'
+2026-10-20T12:34:57.3240256Z   ...
+2026-10-20T12:34:57.3240778Z # Subtest: one unreviewed response is evidence of participation, not competence or transfer
+2026-10-20T12:34:57.3241473Z ok 109 - one unreviewed response is evidence of participation, not competence or transfer
+2026-10-20T12:34:57.3241893Z   ---
+2026-10-20T12:34:57.3242088Z   duration_ms: 0.367276
+2026-10-20T12:34:57.3242300Z   type: 'test'
+2026-10-20T12:34:57.3242482Z   ...
+2026-10-20T12:34:57.3243052Z # Subtest: real staging-shaped case: nine saved responses across four contexts remain unconfirmed when none are reviewed
+2026-10-20T12:34:57.3243972Z ok 110 - real staging-shaped case: nine saved responses across four contexts remain unconfirmed when none are reviewed
+2026-10-20T12:34:57.3244520Z   ---
+2026-10-20T12:34:57.3244703Z   duration_ms: 0.500745
+2026-10-20T12:34:57.3244917Z   type: 'test'
+2026-10-20T12:34:57.3245102Z   ...
+2026-10-20T12:34:57.3245522Z # Subtest: accepted evidence in two contexts supports cautious progression and transfer
+2026-10-20T12:34:57.3246197Z ok 111 - accepted evidence in two contexts supports cautious progression and transfer
+2026-10-20T12:34:57.3246592Z   ---
+2026-10-20T12:34:57.3246778Z   duration_ms: 0.306802
+2026-10-20T12:34:57.3246992Z   type: 'test'
+2026-10-20T12:34:57.3247183Z   ...
+2026-10-20T12:34:57.3247585Z # Subtest: growth requires dated accepted observations in the same evidence domain
+2026-10-20T12:34:57.3248373Z ok 112 - growth requires dated accepted observations in the same evidence domain
+2026-10-20T12:34:57.3248750Z   ---
+2026-10-20T12:34:57.3248934Z   duration_ms: 8.607849
+2026-10-20T12:34:57.3249144Z   type: 'test'
+2026-10-20T12:34:57.3249338Z   ...
+2026-10-20T12:34:57.3249813Z # Subtest: revision feedback and facilitator guidance take precedence over generic pathways
+2026-10-20T12:34:57.3250812Z ok 113 - revision feedback and facilitator guidance take precedence over generic pathways
+2026-10-20T12:34:57.3251231Z   ---
+2026-10-20T12:34:57.3251416Z   duration_ms: 0.248834
+2026-10-20T12:34:57.3251657Z   type: 'test'
+2026-10-20T12:34:57.3251988Z   ...
+2026-10-20T12:34:57.3252580Z # (node:2545) ExperimentalWarning: stripTypeScriptTypes is an experimental feature and might change at any time
+2026-10-20T12:34:57.3253280Z # (Use `node --trace-warnings ...` to show where the warning was created)
+2026-10-20T12:34:57.3253796Z # Subtest: signed-out preference reads and writes are denied
+2026-10-20T12:34:57.3254272Z ok 114 - signed-out preference reads and writes are denied
+2026-10-20T12:34:57.3254694Z   ---
+2026-10-20T12:34:57.3255013Z   duration_ms: 47.2353
+2026-10-20T12:34:57.3255353Z   type: 'test'
+2026-10-20T12:34:57.3255669Z   ...
+2026-10-20T12:34:57.3256339Z # Subtest: preference reads return safe defaults and private cache headers
+2026-10-20T12:34:57.3257362Z ok 115 - preference reads return safe defaults and private cache headers
+2026-10-20T12:34:57.3258018Z   ---
+2026-10-20T12:34:57.3258385Z   duration_ms: 2.807517
+2026-10-20T12:34:57.3258802Z   type: 'test'
+2026-10-20T12:34:57.3259143Z   ...
+2026-10-20T12:34:57.3259975Z # Subtest: updates validate preference values and only write the authenticated account
+2026-10-20T12:34:57.3261583Z ok 116 - updates validate preference values and only write the authenticated account
+2026-10-20T12:34:57.3262324Z   ---
+2026-10-20T12:34:57.3262660Z   duration_ms: 6.520544
+2026-10-20T12:34:57.3263050Z   type: 'test'
+2026-10-20T12:34:57.3263386Z   ...
+2026-10-20T12:34:57.3264172Z # Subtest: storage failures return private service errors rather than claiming success
+2026-10-20T12:34:57.3265381Z ok 117 - storage failures return private service errors rather than claiming success
+2026-10-20T12:34:57.3266140Z   ---
+2026-10-20T12:34:57.3266496Z   duration_ms: 0.476218
+2026-10-20T12:34:57.3266959Z   type: 'test'
+2026-10-20T12:34:57.3267301Z   ...
+2026-10-20T12:34:57.3267843Z # Subtest: cross-origin settings writes are rejected
+2026-10-20T12:34:57.3268573Z ok 118 - cross-origin settings writes are rejected
+2026-10-20T12:34:57.3269118Z   ---
+2026-10-20T12:34:57.3269470Z   duration_ms: 0.534658
+2026-10-20T12:34:57.3269870Z   type: 'test'
+2026-10-20T12:34:57.3270518Z   ...
+2026-10-20T12:34:57.3271163Z # Subtest: revoked sessions cannot load defaults or save settings
+2026-10-20T12:34:57.3272070Z ok 119 - revoked sessions cannot load defaults or save settings
+2026-10-20T12:34:57.3272674Z   ---
+2026-10-20T12:34:57.3273018Z   duration_ms: 0.466441
+2026-10-20T12:34:57.3273389Z   type: 'test'
+2026-10-20T12:34:57.3273704Z   ...
+2026-10-20T12:34:57.3274382Z # Subtest: profile omits evidence, notes and recent activity sections
+2026-10-20T12:34:57.3275374Z ok 120 - profile omits evidence, notes and recent activity sections
+2026-10-20T12:34:57.3276027Z   ---
+2026-10-20T12:34:57.3276381Z   duration_ms: 1.671569
+2026-10-20T12:34:57.3276784Z   type: 'test'
+2026-10-20T12:34:57.3277134Z   ...
+2026-10-20T12:34:57.3277931Z # Subtest: learner home keeps the learning action without a duplicate portfolio card
+2026-10-20T12:34:57.3279034Z ok 121 - learner home keeps the learning action without a duplicate portfolio card
+2026-10-20T12:34:57.3279730Z   ---
+2026-10-20T12:34:57.3280358Z   duration_ms: 0.468905
+2026-10-20T12:34:57.3280748Z   type: 'test'
+2026-10-20T12:34:57.3281078Z   ...
+2026-10-20T12:34:57.3281920Z # Subtest: runtime curriculum bypasses stale HTTP files and supplies identities to answer fields
+2026-10-20T12:34:57.3283392Z ok 122 - runtime curriculum bypasses stale HTTP files and supplies identities to answer fields
+2026-10-20T12:34:57.3284094Z   ---
+2026-10-20T12:34:57.3284389Z   duration_ms: 220.128763
+2026-10-20T12:34:57.3284744Z   type: 'test'
+2026-10-20T12:34:57.3285132Z   ...
+2026-10-20T12:34:57.3285991Z # Subtest: saved answer survives insertion and reordering without populating a different task
+2026-10-20T12:34:57.3287399Z ok 123 - saved answer survives insertion and reordering without populating a different task
+2026-10-20T12:34:57.3288055Z   ---
+2026-10-20T12:34:57.3288256Z   duration_ms: 1.775533
+2026-10-20T12:34:57.3288498Z   type: 'test'
+2026-10-20T12:34:57.3288732Z   ...
+2026-10-20T12:34:57.3289544Z # Subtest: legacy migration preserves answers, notes, completion and profile without guessing questions
+2026-10-20T12:34:57.3290735Z ok 124 - legacy migration preserves answers, notes, completion and profile without guessing questions
+2026-10-20T12:34:57.3291411Z   ---
+2026-10-20T12:34:57.3291717Z   duration_ms: 1.249851
+2026-10-20T12:34:57.3292070Z   type: 'test'
+2026-10-20T12:34:57.3292356Z   ...
+2026-10-20T12:34:57.3293128Z # Subtest: answered activity reaches its portfolio with the same saved value after reopening
+2026-10-20T12:34:57.3294054Z ok 125 - answered activity reaches its portfolio with the same saved value after reopening
+2026-10-20T12:34:57.3294496Z   ---
+2026-10-20T12:34:57.3294846Z   duration_ms: 2.199193
+2026-10-20T12:34:57.3295198Z   type: 'test'
+2026-10-20T12:34:57.3295479Z   ...
+2026-10-20T12:34:57.3295870Z # Subtest: foreign lesson keys and missing task identities cannot be saved
+2026-10-20T12:34:57.3296432Z ok 126 - foreign lesson keys and missing task identities cannot be saved
+2026-10-20T12:34:57.3296801Z   ---
+2026-10-20T12:34:57.3296990Z   duration_ms: 0.325948
+2026-10-20T12:34:57.3297207Z   type: 'test'
+2026-10-20T12:34:57.3297393Z   ...
+2026-10-20T12:34:57.3297931Z # Subtest: learner merge prefers the newest known answer and keeps older remote evidence out of the active record
+2026-10-20T12:34:57.3298788Z ok 127 - learner merge prefers the newest known answer and keeps older remote evidence out of the active record
+2026-10-20T12:34:57.3299267Z   ---
+2026-10-20T12:34:57.3299455Z   duration_ms: 1.773579
+2026-10-20T12:34:57.3299663Z   type: 'test'
+2026-10-20T12:34:57.3299847Z   ...
+2026-10-20T12:34:57.3300719Z # Subtest: learner merge uses remote when it is newer and never lets an older timestamp overwrite it
+2026-10-20T12:34:57.3301841Z ok 128 - learner merge uses remote when it is newer and never lets an older timestamp overwrite it
+2026-10-20T12:34:57.3302286Z   ---
+2026-10-20T12:34:57.3302479Z   duration_ms: 0.394235
+2026-10-20T12:34:57.3302693Z   type: 'test'
+2026-10-20T12:34:57.3302877Z   ...
+2026-10-20T12:34:57.3303302Z # Subtest: legacy local values without timestamps remain available during migration
+2026-10-20T12:34:57.3303930Z ok 129 - legacy local values without timestamps remain available during migration
+2026-10-20T12:34:57.3304317Z   ---
+2026-10-20T12:34:57.3304505Z   duration_ms: 0.378716
+2026-10-20T12:34:57.3304726Z   type: 'test'
+2026-10-20T12:34:57.3304909Z   ...
+2026-10-20T12:34:57.3305408Z # Subtest: pending decisions remain in workload and do not count as completed reviews or rubric results
+2026-10-20T12:34:57.3306177Z ok 130 - pending decisions remain in workload and do not count as completed reviews or rubric results
+2026-10-20T12:34:57.3306631Z   ---
+2026-10-20T12:34:57.3306816Z   duration_ms: 5.060481
+2026-10-20T12:34:57.3307035Z   type: 'test'
+2026-10-20T12:34:57.3307222Z   ...
+2026-10-20T12:34:57.3307685Z # Subtest: saved pending rubric and verification decisions remain in their respective queues
+2026-10-20T12:34:57.3308380Z ok 131 - saved pending rubric and verification decisions remain in their respective queues
+2026-10-20T12:34:57.3308845Z   ---
+2026-10-20T12:34:57.3309035Z   duration_ms: 0.811604
+2026-10-20T12:34:57.3309250Z   type: 'test'
+2026-10-20T12:34:57.3309432Z   ...
+2026-10-20T12:34:57.3309843Z # Subtest: a decision tied to an earlier answer cannot count as current review coverage
+2026-10-20T12:34:57.3311045Z ok 132 - a decision tied to an earlier answer cannot count as current review coverage
+2026-10-20T12:34:57.3311447Z   ---
+2026-10-20T12:34:57.3311643Z   duration_ms: 0.396329
+2026-10-20T12:34:57.3311862Z   type: 'test'
+2026-10-20T12:34:57.3312054Z   ...
+2026-10-20T12:34:57.3312572Z # Subtest: authorized roster summaries keep distinct real learner IDs rather than the local placeholder
+2026-10-20T12:34:57.3313368Z ok 133 - authorized roster summaries keep distinct real learner IDs rather than the local placeholder
+2026-10-20T12:34:57.3313832Z   ---
+2026-10-20T12:34:57.3314019Z   duration_ms: 0.398674
+2026-10-20T12:34:57.3314238Z   type: 'test'
+2026-10-20T12:34:57.3314559Z   ...
+2026-10-20T12:34:57.3315985Z # Subtest: mixed-grade roster progress uses each learner’s current grade and excludes exams and retired IDs
+2026-10-20T12:34:57.3317468Z ok 134 - mixed-grade roster progress uses each learner’s current grade and excludes exams and retired IDs
+2026-10-20T12:34:57.3318350Z   ---
+2026-10-20T12:34:57.3318689Z   duration_ms: 1.024682
+2026-10-20T12:34:57.3319102Z   type: 'test'
+2026-10-20T12:34:57.3319468Z   ...
+2026-10-20T12:34:57.3320504Z # Subtest: runtime release manifest is explicit and does not claim source fingerprinting
+2026-10-20T12:34:57.3321771Z ok 135 - runtime release manifest is explicit and does not claim source fingerprinting
+2026-10-20T12:34:57.3322521Z   ---
+2026-10-20T12:34:57.3322888Z   duration_ms: 1.086688
+2026-10-20T12:34:57.3323281Z   type: 'test'
+2026-10-20T12:34:57.3323619Z   ...
+2026-10-20T12:34:57.3324414Z # Subtest: all 395 lessons and four assessments have complete, immutable semantic coverage
+2026-10-20T12:34:57.3325680Z ok 136 - all 395 lessons and four assessments have complete, immutable semantic coverage
+2026-10-20T12:34:57.3326410Z   ---
+2026-10-20T12:34:57.3326742Z   duration_ms: 73.633811
+2026-10-20T12:34:57.3327121Z   type: 'test'
+2026-10-20T12:34:57.3327325Z   ...
+2026-10-20T12:34:57.3327786Z # Subtest: ranking needs an explicit instruction, and ordinary choices keep their meaning
+2026-10-20T12:34:57.3328470Z ok 137 - ranking needs an explicit instruction, and ordinary choices keep their meaning
+2026-10-20T12:34:57.3328876Z   ---
+2026-10-20T12:34:57.3329076Z   duration_ms: 0.904367
+2026-10-20T12:34:57.3329344Z   type: 'test'
+2026-10-20T12:34:57.3329539Z   ...
+2026-10-20T12:34:57.3329955Z # Subtest: source scales are bounded and numeric blanks retain their authored units
+2026-10-20T12:34:57.3330980Z ok 138 - source scales are bounded and numeric blanks retain their authored units
+2026-10-20T12:34:57.3331378Z   ---
+2026-10-20T12:34:57.3331666Z   duration_ms: 0.418761
+2026-10-20T12:34:57.3331943Z   type: 'test'
+2026-10-20T12:34:57.3332135Z   ...
+2026-10-20T12:34:57.3332593Z # Subtest: Grade 9 values selection derives options and narrowing from the authored tasks
+2026-10-20T12:34:57.3333257Z ok 139 - Grade 9 values selection derives options and narrowing from the authored tasks
+2026-10-20T12:34:57.3333674Z   ---
+2026-10-20T12:34:57.3333872Z   duration_ms: 0.914346
+2026-10-20T12:34:57.3334093Z   type: 'test'
+2026-10-20T12:34:57.3334283Z   ...
+2026-10-20T12:34:57.3334947Z # Subtest: OR does not drop checkpoint context and equations stay instructional
+2026-10-20T12:34:57.3335999Z ok 140 - OR does not drop checkpoint context and equations stay instructional
+2026-10-20T12:34:57.3336631Z   ---
+2026-10-20T12:34:57.3336954Z   duration_ms: 0.238425
+2026-10-20T12:34:57.3337274Z   type: 'test'
+2026-10-20T12:34:57.3337477Z   ...
+2026-10-20T12:34:57.3337934Z # Subtest: native controls reuse stable answer slots across reopening and source insertion
+2026-10-20T12:34:57.3338615Z ok 141 - native controls reuse stable answer slots across reopening and source insertion
+2026-10-20T12:34:57.3339052Z   ---
+2026-10-20T12:34:57.3339250Z   duration_ms: 0.720695
+2026-10-20T12:34:57.3339472Z   type: 'test'
+2026-10-20T12:34:57.3339666Z   ...
+2026-10-20T12:34:57.3340511Z # Subtest: audit distinguishes cancelled speculative prefetches from failed navigation and data
+2026-10-20T12:34:57.3341485Z ok 142 - audit distinguishes cancelled speculative prefetches from failed navigation and data
+2026-10-20T12:34:57.3341932Z   ---
+2026-10-20T12:34:57.3342125Z   duration_ms: 1.584286
+2026-10-20T12:34:57.3342341Z   type: 'test'
+2026-10-20T12:34:57.3342535Z   ...
+2026-10-20T12:34:57.3342898Z # Subtest: shared learner presentation system is wired into lessons
+2026-10-20T12:34:57.3343417Z ok 143 - shared learner presentation system is wired into lessons
+2026-10-20T12:34:57.3343769Z   ---
+2026-10-20T12:34:57.3343969Z   duration_ms: 2.807628
+2026-10-20T12:34:57.3344192Z   type: 'test'
+2026-10-20T12:34:57.3344388Z   ...
+2026-10-20T12:34:57.3344702Z # Subtest: profile is part of the learner shell
+2026-10-20T12:34:57.3345201Z ok 144 - profile is part of the learner shell
+2026-10-20T12:34:57.3345494Z   ---
+2026-10-20T12:34:57.3345684Z   duration_ms: 0.445992
+2026-10-20T12:34:57.3345901Z   type: 'test'
+2026-10-20T12:34:57.3346091Z   ...
+2026-10-20T12:34:57.3346464Z # Subtest: book-era platform language does not leak into product chrome
+2026-10-20T12:34:57.3347012Z ok 145 - book-era platform language does not leak into product chrome
+2026-10-20T12:34:57.3347362Z   ---
+2026-10-20T12:34:57.3347550Z   duration_ms: 0.967856
+2026-10-20T12:34:57.3347771Z   type: 'test'
+2026-10-20T12:34:57.3347959Z   ...
+2026-10-20T12:34:57.3348347Z # Subtest: known screenshot regressions remain covered by interaction rules
+2026-10-20T12:34:57.3348918Z ok 146 - known screenshot regressions remain covered by interaction rules
+2026-10-20T12:34:57.3349290Z   ---
+2026-10-20T12:34:57.3349479Z   duration_ms: 0.531101
+2026-10-20T12:34:57.3349694Z   type: 'test'
+2026-10-20T12:34:57.3349885Z   ...
+2026-10-20T12:34:57.3350758Z # Subtest: center menu keeps five learner destinations and accessible dialog behavior
+2026-10-20T12:34:57.3351422Z ok 147 - center menu keeps five learner destinations and accessible dialog behavior
+2026-10-20T12:34:57.3351838Z   ---
+2026-10-20T12:34:57.3352034Z   duration_ms: 0.430663
+2026-10-20T12:34:57.3352261Z   type: 'test'
+2026-10-20T12:34:57.3352453Z   ...
+2026-10-20T12:34:57.3352867Z # Subtest: home is a learner welcome dashboard, not a duplicated curriculum index
+2026-10-20T12:34:57.3353491Z ok 148 - home is a learner welcome dashboard, not a duplicated curriculum index
+2026-10-20T12:34:57.3353875Z   ---
+2026-10-20T12:34:57.3354066Z   duration_ms: 0.291112
+2026-10-20T12:34:57.3354285Z   type: 'test'
+2026-10-20T12:34:57.3354475Z   ...
+2026-10-20T12:34:57.3354898Z # Subtest: thinking equation notices do not promote ordinary narrative into banners
+2026-10-20T12:34:57.3355521Z ok 149 - thinking equation notices do not promote ordinary narrative into banners
+2026-10-20T12:34:57.3355913Z   ---
+2026-10-20T12:34:57.3356112Z   duration_ms: 0.672294
+2026-10-20T12:34:57.3356333Z   type: 'test'
+2026-10-20T12:34:57.3356530Z   ...
+2026-10-20T12:34:57.3356922Z # Subtest: home adopts BIS Today hierarchy without a giant enclosing hero card
+2026-10-20T12:34:57.3357503Z ok 150 - home adopts BIS Today hierarchy without a giant enclosing hero card
+2026-10-20T12:34:57.3357887Z   ---
+2026-10-20T12:34:57.3358073Z   duration_ms: 0.334534
+2026-10-20T12:34:57.3358295Z   type: 'test'
+2026-10-20T12:34:57.3358487Z   ...
+2026-10-20T12:34:57.3358823Z # Subtest: formal assessment units render real response controls
+2026-10-20T12:34:57.3359312Z ok 151 - formal assessment units render real response controls
+2026-10-20T12:34:57.3359639Z   ---
+2026-10-20T12:34:57.3359829Z   duration_ms: 0.845647
+2026-10-20T12:34:57.3360289Z   type: 'test'
+2026-10-20T12:34:57.3360495Z   ...
+2026-10-20T12:34:57.3360964Z # Subtest: compact facilitator navigation uses the centered menu instead of a horizontal rail
+2026-10-20T12:34:57.3361683Z ok 152 - compact facilitator navigation uses the centered menu instead of a horizontal rail
+2026-10-20T12:34:57.3362120Z   ---
+2026-10-20T12:34:57.3362312Z   duration_ms: 0.923272
+2026-10-20T12:34:57.3362529Z   type: 'test'
+2026-10-20T12:34:57.3362718Z   ...
+2026-10-20T12:34:57.3363179Z # Subtest: presentation architecture v2 preserves semantic hierarchy and mobile table meaning
+2026-10-20T12:34:57.3364053Z ok 153 - presentation architecture v2 preserves semantic hierarchy and mobile table meaning
+2026-10-20T12:34:57.3364483Z   ---
+2026-10-20T12:34:57.3364677Z   duration_ms: 0.694295
+2026-10-20T12:34:57.3364900Z   type: 'test'
+2026-10-20T12:34:57.3365093Z   ...
+2026-10-20T12:34:57.3365502Z # Subtest: account creation confirms password and keeps role assignment separate
+2026-10-20T12:34:57.3366125Z ok 154 - account creation confirms password and keeps role assignment separate
+2026-10-20T12:34:57.3366508Z   ---
+2026-10-20T12:34:57.3366702Z   duration_ms: 0.280504
+2026-10-20T12:34:57.3366921Z   type: 'test'
+2026-10-20T12:34:57.3367111Z   ...
+2026-10-20T12:34:57.3367702Z # Subtest: account access keeps Applied Commerce identity without an explanatory panel
+2026-10-20T12:34:57.3368368Z ok 155 - account access keeps Applied Commerce identity without an explanatory panel
+2026-10-20T12:34:57.3368769Z   ---
+2026-10-20T12:34:57.3368957Z   duration_ms: 0.279211
+2026-10-20T12:34:57.3369179Z   type: 'test'
+2026-10-20T12:34:57.3369365Z   ...
+2026-10-20T12:34:57.3369699Z # Subtest: primary navigation keeps only one staff sign-in link
+2026-10-20T12:34:57.3370553Z ok 156 - primary navigation keeps only one staff sign-in link
+2026-10-20T12:34:57.3370899Z   ---
+2026-10-20T12:34:57.3371100Z   duration_ms: 0.246901
+2026-10-20T12:34:57.3371319Z   type: 'test'
+2026-10-20T12:34:57.3371509Z   ...
+2026-10-20T12:34:57.3371945Z # Subtest: legacy auth profile repair is additive and does not assign application roles
+2026-10-20T12:34:57.3372624Z ok 157 - legacy auth profile repair is additive and does not assign application roles
+2026-10-20T12:34:57.3373029Z   ---
+2026-10-20T12:34:57.3373228Z   duration_ms: 0.268871
+2026-10-20T12:34:57.3373449Z   type: 'test'
+2026-10-20T12:34:57.3373637Z   ...
+2026-10-20T12:34:57.3374059Z # Subtest: platform-admin learning evidence sync respects exclusive operating roles
+2026-10-20T12:34:57.3374709Z ok 158 - platform-admin learning evidence sync respects exclusive operating roles
+2026-10-20T12:34:57.3375113Z   ---
+2026-10-20T12:34:57.3375307Z   duration_ms: 0.291924
+2026-10-20T12:34:57.3375524Z   type: 'test'
+2026-10-20T12:34:57.3375713Z   ...
+2026-10-20T12:34:57.3376079Z # Subtest: local learning records are isolated by authenticated account
+2026-10-20T12:34:57.3376621Z ok 159 - local learning records are isolated by authenticated account
+2026-10-20T12:34:57.3376965Z   ---
+2026-10-20T12:34:57.3377152Z   duration_ms: 0.265626
+2026-10-20T12:34:57.3377367Z   type: 'test'
+2026-10-20T12:34:57.3377556Z   ...
+2026-10-20T12:34:57.3378015Z # Subtest: profile settings persist account presentation preferences with owner-only access
+2026-10-20T12:34:57.3378729Z ok 160 - profile settings persist account presentation preferences with owner-only access
+2026-10-20T12:34:57.3379151Z   ---
+2026-10-20T12:34:57.3379342Z   duration_ms: 0.430744
+2026-10-20T12:34:57.3379558Z   type: 'test'
+2026-10-20T12:34:57.3379744Z   ...
+2026-10-20T12:34:57.3379923Z 1..160
+2026-10-20T12:34:57.3380455Z # tests 160
+2026-10-20T12:34:57.3380712Z # suites 0
+2026-10-20T12:34:57.3380911Z # pass 160
+2026-10-20T12:34:57.3381202Z # fail 0
+2026-10-20T12:34:57.3381512Z # cancelled 0
+2026-10-20T12:34:57.3381717Z # skipped 0
+2026-10-20T12:34:57.3381909Z # todo 0
+2026-10-20T12:34:57.3382122Z # duration_ms 7926.208064
+2026-10-20T12:34:57.3415426Z ##[group]Run npm run verify:operations
+2026-10-20T12:34:57.3415768Z [36;1mnpm run verify:operations[0m
+2026-10-20T12:34:57.3480928Z shell: /usr/bin/bash -e {0}
+2026-10-20T12:34:57.3481185Z env:
+2026-10-20T12:34:57.3481456Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T12:34:57.3481925Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-10-20T12:34:57.3482353Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T12:34:57.3482730Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T12:34:57.3483116Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T12:34:57.3483662Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-10-20T12:34:57.3483985Z ##[endgroup]
+2026-10-20T12:34:57.4501259Z
+2026-10-20T12:34:57.4502109Z > applied-commerce-learning-platform@0.1.0 verify:operations
+2026-10-20T12:34:57.4503071Z > node scripts/operational-database-drill.mjs
+2026-10-20T12:34:57.4503596Z
+2026-10-20T12:34:59.9602810Z PASS complete migration replay
+2026-10-20T12:35:00.6054463Z PASS synthetic cohort, revision and review fixtures
+2026-10-20T12:35:05.7714042Z PASS role-specific volume queries and revision saves
+2026-10-20T12:35:07.7214991Z PASS physical restore preserves every table digest, RLS policy, grant and function
+2026-10-20T12:35:09.3394139Z PASS restored learner isolation, assigned review and write enforcement
+2026-10-20T12:35:09.3605514Z PASS restored save accepts current revision and rejects stale work
+2026-10-20T12:35:09.3637640Z PASS restored session revocation removes private visibility
+2026-10-20T12:35:09.3704582Z {"passed":7,"failed":0,"learners":500,"answers":10000,"timings":{"learnerAnswers":{"samples":20,"p50Ms":5.29,"p95Ms":6.97,"maxMs":8.02},"facilitatorPage":{"samples":20,"p50Ms":161,"p95Ms":169.86,"maxMs":185.09},"administratorCohort":{"samples":20,"p50Ms":66.64,"p95Ms":68.2,"maxMs":68.25},"revisionSave":{"samples":20,"p50Ms":1.62,"p95Ms":1.93,"maxMs":1.93}},"backup":{"bytes":7076630,"sha256":"862e6d29d368fbbdec7e978761828ee13038b1e38a4af7be191f319756387d7f","backupMs":759,"restoreMs":792,"tablesVerified":26}}
+2026-10-20T12:35:09.4353048Z ##[group]Run set -o pipefail
+2026-10-20T12:35:09.4353389Z [36;1mset -o pipefail[0m
+2026-10-20T12:35:09.4353645Z [36;1mmkdir -p test-results[0m
+2026-10-20T12:35:09.4354048Z [36;1mnpm run typecheck -- --pretty false 2>&1 | tee test-results/typecheck.log[0m
+2026-10-20T12:35:09.4418257Z shell: /usr/bin/bash -e {0}
+2026-10-20T12:35:09.4418507Z env:
+2026-10-20T12:35:09.4419006Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T12:35:09.4419549Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-10-20T12:35:09.4420352Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T12:35:09.4420938Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T12:35:09.4421451Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T12:35:09.4421949Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-10-20T12:35:09.4434693Z ##[endgroup]
+2026-10-20T12:35:09.5468936Z
+2026-10-20T12:35:09.5469548Z > applied-commerce-learning-platform@0.1.0 typecheck
+2026-10-20T12:35:09.5470259Z > tsc --noEmit --pretty false
+2026-10-20T12:35:09.5470521Z
+2026-10-20T12:35:15.4399153Z ##[group]Run set -o pipefail
+2026-10-20T12:35:15.4399488Z [36;1mset -o pipefail[0m
+2026-10-20T12:35:15.4399749Z [36;1mmkdir -p test-results[0m
+2026-10-20T12:35:15.4401021Z [36;1mnpm run lint 2>&1 | tee test-results/lint.log[0m
+2026-10-20T12:35:15.4463632Z shell: /usr/bin/bash -e {0}
+2026-10-20T12:35:15.4463891Z env:
+2026-10-20T12:35:15.4464168Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T12:35:15.4464650Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-10-20T12:35:15.4465115Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T12:35:15.4465519Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T12:35:15.4465926Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T12:35:15.4466329Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-10-20T12:35:15.4466667Z ##[endgroup]
+2026-10-20T12:35:15.5476861Z
+2026-10-20T12:35:15.5477663Z > applied-commerce-learning-platform@0.1.0 lint
+2026-10-20T12:35:15.5478454Z > eslint . --ignore-pattern .next
+2026-10-20T12:35:15.5478754Z
+2026-10-20T12:35:25.4514864Z ##[group]Run npm run build
+2026-10-20T12:35:25.4515165Z [36;1mnpm run build[0m
+2026-10-20T12:35:25.4579565Z shell: /usr/bin/bash -e {0}
+2026-10-20T12:35:25.4579829Z env:
+2026-10-20T12:35:25.4580520Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T12:35:25.4581307Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-10-20T12:35:25.4581768Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T12:35:25.4582167Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T12:35:25.4582576Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T12:35:25.4582984Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-10-20T12:35:25.4583325Z ##[endgroup]
+2026-10-20T12:35:25.5615568Z
+2026-10-20T12:35:25.5616245Z > applied-commerce-learning-platform@0.1.0 build
+2026-10-20T12:35:25.5616845Z > next build
+2026-10-20T12:35:25.5617004Z
+2026-10-20T12:35:25.9313316Z ▲ Next.js 16.3.8 (Turbopack)
+2026-10-20T12:35:25.9563537Z ✓ Running next.config.ts took 24ms
+2026-10-20T12:35:25.9566276Z ⚠ No build cache found. Please configure build caching for faster rebuilds. Read more: https://nextjs.org/docs/messages/no-cache
+2026-10-20T12:35:25.9667726Z Attention: Next.js now collects completely anonymous telemetry regarding usage.
+2026-10-20T12:35:25.9669022Z This information is used to shape Next.js' roadmap and prioritize features.
+2026-10-20T12:35:25.9670763Z You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+2026-10-20T12:35:25.9671900Z https://nextjs.org/telemetry
+2026-10-20T12:35:25.9672219Z
+2026-10-20T12:35:25.9876961Z
+2026-10-20T12:35:26.0626693Z   Creating an optimized production build ...
+2026-10-20T12:35:32.3073745Z ✓ Compiled successfully in 5.8s
+2026-10-20T12:35:32.3151638Z   Running TypeScript ...
+2026-10-20T12:35:38.3564929Z   Finished TypeScript in 6.0s ...
+2026-10-20T12:35:38.3606613Z   Collecting page data using 3 workers ...
+2026-10-20T12:35:39.0361795Z   Generating static pages using 3 workers (0/21) ...
+2026-10-20T12:35:39.2190522Z   Generating static pages using 3 workers (5/21)
+2026-10-20T12:35:39.4237345Z   Generating static pages using 3 workers (10/21)
+2026-10-20T12:35:39.4246811Z   Generating static pages using 3 workers (15/21)
+2026-10-20T12:35:39.4963908Z ✓ Generating static pages using 3 workers (21/21) in 460ms
+2026-10-20T12:35:39.5014863Z   Finalizing page optimization ...
+2026-10-20T12:35:39.5118590Z
+2026-10-20T12:35:39.5136362Z Route (app)
+2026-10-20T12:35:39.5136897Z ┌ ○ /
+2026-10-20T12:35:39.5137284Z ├ ○ /_not-found
+2026-10-20T12:35:39.5137702Z ├ ƒ /api/health
+2026-10-20T12:35:39.5138137Z ├ ƒ /api/preferences
+2026-10-20T12:35:39.5138532Z ├ ƒ /auth
+2026-10-20T12:35:39.5138915Z ├ ƒ /auth/callback
+2026-10-20T12:35:39.5139308Z ├ ○ /auth/reset
+2026-10-20T12:35:39.5139680Z ├ ƒ /facilitator
+2026-10-20T12:35:39.5140372Z ├ ƒ /facilitator/[section]
+2026-10-20T12:35:39.5141052Z ├ ○ /icon.svg
+2026-10-20T12:35:39.5141522Z ├ ○ /institution-admin
+2026-10-20T12:35:39.5141961Z ├ ○ /institutions
+2026-10-20T12:35:39.5142385Z ├ ○ /institutions/demo
+2026-10-20T12:35:39.5142847Z ├ ○ /institutions/deploy
+2026-10-20T12:35:39.5143329Z ├ ○ /institutions/digitise
+2026-10-20T12:35:39.5143704Z ├ ○ /institutions/manage
+2026-10-20T12:35:39.5144041Z ├ ƒ /institutions/manage/[section]
+2026-10-20T12:35:39.5144324Z ├ ○ /learn
+2026-10-20T12:35:39.5144552Z ├ ƒ /learn/[grade]
+2026-10-20T12:35:39.5144868Z ├ ƒ /learn/[grade]/term/[term]/[unit]
+2026-10-20T12:35:39.5145158Z ├ ○ /portfolio
+2026-10-20T12:35:39.5145383Z ├ ○ /profile
+2026-10-20T12:35:39.5145595Z ├ ○ /progress
+2026-10-20T12:35:39.5145812Z └ ○ /settings
+2026-10-20T12:35:39.5145930Z
+2026-10-20T12:35:39.5145937Z
+2026-10-20T12:35:39.5146091Z ƒ Proxy (Middleware)
+2026-10-20T12:35:39.5146231Z
+2026-10-20T12:35:39.5146440Z ○  (Static)   prerendered as static content
+2026-10-20T12:35:39.5146828Z ƒ  (Dynamic)  server-rendered on demand
+2026-10-20T12:35:39.5147022Z
+2026-10-20T12:35:39.6439382Z ##[group]Run npx playwright install --with-deps chromium
+2026-10-20T12:35:39.6439861Z [36;1mnpx playwright install --with-deps chromium[0m
+2026-10-20T12:35:39.6503019Z shell: /usr/bin/bash -e {0}
+2026-10-20T12:35:39.6503275Z env:
+2026-10-20T12:35:39.6503732Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T12:35:39.6504176Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-10-20T12:35:39.6504630Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T12:35:39.6505040Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T12:35:39.6505430Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T12:35:39.6505817Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-10-20T12:35:39.6506143Z ##[endgroup]
+2026-10-20T12:35:40.4217818Z Installing dependencies...
+2026-10-20T12:35:40.4316952Z Switching to root user to install dependencies...
+2026-10-20T12:35:40.5182306Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
+2026-10-20T12:35:40.5490561Z Get:6 https://packages.microsoft.com/ubuntu/24.04/prod noble InRelease [3600 B]
+2026-10-20T12:35:40.5631601Z Hit:2 http://azure.archive.ubuntu.com/ubuntu noble InRelease
+2026-10-20T12:35:40.5633000Z Get:3 http://azure.archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+2026-10-20T12:35:40.5699811Z Get:4 http://azure.archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+2026-10-20T12:35:40.5706125Z Get:5 http://azure.archive.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+2026-10-20T12:35:40.6369590Z Get:7 https://packages.microsoft.com/ubuntu/24.04/prod noble/main amd64 Packages [618 kB]
+2026-10-20T12:35:40.6502072Z Get:8 https://packages.microsoft.com/ubuntu/24.04/prod noble/main armhf Packages [12.4 kB]
+2026-10-20T12:35:40.6541674Z Get:9 https://packages.microsoft.com/ubuntu/24.04/prod noble/main arm64 Packages [557 kB]
+2026-10-20T12:35:40.7503086Z Get:10 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [1397 kB]
+2026-10-20T12:35:40.7597477Z Get:11 http://azure.archive.ubuntu.com/ubuntu noble-updates/main Translation-en [308 kB]
+2026-10-20T12:35:40.7612521Z Get:12 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1704 kB]
+2026-10-20T12:35:40.7682704Z Get:13 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe Translation-en [342 kB]
+2026-10-20T12:35:40.7706857Z Get:14 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Packages [1805 kB]
+2026-10-20T12:35:40.7803504Z Get:15 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted Translation-en [411 kB]
+2026-10-20T12:35:40.8641742Z Get:16 http://azure.archive.ubuntu.com/ubuntu noble-security/main amd64 Packages [1145 kB]
+2026-10-20T12:35:40.8681148Z Get:17 http://azure.archive.ubuntu.com/ubuntu noble-security/main Translation-en [231 kB]
+2026-10-20T12:35:40.8702041Z Get:18 http://azure.archive.ubuntu.com/ubuntu noble-security/universe amd64 Packages [1222 kB]
+2026-10-20T12:35:40.8770544Z Get:19 http://azure.archive.ubuntu.com/ubuntu noble-security/universe Translation-en [246 kB]
+2026-10-20T12:35:40.9212410Z Get:20 http://azure.archive.ubuntu.com/ubuntu noble-security/restricted amd64 Packages [1713 kB]
+2026-10-20T12:35:40.9314217Z Get:21 http://azure.archive.ubuntu.com/ubuntu noble-security/restricted Translation-en [392 kB]
+2026-10-20T12:35:43.9165972Z Fetched 12.5 MB in 1s (9742 kB/s)
+2026-10-20T12:35:44.8221490Z Reading package lists...
+2026-10-20T12:35:44.8461871Z Reading package lists...
+2026-10-20T12:35:45.0384850Z Building dependency tree...
+2026-10-20T12:35:45.0392480Z Reading state information...
+2026-10-20T12:35:45.1869313Z libasound2t64 is already the newest version (1.2.11-1ubuntu0.3).
+2026-10-20T12:35:45.1870684Z libasound2t64 set to manually installed.
+2026-10-20T12:35:45.1871552Z libatk-bridge2.0-0t64 is already the newest version (2.52.0-1build1).
+2026-10-20T12:35:45.1872349Z libatk-bridge2.0-0t64 set to manually installed.
+2026-10-20T12:35:45.1873689Z libatk1.0-0t64 is already the newest version (2.52.0-1build1).
+2026-10-20T12:35:45.1874442Z libatk1.0-0t64 set to manually installed.
+2026-10-20T12:35:45.1875189Z libatspi2.0-0t64 is already the newest version (2.52.0-1build1).
+2026-10-20T12:35:45.1875906Z libatspi2.0-0t64 set to manually installed.
+2026-10-20T12:35:45.1876815Z libcairo2 is already the newest version (1.18.0-3build1).
+2026-10-20T12:35:45.1877488Z libcairo2 set to manually installed.
+2026-10-20T12:35:45.1877954Z libcups2t64 is already the newest version (2.4.7-1.2ubuntu7.14).
+2026-10-20T12:35:45.1878389Z libcups2t64 set to manually installed.
+2026-10-20T12:35:45.1878821Z libdbus-1-3 is already the newest version (1.14.10-4ubuntu4.1).
+2026-10-20T12:35:45.1879237Z libdbus-1-3 set to manually installed.
+2026-10-20T12:35:45.1879683Z libdrm2 is already the newest version (2.4.125-1ubuntu0.1~24.04.2).
+2026-10-20T12:35:45.1880296Z libdrm2 set to manually installed.
+2026-10-20T12:35:45.1880723Z libgbm1 is already the newest version (25.2.8-0ubuntu0.24.04.4).
+2026-10-20T12:35:45.1881153Z libgbm1 set to manually installed.
+2026-10-20T12:35:45.1881593Z libglib2.0-0t64 is already the newest version (2.80.0-6ubuntu3.9).
+2026-10-20T12:35:45.1882040Z libglib2.0-0t64 set to manually installed.
+2026-10-20T12:35:45.1882480Z libnspr4 is already the newest version (2:4.35-1.1build1).
+2026-10-20T12:35:45.1882892Z libnspr4 set to manually installed.
+2026-10-20T12:35:45.1883297Z libnss3 is already the newest version (2:3.98-1ubuntu0.2).
+2026-10-20T12:35:45.1883695Z libnss3 set to manually installed.
+2026-10-20T12:35:45.1884125Z libpango-1.0-0 is already the newest version (1.52.1+ds-1build1).
+2026-10-20T12:35:45.1884607Z libpango-1.0-0 set to manually installed.
+2026-10-20T12:35:45.1885038Z libx11-6 is already the newest version (2:1.8.7-1ubuntu0.1).
+2026-10-20T12:35:45.1885450Z libx11-6 set to manually installed.
+2026-10-20T12:35:45.1885831Z libxcb1 is already the newest version (1.15-1ubuntu2).
+2026-10-20T12:35:45.1886209Z libxcb1 set to manually installed.
+2026-10-20T12:35:45.1886640Z libxcomposite1 is already the newest version (1:0.4.5-1build3).
+2026-10-20T12:35:45.1887077Z libxcomposite1 set to manually installed.
+2026-10-20T12:35:45.1887515Z libxdamage1 is already the newest version (1:1.1.6-1build1).
+2026-10-20T12:35:45.1887929Z libxdamage1 set to manually installed.
+2026-10-20T12:35:45.1888360Z libxext6 is already the newest version (2:1.3.4-1build2).
+2026-10-20T12:35:45.1888752Z libxext6 set to manually installed.
+2026-10-20T12:35:45.1889159Z libxfixes3 is already the newest version (1:6.0.0-2build1).
+2026-10-20T12:35:45.1889591Z libxfixes3 set to manually installed.
+2026-10-20T12:35:45.1890146Z libxkbcommon0 is already the newest version (1.6.0-1build1).
+2026-10-20T12:35:45.1890571Z libxkbcommon0 set to manually installed.
+2026-10-20T12:35:45.1890993Z libxrandr2 is already the newest version (2:1.5.2-2build1).
+2026-10-20T12:35:45.1891395Z libxrandr2 set to manually installed.
+2026-10-20T12:35:45.1892290Z fonts-noto-color-emoji is already the newest version (2.047-0ubuntu0.24.04.1).
+2026-10-20T12:35:45.1892886Z libfontconfig1 is already the newest version (2.15.0-1.1ubuntu2).
+2026-10-20T12:35:45.1893493Z libfontconfig1 set to manually installed.
+2026-10-20T12:35:45.1894088Z libfreetype6 is already the newest version (2.13.2+dfsg-1ubuntu0.2).
+2026-10-20T12:35:45.1894739Z libfreetype6 set to manually installed.
+2026-10-20T12:35:45.1895391Z fonts-liberation is already the newest version (1:2.1.5-3).
+2026-10-20T12:35:45.1896111Z fonts-liberation set to manually installed.
+2026-10-20T12:35:45.1896792Z The following additional packages will be installed:
+2026-10-20T12:35:45.1897263Z   xfonts-encodings xfonts-utils xserver-common
+2026-10-20T12:35:45.1897596Z Recommended packages:
+2026-10-20T12:35:45.1898192Z   fonts-ipafont-mincho fonts-tlwg-loma xfonts-base
+2026-10-20T12:35:45.2052948Z The following NEW packages will be installed:
+2026-10-20T12:35:45.2053815Z   fonts-freefont-ttf fonts-ipafont-gothic fonts-tlwg-loma-otf fonts-unifont
+2026-10-20T12:35:45.2058913Z   fonts-wqy-zenhei xfonts-cyrillic xfonts-encodings xfonts-scalable
+2026-10-20T12:35:45.2059605Z   xfonts-utils
+2026-10-20T12:35:45.2066703Z The following packages will be upgraded:
+2026-10-20T12:35:45.2067203Z   xserver-common xvfb
+2026-10-20T12:35:45.2224487Z 2 upgraded, 9 newly installed, 0 to remove and 79 not upgraded.
+2026-10-20T12:35:45.2225446Z Need to get 22.0 MB of archives.
+2026-10-20T12:35:45.2225907Z After this operation, 79.5 MB of additional disk space will be used.
+2026-10-20T12:35:45.2226406Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
+2026-10-20T12:35:45.4185767Z Get:2 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 fonts-ipafont-gothic all 00303-21ubuntu1 [3513 kB]
+2026-10-20T12:35:46.2592201Z Get:3 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 fonts-freefont-ttf all 20211204+svn4273-2 [5641 kB]
+2026-10-20T12:35:46.4851631Z Get:4 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 fonts-tlwg-loma-otf all 1:0.7.3-1 [107 kB]
+2026-10-20T12:35:46.5759156Z Get:5 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 fonts-unifont all 1:15.1.01-1build1 [2993 kB]
+2026-10-20T12:35:46.6947350Z Get:6 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 fonts-wqy-zenhei all 0.9.45-8 [7472 kB]
+2026-10-20T12:35:46.9796298Z Get:7 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 xfonts-encodings all 1:1.0.5-0ubuntu2 [578 kB]
+2026-10-20T12:35:47.0891924Z Get:8 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 xfonts-utils amd64 1:7.7+6build3 [94.4 kB]
+2026-10-20T12:35:47.1801805Z Get:9 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 xfonts-cyrillic all 1:1.0.5+nmu1 [384 kB]
+2026-10-20T12:35:47.2801676Z Get:10 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 xfonts-scalable all 1:1.0.3-1.3 [304 kB]
+2026-10-20T12:35:47.3786575Z Get:11 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 xserver-common all 2:21.1.12-1ubuntu1.9 [35.0 kB]
+2026-10-20T12:35:47.4696378Z Get:12 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 xvfb amd64 2:21.1.12-1ubuntu1.9 [877 kB]
+2026-10-20T12:35:47.7336995Z Fetched 22.0 MB in 2s (9711 kB/s)
+2026-10-20T12:35:47.7556871Z Selecting previously unselected package fonts-ipafont-gothic.
+2026-10-20T12:35:47.7805876Z (Reading database ...
+2026-10-20T12:35:47.7806496Z (Reading database ... 5%
+2026-10-20T12:35:47.7806838Z (Reading database ... 10%
+2026-10-20T12:35:47.7807110Z (Reading database ... 15%
+2026-10-20T12:35:47.7807363Z (Reading database ... 20%
+2026-10-20T12:35:47.7807616Z (Reading database ... 25%
+2026-10-20T12:35:47.7807866Z (Reading database ... 30%
+2026-10-20T12:35:47.7808459Z (Reading database ... 35%
+2026-10-20T12:35:47.7808910Z (Reading database ... 40%
+2026-10-20T12:35:47.7809208Z (Reading database ... 45%
+2026-10-20T12:35:47.7809450Z (Reading database ... 50%
+2026-10-20T12:35:47.7841219Z (Reading database ... 55%
+2026-10-20T12:35:47.8919657Z (Reading database ... 60%
+2026-10-20T12:35:48.0422047Z (Reading database ... 65%
+2026-10-20T12:35:48.2416773Z (Reading database ... 70%
+2026-10-20T12:35:48.3938633Z (Reading database ... 75%
+2026-10-20T12:35:48.5152026Z (Reading database ... 80%
+2026-10-20T12:35:48.6467175Z (Reading database ... 85%
+2026-10-20T12:35:48.7590296Z (Reading database ... 90%
+2026-10-20T12:35:48.8521035Z (Reading database ... 95%
+2026-10-20T12:35:48.8521752Z (Reading database ... 100%
+2026-10-20T12:35:48.8522738Z (Reading database ... 203540 files and directories currently installed.)
+2026-10-20T12:35:48.8566937Z Preparing to unpack .../00-fonts-ipafont-gothic_00303-21ubuntu1_all.deb ...
+2026-10-20T12:35:48.8664634Z Unpacking fonts-ipafont-gothic (00303-21ubuntu1) ...
+2026-10-20T12:35:49.0909372Z Selecting previously unselected package fonts-freefont-ttf.
+2026-10-20T12:35:49.1034953Z Preparing to unpack .../01-fonts-freefont-ttf_20211204+svn4273-2_all.deb ...
+2026-10-20T12:35:49.1041794Z Unpacking fonts-freefont-ttf (20211204+svn4273-2) ...
+2026-10-20T12:35:49.1976214Z Selecting previously unselected package fonts-tlwg-loma-otf.
+2026-10-20T12:35:49.2104193Z Preparing to unpack .../02-fonts-tlwg-loma-otf_1%3a0.7.3-1_all.deb ...
+2026-10-20T12:35:49.2111065Z Unpacking fonts-tlwg-loma-otf (1:0.7.3-1) ...
+2026-10-20T12:35:49.2312961Z Selecting previously unselected package fonts-unifont.
+2026-10-20T12:35:49.2437260Z Preparing to unpack .../03-fonts-unifont_1%3a15.1.01-1build1_all.deb ...
+2026-10-20T12:35:49.2444163Z Unpacking fonts-unifont (1:15.1.01-1build1) ...
+2026-10-20T12:35:49.3456458Z Selecting previously unselected package fonts-wqy-zenhei.
+2026-10-20T12:35:49.3581408Z Preparing to unpack .../04-fonts-wqy-zenhei_0.9.45-8_all.deb ...
+2026-10-20T12:35:49.3677472Z Unpacking fonts-wqy-zenhei (0.9.45-8) ...
+2026-10-20T12:35:49.8282010Z Selecting previously unselected package xfonts-encodings.
+2026-10-20T12:35:49.8408960Z Preparing to unpack .../05-xfonts-encodings_1%3a1.0.5-0ubuntu2_all.deb ...
+2026-10-20T12:35:49.8416221Z Unpacking xfonts-encodings (1:1.0.5-0ubuntu2) ...
+2026-10-20T12:35:49.8693909Z Selecting previously unselected package xfonts-utils.
+2026-10-20T12:35:49.8820528Z Preparing to unpack .../06-xfonts-utils_1%3a7.7+6build3_amd64.deb ...
+2026-10-20T12:35:49.8827041Z Unpacking xfonts-utils (1:7.7+6build3) ...
+2026-10-20T12:35:49.9165972Z Selecting previously unselected package xfonts-cyrillic.
+2026-10-20T12:35:49.9291441Z Preparing to unpack .../07-xfonts-cyrillic_1%3a1.0.5+nmu1_all.deb ...
+2026-10-20T12:35:49.9298629Z Unpacking xfonts-cyrillic (1:1.0.5+nmu1) ...
+2026-10-20T12:35:49.9615412Z Selecting previously unselected package xfonts-scalable.
+2026-10-20T12:35:49.9744171Z Preparing to unpack .../08-xfonts-scalable_1%3a1.0.3-1.3_all.deb ...
+2026-10-20T12:35:49.9751197Z Unpacking xfonts-scalable (1:1.0.3-1.3) ...
+2026-10-20T12:35:50.0099909Z Preparing to unpack .../09-xserver-common_2%3a21.1.12-1ubuntu1.9_all.deb ...
+2026-10-20T12:35:50.0120430Z Unpacking xserver-common (2:21.1.12-1ubuntu1.9) over (2:21.1.12-1ubuntu1.8) ...
+2026-10-20T12:35:50.0452415Z Preparing to unpack .../10-xvfb_2%3a21.1.12-1ubuntu1.9_amd64.deb ...
+2026-10-20T12:35:50.0486633Z Unpacking xvfb (2:21.1.12-1ubuntu1.9) over (2:21.1.12-1ubuntu1.8) ...
+2026-10-20T12:35:50.1031272Z Setting up fonts-wqy-zenhei (0.9.45-8) ...
+2026-10-20T12:35:50.1143269Z Setting up fonts-freefont-ttf (20211204+svn4273-2) ...
+2026-10-20T12:35:50.1159736Z Setting up fonts-tlwg-loma-otf (1:0.7.3-1) ...
+2026-10-20T12:35:50.1177160Z Setting up xfonts-encodings (1:1.0.5-0ubuntu2) ...
+2026-10-20T12:35:50.1196009Z Setting up fonts-ipafont-gothic (00303-21ubuntu1) ...
+2026-10-20T12:35:50.1259923Z update-alternatives: using /usr/share/fonts/opentype/ipafont-gothic/ipag.ttf to provide /usr/share/fonts/truetype/fonts-japanese-gothic.ttf (fonts-japanese-gothic.ttf) in auto mode
+2026-10-20T12:35:50.1273874Z Setting up xserver-common (2:21.1.12-1ubuntu1.9) ...
+2026-10-20T12:35:50.1291848Z Setting up fonts-unifont (1:15.1.01-1build1) ...
+2026-10-20T12:35:50.1308306Z Setting up xvfb (2:21.1.12-1ubuntu1.9) ...
+2026-10-20T12:35:50.1324006Z Setting up xfonts-utils (1:7.7+6build3) ...
+2026-10-20T12:35:50.1361139Z Setting up xfonts-cyrillic (1:1.0.5+nmu1) ...
+2026-10-20T12:35:50.1861168Z Setting up xfonts-scalable (1:1.0.3-1.3) ...
+2026-10-20T12:35:50.2173459Z Processing triggers for man-db (2.12.0-4build2) ...
+2026-10-20T12:35:50.2191902Z Not building database; man-db/auto-update is not 'true'.
+2026-10-20T12:35:50.2205648Z Processing triggers for fontconfig (2.15.0-1.1ubuntu2) ...
+2026-10-20T12:35:50.9363621Z
+2026-10-20T12:35:50.9364427Z Running kernel seems to be up-to-date.
+2026-10-20T12:35:50.9364783Z
+2026-10-20T12:35:50.9364988Z No services need to be restarted.
+2026-10-20T12:35:50.9365229Z
+2026-10-20T12:35:50.9365422Z No containers need to be restarted.
+2026-10-20T12:35:50.9365650Z
+2026-10-20T12:35:50.9365880Z No user sessions are running outdated binaries.
+2026-10-20T12:35:50.9366164Z
+2026-10-20T12:35:50.9366547Z No VM guests are running outdated hypervisor (qemu) binaries on this host.
+2026-10-20T12:35:51.8267179Z Downloading Chrome for Testing 156.0.8078.4 (playwright chromium v1248) from https://cdn.playwright.dev/builds/cft/156.0.8078.4/linux64/chrome-linux64.zip
+2026-10-20T12:35:52.2101816Z |                                                                                |   0% of 191.1 MiB
+2026-10-20T12:35:52.4977448Z |■■■■■■■■                                                                        |  10% of 191.1 MiB
+2026-10-20T12:35:52.5972002Z |■■■■■■■■■■■■■■■■                                                                |  20% of 191.1 MiB
+2026-10-20T12:35:52.6676464Z |■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 191.1 MiB
+2026-10-20T12:35:52.7401682Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 191.1 MiB
+2026-10-20T12:35:52.8120708Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 191.1 MiB
+2026-10-20T12:35:52.8961801Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 191.1 MiB
+2026-10-20T12:35:52.9641406Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 191.1 MiB
+2026-10-20T12:35:53.0316042Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 191.1 MiB
+2026-10-20T12:35:53.1045889Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 191.1 MiB
+2026-10-20T12:35:53.1704044Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 191.1 MiB
+2026-10-20T12:35:56.0603761Z Chrome for Testing 156.0.8078.4 (playwright chromium v1248) downloaded to /home/runner/.cache/ms-playwright/chromium-1248
+2026-10-20T12:35:56.0606761Z Downloading FFmpeg (playwright ffmpeg v1013) from https://cdn.playwright.dev/dbazure/download/playwright/builds/ffmpeg/1013/ffmpeg-linux.zip
+2026-10-20T12:35:56.4264018Z |                                                                                |   0% of 2.2 MiB
+2026-10-20T12:35:56.4299500Z |■■■■■■■■                                                                        |  10% of 2.2 MiB
+2026-10-20T12:35:56.4318708Z |■■■■■■■■■■■■■■■■                                                                |  20% of 2.2 MiB
+2026-10-20T12:35:56.4336708Z |■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 2.2 MiB
+2026-10-20T12:35:56.4362386Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 2.2 MiB
+2026-10-20T12:35:56.4375231Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 2.2 MiB
+2026-10-20T12:35:56.4390450Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 2.2 MiB
+2026-10-20T12:35:56.4404798Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 2.2 MiB
+2026-10-20T12:35:56.4417303Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 2.2 MiB
+2026-10-20T12:35:56.4432006Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 2.2 MiB
+2026-10-20T12:35:56.4443039Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 2.2 MiB
+2026-10-20T12:35:56.5056293Z FFmpeg (playwright ffmpeg v1013) downloaded to /home/runner/.cache/ms-playwright/ffmpeg-1013
+2026-10-20T12:35:56.5059345Z Downloading Chrome Headless Shell 156.0.8078.4 (playwright chromium-headless-shell v1248) from https://cdn.playwright.dev/builds/cft/156.0.8078.4/linux64/chrome-headless-shell-linux64.zip
+2026-10-20T12:35:56.8839816Z |                                                                                |   0% of 120 MiB
+2026-10-20T12:35:57.1215890Z |■■■■■■■■                                                                        |  10% of 120 MiB
+2026-10-20T12:35:57.2173689Z |■■■■■■■■■■■■■■■■                                                                |  20% of 120 MiB
+2026-10-20T12:35:57.2771000Z |■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 120 MiB
+2026-10-20T12:35:57.3262203Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 120 MiB
+2026-10-20T12:35:57.3752639Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 120 MiB
+2026-10-20T12:35:57.4228563Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 120 MiB
+2026-10-20T12:35:57.4646079Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 120 MiB
+2026-10-20T12:35:57.5118186Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 120 MiB
+2026-10-20T12:35:57.5539641Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 120 MiB
+2026-10-20T12:35:57.6029408Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 120 MiB
+2026-10-20T12:35:59.6826533Z Chrome Headless Shell 156.0.8078.4 (playwright chromium-headless-shell v1248) downloaded to /home/runner/.cache/ms-playwright/chromium_headless_shell-1248
+2026-10-20T12:35:59.7086193Z ##[group]Run npx playwright test --config=playwright.config.mjs
+2026-10-20T12:35:59.7086706Z [36;1mnpx playwright test --config=playwright.config.mjs[0m
+2026-10-20T12:35:59.7148927Z shell: /usr/bin/bash -e {0}
+2026-10-20T12:35:59.7149176Z env:
+2026-10-20T12:35:59.7149475Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T12:35:59.7149932Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-10-20T12:35:59.7150668Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T12:35:59.7151063Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T12:35:59.7151453Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T12:35:59.7151846Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-10-20T12:35:59.7152172Z ##[endgroup]
+2026-10-20T12:36:02.4176553Z
+2026-10-20T12:36:02.4177209Z Running 213 tests using 1 worker
+2026-10-20T12:36:02.4177669Z
+2026-10-20T12:36:02.8342781Z [1/213] [desktop-1280] › tests/browser/auth-persistence.spec.mjs:3:1 › learner local state survives reload and profile settings stay concise without altering the record
+2026-10-20T12:36:03.8551318Z [2/213] [desktop-1280] › tests/browser/compact-list-reflow.spec.mjs:3:1 › authored list blanks wrap at 320px and keep saved choices
+2026-10-20T12:36:04.6016239Z [3/213] [desktop-1280] › tests/browser/compact-list-reflow.spec.mjs:20:1 › authored list response fields save under stable identities and reach portfolio
+2026-10-20T12:36:05.7229763Z [4/213] [desktop-1280] › tests/browser/institutional-operations.spec.mjs:4:3 › Institutional operations › operations route is present and safely gates unauthenticated access
+2026-10-20T12:36:05.9933473Z [5/213] [desktop-1280] › tests/browser/institutional-operations.spec.mjs:19:3 › Institutional operations › public institution page exposes the live operations entry point
+2026-10-20T12:36:06.2412853Z [6/213] [desktop-1280] › tests/browser/learner-surface-consistency.spec.mjs:9:1 › home, library, grade map and progress agree without counting assessment or historical completions
+2026-10-20T12:36:07.0884294Z [7/213] [desktop-1280] › tests/browser/learner-surface-consistency.spec.mjs:20:2 › home recovers a failed curriculum load without false progress or lost work
+2026-10-20T12:36:07.5639299Z [8/213] [desktop-1280] › tests/browser/learner-surface-consistency.spec.mjs:20:2 › library recovers a failed curriculum load without false progress or lost work
+2026-10-20T12:36:08.0477515Z [9/213] [desktop-1280] › tests/browser/learner-surface-consistency.spec.mjs:20:2 › grade map recovers a failed curriculum load without false progress or lost work
+2026-10-20T12:36:08.6368918Z [10/213] [desktop-1280] › tests/browser/learner-surface-consistency.spec.mjs:32:1 › home does not label a newly selected lesson with the previous lesson title
+2026-10-20T12:36:09.6455073Z [11/213] [desktop-1280] › tests/browser/learner-surface-consistency.spec.mjs:49:1 › facilitator report CSS fixture prints readable copy without mobile navigation in dark and system modes
+2026-10-20T12:36:10.1161818Z [12/213] [desktop-1280] › tests/browser/loading-skip.spec.mjs:3:1 › reader skip target keeps focus while its lesson bundle is loading
+2026-10-20T12:36:10.5423879Z [13/213] [desktop-1280] › tests/browser/portfolio-recovery.spec.mjs:2:1 › portfolio curriculum failure preserves saved answers and gives recovery instead of a false empty state
+2026-10-20T12:36:11.7384130Z [14/213] [desktop-1280] › tests/browser/presentation-v2.spec.mjs:79:3 › Applied Commerce Presentation Architecture 2.0 › hierarchy stays quiet for reading and strong at learning transitions
+2026-10-20T12:36:12.7173191Z [15/213] [desktop-1280] › tests/browser/presentation-v2.spec.mjs:100:3 › Applied Commerce Presentation Architecture 2.0 › simple tables become labelled mobile rows while wide tables retain geometry
+2026-10-20T12:36:13.6206923Z [16/213] [desktop-1280] › tests/browser/presentation-v2.spec.mjs:132:3 › Applied Commerce Presentation Architecture 2.0 › authored choices remain usable and visibly selected
+2026-10-20T12:36:14.8917973Z [17/213] [desktop-1280] › tests/browser/presentation-v2.spec.mjs:152:3 › Applied Commerce Presentation Architecture 2.0 › long lesson titles wrap without colliding with reader chrome
+2026-10-20T12:36:15.9552413Z [18/213] [desktop-1280] › tests/browser/presentation-v2.spec.mjs:185:3 › Applied Commerce Presentation Architecture 2.0 › wide-table outlier preserves table geometry without creating page overflow
+2026-10-20T12:36:16.6397727Z [19/213] [desktop-1280] › tests/browser/presentation-v2.spec.mjs:207:3 › Applied Commerce Presentation Architecture 2.0 › formal assessment answers use assessment surfaces and real controls
+2026-10-20T12:36:17.9823000Z [20/213] [desktop-1280] › tests/browser/progress-accuracy.spec.mjs:2:1 › completing assessment content preserves that record without inflating the lesson progress map
+2026-10-20T12:36:18.9597226Z [21/213] [desktop-1280] › tests/browser/role-gates.spec.mjs:4:3 › Role-gated workspaces › facilitator workspace does not expose tools to a signed-out visitor
+2026-10-20T12:36:19.2376777Z [22/213] [desktop-1280] › tests/browser/role-gates.spec.mjs:13:3 › Role-gated workspaces › institution operations does not grant management access to a signed-out visitor
+2026-10-20T12:36:20.1100563Z [23/213] [desktop-1280] › tests/browser/semantic-learning-v3.spec.mjs:37:1 › rankings are ordered, confirmed, persistent and visible in portfolio
+2026-10-20T12:36:21.7274583Z [24/213] [desktop-1280] › tests/browser/semantic-learning-v3.spec.mjs:61:1 › rating controls retain their scale and written action fields
+2026-10-20T12:36:23.0258679Z [25/213] [desktop-1280] › tests/browser/semantic-learning-v3.spec.mjs:75:1 › values sort supports authored choices, custom values and five-three-one narrowing
+2026-10-20T12:36:24.6532929Z [26/213] [desktop-1280] › tests/browser/semantic-learning-v3.spec.mjs:91:1 › choices inside source lists remain interactive and keep stable identities
+2026-10-20T12:36:25.8012393Z [27/213] [desktop-1280] › tests/browser/semantic-learning-v3.spec.mjs:100:1 › equations and percentage fields retain meaning and outline avoids fixed chrome
+2026-10-20T12:36:27.5383850Z [28/213] [desktop-1280] › tests/browser/semantic-learning-v3.spec.mjs:116:1 › failed device save does not present an answer as captured
+2026-10-20T12:36:28.0458817Z [29/213] [desktop-1280] › tests/browser/semantic-learning-v3.spec.mjs:125:1 › completion saves the lesson before moving forward
+2026-10-20T12:36:28.5483983Z [30/213] [desktop-1280] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 8 Term 1 retains authored content and viewport integrity
+2026-10-20T12:36:29.5821860Z [31/213] [desktop-1280] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 8 Term 2 retains authored content and viewport integrity
+2026-10-20T12:36:30.4247866Z [32/213] [desktop-1280] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 8 Term 3 retains authored content and viewport integrity
+2026-10-20T12:36:31.3449769Z [33/213] [desktop-1280] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 8 Term 4 retains authored content and viewport integrity
+2026-10-20T12:36:32.1592580Z [34/213] [desktop-1280] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 9 Term 1 retains authored content and viewport integrity
+2026-10-20T12:36:33.0883071Z [35/213] [desktop-1280] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 9 Term 2 retains authored content and viewport integrity
+2026-10-20T12:36:34.0789973Z [36/213] [desktop-1280] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 9 Term 3 retains authored content and viewport integrity
+2026-10-20T12:36:35.1262032Z [37/213] [desktop-1280] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 9 Term 4 retains authored content and viewport integrity
+2026-10-20T12:36:36.1081495Z [38/213] [desktop-1280] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 10 Term 1 retains authored content and viewport integrity
+2026-10-20T12:36:37.0202965Z [39/213] [desktop-1280] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 10 Term 2 retains authored content and viewport integrity
+2026-10-20T12:36:38.0327882Z [40/213] [desktop-1280] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 10 Term 3 retains authored content and viewport integrity
+2026-10-20T12:36:39.0896121Z [41/213] [desktop-1280] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 10 Term 4 retains authored content and viewport integrity
+2026-10-20T12:36:40.1312835Z [42/213] [desktop-1280] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 11 Term 1 retains authored content and viewport integrity
+2026-10-20T12:36:41.3498252Z [43/213] [desktop-1280] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 11 Term 2 retains authored content and viewport integrity
+2026-10-20T12:36:42.4698308Z [44/213] [desktop-1280] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 11 Term 3 retains authored content and viewport integrity
+2026-10-20T12:36:43.6447004Z [45/213] [desktop-1280] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 11 Term 4 retains authored content and viewport integrity
+2026-10-20T12:36:44.6979628Z [46/213] [desktop-1280] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 12 Term 1 retains authored content and viewport integrity
+2026-10-20T12:36:45.6468434Z [47/213] [desktop-1280] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 12 Term 2 retains authored content and viewport integrity
+2026-10-20T12:36:46.7363355Z [48/213] [desktop-1280] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 12 Term 3 retains authored content and viewport integrity
+2026-10-20T12:36:47.7111454Z [49/213] [desktop-1280] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 12 Term 4 retains authored content and viewport integrity
+2026-10-20T12:36:48.6838092Z [50/213] [desktop-1280] › tests/browser/settings-preferences.spec.mjs:3:1 › staff workspace surface fixtures keep readable text in dark and system themes
+2026-10-20T12:36:49.0882290Z [51/213] [desktop-1280] › tests/browser/settings-preferences.spec.mjs:26:1 › profile refresh preserves unsaved fields and updates untouched fields across tabs
+2026-10-20T12:36:49.8218107Z [52/213] [desktop-1280] › tests/browser/settings-preferences.spec.mjs:45:1 › appearance and reading preferences apply immediately and survive reload
+2026-10-20T12:36:50.3403269Z [53/213] [desktop-1280] › tests/browser/settings-preferences.spec.mjs:69:1 › dark and system themes keep the learner menu and settings readable
+2026-10-20T12:36:50.9937830Z [54/213] [desktop-1280] › tests/browser/settings-preferences.spec.mjs:115:1 › all appearance, accent, text size and reading width settings update the document
+2026-10-20T12:36:51.9376098Z [55/213] [desktop-1280] › tests/browser/uiux-followup.spec.mjs:5:1 › alternative activity disclosure has a usable touch target and preserves content
+2026-10-20T12:36:52.4858429Z [56/213] [desktop-1280] › tests/browser/uiux-followup.spec.mjs:20:1 › reader position and account wrappers use supported accessible names
+2026-10-20T12:36:53.0443687Z [57/213] [desktop-1280] › tests/browser/uiux-followup.spec.mjs:30:1 › assessment radio choices use their full label as a touch target
+2026-10-20T12:36:53.6192404Z [58/213] [desktop-1280] › tests/browser/uiux-hardening.spec.mjs:7:1 › public learner, account and institution accessibility regressions
+2026-10-20T12:36:59.7735577Z [59/213] [desktop-1280] › tests/browser/uiux-hardening.spec.mjs:18:3 › dark keeps core reading, progress, portfolio and institutional demo accessible
+2026-10-20T12:37:03.7415252Z [60/213] [desktop-1280] › tests/browser/uiux-hardening.spec.mjs:18:3 › system keeps core reading, progress, portfolio and institutional demo accessible
+2026-10-20T12:37:07.7814264Z [61/213] [desktop-1280] › tests/browser/uiux-hardening.spec.mjs:35:1 › institution demo learner action opens the curriculum
+2026-10-20T12:37:08.1492533Z [62/213] [desktop-1280] › tests/browser/uiux-hardening.spec.mjs:42:1 › site icon resolves and header navigation offers a touch target
+2026-10-20T12:37:08.4771838Z [63/213] [desktop-1280] › tests/browser/uiux-hardening.spec.mjs:55:1 › reading preferences change actual lesson text size and measure
+2026-10-20T12:37:09.8651634Z [64/213] [desktop-1280] › tests/browser/uiux-hardening.spec.mjs:75:1 › each workspace has one main landmark and a keyboard skip link
+2026-10-20T12:37:11.2091370Z [65/213] [desktop-1280] › tests/browser/uiux-hardening.spec.mjs:87:1 › lesson notes and position indicator have accessible names and notes survive reload
+2026-10-20T12:37:11.8346376Z [66/213] [desktop-1280] › tests/browser/uiux-hardening.spec.mjs:96:1 › offline answers and notes survive reconnect under the same response identities
+2026-10-20T12:37:12.6386229Z [67/213] [desktop-1280] › tests/browser/uiux-hardening.spec.mjs:113:1 › compact term map traps focus, closes on Escape, and restores focus
+2026-10-20T12:37:13.3448985Z [68/213] [desktop-1280] › tests/browser/uiux-hardening.spec.mjs:141:1 › learner menu makes the background inert while open
+2026-10-20T12:37:13.7322543Z [69/213] [desktop-1280] › tests/browser/uiux-hardening.spec.mjs:152:1 › institution demo perspective tabs support arrows, Home and End
+2026-10-20T12:37:14.0967623Z [70/213] [desktop-1280] › tests/browser/uiux-hardening.spec.mjs:169:1 › lesson load failure offers retry in place without losing a saved answer
+2026-10-20T12:37:14.8441062Z [71/213] [desktop-1280] › tests/browser/uiux-hardening.spec.mjs:181:1 › reader print preserves lesson copy and saved notes without fixed navigation
+2026-10-20T12:37:15.9639694Z [72/213] [mobile-430] › tests/browser/auth-persistence.spec.mjs:3:1 › learner local state survives reload and profile settings stay concise without altering the record
+2026-10-20T12:37:16.7568429Z [73/213] [mobile-430] › tests/browser/compact-list-reflow.spec.mjs:3:1 › authored list blanks wrap at 320px and keep saved choices
+2026-10-20T12:37:17.5134456Z [74/213] [mobile-430] › tests/browser/compact-list-reflow.spec.mjs:20:1 › authored list response fields save under stable identities and reach portfolio
+2026-10-20T12:37:18.5431658Z [75/213] [mobile-430] › tests/browser/institutional-operations.spec.mjs:4:3 › Institutional operations › operations route is present and safely gates unauthenticated access
+2026-10-20T12:37:18.8191812Z [76/213] [mobile-430] › tests/browser/institutional-operations.spec.mjs:19:3 › Institutional operations › public institution page exposes the live operations entry point
+2026-10-20T12:37:19.0575840Z [77/213] [mobile-430] › tests/browser/learner-surface-consistency.spec.mjs:9:1 › home, library, grade map and progress agree without counting assessment or historical completions
+2026-10-20T12:37:19.8236400Z [78/213] [mobile-430] › tests/browser/learner-surface-consistency.spec.mjs:20:2 › home recovers a failed curriculum load without false progress or lost work
+2026-10-20T12:37:20.3091511Z [79/213] [mobile-430] › tests/browser/learner-surface-consistency.spec.mjs:20:2 › library recovers a failed curriculum load without false progress or lost work
+2026-10-20T12:37:20.7968825Z [80/213] [mobile-430] › tests/browser/learner-surface-consistency.spec.mjs:20:2 › grade map recovers a failed curriculum load without false progress or lost work
+2026-10-20T12:37:21.3498356Z [81/213] [mobile-430] › tests/browser/learner-surface-consistency.spec.mjs:32:1 › home does not label a newly selected lesson with the previous lesson title
+2026-10-20T12:37:22.2612390Z [82/213] [mobile-430] › tests/browser/learner-surface-consistency.spec.mjs:49:1 › facilitator report CSS fixture prints readable copy without mobile navigation in dark and system modes
+2026-10-20T12:37:22.7132093Z [83/213] [mobile-430] › tests/browser/loading-skip.spec.mjs:3:1 › reader skip target keeps focus while its lesson bundle is loading
+2026-10-20T12:37:23.1380442Z [84/213] [mobile-430] › tests/browser/portfolio-recovery.spec.mjs:2:1 › portfolio curriculum failure preserves saved answers and gives recovery instead of a false empty state
+2026-10-20T12:37:24.3573349Z [85/213] [mobile-430] › tests/browser/presentation-v2.spec.mjs:79:3 › Applied Commerce Presentation Architecture 2.0 › hierarchy stays quiet for reading and strong at learning transitions
+2026-10-20T12:37:25.1135975Z [86/213] [mobile-430] › tests/browser/presentation-v2.spec.mjs:100:3 › Applied Commerce Presentation Architecture 2.0 › simple tables become labelled mobile rows while wide tables retain geometry
+2026-10-20T12:37:25.8993994Z [87/213] [mobile-430] › tests/browser/presentation-v2.spec.mjs:132:3 › Applied Commerce Presentation Architecture 2.0 › authored choices remain usable and visibly selected
+2026-10-20T12:37:26.9906159Z [88/213] [mobile-430] › tests/browser/presentation-v2.spec.mjs:152:3 › Applied Commerce Presentation Architecture 2.0 › long lesson titles wrap without colliding with reader chrome
+2026-10-20T12:37:27.8505398Z [89/213] [mobile-430] › tests/browser/presentation-v2.spec.mjs:185:3 › Applied Commerce Presentation Architecture 2.0 › wide-table outlier preserves table geometry without creating page overflow
+2026-10-20T12:37:28.4741386Z [90/213] [mobile-430] › tests/browser/presentation-v2.spec.mjs:207:3 › Applied Commerce Presentation Architecture 2.0 › formal assessment answers use assessment surfaces and real controls
+2026-10-20T12:37:29.4277734Z [91/213] [mobile-430] › tests/browser/progress-accuracy.spec.mjs:2:1 › completing assessment content preserves that record without inflating the lesson progress map
+2026-10-20T12:37:30.4067383Z [92/213] [mobile-430] › tests/browser/role-gates.spec.mjs:4:3 › Role-gated workspaces › facilitator workspace does not expose tools to a signed-out visitor
+2026-10-20T12:37:30.6761516Z [93/213] [mobile-430] › tests/browser/role-gates.spec.mjs:13:3 › Role-gated workspaces › institution operations does not grant management access to a signed-out visitor
+2026-10-20T12:37:31.5602837Z [94/213] [mobile-430] › tests/browser/semantic-learning-v3.spec.mjs:37:1 › rankings are ordered, confirmed, persistent and visible in portfolio
+2026-10-20T12:37:33.0211816Z [95/213] [mobile-430] › tests/browser/semantic-learning-v3.spec.mjs:61:1 › rating controls retain their scale and written action fields
+2026-10-20T12:37:34.1700436Z [96/213] [mobile-430] › tests/browser/semantic-learning-v3.spec.mjs:75:1 › values sort supports authored choices, custom values and five-three-one narrowing
+2026-10-20T12:37:35.6835888Z [97/213] [mobile-430] › tests/browser/semantic-learning-v3.spec.mjs:91:1 › choices inside source lists remain interactive and keep stable identities
+2026-10-20T12:37:36.5989472Z [98/213] [mobile-430] › tests/browser/semantic-learning-v3.spec.mjs:100:1 › equations and percentage fields retain meaning and outline avoids fixed chrome
+2026-10-20T12:37:37.8915642Z [99/213] [mobile-430] › tests/browser/semantic-learning-v3.spec.mjs:116:1 › failed device save does not present an answer as captured
+2026-10-20T12:37:38.3942173Z [100/213] [mobile-430] › tests/browser/semantic-learning-v3.spec.mjs:125:1 › completion saves the lesson before moving forward
+2026-10-20T12:37:38.9073621Z [101/213] [mobile-430] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 8 Term 1 retains authored content and viewport integrity
+2026-10-20T12:37:39.6843164Z [102/213] [mobile-430] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 8 Term 2 retains authored content and viewport integrity
+2026-10-20T12:37:40.3905773Z [103/213] [mobile-430] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 8 Term 3 retains authored content and viewport integrity
+2026-10-20T12:37:41.1045112Z [104/213] [mobile-430] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 8 Term 4 retains authored content and viewport integrity
+2026-10-20T12:37:41.7812413Z [105/213] [mobile-430] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 9 Term 1 retains authored content and viewport integrity
+2026-10-20T12:37:42.5380596Z [106/213] [mobile-430] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 9 Term 2 retains authored content and viewport integrity
+2026-10-20T12:37:43.3546682Z [107/213] [mobile-430] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 9 Term 3 retains authored content and viewport integrity
+2026-10-20T12:37:44.1367770Z [108/213] [mobile-430] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 9 Term 4 retains authored content and viewport integrity
+2026-10-20T12:37:44.8939878Z [109/213] [mobile-430] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 10 Term 1 retains authored content and viewport integrity
+2026-10-20T12:37:45.5932037Z [110/213] [mobile-430] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 10 Term 2 retains authored content and viewport integrity
+2026-10-20T12:37:46.3690686Z [111/213] [mobile-430] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 10 Term 3 retains authored content and viewport integrity
+2026-10-20T12:37:47.1284005Z [112/213] [mobile-430] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 10 Term 4 retains authored content and viewport integrity
+2026-10-20T12:37:47.8365190Z [113/213] [mobile-430] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 11 Term 1 retains authored content and viewport integrity
+2026-10-20T12:37:48.6516697Z [114/213] [mobile-430] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 11 Term 2 retains authored content and viewport integrity
+2026-10-20T12:37:49.4485475Z [115/213] [mobile-430] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 11 Term 3 retains authored content and viewport integrity
+2026-10-20T12:37:50.2931428Z [116/213] [mobile-430] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 11 Term 4 retains authored content and viewport integrity
+2026-10-20T12:37:51.0809513Z [117/213] [mobile-430] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 12 Term 1 retains authored content and viewport integrity
+2026-10-20T12:37:51.8518562Z [118/213] [mobile-430] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 12 Term 2 retains authored content and viewport integrity
+2026-10-20T12:37:52.7963584Z [119/213] [mobile-430] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 12 Term 3 retains authored content and viewport integrity
+2026-10-20T12:37:53.5931018Z [120/213] [mobile-430] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 12 Term 4 retains authored content and viewport integrity
+2026-10-20T12:37:54.3430416Z [121/213] [mobile-430] › tests/browser/settings-preferences.spec.mjs:3:1 › staff workspace surface fixtures keep readable text in dark and system themes
+2026-10-20T12:37:54.7375484Z [122/213] [mobile-430] › tests/browser/settings-preferences.spec.mjs:26:1 › profile refresh preserves unsaved fields and updates untouched fields across tabs
+2026-10-20T12:37:55.4633046Z [123/213] [mobile-430] › tests/browser/settings-preferences.spec.mjs:45:1 › appearance and reading preferences apply immediately and survive reload
+2026-10-20T12:37:55.9765242Z [124/213] [mobile-430] › tests/browser/settings-preferences.spec.mjs:69:1 › dark and system themes keep the learner menu and settings readable
+2026-10-20T12:37:56.6324154Z [125/213] [mobile-430] › tests/browser/settings-preferences.spec.mjs:115:1 › all appearance, accent, text size and reading width settings update the document
+2026-10-20T12:37:57.5289172Z [126/213] [mobile-430] › tests/browser/uiux-followup.spec.mjs:5:1 › alternative activity disclosure has a usable touch target and preserves content
+2026-10-20T12:37:58.0501369Z [127/213] [mobile-430] › tests/browser/uiux-followup.spec.mjs:20:1 › reader position and account wrappers use supported accessible names
+2026-10-20T12:37:58.5546779Z [128/213] [mobile-430] › tests/browser/uiux-followup.spec.mjs:30:1 › assessment radio choices use their full label as a touch target
+2026-10-20T12:37:59.1354635Z [129/213] [mobile-430] › tests/browser/uiux-hardening.spec.mjs:7:1 › public learner, account and institution accessibility regressions
+2026-10-20T12:38:05.0719015Z [130/213] [mobile-430] › tests/browser/uiux-hardening.spec.mjs:18:3 › dark keeps core reading, progress, portfolio and institutional demo accessible
+2026-10-20T12:38:08.8919927Z [131/213] [mobile-430] › tests/browser/uiux-hardening.spec.mjs:18:3 › system keeps core reading, progress, portfolio and institutional demo accessible
+2026-10-20T12:38:12.6810427Z [132/213] [mobile-430] › tests/browser/uiux-hardening.spec.mjs:35:1 › institution demo learner action opens the curriculum
+2026-10-20T12:38:13.0200629Z [133/213] [mobile-430] › tests/browser/uiux-hardening.spec.mjs:42:1 › site icon resolves and header navigation offers a touch target
+2026-10-20T12:38:13.3361225Z [134/213] [mobile-430] › tests/browser/uiux-hardening.spec.mjs:55:1 › reading preferences change actual lesson text size and measure
+2026-10-20T12:38:14.6198041Z [135/213] [mobile-430] › tests/browser/uiux-hardening.spec.mjs:75:1 › each workspace has one main landmark and a keyboard skip link
+2026-10-20T12:38:15.9630737Z [136/213] [mobile-430] › tests/browser/uiux-hardening.spec.mjs:87:1 › lesson notes and position indicator have accessible names and notes survive reload
+2026-10-20T12:38:16.5825018Z [137/213] [mobile-430] › tests/browser/uiux-hardening.spec.mjs:96:1 › offline answers and notes survive reconnect under the same response identities
+2026-10-20T12:38:17.3016131Z [138/213] [mobile-430] › tests/browser/uiux-hardening.spec.mjs:113:1 › compact term map traps focus, closes on Escape, and restores focus
+2026-10-20T12:38:18.0285159Z [139/213] [mobile-430] › tests/browser/uiux-hardening.spec.mjs:141:1 › learner menu makes the background inert while open
+2026-10-20T12:38:18.3787521Z [140/213] [mobile-430] › tests/browser/uiux-hardening.spec.mjs:152:1 › institution demo perspective tabs support arrows, Home and End
+2026-10-20T12:38:18.7452184Z [141/213] [mobile-430] › tests/browser/uiux-hardening.spec.mjs:169:1 › lesson load failure offers retry in place without losing a saved answer
+2026-10-20T12:38:19.4358824Z [142/213] [mobile-430] › tests/browser/uiux-hardening.spec.mjs:181:1 › reader print preserves lesson copy and saved notes without fixed navigation
+2026-10-20T12:38:20.5068996Z [143/213] [mobile-360] › tests/browser/auth-persistence.spec.mjs:3:1 › learner local state survives reload and profile settings stay concise without altering the record
+2026-10-20T12:38:21.3196044Z [144/213] [mobile-360] › tests/browser/compact-list-reflow.spec.mjs:3:1 › authored list blanks wrap at 320px and keep saved choices
+2026-10-20T12:38:22.0691646Z [145/213] [mobile-360] › tests/browser/compact-list-reflow.spec.mjs:20:1 › authored list response fields save under stable identities and reach portfolio
+2026-10-20T12:38:23.1370916Z [146/213] [mobile-360] › tests/browser/institutional-operations.spec.mjs:4:3 › Institutional operations › operations route is present and safely gates unauthenticated access
+2026-10-20T12:38:23.4234644Z [147/213] [mobile-360] › tests/browser/institutional-operations.spec.mjs:19:3 › Institutional operations › public institution page exposes the live operations entry point
+2026-10-20T12:38:23.6915219Z [148/213] [mobile-360] › tests/browser/learner-surface-consistency.spec.mjs:9:1 › home, library, grade map and progress agree without counting assessment or historical completions
+2026-10-20T12:38:24.4832489Z [149/213] [mobile-360] › tests/browser/learner-surface-consistency.spec.mjs:20:2 › home recovers a failed curriculum load without false progress or lost work
+2026-10-20T12:38:24.9749267Z [150/213] [mobile-360] › tests/browser/learner-surface-consistency.spec.mjs:20:2 › library recovers a failed curriculum load without false progress or lost work
+2026-10-20T12:38:25.4619940Z [151/213] [mobile-360] › tests/browser/learner-surface-consistency.spec.mjs:20:2 › grade map recovers a failed curriculum load without false progress or lost work
+2026-10-20T12:38:26.0374369Z [152/213] [mobile-360] › tests/browser/learner-surface-consistency.spec.mjs:32:1 › home does not label a newly selected lesson with the previous lesson title
+2026-10-20T12:38:26.9397878Z [153/213] [mobile-360] › tests/browser/learner-surface-consistency.spec.mjs:49:1 › facilitator report CSS fixture prints readable copy without mobile navigation in dark and system modes
+2026-10-20T12:38:27.3815161Z [154/213] [mobile-360] › tests/browser/loading-skip.spec.mjs:3:1 › reader skip target keeps focus while its lesson bundle is loading
+2026-10-20T12:38:27.7933344Z [155/213] [mobile-360] › tests/browser/portfolio-recovery.spec.mjs:2:1 › portfolio curriculum failure preserves saved answers and gives recovery instead of a false empty state
+2026-10-20T12:38:28.9324674Z [156/213] [mobile-360] › tests/browser/presentation-v2.spec.mjs:79:3 › Applied Commerce Presentation Architecture 2.0 › hierarchy stays quiet for reading and strong at learning transitions
+2026-10-20T12:38:29.6943546Z [157/213] [mobile-360] › tests/browser/presentation-v2.spec.mjs:100:3 › Applied Commerce Presentation Architecture 2.0 › simple tables become labelled mobile rows while wide tables retain geometry
+2026-10-20T12:38:30.4490367Z [158/213] [mobile-360] › tests/browser/presentation-v2.spec.mjs:132:3 › Applied Commerce Presentation Architecture 2.0 › authored choices remain usable and visibly selected
+2026-10-20T12:38:31.4619743Z [159/213] [mobile-360] › tests/browser/presentation-v2.spec.mjs:152:3 › Applied Commerce Presentation Architecture 2.0 › long lesson titles wrap without colliding with reader chrome
+2026-10-20T12:38:32.3118418Z [160/213] [mobile-360] › tests/browser/presentation-v2.spec.mjs:185:3 › Applied Commerce Presentation Architecture 2.0 › wide-table outlier preserves table geometry without creating page overflow
+2026-10-20T12:38:32.9281830Z [161/213] [mobile-360] › tests/browser/presentation-v2.spec.mjs:207:3 › Applied Commerce Presentation Architecture 2.0 › formal assessment answers use assessment surfaces and real controls
+2026-10-20T12:38:33.8366677Z [162/213] [mobile-360] › tests/browser/progress-accuracy.spec.mjs:2:1 › completing assessment content preserves that record without inflating the lesson progress map
+2026-10-20T12:38:34.8093205Z [163/213] [mobile-360] › tests/browser/role-gates.spec.mjs:4:3 › Role-gated workspaces › facilitator workspace does not expose tools to a signed-out visitor
+2026-10-20T12:38:35.0756573Z [164/213] [mobile-360] › tests/browser/role-gates.spec.mjs:13:3 › Role-gated workspaces › institution operations does not grant management access to a signed-out visitor
+2026-10-20T12:38:35.9247836Z [165/213] [mobile-360] › tests/browser/semantic-learning-v3.spec.mjs:37:1 › rankings are ordered, confirmed, persistent and visible in portfolio
+2026-10-20T12:38:37.4278065Z [166/213] [mobile-360] › tests/browser/semantic-learning-v3.spec.mjs:61:1 › rating controls retain their scale and written action fields
+2026-10-20T12:38:38.5710625Z [167/213] [mobile-360] › tests/browser/semantic-learning-v3.spec.mjs:75:1 › values sort supports authored choices, custom values and five-three-one narrowing
+2026-10-20T12:38:40.0244220Z [168/213] [mobile-360] › tests/browser/semantic-learning-v3.spec.mjs:91:1 › choices inside source lists remain interactive and keep stable identities
+2026-10-20T12:38:40.9642959Z [169/213] [mobile-360] › tests/browser/semantic-learning-v3.spec.mjs:100:1 › equations and percentage fields retain meaning and outline avoids fixed chrome
+2026-10-20T12:38:42.1955244Z [170/213] [mobile-360] › tests/browser/semantic-learning-v3.spec.mjs:116:1 › failed device save does not present an answer as captured
+2026-10-20T12:38:42.7056235Z [171/213] [mobile-360] › tests/browser/semantic-learning-v3.spec.mjs:125:1 › completion saves the lesson before moving forward
+2026-10-20T12:38:43.2337456Z [172/213] [mobile-360] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 8 Term 1 retains authored content and viewport integrity
+2026-10-20T12:38:43.9967347Z [173/213] [mobile-360] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 8 Term 2 retains authored content and viewport integrity
+2026-10-20T12:38:44.6854290Z [174/213] [mobile-360] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 8 Term 3 retains authored content and viewport integrity
+2026-10-20T12:38:45.4121919Z [175/213] [mobile-360] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 8 Term 4 retains authored content and viewport integrity
+2026-10-20T12:38:46.0707471Z [176/213] [mobile-360] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 9 Term 1 retains authored content and viewport integrity
+2026-10-20T12:38:46.8087148Z [177/213] [mobile-360] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 9 Term 2 retains authored content and viewport integrity
+2026-10-20T12:38:47.5626107Z [178/213] [mobile-360] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 9 Term 3 retains authored content and viewport integrity
+2026-10-20T12:38:48.3242210Z [179/213] [mobile-360] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 9 Term 4 retains authored content and viewport integrity
+2026-10-20T12:38:49.0512684Z [180/213] [mobile-360] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 10 Term 1 retains authored content and viewport integrity
+2026-10-20T12:38:49.7227554Z [181/213] [mobile-360] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 10 Term 2 retains authored content and viewport integrity
+2026-10-20T12:38:50.4573024Z [182/213] [mobile-360] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 10 Term 3 retains authored content and viewport integrity
+2026-10-20T12:38:51.2583406Z [183/213] [mobile-360] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 10 Term 4 retains authored content and viewport integrity
+2026-10-20T12:38:51.9546471Z [184/213] [mobile-360] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 11 Term 1 retains authored content and viewport integrity
+2026-10-20T12:38:52.7366732Z [185/213] [mobile-360] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 11 Term 2 retains authored content and viewport integrity
+2026-10-20T12:38:53.4750259Z [186/213] [mobile-360] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 11 Term 3 retains authored content and viewport integrity
+2026-10-20T12:38:54.2779445Z [187/213] [mobile-360] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 11 Term 4 retains authored content and viewport integrity
+2026-10-20T12:38:55.0236513Z [188/213] [mobile-360] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 12 Term 1 retains authored content and viewport integrity
+2026-10-20T12:38:55.7628969Z [189/213] [mobile-360] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 12 Term 2 retains authored content and viewport integrity
+2026-10-20T12:38:56.6252578Z [190/213] [mobile-360] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 12 Term 3 retains authored content and viewport integrity
+2026-10-20T12:38:57.3883022Z [191/213] [mobile-360] › tests/browser/semantic-learning-v3.spec.mjs:135:3 › semantic census Grade 12 Term 4 retains authored content and viewport integrity
+2026-10-20T12:38:58.1219764Z [192/213] [mobile-360] › tests/browser/settings-preferences.spec.mjs:3:1 › staff workspace surface fixtures keep readable text in dark and system themes
+2026-10-20T12:38:58.4923581Z [193/213] [mobile-360] › tests/browser/settings-preferences.spec.mjs:26:1 › profile refresh preserves unsaved fields and updates untouched fields across tabs
+2026-10-20T12:38:59.2088069Z [194/213] [mobile-360] › tests/browser/settings-preferences.spec.mjs:45:1 › appearance and reading preferences apply immediately and survive reload
+2026-10-20T12:38:59.6967830Z [195/213] [mobile-360] › tests/browser/settings-preferences.spec.mjs:69:1 › dark and system themes keep the learner menu and settings readable
+2026-10-20T12:39:00.3232935Z [196/213] [mobile-360] › tests/browser/settings-preferences.spec.mjs:115:1 › all appearance, accent, text size and reading width settings update the document
+2026-10-20T12:39:01.2164988Z [197/213] [mobile-360] › tests/browser/uiux-followup.spec.mjs:5:1 › alternative activity disclosure has a usable touch target and preserves content
+2026-10-20T12:39:01.6928863Z [198/213] [mobile-360] › tests/browser/uiux-followup.spec.mjs:20:1 › reader position and account wrappers use supported accessible names
+2026-10-20T12:39:02.2271429Z [199/213] [mobile-360] › tests/browser/uiux-followup.spec.mjs:30:1 › assessment radio choices use their full label as a touch target
+2026-10-20T12:39:02.7810885Z [200/213] [mobile-360] › tests/browser/uiux-hardening.spec.mjs:7:1 › public learner, account and institution accessibility regressions
+2026-10-20T12:39:08.5793080Z [201/213] [mobile-360] › tests/browser/uiux-hardening.spec.mjs:18:3 › dark keeps core reading, progress, portfolio and institutional demo accessible
+2026-10-20T12:39:12.2699223Z [202/213] [mobile-360] › tests/browser/uiux-hardening.spec.mjs:18:3 › system keeps core reading, progress, portfolio and institutional demo accessible
+2026-10-20T12:39:16.0003287Z [203/213] [mobile-360] › tests/browser/uiux-hardening.spec.mjs:35:1 › institution demo learner action opens the curriculum
+2026-10-20T12:39:16.3623495Z [204/213] [mobile-360] › tests/browser/uiux-hardening.spec.mjs:42:1 › site icon resolves and header navigation offers a touch target
+2026-10-20T12:39:16.6688837Z [205/213] [mobile-360] › tests/browser/uiux-hardening.spec.mjs:55:1 › reading preferences change actual lesson text size and measure
+2026-10-20T12:39:17.9304977Z [206/213] [mobile-360] › tests/browser/uiux-hardening.spec.mjs:75:1 › each workspace has one main landmark and a keyboard skip link
+2026-10-20T12:39:19.1580852Z [207/213] [mobile-360] › tests/browser/uiux-hardening.spec.mjs:87:1 › lesson notes and position indicator have accessible names and notes survive reload
+2026-10-20T12:39:19.7547421Z [208/213] [mobile-360] › tests/browser/uiux-hardening.spec.mjs:96:1 › offline answers and notes survive reconnect under the same response identities
+2026-10-20T12:39:20.4882717Z [209/213] [mobile-360] › tests/browser/uiux-hardening.spec.mjs:113:1 › compact term map traps focus, closes on Escape, and restores focus
+2026-10-20T12:39:21.1532500Z [210/213] [mobile-360] › tests/browser/uiux-hardening.spec.mjs:141:1 › learner menu makes the background inert while open
+2026-10-20T12:39:21.5347904Z [211/213] [mobile-360] › tests/browser/uiux-hardening.spec.mjs:152:1 › institution demo perspective tabs support arrows, Home and End
+2026-10-20T12:39:21.8673192Z [212/213] [mobile-360] › tests/browser/uiux-hardening.spec.mjs:169:1 › lesson load failure offers retry in place without losing a saved answer
+2026-10-20T12:39:22.5340276Z [213/213] [mobile-360] › tests/browser/uiux-hardening.spec.mjs:181:1 › reader print preserves lesson copy and saved notes without fixed navigation
+2026-10-20T12:39:23.2082919Z   213 passed (3.4m)
+2026-10-20T12:39:23.2378379Z ##[group]Run npm run census:presentation
+2026-10-20T12:39:23.2378750Z [36;1mnpm run census:presentation[0m
+2026-10-20T12:39:23.2440969Z shell: /usr/bin/bash -e {0}
+2026-10-20T12:39:23.2441218Z env:
+2026-10-20T12:39:23.2441486Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T12:39:23.2441936Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-10-20T12:39:23.2442387Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T12:39:23.2442786Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T12:39:23.2443186Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T12:39:23.2443577Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-10-20T12:39:23.2443894Z ##[endgroup]
+2026-10-20T12:39:23.3440025Z
+2026-10-20T12:39:23.3441026Z > applied-commerce-learning-platform@0.1.0 census:presentation
+2026-10-20T12:39:23.3441903Z > node scripts/presentation-census.mjs
+2026-10-20T12:39:23.3442580Z
+2026-10-20T12:39:23.4522783Z {
+2026-10-20T12:39:23.4523265Z   "ok": true,
+2026-10-20T12:39:23.4523647Z   "grades": [
+2026-10-20T12:39:23.4523987Z     {
+2026-10-20T12:39:23.4524317Z       "grade": 8,
+2026-10-20T12:39:23.4524655Z       "units": 80,
+2026-10-20T12:39:23.4525018Z       "blocks": 4723,
+2026-10-20T12:39:23.4525506Z       "stableBlockIdentities": 4723,
+2026-10-20T12:39:23.4526013Z       "families": {
+2026-10-20T12:39:23.4526411Z         "section": 561,
+2026-10-20T12:39:23.4526848Z         "paragraph": 2815,
+2026-10-20T12:39:23.4527298Z         "list": 698,
+2026-10-20T12:39:23.4527694Z         "table": 203,
+2026-10-20T12:39:23.4528090Z         "equation": 37,
+2026-10-20T12:39:23.4528496Z         "reflection": 68,
+2026-10-20T12:39:23.4528912Z         "activity": 96,
+2026-10-20T12:39:23.4529317Z         "portfolio": 169,
+2026-10-20T12:39:23.4533209Z         "checkpoint": 76
+2026-10-20T12:39:23.4533654Z       }
+2026-10-20T12:39:23.4533976Z     },
+2026-10-20T12:39:23.4534308Z     {
+2026-10-20T12:39:23.4534743Z       "grade": 9,
+2026-10-20T12:39:23.4535111Z       "units": 75,
+2026-10-20T12:39:23.4535484Z       "blocks": 4907,
+2026-10-20T12:39:23.4535948Z       "stableBlockIdentities": 4907,
+2026-10-20T12:39:23.4536418Z       "families": {
+2026-10-20T12:39:23.4536773Z         "section": 683,
+2026-10-20T12:39:23.4537139Z         "paragraph": 3068,
+2026-10-20T12:39:23.4537545Z         "list": 436,
+2026-10-20T12:39:23.4537885Z         "table": 302,
+2026-10-20T12:39:23.4538245Z         "equation": 68,
+2026-10-20T12:39:23.4538631Z         "reflection": 47,
+2026-10-20T12:39:23.4539009Z         "activity": 77,
+2026-10-20T12:39:23.4539381Z         "portfolio": 152,
+2026-10-20T12:39:23.4539771Z         "checkpoint": 74
+2026-10-20T12:39:23.4540392Z       }
+2026-10-20T12:39:23.4540696Z     },
+2026-10-20T12:39:23.4540986Z     {
+2026-10-20T12:39:23.4541286Z       "grade": 10,
+2026-10-20T12:39:23.4541622Z       "units": 80,
+2026-10-20T12:39:23.4541967Z       "blocks": 3244,
+2026-10-20T12:39:23.4542412Z       "stableBlockIdentities": 3244,
+2026-10-20T12:39:23.4542869Z       "families": {
+2026-10-20T12:39:23.4543220Z         "section": 467,
+2026-10-20T12:39:23.4543589Z         "paragraph": 1915,
+2026-10-20T12:39:23.4543974Z         "list": 257,
+2026-10-20T12:39:23.4544329Z         "table": 220,
+2026-10-20T12:39:23.4544727Z         "equation": 39,
+2026-10-20T12:39:23.4545178Z         "reflection": 55,
+2026-10-20T12:39:23.4564438Z         "activity": 79,
+2026-10-20T12:39:23.4564952Z         "portfolio": 144,
+2026-10-20T12:39:23.4565411Z         "checkpoint": 68
+2026-10-20T12:39:23.4565807Z       }
+2026-10-20T12:39:23.4566121Z     },
+2026-10-20T12:39:23.4566425Z     {
+2026-10-20T12:39:23.4566743Z       "grade": 11,
+2026-10-20T12:39:23.4567099Z       "units": 80,
+2026-10-20T12:39:23.4567445Z       "blocks": 4090,
+2026-10-20T12:39:23.4567882Z       "stableBlockIdentities": 4090,
+2026-10-20T12:39:23.4568332Z       "families": {
+2026-10-20T12:39:23.4568691Z         "section": 470,
+2026-10-20T12:39:23.4569368Z         "paragraph": 2553,
+2026-10-20T12:39:23.4569794Z         "list": 357,
+2026-10-20T12:39:23.4570412Z         "table": 291,
+2026-10-20T12:39:23.4570783Z         "equation": 39,
+2026-10-20T12:39:23.4571158Z         "reflection": 61,
+2026-10-20T12:39:23.4571543Z         "activity": 82,
+2026-10-20T12:39:23.4571906Z         "portfolio": 159,
+2026-10-20T12:39:23.4572292Z         "checkpoint": 78
+2026-10-20T12:39:23.4572664Z       }
+2026-10-20T12:39:23.4572955Z     },
+2026-10-20T12:39:23.4573246Z     {
+2026-10-20T12:39:23.4573550Z       "grade": 12,
+2026-10-20T12:39:23.4573891Z       "units": 80,
+2026-10-20T12:39:23.4574245Z       "blocks": 3802,
+2026-10-20T12:39:23.4574699Z       "stableBlockIdentities": 3802,
+2026-10-20T12:39:23.4575156Z       "families": {
+2026-10-20T12:39:23.4575511Z         "section": 535,
+2026-10-20T12:39:23.4575889Z         "paragraph": 2237,
+2026-10-20T12:39:23.4576272Z         "list": 351,
+2026-10-20T12:39:23.4576621Z         "table": 243,
+2026-10-20T12:39:23.4576981Z         "equation": 51,
+2026-10-20T12:39:23.4577657Z         "reflection": 72,
+2026-10-20T12:39:23.4578053Z         "activity": 81,
+2026-10-20T12:39:23.4578496Z         "portfolio": 152,
+2026-10-20T12:39:23.4578882Z         "checkpoint": 80
+2026-10-20T12:39:23.4579240Z       }
+2026-10-20T12:39:23.4579539Z     }
+2026-10-20T12:39:23.4579850Z   ],
+2026-10-20T12:39:23.4580492Z   "outliers": [
+2026-10-20T12:39:23.4580813Z     {
+2026-10-20T12:39:23.4581128Z       "grade": 8,
+2026-10-20T12:39:23.4581464Z       "term": 1,
+2026-10-20T12:39:23.4581864Z       "unitId": "g8-t1-l01-001",
+2026-10-20T12:39:23.4582299Z       "title": "WHO AM I?",
+2026-10-20T12:39:23.4582730Z       "blockCount": 106,
+2026-10-20T12:39:23.4583121Z       "maxColumns": 4,
+2026-10-20T12:39:23.4583510Z       "longTextBlocks": 0,
+2026-10-20T12:39:23.4583926Z       "responseBlocks": 8,
+2026-10-20T12:39:23.4584327Z       "families": {
+2026-10-20T12:39:23.4584684Z         "section": 8,
+2026-10-20T12:39:23.4585073Z         "paragraph": 67,
+2026-10-20T12:39:23.4585471Z         "list": 20,
+2026-10-20T12:39:23.4585833Z         "table": 2,
+2026-10-20T12:39:23.4586187Z         "equation": 1,
+2026-10-20T12:39:23.4586566Z         "reflection": 2,
+2026-10-20T12:39:23.4586954Z         "activity": 2,
+2026-10-20T12:39:23.4587343Z         "portfolio": 3,
+2026-10-20T12:39:23.4587727Z         "checkpoint": 1
+2026-10-20T12:39:23.4588092Z       },
+2026-10-20T12:39:23.4588410Z       "reasons": [
+2026-10-20T12:39:23.4588761Z         "large-unit"
+2026-10-20T12:39:23.4589105Z       ]
+2026-10-20T12:39:23.4589414Z     },
+2026-10-20T12:39:23.4589705Z     {
+2026-10-20T12:39:23.4590281Z       "grade": 8,
+2026-10-20T12:39:23.4590660Z       "term": 1,
+2026-10-20T12:39:23.4591070Z       "unitId": "g8-t1-l03-003",
+2026-10-20T12:39:23.4591556Z       "title": "PERSONAL EFFICACY",
+2026-10-20T12:39:23.4592016Z       "blockCount": 110,
+2026-10-20T12:39:23.4592409Z       "maxColumns": 4,
+2026-10-20T12:39:23.4592803Z       "longTextBlocks": 0,
+2026-10-20T12:39:23.4593221Z       "responseBlocks": 7,
+2026-10-20T12:39:23.4593636Z       "families": {
+2026-10-20T12:39:23.4593986Z         "section": 8,
+2026-10-20T12:39:23.4594370Z         "paragraph": 69,
+2026-10-20T12:39:23.4594750Z         "list": 23,
+2026-10-20T12:39:23.4595172Z         "table": 2,
+2026-10-20T12:39:23.4595525Z         "equation": 1,
+2026-10-20T12:39:23.4595906Z         "reflection": 1,
+2026-10-20T12:39:23.4596288Z         "activity": 2,
+2026-10-20T12:39:23.4596662Z         "portfolio": 3,
+2026-10-20T12:39:23.4597056Z         "checkpoint": 1
+2026-10-20T12:39:23.4597409Z       },
+2026-10-20T12:39:23.4597724Z       "reasons": [
+2026-10-20T12:39:23.4598070Z         "large-unit"
+2026-10-20T12:39:23.4598422Z       ]
+2026-10-20T12:39:23.4598719Z     },
+2026-10-20T12:39:23.4599022Z     {
+2026-10-20T12:39:23.4599332Z       "grade": 8,
+2026-10-20T12:39:23.4599668Z       "term": 1,
+2026-10-20T12:39:23.4600275Z       "unitId": "g8-t1-l04-004",
+2026-10-20T12:39:23.4600783Z       "title": "HOW OTHERS SHAPE US",
+2026-10-20T12:39:23.4601252Z       "blockCount": 94,
+2026-10-20T12:39:23.4602456Z       "maxColumns": 4,
+2026-10-20T12:39:23.4602927Z       "longTextBlocks": 0,
+2026-10-20T12:39:23.4603361Z       "responseBlocks": 6,
+2026-10-20T12:39:23.4603766Z       "families": {
+2026-10-20T12:39:23.4604136Z         "section": 10,
+2026-10-20T12:39:23.4604532Z         "paragraph": 52,
+2026-10-20T12:39:23.4604925Z         "list": 23,
+2026-10-20T12:39:23.4605279Z         "table": 3,
+2026-10-20T12:39:23.4605637Z         "activity": 2,
+2026-10-20T12:39:23.4606017Z         "reflection": 1,
+2026-10-20T12:39:23.4606408Z         "portfolio": 2,
+2026-10-20T12:39:23.4606800Z         "checkpoint": 1
+2026-10-20T12:39:23.4607171Z       },
+2026-10-20T12:39:23.4607491Z       "reasons": [
+2026-10-20T12:39:23.4607843Z         "large-unit"
+2026-10-20T12:39:23.4608194Z       ]
+2026-10-20T12:39:23.4608496Z     },
+2026-10-20T12:39:23.4608791Z     {
+2026-10-20T12:39:23.4609100Z       "grade": 8,
+2026-10-20T12:39:23.4609442Z       "term": 1,
+2026-10-20T12:39:23.4609841Z       "unitId": "g8-t1-l05-005",
+2026-10-20T12:39:23.4610819Z       "title": "WHAT DO I WANT?",
+2026-10-20T12:39:23.4611273Z       "blockCount": 78,
+2026-10-20T12:39:23.4611661Z       "maxColumns": 4,
+2026-10-20T12:39:23.4612053Z       "longTextBlocks": 0,
+2026-10-20T12:39:23.4612481Z       "responseBlocks": 6,
+2026-10-20T12:39:23.4612895Z       "families": {
+2026-10-20T12:39:23.4613251Z         "section": 9,
+2026-10-20T12:39:23.4613637Z         "paragraph": 50,
+2026-10-20T12:39:23.4614021Z         "list": 9,
+2026-10-20T12:39:23.4614368Z         "table": 3,
+2026-10-20T12:39:23.4614723Z         "equation": 1,
+2026-10-20T12:39:23.4615104Z         "reflection": 2,
+2026-10-20T12:39:23.4615490Z         "activity": 1,
+2026-10-20T12:39:23.4615867Z         "portfolio": 2,
+2026-10-20T12:39:23.4616253Z         "checkpoint": 1
+2026-10-20T12:39:23.4616612Z       },
+2026-10-20T12:39:23.4616927Z       "reasons": [
+2026-10-20T12:39:23.4617281Z         "large-unit"
+2026-10-20T12:39:23.4617727Z       ]
+2026-10-20T12:39:23.4618026Z     },
+2026-10-20T12:39:23.4618332Z     {
+2026-10-20T12:39:23.4618642Z       "grade": 8,
+2026-10-20T12:39:23.4618970Z       "term": 1,
+2026-10-20T12:39:23.4619353Z       "unitId": "g8-t1-l20-020",
+2026-10-20T12:39:23.4619851Z       "title": "TERM REVIEW AND PORTFOLIO",
+2026-10-20T12:39:23.4620537Z       "blockCount": 97,
+2026-10-20T12:39:23.4620909Z       "maxColumns": 0,
+2026-10-20T12:39:23.4621282Z       "longTextBlocks": 0,
+2026-10-20T12:39:23.4621686Z       "responseBlocks": 10,
+2026-10-20T12:39:23.4622077Z       "families": {
+2026-10-20T12:39:23.4622430Z         "section": 6,
+2026-10-20T12:39:23.4622782Z         "paragraph": 55,
+2026-10-20T12:39:23.4623138Z         "list": 25,
+2026-10-20T12:39:23.4623477Z         "activity": 5,
+2026-10-20T12:39:23.4623834Z         "portfolio": 5,
+2026-10-20T12:39:23.4624197Z         "equation": 1
+2026-10-20T12:39:23.4624539Z       },
+2026-10-20T12:39:23.4624843Z       "reasons": [
+2026-10-20T12:39:23.4625188Z         "large-unit",
+2026-10-20T12:39:23.4625554Z         "response-dense"
+2026-10-20T12:39:23.4625929Z       ]
+2026-10-20T12:39:23.4626216Z     },
+2026-10-20T12:39:23.4626507Z     {
+2026-10-20T12:39:23.4626799Z       "grade": 8,
+2026-10-20T12:39:23.4627120Z       "term": 3,
+2026-10-20T12:39:23.4627501Z       "unitId": "g8-t3-l57-056",
+2026-10-20T12:39:23.4628297Z       "title": "PROJECT LAUNCH — MY HABIT TRACKER",
+2026-10-20T12:39:23.4628809Z       "blockCount": 75,
+2026-10-20T12:39:23.4629184Z       "maxColumns": 4,
+2026-10-20T12:39:23.4629555Z       "longTextBlocks": 0,
+2026-10-20T12:39:23.4629947Z       "responseBlocks": 5,
+2026-10-20T12:39:23.4630555Z       "families": {
+2026-10-20T12:39:23.4630901Z         "section": 9,
+2026-10-20T12:39:23.4631259Z         "paragraph": 35,
+2026-10-20T12:39:23.4631623Z         "list": 22,
+2026-10-20T12:39:23.4631940Z         "table": 4,
+2026-10-20T12:39:23.4632279Z         "reflection": 1,
+2026-10-20T12:39:23.4632648Z         "activity": 1,
+2026-10-20T12:39:23.4633006Z         "portfolio": 2,
+2026-10-20T12:39:23.4633369Z         "checkpoint": 1
+2026-10-20T12:39:23.4633974Z       },
+2026-10-20T12:39:23.4634354Z       "reasons": [
+2026-10-20T12:39:23.4634681Z         "large-unit"
+2026-10-20T12:39:23.4635004Z       ]
+2026-10-20T12:39:23.4635291Z     },
+2026-10-20T12:39:23.4635573Z     {
+2026-10-20T12:39:23.4635865Z       "grade": 8,
+2026-10-20T12:39:23.4636193Z       "term": 3,
+2026-10-20T12:39:23.4636570Z       "unitId": "g8-t3-l60-059",
+2026-10-20T12:39:23.4637125Z       "title": "WHAT HABITS TAUGHT ME AND TERM REFLECTION",
+2026-10-20T12:39:23.4637657Z       "blockCount": 92,
+2026-10-20T12:39:23.4638018Z       "maxColumns": 2,
+2026-10-20T12:39:23.4638384Z       "longTextBlocks": 0,
+2026-10-20T12:39:23.4638782Z       "responseBlocks": 12,
+2026-10-20T12:39:23.4639161Z       "families": {
+2026-10-20T12:39:23.4639494Z         "section": 7,
+2026-10-20T12:39:23.4639845Z         "paragraph": 63,
+2026-10-20T12:39:23.4640426Z         "list": 9,
+2026-10-20T12:39:23.4640773Z         "reflection": 1,
+2026-10-20T12:39:23.4641155Z         "activity": 5,
+2026-10-20T12:39:23.4641530Z         "portfolio": 6,
+2026-10-20T12:39:23.4642086Z         "table": 1
+2026-10-20T12:39:23.4642410Z       },
+2026-10-20T12:39:23.4642708Z       "reasons": [
+2026-10-20T12:39:23.4643043Z         "large-unit",
+2026-10-20T12:39:23.4643413Z         "response-dense"
+2026-10-20T12:39:23.4643770Z       ]
+2026-10-20T12:39:23.4644056Z     },
+2026-10-20T12:39:23.4644336Z     {
+2026-10-20T12:39:23.4644635Z       "grade": 8,
+2026-10-20T12:39:23.4644967Z       "term": 4,
+2026-10-20T12:39:23.4645356Z       "unitId": "g8-t4-l66-065",
+2026-10-20T12:39:23.4645849Z       "title": "CHOOSING YOUR PROJECT",
+2026-10-20T12:39:23.4646310Z       "blockCount": 76,
+2026-10-20T12:39:23.4646684Z       "maxColumns": 4,
+2026-10-20T12:39:23.4647064Z       "longTextBlocks": 0,
+2026-10-20T12:39:23.4647470Z       "responseBlocks": 5,
+2026-10-20T12:39:23.4647862Z       "families": {
+2026-10-20T12:39:23.4648222Z         "section": 8,
+2026-10-20T12:39:23.4648594Z         "paragraph": 28,
+2026-10-20T12:39:23.4648977Z         "list": 32,
+2026-10-20T12:39:23.4649334Z         "table": 3,
+2026-10-20T12:39:23.4649677Z         "reflection": 1,
+2026-10-20T12:39:23.4650266Z         "activity": 1,
+2026-10-20T12:39:23.4650642Z         "portfolio": 2,
+2026-10-20T12:39:23.4651009Z         "checkpoint": 1
+2026-10-20T12:39:23.4651351Z       },
+2026-10-20T12:39:23.4651652Z       "reasons": [
+2026-10-20T12:39:23.4652000Z         "large-unit"
+2026-10-20T12:39:23.4652332Z       ]
+2026-10-20T12:39:23.4652623Z     },
+2026-10-20T12:39:23.4652907Z     {
+2026-10-20T12:39:23.4653198Z       "grade": 9,
+2026-10-20T12:39:23.4653530Z       "term": 1,
+2026-10-20T12:39:23.4653916Z       "unitId": "g9-t1-l07-007",
+2026-10-20T12:39:23.4654381Z       "title": "SKILLS ARE ASSETS",
+2026-10-20T12:39:23.4654819Z       "blockCount": 75,
+2026-10-20T12:39:23.4655186Z       "maxColumns": 4,
+2026-10-20T12:39:23.4655557Z       "longTextBlocks": 0,
+2026-10-20T12:39:23.4655955Z       "responseBlocks": 5,
+2026-10-20T12:39:23.4656343Z       "families": {
+2026-10-20T12:39:23.4656697Z         "section": 8,
+2026-10-20T12:39:23.4657067Z         "paragraph": 55,
+2026-10-20T12:39:23.4657439Z         "list": 3,
+2026-10-20T12:39:23.4657767Z         "table": 3,
+2026-10-20T12:39:23.4658100Z         "equation": 1,
+2026-10-20T12:39:23.4658456Z         "reflection": 1,
+2026-10-20T12:39:23.4658823Z         "activity": 1,
+2026-10-20T12:39:23.4659182Z         "portfolio": 2,
+2026-10-20T12:39:23.4659560Z         "checkpoint": 1
+2026-10-20T12:39:23.4659902Z       },
+2026-10-20T12:39:23.4660392Z       "reasons": [
+2026-10-20T12:39:23.4660730Z         "large-unit"
+2026-10-20T12:39:23.4661065Z       ]
+2026-10-20T12:39:23.4661360Z     },
+2026-10-20T12:39:23.4661657Z     {
+2026-10-20T12:39:23.4661956Z       "grade": 9,
+2026-10-20T12:39:23.4662288Z       "term": 2,
+2026-10-20T12:39:23.4662670Z       "unitId": "g9-t2-l18-019",
+2026-10-20T12:39:23.4663242Z       "title": "FOLLOWING THE MONEY IN MY HOUSEHOLD",
+2026-10-20T12:39:23.4663761Z       "blockCount": 76,
+2026-10-20T12:39:23.4664138Z       "maxColumns": 4,
+2026-10-20T12:39:23.4664723Z       "longTextBlocks": 0,
+2026-10-20T12:39:23.4665147Z       "responseBlocks": 5,
+2026-10-20T12:39:23.4665535Z       "families": {
+2026-10-20T12:39:23.4665879Z         "section": 9,
+2026-10-20T12:39:23.4666225Z         "table": 4,
+2026-10-20T12:39:23.4666571Z         "paragraph": 41,
+2026-10-20T12:39:23.4666934Z         "list": 16,
+2026-10-20T12:39:23.4667264Z         "equation": 1,
+2026-10-20T12:39:23.4667628Z         "reflection": 1,
+2026-10-20T12:39:23.4667994Z         "activity": 1,
+2026-10-20T12:39:23.4668359Z         "portfolio": 2,
+2026-10-20T12:39:23.4668729Z         "checkpoint": 1
+2026-10-20T12:39:23.4669078Z       },
+2026-10-20T12:39:23.4669386Z       "reasons": [
+2026-10-20T12:39:23.4669724Z         "large-unit"
+2026-10-20T12:39:23.4670288Z       ]
+2026-10-20T12:39:23.4670589Z     },
+2026-10-20T12:39:23.4670875Z     {
+2026-10-20T12:39:23.4671165Z       "grade": 9,
+2026-10-20T12:39:23.4671487Z       "term": 2,
+2026-10-20T12:39:23.4671868Z       "unitId": "g9-t2-l22-023",
+2026-10-20T12:39:23.4672919Z       "title": "EMPLOYERS AND EMPLOYEES — TWO ROLES, DIFFERENT RISKS",
+2026-10-20T12:39:23.4673518Z       "blockCount": 79,
+2026-10-20T12:39:23.4673892Z       "maxColumns": 5,
+2026-10-20T12:39:23.4674266Z       "longTextBlocks": 0,
+2026-10-20T12:39:23.4674666Z       "responseBlocks": 5,
+2026-10-20T12:39:23.4675052Z       "families": {
+2026-10-20T12:39:23.4675400Z         "section": 10,
+2026-10-20T12:39:23.4675749Z         "table": 5,
+2026-10-20T12:39:23.4676101Z         "paragraph": 40,
+2026-10-20T12:39:23.4676474Z         "list": 18,
+2026-10-20T12:39:23.4676811Z         "equation": 1,
+2026-10-20T12:39:23.4677176Z         "reflection": 1,
+2026-10-20T12:39:23.4677548Z         "activity": 1,
+2026-10-20T12:39:23.4677916Z         "portfolio": 2,
+2026-10-20T12:39:23.4678291Z         "checkpoint": 1
+2026-10-20T12:39:23.4678645Z       },
+2026-10-20T12:39:23.4678958Z       "reasons": [
+2026-10-20T12:39:23.4679309Z         "large-unit"
+2026-10-20T12:39:23.4679641Z       ]
+2026-10-20T12:39:23.4679940Z     },
+2026-10-20T12:39:23.4680500Z     {
+2026-10-20T12:39:23.4680822Z       "grade": 9,
+2026-10-20T12:39:23.4681162Z       "term": 3,
+2026-10-20T12:39:23.4681577Z       "unitId": "g9-t3-l50-039",
+2026-10-20T12:39:23.4682312Z       "title": "PROJECT LAUNCH — MY HABIT TRANSFORMATION",
+2026-10-20T12:39:23.4682884Z       "blockCount": 83,
+2026-10-20T12:39:23.4683272Z       "maxColumns": 4,
+2026-10-20T12:39:23.4683666Z       "longTextBlocks": 0,
+2026-10-20T12:39:23.4684092Z       "responseBlocks": 4,
+2026-10-20T12:39:23.4684495Z       "families": {
+2026-10-20T12:39:23.4684864Z         "section": 13,
+2026-10-20T12:39:23.4685234Z         "table": 5,
+2026-10-20T12:39:23.4685597Z         "paragraph": 44,
+2026-10-20T12:39:23.4685976Z         "list": 16,
+2026-10-20T12:39:23.4686333Z         "equation": 1,
+2026-10-20T12:39:23.4686711Z         "activity": 1,
+2026-10-20T12:39:23.4687088Z         "portfolio": 2,
+2026-10-20T12:39:23.4687471Z         "checkpoint": 1
+2026-10-20T12:39:23.4687826Z       },
+2026-10-20T12:39:23.4688154Z       "reasons": [
+2026-10-20T12:39:23.4688495Z         "large-unit"
+2026-10-20T12:39:23.4688839Z       ]
+2026-10-20T12:39:23.4689131Z     },
+2026-10-20T12:39:23.4689419Z     {
+2026-10-20T12:39:23.4689715Z       "grade": 9,
+2026-10-20T12:39:23.4690304Z       "term": 3,
+2026-10-20T12:39:23.4690721Z       "unitId": "g9-t3-l54-043",
+2026-10-20T12:39:23.4691299Z       "title": "TERM REFLECTION AND THE FORK IN THE ROAD",
+2026-10-20T12:39:23.4691859Z       "blockCount": 81,
+2026-10-20T12:39:23.4692253Z       "maxColumns": 4,
+2026-10-20T12:39:23.4692653Z       "longTextBlocks": 1,
+2026-10-20T12:39:23.4693069Z       "responseBlocks": 6,
+2026-10-20T12:39:23.4693464Z       "families": {
+2026-10-20T12:39:23.4693832Z         "section": 12,
+2026-10-20T12:39:23.4694206Z         "table": 5,
+2026-10-20T12:39:23.4694581Z         "paragraph": 54,
+2026-10-20T12:39:23.4695039Z         "list": 3,
+2026-10-20T12:39:23.4695393Z         "equation": 1,
+2026-10-20T12:39:23.4695769Z         "activity": 2,
+2026-10-20T12:39:23.4696377Z         "portfolio": 3,
+2026-10-20T12:39:23.4696792Z         "checkpoint": 1
+2026-10-20T12:39:23.4697163Z       },
+2026-10-20T12:39:23.4697469Z       "reasons": [
+2026-10-20T12:39:23.4697808Z         "large-unit"
+2026-10-20T12:39:23.4698142Z       ]
+2026-10-20T12:39:23.4698428Z     },
+2026-10-20T12:39:23.4698724Z     {
+2026-10-20T12:39:23.4699037Z       "grade": 10,
+2026-10-20T12:39:23.4699384Z       "term": 2,
+2026-10-20T12:39:23.4699793Z       "unitId": "g10-t2-l33-033",
+2026-10-20T12:39:23.4700731Z       "title": "PROJECT WORKSHOP — PLANNING",
+2026-10-20T12:39:23.4701261Z       "blockCount": 39,
+2026-10-20T12:39:23.4701661Z       "maxColumns": 7,
+2026-10-20T12:39:23.4702051Z       "longTextBlocks": 0,
+2026-10-20T12:39:23.4702471Z       "responseBlocks": 4,
+2026-10-20T12:39:23.4702867Z       "families": {
+2026-10-20T12:39:23.4703231Z         "section": 5,
+2026-10-20T12:39:23.4703612Z         "paragraph": 13,
+2026-10-20T12:39:23.4703999Z         "list": 15,
+2026-10-20T12:39:23.4704363Z         "activity": 1,
+2026-10-20T12:39:23.4704931Z         "table": 2,
+2026-10-20T12:39:23.4705281Z         "portfolio": 2,
+2026-10-20T12:39:23.4705660Z         "checkpoint": 1
+2026-10-20T12:39:23.4706018Z       },
+2026-10-20T12:39:23.4706376Z       "reasons": [
+2026-10-20T12:39:23.4706735Z         "wide-table"
+2026-10-20T12:39:23.4707078Z       ]
+2026-10-20T12:39:23.4707373Z     },
+2026-10-20T12:39:23.4707665Z     {
+2026-10-20T12:39:23.4707970Z       "grade": 11,
+2026-10-20T12:39:23.4708318Z       "term": 1,
+2026-10-20T12:39:23.4708716Z       "unitId": "g11-t1-l20-020",
+2026-10-20T12:39:23.4709249Z       "title": "TERM REFLECTION AND PORTFOLIO",
+2026-10-20T12:39:23.4709754Z       "blockCount": 83,
+2026-10-20T12:39:23.4710371Z       "maxColumns": 2,
+2026-10-20T12:39:23.4710765Z       "longTextBlocks": 0,
+2026-10-20T12:39:23.4711184Z       "responseBlocks": 6,
+2026-10-20T12:39:23.4711579Z       "families": {
+2026-10-20T12:39:23.4711972Z         "section": 8,
+2026-10-20T12:39:23.4712346Z         "paragraph": 56,
+2026-10-20T12:39:23.4712746Z         "list": 11,
+2026-10-20T12:39:23.4713089Z         "table": 2,
+2026-10-20T12:39:23.4713449Z         "activity": 2,
+2026-10-20T12:39:23.4713843Z         "portfolio": 3,
+2026-10-20T12:39:23.4714238Z         "checkpoint": 1
+2026-10-20T12:39:23.4714604Z       },
+2026-10-20T12:39:23.4714927Z       "reasons": [
+2026-10-20T12:39:23.4715289Z         "large-unit"
+2026-10-20T12:39:23.4715644Z       ]
+2026-10-20T12:39:23.4715963Z     },
+2026-10-20T12:39:23.4716269Z     {
+2026-10-20T12:39:23.4716597Z       "grade": 12,
+2026-10-20T12:39:23.4716950Z       "term": 4,
+2026-10-20T12:39:23.4717367Z       "unitId": "g12-t4-l61-053",
+2026-10-20T12:39:23.4718052Z       "title": "REVIEW — THE GRADE 12 JOURNEY",
+2026-10-20T12:39:23.4718578Z       "blockCount": 82,
+2026-10-20T12:39:23.4718971Z       "maxColumns": 4,
+2026-10-20T12:39:23.4719366Z       "longTextBlocks": 0,
+2026-10-20T12:39:23.4719787Z       "responseBlocks": 5,
+2026-10-20T12:39:23.4720396Z       "families": {
+2026-10-20T12:39:23.4720786Z         "section": 7,
+2026-10-20T12:39:23.4721194Z         "paragraph": 30,
+2026-10-20T12:39:23.4721584Z         "list": 36,
+2026-10-20T12:39:23.4721940Z         "table": 3,
+2026-10-20T12:39:23.4722301Z         "equation": 1,
+2026-10-20T12:39:23.4722689Z         "reflection": 1,
+2026-10-20T12:39:23.4723081Z         "activity": 1,
+2026-10-20T12:39:23.4723464Z         "portfolio": 2,
+2026-10-20T12:39:23.4723848Z         "checkpoint": 1
+2026-10-20T12:39:23.4724201Z       },
+2026-10-20T12:39:23.4724500Z       "reasons": [
+2026-10-20T12:39:23.4724836Z         "large-unit"
+2026-10-20T12:39:23.4725156Z       ]
+2026-10-20T12:39:23.4725435Z     },
+2026-10-20T12:39:23.4725737Z     {
+2026-10-20T12:39:23.4726043Z       "grade": 12,
+2026-10-20T12:39:23.4726378Z       "term": 4,
+2026-10-20T12:39:23.4726768Z       "unitId": "g12-t4-l73-065",
+2026-10-20T12:39:23.4727391Z       "title": "REVIEW — THE GRADE 12 JOURNEY",
+2026-10-20T12:39:23.4727892Z       "blockCount": 83,
+2026-10-20T12:39:23.4728273Z       "maxColumns": 4,
+2026-10-20T12:39:23.4728874Z       "longTextBlocks": 0,
+2026-10-20T12:39:23.4729294Z       "responseBlocks": 5,
+2026-10-20T12:39:23.4729682Z       "families": {
+2026-10-20T12:39:23.4730242Z         "section": 7,
+2026-10-20T12:39:23.4730629Z         "paragraph": 30,
+2026-10-20T12:39:23.4731009Z         "list": 37,
+2026-10-20T12:39:23.4731343Z         "table": 3,
+2026-10-20T12:39:23.4731678Z         "equation": 1,
+2026-10-20T12:39:23.4732043Z         "reflection": 1,
+2026-10-20T12:39:23.4732418Z         "activity": 1,
+2026-10-20T12:39:23.4732782Z         "portfolio": 2,
+2026-10-20T12:39:23.4733157Z         "checkpoint": 1
+2026-10-20T12:39:23.4733504Z       },
+2026-10-20T12:39:23.4733804Z       "reasons": [
+2026-10-20T12:39:23.4734142Z         "large-unit"
+2026-10-20T12:39:23.4734477Z       ]
+2026-10-20T12:39:23.4734783Z     }
+2026-10-20T12:39:23.4735146Z   ],
+2026-10-20T12:39:23.4735465Z   "totals": {
+2026-10-20T12:39:23.4735804Z     "units": 395,
+2026-10-20T12:39:23.4736242Z     "blocks": 20766,
+2026-10-20T12:39:23.4737093Z     "stableBlockIdentities": 20766,
+2026-10-20T12:39:23.4737540Z     "families": {
+2026-10-20T12:39:23.4737893Z       "section": 2716,
+2026-10-20T12:39:23.4738276Z       "paragraph": 12588,
+2026-10-20T12:39:23.4738657Z       "list": 2099,
+2026-10-20T12:39:23.4739001Z       "table": 1259,
+2026-10-20T12:39:23.4739356Z       "equation": 234,
+2026-10-20T12:39:23.4739727Z       "reflection": 303,
+2026-10-20T12:39:23.4740344Z       "activity": 415,
+2026-10-20T12:39:23.4740731Z       "portfolio": 776,
+2026-10-20T12:39:23.4741107Z       "checkpoint": 376
+2026-10-20T12:39:23.4741455Z     }
+2026-10-20T12:39:23.4741743Z   }
+2026-10-20T12:39:23.4742024Z }
+2026-10-20T12:39:23.5012087Z ##[group]Run actions/upload-artifact@v4
+2026-10-20T12:39:23.5012390Z with:
+2026-10-20T12:39:23.5012737Z   name: applied-commerce-semantic-v3-c3f19276e83e1f1cd007c93021e60b20a62d1ffd
+2026-10-20T12:39:23.5013156Z   path: test-results
+2026-10-20T12:39:23.5013378Z   if-no-files-found: ignore
+2026-10-20T12:39:23.5013613Z   retention-days: 14
+2026-10-20T12:39:23.5013838Z   compression-level: 6
+2026-10-20T12:39:23.5014047Z   overwrite: false
+2026-10-20T12:39:23.5014263Z   include-hidden-files: false
+2026-10-20T12:39:23.5014570Z env:
+2026-10-20T12:39:23.5014827Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T12:39:23.5015252Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-10-20T12:39:23.5015672Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T12:39:23.5016048Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T12:39:23.5016421Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T12:39:23.5016828Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-10-20T12:39:23.5017155Z ##[endgroup]
+2026-10-20T12:39:23.6639708Z (node:7263) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-20T12:39:23.6641465Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-20T12:39:23.7755779Z With the provided path, there will be 190 files uploaded
+2026-10-20T12:39:23.7762604Z Artifact name is valid!
+2026-10-20T12:39:23.7763281Z Root directory input is valid!
+2026-10-20T12:39:23.9852440Z Beginning upload of artifact content to blob storage
+2026-10-20T12:39:24.3153661Z (node:7263) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-10-20T12:39:24.4603492Z Uploaded bytes 8388608
+2026-10-20T12:39:24.8070630Z Uploaded bytes 16777216
+2026-10-20T12:39:25.1079945Z Uploaded bytes 25165824
+2026-10-20T12:39:25.3988197Z Uploaded bytes 33554432
+2026-10-20T12:39:25.6491514Z Uploaded bytes 41943040
+2026-10-20T12:39:25.9516126Z Uploaded bytes 50331648
+2026-10-20T12:39:26.2112271Z Uploaded bytes 58720256
+2026-10-20T12:39:26.4681258Z Uploaded bytes 67108864
+2026-10-20T12:39:26.7678115Z Uploaded bytes 75497472
+2026-10-20T12:39:27.0557687Z Uploaded bytes 83886080
+2026-10-20T12:39:27.3303401Z Uploaded bytes 92274688
+2026-10-20T12:39:27.6244229Z Uploaded bytes 100663296
+2026-10-20T12:39:27.9078593Z Uploaded bytes 109051904
+2026-10-20T12:39:28.1535406Z Uploaded bytes 117440512
+2026-10-20T12:39:28.4679979Z Uploaded bytes 125829120
+2026-10-20T12:39:28.6736052Z Uploaded bytes 131485373
+2026-10-20T12:39:28.6894516Z Finished uploading artifact content to blob storage!
+2026-10-20T12:39:28.6898145Z SHA256 digest of uploaded artifact zip is 79a32d9e8dabe2bd32bf9b56c1e6a489e0e71af527d2bdf19da1ec29afa662c6
+2026-10-20T12:39:28.6900726Z Finalizing artifact upload
+2026-10-20T12:39:28.9039016Z Artifact applied-commerce-semantic-v3-c3f19276e83e1f1cd007c93021e60b20a62d1ffd.zip successfully finalized. Artifact ID 12264423711
+2026-10-20T12:39:28.9041243Z Artifact applied-commerce-semantic-v3-c3f19276e83e1f1cd007c93021e60b20a62d1ffd has been successfully uploaded! Final size is 131485373 bytes. Artifact ID is 12264423711
+2026-10-20T12:39:28.9047685Z Artifact download URL: https://github.com/PDthePlug/Applied-Commerce-/actions/runs/39423305203/artifacts/12264423711
+2026-10-20T12:39:28.9244826Z Post job cleanup.
+2026-10-20T12:39:29.0454496Z (node:7276) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-20T12:39:29.0455565Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-20T12:39:29.0571131Z Post job cleanup.
+2026-10-20T12:39:29.1974584Z (node:7284) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-20T12:39:29.1976091Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-20T12:39:29.2207270Z Post job cleanup.
+2026-10-20T12:39:29.3111254Z [command]/usr/bin/git version
+2026-10-20T12:39:29.3156745Z git version 2.55.0
+2026-10-20T12:39:29.3202857Z Temporarily overriding HOME='/home/runner/work/_temp/47900adc-5786-4859-b462-acf5a0cdedfc' before making global git config changes
+2026-10-20T12:39:29.3204432Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-20T12:39:29.3209023Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Applied-Commerce-/Applied-Commerce-
+2026-10-20T12:39:29.3248216Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-20T12:39:29.3283555Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-20T12:39:29.3557825Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-20T12:39:29.3582994Z http.https://github.com/.extraheader
+2026-10-20T12:39:29.3596310Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-10-20T12:39:29.3642778Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-20T12:39:29.3911416Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-20T12:39:29.3963016Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-20T12:39:29.4387762Z Cleaning up orphan processes
+2026-10-20T12:39:29.4710569Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4, actions/setup-python@v5, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

@@ -1,0 +1,24 @@
+{
+  "runID": 39417307109,
+  "jobID": 118609339687,
+  "url": "https://github.com/PDthePlug/Applied-Commerce-/actions/runs/39417307109",
+  "headCommit": "a31249ebae75e6e61b037f9ed82654a23c028df5",
+  "mergeCommit": "66f56ca4ea56c7b9fd6df4f95ef1203315cf1e6c",
+  "mergeTreeIdenticalToHead": true,
+  "conclusion": "success",
+  "acceptance": {
+    "passed": 204,
+    "failed": 0,
+    "skipped": 0,
+    "flaky": 0,
+    "duration": "2.9 minutes"
+  },
+  "engineeringTests": 160,
+  "embeddedDatabaseChecks": 7,
+  "artifact": {
+    "id": 12261389759,
+    "size": 131466856,
+    "digest": "sha256:1cb351b63e29c6fbdab422d3b8f0ae0bf36003ce3af37079c1fca4dfda5da834",
+    "expiresAt": "2026-11-03T11:50:27Z"
+  }
+}

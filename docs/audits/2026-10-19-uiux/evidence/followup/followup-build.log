@@ -1,0 +1,50 @@
+
+> applied-commerce-learning-platform@0.1.0 build
+> next build
+
+▲ Next.js 16.3.8 (Turbopack)
+✓ Running next.config.ts took 130ms
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 3.8s
+  Running TypeScript ...
+  Finished TypeScript in 12.1s ...
+  Collecting page data using 2 workers ...
+  Generating static pages using 2 workers (0/21) ...
+  Generating static pages using 2 workers (5/21)
+  Generating static pages using 2 workers (10/21)
+  Generating static pages using 2 workers (15/21)
+✓ Generating static pages using 2 workers (21/21) in 1410ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ƒ /api/health
+├ ƒ /api/preferences
+├ ƒ /auth
+├ ƒ /auth/callback
+├ ○ /auth/reset
+├ ƒ /facilitator
+├ ƒ /facilitator/[section]
+├ ○ /icon.svg
+├ ○ /institution-admin
+├ ○ /institutions
+├ ○ /institutions/demo
+├ ○ /institutions/deploy
+├ ○ /institutions/digitise
+├ ○ /institutions/manage
+├ ƒ /institutions/manage/[section]
+├ ○ /learn
+├ ƒ /learn/[grade]
+├ ƒ /learn/[grade]/term/[term]/[unit]
+├ ○ /portfolio
+├ ○ /profile
+├ ○ /progress
+└ ○ /settings
+
+
+ƒ Proxy (Middleware)
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
