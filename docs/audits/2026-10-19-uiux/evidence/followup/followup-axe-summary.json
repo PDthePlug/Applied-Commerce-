@@ -1,0 +1,43 @@
+[
+  {
+    "name": "reader",
+    "path": "/learn/8/term/1/g8-t1-l01-001",
+    "width": 360,
+    "violations": 0,
+    "incomplete": [
+      {
+        "id": "aria-valid-attr-value",
+        "nodes": [
+          [
+            ".reader-menu-button"
+          ]
+        ]
+      }
+    ],
+    "file": "work/hardening/followup-axe-reader-360.json"
+  },
+  {
+    "name": "account",
+    "path": "/auth",
+    "width": 360,
+    "violations": 0,
+    "incomplete": [],
+    "file": "work/hardening/followup-axe-account-360.json"
+  },
+  {
+    "name": "reader",
+    "path": "/learn/8/term/1/g8-t1-l01-001",
+    "width": 1280,
+    "violations": 0,
+    "incomplete": [],
+    "file": "work/hardening/followup-axe-reader-1280.json"
+  },
+  {
+    "name": "account",
+    "path": "/auth",
+    "width": 1280,
+    "violations": 0,
+    "incomplete": [],
+    "file": "work/hardening/followup-axe-account-1280.json"
+  }
+]

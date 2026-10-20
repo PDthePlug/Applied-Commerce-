@@ -1,0 +1,123 @@
+
+Running 2 tests using 1 worker
+
+(node:6973) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/2] [mobile-360] › tests/browser/uiux-followup.spec.mjs:5:1 › alternative activity disclosure has a usable touch target and preserves content
+  1) [mobile-360] › tests/browser/uiux-followup.spec.mjs:5:1 › alternative activity disclosure has a usable touch target and preserves content
+
+    Error: expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 44
+    Received:    11
+
+      10 |   const box=await summary.boundingBox();
+      11 |   await testInfo.attach('alternative target',{body:Buffer.from(JSON.stringify({viewport:page.viewportSize(),box})),contentType:'application/json'});
+    > 12 |   expect(box.height).toBeGreaterThanOrEqual(44);
+         |                      ^
+      13 |   await summary.click();
+      14 |   await expect(summary.locator('..')).toHaveAttribute('open','');
+      15 |   expect(await summary.locator('..').textContent()).toBe(before);
+        at /workspace/Applied-Commerce-/tests/browser/uiux-followup.spec.mjs:12:22
+
+    Error Context: work/hardening/followup-before-artifacts/uiux-followup-alternative--03076-arget-and-preserves-content-mobile-360/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    work/hardening/followup-before-artifacts/uiux-followup-alternative--03076-arget-and-preserves-content-mobile-360/trace.zip
+    Usage:
+
+        npx playwright show-trace work/hardening/followup-before-artifacts/uiux-followup-alternative--03076-arget-and-preserves-content-mobile-360/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+(node:7200) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[2/2] [mobile-360] › tests/browser/uiux-followup.spec.mjs:20:1 › reader position and account wrappers use supported accessible names
+  2) [mobile-360] › tests/browser/uiux-followup.spec.mjs:20:1 › reader position and account wrappers use supported accessible names
+
+    Error: expect(locator).toHaveRole(expected) failed
+
+    Locator:  locator('.reader-progress')
+    Expected: "group"
+    Received: ""
+    Timeout:  12000ms
+
+    Call log:
+      - Expect "soft toHaveRole" locator('.reader-progress') with timeout 12000ms
+      - waiting for locator('.reader-progress')
+        26 × locator resolved to <div class="reader-progress" aria-label="Lesson 1 of 20">…</div>
+           - unexpected value ""
+
+
+      21 |   await page.goto(lesson);
+      22 |   await expect(page.locator('.lesson-heading h1')).toBeVisible();
+    > 23 |   await expect.soft(page.locator('.reader-progress')).toHaveRole('group');
+         |                                                       ^
+      24 |   await expect.soft(page.getByRole('group',{name:'Lesson 1 of 20',exact:true})).toBeVisible();
+      25 |   await page.goto('/auth');
+      26 |   await expect.soft(page.locator('.auth-entry')).not.toHaveAttribute('aria-label');
+        at /workspace/Applied-Commerce-/tests/browser/uiux-followup.spec.mjs:23:55
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('group', { name: 'Lesson 1 of 20', exact: true })
+    Expected: visible
+    Timeout: 12000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "soft toBeVisible" getByRole('group', { name: 'Lesson 1 of 20', exact: true }) with timeout 12000ms
+      - waiting for getByRole('group', { name: 'Lesson 1 of 20', exact: true })
+
+
+      22 |   await expect(page.locator('.lesson-heading h1')).toBeVisible();
+      23 |   await expect.soft(page.locator('.reader-progress')).toHaveRole('group');
+    > 24 |   await expect.soft(page.getByRole('group',{name:'Lesson 1 of 20',exact:true})).toBeVisible();
+         |                                                                                 ^
+      25 |   await page.goto('/auth');
+      26 |   await expect.soft(page.locator('.auth-entry')).not.toHaveAttribute('aria-label');
+      27 |   await expect(page.getByRole('heading',{level:1})).toBeVisible();
+        at /workspace/Applied-Commerce-/tests/browser/uiux-followup.spec.mjs:24:81
+
+    Error: expect(locator).not.toHaveAttribute() failed
+
+    Locator:  locator('.auth-entry')
+    Expected: not have attribute
+    Received: have attribute
+    Timeout:  12000ms
+
+    Call log:
+      - Expect "soft not toHaveAttribute" locator('.auth-entry') with timeout 12000ms
+      - waiting for locator('.auth-entry')
+        26 × locator resolved to <div class="auth-entry" aria-label="Sign in or create an account">…</div>
+           - unexpected value "attribute present"
+
+
+      24 |   await expect.soft(page.getByRole('group',{name:'Lesson 1 of 20',exact:true})).toBeVisible();
+      25 |   await page.goto('/auth');
+    > 26 |   await expect.soft(page.locator('.auth-entry')).not.toHaveAttribute('aria-label');
+         |                                                      ^
+      27 |   await expect(page.getByRole('heading',{level:1})).toBeVisible();
+      28 | });
+      29 |
+        at /workspace/Applied-Commerce-/tests/browser/uiux-followup.spec.mjs:26:54
+
+    Error Context: work/hardening/followup-before-artifacts/uiux-followup-reader-posit-866ca--supported-accessible-names-mobile-360/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    work/hardening/followup-before-artifacts/uiux-followup-reader-posit-866ca--supported-accessible-names-mobile-360/trace.zip
+    Usage:
+
+        npx playwright show-trace work/hardening/followup-before-artifacts/uiux-followup-reader-posit-866ca--supported-accessible-names-mobile-360/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+  2 failed
+    [mobile-360] › tests/browser/uiux-followup.spec.mjs:5:1 › alternative activity disclosure has a usable touch target and preserves content
+    [mobile-360] › tests/browser/uiux-followup.spec.mjs:20:1 › reader position and account wrappers use supported accessible names

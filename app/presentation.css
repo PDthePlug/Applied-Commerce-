@@ -159,17 +159,21 @@
 }
 .home-alternative-path{
   margin:14px 0 24px;
-  padding:13px 15px;
+  padding:0 15px;
   border:1px solid #ddd8c9;
   border-radius:14px;
   background:#f8f5ec;
 }
 .home-alternative-path>summary{
+  min-height:44px;
+  padding:14px 0;
   cursor:pointer;
   color:#685e45;
   font-size:10px;
+  line-height:1.6;
   font-weight:900;
 }
+.home-alternative-path[open]{padding-bottom:13px}
 .home-alternative-path>div{
   padding-top:12px;
 }

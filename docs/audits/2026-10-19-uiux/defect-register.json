@@ -180,6 +180,18 @@
     "status": "FIXED \u2014 local regression passed"
   },
   {
+    "id": "AC-UX-18",
+    "severity": "P2",
+    "status": "FIXED \u2014 regression passed",
+    "title": "Alternative activity disclosure has an 11px click target",
+    "reproduce": "At 360px open the first Grade 8 lesson and measure the summary If the main task is not possible.",
+    "observed": "The clickable summary is only 11px high; surrounding card padding does not toggle it. Dedicated regression fails at 11 < 44.",
+    "expected": "A 44px target with pointer and keyboard activation and unchanged source content.",
+    "fix": "Add minimum height and vertical padding to the native summary; retain its wording, marker and disclosure behavior.",
+    "regression": "alternative activity disclosure has a usable touch target and preserves content; six-viewport target assertions",
+    "before": "followup-before-results.json; followup-before-alternative.png; before-fix trace"
+  },
+  {
     "id": "AC-UX-14",
     "severity": "P3",
     "title": "Account unavailable state has no h1 and lesson outline skips heading levels",
@@ -202,5 +214,17 @@
     "regression": "site icon resolves and header navigation offers a touch target",
     "before": "baseline-diagnostics.json; extra-before.json",
     "status": "FIXED \u2014 local regression passed"
+  },
+  {
+    "id": "AC-UX-19",
+    "severity": "P3",
+    "status": "FIXED \u2014 regression passed",
+    "title": "Generic reader/account wrappers use unsupported accessible labels",
+    "reproduce": "Inspect reader-progress and auth-entry with axe and accessibility-role tooling.",
+    "observed": "Generic div labels produce aria-prohibited-attr incomplete findings; reader position has no named group role.",
+    "expected": "A supported named role where useful; omit redundant generic labels.",
+    "fix": "Make reader position a named group; remove account wrapper label while retaining its h1 and behavior.",
+    "regression": "reader position and account wrappers use supported accessible names; four focused axe scans; full CI accessibility scenarios",
+    "before": "prior axe incomplete findings; followup-before-results.json"
   }
 ]

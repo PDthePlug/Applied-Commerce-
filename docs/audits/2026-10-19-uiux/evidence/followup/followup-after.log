@@ -1,0 +1,28 @@
+[WebServer] (node:8620) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+
+Running 9 tests using 1 worker
+
+(node:8647) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/9] [desktop-1280] › tests/browser/uiux-followup.spec.mjs:5:1 › alternative activity disclosure has a usable touch target and preserves content
+[2/9] [desktop-1280] › tests/browser/uiux-followup.spec.mjs:20:1 › reader position and account wrappers use supported accessible names
+[3/9] [desktop-1280] › tests/browser/uiux-followup.spec.mjs:30:1 › assessment radio choices use their full label as a touch target
+(node:9395) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[4/9] [mobile-430] › tests/browser/uiux-followup.spec.mjs:5:1 › alternative activity disclosure has a usable touch target and preserves content
+[5/9] [mobile-430] › tests/browser/uiux-followup.spec.mjs:20:1 › reader position and account wrappers use supported accessible names
+[6/9] [mobile-430] › tests/browser/uiux-followup.spec.mjs:30:1 › assessment radio choices use their full label as a touch target
+(node:9907) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[7/9] [mobile-360] › tests/browser/uiux-followup.spec.mjs:5:1 › alternative activity disclosure has a usable touch target and preserves content
+[8/9] [mobile-360] › tests/browser/uiux-followup.spec.mjs:20:1 › reader position and account wrappers use supported accessible names
+[9/9] [mobile-360] › tests/browser/uiux-followup.spec.mjs:30:1 › assessment radio choices use their full label as a touch target
+  9 passed (1.4m)
