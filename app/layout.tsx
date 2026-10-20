@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import "./personalisation.css";
 import "./uiux-hardening.css";
+import "./classroom.css";
 import { AppShell } from "@/components/app-shell";
 import { AuthProvider } from "@/lib/auth-context";
 import { LearningStoreProvider } from "@/lib/learning-store";

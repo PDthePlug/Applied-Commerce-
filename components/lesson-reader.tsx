@@ -19,7 +19,7 @@ const subscribeCompact=(notify:()=>void)=>{
 const compactSnapshot=()=>window.matchMedia(compactQuery).matches;
 const desktopSnapshot=()=>false;
 
-export function LessonReader({grade,term,unitId}:{grade:number;term:number;unitId:string}){
+export function LessonReader({grade,term,unitId,classroomContext=false}:{grade:number;term:number;unitId:string;classroomContext?:boolean}){
  const router=useRouter();
  const [termData,setTermData]=useState<TermIndex|null>(null); const [unit,setUnit]=useState<UnitContent|null>(null); const [loadError,setLoadError]=useState<string|null>(null); const [menu,setMenu]=useState(false);
  const [loadRevision,retryLoad]=useState(0);
@@ -79,6 +79,7 @@ export function LessonReader({grade,term,unitId}:{grade:number;term:number;unitI
     <article className="lesson-document">
       <header className="lesson-heading"><p className="eyebrow">Grade {grade} · Term {term} · {unit.label}</p><h1>{unit.title}</h1>
         <nav className="lesson-outline" aria-label="In this lesson"><p className="eyebrow">In this lesson</p>
+          {classroomContext&&<Link className="teacher-context-link" href={`/facilitator/classroom?${new URLSearchParams({lesson:unitId})}`}>Back to teacher guidance</Link>}
           <ul>{learningSections(unit.blocks,unit.type).filter(section=>section.context&&section.context!=="reflection").map(section=><li key={section.anchor}><a href={`#${section.anchor}`}>{section.title}</a></li>)}</ul>
         </nav>
       </header>

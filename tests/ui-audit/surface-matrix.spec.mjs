@@ -18,6 +18,7 @@ const pages = [
   ["institutions", "/institutions"],
   ["institution operations gate", "/institutions/manage"],
   ["facilitator gate", "/facilitator"],
+  ["classroom guidance gate", "/facilitator/classroom"],
 ];
 
 for (const [name, url] of pages) {

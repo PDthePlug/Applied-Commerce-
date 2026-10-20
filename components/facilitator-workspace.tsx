@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { currentReviews, hasReviewDecision } from "@/lib/evidence/current-reviews";
 import { friendlyActionError } from "@/lib/customer-errors";
 import { facilitatorSectionHref, selectedRosterLearner } from "@/lib/facilitator/navigation";
@@ -195,6 +196,7 @@ export function FacilitatorWorkspace({initialSection="overview",initialLearnerId
         <div><small>Facilitator workspace</small><strong>{grade?"Grade "+grade:"No grade selected"}</strong></div>
       </div>
       <nav aria-label="Facilitator dashboard">
+        <Link className="fac-classroom-link" href="/facilitator/classroom">Classroom teaching</Link>
         {nav.map(item=>{
           const Icon=item.icon;
           return <button key={item.id} type="button" className={section===item.id?"active":""} onClick={()=>navigateToSection(item.id)} aria-current={section===item.id?"page":undefined}>
@@ -216,6 +218,7 @@ export function FacilitatorWorkspace({initialSection="overview",initialLearnerId
           <button type="button" onClick={()=>setFacMenuOpen(false)} aria-label="Close facilitator menu"><X/></button>
         </header>
         <nav>
+          <Link className="fac-classroom-link" href="/facilitator/classroom">Classroom teaching</Link>
           {nav.map(item=>{
             const Icon=item.icon;
             return <button

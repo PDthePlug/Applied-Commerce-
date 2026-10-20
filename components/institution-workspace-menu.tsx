@@ -20,6 +20,7 @@ export function InstitutionWorkspaceMenu({ isPlatformAdmin }: { isPlatformAdmin:
         { href: "/institutions/manage/learners", label: "Learner enrolment", detail: "Assign learners by email, before or after signup", icon: GraduationCap },
         { href: "/institutions/manage/facilitators", label: "Facilitator assignments", detail: "Assign educators to cohorts", icon: UsersRound },
         { href: "/institutions/manage/team", label: "Institution access", detail: "Manage school administrators and educators", icon: UserRound },
+        { href: "/facilitator/classroom", label: "Classroom teaching", detail: "Prepare source-linked classroom lessons", icon: GraduationCap },
         { href: "/", label: "Learner experience", detail: "Open the learner workspace", icon: GraduationCap },
       ]
     : [
@@ -28,6 +29,7 @@ export function InstitutionWorkspaceMenu({ isPlatformAdmin }: { isPlatformAdmin:
         { href: "/institutions/manage/learners", label: "Learners", detail: "Enrol learners by email, before or after signup", icon: GraduationCap },
         { href: "/institutions/manage/facilitators", label: "Facilitators", detail: "Assign facilitators to cohorts", icon: UsersRound },
         { href: "/institutions/manage/team", label: "Institution team", detail: "Manage school-level access", icon: UserRound },
+        { href: "/facilitator/classroom", label: "Classroom teaching", detail: "Prepare source-linked classroom lessons", icon: GraduationCap },
         { href: "/", label: "Learner platform", detail: "Open the learner workspace", icon: GraduationCap },
       ];
 
