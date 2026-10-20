@@ -28,6 +28,7 @@ async function inspect(page,testInfo,path,label){
     await surfaceReady(page,path);
     const diagnostics=await page.evaluate(()=>({
       url:location.pathname,viewport:{width:innerWidth,height:innerHeight},rootWidth:document.documentElement.scrollWidth,bodyWidth:document.body.scrollWidth,
+      alternativeTargets:[...document.querySelectorAll('.home-alternative-path > summary')].map(el=>({width:el.getBoundingClientRect().width,height:el.getBoundingClientRect().height})),
       headings:[...document.querySelectorAll('h1')].map(el=>el.textContent),mainCount:document.querySelectorAll('main').length,
       fields:[...document.querySelectorAll('input,select,textarea')].filter(el=>el.getClientRects().length&&!el.closest('[inert]')).map(el=>({tag:el.tagName,label:el.getAttribute('aria-label')||el.labels?.[0]?.textContent||el.getAttribute('aria-labelledby')||''})),
       tinyTargets:[...document.querySelectorAll('a,button,input,select,textarea,summary')].filter(el=>!el.closest('[inert]')&&el.getClientRects().length).map(el=>({el,rect:el.getBoundingClientRect()})).filter(({rect})=>rect.width<24||rect.height<24).slice(0,25).map(({el,rect})=>({label:el.getAttribute('aria-label')||el.textContent?.slice(0,90),width:rect.width,height:rect.height})),
@@ -40,6 +41,7 @@ async function inspect(page,testInfo,path,label){
     expect(failedRequests.filter(request=>!request.cancelledPrefetch)).toEqual([]);
     expect(httpErrors).toEqual([]);
     expect(diagnostics.mainCount).toBe(1);
+    expect(diagnostics.alternativeTargets.filter(target=>target.width<44||target.height<44)).toEqual([]);
     expect(diagnostics.headings.length).toBe(1);
     expect(diagnostics.fields.filter(field=>!field.label.trim())).toEqual([]);
     expect(diagnostics.rootWidth).toBeLessThanOrEqual(diagnostics.viewport.width+2);

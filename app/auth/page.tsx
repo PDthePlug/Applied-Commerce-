@@ -15,7 +15,7 @@ export default async function AuthPage({searchParams}:{searchParams:Promise<{lin
       <Brand subtitle="Learning platform" />
       <span className="auth-secure-label"><ShieldCheck aria-hidden="true" /> Secure sign-in</span>
     </header>
-    <div className="auth-entry" aria-label="Sign in or create an account">
+    <div className="auth-entry">
       {link==="expired"&&<p role="alert">That account link could not be used. Request a new link and open it in the browser where you started.</p>}
       <AuthPanel />
     </div>
