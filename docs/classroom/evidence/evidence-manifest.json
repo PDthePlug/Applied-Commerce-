@@ -1,0 +1,661 @@
+{
+  "version": 1,
+  "roleContext": "Synthetic educator UI with real private guide payload; live Supabase auth NOT TESTED",
+  "coreMatrix": {
+    "passed": 42,
+    "failed": 0,
+    "duration": "10.8m",
+    "widths": [
+      320,
+      360,
+      430,
+      768,
+      1280,
+      1920
+    ],
+    "implementationCommit": "ee1aa09072ad89dc29a5ea19f492c8e4fbd3c153",
+    "note": "Core screenshots precede the scoped global sync-warning contrast correction. Final corrected state is in after/."
+  },
+  "syncContrastRegression": {
+    "passed": 6,
+    "failed": 0,
+    "widths": [
+      320,
+      360,
+      430,
+      768,
+      1280,
+      1920
+    ]
+  },
+  "sourceFileSHA256": {
+    "components/classroom-workspace.tsx": "63c9a05af96aa32ff6d8b82971f084bb6f1ad2206fb76b72fa7cfcd885d37295",
+    "app/globals.css": "854d1416cb1a747d26956b872d36bd1f1c07016692cefdd2bd64e34492efeb38",
+    "content/instructional/benchmark-manifest.v1.json": "105b640d93ce58ca890def097b92f0639f2e53a115d97039e6fd4a9311cc5fc9"
+  },
+  "encryptedReview": "benchmark-review.v1.enc.json",
+  "encryptedReviewIncludes": [
+    "after/CL-01-keyboard-scaffold.png",
+    "after/CL-02-no-cached-guide.png",
+    "after/CL-03-readable-sync.png",
+    "after/g10-t2-l19-019-viewport.png",
+    "after/g11-t1-l14-014-viewport.png",
+    "after/g12-t1-l05-005-viewport.png",
+    "after/g8-t1-l08-008-viewport.png",
+    "after/g9-t1-l02-002-viewport.png",
+    "before/CL-01-scroll-region.png",
+    "before/CL-02-cached-guidance.png",
+    "before/CL-03-dark-sync.png",
+    "benchmark-guides.v1.plain.json",
+    "evidence/dark-classroom-1280.png",
+    "evidence/g10-t2-l19-019-classroom-1280.png",
+    "evidence/g10-t2-l19-019.pdf",
+    "evidence/g11-t1-l14-014-classroom-1280.png",
+    "evidence/g11-t1-l14-014.pdf",
+    "evidence/g12-t1-l05-005-classroom-1280.png",
+    "evidence/g12-t1-l05-005.pdf",
+    "evidence/g8-t1-l08-008-classroom-1280.png",
+    "evidence/g8-t1-l08-008-classroom-1920.png",
+    "evidence/g8-t1-l08-008-classroom-320.png",
+    "evidence/g8-t1-l08-008-classroom-360.png",
+    "evidence/g8-t1-l08-008-classroom-430.png",
+    "evidence/g8-t1-l08-008-classroom-768.png",
+    "evidence/g8-t1-l08-008.pdf",
+    "evidence/g9-t1-l02-002-classroom-1280.png",
+    "evidence/g9-t1-l02-002.pdf"
+  ],
+  "fullRawEvidence": "work/classroom/private/ (ignored; retain privately before workspace disposal)",
+  "artifacts": [
+    {
+      "file": "after/CL-01-keyboard-scaffold.png",
+      "bytes": 17538,
+      "sha256": "cda62ae358f0436bd0040406d468af01ca48dd775612e0b862141a9d0dd0588a",
+      "privacy": "private teacher review; synthetic identity only",
+      "inEncryptedReview": true,
+      "width": 288,
+      "height": 438
+    },
+    {
+      "file": "after/CL-02-no-cached-guide.png",
+      "bytes": 41896,
+      "sha256": "7338edb2b9310ad62182edb876288408f919086eb1df80adeeb1c3e773bd908d",
+      "privacy": "private teacher review; synthetic identity only",
+      "inEncryptedReview": true,
+      "width": 320,
+      "height": 900
+    },
+    {
+      "file": "after/CL-03-readable-sync.png",
+      "bytes": 10785,
+      "sha256": "f46e6e0b3046f5daf58d950f455a2f9553d98f987f69ecd99ce64fd1f9ccfce3",
+      "privacy": "private teacher review; synthetic identity only",
+      "inEncryptedReview": true,
+      "width": 1100,
+      "height": 118
+    },
+    {
+      "file": "after/g10-t2-l19-019-viewport.png",
+      "bytes": 109370,
+      "sha256": "2c38c0fd5ae74d53c9c9dc875cbd06f605f700986f694a146a239524ac259991",
+      "privacy": "private teacher review; synthetic identity only",
+      "inEncryptedReview": true,
+      "width": 1280,
+      "height": 1000
+    },
+    {
+      "file": "after/g11-t1-l14-014-viewport.png",
+      "bytes": 116514,
+      "sha256": "76dae5bada434922ce1638f665c0854fda3a624f32a245b359561f42cc7906df",
+      "privacy": "private teacher review; synthetic identity only",
+      "inEncryptedReview": true,
+      "width": 1280,
+      "height": 1000
+    },
+    {
+      "file": "after/g12-t1-l05-005-viewport.png",
+      "bytes": 118218,
+      "sha256": "0225e478b0e3beeb84b739eb18c82dc9e456019f175ce013d52fce8bdee1ab07",
+      "privacy": "private teacher review; synthetic identity only",
+      "inEncryptedReview": true,
+      "width": 1280,
+      "height": 1000
+    },
+    {
+      "file": "after/g8-t1-l08-008-viewport.png",
+      "bytes": 103420,
+      "sha256": "317dba0813e5c8ee4151919818167a3efbbd099c5f958510b5fab974a67bc8aa",
+      "privacy": "private teacher review; synthetic identity only",
+      "inEncryptedReview": true,
+      "width": 1280,
+      "height": 1000
+    },
+    {
+      "file": "after/g9-t1-l02-002-viewport.png",
+      "bytes": 107603,
+      "sha256": "3cc243491f08684b1e86c3accd411fd4ce2fa7f1ffea00bcf2255c97b42142f6",
+      "privacy": "private teacher review; synthetic identity only",
+      "inEncryptedReview": true,
+      "width": 1280,
+      "height": 1000
+    },
+    {
+      "file": "before/CL-01-scroll-region.png",
+      "bytes": 21095,
+      "sha256": "dc0d9ba723a2ed40a77410ccd73fefbce49c464b70094269294f9cebbb4e14f7",
+      "privacy": "private teacher review; synthetic identity only",
+      "inEncryptedReview": true,
+      "width": 288,
+      "height": 438
+    },
+    {
+      "file": "before/CL-02-cached-guidance.png",
+      "bytes": 66587,
+      "sha256": "af3e027d527c26da3daa954f7e2570b5a4346975f7634f3204185580b56d9059",
+      "privacy": "private teacher review; synthetic identity only",
+      "inEncryptedReview": true,
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "file": "before/CL-03-dark-sync.png",
+      "bytes": 7124,
+      "sha256": "d4866a5d1f76497f8cdde1aa3701e116ce2056493215ef12c6fc2acfa3676730",
+      "privacy": "private teacher review; synthetic identity only",
+      "inEncryptedReview": true,
+      "width": 406,
+      "height": 146
+    },
+    {
+      "file": "evidence/dark-classroom-1280.png",
+      "bytes": 1890112,
+      "sha256": "e867c823d1cacb189526386e294278d1f0bd261b7fa88f577fc01b3cfcf30ff9",
+      "privacy": "private teacher review; synthetic identity only",
+      "inEncryptedReview": true,
+      "width": 1280,
+      "height": 12858
+    },
+    {
+      "file": "evidence/dark-classroom-1920.png",
+      "bytes": 1971746,
+      "sha256": "e52563c11b828defcc31825f61c3b3157f2202a5e21af5c64fd4c2e94fe974ab",
+      "privacy": "private teacher review; synthetic identity only",
+      "inEncryptedReview": false,
+      "width": 1920,
+      "height": 12858
+    },
+    {
+      "file": "evidence/dark-classroom-320.png",
+      "bytes": 2292440,
+      "sha256": "bcc89e1dd981bd2a63761ecc3dd0228b3b2ab7a8c08fd89aae01d19783d17069",
+      "privacy": "private teacher review; synthetic identity only",
+      "inEncryptedReview": false,
+      "width": 320,
+      "height": 35147
+    },
+    {
+      "file": "evidence/dark-classroom-360.png",
+      "bytes": 2260998,
+      "sha256": "0cf5670d359d0ff898456447611b15e7f648d3412e4f893f4e2e8709cda2447f",
+      "privacy": "private teacher review; synthetic identity only",
+      "inEncryptedReview": false,
+      "width": 360,
+      "height": 30690
+    },
+    {
+      "file": "evidence/dark-classroom-430.png",
+      "bytes": 2178880,
+      "sha256": "c1016adab2c270738783f94127b6d3cce6283bc4557d5926044b8176ad4f002d",
+      "privacy": "private teacher review; synthetic identity only",
+      "inEncryptedReview": false,
+      "width": 430,
+      "height": 25681
+    },
+    {
+      "file": "evidence/dark-classroom-768.png",
+      "bytes": 2032026,
+      "sha256": "cfe170a0a923e7dc0c4174935883b706fd94c24ec89027a5fd942d55fbdd7883",
+      "privacy": "private teacher review; synthetic identity only",
+      "inEncryptedReview": false,
+      "width": 768,
+      "height": 17093
+    },
+    {
+      "file": "evidence/g10-t2-l19-019-classroom-1280.png",
+      "bytes": 1300388,
+      "sha256": "6abe86bf1831c5f088a984f8325b6ee94a906c87a2a8c89cd26f362f89628c94",
+      "privacy": "private teacher review; synthetic identity only",
+      "inEncryptedReview": true,
+      "width": 1280,
+      "height": 9785
+    },
+    {
+      "file": "evidence/g10-t2-l19-019-classroom-1920.png",
+      "bytes": 1355477,
+      "sha256": "bb34d971f26764f91d04d08a372bcac95b1bdc3bdedefbdbe1ac513167ef81fd",
+      "privacy": "private teacher review; synthetic identity only",
+      "inEncryptedReview": false,
+      "width": 1920,
+      "height": 9785
+    },
+    {
+      "file": "evidence/g10-t2-l19-019-classroom-320.png",
+      "bytes": 1357683,
+      "sha256": "4257e5dca297bf4a5e2cfa7aa9c3e30ad62e394125f9b6981e908507ea8b3047",
+      "privacy": "private teacher review; synthetic identity only",
+      "inEncryptedReview": false,
+      "width": 320,
+      "height": 18421
+    },
+    {
+      "file": "evidence/g10-t2-l19-019-classroom-360.png",
+      "bytes": 1332741,
+      "sha256": "c701f74c2e585280fe8924508782ad155c4856f43f63c28fb02e219694e6a277",
+      "privacy": "private teacher review; synthetic identity only",
+      "inEncryptedReview": false,
+      "width": 360,
+      "height": 16891
+    },
+    {
+      "file": "evidence/g10-t2-l19-019-classroom-430.png",
+      "bytes": 1427817,
+      "sha256": "57173c45324d56a12410fed86de54735863d027a16e3c6ba1e351feb52348bdc",
+      "privacy": "private teacher review; synthetic identity only",
+      "inEncryptedReview": false,
+      "width": 430,
+      "height": 15047
+    },
+    {
+      "file": "evidence/g10-t2-l19-019-classroom-768.png",
+      "bytes": 1339307,
+      "sha256": "516f49379af6c734eb9c8e43efcca77fde3d85a12453d8aa8b15753372acc8b1",
+      "privacy": "private teacher review; synthetic identity only",
+      "inEncryptedReview": false,
+      "width": 768,
+      "height": 11243
+    },
+    {
+      "file": "evidence/g10-t2-l19-019.pdf",
+      "bytes": 101820,
+      "sha256": "8cd9a2a3f0493456e4aa185ce564e26a9d0679a7e8d68282296f771894a15603",
+      "privacy": "private teacher review; synthetic identity only",
+      "inEncryptedReview": true
+    },
+    {
+      "file": "evidence/g11-t1-l14-014-classroom-1280.png",
+      "bytes": 975556,
+      "sha256": "72ac802e5a80b8b0011add9550d3fdcd8afa976ebaa0812657d85015ffe56610",
+      "privacy": "private teacher review; synthetic identity only",
+      "inEncryptedReview": true,
+      "width": 1280,
+      "height": 7384
+    },
+    {
+      "file": "evidence/g11-t1-l14-014-classroom-1920.png",
+      "bytes": 1017682,
+      "sha256": "706b7aa11abfff4ff15f9cd50187bb9c7d907282ede5e01785a9948db6b28b86",
+      "privacy": "private teacher review; synthetic identity only",
+      "inEncryptedReview": false,
+      "width": 1920,
+      "height": 7384
+    },
+    {
+      "file": "evidence/g11-t1-l14-014-classroom-320.png",
+      "bytes": 1000811,
+      "sha256": "7a2c0e376de314c64a7630a31827c466513afca5b22029577a320375695e336e",
+      "privacy": "private teacher review; synthetic identity only",
+      "inEncryptedReview": false,
+      "width": 320,
+      "height": 13695
+    },
+    {
+      "file": "evidence/g11-t1-l14-014-classroom-360.png",
+      "bytes": 982985,
+      "sha256": "b028896498f8447cff3d8ecf5b8d6d52a091c62527be96b94ad20e13c48edcaf",
+      "privacy": "private teacher review; synthetic identity only",
+      "inEncryptedReview": false,
+      "width": 360,
+      "height": 12441
+    },
+    {
+      "file": "evidence/g11-t1-l14-014-classroom-430.png",
+      "bytes": 1056670,
+      "sha256": "333705eb8a66f114c9395d59d684d4391e471e5c4ac801341e7737adc17edf31",
+      "privacy": "private teacher review; synthetic identity only",
+      "inEncryptedReview": false,
+      "width": 430,
+      "height": 11135
+    },
+    {
+      "file": "evidence/g11-t1-l14-014-classroom-768.png",
+      "bytes": 997758,
+      "sha256": "dc4a38e8ebfe9257e4052747853dc813cdd04368a0be5cc8be6f2dab8f820b18",
+      "privacy": "private teacher review; synthetic identity only",
+      "inEncryptedReview": false,
+      "width": 768,
+      "height": 8559
+    },
+    {
+      "file": "evidence/g11-t1-l14-014.pdf",
+      "bytes": 86141,
+      "sha256": "beee7a12bf2b1e98881ed4906befcf23aeb92e99d30e7a4736be7b38cffeafb9",
+      "privacy": "private teacher review; synthetic identity only",
+      "inEncryptedReview": true
+    },
+    {
+      "file": "evidence/g12-t1-l05-005-classroom-1280.png",
+      "bytes": 1350207,
+      "sha256": "7894e8bc15e1c89f6b5bb36192ca6147bcf5077955c8295398842f1cbebfb051",
+      "privacy": "private teacher review; synthetic identity only",
+      "inEncryptedReview": true,
+      "width": 1280,
+      "height": 10027
+    },
+    {
+      "file": "evidence/g12-t1-l05-005-classroom-1920.png",
+      "bytes": 1406589,
+      "sha256": "8ff006108d7e1551d2697239e1098e297b455cfeaf7c133ec6a9fcdd089a8648",
+      "privacy": "private teacher review; synthetic identity only",
+      "inEncryptedReview": false,
+      "width": 1920,
+      "height": 10027
+    },
+    {
+      "file": "evidence/g12-t1-l05-005-classroom-320.png",
+      "bytes": 1432653,
+      "sha256": "7f79793b1cfc3764946a94592f686133094a52a67a06aae4f3e4e438d034ed6b",
+      "privacy": "private teacher review; synthetic identity only",
+      "inEncryptedReview": false,
+      "width": 320,
+      "height": 19340
+    },
+    {
+      "file": "evidence/g12-t1-l05-005-classroom-360.png",
+      "bytes": 1408118,
+      "sha256": "af36e6f09846731044e2cc5c506fd6f755b5004772ce57d7ee4db8362211a5ab",
+      "privacy": "private teacher review; synthetic identity only",
+      "inEncryptedReview": false,
+      "width": 360,
+      "height": 17971
+    },
+    {
+      "file": "evidence/g12-t1-l05-005-classroom-430.png",
+      "bytes": 1520759,
+      "sha256": "4052ecb80f86033dd193c40963fc13471ad7e9c49ebae54e31590b633fc511bd",
+      "privacy": "private teacher review; synthetic identity only",
+      "inEncryptedReview": false,
+      "width": 430,
+      "height": 15699
+    },
+    {
+      "file": "evidence/g12-t1-l05-005-classroom-768.png",
+      "bytes": 1433369,
+      "sha256": "bdff8b524b7855b6a841735bbb58a6954d6b17b7a90a50c46e2bddad5a1a07e4",
+      "privacy": "private teacher review; synthetic identity only",
+      "inEncryptedReview": false,
+      "width": 768,
+      "height": 12015
+    },
+    {
+      "file": "evidence/g12-t1-l05-005.pdf",
+      "bytes": 102342,
+      "sha256": "5e49294b8cdedec11dfd9e27e3c0aee055b8d67288b34844c328c24bc30bd0f9",
+      "privacy": "private teacher review; synthetic identity only",
+      "inEncryptedReview": true
+    },
+    {
+      "file": "evidence/g8-t1-l08-008-classroom-1280.png",
+      "bytes": 905298,
+      "sha256": "54d3243e375a20e26db6d775aa49c5e7763302ee43080a9aae7c10fd19a02493",
+      "privacy": "private teacher review; synthetic identity only",
+      "inEncryptedReview": true,
+      "width": 1280,
+      "height": 7235
+    },
+    {
+      "file": "evidence/g8-t1-l08-008-classroom-1920.png",
+      "bytes": 944775,
+      "sha256": "21f47c4cd42149425a852a517116d5ae48f0d82001326ed5efe8f7a017438942",
+      "privacy": "private teacher review; synthetic identity only",
+      "inEncryptedReview": true,
+      "width": 1920,
+      "height": 7235
+    },
+    {
+      "file": "evidence/g8-t1-l08-008-classroom-320.png",
+      "bytes": 939614,
+      "sha256": "87db2d29e2f01851b0a5cd3e2f12aefa842cd86ba249168e5e60fcce56c32989",
+      "privacy": "private teacher review; synthetic identity only",
+      "inEncryptedReview": true,
+      "width": 320,
+      "height": 13182
+    },
+    {
+      "file": "evidence/g8-t1-l08-008-classroom-360.png",
+      "bytes": 920837,
+      "sha256": "85a7fabb3df8f8c613861f02c5a5c83bd280d2ac62e25aab9a48ba01906cc16a",
+      "privacy": "private teacher review; synthetic identity only",
+      "inEncryptedReview": true,
+      "width": 360,
+      "height": 12157
+    },
+    {
+      "file": "evidence/g8-t1-l08-008-classroom-430.png",
+      "bytes": 989368,
+      "sha256": "c805bfa7bca201da1eab4b9d02b340111914c12fa3b1bcc4f197ee9e563cac68",
+      "privacy": "private teacher review; synthetic identity only",
+      "inEncryptedReview": true,
+      "width": 430,
+      "height": 10871
+    },
+    {
+      "file": "evidence/g8-t1-l08-008-classroom-768.png",
+      "bytes": 944181,
+      "sha256": "5dc1b28b4d84101ef43534a3781b576e938551ba609f4af03d4326a6cd5e0f0d",
+      "privacy": "private teacher review; synthetic identity only",
+      "inEncryptedReview": true,
+      "width": 768,
+      "height": 8495
+    },
+    {
+      "file": "evidence/g8-t1-l08-008.pdf",
+      "bytes": 83248,
+      "sha256": "926cf3c6c58d7104b0acffe30ca0440a38293c342e95b82e4e960c48d7956d0f",
+      "privacy": "private teacher review; synthetic identity only",
+      "inEncryptedReview": true
+    },
+    {
+      "file": "evidence/g9-t1-l02-002-classroom-1280.png",
+      "bytes": 897944,
+      "sha256": "b319cc0cbcded16a439822e41fb1305121ddc513100cb52e55e7ce58d85779f8",
+      "privacy": "private teacher review; synthetic identity only",
+      "inEncryptedReview": true,
+      "width": 1280,
+      "height": 7046
+    },
+    {
+      "file": "evidence/g9-t1-l02-002-classroom-1920.png",
+      "bytes": 935405,
+      "sha256": "be05a9cad9c58242b0b9e732b9cee0a8440dd611d1fbe3a96bb15a2baad7de63",
+      "privacy": "private teacher review; synthetic identity only",
+      "inEncryptedReview": false,
+      "width": 1920,
+      "height": 7046
+    },
+    {
+      "file": "evidence/g9-t1-l02-002-classroom-320.png",
+      "bytes": 942169,
+      "sha256": "b76c45617e9a765e33f224b45edb900b7d275df1e3d01b7d9006d565e0ca186f",
+      "privacy": "private teacher review; synthetic identity only",
+      "inEncryptedReview": false,
+      "width": 320,
+      "height": 13129
+    },
+    {
+      "file": "evidence/g9-t1-l02-002-classroom-360.png",
+      "bytes": 919770,
+      "sha256": "e114b86f1fae9236b8b3c29b1cd01be5c26243c0bf43cc7cb176abc50fa5ff22",
+      "privacy": "private teacher review; synthetic identity only",
+      "inEncryptedReview": false,
+      "width": 360,
+      "height": 11946
+    },
+    {
+      "file": "evidence/g9-t1-l02-002-classroom-430.png",
+      "bytes": 995545,
+      "sha256": "1dbcb5b5f6b11c8468d37b2e7984537f931af98dff4daa27288c4431e5a260e7",
+      "privacy": "private teacher review; synthetic identity only",
+      "inEncryptedReview": false,
+      "width": 430,
+      "height": 10789
+    },
+    {
+      "file": "evidence/g9-t1-l02-002-classroom-768.png",
+      "bytes": 933064,
+      "sha256": "d97c0187f87221215153e7a0ee74537f2e8287a646d37c6abe889e21570546ec",
+      "privacy": "private teacher review; synthetic identity only",
+      "inEncryptedReview": false,
+      "width": 768,
+      "height": 8215
+    },
+    {
+      "file": "evidence/g9-t1-l02-002.pdf",
+      "bytes": 84293,
+      "sha256": "d6b63b29797fd2e9336f6f203a0d76bfa0d29d27c00239615f30d7bcd9df84b0",
+      "privacy": "private teacher review; synthetic identity only",
+      "inEncryptedReview": true
+    }
+  ],
+  "printInspection": [
+    {
+      "lesson": "g10-t2-l19-019",
+      "pages": 9,
+      "pageCharacters": [
+        1660,
+        1881,
+        1619,
+        1555,
+        1634,
+        1610,
+        1177,
+        1202,
+        1341
+      ],
+      "outOfPageText": []
+    },
+    {
+      "lesson": "g11-t1-l14-014",
+      "pages": 7,
+      "pageCharacters": [
+        1427,
+        1741,
+        1519,
+        1415,
+        1575,
+        1110,
+        1231
+      ],
+      "outOfPageText": []
+    },
+    {
+      "lesson": "g12-t1-l05-005",
+      "pages": 10,
+      "pageCharacters": [
+        1604,
+        2107,
+        1539,
+        1439,
+        1265,
+        1718,
+        1786,
+        928,
+        1229,
+        1491
+      ],
+      "outOfPageText": []
+    },
+    {
+      "lesson": "g8-t1-l08-008",
+      "pages": 7,
+      "pageCharacters": [
+        1383,
+        1161,
+        1417,
+        1524,
+        1460,
+        1125,
+        1265
+      ],
+      "outOfPageText": []
+    },
+    {
+      "lesson": "g9-t1-l02-002",
+      "pages": 7,
+      "pageCharacters": [
+        1526,
+        1200,
+        1379,
+        1432,
+        1494,
+        1138,
+        1270
+      ],
+      "outOfPageText": []
+    }
+  ],
+  "defectProbes": {
+    "CL-02-before": {
+      "scenario": "Same account signs back in after role revocation; new server check pending",
+      "staleGuidesVisible": 1,
+      "expected": 0
+    },
+    "CL-01-after": {
+      "width": 288,
+      "scrollWidth": 600,
+      "tabIndex": 0,
+      "role": "region",
+      "accessibleLabel": "Practical work scaffold",
+      "keyboardScrollLeft": 40
+    },
+    "CL-03-before": {
+      "scenario": "Synthetic account sync error in existing dark appearance",
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "targets": [
+            [
+              "p[role=\"alert\"]"
+            ],
+            [
+              "p[role=\"alert\"] > button"
+            ]
+          ]
+        }
+      ],
+      "styles": {
+        "color": "rgb(34, 34, 34)",
+        "background": "rgb(32, 37, 34)"
+      }
+    },
+    "CL-02-after": {
+      "scenario": "Same account signs back in after role revocation; new server check pending",
+      "staleGuidesVisible": 0,
+      "expected": 0
+    },
+    "CL-01-before": {
+      "width": 288,
+      "scrollWidth": 600,
+      "tabIndex": -1,
+      "role": null,
+      "accessibleLabel": null
+    },
+    "CL-03-after": {
+      "scenario": "Synthetic account sync error in dark appearance after theme correction",
+      "violations": [],
+      "styles": {
+        "color": "rgb(244, 243, 238)",
+        "background": "rgb(32, 37, 34)"
+      }
+    }
+  }
+}

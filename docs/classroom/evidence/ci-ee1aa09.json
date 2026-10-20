@@ -1,0 +1,18 @@
+{
+  "repository": "PDthePlug/Applied-Commerce-",
+  "commit": "ee1aa09072ad89dc29a5ea19f492c8e4fbd3c153",
+  "run": "https://github.com/PDthePlug/Applied-Commerce-/actions/runs/39433583292",
+  "jobId": 118664653272,
+  "conclusion": "success",
+  "evidence": "GitHub job/step metadata and full job log fetched 2026-10-20; test totals read from the actual log.",
+  "nodeTests": {"tests":174,"passed":174,"failed":0},
+  "browserAcceptance": {"passed":210,"duration":"2.8m","workers":1},
+  "pythonIdentity": "PASS",
+  "syntheticDatabaseDrill": {"checks":7,"learners":500,"answers":10000,"failed":0},
+  "typecheck": "PASS",
+  "lint": "PASS",
+  "build": "PASS",
+  "presentationCensus": "PASS",
+  "liveSupabaseRoles": "NOT TESTED",
+  "privateClassroomUIMatrix": "Separate local synthetic fixture run; not included in this public CI job."
+}

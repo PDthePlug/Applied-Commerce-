@@ -16,6 +16,9 @@
     "verify:operations": "node scripts/operational-database-drill.mjs",
     "verify:roles": "node scripts/validate-role-sessions.mjs",
     "census:presentation": "node scripts/presentation-census.mjs",
+    "classroom:inventory": "node scripts/classroom-inventory.mjs",
+    "classroom:release": "node scripts/classroom-release.mjs",
+    "classroom:fixture": "node scripts/prepare-classroom-fixture.mjs",
     "verify": "npm run verify:runtime && npm test && npm run typecheck && npm run lint && npm run build"
   },
   "dependencies": {

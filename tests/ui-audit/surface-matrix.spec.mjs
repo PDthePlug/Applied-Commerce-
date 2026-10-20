@@ -18,6 +18,7 @@ const pages = [
   ["institutions", "/institutions"],
   ["institution operations gate", "/institutions/manage"],
   ["facilitator gate", "/facilitator"],
+  ["classroom guidance gate", "/facilitator/classroom"],
 ];
 
 for (const [name, url] of pages) {
@@ -87,6 +88,8 @@ for (const [name, url] of pages) {
       };
     });
 
+    if(url==="/facilitator/classroom"){const signIn=page.getByRole("link",{name:"Staff sign in",exact:true});expect((await signIn.boundingBox()).height).toBeGreaterThanOrEqual(44);}
+
     await testInfo.attach("route-diagnostics", {
       body: Buffer.from(JSON.stringify({
         requested: url,
@@ -100,7 +103,7 @@ for (const [name, url] of pages) {
       contentType: "application/json",
     });
     await testInfo.attach("screen", {
-      body: await page.screenshot({ fullPage: true, animations: "disabled" }),
+      body: await page.screenshot({ fullPage: true, animations: "disabled", timeout: 30_000 }),
       contentType: "image/png",
     });
 

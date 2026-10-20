@@ -82,3 +82,7 @@ These additions require teacher review. Curriculum mapping, current legal/financ
 ## Stable learner responses
 
 The response persistence milestone uses compiled block identities rather than document positions. Legacy positional answers appear in Portfolio under **Earlier answers kept for review**; they are preserved without guessing which revised question they answered. Before the first migration write, the previous record is backed up on the same device. New task answers and portfolio evidence share the same stable identities. See `docs/checkpoints/2026-10-04-response-persistence.md` for validation and limitations.
+
+## Classroom teaching drafts
+
+The integrated `/facilitator/classroom` workspace adds five source-linked benchmark guides, presentation prompts and printing. Teacher guidance requires verified staff/admin access and a private content release; it is not included in public learner bundles. The other 390 guides await educational development. See the [classroom milestone deliverables](docs/classroom/README.md) for the complete 395-lesson inventory, teaching standard, review limits and safe local review procedure. Draft enrichment is separate from the canonical learner books and requires human educator approval before publication as approved teaching material.

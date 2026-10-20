@@ -1,0 +1,142 @@
+{
+  "codeRevision": "e6c87e6a18913ef46f1eac84d34e8ab098276a04",
+  "node": {
+    "passed": 174,
+    "failed": 0
+  },
+  "targetedClassroomAfterInventoryRefinement": {
+    "passed": 14,
+    "failed": 0
+  },
+  "typecheck": "PASS",
+  "lint": "PASS",
+  "build": "PASS",
+  "runtime": {
+    "grades": 5,
+    "lessons": 395,
+    "assessments": 4,
+    "rawStableBlocks": 20766,
+    "resolvedBlocks": 20742
+  },
+  "pythonIdentity": {
+    "passed": 2
+  },
+  "privateGuides": {
+    "guides": 5,
+    "periods": 7,
+    "minutesPerPeriod": 45,
+    "humanEducatorApproval": "NOT YET REVIEWED"
+  },
+  "privateClassroomCore": {
+    "passed": 42,
+    "duration": "10.8m"
+  },
+  "privateClassroomContrast": {
+    "passed": 6,
+    "duration": "3.2m"
+  },
+  "browserAcceptance": {
+    "source": "GitHub CI exact final application code revision 898296e0609850031db1efcc0fd20456a333d9d6",
+    "passed": 210,
+    "duration": "3.6m"
+  },
+  "discovery": {
+    "passed": 390,
+    "duration": "11.5m",
+    "diagnosticSamples": 450,
+    "screenshots": 450,
+    "unexpectedErrors": 0
+  },
+  "databaseDrill": {
+    "passed": 7,
+    "syntheticLearners": 500,
+    "syntheticAnswers": 10000,
+    "hostedDatabaseUsed": false,
+    "capacityBenchmark": false
+  },
+  "publicAssetCheck": {
+    "ok": true,
+    "publicAssetsChecked": 77,
+    "privateSentinelsChecked": 25,
+    "keyExported": false
+  },
+  "liveSupabaseRoles": "NOT TESTED: AC_ROLE_FIXTURES unset; user skipped fixture provision",
+  "productionWrites": false,
+  "productionDeployment": false,
+  "sourceBooksRuntimeResponseContractsChanged": false,
+  "logs": {
+    "node": {
+      "path": "work/classroom/final-node.log",
+      "bytes": 16611,
+      "sha256": "0a15b608c7a739a8baeb6934c247283c5c30436531a97d73609c42fbe7504cd7"
+    },
+    "targetedClassroom": {
+      "path": "work/classroom/classroom-node-final.log",
+      "bytes": 1769,
+      "sha256": "5d6251ada95b8e64215772734085c16b1af8ecca8584f4ae19af9c82bd62d520"
+    },
+    "typecheck": {
+      "path": "work/classroom/final-typecheck.log",
+      "bytes": 70,
+      "sha256": "95f67e2697c792f28f9240c65c2b33df400fcdfe74f423d5b023117730f8f808"
+    },
+    "lint": {
+      "path": "work/classroom/final-lint.log",
+      "bytes": 84,
+      "sha256": "bee8afa3ec73ed938eae2eb76aee7edb99b3d43388947839853cc1a3d9b6a3bc"
+    },
+    "build": {
+      "path": "work/classroom/final-build.log",
+      "bytes": 1347,
+      "sha256": "5f78230789b6f47cbbf6cdcd84f5b67bb397f6e1fa453ccd0237785a3d66c1dd"
+    },
+    "runtime": {
+      "path": "work/classroom/final-runtime.log",
+      "bytes": 269,
+      "sha256": "8cfbd9b53d35c7b048bca21a3aa989ea45eac52fb019aa0c6160e084a57c6469"
+    },
+    "pythonIdentity": {
+      "path": "work/classroom/final-python.log",
+      "bytes": 100,
+      "sha256": "a6707d4eff38012da33ddc34bc6dc076a3b17151cfc9aef223c8790cbe64c3da"
+    },
+    "privateRelease": {
+      "path": "work/classroom/private-release-validation.log",
+      "bytes": 127,
+      "sha256": "d08549191f506b23c919396dd7554214f2bbea4d933939449556617a27cddeaa"
+    },
+    "publicAssets": {
+      "path": "work/classroom/client-boundary.log",
+      "bytes": 86,
+      "sha256": "7d0eb3553e2cb0d880c67a0325108eb13e658d37e1aa4a183512c99dca388e24"
+    },
+    "classroomCore": {
+      "path": "work/classroom/classroom-browser.log",
+      "bytes": 7616,
+      "sha256": "4ca9f9b8987a2833934f9809bf5327a1806a79ead66f8e47e8990b6afc0eb4b2"
+    },
+    "classroomContrast": {
+      "path": "work/classroom/sync-browser.log",
+      "bytes": 2090,
+      "sha256": "cfdded08afdae0f7b009361fed7b5d93cd21e2feac46527e02cd20be3a0b2a85"
+    },
+    "sourceCompilation": {
+      "path": "work/classroom/compile-comparison.log",
+      "bytes": 119,
+      "sha256": "68c86d633674189be934afc6132e6f1b7f5740c1c06cd0107e87ed7849f1163e"
+    },
+    "databaseDrill": {
+      "path": "work/classroom/final-operations.log",
+      "bytes": 1055,
+      "sha256": "3014301a810881f7016e40996f51008b007329ccc449d845a6265354f12994a8"
+    }
+  },
+  "scopedTouchTargetFollowUp": {
+    "codeRevision": "898296e0609850031db1efcc0fd20456a333d9d6",
+    "passed": 6,
+    "failed": 0,
+    "duration": "19.4s",
+    "minimumLinkHeight": 44
+  },
+  "applicationCodeRevision": "898296e0609850031db1efcc0fd20456a333d9d6"
+}

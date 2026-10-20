@@ -1,0 +1,22 @@
+{
+  "finding":"QA-01: full-page diagnostic capture inherited a 10-second action timeout",
+  "classification":"Test harness capture budget; not a confirmed application defect",
+  "initialRun":{"passed":56,"failed":2,"interrupted":2,"notRun":330},
+  "failedCases":["phone-320: reader grade 9 term 2","phone-320: reader grade 9 term 3"],
+  "sampleBeforeCapture":{
+    "requested":"/learn/9/term/2/g9-t2-l17-018",
+    "status":200,
+    "viewport":{"width":320,"height":760},
+    "rootWidth":320,
+    "bodyWidth":320,
+    "pageErrors":[],
+    "consoleErrors":[],
+    "httpErrors":[],
+    "unexpectedFailedRequests":0,
+    "cancelledSpeculativePrefetches":9
+  },
+  "correction":"Explicit 30-second screenshot budget; unchanged navigation, error, layout, label and semantic assertions",
+  "focusedRetest":{"tests":2,"passed":2,"failed":0,"duration":"8.3s"},
+  "rawBeforeEvidence":"work/classroom/discovery-initial/, discovery-capture-before/, discovery-initial.log (ignored)",
+  "rawRetest":"work/classroom/discovery-capture-retest/ and discovery-capture-retest.log (ignored)"
+}

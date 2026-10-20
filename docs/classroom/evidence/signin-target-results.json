@@ -1,0 +1,62 @@
+{
+  "defect": "CL-04",
+  "severity": "P3",
+  "before": {
+    "link": "Staff sign in",
+    "width": 83,
+    "height": 17,
+    "cause": "min-height does not apply to an inline anchor"
+  },
+  "correction": "Display card links as inline-flex with centred alignment; preserve link semantics and existing 44px minimum height.",
+  "codeRevision": "898296e",
+  "passed": 6,
+  "failed": 0,
+  "duration": "19.4s",
+  "cases": [
+    {
+      "project": "phone-320",
+      "status": "passed",
+      "minimumLinkHeightAsserted": 44,
+      "screenshot": "public-classroom-gate-phone-320.png",
+      "screenshotSHA256": "2511d86e3017d7007243f3ec23ebe723b4ea2768424c722f27dacd18acaaab2c"
+    },
+    {
+      "project": "phone-360",
+      "status": "passed",
+      "minimumLinkHeightAsserted": 44,
+      "screenshot": "public-classroom-gate-phone-360.png",
+      "screenshotSHA256": "c20289d89c8cb7c57e9a002e29dfeb41c7f447ff3fdb22d7ebd66e63d8fcac87"
+    },
+    {
+      "project": "phone-430",
+      "status": "passed",
+      "minimumLinkHeightAsserted": 44,
+      "screenshot": "public-classroom-gate-phone-430.png",
+      "screenshotSHA256": "78147e7384cc0c8503bdacfd225eda881db4e07fef2cb4c52163f904efac8ad6"
+    },
+    {
+      "project": "tablet-768",
+      "status": "passed",
+      "minimumLinkHeightAsserted": 44,
+      "screenshot": "public-classroom-gate-tablet-768.png",
+      "screenshotSHA256": "41ab0bedad55cbc1e9a2c243ac222eadd6daca47b2a5cf7aa77985a7bac8fa2e"
+    },
+    {
+      "project": "desktop-1280",
+      "status": "passed",
+      "minimumLinkHeightAsserted": 44,
+      "screenshot": "public-classroom-gate-desktop-1280.png",
+      "screenshotSHA256": "ff12012b7d5af4f91c4401cb1b681e91c34f43745a1d4bf11f303ab2583d13cf"
+    },
+    {
+      "project": "desktop-1920",
+      "status": "passed",
+      "minimumLinkHeightAsserted": 44,
+      "screenshot": "public-classroom-gate-desktop-1920.png",
+      "screenshotSHA256": "bea1b9936e7dbca99798b8569e56e06aacd8e7ad7492ee41470429623141e588"
+    }
+  ],
+  "fullSweepContext": "390 cases passed before this scoped new-workspace link fix; these six cases retest every affected viewport after it.",
+  "rawBefore": "work/classroom/signin-target-before/ and discovery-final-full/",
+  "rawAfter": "test-results/ui-audit-results.json and ui-audit-report/"
+}
