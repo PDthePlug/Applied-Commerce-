@@ -88,6 +88,8 @@ for (const [name, url] of pages) {
       };
     });
 
+    if(url==="/facilitator/classroom"){const signIn=page.getByRole("link",{name:"Staff sign in",exact:true});expect((await signIn.boundingBox()).height).toBeGreaterThanOrEqual(44);}
+
     await testInfo.attach("route-diagnostics", {
       body: Buffer.from(JSON.stringify({
         requested: url,

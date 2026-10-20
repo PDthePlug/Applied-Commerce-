@@ -1,7 +1,7 @@
 import {test,expect} from '@playwright/test';
 test('classroom guidance stays private in the real local-mode app',async({page,request})=>{
  const response=await request.get('/api/classroom?lesson=g8-t1-l08-008');expect(response.status()).toBe(401);expect(response.headers()['cache-control']).toContain('no-store');expect(await response.json()).not.toHaveProperty('guide');
- await page.goto('/facilitator/classroom?lesson=g8-t1-l08-008');await expect(page.getByRole('heading',{name:'Sign in to open teacher guidance.'})).toBeVisible();await expect(page.getByRole('article',{name:'Draft teacher guide'})).toHaveCount(0);
+ await page.goto('/facilitator/classroom?lesson=g8-t1-l08-008');await expect(page.getByRole('heading',{name:'Sign in to open teacher guidance.'})).toBeVisible();await expect(page.getByRole('article',{name:'Draft teacher guide'})).toHaveCount(0);const staffSignIn=page.getByRole('link',{name:'Staff sign in',exact:true});expect((await staffSignIn.boundingBox()).height).toBeGreaterThanOrEqual(44);
  expect((await request.get('/content/instructional/benchmark-guides.v1.plain.json')).status()).toBe(404);
 });
 test('classroom return context preserves the source lesson without granting access',async({page})=>{
