@@ -1,0 +1,35 @@
+{
+  "repository": "PDthePlug/Applied-Commerce-",
+  "commit": "898296e0609850031db1efcc0fd20456a333d9d6",
+  "run": "https://github.com/PDthePlug/Applied-Commerce-/actions/runs/39476206214",
+  "jobId": 118812698762,
+  "conclusion": "success",
+  "evidence": "Completed GitHub job metadata and full log inspected; actual totals extracted from that log.",
+  "nodeTests": {
+    "tests": 174,
+    "passed": 174,
+    "failed": 0
+  },
+  "browserAcceptance": {
+    "passed": 210,
+    "duration": "3.6m",
+    "workers": 1
+  },
+  "pythonIdentity": "PASS",
+  "syntheticDatabaseDrill": {
+    "checks": 7,
+    "learners": 500,
+    "answers": 10000,
+    "failed": 0
+  },
+  "typecheck": "PASS",
+  "lint": "PASS",
+  "build": "PASS",
+  "presentationCensus": "PASS",
+  "liveSupabaseRoles": "NOT TESTED",
+  "privateClassroomUIMatrix": "Separate local synthetic run: 42 core plus six scoped contrast cases.",
+  "scopedTouchTargetRegression": {
+    "passed": 6,
+    "duration": "19.4s"
+  }
+}
