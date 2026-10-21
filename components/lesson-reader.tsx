@@ -7,10 +7,11 @@ import { ArrowLeft, ArrowRight, Check, CheckCircle2, Menu, NotebookPen, X } from
 import { curriculum } from "@/lib/curriculum";
 import { learningSections } from "@/lib/semantic-learning";
 import type { TermIndex, UnitContent, UnitSummary } from "@/lib/types";
+import {contextualActivityPlacements} from "@/lib/classroom/contextual";
 import { ContentBlocks } from "./content-blocks";
 import { LessonIconKey } from "./presentation-system";
 import { useLearningStore } from "@/lib/learning-store";
-import {ContextualGuidance,FullTeacherPreparation,TeacherModeControl,TeacherPreparation,teacherMoments,useContextualTeacher} from "./contextual-teacher";
+import {ContextualActivity,ContextualGuidance,TeacherPrintGuide,TeacherModeControl,TeacherPreparation,teacherMoments,useContextualTeacher} from "./contextual-teacher";
 
 const compactQuery="(max-width: 820px)";
 const subscribeCompact=(notify:()=>void)=>{
@@ -27,8 +28,9 @@ export function LessonReader({grade,term,unitId,classroomContext=false,presentat
  const [loadRevision,retryLoad]=useState(0);
  const teacher=useContextualTeacher(unitId,presentationOnly);
  const [printing,setPrinting]=useState(false);
+ const [activeTeachingStage,setActiveTeachingStage]=useState("g8-open");
  const moments=unit&&teacher.guide?teacherMoments(unit,teacher.guide):null;
- const teaching=teacher.teacherMode&&Boolean(moments);
+ const teaching=teacher.teacherMode&&Boolean(moments)&&Boolean(teacher.contextual);
  useEffect(()=>{const done=()=>setPrinting(false);window.addEventListener("afterprint",done);return()=>window.removeEventListener("afterprint",done);},[]);
  const compact=useSyncExternalStore(subscribeCompact,compactSnapshot,desktopSnapshot);
  const railRef=useRef<HTMLElement|null>(null);
@@ -74,7 +76,11 @@ export function LessonReader({grade,term,unitId,classroomContext=false,presentat
         unitType={unit.type}
         promptResponses={presentationOnly?{}:state.promptResponses}
         onSavePromptResponse={presentationOnly?()=>{}:savePromptResponse}
-        sectionGuidance={teaching&&teacher.guide&&moments?(section,edge)=>moments.filter(moment=>moment.sectionAnchor===section.anchor&&moment.edge===edge).map(moment=><ContextualGuidance key={moment.stageId} moment={moment} guide={teacher.guide!} moments={moments}/>):undefined}
+        sectionGuidance={teaching&&teacher.guide&&teacher.contextual&&moments?(section,edge)=><>
+         {moments.filter(moment=>moment.sectionAnchor===section.anchor&&moment.edge===edge).map(moment=><ContextualGuidance onStage={setActiveTeachingStage} key={moment.stageId} moment={moment} guide={teacher.guide!} content={teacher.contextual!} moments={moments}/>)}
+         {edge==="before"&&contextualActivityPlacements.filter(item=>item.kind==="section"&&unit.blocks[section.start]?.id===item.blockId).map(item=><ContextualActivity key={item.activity} activity={item.activity} guide={teacher.guide!} content={teacher.contextual!}/>)}
+        </>:undefined}
+        partGuidance={teaching&&teacher.guide&&teacher.contextual?block=>{const placement=contextualActivityPlacements.find(item=>item.kind==="part"&&item.blockId===block.id);return placement?<ContextualActivity activity={placement.activity} guide={teacher.guide!} content={teacher.contextual!}/>:null;}:undefined}
       />;
  return <div className={`reader-shell${teaching&&printing?" contextual-printing":""}`} data-presentation-contract="applied-commerce-v2">
   <header className="reader-topbar">
@@ -101,12 +107,12 @@ export function LessonReader({grade,term,unitId,classroomContext=false,presentat
       </header>
       {!presentationOnly&&<TeacherModeControl teacher={teacher}/>}
       {teacher.teacherMode&&!moments&&<p role="alert">The teaching placement needs review. Use the standalone classroom guide.</p>}
-      {teaching&&teacher.guide&&moments&&<TeacherPreparation guide={teacher.guide} moments={moments} onPrint={()=>{setPrinting(true);requestAnimationFrame(()=>requestAnimationFrame(()=>window.print()));}}/>}
+      {teaching&&teacher.guide&&moments&&<TeacherPreparation active={activeTeachingStage} onStage={setActiveTeachingStage} guide={teacher.guide} content={teacher.contextual!} moments={moments} onPrint={()=>{setPrinting(true);requestAnimationFrame(()=>requestAnimationFrame(()=>window.print()));}}/>}
       {presentationOnly&&<p className="learner-presentation-notice">Learner presentation · Use your own copy of the lesson for answers.</p>}
       {presentationOnly?<fieldset className="learner-projection" disabled aria-label="Learner presentation material">{lessonContent}</fieldset>:lessonContent}
     </article>
-    {teaching&&teacher.guide&&<FullTeacherPreparation guide={teacher.guide} printing={printing}/>}
-    {!presentationOnly&&<>
+    {teaching&&printing&&teacher.guide&&teacher.contextual&&<TeacherPrintGuide guide={teacher.guide} content={teacher.contextual}/>}
+    {!presentationOnly&&!teaching&&<>
     <section className="workbook-panel">
       <div className="workbook-title"><NotebookPen/><div><p className="eyebrow">Lesson notes</p><h2>Anything you want to remember</h2></div></div>
       <p>Your responses are captured beside each activity, reflection, table and workbook field. Use this separate space only for extra notes you want to keep about the lesson.</p>

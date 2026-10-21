@@ -1,5 +1,7 @@
 # Contextual Teacher View — Grade 8, Term 1, Lesson 8
 
+**Current review:** [PR #43 owner corrections](owner-review/REPORT.md) supersede the initial verification below. Owner acceptance is pending.
+
 This milestone changes only the teaching presentation of `g8-t1-l08-008`.
 The existing learner content remains the canvas. The encrypted Grade 8 benchmark
 is reused without rewriting it; the other four benchmark payloads are unchanged.
@@ -43,17 +45,25 @@ the teacher sequence does not manufacture an observation during this period.
 
 ## Preparation, detail and projection
 
-The compact overview contains objectives, observable outcome, materials,
-prerequisites, misconceptions, South African context and participation privacy.
-Full instructional details retain the original concept, educator knowledge,
-vocabulary, all stage actions, questions and participation indicators, discussion
-reasoning, practical instructions/scaffold, understanding checks, adaptations,
-continuity and independent learning. Stage presentation questions/tasks are also
-available. The complete preparation can be printed without printing learner work.
+The initially closed preparation at the top now contains complete educator
+preparation. All 100 original instructional text fields have explicit live
+locations in preparation, the five contextual stages or the local independent
+work panel. See the [field-by-field map](owner-review/instructional-field-map.csv).
+The full bottom document has been removed from the live lesson. A print request
+mounts the complete original guide and contextual clarification for print only.
+The standalone guide remains a working fallback.
 
-Long contextual guidance has a named, keyboard-focusable scroll region limited
-to 40% of the screen height, so the adjacent original learner material remains
-available. The collapsed summary remains outside that region.
+Panels use ordinary document scrolling and local expandable detail, without a
+constrained vertical scroll region. A compact accessible stage selector and
+previous/next controls expose the deliberate teaching order. Additional local
+annotations distinguish current practical/reflection work, later Part B/home
+observations and optional Deepening Insight. Learner notes and completion
+controls return unchanged in Learner View and are absent during Teacher View.
+
+A separate encrypted Grade 8-only enrichment supplies reviewed-for-implementation
+transitions, activity scheduling and the survival/functional distinction, pending
+owner and educator review. It is linked to the existing guide version and source
+fingerprint; the original five-guide release is unchanged.
 
 The learner presentation link opens `?presentation=1` in a separate window with
 no opener relationship. That window requests no classroom payload, renders no
@@ -73,7 +83,7 @@ release for governance. The other four standalone guide presentations are unchan
 `app/api/classroom/route.ts` and `lib/classroom/access.ts` retain their existing
 verified-user, active-session, current-assignment/admin checks and private,
 no-store headers. No migration, RLS change, production database write or fixture
-flag is added. Guide data is loaded through the protected API, never imported
+flag is added. Guide and contextual-enrichment data are loaded through the protected API, never imported
 into client code as plaintext.
 
 The contextual client binds results to the current user object, session object,
@@ -119,14 +129,14 @@ and an explicitly verified hosted commit. Without those fixtures they are
 The renderer regression fixture records SHA-256 of the exact empty-answer markup
 for all 399 main-branch units, generated from commit
 `3933c2d90519e7aa53984405693da9526c12a588`, rather than from the modified renderer.
-The three new Node tests check default learner parity, real renderer boundaries,
-timings and failure on ambiguous or changed placements.
+The original Node tests check default learner parity, real renderer boundaries,
+timings and failure on ambiguous or changed placements; owner-review checks add explicit field ownership and safe Part-heading annotations.
 
 For this staging review deployment only, the deployment build command can append
 `node scripts/verify-classroom-hosted.mjs` after `npm run build`. This passes the
 existing server-bound Secret to the existing release validator through standard
 input (`--key-file -`). It checks all five encrypted guides, timing, source
-fingerprints and excerpts without logging key/guide text, writing a key file or
+fingerprints and excerpts, plus Grade 8 contextual enrichment and 100-field ownership without logging key/guide text, writing a key file or
 adding a test endpoint. A separate Node regression rejects missing/invalid
 Secrets without disclosing their values. A PASS is server-build decryption
 evidence, not runtime educator or learner authorisation evidence.

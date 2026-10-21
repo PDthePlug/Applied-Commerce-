@@ -1,9 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import {useEffect,useRef,useState} from "react";
+import {useEffect,useState} from "react";
 import {useAuth} from "@/lib/auth-context";
 import {contextualAlignment,contextualLessonId,type ContextualMoment} from "@/lib/classroom/contextual";
+import {instructionalFields,type ContextualEnrichment,type TeachingLocation} from "@/lib/classroom/contextual-fields";
 import type {ClassroomPayload,TeacherGuide} from "@/lib/classroom/model";
 import type {UnitContent} from "@/lib/types";
 import {TeacherGuideView} from "./classroom-workspace";
@@ -15,14 +16,15 @@ export function useContextualTeacher(unitId:string,presentationOnly:boolean){
  const [revision,setRevision]=useState(0);
  const [intent,setIntent]=useState<{account:typeof user;session:typeof session;unitId:string}|null>(null);
  const requested=intent?.account===user&&intent?.session===session&&intent?.unitId===unitId;
- const [result,setResult]=useState<{account:typeof user;session:typeof session;unitId:string;revision:number;guide:TeacherGuide|null;error?:string}|null>(null);
+ const [result,setResult]=useState<{account:typeof user;session:typeof session;unitId:string;revision:number;guide:TeacherGuide|null;contextual?:ContextualEnrichment|null;error?:string}|null>(null);
  const eligible=unitId===contextualLessonId&&!presentationOnly;
  useEffect(()=>{
+  if(!eligible)return;
   const refresh=()=>setRevision(value=>value+1);
   const visible=()=>{if(document.visibilityState==="visible")refresh();};
   window.addEventListener("focus",refresh);window.addEventListener("online",refresh);document.addEventListener("visibilitychange",visible);
   return()=>{window.removeEventListener("focus",refresh);window.removeEventListener("online",refresh);document.removeEventListener("visibilitychange",visible);};
- },[]);
+ },[eligible]);
  useEffect(()=>{
   // Clear the actual private state as well as gating it during render. This is a
   // deliberate security boundary on identity/session/lesson/request changes.
@@ -34,19 +36,57 @@ export function useContextualTeacher(unitId:string,presentationOnly:boolean){
   void fetch(`/api/classroom?${new URLSearchParams({lesson:unitId})}`,{credentials:"same-origin",cache:"no-store",signal:controller.signal,headers:{"x-ac-expected-user-id":user.id}}).then(async response=>{
    const data=await response.json() as ClassroomPayload&{error?:string};
    if(controller.signal.aborted)return;
-   const guide=response.ok&&data.selected?.id===unitId&&data.guide?.lessonId===unitId?data.guide:null;
-   setResult({account:user,session,unitId,revision,guide,error:response.ok?(guide?undefined:"Teacher guidance does not match this lesson."):data.error??"Teacher guidance is unavailable."});
+   const guide=response.ok&&data.selected?.id===unitId&&data.guide?.lessonId===unitId&&data.contextual?.lessonId===unitId?data.guide:null;
+   setResult({account:user,session,unitId,revision,guide,contextual:guide?data.contextual:null,error:response.ok?(guide?undefined:"Teacher guidance does not match this lesson."):data.error??"Teacher guidance is unavailable."});
   }).catch(()=>{if(!controller.signal.aborted)setResult({account:user,session,unitId,revision,guide:null,error:"Check your connection and try teacher guidance again."});}).finally(()=>clearTimeout(timer));
   return()=>{controller.abort();clearTimeout(timer);};
  },[eligible,user,session,loading,unitId,revision]);
  const current=eligible&&!loading&&result?.account===user&&result.session===session&&result.unitId===unitId&&result.revision===revision?result:null;
  const guide=current?.guide??null;
- return {guide,teacherMode:requested&&Boolean(guide),pending:eligible&&Boolean(user)&&!current,error:current?.error,
+ return {guide,contextual:current?.contextual??null,teacherMode:requested&&Boolean(guide),pending:eligible&&Boolean(user)&&!current,error:current?.error,
   requested:requested&&eligible&&Boolean(user),toggle:()=>{if(requested)setIntent(null);else{setIntent({account:user,session,unitId});setRevision(value=>value+1);}},retry:()=>setRevision(value=>value+1)};
 }
 
-function Bullets({items}:{items:string[]}){return <ul>{items.map((item,index)=><li key={index}>{item}</li>)}</ul>;}
-function jump(id:string){const target=document.getElementById(id);if(!target)return;let focus=target;if(target.matches(".learning-section")){target.querySelectorAll<HTMLDetailsElement>("details.deepening-insight").forEach(details=>details.open=true);focus=target.querySelector<HTMLElement>("h2,h3,summary")??target;if(!focus.matches("summary")){focus.tabIndex=-1;focus.addEventListener("blur",()=>focus.removeAttribute("tabindex"),{once:true});}}target.scrollIntoView({block:"start",behavior:"instant"});focus.focus({preventScroll:true});}
+function jump(id:string){
+ const target=document.getElementById(id);if(!target)return;
+ let focus=target;
+ if(target.matches(".learning-section")){
+  target.querySelectorAll<HTMLDetailsElement>("details.deepening-insight").forEach(details=>details.open=true);
+  focus=target.querySelector<HTMLElement>("h2,h3,summary")??target;
+ }
+ if(!focus.matches("summary,button,a,input,select,textarea")){
+  focus.tabIndex=-1;focus.addEventListener("blur",()=>focus.removeAttribute("tabindex"),{once:true});
+ }
+ target.scrollIntoView({block:"start",behavior:"instant"});focus.focus({preventScroll:true});
+}
+function Text({guide,path,label}:{guide:TeacherGuide;path:string;label?:string}){
+ const field=instructionalFields(guide).find(item=>item.path===path);
+ if(!field)return null;
+ return <p data-instructional-field={path}>{label&&<strong>{label}: </strong>}{field.value}</p>;
+}
+function List({guide,prefix}:{guide:TeacherGuide;prefix:string}){
+ return <ul>{instructionalFields(guide).filter(item=>item.path.startsWith(prefix+".")).map(item=><li key={item.path} data-instructional-field={item.path}>{item.value}</li>)}</ul>;
+}
+function Vocabulary({guide}:{guide:TeacherGuide}){
+ return <dl>{guide.preparation.vocabulary.map((item,i)=><div key={i}><dt data-instructional-field={`preparation.vocabulary.${i}.term`}>{item.term}</dt><dd data-instructional-field={`preparation.vocabulary.${i}.explanation`}>{item.explanation}</dd></div>)}</dl>;
+}
+function Misconception({guide,index}:{guide:TeacherGuide;index:number}){
+ return <><Text guide={guide} path={`preparation.misconceptions.${index}.belief`} label="Common misconception"/><Text guide={guide} path={`preparation.misconceptions.${index}.response`} label="Response"/></>;
+}
+function Discussion({guide,index}:{guide:TeacherGuide;index:number}){
+ const prefix=`discussion.${index}`;
+ return <><Text guide={guide} path={`${prefix}.question`} label="Discuss"/><Text guide={guide} path={`${prefix}.followUp`} label="Probe"/><Text guide={guide} path={`${prefix}.indicativeReasoning`} label="Indicative reasoning"/><Text guide={guide} path={`${prefix}.partialUnderstanding`} label="Partial understanding"/></>;
+}
+function Understanding({guide,index}:{guide:TeacherGuide;index:number}){
+ const prefix=`understandingChecks.${index}`;
+ return <><Text guide={guide} path={`${prefix}.prompt`} label="Check"/><Text guide={guide} path={`${prefix}.secureReasoning`} label="Secure reasoning"/><Text guide={guide} path={`${prefix}.partialUnderstanding`} label="Partial understanding"/><Text guide={guide} path={`${prefix}.notYetEvidenced`} label="Not yet evidenced"/><Text guide={guide} path={`${prefix}.nextTeachingMove`} label="Next teaching move"/></>;
+}
+function Distinction({content}:{content:ContextualEnrichment}){
+ return <div className="contextual-distinction"><h4>Survival needs and functional needs</h4>{Object.entries(content.distinction).map(([key,text])=><p key={key} data-contextual-addition={`distinction.${key}`}>{text}</p>)}</div>;
+}
+function ActivityText({content,activity}:{content:ContextualEnrichment;activity:keyof ContextualEnrichment["activities"]}){
+ return <div className="contextual-activity-scope"><h4>{content.activities[activity].title}</h4><p data-contextual-addition={`activities.${activity}.text`}>{content.activities[activity].text}</p></div>;
+}
 
 export function TeacherModeControl({teacher}:{teacher:ReturnType<typeof useContextualTeacher>}){
  if(!teacher.guide&&!teacher.requested)return null;
@@ -57,52 +97,82 @@ export function TeacherModeControl({teacher}:{teacher:ReturnType<typeof useConte
  </div>;
 }
 
-export function TeacherPreparation({guide,moments,onPrint}:{guide:TeacherGuide;moments:ContextualMoment[];onPrint:()=>void}){
- const [active,setActive]=useState<string|null>(null);
+export function TeacherPreparation({guide,moments,content,onPrint,active,onStage}:{guide:TeacherGuide;moments:ContextualMoment[];content:ContextualEnrichment;onPrint:()=>void;active:string;onStage:(id:string)=>void}){
  return <aside className="contextual-preparation contextual-private contextual-no-print" aria-label="Teacher preparation and delivery">
-  <details><summary>Prepare to teach · 45 minutes</summary><div className="contextual-body">
-   <h2>Classroom objectives</h2><Bullets items={guide.objectives}/><h3>Expected learning outcome</h3><p>{guide.observableOutcome}</p>
-   <h3>Materials</h3><Bullets items={guide.preparation.materials}/><h3>Prerequisite knowledge</h3><Bullets items={guide.prerequisites}/>
-   <h3>Important misconceptions</h3><dl>{guide.preparation.misconceptions.map(item=><div key={item.belief}><dt>{item.belief}</dt><dd>{item.response}</dd></div>)}</dl>
-   <h3>South African classroom context</h3><p>{guide.preparation.southAfricanContext}</p><h3>Participation and privacy</h3><Bullets items={guide.preparation.privacy}/>
+  <details data-instructional-location="preparation"><summary>Prepare to teach · 45 minutes</summary><div className="contextual-body">
+   <Text guide={guide} path="originalTitle"/><Text guide={guide} path="periods.0.title"/>
+   <h2>Purpose and classroom objectives</h2><Text guide={guide} path="centralConcept"/><List guide={guide} prefix="objectives"/>
+   <h3>Expected learning outcome</h3><Text guide={guide} path="observableOutcome"/>
+   <h3>Prerequisite knowledge and continuity</h3><List guide={guide} prefix="prerequisites"/><Text guide={guide} path="continuity.connection"/>
+   <h3>Educator preparation</h3><List guide={guide} prefix="preparation.knowledge"/>
+   <h3>Materials</h3><List guide={guide} prefix="preparation.materials"/>
+   <h3>Vocabulary and important distinctions</h3><Vocabulary guide={guide}/><Distinction content={content}/>
+   <h3>Important misconceptions</h3>{guide.preparation.misconceptions.map((_,index)=><Misconception key={index} guide={guide} index={index}/>)}
+   <h3>South African classroom context</h3><Text guide={guide} path="preparation.southAfricanContext"/>
+   <h3>Participation and privacy</h3><List guide={guide} prefix="preparation.privacy"/>
+   <h3>Teaching stages and timing</h3><ol>{moments.map(moment=><li key={moment.stageId}>{moment.start}–{moment.end} minutes · {moment.title}</li>)}</ol>
+   <p>Start at the phone/data examples, return to the earlier definitions, then revisit the examples with new constraints. Stage buttons follow teaching order; the original learner reading order stays intact.</p>
+   <h3>Workload and participation</h3><p>Use the activity timing and adaptations at each teaching moment. The 24-hour experiment, home observation and optional deepening remain later work. Learner notes and completion controls are available in Learner View.</p>
   </div></details>
-  <nav aria-label="Classroom teaching stages"><p>Teaching sequence · 45 minutes</p><ol>{moments.map(moment=><li key={moment.stageId}><button type="button" aria-current={active===moment.stageId?"step":undefined} onClick={()=>{setActive(moment.stageId);jump(`teacher-moment-${moment.stageId}`);}}><span>{moment.start}–{moment.end} min</span> {moment.title}</button></li>)}</ol></nav>
-  <div className="contextual-actions"><a href="/learn/8/term/1/g8-t1-l08-008?presentation=1" target="_blank" rel="noopener noreferrer">Open learner presentation in a new window</a><button type="button" onClick={onPrint}>Print complete teacher preparation</button><Link href="/facilitator/classroom?lesson=g8-t1-l08-008">Standalone guide</Link></div>
-  <p className="contextual-note">Keep this window on your own screen. Share only the learner presentation window. Learners use their own lesson; device synchronisation is not provided.</p>
+  <nav aria-label="Classroom teaching stages"><label htmlFor="classroom-stage">Teaching sequence · 45 minutes</label>
+   <div className="contextual-stage-picker"><select id="classroom-stage" value={active} onChange={event=>onStage(event.target.value)}>{moments.map((moment,i)=><option key={moment.stageId} value={moment.stageId}>{i+1}. {moment.start}–{moment.end} min · {moment.title}</option>)}</select><button type="button" onClick={()=>jump(`teacher-moment-${active}`)}>Go to stage</button></div>
+  </nav>
+  <details className="contextual-tools"><summary>Presentation, print and fallback</summary><div className="contextual-body"><div className="contextual-actions"><a href="/learn/8/term/1/g8-t1-l08-008?presentation=1" target="_blank" rel="noopener noreferrer">Open learner presentation in a new window</a><button type="button" onClick={onPrint}>Print complete teacher preparation</button><Link href="/facilitator/classroom?lesson=g8-t1-l08-008">Standalone guide</Link></div>
+  <p className="contextual-note">Keep this window on your own screen. Share only the learner presentation window. Learners use their own lesson; device synchronisation is not provided.</p></div></details>
  </aside>;
 }
 
-export function ContextualGuidance({moment,guide,moments}:{moment:ContextualMoment;guide:TeacherGuide;moments:ContextualMoment[]}){
+export function ContextualGuidance({moment,guide,moments,content,onStage}:{moment:ContextualMoment;guide:TeacherGuide;moments:ContextualMoment[];content:ContextualEnrichment;onStage:(id:string)=>void}){
  const stage=moment.stage;
  const index=moments.findIndex(item=>item.stageId===moment.stageId);
- const next=moments[index+1];
- const practical=stage.id==="g8-do";
- const discussions=stage.id==="g8-discuss"?guide.discussion:[];
- const checks=stage.id==="g8-discuss"?guide.understandingChecks.slice(0,1):stage.id==="g8-check"?guide.understandingChecks:[];
- const misconceptions=stage.id==="g8-explore"?guide.preparation.misconceptions:[];
- return <details className="contextual-guidance contextual-private contextual-no-print" data-teaching-stage={stage.id}>
-  <summary id={`teacher-moment-${stage.id}`}><span className="contextual-summary"><strong>Teacher guidance</strong><span>{moment.title}</span><small>{stage.minutes} minutes · {moment.start}–{moment.end} min</small></span><span className="contextual-expand" aria-hidden="true">+</span></summary>
-  <div className="contextual-body" role="region" aria-label={`Teaching support: ${moment.title}`} tabIndex={0}>
-   <h3>{practical?"Facilitate the activity":"Explain"}</h3><Bullets items={stage.teacher}/>
-   <h3>Ask learners</h3><p>{stage.presentation.question}</p><p>{stage.presentation.task}</p>
-   {discussions.map(item=><div key={item.question}><h4>{item.question}</h4><p>{item.followUp}</p><p><strong>Indicative reasoning:</strong> {item.indicativeReasoning}</p><p><strong>Partial understanding:</strong> {item.partialUnderstanding}</p></div>)}
-   <h3>{practical?"Learner participation":"Facilitate the activity"}</h3><Bullets items={stage.learners}/>
-   {practical&&<><Bullets items={guide.practical.instructions}/><p><strong>In-class scope:</strong> {guide.practical.inClassScope}</p><p><strong>Expected output:</strong> {guide.practical.expectedOutput}</p><p><strong>Later follow-up:</strong> {guide.practical.followUp}</p></>}
-   <h3>Look for understanding</h3><p>{stage.successfulParticipation}</p>
-   {checks.map(item=><div key={item.prompt}><h4>{item.prompt}</h4><dl><div><dt>Secure reasoning</dt><dd>{item.secureReasoning}</dd></div><div><dt>Partial understanding</dt><dd>{item.partialUnderstanding}</dd></div><div><dt>Not yet evidenced</dt><dd>{item.notYetEvidenced}</dd></div></dl><p><strong>Next teaching move:</strong> {item.nextTeachingMove}</p></div>)}
-   {misconceptions.length>0&&<><h3>Common misconception and response</h3><dl>{misconceptions.map(item=><div key={item.belief}><dt>{item.belief}</dt><dd>{item.response}</dd></div>)}</dl></>}
-   {moment.supportingSections.length>0&&<nav className="contextual-actions" aria-label="Supporting learner material">{moment.supportingSections.map(section=><button key={section.anchor} type="button" onClick={()=>jump(section.anchor)}>Show {section.title}</button>)}</nav>}
-   {next&&<><h3>Next teaching move</h3><button type="button" onClick={()=>jump(`teacher-moment-${next.stageId}`)}>Continue to {next.title}</button></>}
+ const next=moments[index+1];const previous=moments[index-1];
+ const prefix=`periods.0.stages.${index}`;
+ return <details className="contextual-guidance contextual-private contextual-no-print" data-teaching-stage={stage.id} data-instructional-location={stage.id} onToggle={event=>{if(event.target===event.currentTarget&&event.currentTarget.open)onStage(stage.id);}}>
+  <summary id={`teacher-moment-${stage.id}`}><span className="contextual-summary"><strong>Teacher guidance · Stage {index+1} of 5</strong><span>{moment.title}</span><small>{stage.minutes} minutes · {moment.start}–{moment.end} min</small></span><span className="contextual-expand" aria-hidden="true">+</span></summary>
+  <div className="contextual-body" role="region" aria-label={`Teaching support: ${moment.title}`}>
+   <p className="contextual-transition" data-contextual-addition={`transitions.${stage.id}`}>{content.transitions[stage.id as keyof ContextualEnrichment["transitions"]]}</p>
+   <h3>{stage.id==="g8-do"?"Facilitate the activity":"Explain"}</h3><List guide={guide} prefix={`${prefix}.teacher`}/>
+   <h3>Ask learners</h3><Text guide={guide} path={`${prefix}.presentation.question`}/><Text guide={guide} path={`${prefix}.presentation.task`}/>
+   <h3>Learner participation</h3><List guide={guide} prefix={`${prefix}.learners`}/>
+   <h3>Look for understanding</h3><Text guide={guide} path={`${prefix}.successfulParticipation`}/>
+   <details className="contextual-depth"><summary>{stage.id==="g8-do"?"Scaffold, reasoning and adaptations":stage.id==="g8-check"?"Assess the explanation and plan later work":"Deeper teaching support and adaptations"}</summary><div className="contextual-body">
+    <Text guide={guide} path={`${prefix}.title`} label="Teaching focus"/>
+    {stage.id==="g8-open"&&<><h4>Quiet participation</h4><List guide={guide} prefix="differentiation.quietParticipation"/></>}
+    {stage.id==="g8-explore"&&<><Distinction content={content}/><h4>Vocabulary</h4><Vocabulary guide={guide}/><Misconception guide={guide} index={0}/><h4>Reading support</h4><List guide={guide} prefix="differentiation.readingSupport"/></>}
+    {stage.id==="g8-discuss"&&<><Discussion guide={guide} index={0}/><Understanding guide={guide} index={0}/><Misconception guide={guide} index={1}/><h4>Large class</h4><List guide={guide} prefix="differentiation.largeClass"/></>}
+    {stage.id==="g8-do"&&<><ActivityText content={content} activity="partA"/><h4>Practical instructions</h4><List guide={guide} prefix="practical.instructions"/><Text guide={guide} path="practical.inClassScope" label="In-class scope"/><Text guide={guide} path="practical.expectedOutput" label="Expected output"/>
+     <h4>Fictional scaffold</h4><p>Use these headings on paper alongside the original five-row task:</p><List guide={guide} prefix="practical.scaffold.columns"/><p>Fictional examples; learners supply the purpose, category and reason:</p><List guide={guide} prefix="practical.scaffold.rows"/>
+     <Discussion guide={guide} index={1}/><Understanding guide={guide} index={1}/><h4>Additional support</h4><List guide={guide} prefix="differentiation.support"/><h4>Low technology</h4><List guide={guide} prefix="differentiation.lowTechnology"/><h4>Quiet participation</h4><List guide={guide} prefix="differentiation.quietParticipation"/>
+    </>}
+    {stage.id==="g8-check"&&<><ActivityText content={content} activity="checkpoint"/><Understanding guide={guide} index={1}/><h4>Alternative participation</h4><List guide={guide} prefix="differentiation.quietParticipation"/><Text guide={guide} path="practical.followUp" label="Later follow-up"/><Text guide={guide} path="continuity.nextUse" label="Next lesson"/></>}
+   </div></details>
+   {moment.supportingSections.length>0&&<details className="contextual-source-links"><summary>Related learner material</summary><nav className="contextual-actions" aria-label="Supporting learner material">{moment.supportingSections.map(section=><button key={section.anchor} type="button" onClick={()=>jump(section.anchor)}>Show {section.title}</button>)}</nav></details>}
+   <nav className="contextual-actions contextual-next" aria-label={`Teaching sequence from stage ${index+1}`}>
+    {previous&&<button type="button" onClick={()=>{onStage(previous.stageId);jump(`teacher-moment-${previous.stageId}`);}}>Previous stage · {previous.start}–{previous.end} min</button>}
+    {next?<button type="button" onClick={()=>{onStage(next.stageId);jump(`teacher-moment-${next.stageId}`);}}>{index===0?"Return to":index===1?"Revisit":"Continue to"} {next.title}</button>:<button type="button" onClick={()=>jump("teacher-later-home")}>Review later work</button>}
+    <button type="button" onClick={()=>jump("classroom-stage")}>Teaching navigator</button>
+   </nav>
   </div>
  </details>;
 }
 
-export function FullTeacherPreparation({guide,printing}:{guide:TeacherGuide;printing:boolean}){
- const trigger=useRef<HTMLDetailsElement|null>(null);
- return <details ref={trigger} className={`contextual-full contextual-private ${printing?"contextual-print-guide":""}`} open={printing||undefined}>
-  <summary>Full instructional details and preparation</summary>
-  <div className="classroom-workspace"><header><p>Grade {guide.grade} · Term {guide.term} · Teacher preparation</p><h2>{guide.originalTitle}</h2></header><TeacherGuideView guide={guide} teachingOnly/></div>
+export function ContextualActivity({guide,content,activity}:{guide:TeacherGuide;content:ContextualEnrichment;activity:keyof ContextualEnrichment["activities"]}){
+ const location:TeachingLocation|undefined=activity==="home"?"independent":undefined;
+ return <details id={`teacher-later-${activity}`} className="contextual-guidance contextual-activity contextual-private contextual-no-print" data-instructional-location={location} data-teaching-activity={activity}>
+  <summary><span className="contextual-summary"><strong>Teacher guidance</strong><span>{content.activities[activity].title}</span></span><span className="contextual-expand" aria-hidden="true">+</span></summary>
+  <div className="contextual-body"><ActivityText content={content} activity={activity}/>
+   {activity==="home"&&<><h4>Independent learning</h4><List guide={guide} prefix="independentLearning"/><details className="contextual-depth"><summary>Optional extension</summary><div className="contextual-body"><List guide={guide} prefix="differentiation.extension"/></div></details></>}
+   <button type="button" onClick={()=>jump(`teacher-moment-${activity==="partB"||activity==="home"?"g8-check":"g8-do"}`)}>Return to {activity==="partB"||activity==="home"?"reflection and understanding check":"practical application"}</button>
+  </div>
  </details>;
+}
+
+// Mounted only for printing, hidden from the live screen even while the print
+// dialog is open. All live teaching text has its own contextual placement.
+export function TeacherPrintGuide({guide,content}:{guide:TeacherGuide;content:ContextualEnrichment}){
+ return <div className="contextual-print-guide contextual-private"><div className="classroom-workspace"><header><p>Grade {guide.grade} · Term {guide.term} · Teacher preparation</p><h2>{guide.originalTitle}</h2></header><TeacherGuideView guide={guide} teachingOnly/>
+  <section className="contextual-print-addendum"><h2>Contextual delivery clarification</h2><Distinction content={content}/><h3>Teaching order and transitions</h3>{Object.entries(content.transitions).map(([id,text],i)=><p key={id}><strong>Stage {i+1}: </strong>{text}</p>)}<h3>Current lesson, independent and later work</h3>{(Object.keys(content.activities) as Array<keyof ContextualEnrichment["activities"]>).map(activity=><ActivityText key={activity} content={content} activity={activity}/>)}</section>
+ </div></div>;
 }
 
 export function teacherMoments(unit:UnitContent,guide:TeacherGuide){

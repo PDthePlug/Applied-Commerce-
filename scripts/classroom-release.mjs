@@ -7,6 +7,10 @@ export async function validatePrivateClassroomRelease(keyFile){
  const envelope=JSON.parse(fs.readFileSync('content/instructional/benchmark-guides.v1.enc.json','utf8'));
  const key=Buffer.from(fs.readFileSync(keyFile==='-'?0:keyFile,'utf8').trim(),'base64');
  const payload=JSON.parse(openContent(envelope,key,'applied-commerce-classroom-v1').toString('utf8'));
+ const contextualEnvelope=JSON.parse(fs.readFileSync('content/instructional/g8-t1-l08-008.contextual.v1.enc.json','utf8'));
+ const contextual=JSON.parse(openContent(contextualEnvelope,key,'applied-commerce-classroom-v1').toString('utf8'));
+ const {validateContextualEnrichment}=await import(typescriptModule('lib/classroom/contextual-fields.ts'));
+ validateContextualEnrichment(contextual,payload.guides.find(guide=>guide.lessonId==='g8-t1-l08-008'));
  const catalog=JSON.parse(fs.readFileSync('content/instructional/catalog.v1.json','utf8'));
  const {validateTeacherGuide}=await import(typescriptModule('lib/classroom/model.ts'));
  const units=await runtimeUnits();
@@ -29,5 +33,5 @@ if(process.argv[1]===new URL(import.meta.url).pathname){
  const i=process.argv.indexOf('--key-file');if(i<0||!process.argv[i+1])throw new Error('Provide --key-file with a private content-key path; never pass a key value.');
  const manifest=await validatePrivateClassroomRelease(process.argv[i+1]);
  if(process.argv.includes('--write-manifest'))fs.writeFileSync('content/instructional/benchmark-manifest.v1.json',JSON.stringify(manifest,null,2)+'\n');
- console.log(JSON.stringify({ok:true,guides:manifest.guides.length,periods:manifest.guides.reduce((n,g)=>n+g.periods.length,0),allPeriodMinutes:45,privateKeyExported:false,humanEducatorApproval:'NOT YET REVIEWED'}));
+ console.log(JSON.stringify({ok:true,guides:manifest.guides.length,periods:manifest.guides.reduce((n,g)=>n+g.periods.length,0),allPeriodMinutes:45,contextualEnrichment:"PASS",contextualInstructionalFields:100,privateKeyExported:false,humanEducatorApproval:'NOT YET REVIEWED'}));
 }

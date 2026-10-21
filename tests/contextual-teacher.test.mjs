@@ -34,3 +34,30 @@ test('hosted release verification fails closed without exposing a missing or inv
   assert.equal(result.status,1);assert.ok(!result.stdout.includes('classroomServerBuildVerification'));assert.ok(!(result.stdout+result.stderr).includes('SYNTHETIC_INVALID_KEY_SENTINEL'));
  }
 });
+
+const {instructionalFields,instructionalLocation,validateContextualEnrichment}=await import(renderModule('lib/classroom/contextual-fields.ts'));
+test('all 100 original instructional paths have explicit live contextual ownership, with unknown fields rejected',()=>{
+ const map=JSON.parse(fs.readFileSync('docs/contextual-teacher/owner-review/instructional-field-map.json'));
+ const synthetic={};
+ for(const row of map.fields){const keys=row.path.split('.');let cursor=synthetic;for(const key of keys.slice(0,-1))cursor=cursor[key]??= {};cursor[keys.at(-1)]=`SYNTHETIC_${row.path}`;assert.equal(instructionalLocation(row.path),row.location);}
+ const fields=instructionalFields(synthetic);assert.equal(fields.length,100);assert.equal(new Set(fields.map(f=>f.path)).size,100);
+ assert.deepEqual(fields.reduce((counts,f)=>({...counts,[f.location]:(counts[f.location]??0)+1}),{}),{preparation:17,'g8-explore':15,'g8-discuss':18,'g8-open':7,'g8-do':26,'g8-check':13,independent:4});
+ assert.throws(()=>instructionalFields({...synthetic,unreviewedTeachingDetail:'Requires an explicit placement'}));
+ assert.throws(()=>validateContextualEnrichment(null,synthetic));
+ assert.throws(()=>validateContextualEnrichment({schemaVersion:1,lessonId:unit.id,version:'changed'},synthetic));
+});
+test('local annotations use real rendered Part headings and cannot silently attach to changed activity grouping',()=>{
+ const changed=structuredClone(unit);changed.blocks.find(b=>b.id==='6d36aadb38b15408df733b24-1').text='Changed activity grouping';assert.throws(()=>contextualAlignment(changed,structuralGuide));
+ const regrouped=structuredClone(unit);regrouped.blocks.find(b=>b.id==='6d36aadb38b15408df733b24-1').type='list';assert.throws(()=>contextualAlignment(regrouped,structuralGuide));
+ const html=renderToStaticMarkup(React.createElement(ContentBlocks,{blocks:unit.blocks,unitId:unit.id,promptResponses:{},onSavePromptResponse:()=>{},partGuidance:block=>['6d36aadb38b15408df733b24-1','616f175c1669b5b75b907def-1'].includes(block.id)?React.createElement('aside',{'data-part-placement':block.id},'SYNTHETIC_SCOPE'):null}));
+ assert.match(html,/data-part-placement="6d36aadb38b15408df733b24-1"[^]*?<\/aside><h3 class="module-part-heading">Part B:/);
+ assert.match(html,/data-part-placement="616f175c1669b5b75b907def-1"[^]*?<\/aside><h3 class="module-part-heading">Part C:/);
+});
+test('every visible authored Grade 8 activity has a current, independent or later-work disposition without changing source order',()=>{
+ const map=JSON.parse(fs.readFileSync('docs/contextual-teacher/owner-review/activity-routing.json'));
+ assert.deepEqual(map.groups.flatMap(g=>g.sourceBlockIds),unit.blocks.slice(0,50).map(b=>b.id));
+ assert.equal(map.visibleSourceBlocksMapped,50);
+ assert.match(map.groups.find(g=>g.guidance==='partB').schedule,/Later/);
+ assert.match(map.groups.find(g=>g.authoredMaterial==='Checkpoint Question 3').schedule,/Later/);
+ assert.match(map.groups.find(g=>g.guidance==='deepening').schedule,/Optional independent/);
+});

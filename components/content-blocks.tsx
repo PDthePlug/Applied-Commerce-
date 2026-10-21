@@ -1,6 +1,7 @@
 "use client";
 
 import { responseView, persistResponseKey } from "@/lib/response-identity";
+import {Fragment} from "react";
 import { Plus } from "lucide-react";
 import type { ContentBlock, TextBlockType, UnitContent } from "@/lib/types";
 import type {LearningSection} from "@/lib/semantic-learning";
@@ -22,6 +23,7 @@ type Props = {
   unitType?: UnitContent["type"];
   promptResponses: Record<string,string>;
   onSavePromptResponse: (promptId:string,value:string)=>void;
+  partGuidance?: (block:ContentBlock)=>React.ReactNode;
   sectionGuidance?: (section:LearningSection,edge:"before"|"after")=>React.ReactNode;
 };
 
@@ -795,7 +797,7 @@ function TableBlockView({
   </div>;
 }
 
-export function ContentBlocks({blocks,unitId,unitType="lesson",promptResponses:storedResponses,onSavePromptResponse:saveResponse,sectionGuidance}:Props) {
+export function ContentBlocks({blocks,unitId,unitType="lesson",promptResponses:storedResponses,onSavePromptResponse:saveResponse,sectionGuidance,partGuidance}:Props) {
   const promptResponses=responseView(unitId,blocks,storedResponses);
   const onSavePromptResponse=(key:string,value:string)=>saveResponse(persistResponseKey(unitId,blocks,key),value);
   const indexed=pruneTensionContent(blocks);
@@ -821,6 +823,13 @@ export function ContentBlocks({blocks,unitId,unitType="lesson",promptResponses:s
         continue;
       }
       flush();
+
+      // Only actual standalone Part headings are eligible; grouped lists,
+      // tables and Deepening Insight contents are never split by annotations.
+      if(block.kind==="text"&&PART_HEADING_RE.test(displayText(block.text))){
+        const guidance=partGuidance?.(block);
+        if(guidance)views.push(<Fragment key={`part-guidance-${index}`}>{guidance}</Fragment>);
+      }
 
       if(allowInsightGrouping&&isDeepeningInsight(block)){
         context=null;
