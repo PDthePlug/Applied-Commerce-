@@ -1,6 +1,8 @@
 "use client";
 
 import Link from "next/link";
+import availability from "@/content/instructional/teaching-availability.v2.json";
+import {StandaloneTeachingPlan} from "./teaching-plan-view";
 import {useEffect,useRef,useState} from "react";
 import {useAuth} from "@/lib/auth-context";
 import type {ClassroomPayload,TeacherGuide} from "@/lib/classroom/model";
@@ -21,6 +23,9 @@ export function ClassroomWorkspace({initialLessonId}:{initialLessonId:string}){
   return()=>{window.removeEventListener("focus",refresh);window.removeEventListener("online",refresh);document.removeEventListener("visibilitychange",visible);window.removeEventListener("popstate",pop);};
  },[]);
  useEffect(()=>{
+  // Drop actual private state when account, lesson or access revision changes.
+  // eslint-disable-next-line react-hooks/set-state-in-effect
+  setResult(null);
   if(!userId)return;
   const controller=new AbortController();const timer=setTimeout(()=>{setResult({key,account:user,error:"Teacher guidance took too long to load. Try again."});controller.abort();},25_000);
   void fetch(`/api/classroom?${new URLSearchParams({lesson:selectedId})}`,{credentials:"same-origin",cache:"no-store",signal:controller.signal,headers:{"x-ac-expected-user-id":userId}}).then(async response=>{
@@ -39,7 +44,7 @@ export function ClassroomWorkspace({initialLessonId}:{initialLessonId:string}){
 }
 
 export function ClassroomExperience({payload,onSelect}:{payload:ClassroomPayload;onSelect:(id:string)=>void}){
- const {catalog,selected,guide}=payload;
+ const {catalog,selected,guide,plan}=payload;
  const [presentation,setPresentation]=useState(false);const [periodIndex,setPeriodIndex]=useState(0);const [stageIndex,setStageIndex]=useState(0);
  const stageHeading=useRef<HTMLHeadingElement|null>(null);const presentationTrigger=useRef<HTMLButtonElement|null>(null);
  const chooseGrade=(grade:number)=>onSelect((catalog.find(entry=>entry.grade===grade&&entry.benchmark)??catalog.find(entry=>entry.grade===grade))!.id);
@@ -51,19 +56,19 @@ export function ClassroomExperience({payload,onSelect}:{payload:ClassroomPayload
   <div className="classroom-catalog classroom-controls">
    <label>Grade<select value={selected.grade} onChange={event=>chooseGrade(Number(event.target.value))}>{[8,9,10,11,12].map(grade=><option key={grade} value={grade}>Grade {grade}</option>)}</select></label>
    <label>Term<select value={selected.term} onChange={event=>chooseTerm(Number(event.target.value))}>{[1,2,3,4].map(term=><option key={term} value={term}>Term {term}</option>)}</select></label>
-   <label>Lesson<select value={selected.id} onChange={event=>onSelect(event.target.value)}>{catalog.filter(entry=>entry.grade===selected.grade&&entry.term===selected.term).map(entry=><option key={entry.id} value={entry.id}>Lesson {entry.number} · {entry.title}{entry.benchmark?" · Draft benchmark":" · Guide not developed"}</option>)}</select></label>
+   <label>Lesson<select value={selected.id} onChange={event=>onSelect(event.target.value)}>{catalog.filter(entry=>entry.grade===selected.grade&&entry.term===selected.term).map(entry=><option key={entry.id} value={entry.id}>Lesson {entry.number} · {entry.title}{availability.lessonIds.includes(entry.id)?" · Classroom draft available":" · Guide not developed"}</option>)}</select></label>
   </div>
   <header className="classroom-lesson-heading"><p>Grade {selected.grade} · Term {selected.term} · Lesson {selected.number}</p><h2>{selected.title}</h2>
-   <div className="classroom-actions classroom-controls"><Link href={learnerHref}>Open learner lesson</Link>{guide&&<><button ref={presentationTrigger} type="button" aria-pressed={presentation} onClick={()=>setPresentation(value=>!value)}>Presentation prompts</button><button type="button" onClick={()=>window.print()}>Print {presentation?"current prompts":"teacher guide"}</button></>}</div>
+   <div className="classroom-actions classroom-controls"><Link href={learnerHref}>Open integrated lesson</Link>{plan&&!guide&&<button type="button" onClick={()=>window.print()}>Print teacher guide</button>}{guide&&<><button ref={presentationTrigger} type="button" aria-pressed={presentation} onClick={()=>setPresentation(value=>!value)}>Presentation prompts</button><button type="button" onClick={()=>window.print()}>Print {presentation?"current prompts":"teacher guide"}</button></>}</div>
   </header>
-  {!guide?<section className="classroom-card"><h3>This classroom guide has not been developed yet.</h3><p>Five draft benchmarks are available across Grades 8–12. The remaining 390 guides await educational review and development; no teaching plan is inferred from this title.</p><p>The authored learner lesson remains available.</p></section>:presentation?<section className="classroom-presentation" aria-label="Learner-facing classroom prompts">
+  {!guide&&plan?<StandaloneTeachingPlan plan={plan} title={selected.title}/>:!guide?<section className="classroom-card"><h3>This classroom guide has not been developed yet.</h3><p>Grade 8 Term 1 and the five original benchmarks have classroom drafts. Further grade-and-term batches await owner and educator review; no teaching plan is inferred from this title.</p><p>The authored learner lesson remains available.</p></section>:presentation?<section className="classroom-presentation" aria-label="Learner-facing classroom prompts">
    <p className="classroom-draft">Classroom prompts · Private indicative answers are not shown in this mode.</p>
    <label className="classroom-controls">Period<select value={periodIndex} onChange={event=>{setPeriodIndex(Number(event.target.value));setStageIndex(0);}}>{guide.periods.map((period,index)=><option key={period.title} value={index}>{period.title}</option>)}</select></label>
    <p>Stage {stageIndex+1} of {guide.periods[periodIndex].stages.length} · {guide.periods[periodIndex].stages[stageIndex].minutes} minutes</p>
    <h3 ref={stageHeading} tabIndex={-1}>{guide.periods[periodIndex].stages[stageIndex].title}</h3>
    <p className="classroom-presentation-question">{guide.periods[periodIndex].stages[stageIndex].presentation.question}</p><p>{guide.periods[periodIndex].stages[stageIndex].presentation.task}</p>
    <nav className="classroom-actions classroom-controls" aria-label="Teaching stages"><button type="button" disabled={stageIndex===0} onClick={()=>move(stageIndex-1)}>Previous stage</button><button type="button" disabled={stageIndex===guide.periods[periodIndex].stages.length-1} onClick={()=>move(stageIndex+1)}>Next stage</button><button type="button" onClick={closePresentation}>Return to teacher guide</button></nav>
-  </section>:<TeacherGuideView guide={guide} teachingOnly={guide.lessonId==="g8-t1-l08-008"}/>}
+  </section>:<TeacherGuideView guide={guide} teachingOnly/>}
  </>;
 }
 

@@ -1,0 +1,1666 @@
+{
+  "lessonId": "g9-t1-l02-002",
+  "sourceUnitSHA256": "165d46bc44d06e90414fbe29c7b29f224961f93d8faa0941927816357920876c",
+  "instructionalFieldCount": 101,
+  "instructionalFields": [
+    {
+      "path": "centralConcept",
+      "locations": [
+        "preparation"
+      ],
+      "valueSHA256": "315a394d3957d464c3a3aab050a1e90b6fd7bb2c6a10e160c90ce12cc9b7a9ef",
+      "access": [
+        {
+          "location": "preparation",
+          "selector": ".contextual-preparation > details:first-child [data-instructional-field=\"centralConcept\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "prerequisites.0",
+      "locations": [
+        "preparation"
+      ],
+      "valueSHA256": "f0433e2d5ea6de22dae6fcdf51522c1ac5bb7b2594bec30d0699318183a4fb6d",
+      "access": [
+        {
+          "location": "preparation",
+          "selector": ".contextual-preparation > details:first-child [data-instructional-field=\"prerequisites.0\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "prerequisites.1",
+      "locations": [
+        "preparation"
+      ],
+      "valueSHA256": "14b16f1a4a802cc526f43750e74fd9b04d226e691c9799192cedee4e9920b1ef",
+      "access": [
+        {
+          "location": "preparation",
+          "selector": ".contextual-preparation > details:first-child [data-instructional-field=\"prerequisites.1\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "objectives.0",
+      "locations": [
+        "preparation"
+      ],
+      "valueSHA256": "2a32519c2272b1e9c3f07dac5a1723a4ac5a991ef427e7118cc061152ec343e7",
+      "access": [
+        {
+          "location": "preparation",
+          "selector": ".contextual-preparation > details:first-child [data-instructional-field=\"objectives.0\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "objectives.1",
+      "locations": [
+        "preparation"
+      ],
+      "valueSHA256": "5157d99d39e6ca9c2822b40ade9b03f8079704c87566738a4c430af04426b951",
+      "access": [
+        {
+          "location": "preparation",
+          "selector": ".contextual-preparation > details:first-child [data-instructional-field=\"objectives.1\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "objectives.2",
+      "locations": [
+        "preparation"
+      ],
+      "valueSHA256": "38dfb3fc450ce7b12d7661f01e8b89447ce589e46a1e9df23af388efee70b8b0",
+      "access": [
+        {
+          "location": "preparation",
+          "selector": ".contextual-preparation > details:first-child [data-instructional-field=\"objectives.2\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "observableOutcome",
+      "locations": [
+        "preparation"
+      ],
+      "valueSHA256": "c868b7e9f544ba9460c667affcd263a5fd016342f42a1391a8d5f1bd69d11322",
+      "access": [
+        {
+          "location": "preparation",
+          "selector": ".contextual-preparation > details:first-child [data-instructional-field=\"observableOutcome\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "preparation.knowledge.0",
+      "locations": [
+        "preparation"
+      ],
+      "valueSHA256": "481560b917a4dbafe4e43011dfc95fe73f6f4bbd637d48c6ef411d730fee9cfa",
+      "access": [
+        {
+          "location": "preparation",
+          "selector": ".contextual-preparation > details:first-child [data-instructional-field=\"preparation.knowledge.0\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "preparation.knowledge.1",
+      "locations": [
+        "preparation"
+      ],
+      "valueSHA256": "975dceac4d5297542f27b29d757f587db7a2189462d85f446958aa134838f178",
+      "access": [
+        {
+          "location": "preparation",
+          "selector": ".contextual-preparation > details:first-child [data-instructional-field=\"preparation.knowledge.1\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "preparation.materials.0",
+      "locations": [
+        "preparation"
+      ],
+      "valueSHA256": "951d0054b759aca35720064d1d4ca0bcedbee3163ce82b6600f989927795b49c",
+      "access": [
+        {
+          "location": "preparation",
+          "selector": ".contextual-preparation > details:first-child [data-instructional-field=\"preparation.materials.0\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "preparation.materials.1",
+      "locations": [
+        "preparation"
+      ],
+      "valueSHA256": "ac7ee8d43704d4f7441006334666145c33293e9d2fd4eff0aec0a7be321381b9",
+      "access": [
+        {
+          "location": "preparation",
+          "selector": ".contextual-preparation > details:first-child [data-instructional-field=\"preparation.materials.1\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "preparation.vocabulary.0.term",
+      "locations": [
+        "preparation",
+        "g9-explore"
+      ],
+      "valueSHA256": "8e37953d23daca5ff01b8282c33f4e0a2152f1d1885f94c06418617e3ee1d24e",
+      "access": [
+        {
+          "location": "preparation",
+          "selector": ".contextual-preparation > details:first-child [data-instructional-field=\"preparation.vocabulary.0.term\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        },
+        {
+          "location": "g9-explore",
+          "selector": "[data-instructional-location=\"g9-explore\"] [data-instructional-field=\"preparation.vocabulary.0.term\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "preparation.vocabulary.0.explanation",
+      "locations": [
+        "preparation",
+        "g9-explore"
+      ],
+      "valueSHA256": "05d65695226ac112ae14bbd6e4790abfd4a3a3cf63e94c27a8c5e526a723cec9",
+      "access": [
+        {
+          "location": "preparation",
+          "selector": ".contextual-preparation > details:first-child [data-instructional-field=\"preparation.vocabulary.0.explanation\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        },
+        {
+          "location": "g9-explore",
+          "selector": "[data-instructional-location=\"g9-explore\"] [data-instructional-field=\"preparation.vocabulary.0.explanation\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "preparation.vocabulary.1.term",
+      "locations": [
+        "preparation",
+        "g9-explore"
+      ],
+      "valueSHA256": "c6a25797d6ae5abad9af9cc1950fbdae6d87517e76daa9e491502f45d91665a5",
+      "access": [
+        {
+          "location": "preparation",
+          "selector": ".contextual-preparation > details:first-child [data-instructional-field=\"preparation.vocabulary.1.term\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        },
+        {
+          "location": "g9-explore",
+          "selector": "[data-instructional-location=\"g9-explore\"] [data-instructional-field=\"preparation.vocabulary.1.term\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "preparation.vocabulary.1.explanation",
+      "locations": [
+        "preparation",
+        "g9-explore"
+      ],
+      "valueSHA256": "554a43f4be5db0ea4ff4f317c21c463ed39ca4062e861f871b881e290c568ac0",
+      "access": [
+        {
+          "location": "preparation",
+          "selector": ".contextual-preparation > details:first-child [data-instructional-field=\"preparation.vocabulary.1.explanation\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        },
+        {
+          "location": "g9-explore",
+          "selector": "[data-instructional-location=\"g9-explore\"] [data-instructional-field=\"preparation.vocabulary.1.explanation\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "preparation.vocabulary.2.term",
+      "locations": [
+        "preparation",
+        "g9-explore"
+      ],
+      "valueSHA256": "b1b1b4e5e8d796ce71667cf34f0aa7c824da30757b3ebd41c6aeb0645701d669",
+      "access": [
+        {
+          "location": "preparation",
+          "selector": ".contextual-preparation > details:first-child [data-instructional-field=\"preparation.vocabulary.2.term\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        },
+        {
+          "location": "g9-explore",
+          "selector": "[data-instructional-location=\"g9-explore\"] [data-instructional-field=\"preparation.vocabulary.2.term\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "preparation.vocabulary.2.explanation",
+      "locations": [
+        "preparation",
+        "g9-explore"
+      ],
+      "valueSHA256": "12ce9c538a775bf80af02cb5dfe2eedfee465a624df18ada8e578d1333163982",
+      "access": [
+        {
+          "location": "preparation",
+          "selector": ".contextual-preparation > details:first-child [data-instructional-field=\"preparation.vocabulary.2.explanation\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        },
+        {
+          "location": "g9-explore",
+          "selector": "[data-instructional-location=\"g9-explore\"] [data-instructional-field=\"preparation.vocabulary.2.explanation\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "preparation.misconceptions.0.belief",
+      "locations": [
+        "preparation",
+        "g9-explore"
+      ],
+      "valueSHA256": "ee549017db386b549d2225281d91426d8176ff3f2be52781842a53e7440b9706",
+      "access": [
+        {
+          "location": "preparation",
+          "selector": ".contextual-preparation > details:first-child [data-instructional-field=\"preparation.misconceptions.0.belief\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        },
+        {
+          "location": "g9-explore",
+          "selector": "[data-instructional-location=\"g9-explore\"] [data-instructional-field=\"preparation.misconceptions.0.belief\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "preparation.misconceptions.0.response",
+      "locations": [
+        "preparation",
+        "g9-explore"
+      ],
+      "valueSHA256": "3335b87015640ff3ab11668e88c557cb62473e87764b76fe0850e09c5ef04b65",
+      "access": [
+        {
+          "location": "preparation",
+          "selector": ".contextual-preparation > details:first-child [data-instructional-field=\"preparation.misconceptions.0.response\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        },
+        {
+          "location": "g9-explore",
+          "selector": "[data-instructional-location=\"g9-explore\"] [data-instructional-field=\"preparation.misconceptions.0.response\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "preparation.misconceptions.1.belief",
+      "locations": [
+        "preparation",
+        "g9-explore"
+      ],
+      "valueSHA256": "96fcbb81d939b4e3abe3825d5aff05e4a781972451a990d03c088f5a5451bc53",
+      "access": [
+        {
+          "location": "preparation",
+          "selector": ".contextual-preparation > details:first-child [data-instructional-field=\"preparation.misconceptions.1.belief\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        },
+        {
+          "location": "g9-explore",
+          "selector": "[data-instructional-location=\"g9-explore\"] [data-instructional-field=\"preparation.misconceptions.1.belief\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "preparation.misconceptions.1.response",
+      "locations": [
+        "preparation",
+        "g9-explore"
+      ],
+      "valueSHA256": "80a007667ebbbfed8eebfb97b1adb52be5f3d44881ad7cd66c5b871d6ab33311",
+      "access": [
+        {
+          "location": "preparation",
+          "selector": ".contextual-preparation > details:first-child [data-instructional-field=\"preparation.misconceptions.1.response\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        },
+        {
+          "location": "g9-explore",
+          "selector": "[data-instructional-location=\"g9-explore\"] [data-instructional-field=\"preparation.misconceptions.1.response\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "preparation.southAfricanContext",
+      "locations": [
+        "preparation"
+      ],
+      "valueSHA256": "47e21bd87b66ecb70d877e64435ea5ddeb4654e57ae71afc9332cc5766372e35",
+      "access": [
+        {
+          "location": "preparation",
+          "selector": ".contextual-preparation > details:first-child [data-instructional-field=\"preparation.southAfricanContext\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "preparation.privacy.0",
+      "locations": [
+        "preparation"
+      ],
+      "valueSHA256": "17fb42d49a8d9407ec350e0606a2c28c680e462d460894567aa590e0af173501",
+      "access": [
+        {
+          "location": "preparation",
+          "selector": ".contextual-preparation > details:first-child [data-instructional-field=\"preparation.privacy.0\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "preparation.privacy.1",
+      "locations": [
+        "preparation"
+      ],
+      "valueSHA256": "fdf63472bc6fcaf8f0feedc2c7b34c9dbede64deb72afa781b455d29e59981de",
+      "access": [
+        {
+          "location": "preparation",
+          "selector": ".contextual-preparation > details:first-child [data-instructional-field=\"preparation.privacy.1\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "periods.0.title",
+      "locations": [
+        "preparation.periods.0"
+      ],
+      "valueSHA256": "2fe5ef659cce4eed772985d39bfe31ed8f4d88dd47b6498edd4d9fa65a14105c",
+      "access": [
+        {
+          "location": "preparation.periods.0",
+          "selector": ".contextual-preparation > details:first-child [data-instructional-field=\"periods.0.title\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "periods.0.stages.0.title",
+      "locations": [
+        "g9-open"
+      ],
+      "valueSHA256": "5d8fafda307cca822ac8f25c464e5e3697537ab35107cfb2d599293fba36cadb",
+      "access": [
+        {
+          "location": "g9-open",
+          "selector": "[data-instructional-location=\"g9-open\"] [data-instructional-field=\"periods.0.stages.0.title\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "periods.0.stages.0.teacher.0",
+      "locations": [
+        "g9-open"
+      ],
+      "valueSHA256": "8a7c05067f8b678ab926bdfeec6cfe5ceecec76d3c5e05a0b349812df6316da4",
+      "access": [
+        {
+          "location": "g9-open",
+          "selector": "[data-instructional-location=\"g9-open\"] [data-instructional-field=\"periods.0.stages.0.teacher.0\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "periods.0.stages.0.learners.0",
+      "locations": [
+        "g9-open"
+      ],
+      "valueSHA256": "d9e0ca9a4351a0fc5aef49c3158132a9a9b614466adaf580a8b0101d5430fd62",
+      "access": [
+        {
+          "location": "g9-open",
+          "selector": "[data-instructional-location=\"g9-open\"] [data-instructional-field=\"periods.0.stages.0.learners.0\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "periods.0.stages.0.successfulParticipation",
+      "locations": [
+        "g9-open"
+      ],
+      "valueSHA256": "e5954d593adb29e4c2bd6eb6aeeeb7d0fe60b07d7bf5dd277e300aa07e09fd3a",
+      "access": [
+        {
+          "location": "g9-open",
+          "selector": "[data-instructional-location=\"g9-open\"] [data-instructional-field=\"periods.0.stages.0.successfulParticipation\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "periods.0.stages.0.presentation.question",
+      "locations": [
+        "g9-open"
+      ],
+      "valueSHA256": "a2f888bfd09d867fba72229fdbce7433d0d1f0d2b7741328be676a66d45e9ff6",
+      "access": [
+        {
+          "location": "g9-open",
+          "selector": "[data-instructional-location=\"g9-open\"] [data-instructional-field=\"periods.0.stages.0.presentation.question\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "periods.0.stages.0.presentation.task",
+      "locations": [
+        "g9-open"
+      ],
+      "valueSHA256": "623de6ada709677638321005f0fe296b7c8de597cb04979507e7568caf448868",
+      "access": [
+        {
+          "location": "g9-open",
+          "selector": "[data-instructional-location=\"g9-open\"] [data-instructional-field=\"periods.0.stages.0.presentation.task\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "periods.0.stages.1.title",
+      "locations": [
+        "g9-explore"
+      ],
+      "valueSHA256": "92b800ca5b86a4476320dab9e610f299bf6e044d3982ab5291402e4bbb467d31",
+      "access": [
+        {
+          "location": "g9-explore",
+          "selector": "[data-instructional-location=\"g9-explore\"] [data-instructional-field=\"periods.0.stages.1.title\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "periods.0.stages.1.teacher.0",
+      "locations": [
+        "g9-explore"
+      ],
+      "valueSHA256": "31f76fc10197dcb18251eb035e41a878b2eda10bea9c72a177ff05a11d17a0a3",
+      "access": [
+        {
+          "location": "g9-explore",
+          "selector": "[data-instructional-location=\"g9-explore\"] [data-instructional-field=\"periods.0.stages.1.teacher.0\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "periods.0.stages.1.learners.0",
+      "locations": [
+        "g9-explore"
+      ],
+      "valueSHA256": "e8dad34e9a04fcfbe89e2fa78c7925c3ef39b543eaa2dbc86c660e9666330849",
+      "access": [
+        {
+          "location": "g9-explore",
+          "selector": "[data-instructional-location=\"g9-explore\"] [data-instructional-field=\"periods.0.stages.1.learners.0\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "periods.0.stages.1.successfulParticipation",
+      "locations": [
+        "g9-explore"
+      ],
+      "valueSHA256": "17d10b37eac59b8ba254e9f0100f250725745da06520116c683602281c44ef1a",
+      "access": [
+        {
+          "location": "g9-explore",
+          "selector": "[data-instructional-location=\"g9-explore\"] [data-instructional-field=\"periods.0.stages.1.successfulParticipation\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "periods.0.stages.1.presentation.question",
+      "locations": [
+        "g9-explore"
+      ],
+      "valueSHA256": "4c276769b36a490bfa1790a638dc2fcef80d2891763b7c89d4400deb254fe12e",
+      "access": [
+        {
+          "location": "g9-explore",
+          "selector": "[data-instructional-location=\"g9-explore\"] [data-instructional-field=\"periods.0.stages.1.presentation.question\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "periods.0.stages.1.presentation.task",
+      "locations": [
+        "g9-explore"
+      ],
+      "valueSHA256": "17e0216a188a5cb085ce7d54a039e8c0cf3428de02c26824e82d0eb94492ab26",
+      "access": [
+        {
+          "location": "g9-explore",
+          "selector": "[data-instructional-location=\"g9-explore\"] [data-instructional-field=\"periods.0.stages.1.presentation.task\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "periods.0.stages.2.title",
+      "locations": [
+        "g9-discuss"
+      ],
+      "valueSHA256": "f9fee2e090772f95b7ffc927b34a4ecba61dd1d09be90fe407569d569c2777ea",
+      "access": [
+        {
+          "location": "g9-discuss",
+          "selector": "[data-instructional-location=\"g9-discuss\"] [data-instructional-field=\"periods.0.stages.2.title\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "periods.0.stages.2.teacher.0",
+      "locations": [
+        "g9-discuss"
+      ],
+      "valueSHA256": "550c5ceb616234347ae8d3ac099054867ad7d05a1de546e68b670b06651e5e3d",
+      "access": [
+        {
+          "location": "g9-discuss",
+          "selector": "[data-instructional-location=\"g9-discuss\"] [data-instructional-field=\"periods.0.stages.2.teacher.0\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "periods.0.stages.2.learners.0",
+      "locations": [
+        "g9-discuss"
+      ],
+      "valueSHA256": "5b0b0ed7f16693efe282808e464f14a7156d591b7f17674ae61e6c5cb6447dea",
+      "access": [
+        {
+          "location": "g9-discuss",
+          "selector": "[data-instructional-location=\"g9-discuss\"] [data-instructional-field=\"periods.0.stages.2.learners.0\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "periods.0.stages.2.successfulParticipation",
+      "locations": [
+        "g9-discuss"
+      ],
+      "valueSHA256": "980fa5d99280a166db9beabf100753f33d28fbad40e14699435c21d3693c77d9",
+      "access": [
+        {
+          "location": "g9-discuss",
+          "selector": "[data-instructional-location=\"g9-discuss\"] [data-instructional-field=\"periods.0.stages.2.successfulParticipation\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "periods.0.stages.2.presentation.question",
+      "locations": [
+        "g9-discuss"
+      ],
+      "valueSHA256": "6d39b81b696dae05ce50fcceca6ff9f834e9d0f8dda9b8248798c8f2e3f0c5bd",
+      "access": [
+        {
+          "location": "g9-discuss",
+          "selector": "[data-instructional-location=\"g9-discuss\"] [data-instructional-field=\"periods.0.stages.2.presentation.question\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "periods.0.stages.2.presentation.task",
+      "locations": [
+        "g9-discuss"
+      ],
+      "valueSHA256": "024caf480018e886caf2403eb6d13a867dc2059b759843db4b0be389f47fa83d",
+      "access": [
+        {
+          "location": "g9-discuss",
+          "selector": "[data-instructional-location=\"g9-discuss\"] [data-instructional-field=\"periods.0.stages.2.presentation.task\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "periods.0.stages.3.title",
+      "locations": [
+        "g9-do"
+      ],
+      "valueSHA256": "bd5383b8a6084e025684800c1ad601666cb527d76cae5741a9b0d4c2053e3945",
+      "access": [
+        {
+          "location": "g9-do",
+          "selector": "[data-instructional-location=\"g9-do\"] [data-instructional-field=\"periods.0.stages.3.title\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "periods.0.stages.3.teacher.0",
+      "locations": [
+        "g9-do"
+      ],
+      "valueSHA256": "03a699b95dec4bb8cd340ac16c61cbd39cee112443a863650bf63793987ec8c1",
+      "access": [
+        {
+          "location": "g9-do",
+          "selector": "[data-instructional-location=\"g9-do\"] [data-instructional-field=\"periods.0.stages.3.teacher.0\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "periods.0.stages.3.learners.0",
+      "locations": [
+        "g9-do"
+      ],
+      "valueSHA256": "10e62cd9f4caad389eabd56939e4805a341dd94a15994b04ff3838621351b202",
+      "access": [
+        {
+          "location": "g9-do",
+          "selector": "[data-instructional-location=\"g9-do\"] [data-instructional-field=\"periods.0.stages.3.learners.0\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "periods.0.stages.3.successfulParticipation",
+      "locations": [
+        "g9-do"
+      ],
+      "valueSHA256": "9c09105d11383eb3bfd9f762c2b05d5102c59b8629b13764b86425b1cedc1dad",
+      "access": [
+        {
+          "location": "g9-do",
+          "selector": "[data-instructional-location=\"g9-do\"] [data-instructional-field=\"periods.0.stages.3.successfulParticipation\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "periods.0.stages.3.presentation.question",
+      "locations": [
+        "g9-do"
+      ],
+      "valueSHA256": "4df0299df7f12c4f5a8ec9cef9e4e0a593b9441baeb699c56f62d1c15bddbc3a",
+      "access": [
+        {
+          "location": "g9-do",
+          "selector": "[data-instructional-location=\"g9-do\"] [data-instructional-field=\"periods.0.stages.3.presentation.question\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "periods.0.stages.3.presentation.task",
+      "locations": [
+        "g9-do"
+      ],
+      "valueSHA256": "a44343acc84da84b7a2c80e357bf2d0531cde2fc620a541794eebe92829e71e2",
+      "access": [
+        {
+          "location": "g9-do",
+          "selector": "[data-instructional-location=\"g9-do\"] [data-instructional-field=\"periods.0.stages.3.presentation.task\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "periods.0.stages.4.title",
+      "locations": [
+        "g9-check"
+      ],
+      "valueSHA256": "d4aca659a63cebf8431ddd42087041b97b142c85eba15079c194310e94e9c85a",
+      "access": [
+        {
+          "location": "g9-check",
+          "selector": "[data-instructional-location=\"g9-check\"] [data-instructional-field=\"periods.0.stages.4.title\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "periods.0.stages.4.teacher.0",
+      "locations": [
+        "g9-check"
+      ],
+      "valueSHA256": "dd97213a90c51aa3352a56ab52796f7562a5a5fa121c8356560d38172f680dfa",
+      "access": [
+        {
+          "location": "g9-check",
+          "selector": "[data-instructional-location=\"g9-check\"] [data-instructional-field=\"periods.0.stages.4.teacher.0\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "periods.0.stages.4.learners.0",
+      "locations": [
+        "g9-check"
+      ],
+      "valueSHA256": "ba31d25845759f908c7f1cf4bcb7005df352a842a99c4d9c5b59ebbdf2600eab",
+      "access": [
+        {
+          "location": "g9-check",
+          "selector": "[data-instructional-location=\"g9-check\"] [data-instructional-field=\"periods.0.stages.4.learners.0\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "periods.0.stages.4.successfulParticipation",
+      "locations": [
+        "g9-check"
+      ],
+      "valueSHA256": "753c87cf50c7a2329e83079d3a9fd274732360f0ac5c20540a1f135e92e1b73e",
+      "access": [
+        {
+          "location": "g9-check",
+          "selector": "[data-instructional-location=\"g9-check\"] [data-instructional-field=\"periods.0.stages.4.successfulParticipation\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "periods.0.stages.4.presentation.question",
+      "locations": [
+        "g9-check"
+      ],
+      "valueSHA256": "fb704c2b38d632146b99dab35ee74febbd44be2ac52fe2f32b0eea239c19c430",
+      "access": [
+        {
+          "location": "g9-check",
+          "selector": "[data-instructional-location=\"g9-check\"] [data-instructional-field=\"periods.0.stages.4.presentation.question\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "periods.0.stages.4.presentation.task",
+      "locations": [
+        "g9-check"
+      ],
+      "valueSHA256": "b7dd24fabfc41a67657dec0706f00ab199d02fab7d49b3caf7e111706645859a",
+      "access": [
+        {
+          "location": "g9-check",
+          "selector": "[data-instructional-location=\"g9-check\"] [data-instructional-field=\"periods.0.stages.4.presentation.task\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "discussion.0.question",
+      "locations": [
+        "g9-explore"
+      ],
+      "valueSHA256": "55fd5a9ac3eaae4f66cd52e0a058d68f9b2cb20e32ffc1ac8c05a8f88520ab15",
+      "access": [
+        {
+          "location": "g9-explore",
+          "selector": "[data-instructional-location=\"g9-explore\"] [data-instructional-field=\"discussion.0.question\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "discussion.0.followUp",
+      "locations": [
+        "g9-explore"
+      ],
+      "valueSHA256": "4e065e286c7ae1afecc90ddbf86efe2e00426c7aad62767901587b35fc631c8b",
+      "access": [
+        {
+          "location": "g9-explore",
+          "selector": "[data-instructional-location=\"g9-explore\"] [data-instructional-field=\"discussion.0.followUp\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "discussion.0.indicativeReasoning",
+      "locations": [
+        "g9-explore"
+      ],
+      "valueSHA256": "fea3fec511a69690a318721c54a38fc7bc63899130b0f7bb12b9f44c1cefcdba",
+      "access": [
+        {
+          "location": "g9-explore",
+          "selector": "[data-instructional-location=\"g9-explore\"] [data-instructional-field=\"discussion.0.indicativeReasoning\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "discussion.0.partialUnderstanding",
+      "locations": [
+        "g9-explore"
+      ],
+      "valueSHA256": "5e8e9a6125f076d1899be5d96037a42ed07adad874a863c533d0347a241917c3",
+      "access": [
+        {
+          "location": "g9-explore",
+          "selector": "[data-instructional-location=\"g9-explore\"] [data-instructional-field=\"discussion.0.partialUnderstanding\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "discussion.1.question",
+      "locations": [
+        "g9-discuss"
+      ],
+      "valueSHA256": "f7d84796c774c6487a6b25f5f0ddb81a76bd53cec95d4b54cc2e5319f92907ab",
+      "access": [
+        {
+          "location": "g9-discuss",
+          "selector": "[data-instructional-location=\"g9-discuss\"] [data-instructional-field=\"discussion.1.question\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "discussion.1.followUp",
+      "locations": [
+        "g9-discuss"
+      ],
+      "valueSHA256": "649c18f59063f2fa4df21dd093f19c529adffe7223b8ea11003e7b6f39e67f1b",
+      "access": [
+        {
+          "location": "g9-discuss",
+          "selector": "[data-instructional-location=\"g9-discuss\"] [data-instructional-field=\"discussion.1.followUp\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "discussion.1.indicativeReasoning",
+      "locations": [
+        "g9-discuss"
+      ],
+      "valueSHA256": "5d2eec1da6bd38fab33a9f340cf68497c0fe1108305cbbf9b44d22b7be2e8553",
+      "access": [
+        {
+          "location": "g9-discuss",
+          "selector": "[data-instructional-location=\"g9-discuss\"] [data-instructional-field=\"discussion.1.indicativeReasoning\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "discussion.1.partialUnderstanding",
+      "locations": [
+        "g9-discuss"
+      ],
+      "valueSHA256": "93fd1dbb6fd661cc0de8702d8302324f8b0f8716312a4fbc78201206f41df584",
+      "access": [
+        {
+          "location": "g9-discuss",
+          "selector": "[data-instructional-location=\"g9-discuss\"] [data-instructional-field=\"discussion.1.partialUnderstanding\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "practical.instructions.0",
+      "locations": [
+        "g9-do"
+      ],
+      "valueSHA256": "113eb45e24bb9b386a074d8cdd16f6ef0ea3a53c02442a08f3f2efc86e46d18c",
+      "access": [
+        {
+          "location": "g9-do",
+          "selector": "[data-instructional-location=\"g9-do\"] [data-instructional-field=\"practical.instructions.0\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "practical.instructions.1",
+      "locations": [
+        "g9-do"
+      ],
+      "valueSHA256": "31783e4d6f6572cc6f1942a077b36760ba3a3e273fee1bc65debef7e99e40413",
+      "access": [
+        {
+          "location": "g9-do",
+          "selector": "[data-instructional-location=\"g9-do\"] [data-instructional-field=\"practical.instructions.1\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "practical.instructions.2",
+      "locations": [
+        "g9-do"
+      ],
+      "valueSHA256": "5ac15acfc8c8538bd9d1f81e899d8b15af6ca1731b97e88eaa710c946a279aeb",
+      "access": [
+        {
+          "location": "g9-do",
+          "selector": "[data-instructional-location=\"g9-do\"] [data-instructional-field=\"practical.instructions.2\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "practical.expectedOutput",
+      "locations": [
+        "g9-do"
+      ],
+      "valueSHA256": "083f1272359161fa5fdff22344661e2a31fcf759e342f762266dd5ee4245957e",
+      "access": [
+        {
+          "location": "g9-do",
+          "selector": "[data-instructional-location=\"g9-do\"] [data-instructional-field=\"practical.expectedOutput\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "practical.inClassScope",
+      "locations": [
+        "g9-do"
+      ],
+      "valueSHA256": "874cfef53507925fa9ab14112c5e4e8e27ca3db9f21a19e816c2beb4afa98161",
+      "access": [
+        {
+          "location": "g9-do",
+          "selector": "[data-instructional-location=\"g9-do\"] [data-instructional-field=\"practical.inClassScope\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "practical.followUp",
+      "locations": [
+        "g9-independent"
+      ],
+      "valueSHA256": "99e58a640a2c90e6b5171ac91c9a9a88590cb4e38f327e9b6f06a0a8f64a3cfb",
+      "access": [
+        {
+          "location": "g9-independent",
+          "selector": "[data-instructional-location=\"g9-independent\"] [data-instructional-field=\"practical.followUp\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "practical.scaffold.columns.0",
+      "locations": [
+        "g9-do"
+      ],
+      "valueSHA256": "a730d3e6ca6a76b3fc79cb958a9d494c34e60f1a680d9b146df1cfb87481eef8",
+      "access": [
+        {
+          "location": "g9-do",
+          "selector": "[data-instructional-location=\"g9-do\"] [data-instructional-field=\"practical.scaffold.columns.0\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "practical.scaffold.columns.1",
+      "locations": [
+        "g9-do"
+      ],
+      "valueSHA256": "1df7adacc285dc3a087c25badb4ed11a326fb690d31f70bf1e8cac354f74c106",
+      "access": [
+        {
+          "location": "g9-do",
+          "selector": "[data-instructional-location=\"g9-do\"] [data-instructional-field=\"practical.scaffold.columns.1\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "practical.scaffold.columns.2",
+      "locations": [
+        "g9-do"
+      ],
+      "valueSHA256": "267f5a7a039f49f2d8cdddb3a20e1ebe1b87d30c03f23a54c92013ba5f69baab",
+      "access": [
+        {
+          "location": "g9-do",
+          "selector": "[data-instructional-location=\"g9-do\"] [data-instructional-field=\"practical.scaffold.columns.2\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "practical.scaffold.columns.3",
+      "locations": [
+        "g9-do"
+      ],
+      "valueSHA256": "a86e443388b8db802b164c87b1ac51b4f950970cb8395679e7115b41add401d0",
+      "access": [
+        {
+          "location": "g9-do",
+          "selector": "[data-instructional-location=\"g9-do\"] [data-instructional-field=\"practical.scaffold.columns.3\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "practical.scaffold.columns.4",
+      "locations": [
+        "g9-do"
+      ],
+      "valueSHA256": "20db271a89ec386d07dd7bb2d76e5b60c115e7c11b918d0a0fac7029c78bb408",
+      "access": [
+        {
+          "location": "g9-do",
+          "selector": "[data-instructional-location=\"g9-do\"] [data-instructional-field=\"practical.scaffold.columns.4\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "understandingChecks.0.prompt",
+      "locations": [
+        "g9-do"
+      ],
+      "valueSHA256": "954dde3124027c2f5d7a5139b830467096fbeaa233d173ff996dba32d9078cb1",
+      "access": [
+        {
+          "location": "g9-do",
+          "selector": "[data-instructional-location=\"g9-do\"] [data-instructional-field=\"understandingChecks.0.prompt\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "understandingChecks.0.secureReasoning",
+      "locations": [
+        "g9-do"
+      ],
+      "valueSHA256": "f967ec9e620d926b5aafc2878e41eaac5a460d2e8699fe00b36ca3dd72af0b6c",
+      "access": [
+        {
+          "location": "g9-do",
+          "selector": "[data-instructional-location=\"g9-do\"] [data-instructional-field=\"understandingChecks.0.secureReasoning\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "understandingChecks.0.partialUnderstanding",
+      "locations": [
+        "g9-do"
+      ],
+      "valueSHA256": "86890d31437b8e1039420a7f01fc4c985db94f096867856b4da7362903f0bed9",
+      "access": [
+        {
+          "location": "g9-do",
+          "selector": "[data-instructional-location=\"g9-do\"] [data-instructional-field=\"understandingChecks.0.partialUnderstanding\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "understandingChecks.0.notYetEvidenced",
+      "locations": [
+        "g9-do"
+      ],
+      "valueSHA256": "5d989dd90a96b4dca0aaf16345857ec297ccf51bb5e6f8048382ad7a49894bb7",
+      "access": [
+        {
+          "location": "g9-do",
+          "selector": "[data-instructional-location=\"g9-do\"] [data-instructional-field=\"understandingChecks.0.notYetEvidenced\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "understandingChecks.0.nextTeachingMove",
+      "locations": [
+        "g9-do"
+      ],
+      "valueSHA256": "77a1fcec31dcd34743e11209af1fc6a56d10c47da3b100d68a4e0238809448ba",
+      "access": [
+        {
+          "location": "g9-do",
+          "selector": "[data-instructional-location=\"g9-do\"] [data-instructional-field=\"understandingChecks.0.nextTeachingMove\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "understandingChecks.1.prompt",
+      "locations": [
+        "g9-check"
+      ],
+      "valueSHA256": "adb6ebe453cf4cfde45521b5f6dd9a68d7155f375c157bef10642ad792d23cf1",
+      "access": [
+        {
+          "location": "g9-check",
+          "selector": "[data-instructional-location=\"g9-check\"] [data-instructional-field=\"understandingChecks.1.prompt\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "understandingChecks.1.secureReasoning",
+      "locations": [
+        "g9-check"
+      ],
+      "valueSHA256": "08845a594277e945cba29ce8cf83f639c3adbd4140a7e7b7eddfc2ef6d64c867",
+      "access": [
+        {
+          "location": "g9-check",
+          "selector": "[data-instructional-location=\"g9-check\"] [data-instructional-field=\"understandingChecks.1.secureReasoning\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "understandingChecks.1.partialUnderstanding",
+      "locations": [
+        "g9-check"
+      ],
+      "valueSHA256": "b1a4e5991c7fd1b207cb4633810eb3075f9c366bac191b20d0457c384fabfa49",
+      "access": [
+        {
+          "location": "g9-check",
+          "selector": "[data-instructional-location=\"g9-check\"] [data-instructional-field=\"understandingChecks.1.partialUnderstanding\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "understandingChecks.1.notYetEvidenced",
+      "locations": [
+        "g9-check"
+      ],
+      "valueSHA256": "fb3078ecaa54d506ad1cedd37a1bc97e56c16d36dd52171ccd3b813c300d6b84",
+      "access": [
+        {
+          "location": "g9-check",
+          "selector": "[data-instructional-location=\"g9-check\"] [data-instructional-field=\"understandingChecks.1.notYetEvidenced\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "understandingChecks.1.nextTeachingMove",
+      "locations": [
+        "g9-check"
+      ],
+      "valueSHA256": "bb86de8ddf83f24c54d2ddd4877bcb1e8ecb42888b9aaf033052355f8c028746",
+      "access": [
+        {
+          "location": "g9-check",
+          "selector": "[data-instructional-location=\"g9-check\"] [data-instructional-field=\"understandingChecks.1.nextTeachingMove\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "differentiation.support.0",
+      "locations": [
+        "g9-do"
+      ],
+      "valueSHA256": "8a53ca28d6c9bfbfb76f31a582b7cb326b49bfdf23d0e1ba023217f59251f2d3",
+      "access": [
+        {
+          "location": "g9-do",
+          "selector": "[data-instructional-location=\"g9-do\"] [data-instructional-field=\"differentiation.support.0\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "differentiation.extension.0",
+      "locations": [
+        "g9-independent"
+      ],
+      "valueSHA256": "cebf9d2ad38a73a4900010bb3687840ba2ff56846542637a1ddd63367f60017d",
+      "access": [
+        {
+          "location": "g9-independent",
+          "selector": "[data-instructional-location=\"g9-independent\"] [data-instructional-field=\"differentiation.extension.0\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "differentiation.quietParticipation.0",
+      "locations": [
+        "g9-do"
+      ],
+      "valueSHA256": "3dc0113efe870a4adccbbeaa4f8de04d66655a5353fb23f19151efb0d15f16ae",
+      "access": [
+        {
+          "location": "g9-do",
+          "selector": "[data-instructional-location=\"g9-do\"] [data-instructional-field=\"differentiation.quietParticipation.0\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "differentiation.largeClass.0",
+      "locations": [
+        "g9-do"
+      ],
+      "valueSHA256": "667f7c5aa941c388a8196a4bcc52d4c4da18e8b9a6067d2c317b88bfad502bc9",
+      "access": [
+        {
+          "location": "g9-do",
+          "selector": "[data-instructional-location=\"g9-do\"] [data-instructional-field=\"differentiation.largeClass.0\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "differentiation.lowTechnology.0",
+      "locations": [
+        "g9-do"
+      ],
+      "valueSHA256": "d2bdc47bdd133f1bb06c2f9fab9477522820043bebb3ed2a3387f7b823cb853e",
+      "access": [
+        {
+          "location": "g9-do",
+          "selector": "[data-instructional-location=\"g9-do\"] [data-instructional-field=\"differentiation.lowTechnology.0\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "differentiation.readingSupport.0",
+      "locations": [
+        "g9-explore"
+      ],
+      "valueSHA256": "080cf74ace16d221b88231a409d630d9606d8d684725d0343e4be6603bfb6db9",
+      "access": [
+        {
+          "location": "g9-explore",
+          "selector": "[data-instructional-location=\"g9-explore\"] [data-instructional-field=\"differentiation.readingSupport.0\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "continuity.connection",
+      "locations": [
+        "preparation"
+      ],
+      "valueSHA256": "28e254ea69f865321513fb0bdeef43e6f8c4ad1337c41273b9e520ebaf84dd7b",
+      "access": [
+        {
+          "location": "preparation",
+          "selector": ".contextual-preparation > details:first-child [data-instructional-field=\"continuity.connection\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "continuity.nextUse",
+      "locations": [
+        "g9-check"
+      ],
+      "valueSHA256": "bd0b8884070357ed934697fdb25c88e6842e762dc65d003efaf4f54d96a6e33b",
+      "access": [
+        {
+          "location": "g9-check",
+          "selector": "[data-instructional-location=\"g9-check\"] [data-instructional-field=\"continuity.nextUse\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "independentLearning.0",
+      "locations": [
+        "g9-independent"
+      ],
+      "valueSHA256": "47b64b01c4fd64a1e19254c40e7f403b6857bdbf45ab713f3918c990d6ae391a",
+      "access": [
+        {
+          "location": "g9-independent",
+          "selector": "[data-instructional-location=\"g9-independent\"] [data-instructional-field=\"independentLearning.0\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "independentLearning.1",
+      "locations": [
+        "g9-independent"
+      ],
+      "valueSHA256": "26dc70cd89588101df2afdd50763d49fddb3f8cbf030f3a8d3f9ae8ae61b6216",
+      "access": [
+        {
+          "location": "g9-independent",
+          "selector": "[data-instructional-location=\"g9-independent\"] [data-instructional-field=\"independentLearning.1\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "independentLearning.2",
+      "locations": [
+        "g9-independent"
+      ],
+      "valueSHA256": "ccabf761017d5d1788ebcaf8f7e37ecee4989f20b789ca891e98768462b14603",
+      "access": [
+        {
+          "location": "g9-independent",
+          "selector": "[data-instructional-location=\"g9-independent\"] [data-instructional-field=\"independentLearning.2\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "originalTitle",
+      "locations": [
+        "preparation"
+      ],
+      "valueSHA256": "63b97af55137b4e61a820e1f47559ec10a040dfbee8d6658242126cadd30f7df",
+      "access": [
+        {
+          "location": "preparation",
+          "selector": ".contextual-preparation > details:first-child [data-instructional-field=\"originalTitle\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "delivery.later.title",
+      "locations": [
+        "g9-independent"
+      ],
+      "valueSHA256": "b4c3c1b2ff19c2276bc9491fb0a299e4a66eacab5939fb2fa631fcd33fdacf92",
+      "access": [
+        {
+          "location": "g9-independent",
+          "selector": "[data-instructional-location=\"g9-independent\"] [data-instructional-field=\"delivery.later.title\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "delivery.reflection.title",
+      "locations": [
+        "g9-reflection"
+      ],
+      "valueSHA256": "606f0ff0162558e098d308e212b5b355f0ab208846616be04bb79464ed84b38b",
+      "access": [
+        {
+          "location": "g9-reflection",
+          "selector": "[data-instructional-location=\"g9-reflection\"] [data-instructional-field=\"delivery.reflection.title\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "delivery.reflection.text",
+      "locations": [
+        "g9-reflection"
+      ],
+      "valueSHA256": "42c25ee4ea4f6726345e6ae75558d8c569d9bd146d56b9d8259018d0a1d47b6b",
+      "access": [
+        {
+          "location": "g9-reflection",
+          "selector": "[data-instructional-location=\"g9-reflection\"] [data-instructional-field=\"delivery.reflection.text\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "delivery.deepening.title",
+      "locations": [
+        "g9-deepening"
+      ],
+      "valueSHA256": "0c8dc9ee5b5279aa66add926ba707d74e933ba68805ac0d2f09a4707a795d7f8",
+      "access": [
+        {
+          "location": "g9-deepening",
+          "selector": "[data-instructional-location=\"g9-deepening\"] [data-instructional-field=\"delivery.deepening.title\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "delivery.deepening.text",
+      "locations": [
+        "g9-deepening"
+      ],
+      "valueSHA256": "88cb8ebf260a04a394e998d20bdefc3e27eb0b11fc94e46e98c0a0b39439c26b",
+      "access": [
+        {
+          "location": "g9-deepening",
+          "selector": "[data-instructional-location=\"g9-deepening\"] [data-instructional-field=\"delivery.deepening.text\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    }
+  ],
+  "reviewedPlacements": [
+    {
+      "id": "g9-open",
+      "period": 0,
+      "schedule": "classroom",
+      "minutes": 5,
+      "placement": {
+        "kind": "section",
+        "blockId": "4999c7d138125cc153044ca1-1",
+        "edge": "before",
+        "review": "Individually reviewed against the complete authored runtime lesson and intact semantic section. Teaching order can revisit this same material; navigation states the next teaching moment explicitly."
+      },
+      "sourceBlockIds": [
+        "f060fa40d32fdb244cb792e1-1",
+        "00975c211a2dca2bbdd56fee-1",
+        "407b21f0298f3f5d7e5ed9d0-1",
+        "021a9b3b331eb13213d0ec55-1"
+      ]
+    },
+    {
+      "id": "g9-explore",
+      "period": 0,
+      "schedule": "classroom",
+      "minutes": 8,
+      "placement": {
+        "kind": "section",
+        "blockId": "1da7ea1ae76d8493a530069b-1",
+        "edge": "before",
+        "review": "Individually reviewed against the complete authored runtime lesson and intact semantic section. Teaching order can revisit this same material; navigation states the next teaching moment explicitly."
+      },
+      "sourceBlockIds": [
+        "7257c83a76bcc6a26c82becc-1",
+        "19b7003b6af765651e76907e-1",
+        "a9c3dee219fce2ac0c4a2d40-1",
+        "a32ba2f35b53ad6e7d851c92-1",
+        "e9c62a65162063aa8c02f96f-1",
+        "021a9b3b331eb13213d0ec55-1"
+      ]
+    },
+    {
+      "id": "g9-discuss",
+      "period": 0,
+      "schedule": "classroom",
+      "minutes": 10,
+      "placement": {
+        "kind": "section",
+        "blockId": "f109d0452830840e96b01876-1",
+        "edge": "before",
+        "review": "Individually reviewed against the complete authored runtime lesson and intact semantic section. Teaching order can revisit this same material; navigation states the next teaching moment explicitly."
+      },
+      "sourceBlockIds": [
+        "886812f114b59fe4b7776db7-1",
+        "095b8a7b1cf72d8a94f29b3f-1",
+        "06286747fa28fbde3485f91c-1",
+        "1d5cc670fa95d3123cd5d0e3-1"
+      ]
+    },
+    {
+      "id": "g9-do",
+      "period": 0,
+      "schedule": "classroom",
+      "minutes": 17,
+      "placement": {
+        "kind": "section",
+        "blockId": "465b70a5e59ec1718d9781fe-1",
+        "edge": "before",
+        "review": "Individually reviewed against the complete authored runtime lesson and intact semantic section. Teaching order can revisit this same material; navigation states the next teaching moment explicitly."
+      },
+      "sourceBlockIds": [
+        "465b70a5e59ec1718d9781fe-1",
+        "7cb6621b23ce3bbf9e6ca9e3-1",
+        "81b079a1cbda6e8a4c4a0697-1",
+        "59af5ba6eeb8da636180d0cc-1",
+        "843cd64e80803ad37fc14384-1",
+        "c05be9d644e52d200f47f9dc-1",
+        "886812f114b59fe4b7776db7-1",
+        "a08f1f119532104ddb02a3b1-1",
+        "0a310865764d718934fc69e7-1",
+        "2621d5204120dc39dfff202e-1",
+        "4b4d5383cf9e664465ef91c3-1",
+        "8119657d902bad61cbc1a10c-1",
+        "72183c864a70b315382550f7-1"
+      ]
+    },
+    {
+      "id": "g9-check",
+      "period": 0,
+      "schedule": "classroom",
+      "minutes": 5,
+      "placement": {
+        "kind": "section",
+        "blockId": "77f85198c14cdf408b1cd694-1",
+        "edge": "before",
+        "review": "Individually reviewed against the complete authored runtime lesson and intact semantic section. Teaching order can revisit this same material; navigation states the next teaching moment explicitly."
+      },
+      "sourceBlockIds": [
+        "06286747fa28fbde3485f91c-1",
+        "1f75dcb1ec9185f90cff57f0-1",
+        "d38525f676f0a590f74795d1-1"
+      ]
+    },
+    {
+      "id": "g9-independent",
+      "period": null,
+      "schedule": "later",
+      "minutes": 0,
+      "placement": {
+        "kind": "section",
+        "blockId": "22499840c699d3a0d0c842d7-1",
+        "edge": "before",
+        "review": "Home task is outside scheduled contact time. Distinguish actual observations, hypothetical rehearsals and inaccessible tasks."
+      },
+      "sourceBlockIds": [
+        "22499840c699d3a0d0c842d7-1"
+      ]
+    },
+    {
+      "id": "g9-reflection",
+      "period": null,
+      "schedule": "optional",
+      "minutes": 0,
+      "placement": {
+        "kind": "section",
+        "blockId": "4366a8a71a6f4c1b34bae61f-1",
+        "edge": "before",
+        "review": "Actual complete semantic section reviewed; keep source text and all response surfaces intact."
+      },
+      "sourceBlockIds": [
+        "4366a8a71a6f4c1b34bae61f-1"
+      ]
+    },
+    {
+      "id": "g9-deepening",
+      "period": null,
+      "schedule": "optional",
+      "minutes": 0,
+      "placement": {
+        "kind": "section",
+        "blockId": "f109d0452830840e96b01876-1",
+        "edge": "before",
+        "review": "Actual complete semantic section reviewed; keep source text and all response surfaces intact."
+      },
+      "sourceBlockIds": [
+        "f109d0452830840e96b01876-1"
+      ]
+    }
+  ],
+  "authoredActivityDispositions": [
+    {
+      "blockId": "4366a8a71a6f4c1b34bae61f-1",
+      "momentId": "g9-reflection",
+      "disposition": "optional"
+    },
+    {
+      "blockId": "465b70a5e59ec1718d9781fe-1",
+      "momentId": "g9-do",
+      "disposition": "classroom"
+    },
+    {
+      "blockId": "850db8bd5e4a454c86a9d38a-1",
+      "momentId": "g9-do",
+      "disposition": "classroom"
+    },
+    {
+      "blockId": "1fc72756fdd2739f8b539a9c-1",
+      "momentId": "g9-do",
+      "disposition": "classroom"
+    },
+    {
+      "blockId": "29659f2d4da169668e910fe7-1",
+      "momentId": "g9-do",
+      "disposition": "classroom"
+    },
+    {
+      "blockId": "5ddf4ddea3588e50b4255ce2-1",
+      "momentId": "g9-do",
+      "disposition": "classroom"
+    },
+    {
+      "blockId": "77f85198c14cdf408b1cd694-1",
+      "momentId": "g9-check",
+      "disposition": "classroom"
+    }
+  ],
+  "approval": "Independent educator moderation and classroom pilot pending; automatic checks do not establish educational approval."
+}

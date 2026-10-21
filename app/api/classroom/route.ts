@@ -13,13 +13,14 @@ export async function GET(request:Request){
   const expected=request.headers.get("x-ac-expected-user-id");
   if(expected&&expected!==access.userId)return Response.json({error:"The active account changed. Reload teacher guidance."},{status:409,headers});
   // Import the private release only after access has been established.
-  const {classroomCatalog,loadClassroomGuides,loadContextualEnrichment}=await import("@/lib/classroom/private-library");
+  const {classroomCatalog,loadClassroomGuides,loadContextualEnrichment,loadTeachingPlan}=await import("@/lib/classroom/private-library");
   const id=new URL(request.url).searchParams.get("lesson")??"g8-t1-l08-008";
   const selected=classroomCatalog.find(entry=>entry.id===id);
   if(!selected)return Response.json({error:"This lesson is not in the classroom catalogue."},{status:404,headers});
   const guide=selected.benchmark?(await loadClassroomGuides()).find(item=>item.lessonId===id)??null:null;
   const contextual=guide?await loadContextualEnrichment(guide):null;
-  return Response.json({catalog:classroomCatalog,selected,guide,contextual},{headers});
+  const plan=await loadTeachingPlan(id);
+  return Response.json({catalog:classroomCatalog,selected,guide,contextual,plan},{headers});
  }catch{
   console.error("Classroom guidance could not be loaded.");
   return Response.json({error:"Teacher guidance is not available just now. Ask your administrator to check the private classroom release."},{status:503,headers});

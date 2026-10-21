@@ -1,4 +1,5 @@
 "use client";
+import {teachingHeading} from "@/lib/classroom/teaching-plan";
 
 import { responseView, persistResponseKey } from "@/lib/response-identity";
 import {Fragment} from "react";
@@ -824,9 +825,9 @@ export function ContentBlocks({blocks,unitId,unitType="lesson",promptResponses:s
       }
       flush();
 
-      // Only actual standalone Part headings are eligible; grouped lists,
+      // Only reviewed standalone Part/Step headings are eligible; grouped lists,
       // tables and Deepening Insight contents are never split by annotations.
-      if(block.kind==="text"&&PART_HEADING_RE.test(displayText(block.text))){
+      if(teachingHeading(block)){
         const guidance=partGuidance?.(block);
         if(guidance)views.push(<Fragment key={`part-guidance-${index}`}>{guidance}</Fragment>);
       }

@@ -28,3 +28,7 @@
 .learner-presentation-notice{font-size:.933em!important}.learner-projection{margin:0;padding:0;border:0;min-width:0}
 @media(max-width:430px){.contextual-preparation ol{grid-template-columns:1fr}.contextual-private .contextual-actions>*{width:100%;justify-content:flex-start}.contextual-stage-picker{flex-wrap:wrap}.contextual-stage-picker button{width:100%}}
 @media print{.contextual-private{display:none!important}.contextual-printing .lesson-document,.contextual-printing .workbook-panel,.contextual-printing .reader-stage>.save-error{display:none!important}.contextual-printing .contextual-print-guide{display:block!important;background:white;border:0;margin:0;padding:0}.contextual-print-guide>.classroom-workspace{display:block!important;padding:0}.contextual-print-guide .classroom-guide-outline{display:none!important}.contextual-print-addendum{break-before:page}.contextual-print-addendum h4{break-after:avoid}}
+
+.standalone-teaching-plan .contextual-print-guide{display:block}
+.contextual-body section{margin:14px 0}.contextual-print-guide h3{break-after:avoid}
+@media print{.standalone-teaching-plan .contextual-print-guide{display:block!important}}

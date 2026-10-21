@@ -6,5 +6,9 @@ const payload=JSON.parse(openContent(envelope,Buffer.from(keyText,'base64'),'app
 const sentinels=[keyText,...payload.guides.flatMap(guide=>[...guide.understandingChecks.map(check=>check.secureReasoning),...guide.discussion.map(item=>item.indicativeReasoning)])];
 const contextual=JSON.parse(openContent(JSON.parse(fs.readFileSync('content/instructional/g8-t1-l08-008.contextual.v1.enc.json','utf8')),Buffer.from(keyText,'base64'),'applied-commerce-classroom-v1').toString('utf8'));
 sentinels.push(...Object.values(contextual.distinction),...Object.values(contextual.transitions),...Object.values(contextual.activities).flatMap(item=>[item.title,item.text]));
+const teaching=JSON.parse(openContent(JSON.parse(fs.readFileSync('content/instructional/teaching-plans.v2.enc.json','utf8')),Buffer.from(keyText,'base64'),'applied-commerce-classroom-v1').toString('utf8'));
+// Long instructional fields are unique enough to distinguish disclosure from
+// ordinary shared words such as “Value”. Check raw and JS-escaped forms.
+for(const plan of teaching.plans)for(const value of Object.values(plan.fields))if(value.length>=70)sentinels.push(value,JSON.stringify(value).slice(1,-1));
 let checked=0;function walk(folder){for(const entry of fs.readdirSync(folder,{withFileTypes:true})){const file=path.join(folder,entry.name);if(entry.isDirectory())walk(file);else{const bytes=fs.readFileSync(file);checked++;if(sentinels.some(value=>bytes.includes(Buffer.from(value))))throw new Error('Private classroom material was found in a public asset.');}}}
 if(!fs.existsSync('.next/static'))throw new Error('Build the real application first.');walk('.next/static');walk('public');console.log(JSON.stringify({ok:true,publicAssetsChecked:checked,privateSentinelsChecked:sentinels.length,keyExported:false}));
