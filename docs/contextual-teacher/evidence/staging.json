@@ -1,0 +1,33 @@
+{
+  "projectId": "prj_9MXnYeh3mxtFzcS1xzEDrTjOW2nP",
+  "projectName": "applied-commerce-sa-staging",
+  "teamId": "team_0F7XVax56npxBWgjVdXMJj3V",
+  "target": "production",
+  "deploymentId": "dpl_8YXra7Zy6QB77bDrhkEAFgNUN3CH",
+  "url": "https://applied-commerce-sa-staging-73nabhs5f.vercel.app",
+  "commit": "c68efc48bf5a27fb58225388e6bc0606f83bf5ad",
+  "status": "READY",
+  "buildDurationMs": 19213,
+  "buildCommand": "npm run build && node scripts/verify-classroom-hosted.mjs",
+  "serverBuildDecryption": {
+    "classroomServerBuildVerification": "PASS",
+    "guides": 5,
+    "periods": 7,
+    "privateKeyExported": false,
+    "runtimeEducatorLearnerAccess": "NOT TESTED"
+  },
+  "buildProofTimestamp": 1792597875342,
+  "health": {
+    "status": "ok",
+    "projectRef": "inxshlumnhcgiahxqewe",
+    "commit": "c68efc48bf5a27fb58225388e6bc0606f83bf5ad",
+    "dependencies": {
+      "auth": true,
+      "dataAPI": true
+    }
+  },
+  "runtimeRoleTesting": "NOT TESTED; isolated fixtures unset",
+  "apiClassroomHostedProbe": "Vercel connected fetch reported deployment_authentication_required, not application-level learner denial",
+  "separateProductionProjectModified": false,
+  "secretValuesRetrieved": false
+}

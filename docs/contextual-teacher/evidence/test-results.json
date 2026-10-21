@@ -1,0 +1,92 @@
+{
+  "applicationCommit": "c68efc48bf5a27fb58225388e6bc0606f83bf5ad",
+  "baselineCommit": "3933c2d90519e7aa53984405693da9526c12a588",
+  "local": {
+    "runtime": "PASS: 395 lessons, 4 assessments, 20766 stable raw blocks",
+    "node": {
+      "passed": 178,
+      "failed": 0,
+      "durationMs": 57876.580244
+    },
+    "typecheck": "PASS",
+    "lint": "PASS",
+    "build": "PASS",
+    "pythonIdentityTests": 2,
+    "publicAcceptance": {
+      "passed": 222,
+      "failed": 0,
+      "durationReported": "15.5m",
+      "codeCommit": "40a56cfabadf4e561b136f243c1b07c8b19ece6a"
+    },
+    "contextualUIFull": {
+      "stats": {
+        "startTime": "2026-10-21T15:38:09.528Z",
+        "duration": 325177.336,
+        "expected": 24,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "codeCommit": "40a56cfabadf4e561b136f243c1b07c8b19ece6a"
+    },
+    "contextualPostPrintFix": {
+      "stats": {
+        "startTime": "2026-10-21T15:46:56.590Z",
+        "duration": 104102.883,
+        "expected": 6,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "codeCommit": "c68efc48bf5a27fb58225388e6bc0606f83bf5ad"
+    },
+    "privateRelease": "PASS",
+    "publicAssetScan": {
+      "ok": true,
+      "publicAssetsChecked": 77,
+      "privateSentinelsChecked": 25,
+      "keyExported": false
+    },
+    "browserLearnerParityWidths": [
+      320,
+      360,
+      430,
+      768,
+      1280,
+      1920
+    ],
+    "all399UnitRendererFingerprints": "PASS"
+  },
+  "initialRun": {
+    "stats": {
+      "startTime": "2026-10-21T15:34:22.940Z",
+      "duration": 131602.507,
+      "expected": 4,
+      "skipped": 0,
+      "unexpected": 4,
+      "flaky": 0
+    },
+    "description": "Four passes and four harness failures: fieldset inherited-disabled assertion and unsupported remote-review lookup in the synthetic account. Both corrected in the harness; real local learner portfolio coverage is in public acceptance."
+  },
+  "ci": {
+    "runId": 39629359362,
+    "jobId": 119323039084,
+    "url": "https://github.com/PDthePlug/Applied-Commerce-/actions/runs/39629359362",
+    "commit": "c68efc48bf5a27fb58225388e6bc0606f83bf5ad",
+    "conclusion": "success",
+    "nodePassed": 178,
+    "acceptancePassed": 222,
+    "acceptanceDurationReported": "2.6m",
+    "pythonIdentityTests": 2,
+    "embeddedDatabaseDrill": {
+      "passed": 7,
+      "failed": 0,
+      "syntheticLearners": 500,
+      "syntheticAnswers": 10000,
+      "restoredTableDigests": 26
+    }
+  },
+  "realAuthenticatedRoleValidation": "NOT TESTED: AC_ROLE_FIXTURES unset",
+  "productionDatabaseWrites": false,
+  "separateProductionProjectChanged": false
+}

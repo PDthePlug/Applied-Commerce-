@@ -4,6 +4,10 @@ This milestone changes only the teaching presentation of `g8-t1-l08-008`.
 The existing learner content remains the canvas. The encrypted Grade 8 benchmark
 is reused without rewriting it; the other four benchmark payloads are unchanged.
 
+See the [verification and release report](VERIFICATION_REPORT.md) for actual test
+results, the staging link, instructional preservation, encrypted screenshots/PDFs
+and authenticated-role limitations. [Draft PR #43](https://github.com/PDthePlug/Applied-Commerce-/pull/43).
+
 Open `/learn/8/term/1/g8-t1-l08-008`. After the existing server identity,
 active-session and staff/admin checks succeed, the reader offers Learner View and
 Teacher View. Teacher View adds five initially collapsed guidance disclosures,
