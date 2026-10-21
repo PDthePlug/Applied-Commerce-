@@ -1,5 +1,6 @@
 import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';import crypto from 'node:crypto';
 import React from 'react';import {renderToStaticMarkup} from 'react-dom/server';
+import {spawnSync} from 'node:child_process';
 import {runtimeUnits} from '../scripts/semantic-census.mjs';import {renderModule} from './lib/render-module.mjs';
 const {ContentBlocks}=await import(renderModule('components/content-blocks.tsx'));
 const {contextualAlignment,contextualPlacements}=await import(renderModule('lib/classroom/contextual.ts'));
@@ -26,4 +27,10 @@ test('all 399 learner units retain the exact main-branch renderer markup without
  const baseline=JSON.parse(fs.readFileSync('tests/fixtures/learner-renderer-main.json'));
  assert.equal(baseline.baseCommit,'3933c2d90519e7aa53984405693da9526c12a588');assert.equal(baseline.units.length,399);
  for(const unit of units){const html=renderToStaticMarkup(React.createElement(ContentBlocks,{blocks:unit.blocks,unitId:unit.id,unitType:unit.type,promptResponses:{},onSavePromptResponse:()=>{}}));assert.equal(crypto.createHash('sha256').update(html).digest('hex'),baseline.units.find(row=>row.id===unit.id).sha256,unit.id);}
+});
+test('hosted release verification fails closed without exposing a missing or invalid Secret',()=>{
+ for(const key of ['', 'SYNTHETIC_INVALID_KEY_SENTINEL']){
+  const result=spawnSync(process.execPath,['scripts/verify-classroom-hosted.mjs'],{env:{...process.env,AC_CLASSROOM_CONTENT_KEY:key},encoding:'utf8'});
+  assert.equal(result.status,1);assert.ok(!result.stdout.includes('classroomServerBuildVerification'));assert.ok(!(result.stdout+result.stderr).includes('SYNTHETIC_INVALID_KEY_SENTINEL'));
+ }
 });
