@@ -1,0 +1,958 @@
+{
+  "lessonId": "g8-t1-l12-012",
+  "sourceUnitSHA256": "28ffd066ae0e923347405aa90eb5bb8edb319a076fdca8165ca84d44ca45d811",
+  "instructionalFieldCount": 59,
+  "instructionalFields": [
+    {
+      "path": "purpose.0",
+      "locations": [
+        "preparation"
+      ],
+      "valueSHA256": "d3eb8bb903ae359a2628e288cdf3ba223d94426ef8a45b2bb7fe8fb08ac56475",
+      "access": [
+        {
+          "location": "preparation",
+          "selector": ".contextual-preparation > details:first-child [data-instructional-field=\"purpose.0\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "purpose.1",
+      "locations": [
+        "preparation"
+      ],
+      "valueSHA256": "29529afecb5c5d9aabfc7b8696c59a86233a72ab841aa911de884bf7f0d50907",
+      "access": [
+        {
+          "location": "preparation",
+          "selector": ".contextual-preparation > details:first-child [data-instructional-field=\"purpose.1\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "outcome.0",
+      "locations": [
+        "preparation"
+      ],
+      "valueSHA256": "97f64e0da852dce36e869774318f1049ad43dad7adb64dfed47f3c58849d4898",
+      "access": [
+        {
+          "location": "preparation",
+          "selector": ".contextual-preparation > details:first-child [data-instructional-field=\"outcome.0\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "prerequisites.0",
+      "locations": [
+        "preparation"
+      ],
+      "valueSHA256": "5523c1768dd5a982f50222590b055824aa66f17d61138aa780e8fe6d14d45daf",
+      "access": [
+        {
+          "location": "preparation",
+          "selector": ".contextual-preparation > details:first-child [data-instructional-field=\"prerequisites.0\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "prerequisites.1",
+      "locations": [
+        "preparation"
+      ],
+      "valueSHA256": "a72fbc55bd24174b80fad30394e11f87e63447ec701a913eb99a92bca7e72e06",
+      "access": [
+        {
+          "location": "preparation",
+          "selector": ".contextual-preparation > details:first-child [data-instructional-field=\"prerequisites.1\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "materials.0",
+      "locations": [
+        "preparation"
+      ],
+      "valueSHA256": "4b52c14c0123b786b59c5b18e02e25d813c9be8a2b9eafa55a8d1a2c59e129b5",
+      "access": [
+        {
+          "location": "preparation",
+          "selector": ".contextual-preparation > details:first-child [data-instructional-field=\"materials.0\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "materials.1",
+      "locations": [
+        "preparation"
+      ],
+      "valueSHA256": "1e8c1ad3904372a1282b243a76f62bc536af3235ae313995bd454f9bba360eaf",
+      "access": [
+        {
+          "location": "preparation",
+          "selector": ".contextual-preparation > details:first-child [data-instructional-field=\"materials.1\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "vocabulary.0",
+      "locations": [
+        "preparation"
+      ],
+      "valueSHA256": "f5baed04fecc1d7214a8a7406bbd1583d649fa28f13ac460fe3fd7554e3128b4",
+      "access": [
+        {
+          "location": "preparation",
+          "selector": ".contextual-preparation > details:first-child [data-instructional-field=\"vocabulary.0\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "vocabulary.1",
+      "locations": [
+        "preparation"
+      ],
+      "valueSHA256": "e53b7a358c5fe93a816eb1d25a05b677009b9e1f36c356533778cd9597e51d9a",
+      "access": [
+        {
+          "location": "preparation",
+          "selector": ".contextual-preparation > details:first-child [data-instructional-field=\"vocabulary.1\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "misconceptions.0",
+      "locations": [
+        "preparation"
+      ],
+      "valueSHA256": "8f4aad5314f3849cfd270bacfd46a21070341e9e9612c80d22db81d70bfda94e",
+      "access": [
+        {
+          "location": "preparation",
+          "selector": ".contextual-preparation > details:first-child [data-instructional-field=\"misconceptions.0\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "misconceptions.1",
+      "locations": [
+        "preparation"
+      ],
+      "valueSHA256": "41e7f3c675183ab21de2f6cf9653b7ee6c459df833dfdf669fbefe90779accc8",
+      "access": [
+        {
+          "location": "preparation",
+          "selector": ".contextual-preparation > details:first-child [data-instructional-field=\"misconceptions.1\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "context.0",
+      "locations": [
+        "preparation"
+      ],
+      "valueSHA256": "2dba822c9ecf43bd3b5af6b4220e8bd8e17524bb04b74aeae87fb3e7b0947e87",
+      "access": [
+        {
+          "location": "preparation",
+          "selector": ".contextual-preparation > details:first-child [data-instructional-field=\"context.0\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "access.0",
+      "locations": [
+        "preparation"
+      ],
+      "valueSHA256": "617c5964afddc113c5af36abd7023584abaf8fd0331f53545ebe27a374930980",
+      "access": [
+        {
+          "location": "preparation",
+          "selector": ".contextual-preparation > details:first-child [data-instructional-field=\"access.0\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "access.1",
+      "locations": [
+        "preparation"
+      ],
+      "valueSHA256": "978afc0c839beb4813a95a0196ae2b815836b25c61a08787cffc068522ca14ec",
+      "access": [
+        {
+          "location": "preparation",
+          "selector": ".contextual-preparation > details:first-child [data-instructional-field=\"access.1\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "stages.0.title",
+      "locations": [
+        "l12-stage-1"
+      ],
+      "valueSHA256": "248ca44ee8282a91476b2b72e215f38ecbf97bcecf5e3ad1e2339ee2b3c0a317",
+      "access": [
+        {
+          "location": "l12-stage-1",
+          "selector": "[data-instructional-location=\"l12-stage-1\"] [data-instructional-field=\"stages.0.title\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "stages.0.explain.0",
+      "locations": [
+        "l12-stage-1"
+      ],
+      "valueSHA256": "6f68c0404525be05260e75c1b49c0f3c37df501b315f1996c5ce18fb5b3051b1",
+      "access": [
+        {
+          "location": "l12-stage-1",
+          "selector": "[data-instructional-location=\"l12-stage-1\"] [data-instructional-field=\"stages.0.explain.0\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "stages.0.ask.0",
+      "locations": [
+        "l12-stage-1"
+      ],
+      "valueSHA256": "53a6634beb411eab04d2368b7e109af59fa08407b4e2903ff4bfc674a08782ad",
+      "access": [
+        {
+          "location": "l12-stage-1",
+          "selector": "[data-instructional-location=\"l12-stage-1\"] [data-instructional-field=\"stages.0.ask.0\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "stages.0.task.0",
+      "locations": [
+        "l12-stage-1"
+      ],
+      "valueSHA256": "7db0d8f8e04246a4eb4f54b6e653b19bd4710c07ef096b011a405ee6624c035a",
+      "access": [
+        {
+          "location": "l12-stage-1",
+          "selector": "[data-instructional-location=\"l12-stage-1\"] [data-instructional-field=\"stages.0.task.0\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "stages.0.understanding.0",
+      "locations": [
+        "l12-stage-1"
+      ],
+      "valueSHA256": "2c4a1fa8fe13bccfc1c46eee1da2fa97a83788dd6fc220482d95f15b043aff6e",
+      "access": [
+        {
+          "location": "l12-stage-1",
+          "selector": "[data-instructional-location=\"l12-stage-1\"] [data-instructional-field=\"stages.0.understanding.0\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "stages.0.misconception.0",
+      "locations": [
+        "l12-stage-1"
+      ],
+      "valueSHA256": "d19710479c331d5b0529b9e5fd02ee9b4c6c9fb19359174f713250330be2f99f",
+      "access": [
+        {
+          "location": "l12-stage-1",
+          "selector": "[data-instructional-location=\"l12-stage-1\"] [data-instructional-field=\"stages.0.misconception.0\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "stages.0.support.0",
+      "locations": [
+        "l12-stage-1"
+      ],
+      "valueSHA256": "a89963c40f4a79c9b5546274ee7db0c7ce3eff797cbae04c6bb7ac96bce78ee4",
+      "access": [
+        {
+          "location": "l12-stage-1",
+          "selector": "[data-instructional-location=\"l12-stage-1\"] [data-instructional-field=\"stages.0.support.0\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "stages.0.next.0",
+      "locations": [
+        "l12-stage-1"
+      ],
+      "valueSHA256": "d87257f8849f3f2647b6f32fc1e35d94291458ee72bccb600430c5ef97c3c222",
+      "access": [
+        {
+          "location": "l12-stage-1",
+          "selector": "[data-instructional-location=\"l12-stage-1\"] [data-instructional-field=\"stages.0.next.0\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "stages.1.title",
+      "locations": [
+        "l12-stage-2"
+      ],
+      "valueSHA256": "5a6d29d6fda05305b4a4cc8917b4a2f26e1134b629af9430e40f4a9e5d03d177",
+      "access": [
+        {
+          "location": "l12-stage-2",
+          "selector": "[data-instructional-location=\"l12-stage-2\"] [data-instructional-field=\"stages.1.title\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "stages.1.explain.0",
+      "locations": [
+        "l12-stage-2"
+      ],
+      "valueSHA256": "da5274cc35f4044c3d37fc10a6fefcae4a264d5f96081020ed3aa82ec10a2682",
+      "access": [
+        {
+          "location": "l12-stage-2",
+          "selector": "[data-instructional-location=\"l12-stage-2\"] [data-instructional-field=\"stages.1.explain.0\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "stages.1.ask.0",
+      "locations": [
+        "l12-stage-2"
+      ],
+      "valueSHA256": "dc00db00e70de38bebb9ea5d6af1222575440ac0e6bdd1d7c8b56bd6d02be904",
+      "access": [
+        {
+          "location": "l12-stage-2",
+          "selector": "[data-instructional-location=\"l12-stage-2\"] [data-instructional-field=\"stages.1.ask.0\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "stages.1.task.0",
+      "locations": [
+        "l12-stage-2"
+      ],
+      "valueSHA256": "48f844528d7d2aa3963c748ea1b43bab1ef65ad0976d676784dded5e2ba92737",
+      "access": [
+        {
+          "location": "l12-stage-2",
+          "selector": "[data-instructional-location=\"l12-stage-2\"] [data-instructional-field=\"stages.1.task.0\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "stages.1.understanding.0",
+      "locations": [
+        "l12-stage-2"
+      ],
+      "valueSHA256": "43c09713118d532f8c7e74b023f0c1c2b5d18216873b45458f0758b28010eccf",
+      "access": [
+        {
+          "location": "l12-stage-2",
+          "selector": "[data-instructional-location=\"l12-stage-2\"] [data-instructional-field=\"stages.1.understanding.0\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "stages.1.misconception.0",
+      "locations": [
+        "l12-stage-2"
+      ],
+      "valueSHA256": "683a8ed5d4aaaf8a416cd8fe6b373e97f5680fcb463cef1258b7edfb022305e3",
+      "access": [
+        {
+          "location": "l12-stage-2",
+          "selector": "[data-instructional-location=\"l12-stage-2\"] [data-instructional-field=\"stages.1.misconception.0\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "stages.1.support.0",
+      "locations": [
+        "l12-stage-2"
+      ],
+      "valueSHA256": "fae4267454cc020bb84744933406f4b0a604fbc0904a13089ad7f989b3bbc106",
+      "access": [
+        {
+          "location": "l12-stage-2",
+          "selector": "[data-instructional-location=\"l12-stage-2\"] [data-instructional-field=\"stages.1.support.0\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "stages.1.next.0",
+      "locations": [
+        "l12-stage-2"
+      ],
+      "valueSHA256": "4cb4bc48a97999cad0b6ab21df3649ddc4f46ea9ba9bc906e3b57176b88e4f6a",
+      "access": [
+        {
+          "location": "l12-stage-2",
+          "selector": "[data-instructional-location=\"l12-stage-2\"] [data-instructional-field=\"stages.1.next.0\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "stages.2.title",
+      "locations": [
+        "l12-stage-3"
+      ],
+      "valueSHA256": "2bf2783dd9f0a26bf3c750fe7c735f7b0b5d978ca69955a22e7e6cdb2d1ab03a",
+      "access": [
+        {
+          "location": "l12-stage-3",
+          "selector": "[data-instructional-location=\"l12-stage-3\"] [data-instructional-field=\"stages.2.title\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "stages.2.explain.0",
+      "locations": [
+        "l12-stage-3"
+      ],
+      "valueSHA256": "81d8058352ab5b375a140849f694da3bce2af5308aae21f82ed5a42d25b6c70b",
+      "access": [
+        {
+          "location": "l12-stage-3",
+          "selector": "[data-instructional-location=\"l12-stage-3\"] [data-instructional-field=\"stages.2.explain.0\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "stages.2.ask.0",
+      "locations": [
+        "l12-stage-3"
+      ],
+      "valueSHA256": "1c08d6bd35cdc94c71a1b11abcc7f3ebd1cb631cb652674d87b6e7e5caa0c551",
+      "access": [
+        {
+          "location": "l12-stage-3",
+          "selector": "[data-instructional-location=\"l12-stage-3\"] [data-instructional-field=\"stages.2.ask.0\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "stages.2.task.0",
+      "locations": [
+        "l12-stage-3"
+      ],
+      "valueSHA256": "05d522998d5c5d1549c88ed84ab5c6f2a5f531c322f9668c690e23f10cb00c32",
+      "access": [
+        {
+          "location": "l12-stage-3",
+          "selector": "[data-instructional-location=\"l12-stage-3\"] [data-instructional-field=\"stages.2.task.0\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "stages.2.understanding.0",
+      "locations": [
+        "l12-stage-3"
+      ],
+      "valueSHA256": "d54f5f2a9cb88717f5cc4068971c3ffc96ad6a9841cf43b99a22450f30810062",
+      "access": [
+        {
+          "location": "l12-stage-3",
+          "selector": "[data-instructional-location=\"l12-stage-3\"] [data-instructional-field=\"stages.2.understanding.0\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "stages.2.misconception.0",
+      "locations": [
+        "l12-stage-3"
+      ],
+      "valueSHA256": "4e215c5f0d23663f561d9fb2c5bd4d03a5fb1836b2e68bee5f4aa4b5de06d1b8",
+      "access": [
+        {
+          "location": "l12-stage-3",
+          "selector": "[data-instructional-location=\"l12-stage-3\"] [data-instructional-field=\"stages.2.misconception.0\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "stages.2.support.0",
+      "locations": [
+        "l12-stage-3"
+      ],
+      "valueSHA256": "a3ed49272202f0e437bea018694f8c43e241487b4cb284daafa35f7397ba9b4a",
+      "access": [
+        {
+          "location": "l12-stage-3",
+          "selector": "[data-instructional-location=\"l12-stage-3\"] [data-instructional-field=\"stages.2.support.0\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "stages.2.next.0",
+      "locations": [
+        "l12-stage-3"
+      ],
+      "valueSHA256": "e959538cd0b51b0c49ddbc91ed963eb8bf74ef85958e380f5e05d4a6324c538a",
+      "access": [
+        {
+          "location": "l12-stage-3",
+          "selector": "[data-instructional-location=\"l12-stage-3\"] [data-instructional-field=\"stages.2.next.0\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "stages.3.title",
+      "locations": [
+        "l12-stage-4"
+      ],
+      "valueSHA256": "1e3a51c3be23fa5ee47761289e841b9b972928846db1417ba98daf90f1fbb940",
+      "access": [
+        {
+          "location": "l12-stage-4",
+          "selector": "[data-instructional-location=\"l12-stage-4\"] [data-instructional-field=\"stages.3.title\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "stages.3.explain.0",
+      "locations": [
+        "l12-stage-4"
+      ],
+      "valueSHA256": "b9a3146850ab6947eb9a48c8e87ce817083f49e39882e26cca80d050abe019f7",
+      "access": [
+        {
+          "location": "l12-stage-4",
+          "selector": "[data-instructional-location=\"l12-stage-4\"] [data-instructional-field=\"stages.3.explain.0\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "stages.3.ask.0",
+      "locations": [
+        "l12-stage-4"
+      ],
+      "valueSHA256": "4220753861a76f4b3803830492a59c29788ff227b5819562ec2ae0e053970f83",
+      "access": [
+        {
+          "location": "l12-stage-4",
+          "selector": "[data-instructional-location=\"l12-stage-4\"] [data-instructional-field=\"stages.3.ask.0\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "stages.3.task.0",
+      "locations": [
+        "l12-stage-4"
+      ],
+      "valueSHA256": "61d22cc703ec7b1e13d5402112850f71ea85a6f3ea2c51cb1077207cb0b123ec",
+      "access": [
+        {
+          "location": "l12-stage-4",
+          "selector": "[data-instructional-location=\"l12-stage-4\"] [data-instructional-field=\"stages.3.task.0\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "stages.3.understanding.0",
+      "locations": [
+        "l12-stage-4"
+      ],
+      "valueSHA256": "001819cc6b6c169c7ffa5422f05ef83668af480d7ed6839a75f97e09859da691",
+      "access": [
+        {
+          "location": "l12-stage-4",
+          "selector": "[data-instructional-location=\"l12-stage-4\"] [data-instructional-field=\"stages.3.understanding.0\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "stages.3.misconception.0",
+      "locations": [
+        "l12-stage-4"
+      ],
+      "valueSHA256": "296c3500a7631291fd6a1b4deb245933733b1c5b69a2904d3514d1836f1c38f3",
+      "access": [
+        {
+          "location": "l12-stage-4",
+          "selector": "[data-instructional-location=\"l12-stage-4\"] [data-instructional-field=\"stages.3.misconception.0\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "stages.3.support.0",
+      "locations": [
+        "l12-stage-4"
+      ],
+      "valueSHA256": "7a3013a35aea4c88d39d413c25088185fe3f2aefd8582f71d91eac2b551c8730",
+      "access": [
+        {
+          "location": "l12-stage-4",
+          "selector": "[data-instructional-location=\"l12-stage-4\"] [data-instructional-field=\"stages.3.support.0\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "stages.3.next.0",
+      "locations": [
+        "l12-stage-4"
+      ],
+      "valueSHA256": "24a5df0ae23a319dca87e08d134478a3ba32f282f0e173cb54b08ddbbb19c3eb",
+      "access": [
+        {
+          "location": "l12-stage-4",
+          "selector": "[data-instructional-location=\"l12-stage-4\"] [data-instructional-field=\"stages.3.next.0\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "stages.4.title",
+      "locations": [
+        "l12-stage-5"
+      ],
+      "valueSHA256": "cf738a820017fc4106da381205c526155e154d50e4c9ebf8817eb3eef849715f",
+      "access": [
+        {
+          "location": "l12-stage-5",
+          "selector": "[data-instructional-location=\"l12-stage-5\"] [data-instructional-field=\"stages.4.title\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "stages.4.explain.0",
+      "locations": [
+        "l12-stage-5"
+      ],
+      "valueSHA256": "562befadd271d42c3a7663ea9c6132459aa029184f65b39721db094b18a4d61f",
+      "access": [
+        {
+          "location": "l12-stage-5",
+          "selector": "[data-instructional-location=\"l12-stage-5\"] [data-instructional-field=\"stages.4.explain.0\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "stages.4.ask.0",
+      "locations": [
+        "l12-stage-5"
+      ],
+      "valueSHA256": "d6708f772887ff3e9406583ff551dd52893fd33c1a6fd32bee9b0e8e206b7ad7",
+      "access": [
+        {
+          "location": "l12-stage-5",
+          "selector": "[data-instructional-location=\"l12-stage-5\"] [data-instructional-field=\"stages.4.ask.0\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "stages.4.task.0",
+      "locations": [
+        "l12-stage-5"
+      ],
+      "valueSHA256": "e5a5ad86180407f5b4a13220a713956be7c8ac99e9e8edb661626ded46641c28",
+      "access": [
+        {
+          "location": "l12-stage-5",
+          "selector": "[data-instructional-location=\"l12-stage-5\"] [data-instructional-field=\"stages.4.task.0\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "stages.4.understanding.0",
+      "locations": [
+        "l12-stage-5"
+      ],
+      "valueSHA256": "4b771a4e87acc1dcf83241c9be269aef14e6ff34edfce654ea3ce259332fd2a0",
+      "access": [
+        {
+          "location": "l12-stage-5",
+          "selector": "[data-instructional-location=\"l12-stage-5\"] [data-instructional-field=\"stages.4.understanding.0\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "stages.4.misconception.0",
+      "locations": [
+        "l12-stage-5"
+      ],
+      "valueSHA256": "f61618eaaf3f810ef189762cd48ac4231ae28c299affc124d77fd0d633f6c9c5",
+      "access": [
+        {
+          "location": "l12-stage-5",
+          "selector": "[data-instructional-location=\"l12-stage-5\"] [data-instructional-field=\"stages.4.misconception.0\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "stages.4.support.0",
+      "locations": [
+        "l12-stage-5"
+      ],
+      "valueSHA256": "56000309dd30899725d9b75cc49e13bc98f2d14b54789c05fd0aaf653d55905e",
+      "access": [
+        {
+          "location": "l12-stage-5",
+          "selector": "[data-instructional-location=\"l12-stage-5\"] [data-instructional-field=\"stages.4.support.0\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "stages.4.next.0",
+      "locations": [
+        "l12-stage-5"
+      ],
+      "valueSHA256": "93dfc2439816feb59c7c0424f3277d3cd51667181b10a3ad460f3b1cbf495764",
+      "access": [
+        {
+          "location": "l12-stage-5",
+          "selector": "[data-instructional-location=\"l12-stage-5\"] [data-instructional-field=\"stages.4.next.0\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "later.0.title",
+      "locations": [
+        "l12-later-1"
+      ],
+      "valueSHA256": "701c43b5a4c807f92a8cf264e71199422bfcd4170288e2bb57badc6874df44e4",
+      "access": [
+        {
+          "location": "l12-later-1",
+          "selector": "[data-instructional-location=\"l12-later-1\"] [data-instructional-field=\"later.0.title\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "later.0.guidance.0",
+      "locations": [
+        "l12-later-1"
+      ],
+      "valueSHA256": "89dab3b2cc6d3e56be99fc741003d4229e3c0c1cc7462eb966548e8477c53796",
+      "access": [
+        {
+          "location": "l12-later-1",
+          "selector": "[data-instructional-location=\"l12-later-1\"] [data-instructional-field=\"later.0.guidance.0\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "later.1.title",
+      "locations": [
+        "l12-later-2"
+      ],
+      "valueSHA256": "127c54b1d7e03dfb124575a33760ffc74726815845ebe863a5ee6978e9099fe0",
+      "access": [
+        {
+          "location": "l12-later-2",
+          "selector": "[data-instructional-location=\"l12-later-2\"] [data-instructional-field=\"later.1.title\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "later.1.guidance.0",
+      "locations": [
+        "l12-later-2"
+      ],
+      "valueSHA256": "1a6053e991265fb7f8decd39cdc3f145a8f9d299287d0c96a7393f8f31b379e1",
+      "access": [
+        {
+          "location": "l12-later-2",
+          "selector": "[data-instructional-location=\"l12-later-2\"] [data-instructional-field=\"later.1.guidance.0\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    },
+    {
+      "path": "periods.0.title",
+      "locations": [
+        "preparation.periods.0"
+      ],
+      "valueSHA256": "394d558e0bf5313c9c77506943dca7fb195a25507f76a09c732b4fa9ca38f80d",
+      "access": [
+        {
+          "location": "preparation.periods.0",
+          "selector": ".contextual-preparation > details:first-child [data-instructional-field=\"periods.0.title\"]",
+          "open": "Open Teacher View, expand preparation or the named local moment, then its deeper support if required."
+        }
+      ]
+    }
+  ],
+  "reviewedPlacements": [
+    {
+      "id": "l12-stage-1",
+      "period": 0,
+      "schedule": "classroom",
+      "minutes": 10,
+      "placement": {
+        "kind": "section",
+        "blockId": "c670163d4a43a5dc7c7d3899-1",
+        "edge": "before",
+        "review": "Read the complete authored section; insertion is before its intact rendered heading. Lists, tables and response surfaces remain unsplit."
+      },
+      "sourceBlockIds": [
+        "c670163d4a43a5dc7c7d3899-1"
+      ]
+    },
+    {
+      "id": "l12-stage-2",
+      "period": 0,
+      "schedule": "classroom",
+      "minutes": 8,
+      "placement": {
+        "kind": "section",
+        "blockId": "8011d3cf3b11bcf0625a9e1c-1",
+        "edge": "before",
+        "review": "Read the complete authored section; insertion is before its intact rendered heading. Lists, tables and response surfaces remain unsplit."
+      },
+      "sourceBlockIds": [
+        "8011d3cf3b11bcf0625a9e1c-1"
+      ]
+    },
+    {
+      "id": "l12-stage-3",
+      "period": 0,
+      "schedule": "classroom",
+      "minutes": 17,
+      "placement": {
+        "kind": "section",
+        "blockId": "5c53fcc442baec4339e4a39e-1",
+        "edge": "before",
+        "review": "Read the complete authored section; insertion is before its intact rendered heading. Lists, tables and response surfaces remain unsplit."
+      },
+      "sourceBlockIds": [
+        "5c53fcc442baec4339e4a39e-1"
+      ]
+    },
+    {
+      "id": "l12-stage-4",
+      "period": 0,
+      "schedule": "classroom",
+      "minutes": 5,
+      "placement": {
+        "kind": "section",
+        "blockId": "3c561c390107d2b90027c2cc-1",
+        "edge": "before",
+        "review": "Read the complete authored section; insertion is before its intact rendered heading. Lists, tables and response surfaces remain unsplit."
+      },
+      "sourceBlockIds": [
+        "3c561c390107d2b90027c2cc-1"
+      ]
+    },
+    {
+      "id": "l12-stage-5",
+      "period": 0,
+      "schedule": "classroom",
+      "minutes": 5,
+      "placement": {
+        "kind": "section",
+        "blockId": "1e8357621b551417d9b19216-1",
+        "edge": "before",
+        "review": "Read the complete authored section; insertion is before its intact rendered heading. Lists, tables and response surfaces remain unsplit."
+      },
+      "sourceBlockIds": [
+        "1e8357621b551417d9b19216-1"
+      ]
+    },
+    {
+      "id": "l12-later-1",
+      "period": null,
+      "schedule": "optional",
+      "minutes": 0,
+      "placement": {
+        "kind": "section",
+        "blockId": "219753de8d4d12e12477e560-1",
+        "edge": "before",
+        "review": "Reviewed intact source heading; the schedule describes this authored task rather than claiming a later result exists."
+      },
+      "sourceBlockIds": [
+        "219753de8d4d12e12477e560-1"
+      ]
+    },
+    {
+      "id": "l12-later-2",
+      "period": null,
+      "schedule": "later",
+      "minutes": 0,
+      "placement": {
+        "kind": "section",
+        "blockId": "22499840c699d3a0d0c842d7-1",
+        "edge": "before",
+        "review": "Reviewed intact source heading; the schedule describes this authored task rather than claiming a later result exists."
+      },
+      "sourceBlockIds": [
+        "22499840c699d3a0d0c842d7-1"
+      ]
+    }
+  ],
+  "authoredActivityDispositions": [
+    {
+      "blockId": "8011d3cf3b11bcf0625a9e1c-1",
+      "momentId": "l12-stage-2",
+      "disposition": "classroom"
+    },
+    {
+      "blockId": "5c53fcc442baec4339e4a39e-1",
+      "momentId": "l12-stage-3",
+      "disposition": "classroom"
+    },
+    {
+      "blockId": "1e8357621b551417d9b19216-1",
+      "momentId": "l12-stage-5",
+      "disposition": "classroom"
+    }
+  ],
+  "approval": "Independent educator moderation and classroom pilot pending; automatic checks do not establish educational approval."
+}

@@ -1,3 +1,4 @@
+import type {TeachingPlan} from "./teaching-plan";
 import type {ContextualEnrichment} from "./contextual-fields";
 export type ClassroomCatalogEntry={id:string;grade:number;term:number;title:string;number:number;sourceUnitSHA256:string;benchmark:boolean};
 export type SourceReference={blockId:string;label:string;excerpt:string};
@@ -16,7 +17,7 @@ export type TeacherGuide={
  independentLearning:string[];
  review:{status:"human-educator-review-required";reviewedBy:string;qualityChecks:Array<{criterion:string;evidence:string;disposition:"draft-meets"|"pilot-required"}>;limits:string[]};
 };
-export type ClassroomPayload={catalog:ClassroomCatalogEntry[];selected:ClassroomCatalogEntry;guide:TeacherGuide|null;contextual?:ContextualEnrichment|null};
+export type ClassroomPayload={catalog:ClassroomCatalogEntry[];selected:ClassroomCatalogEntry;guide:TeacherGuide|null;plan?:TeachingPlan|null;contextual?:ContextualEnrichment|null};
 
 // Validate actual decrypted content at authoring and read time; a public summary
 // manifest cannot establish the completeness or quality of private teaching text.

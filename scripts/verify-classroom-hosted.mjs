@@ -9,5 +9,8 @@ if(result.status!==0){console.error('Private classroom release verification fail
 try{
  const summary=JSON.parse(result.stdout);
  if(summary.ok!==true||summary.guides!==5||summary.periods!==7||summary.contextualEnrichment!=="PASS"||summary.contextualInstructionalFields!==100||summary.privateKeyExported!==false)throw new Error();
- console.log(JSON.stringify({classroomServerBuildVerification:'PASS',guides:summary.guides,periods:summary.periods,contextualEnrichment:summary.contextualEnrichment,contextualInstructionalFields:summary.contextualInstructionalFields,privateKeyExported:false,runtimeEducatorLearnerAccess:'NOT TESTED'}));
+ const teachingResult=spawnSync(process.execPath,['scripts/teaching-release.mjs','--key-file','-'],{input:key,encoding:'utf8',timeout:60_000});
+ if(teachingResult.status!==0)throw new Error();
+ const teaching=JSON.parse(teachingResult.stdout);if(teaching.ok!==true||teaching.grade8Term1!==20||teaching.teachingPlans!==24||teaching.privateKeyExported!==false)throw new Error();
+ console.log(JSON.stringify({teachingPlans:teaching.teachingPlans,termLessons:teaching.grade8Term1,teachingPeriods:teaching.periods,instructionalFields:teaching.instructionalFields,classroomServerBuildVerification:'PASS',guides:summary.guides,periods:summary.periods,contextualEnrichment:summary.contextualEnrichment,contextualInstructionalFields:summary.contextualInstructionalFields,privateKeyExported:false,runtimeEducatorLearnerAccess:'NOT TESTED'}));
 }catch{console.error('Private classroom release verification returned an invalid summary.');process.exit(1);}

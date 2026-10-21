@@ -7,10 +7,9 @@ import { ArrowLeft, ArrowRight, Check, CheckCircle2, Menu, NotebookPen, X } from
 import { curriculum } from "@/lib/curriculum";
 import { learningSections } from "@/lib/semantic-learning";
 import type { TermIndex, UnitContent, UnitSummary } from "@/lib/types";
-import {contextualActivityPlacements} from "@/lib/classroom/contextual";
 import { ContentBlocks } from "./content-blocks";
 import { useLearningStore } from "@/lib/learning-store";
-import {ContextualActivity,ContextualGuidance,TeacherPrintGuide,TeacherModeControl,TeacherPreparation,teacherMoments,useContextualTeacher} from "./contextual-teacher";
+import {TeachingGuidance,TeachingPrintGuide,TeachingModeControl,TeachingPreparation,alignedTeachingPlan,useTeachingPlan} from "./teaching-plan-view";
 
 const compactQuery="(max-width: 820px)";
 const subscribeCompact=(notify:()=>void)=>{
@@ -25,11 +24,11 @@ export function LessonReader({grade,term,unitId,classroomContext=false,presentat
  const router=useRouter();
  const [termData,setTermData]=useState<TermIndex|null>(null); const [unit,setUnit]=useState<UnitContent|null>(null); const [loadError,setLoadError]=useState<string|null>(null); const [menu,setMenu]=useState(false);
  const [loadRevision,retryLoad]=useState(0);
- const teacher=useContextualTeacher(unitId,presentationOnly);
+ const teacher=useTeachingPlan(unitId,presentationOnly);
  const [printing,setPrinting]=useState(false);
- const [activeTeachingStage,setActiveTeachingStage]=useState("g8-open");
- const moments=unit&&teacher.guide?teacherMoments(unit,teacher.guide):null;
- const teaching=teacher.teacherMode&&Boolean(moments)&&Boolean(teacher.contextual);
+ const [activeTeachingStage,setActiveTeachingStage]=useState("");
+ const plan=useMemo(()=>unit?alignedTeachingPlan(unit,teacher.plan):null,[unit,teacher.plan]);
+ const teaching=teacher.teacherMode&&Boolean(plan);
  useEffect(()=>{const done=()=>setPrinting(false);window.addEventListener("afterprint",done);return()=>window.removeEventListener("afterprint",done);},[]);
  const compact=useSyncExternalStore(subscribeCompact,compactSnapshot,desktopSnapshot);
  const railRef=useRef<HTMLElement|null>(null);
@@ -75,11 +74,8 @@ export function LessonReader({grade,term,unitId,classroomContext=false,presentat
         unitType={unit.type}
         promptResponses={presentationOnly?{}:state.promptResponses}
         onSavePromptResponse={presentationOnly?()=>{}:savePromptResponse}
-        sectionGuidance={teaching&&teacher.guide&&teacher.contextual&&moments?(section,edge)=><>
-         {moments.filter(moment=>moment.sectionAnchor===section.anchor&&moment.edge===edge).map(moment=><ContextualGuidance onStage={setActiveTeachingStage} key={moment.stageId} moment={moment} guide={teacher.guide!} content={teacher.contextual!} moments={moments}/>)}
-         {edge==="before"&&contextualActivityPlacements.filter(item=>item.kind==="section"&&unit.blocks[section.start]?.id===item.blockId).map(item=><ContextualActivity key={item.activity} activity={item.activity} guide={teacher.guide!} content={teacher.contextual!}/>)}
-        </>:undefined}
-        partGuidance={teaching&&teacher.guide&&teacher.contextual?block=>{const placement=contextualActivityPlacements.find(item=>item.kind==="part"&&item.blockId===block.id);return placement?<ContextualActivity activity={placement.activity} guide={teacher.guide!} content={teacher.contextual!}/>:null;}:undefined}
+        sectionGuidance={teaching&&plan?(section,edge)=><>{plan.moments.filter(moment=>moment.placement.kind==="section"&&moment.placement.blockId===unit.blocks[section.start]?.id&&moment.placement.edge===edge).map(moment=><TeachingGuidance key={moment.id} plan={plan} moment={moment} guide={teacher.guide} onStage={setActiveTeachingStage}/>)}</>:undefined}
+        partGuidance={teaching&&plan?block=><>{plan.moments.filter(moment=>moment.placement.kind==="heading"&&moment.placement.blockId===block.id).map(moment=><TeachingGuidance key={moment.id} plan={plan} moment={moment} guide={teacher.guide} onStage={setActiveTeachingStage}/>)}</>:undefined}
       />;
  return <div className={`reader-shell${teaching&&printing?" contextual-printing":""}`} data-presentation-contract="applied-commerce-v2">
   <header className="reader-topbar">
@@ -103,13 +99,13 @@ export function LessonReader({grade,term,unitId,classroomContext=false,presentat
           <ul>{learningSections(unit.blocks,unit.type).filter(section=>section.context&&section.context!=="reflection").map(section=><li key={section.anchor}><a href={`#${section.anchor}`}>{section.title}</a></li>)}</ul>
         </nav>
       </header>
-      {!presentationOnly&&<TeacherModeControl teacher={teacher}/>}
-      {teacher.teacherMode&&!moments&&<p role="alert">The teaching placement needs review. Use the standalone classroom guide.</p>}
-      {teaching&&teacher.guide&&moments&&<TeacherPreparation active={activeTeachingStage} onStage={setActiveTeachingStage} guide={teacher.guide} content={teacher.contextual!} moments={moments} onPrint={()=>{setPrinting(true);requestAnimationFrame(()=>requestAnimationFrame(()=>window.print()));}}/>}
+      {!presentationOnly&&<TeachingModeControl teacher={teacher}/>}
+      {teacher.teacherMode&&!plan&&<p role="alert">The teaching placement needs review. Use the standalone classroom guide.</p>}
+      {teaching&&plan&&<TeachingPreparation active={activeTeachingStage} onStage={setActiveTeachingStage} plan={plan} unit={unit} onPrint={()=>{setPrinting(true);requestAnimationFrame(()=>requestAnimationFrame(()=>window.print()));}}/>}
       {presentationOnly&&<p className="learner-presentation-notice">Learner presentation · Use your own copy of the lesson for answers.</p>}
       {presentationOnly?<fieldset className="learner-projection" disabled aria-label="Learner presentation material">{lessonContent}</fieldset>:lessonContent}
     </article>
-    {teaching&&printing&&teacher.guide&&teacher.contextual&&<TeacherPrintGuide guide={teacher.guide} content={teacher.contextual}/>}
+    {teaching&&printing&&plan&&<TeachingPrintGuide plan={plan} guide={teacher.guide} title={unit.title}/>}
     {!presentationOnly&&!teaching&&<>
     <section className="workbook-panel">
       <div className="workbook-title"><NotebookPen/><div><p className="eyebrow">Lesson notes</p><h2>Anything you want to remember</h2></div></div>

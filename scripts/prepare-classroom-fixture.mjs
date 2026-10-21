@@ -21,8 +21,8 @@ export function AuthProvider({children}:{children:React.ReactNode}){const [user,
 export function useAuth(){return useContext(Context);}
 `);
 fs.writeFileSync(path.join(target,'app/api/classroom/route.ts'),`// ISOLATED GENERATED FIXTURE ONLY. Not copied into the production application.
-import {classroomCatalog,loadClassroomGuides,loadContextualEnrichment} from "@/lib/classroom/private-library";
+import {classroomCatalog,loadClassroomGuides,loadContextualEnrichment,loadTeachingPlan} from "@/lib/classroom/private-library";
 export const dynamic="force-dynamic";
-export async function GET(request:Request){const id=new URL(request.url).searchParams.get("lesson")??"g8-t1-l08-008";const selected=classroomCatalog.find(item=>item.id===id);if(!selected)return Response.json({error:"Unknown fixture lesson"},{status:404});const guide=selected.benchmark?(await loadClassroomGuides()).find(item=>item.lessonId===id):null;const contextual=guide?await loadContextualEnrichment(guide):null;return Response.json({catalog:classroomCatalog,selected,guide,contextual},{headers:{"Cache-Control":"private, no-store","X-AC-Fixture":"synthetic-classroom-ui"}});}
+export async function GET(request:Request){const id=new URL(request.url).searchParams.get("lesson")??"g8-t1-l08-008";const selected=classroomCatalog.find(item=>item.id===id);if(!selected)return Response.json({error:"Unknown fixture lesson"},{status:404});const guide=selected.benchmark?(await loadClassroomGuides()).find(item=>item.lessonId===id):null;const contextual=guide?await loadContextualEnrichment(guide):null;const plan=await loadTeachingPlan(id);return Response.json({catalog:classroomCatalog,selected,guide,contextual,plan},{headers:{"Cache-Control":"private, no-store","X-AC-Fixture":"synthetic-classroom-ui"}});}
 `);
 console.log('Prepared isolated classroom UI fixture copy. No real-role validation or database access.');
