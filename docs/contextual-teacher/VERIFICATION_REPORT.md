@@ -1,3 +1,5 @@
+> Historical initial milestone evidence. Owner acceptance was not achieved. See [the owner-review correction report](owner-review/REPORT.md) for the current structure and validation.
+
 # Integrated contextual Teacher View — verification and release report
 
 Date: 21 October 2026. Scope: Grade 8, Term 1, Lesson 8 (`g8-t1-l08-008`).

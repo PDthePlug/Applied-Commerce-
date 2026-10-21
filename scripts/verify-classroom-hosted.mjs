@@ -8,6 +8,6 @@ const result=spawnSync(process.execPath,['scripts/classroom-release.mjs','--key-
 if(result.status!==0){console.error('Private classroom release verification failed.');process.exit(1);}
 try{
  const summary=JSON.parse(result.stdout);
- if(summary.ok!==true||summary.guides!==5||summary.periods!==7||summary.privateKeyExported!==false)throw new Error();
- console.log(JSON.stringify({classroomServerBuildVerification:'PASS',guides:summary.guides,periods:summary.periods,privateKeyExported:false,runtimeEducatorLearnerAccess:'NOT TESTED'}));
+ if(summary.ok!==true||summary.guides!==5||summary.periods!==7||summary.contextualEnrichment!=="PASS"||summary.contextualInstructionalFields!==100||summary.privateKeyExported!==false)throw new Error();
+ console.log(JSON.stringify({classroomServerBuildVerification:'PASS',guides:summary.guides,periods:summary.periods,contextualEnrichment:summary.contextualEnrichment,contextualInstructionalFields:summary.contextualInstructionalFields,privateKeyExported:false,runtimeEducatorLearnerAccess:'NOT TESTED'}));
 }catch{console.error('Private classroom release verification returned an invalid summary.');process.exit(1);}

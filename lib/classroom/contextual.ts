@@ -18,6 +18,10 @@ export function contextualAlignment(unit:UnitContent,guide:TeacherGuide){
  if(unit.id!==contextualLessonId||guide.lessonId!==unit.id||unit.grade!==8||unit.term!==1)throw new Error("Contextual teaching is only available for this benchmark.");
  const sections=learningSections(unit.blocks,unit.type);
  const stages=guide.periods.length===1?guide.periods[0].stages:[];
+ for(const placement of contextualActivityPlacements){
+  const block=unit.blocks.find(item=>item.id===placement.blockId);
+  if(!block||(placement.kind==="section"?!sections.some(section=>unit.blocks[section.start]?.id===placement.blockId):block.kind!=="text"||block.type!=="paragraph"||!/^Part [BC]:/.test(block.text)))throw new Error("Activity placement requires renderer review.");
+ }
  if(stages.length!==5)throw new Error("The reviewed five-stage plan has changed.");
  return contextualPlacements.map((placement,index)=>{
   const stage=stages[index];
@@ -28,3 +32,13 @@ export function contextualAlignment(unit:UnitContent,guide:TeacherGuide){
  });
 }
 export type ContextualMoment=ReturnType<typeof contextualAlignment>[number];
+
+// Additional reviewed boundaries for authored work outside the five timed
+// stages. Part headings are separate renderer nodes inside Activity 12.
+export const contextualActivityPlacements=[
+ {activity:"reflection",blockId:"4366a8a71a6f4c1b34bae61f-1",kind:"section"},
+ {activity:"partB",blockId:"6d36aadb38b15408df733b24-1",kind:"part"},
+ {activity:"partC",blockId:"616f175c1669b5b75b907def-1",kind:"part"},
+ {activity:"deepening",blockId:"52e5abf1875a06c6ea81ce7f-1",kind:"section"},
+ {activity:"home",blockId:"22499840c699d3a0d0c842d7-1",kind:"section"},
+] as const;
