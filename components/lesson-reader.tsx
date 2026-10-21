@@ -10,6 +10,7 @@ import type { TermIndex, UnitContent, UnitSummary } from "@/lib/types";
 import { ContentBlocks } from "./content-blocks";
 import { LessonIconKey } from "./presentation-system";
 import { useLearningStore } from "@/lib/learning-store";
+import {ContextualGuidance,FullTeacherPreparation,TeacherModeControl,TeacherPreparation,teacherMoments,useContextualTeacher} from "./contextual-teacher";
 
 const compactQuery="(max-width: 820px)";
 const subscribeCompact=(notify:()=>void)=>{
@@ -20,10 +21,15 @@ const subscribeCompact=(notify:()=>void)=>{
 const compactSnapshot=()=>window.matchMedia(compactQuery).matches;
 const desktopSnapshot=()=>false;
 
-export function LessonReader({grade,term,unitId,classroomContext=false}:{grade:number;term:number;unitId:string;classroomContext?:boolean}){
+export function LessonReader({grade,term,unitId,classroomContext=false,presentationOnly=false}:{grade:number;term:number;unitId:string;classroomContext?:boolean;presentationOnly?:boolean}){
  const router=useRouter();
  const [termData,setTermData]=useState<TermIndex|null>(null); const [unit,setUnit]=useState<UnitContent|null>(null); const [loadError,setLoadError]=useState<string|null>(null); const [menu,setMenu]=useState(false);
  const [loadRevision,retryLoad]=useState(0);
+ const teacher=useContextualTeacher(unitId,presentationOnly);
+ const [printing,setPrinting]=useState(false);
+ const moments=unit&&teacher.guide?teacherMoments(unit,teacher.guide):null;
+ const teaching=teacher.teacherMode&&Boolean(moments);
+ useEffect(()=>{const done=()=>setPrinting(false);window.addEventListener("afterprint",done);return()=>window.removeEventListener("afterprint",done);},[]);
  const compact=useSyncExternalStore(subscribeCompact,compactSnapshot,desktopSnapshot);
  const railRef=useRef<HTMLElement|null>(null);
  const menuTrigger=useRef<HTMLButtonElement|null>(null);
@@ -62,7 +68,15 @@ export function LessonReader({grade,term,unitId,classroomContext=false}:{grade:n
   </div>
  </div>;
  const unitHref=(u:UnitSummary)=>`/learn/${grade}/term/${term}/${u.id}`;
- return <div className="reader-shell" data-presentation-contract="applied-commerce-v2">
+ const lessonContent=<ContentBlocks
+        blocks={unit.blocks}
+        unitId={unitId}
+        unitType={unit.type}
+        promptResponses={presentationOnly?{}:state.promptResponses}
+        onSavePromptResponse={presentationOnly?()=>{}:savePromptResponse}
+        sectionGuidance={teaching&&teacher.guide&&moments?(section,edge)=>moments.filter(moment=>moment.sectionAnchor===section.anchor&&moment.edge===edge).map(moment=><ContextualGuidance key={moment.stageId} moment={moment} guide={teacher.guide!} moments={moments}/>):undefined}
+      />;
+ return <div className={`reader-shell${teaching&&printing?" contextual-printing":""}`} data-presentation-contract="applied-commerce-v2">
   <header className="reader-topbar">
    <Link href={`/learn/${grade}`} className="reader-brand"><span>AC</span><div><strong>Grade {grade}</strong><small>Term {term}</small></div></Link>
    <div className="reader-progress" role="group" aria-label={`Lesson ${pos+1} of ${sequence.length}`}><span>{unit.label}</span><div className="progress-track" role="progressbar" aria-label="Position in this term" aria-valuetext={`${pos+1} of ${sequence.length} units`} aria-valuemin={0} aria-valuemax={100} aria-valuenow={pct}><i style={{width:`${pct}%`}}/></div><strong>{pos+1}/{sequence.length}</strong></div>
@@ -85,14 +99,14 @@ export function LessonReader({grade,term,unitId,classroomContext=false}:{grade:n
           <ul>{learningSections(unit.blocks,unit.type).filter(section=>section.context&&section.context!=="reflection").map(section=><li key={section.anchor}><a href={`#${section.anchor}`}>{section.title}</a></li>)}</ul>
         </nav>
       </header>
-      <ContentBlocks
-        blocks={unit.blocks}
-        unitId={unitId}
-        unitType={unit.type}
-        promptResponses={state.promptResponses}
-        onSavePromptResponse={savePromptResponse}
-      />
+      {!presentationOnly&&<TeacherModeControl teacher={teacher}/>}
+      {teacher.teacherMode&&!moments&&<p role="alert">The teaching placement needs review. Use the standalone classroom guide.</p>}
+      {teaching&&teacher.guide&&moments&&<TeacherPreparation guide={teacher.guide} moments={moments} onPrint={()=>{setPrinting(true);requestAnimationFrame(()=>requestAnimationFrame(()=>window.print()));}}/>}
+      {presentationOnly&&<p className="learner-presentation-notice">Learner presentation · Use your own copy of the lesson for answers.</p>}
+      {presentationOnly?<fieldset className="learner-projection" disabled aria-label="Learner presentation material">{lessonContent}</fieldset>:lessonContent}
     </article>
+    {teaching&&teacher.guide&&<FullTeacherPreparation guide={teacher.guide} printing={printing}/>}
+    {!presentationOnly&&<>
     <section className="workbook-panel">
       <div className="workbook-title"><NotebookPen/><div><p className="eyebrow">Lesson notes</p><h2>Anything you want to remember</h2></div></div>
       <p>Your responses are captured beside each activity, reflection, table and workbook field. Use this separate space only for extra notes you want to keep about the lesson.</p>
@@ -103,6 +117,7 @@ export function LessonReader({grade,term,unitId,classroomContext=false}:{grade:n
         if(markComplete(unitId,true,{grade,term})) router.push(next?unitHref(next):`/learn/${grade}`);
       }}>Complete and continue<ArrowRight aria-hidden="true"/></button>
     </section>
+    </>}
     <footer className="reader-footer">
       {prev?<Link href={unitHref(prev)}><ArrowLeft/><span><small>Previous</small><strong>{prev.title}</strong></span></Link>:<span/>}
       {next?<Link className="next" href={unitHref(next)}><span><small>Next</small><strong>{next.title}</strong></span><ArrowRight/></Link>:<Link className="next" href={`/learn/${grade}`}><span><small>Term complete</small><strong>Return to Grade {grade}</strong></span><ArrowRight/></Link>}
