@@ -1,0 +1,18 @@
+workflow,320x740,360x800,430x932,768x1024,1280x900,1920x1080,evidence_scope
+Complete educator preparation,PASS_SYNTHETIC_UI,PASS_SYNTHETIC_UI,PASS_SYNTHETIC_UI,PASS_SYNTHETIC_UI,PASS_SYNTHETIC_UI,PASS_SYNTHETIC_UI,Isolated generated UI copy; does not establish real roles.
+Five stage panels and deeper support,PASS_SYNTHETIC_UI,PASS_SYNTHETIC_UI,PASS_SYNTHETIC_UI,PASS_SYNTHETIC_UI,PASS_SYNTHETIC_UI,PASS_SYNTHETIC_UI,Isolated generated UI copy; does not establish real roles.
+100 original fields in designated local locations,PASS_SYNTHETIC_UI,PASS_SYNTHETIC_UI,PASS_SYNTHETIC_UI,PASS_SYNTHETIC_UI,PASS_SYNTHETIC_UI,PASS_SYNTHETIC_UI,Isolated generated UI copy; does not establish real roles.
+Explicit stage and reflection/Part C/Part B jump-return navigation,PASS_SYNTHETIC_UI,PASS_SYNTHETIC_UI,PASS_SYNTHETIC_UI,PASS_SYNTHETIC_UI,PASS_SYNTHETIC_UI,PASS_SYNTHETIC_UI,Isolated generated UI copy; does not establish real roles.
+Original source boundary and activity scheduling,PASS_SYNTHETIC_UI,PASS_SYNTHETIC_UI,PASS_SYNTHETIC_UI,PASS_SYNTHETIC_UI,PASS_SYNTHETIC_UI,PASS_SYNTHETIC_UI,Isolated generated UI copy; does not establish real roles.
+Answer/note recovery and completion separation,PASS_SYNTHETIC_UI,PASS_SYNTHETIC_UI,PASS_SYNTHETIC_UI,PASS_SYNTHETIC_UI,PASS_SYNTHETIC_UI,PASS_SYNTHETIC_UI,Isolated generated UI copy; does not establish real roles.
+Navigation leaves answers and completion unchanged,PASS_SYNTHETIC_UI,PASS_SYNTHETIC_UI,PASS_SYNTHETIC_UI,PASS_SYNTHETIC_UI,PASS_SYNTHETIC_UI,PASS_SYNTHETIC_UI,Isolated generated UI copy; does not establish real roles.
+"Keyboard controls, labels and WCAG-tagged axe checks",PASS_SYNTHETIC_UI,PASS_SYNTHETIC_UI,PASS_SYNTHETIC_UI,PASS_SYNTHETIC_UI,PASS_SYNTHETIC_UI,PASS_SYNTHETIC_UI,Isolated generated UI copy; does not establish real roles.
+Normal 15px and enlarged 30px teacher text; no private nested scrolling,PASS_SYNTHETIC_UI,PASS_SYNTHETIC_UI,PASS_SYNTHETIC_UI,PASS_SYNTHETIC_UI,PASS_SYNTHETIC_UI,PASS_SYNTHETIC_UI,Isolated generated UI copy; does not establish real roles.
+Private-state clearing on account/lesson/access changes,PASS_SYNTHETIC_UI,PASS_SYNTHETIC_UI,PASS_SYNTHETIC_UI,PASS_SYNTHETIC_UI,PASS_SYNTHETIC_UI,PASS_SYNTHETIC_UI,Isolated generated UI copy; does not establish real roles.
+Learner projection excludes private material and saved work,PASS_SYNTHETIC_UI,PASS_SYNTHETIC_UI,PASS_SYNTHETIC_UI,PASS_SYNTHETIC_UI,PASS_SYNTHETIC_UI,PASS_SYNTHETIC_UI,Isolated generated UI copy; does not establish real roles.
+Print media and standalone fallback,PASS_SYNTHETIC_UI,PASS_SYNTHETIC_UI,PASS_SYNTHETIC_UI,PASS_SYNTHETIC_UI,PASS_SYNTHETIC_UI,PASS_SYNTHETIC_UI,Isolated generated UI copy; does not establish real roles.
+Original learner pixels/DOM/headings/37 response controls,PASS_LOCAL,PASS_LOCAL,PASS_LOCAL,PASS_LOCAL,PASS_LOCAL,PASS_LOCAL,Guest pixel baselines use matching historical 900px height.
+Real isolated educator access,NOT_TESTED,NOT_TESTED,NOT_TESTED,NOT_TESTED,NOT_TESTED,NOT_TESTED,AC_ROLE_FIXTURES unset.
+Real isolated learner denial,NOT_TESTED,NOT_TESTED,NOT_TESTED,NOT_TESTED,NOT_TESTED,NOT_TESTED,AC_ROLE_FIXTURES unset.
+Real authenticated cloud response/portfolio persistence,NOT_TESTED,NOT_TESTED,NOT_TESTED,NOT_TESTED,NOT_TESTED,NOT_TESTED,AC_ROLE_FIXTURES unset.
+A4 PDF layout/text inspection,PASS,NOT_GENERATED,NOT_GENERATED,NOT_GENERATED,PASS,NOT_GENERATED,"Nine pages, all 100 original fields, no blank pages or out-of-page words."

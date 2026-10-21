@@ -1,0 +1,82 @@
+{
+  "applicationCommit": "50c2dc53f93e84f8657c80f871d386a28fe433ed",
+  "privateUI": {
+    "passed": 24,
+    "failed": 0,
+    "flaky": 0,
+    "durationMs": 224372.644,
+    "viewports": [
+      {
+        "width": 320,
+        "height": 740
+      },
+      {
+        "width": 360,
+        "height": 800
+      },
+      {
+        "width": 430,
+        "height": 932
+      },
+      {
+        "width": 768,
+        "height": 1024
+      },
+      {
+        "width": 1280,
+        "height": 900
+      },
+      {
+        "width": 1920,
+        "height": 1080
+      }
+    ],
+    "roleEvidence": "SYNTHETIC_ONLY"
+  },
+  "node": {
+    "passed": 182,
+    "failed": 0
+  },
+  "typecheck": "PASS",
+  "lint": "PASS",
+  "localProductionBuild": "PASS",
+  "runtime": {
+    "lessons": 395,
+    "assessments": 4,
+    "stableBlocks": 20766,
+    "status": "PASS"
+  },
+  "pythonIdentityTests": {
+    "passed": 2,
+    "failed": 0
+  },
+  "learnerBaseline": {
+    "viewports": 6,
+    "responseControlsPerViewport": 37,
+    "allDOMAndPixelsIdentical": true
+  },
+  "focusedPublicBrowserFinalCode": {
+    "passed": 3,
+    "failed": 0
+  },
+  "fullLocalPublicBrowserInterimBuild": {
+    "passed": 222,
+    "failed": 0,
+    "duration": "16.4m",
+    "scope": "Before final teacher-only text-scale and navigation refinements; exact final-code full acceptance is recorded in ci.json."
+  },
+  "publicAssetScan": {
+    "ok": true,
+    "publicAssetsChecked": 77,
+    "privateSentinelsChecked": 49,
+    "keyExported": false
+  },
+  "realAuthenticatedRoles": "NOT TESTED; AC_ROLE_FIXTURES unset",
+  "initialHarnessCorrections": [
+    "Expanded protected-loader API mock needed its new enrichment loader; corrected and Node suite rerun.",
+    "First DOM comparison mixed inner/outer heading markup and ID/object control schemas; corrected capture protocol and six-width pixel/DOM comparison rerun."
+  ],
+  "productionSupabaseWrites": false,
+  "separateLiveProductionDeployment": false,
+  "ownerAcceptance": "PENDING"
+}

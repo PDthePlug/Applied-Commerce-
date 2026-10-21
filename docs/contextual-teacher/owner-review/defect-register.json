@@ -1,0 +1,72 @@
+{
+  "applicationCommit": "50c2dc53f93e84f8657c80f871d386a28fe433ed",
+  "severityDefinitions": {
+    "S2": "Classroom delivery or owner-acceptance blocker; not an asserted security vulnerability.",
+    "S3": "Teaching workflow, navigation or usability defect."
+  },
+  "entries": [
+    {
+      "id": "CTX-01",
+      "severity": "S2",
+      "kind": "implementation",
+      "before": "Instructional preservation depended on a duplicated full guide at the bottom; local teaching support was incomplete.",
+      "after": "Complete top preparation and 100 original fields in explicit local locations; no live bottom document or print tree required.",
+      "verification": "100 exact-value field checks at every width; absent bottom document; full print/fallback retained.",
+      "status": "CORRECTED_AND_RETESTED"
+    },
+    {
+      "id": "CTX-02",
+      "severity": "S2",
+      "kind": "implementation",
+      "before": "Learner-specific notes and both completion controls remained in Teacher View.",
+      "after": "Controls are absent while teaching; switching to Learner View restores the same data and completion actions.",
+      "verification": "Six-width save, mode-change, reload, completion and unchanged-state checks.",
+      "status": "CORRECTED_AND_RETESTED"
+    },
+    {
+      "id": "CTX-03",
+      "severity": "S2",
+      "kind": "instructional_organisation",
+      "before": "Several authored activities and later/optional tasks lacked a complete local delivery disposition.",
+      "after": "All 50 visible source blocks accounted for; current practical work, later observation and optional independent writing distinguished locally.",
+      "verification": "Activity routing Node regression, local field/placement checks and 45-minute timing validation.",
+      "status": "CORRECTED_AND_RETESTED"
+    },
+    {
+      "id": "CTX-04",
+      "severity": "S3",
+      "kind": "implementation",
+      "before": "Top preparation omitted educator knowledge, vocabulary and continuity that remained in the full document.",
+      "after": "Complete preparation at the beginning, collapsed by default, with stage timing and teaching-order overview.",
+      "verification": "Preparation disclosures and exact original field checks; normal-scale mobile and desktop screenshots.",
+      "status": "CORRECTED_AND_RETESTED"
+    },
+    {
+      "id": "CTX-05",
+      "severity": "S3",
+      "kind": "implementation",
+      "before": "Expanded panels used vertical scrolling capped at 40svh; the reproduced 360px panel had 320px client height for 768px of text.",
+      "after": "Normal page flow, local deeper disclosures, visible native disclosure markers and teacher text that respects configured text scaling.",
+      "verification": "Six actual viewport sizes, no private vertical scroll containers, keyboard and axe; 15px normal and 30px enlarged checks.",
+      "status": "CORRECTED_AND_RETESTED"
+    },
+    {
+      "id": "CTX-06",
+      "severity": "S3",
+      "kind": "implementation",
+      "before": "Teaching order backtracked through learner reading order without sufficiently explicit transitions and local return paths.",
+      "after": "Return/revisit stage transitions, compact selector, previous/next and direct reflection/Part C/Part B jump-return controls focus the correct native summaries.",
+      "verification": "Six-width keyboard/focus assertions with unchanged answer/completion state.",
+      "status": "CORRECTED_AND_RETESTED"
+    },
+    {
+      "id": "EDU-01",
+      "severity": "S2",
+      "kind": "educational_gap",
+      "before": "Narrow survival vocabulary and wider functional examples needed an explicit Grade 8 teaching distinction.",
+      "after": "New separately encrypted clarification linked to the original source and guide version, available in preparation, concept teaching and print.",
+      "verification": "Protected schema/linkage/decryption and browser text presence verified; independent educator moderation and classroom pilot pending.",
+      "status": "IMPLEMENTED_REVIEW_PENDING"
+    }
+  ]
+}
