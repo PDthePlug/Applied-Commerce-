@@ -5,7 +5,7 @@ import {digest} from './classroom-inventory.mjs';
 
 export async function validatePrivateClassroomRelease(keyFile){
  const envelope=JSON.parse(fs.readFileSync('content/instructional/benchmark-guides.v1.enc.json','utf8'));
- const key=Buffer.from(fs.readFileSync(keyFile,'utf8').trim(),'base64');
+ const key=Buffer.from(fs.readFileSync(keyFile==='-'?0:keyFile,'utf8').trim(),'base64');
  const payload=JSON.parse(openContent(envelope,key,'applied-commerce-classroom-v1').toString('utf8'));
  const catalog=JSON.parse(fs.readFileSync('content/instructional/catalog.v1.json','utf8'));
  const {validateTeacherGuide}=await import(typescriptModule('lib/classroom/model.ts'));

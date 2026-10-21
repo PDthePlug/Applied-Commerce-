@@ -118,6 +118,15 @@ for all 399 main-branch units, generated from commit
 The three new Node tests check default learner parity, real renderer boundaries,
 timings and failure on ambiguous or changed placements.
 
+For this staging review deployment only, the deployment build command can append
+`node scripts/verify-classroom-hosted.mjs` after `npm run build`. This passes the
+existing server-bound Secret to the existing release validator through standard
+input (`--key-file -`). It checks all five encrypted guides, timing, source
+fingerprints and excerpts without logging key/guide text, writing a key file or
+adding a test endpoint. A separate Node regression rejects missing/invalid
+Secrets without disclosing their values. A PASS is server-build decryption
+evidence, not runtime educator or learner authorisation evidence.
+
 Screenshot/PDF evidence containing private teaching text must remain private or
 be recipient-encrypted. Never add plaintext teacher screenshots, PDFs, browser
 traces, guide JSON or key files to this public repository. The final verification
