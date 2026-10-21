@@ -19,7 +19,9 @@ observable understanding. A local secondary disclosure holds the relevant
 reasoning, scaffold, checks and adaptations. Navigation explicitly returns to
 The Difference after the opening, then revisits phone/data examples with new
 constraints. Previous/next controls update the delivery navigator and focus the
-correct stage. Delivery navigation does not save answers or change completion.
+correct stage. Direct local links revisit Pause and Reflect and return to practical work, open
+Part C, and plan Part B from the exit stage. They focus the relevant native
+disclosure control. Delivery navigation does not save answers or change completion.
 
 The full bottom document has been removed from the live interface. It mounts
 only on a print request and remains hidden on screen. The complete original

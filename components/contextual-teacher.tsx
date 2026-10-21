@@ -50,6 +50,7 @@ export function useContextualTeacher(unitId:string,presentationOnly:boolean){
 function jump(id:string){
  const target=document.getElementById(id);if(!target)return;
  let focus=target;
+ if(target instanceof HTMLDetailsElement)focus=target.querySelector<HTMLElement>(":scope > summary")??target;
  if(target.matches(".learning-section")){
   target.querySelectorAll<HTMLDetailsElement>("details.deepening-insight").forEach(details=>details.open=true);
   focus=target.querySelector<HTMLElement>("h2,h3,summary")??target;
@@ -57,7 +58,7 @@ function jump(id:string){
  if(!focus.matches("summary,button,a,input,select,textarea")){
   focus.tabIndex=-1;focus.addEventListener("blur",()=>focus.removeAttribute("tabindex"),{once:true});
  }
- target.scrollIntoView({block:"start",behavior:"instant"});focus.focus({preventScroll:true});
+ (target instanceof HTMLDetailsElement?focus:target).scrollIntoView({block:"start",behavior:"instant"});focus.focus({preventScroll:true});
 }
 function Text({guide,path,label}:{guide:TeacherGuide;path:string;label?:string}){
  const field=instructionalFields(guide).find(item=>item.path===path);
@@ -135,6 +136,8 @@ export function ContextualGuidance({moment,guide,moments,content,onStage}:{momen
    <h3>Ask learners</h3><Text guide={guide} path={`${prefix}.presentation.question`}/><Text guide={guide} path={`${prefix}.presentation.task`}/>
    <h3>Learner participation</h3><List guide={guide} prefix={`${prefix}.learners`}/>
    <h3>Look for understanding</h3><Text guide={guide} path={`${prefix}.successfulParticipation`}/>
+   {stage.id==="g8-do"&&<nav className="contextual-actions" aria-label="Practical learner material"><button type="button" onClick={()=>jump("teacher-later-reflection")}>Revisit Pause and Reflect</button><button type="button" onClick={()=>jump("teacher-later-partC")}>Use Part C for one explanation</button></nav>}
+   {stage.id==="g8-check"&&<nav className="contextual-actions" aria-label="Later learner material"><button type="button" onClick={()=>jump("teacher-later-partB")}>Plan Part B for later</button></nav>}
    <details className="contextual-depth"><summary>{stage.id==="g8-do"?"Scaffold, reasoning and adaptations":stage.id==="g8-check"?"Assess the explanation and plan later work":"Deeper teaching support and adaptations"}</summary><div className="contextual-body">
     <Text guide={guide} path={`${prefix}.title`} label="Teaching focus"/>
     {stage.id==="g8-open"&&<><h4>Quiet participation</h4><List guide={guide} prefix="differentiation.quietParticipation"/></>}
