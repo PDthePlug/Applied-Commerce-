@@ -1956,8 +1956,9 @@
     {
       "id": "g8-activity-reflection",
       "period": null,
-      "schedule": "optional",
+      "schedule": "support",
       "minutes": 0,
+      "withinStage": "g8-do",
       "placement": {
         "kind": "section",
         "blockId": "4366a8a71a6f4c1b34bae61f-1",
@@ -1986,8 +1987,9 @@
     {
       "id": "g8-activity-partc",
       "period": null,
-      "schedule": "optional",
+      "schedule": "support",
       "minutes": 0,
+      "withinStage": "g8-do",
       "placement": {
         "kind": "heading",
         "blockId": "616f175c1669b5b75b907def-1",
@@ -2018,7 +2020,7 @@
     {
       "blockId": "4366a8a71a6f4c1b34bae61f-1",
       "momentId": "g8-activity-reflection",
-      "disposition": "optional"
+      "disposition": "support"
     },
     {
       "blockId": "e00c9dfcd0c93b42a6968deb-1",
@@ -2038,7 +2040,7 @@
     {
       "blockId": "616f175c1669b5b75b907def-1",
       "momentId": "g8-activity-partc",
-      "disposition": "optional"
+      "disposition": "support"
     },
     {
       "blockId": "1e8357621b551417d9b19216-1",

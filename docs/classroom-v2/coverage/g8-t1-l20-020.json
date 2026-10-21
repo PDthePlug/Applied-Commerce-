@@ -148,7 +148,7 @@
       "locations": [
         "preparation"
       ],
-      "valueSHA256": "dab2857e7ecdc526306c50442e0a5ad0a0de5413abcdb69b88f76b41c00f7a2a",
+      "valueSHA256": "fe9e726843cc5aa0f92b126796496a74f3a1d05c436316cf43cb1e5aa555465a",
       "access": [
         {
           "location": "preparation",
@@ -540,7 +540,7 @@
       "locations": [
         "l20-stage-4"
       ],
-      "valueSHA256": "3bb3a4a2848e56b77f7570f49394e922a9fe4bd798d04577c7dc9bce1e07f4d6",
+      "valueSHA256": "3958624a3bb9157bcc418e5055967f2b86acfb80b50dad13e3c1749a4a918b9c",
       "access": [
         {
           "location": "l20-stage-4",
@@ -554,7 +554,7 @@
       "locations": [
         "l20-stage-4"
       ],
-      "valueSHA256": "e8a98b0a9660942136f2be17526b6b97ff406ca0c29277c4594b319eb75e9df1",
+      "valueSHA256": "1578084727b3d66610063fd1f351c501a954e81cb916a54ed5a45e33a6890344",
       "access": [
         {
           "location": "l20-stage-4",
@@ -1233,12 +1233,13 @@
       "minutes": 13,
       "placement": {
         "kind": "section",
-        "blockId": "050423945c6fab089db4f53c-1",
+        "blockId": "f5423d25893281d260146f3e-1",
         "edge": "before",
-        "review": "Read the complete authored section; insertion is before its intact rendered heading. Lists, tables and response surfaces remain unsplit."
+        "review": "The existing renderer suppresses Activity 27\u2019s original log-review heading and prompts while retaining its portfolio notice. Reviewed placement: the next intact Activity 28 portfolio section. Use available prior activity responses or paper evidence; do not restore or renumber the suppressed source fields."
       },
       "sourceBlockIds": [
-        "050423945c6fab089db4f53c-1"
+        "050423945c6fab089db4f53c-1",
+        "f5423d25893281d260146f3e-1"
       ]
     },
     {
@@ -1350,7 +1351,7 @@
     },
     {
       "blockId": "f5423d25893281d260146f3e-1",
-      "momentId": "l20-stage-5",
+      "momentId": "l20-stage-4",
       "disposition": "classroom"
     },
     {

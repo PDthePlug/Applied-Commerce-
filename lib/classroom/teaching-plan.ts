@@ -1,17 +1,21 @@
 import type {UnitContent} from "../types";
 import {learningSections} from "../semantic-learning";
+import {isRemovedLogBlock} from "../portfolio-model";
 
 // Instructional text lives only in the encrypted release. Layouts refer to
 // stable field paths so an orphan cannot be hidden in a print-only fallback.
 export type TeachingGroup={heading:string;fields:string[]};
 export type TeachingPlacement={kind:"section"|"heading";blockId:string;edge:"before"|"after";review:string};
-export type TeachingMoment={id:string;title:string;minutes:number;period:number|null;schedule:"classroom"|"later"|"optional";placement:TeachingPlacement;sourceBlockIds:string[];core:TeachingGroup[];depth:TeachingGroup[];links:string[]};
-export type TeachingPlan={schemaVersion:2;version:string;status:"educator-review-required";lessonId:string;sourceUnitSHA256:string;fields:Record<string,string>;preparation:TeachingGroup[];periods:Array<{title:string;minutes:45;moments:string[]}>;moments:TeachingMoment[];activityCoverage:Array<{blockId:string;momentId:string;disposition:"classroom"|"later"|"optional"}>;review:{sourceRead:boolean;alignmentReviewed:boolean;timingRationale:string;limits:string[]}};
+export type TeachingMoment={id:string;title:string;minutes:number;period:number|null;schedule:"classroom"|"support"|"later"|"optional";withinStage?:string;placement:TeachingPlacement;sourceBlockIds:string[];core:TeachingGroup[];depth:TeachingGroup[];links:string[]};
+export type TeachingPlan={schemaVersion:2;version:string;status:"educator-review-required";lessonId:string;sourceUnitSHA256:string;fields:Record<string,string>;preparation:TeachingGroup[];periods:Array<{title:string;minutes:45;moments:string[]}>;moments:TeachingMoment[];activityCoverage:Array<{blockId:string;momentId:string;disposition:"classroom"|"support"|"later"|"optional"}>;review:{sourceRead:boolean;alignmentReviewed:boolean;timingRationale:string;limits:string[]}};
 export function teachingHeading(block:UnitContent["blocks"][number]){
  return block.kind==="text"&&block.type==="paragraph"&&/^(?:Part\s+[A-Z]\s*:|Step\s+\d+\b)/i.test(block.text.trim())&&!/_{2,}|☐/.test(block.text);
 }
 export function teachingBoundaries(unit:UnitContent){
- const sections=learningSections(unit.blocks,unit.type).filter(section=>!/^Tension\/Experiment Log Entry/i.test(section.title??""));
+ // A non-empty semantic container can survive after its original heading has
+ // been pruned (for example a remaining portfolio notice). That container is
+ // not evidence that the authored heading is a visible teaching anchor.
+ const sections=learningSections(unit.blocks,unit.type).filter(section=>!isRemovedLogBlock(unit.blocks[section.start]));
  return {sections,headings:unit.blocks.filter(teachingHeading)};
 }
 export function teachingCoverage(plan:TeachingPlan){
@@ -56,7 +60,10 @@ export function validateTeachingPlan(value:unknown,source:TeachingSource):assert
   if(moment.schedule==="classroom"){
    if(!moment.core.some(group=>group.heading==="Explain")||!moment.core.some(group=>group.heading==="Ask learners")||!moment.core.some(group=>group.heading==="Look for understanding"))fail();
    if(!Number.isInteger(moment.minutes)||moment.minutes<=0||moment.period===null||!plan.periods[moment.period]?.moments.includes(moment.id))fail();
-  }else if(!["later","optional"].includes(moment.schedule)||moment.minutes!==0||moment.period!==null)fail();
+  }else{
+   if(!["support","later","optional"].includes(moment.schedule)||moment.minutes!==0||moment.period!==null)fail();
+   if(moment.schedule==="support"&&!plan.moments.some(stage=>stage.id===moment.withinStage&&stage.schedule==="classroom"))fail();
+  }
  }
  const known=new Set(Object.keys(plan.fields));
  for(const row of teachingCoverage(plan))if(!known.has(row.path)||!row.locations.length)fail();

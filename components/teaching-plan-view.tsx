@@ -61,10 +61,18 @@ export function jumpTeaching(id:string){
  if(!focus.matches("summary,button,a,input,select,textarea")){focus.tabIndex=-1;focus.addEventListener("blur",()=>focus.removeAttribute("tabindex"),{once:true});}
  focus.scrollIntoView({block:"start",behavior:"instant"});focus.focus({preventScroll:true});
 }
+// Labels describe the shared instructional model, never a lesson-specific
+// stage or source reference. Keep labels outside the preserved text field.
+function fieldLabel(path:string){
+ const key=path.split(".").at(-1)??"";
+ if(!/^(discussion|understandingChecks|preparation\.(misconceptions|vocabulary)|practical)\./.test(path))return undefined;
+ return ({question:"Discuss",followUp:"Follow-up",indicativeReasoning:"Indicative reasoning",partialUnderstanding:"Partial understanding",prompt:"Check",secureReasoning:"Secure reasoning",notYetEvidenced:"Not yet evidenced",nextTeachingMove:"Next teaching move",belief:"Common misconception",response:"Response",term:"Vocabulary",explanation:"Plain-language explanation",expectedOutput:"Expected output",inClassScope:"Current classroom scope"} as Record<string,string>)[key];
+}
 function Groups({plan,groups}:{plan:TeachingPlan;groups:TeachingGroup[]}){
- return <>{groups.map((group,index)=><section key={index}><h3>{group.heading}</h3>{group.fields.map(path=><p key={path} data-instructional-field={path}>{plan.fields[path]}</p>)}</section>)}</>;
+ return <>{groups.map((group,index)=><section key={index}><h3>{group.heading}</h3>{group.fields.map(path=><div key={path}>{fieldLabel(path)&&<h4>{fieldLabel(path)}</h4>}<p data-instructional-field={path}>{plan.fields[path]}</p></div>)}</section>)}</>;
 }
 function timing(plan:TeachingPlan,moment:TeachingMoment){
+ if(moment.schedule==="support")return "Current classroom support · within the scheduled stage";
  if(moment.period===null)return moment.schedule==="later"?"Later work · outside contact time":"Optional support · not additional scheduled work";
  const period=plan.periods[moment.period];const index=period.moments.indexOf(moment.id);const start=period.moments.slice(0,index).reduce((sum,id)=>sum+plan.moments.find(m=>m.id===id)!.minutes,0);
  return `Period ${moment.period+1} · ${start}–${start+moment.minutes} min · ${moment.minutes} minutes`;
@@ -106,7 +114,7 @@ export function TeachingGuidance({plan,moment,onStage,guide}:{plan:TeachingPlan;
  </details>;
 }
 export function TeachingPrintGuide({plan,guide,title}:{plan:TeachingPlan;guide?:TeacherGuide|null;title:string}){
- return <div className="contextual-print-guide contextual-private"><article className="classroom-workspace"><h2>{title} · Teacher preparation</h2><p>Private draft instructional enrichment · {plan.periods.length} × 45-minute periods · educator review required</p><Groups plan={plan} groups={plan.preparation}/>{plan.periods.map((period,index)=><section key={index}><h2 data-instructional-field={period.title}>{plan.fields[period.title]}</h2>{period.moments.map(id=>{const moment=plan.moments.find(m=>m.id===id)!;return <section key={id}><h3 data-instructional-field={moment.title}>{timing(plan,moment)} · {plan.fields[moment.title]}</h3><Groups plan={plan} groups={[...moment.core,...moment.depth]}/></section>;})}</section>)}<Scaffold guide={guide}/><h2>Later learning and optional support</h2>{plan.moments.filter(m=>m.schedule!=="classroom").map(moment=><section key={moment.id}><h3 data-instructional-field={moment.title}>{plan.fields[moment.title]} · {moment.schedule}</h3><Groups plan={plan} groups={[...moment.core,...moment.depth]}/></section>)}</article></div>;
+ return <div className="contextual-print-guide contextual-private"><article className="classroom-workspace"><h2>{title} · Teacher preparation</h2><p>Private draft instructional enrichment · {plan.periods.length} × 45-minute periods · educator review required</p><Groups plan={plan} groups={plan.preparation}/>{plan.periods.map((period,index)=><section key={index}><h2 data-instructional-field={period.title}>{plan.fields[period.title]}</h2>{period.moments.map(id=>{const moment=plan.moments.find(m=>m.id===id)!;return <section key={id}><h3 data-instructional-field={moment.title}>{timing(plan,moment)} · {plan.fields[moment.title]}</h3><Groups plan={plan} groups={[...moment.core,...moment.depth]}/></section>;})}</section>)}<Scaffold guide={guide}/><h2>Supporting material and later learning</h2>{plan.moments.filter(m=>m.schedule!=="classroom").map(moment=><section key={moment.id}><h3 data-instructional-field={moment.title}>{plan.fields[moment.title]} · {moment.schedule}</h3><Groups plan={plan} groups={[...moment.core,...moment.depth]}/></section>)}</article></div>;
 }
 export function StandaloneTeachingPlan({plan,guide,title}:{plan:TeachingPlan;guide?:TeacherGuide|null;title:string}){
  return <div className="standalone-teaching-plan"><TeachingPrintGuide plan={plan} guide={guide} title={title}/></div>;
