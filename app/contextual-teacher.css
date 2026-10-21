@@ -32,3 +32,6 @@
 .standalone-teaching-plan .contextual-print-guide{display:block}
 .contextual-body section{margin:14px 0}.contextual-print-guide h3{break-after:avoid}
 @media print{.standalone-teaching-plan .contextual-print-guide{display:block!important}}
+
+@page classroom-teacher{size:A4;margin:12mm}
+@media print{.contextual-print-guide{page:classroom-teacher}}

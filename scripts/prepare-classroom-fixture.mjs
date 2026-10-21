@@ -2,7 +2,9 @@
 // Private guidance and browser evidence stay under ignored work/.
 import fs from 'node:fs';
 import path from 'node:path';
-const root=process.cwd();const target=path.join(root,'work/classroom/fixture-app');
+const root=process.cwd();const argument=process.argv.indexOf('--target');
+const target=path.resolve(root,argument>=0?process.argv[argument+1]??'': 'work/classroom/fixture-app');
+if(!target.startsWith(path.join(root,'work')+path.sep)||target===path.join(root,'work'))throw new Error('Fixture copies must stay inside ignored work/.');
 if(!fs.existsSync('work/classroom/private/content.classroom-key'))throw new Error('Private classroom release key is required; see docs/classroom/IMPLEMENTATION.md.');
 fs.mkdirSync(target,{recursive:true});
 for(const name of ['app','components','lib','content/instructional','public']){

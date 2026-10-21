@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "version": "classroom-v2.2026-10-21.1",
+  "version": "classroom-v2.2026-10-21.2",
   "status": "educator-review-required",
   "plans": [
     {
@@ -152,7 +152,7 @@
         ]
       },
       "fieldCount": 82,
-      "planSHA256": "4296913db4472f0e3959b0902eb44e21c5f92dce1eec4eb31509da381b26f8ed",
+      "planSHA256": "5e5d1510fec34c2647181f3bf574538ee9dfac6c974d77fe8b560082391da8eb",
       "coverage": [
         {
           "path": "purpose.0",
@@ -1023,7 +1023,7 @@
         ]
       },
       "fieldCount": 82,
-      "planSHA256": "7c20d2df82680daaa343a28ce5d55d7161564e50bd739a9836471b22e71145f6",
+      "planSHA256": "9714004695751860ebda0a600abd4b9c1576f3b853a4a2ac9a273ea9a7be6f35",
       "coverage": [
         {
           "path": "purpose.0",
@@ -1924,7 +1924,7 @@
         ]
       },
       "fieldCount": 84,
-      "planSHA256": "8de3a3ecbbe37a6548ff088b78445f1fdbb526b689f1320aa7f892dfbf1ee9c9",
+      "planSHA256": "eac915f74ece4d544f73e28773406783b30e28f91d40fe3c64b3152da71da3bc",
       "coverage": [
         {
           "path": "purpose.0",
@@ -2843,7 +2843,7 @@
         ]
       },
       "fieldCount": 90,
-      "planSHA256": "fef439be656a940f630f0efa9274dfa0151a01903f8a8e4ad4df0cd6522ebac1",
+      "planSHA256": "c8869814781467fff247fca46e1e0c239be49341ec3d6ff68c040fe503830027",
       "coverage": [
         {
           "path": "purpose.0",
@@ -3804,7 +3804,7 @@
         ]
       },
       "fieldCount": 59,
-      "planSHA256": "30b0fef0263b563dfbd5ac62682a64b9b97b854e13b27b17e1fe5961c21522be",
+      "planSHA256": "d72da8e2c1736049b974f9e71677cd9c9cdfa508361407011ec7ce43756009a1",
       "coverage": [
         {
           "path": "purpose.0",
@@ -4464,7 +4464,7 @@
         ]
       },
       "fieldCount": 49,
-      "planSHA256": "9ce2402391e3e8e35ac466f092b0564524ca24a863f911f523ced80447f220ce",
+      "planSHA256": "3dc3d31afa7c0865e20be18146ab2b22b2da9b7217ca7b302be1caa3c77cae14",
       "coverage": [
         {
           "path": "purpose.0",
@@ -5010,7 +5010,7 @@
         ]
       },
       "fieldCount": 59,
-      "planSHA256": "ae4a3b69206e27339864d325dbede2652a806e84696de639ca5de6031813ecb3",
+      "planSHA256": "7020c739bf7bc9ed8b1aecfc55505d61358929cf23ec6416ac69337636c28982",
       "coverage": [
         {
           "path": "purpose.0",
@@ -5641,7 +5641,7 @@
         ]
       },
       "fieldCount": 125,
-      "planSHA256": "e5c573681b849e5a63ca3ff196a7fcffe2b6ef608c0c9061fb1322d703084a03",
+      "planSHA256": "6cad27f1f4e5b6af14cf33d896f0b5a5d02acb22ebf611fc5b28cb81d002098c",
       "coverage": [
         {
           "path": "centralConcept",
@@ -6646,8 +6646,9 @@
         {
           "id": "g8-activity-reflection",
           "period": null,
-          "schedule": "optional",
+          "schedule": "support",
           "minutes": 0,
+          "withinStage": "g8-do",
           "placement": {
             "kind": "section",
             "blockId": "4366a8a71a6f4c1b34bae61f-1",
@@ -6676,8 +6677,9 @@
         {
           "id": "g8-activity-partc",
           "period": null,
-          "schedule": "optional",
+          "schedule": "support",
           "minutes": 0,
+          "withinStage": "g8-do",
           "placement": {
             "kind": "heading",
             "blockId": "616f175c1669b5b75b907def-1",
@@ -6708,7 +6710,7 @@
         {
           "blockId": "4366a8a71a6f4c1b34bae61f-1",
           "momentId": "g8-activity-reflection",
-          "disposition": "optional"
+          "disposition": "support"
         },
         {
           "blockId": "e00c9dfcd0c93b42a6968deb-1",
@@ -6728,7 +6730,7 @@
         {
           "blockId": "616f175c1669b5b75b907def-1",
           "momentId": "g8-activity-partc",
-          "disposition": "optional"
+          "disposition": "support"
         },
         {
           "blockId": "1e8357621b551417d9b19216-1",
@@ -6832,7 +6834,7 @@
         ]
       },
       "fieldCount": 49,
-      "planSHA256": "2b3c999b64e206be1bb091020ce30652c5b7972f9cb86a0a8b708063ea1939a5",
+      "planSHA256": "28f00bd556208ff1f3e6f74ec40fba07581094302384a12d6b63f1b8989bf365",
       "coverage": [
         {
           "path": "purpose.0",
@@ -7391,7 +7393,7 @@
         ]
       },
       "fieldCount": 61,
-      "planSHA256": "c6dd3d3a2080813d71dbd4d2bf07634922b266192075de0437358d0ec807638b",
+      "planSHA256": "d96079249ab2e1437c7e20a907afe9e4c35a2574820a4f097c793224197aee8f",
       "coverage": [
         {
           "path": "purpose.0",
@@ -8054,7 +8056,7 @@
         ]
       },
       "fieldCount": 57,
-      "planSHA256": "fff2810af7a0c328a999a748bcbed421ca4db72156e44952d25609b6792a8b9e",
+      "planSHA256": "a1d973821a0782e13cae1fb24d32dd9de3fca6ad9ddece554359dbe43e2b737c",
       "coverage": [
         {
           "path": "purpose.0",
@@ -8646,7 +8648,7 @@
         ]
       },
       "fieldCount": 59,
-      "planSHA256": "38a51a822889d95b57ce6c04ed0ec35114f37acbf5c2861ee84399842c3bc496",
+      "planSHA256": "780eafa11026dc6ddc0f26f458ac13e64eb2361f90361d12424d0b623920ecd0",
       "coverage": [
         {
           "path": "purpose.0",
@@ -9290,7 +9292,7 @@
         ]
       },
       "fieldCount": 57,
-      "planSHA256": "037e49bbcfac1bd07f6dcc8a0608532e853677bd3a18abea162e7585fb11502e",
+      "planSHA256": "77fd35b78c48454485190a76d51e9520b4653dd8810ab76111f1add1faa1d2ac",
       "coverage": [
         {
           "path": "purpose.0",
@@ -9907,7 +9909,7 @@
         ]
       },
       "fieldCount": 59,
-      "planSHA256": "4983009f6c4a285645276bc2ead9f72e48c8b218d19251432976fbf0131e8a1c",
+      "planSHA256": "4da501efaed441116b1fdd70754eed3b23ab0037f89a4a341423543f5c89841c",
       "coverage": [
         {
           "path": "purpose.0",
@@ -10569,7 +10571,7 @@
         ]
       },
       "fieldCount": 59,
-      "planSHA256": "545e67c95c4f1ac99cfbb1f13b142c255ea3a17811783ea3c514501ee10db29b",
+      "planSHA256": "aaeedf550ba695da3019289f190642404b21d849f5d1b95ac8e73ea3c68fe1ef",
       "coverage": [
         {
           "path": "purpose.0",
@@ -11217,7 +11219,7 @@
         ]
       },
       "fieldCount": 59,
-      "planSHA256": "6307623e5f73f9fbfa0a3b5f3b983ec1fdefd39e59a17a48fbce77cb8a2834dc",
+      "planSHA256": "1b62213e1ccabd50028458a1709a1ad7af9bccc5b2b4c5aca5f0b63eff40741d",
       "coverage": [
         {
           "path": "purpose.0",
@@ -11868,7 +11870,7 @@
         ]
       },
       "fieldCount": 59,
-      "planSHA256": "155721c792d91862683460280495ae3330f31e03ad5ce648cb59886763c7013a",
+      "planSHA256": "a51a451f8084facf6a3297692a5561bd4795c399fb9ca4dce611b62c3f65e389",
       "coverage": [
         {
           "path": "purpose.0",
@@ -12522,7 +12524,7 @@
         ]
       },
       "fieldCount": 59,
-      "planSHA256": "369d0e15eda2254ef0321c3d480bf5da4f7438297433635747b5cec9dff52af8",
+      "planSHA256": "e5ba93e53b2be7cd8e750f2983577926dbe92da94d8bbe48854cbdbaa30776d4",
       "coverage": [
         {
           "path": "purpose.0",
@@ -13184,7 +13186,7 @@
         ]
       },
       "fieldCount": 59,
-      "planSHA256": "a890608b544df3cdaf592fed96452b7c8ace4bcb2527d34e50cfa46d566fd43e",
+      "planSHA256": "9e6d56366086da837f5c43d88578798853ee878ed96a4e64bf77781034d3077e",
       "coverage": [
         {
           "path": "purpose.0",
@@ -13853,7 +13855,6 @@
           "d55045d23aea326b46e477a7-1",
           "04e96036300ead9c1138d079-1",
           "a3e5d6ae9fb70840baf7e897-1",
-          "050423945c6fab089db4f53c-1",
           "f5423d25893281d260146f3e-1",
           "8a8583065ae3dceb4a509691-1",
           "620c367044f93e6d77669d0b-1",
@@ -13872,7 +13873,7 @@
         ]
       },
       "fieldCount": 84,
-      "planSHA256": "c87955bfaf5ef7061ee3710e49b02b70bebba1fde443a11ab0e2efc797868a34",
+      "planSHA256": "a50f7043113f615e028ccf961668912ac6253a269559db1cdb7993531ce229e6",
       "coverage": [
         {
           "path": "purpose.0",
@@ -13949,7 +13950,7 @@
           "locations": [
             "preparation"
           ],
-          "valueSHA256": "dab2857e7ecdc526306c50442e0a5ad0a0de5413abcdb69b88f76b41c00f7a2a"
+          "valueSHA256": "fe9e726843cc5aa0f92b126796496a74f3a1d05c436316cf43cb1e5aa555465a"
         },
         {
           "path": "context.0",
@@ -14145,14 +14146,14 @@
           "locations": [
             "l20-stage-4"
           ],
-          "valueSHA256": "3bb3a4a2848e56b77f7570f49394e922a9fe4bd798d04577c7dc9bce1e07f4d6"
+          "valueSHA256": "3958624a3bb9157bcc418e5055967f2b86acfb80b50dad13e3c1749a4a918b9c"
         },
         {
           "path": "stages.3.explain.0",
           "locations": [
             "l20-stage-4"
           ],
-          "valueSHA256": "e8a98b0a9660942136f2be17526b6b97ff406ca0c29277c4594b319eb75e9df1"
+          "valueSHA256": "1578084727b3d66610063fd1f351c501a954e81cb916a54ed5a45e33a6890344"
         },
         {
           "path": "stages.3.ask.0",
@@ -14516,12 +14517,13 @@
           "minutes": 13,
           "placement": {
             "kind": "section",
-            "blockId": "050423945c6fab089db4f53c-1",
+            "blockId": "f5423d25893281d260146f3e-1",
             "edge": "before",
-            "review": "Read the complete authored section; insertion is before its intact rendered heading. Lists, tables and response surfaces remain unsplit."
+            "review": "The existing renderer suppresses Activity 27’s original log-review heading and prompts while retaining its portfolio notice. Reviewed placement: the next intact Activity 28 portfolio section. Use available prior activity responses or paper evidence; do not restore or renumber the suppressed source fields."
           },
           "sourceBlockIds": [
-            "050423945c6fab089db4f53c-1"
+            "050423945c6fab089db4f53c-1",
+            "f5423d25893281d260146f3e-1"
           ]
         },
         {
@@ -14633,7 +14635,7 @@
         },
         {
           "blockId": "f5423d25893281d260146f3e-1",
-          "momentId": "l20-stage-5",
+          "momentId": "l20-stage-4",
           "disposition": "classroom"
         },
         {
@@ -14748,7 +14750,7 @@
         ]
       },
       "fieldCount": 101,
-      "planSHA256": "d60f4c33d3a7ec13921f2f2778638662826a0d4c7ee31a566cb9c8f2cdb633d0",
+      "planSHA256": "7921db414e2c9f49114f62fbb95253fda6b8092c291062d393d8f64087bd05be",
       "coverage": [
         {
           "path": "centralConcept",
@@ -15758,7 +15760,7 @@
         ]
       },
       "fieldCount": 154,
-      "planSHA256": "aa12e305020770db129eb4e5897461ddd1ffff0a70ffdecbe63f00d5b8f7dd3e",
+      "planSHA256": "ae92ffe2c6a07a42c1063c512ce9019dc1015d044c50841f59d1e3086d45d6e7",
       "coverage": [
         {
           "path": "centralConcept",
@@ -17223,7 +17225,7 @@
         ]
       },
       "fieldCount": 105,
-      "planSHA256": "37c6a5d747351273998102f378430be56253f2f0f1543471754ada221885c37a",
+      "planSHA256": "3a4a9485b5e076ba87be06e57d2191fe71baa8a365798eb549a5e309ad1b3f65",
       "coverage": [
         {
           "path": "centralConcept",
@@ -18247,7 +18249,7 @@
         ]
       },
       "fieldCount": 156,
-      "planSHA256": "caa119c1f6210ca5c37e95af9b12fbf8b7012818ad92046d616314ee2c4db7af",
+      "planSHA256": "1e261d1bd86db580eae58f40401251a24b88bad47f83ed39631fcf3cb82426b1",
       "coverage": [
         {
           "path": "centralConcept",

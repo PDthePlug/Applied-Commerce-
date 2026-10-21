@@ -25,3 +25,10 @@ test('coverage maps retain the approved 100 Grade 8 fields and all 24 contextual
  for(const row of old.fields)assert.equal(binding.coverage.find(item=>item.path===row.path).valueSHA256,row.valueSHA256??row.sha256);
  assert.equal(binding.coverage.filter(row=>row.path.startsWith('enrichment.')).length,24);
 });
+
+test('a surviving portfolio container does not make a suppressed authored heading a valid insertion point',()=>{
+ const binding=manifest.plans.find(p=>p.lessonId==='g8-t1-l20-020');const unit=units.find(u=>u.id===binding.lessonId);const hidden=unit.blocks[41].id;const intact=unit.blocks[49].id;
+ assert.equal(unit.blocks[41].type,'activity');assert.ok(!teachingSource(unit,digest(unit)).sections.includes(hidden));
+ const review=binding.moments.find(m=>m.id==='l20-stage-4');assert.equal(review.placement.blockId,intact);assert.ok(review.sourceBlockIds.includes(hidden));assert.match(review.placement.review,/suppresses Activity 27/);
+ const html=renderToStaticMarkup(React.createElement(ContentBlocks,{blocks:unit.blocks,unitId:unit.id,unitType:unit.type,promptResponses:{},onSavePromptResponse:()=>{}}));assert.ok(!html.includes('Activity 27:'));assert.ok(html.includes('Activity 28:'));
+});
