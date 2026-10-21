@@ -3,6 +3,7 @@
 import { responseView, persistResponseKey } from "@/lib/response-identity";
 import { Plus } from "lucide-react";
 import type { ContentBlock, TextBlockType, UnitContent } from "@/lib/types";
+import type {LearningSection} from "@/lib/semantic-learning";
 import { cleanMarkup, isRemovedLogBlock, sanitizeRemovedLogReferences } from "@/lib/portfolio-model";
 import { DeepeningInsightPanel, LearningNotice, PortfolioCaptureNotice, ResponseSurface, StoryHeading, ThinkingEquationNotice } from "./presentation-system";
 import { authoredScale, choiceMeaning, learningSections, sourceCopy, valueSelection } from "@/lib/semantic-learning";
@@ -20,6 +21,7 @@ type Props = {
   unitType?: UnitContent["type"];
   promptResponses: Record<string,string>;
   onSavePromptResponse: (promptId:string,value:string)=>void;
+  sectionGuidance?: (section:LearningSection,edge:"before"|"after")=>React.ReactNode;
 };
 
 const BLANK_RE= /_{3,}/;
@@ -782,7 +784,7 @@ function TableBlockView({
   </div>;
 }
 
-export function ContentBlocks({blocks,unitId,unitType="lesson",promptResponses:storedResponses,onSavePromptResponse:saveResponse}:Props) {
+export function ContentBlocks({blocks,unitId,unitType="lesson",promptResponses:storedResponses,onSavePromptResponse:saveResponse,sectionGuidance}:Props) {
   const promptResponses=responseView(unitId,blocks,storedResponses);
   const onSavePromptResponse=(key:string,value:string)=>saveResponse(persistResponseKey(unitId,blocks,key),value);
   const indexed=pruneTensionContent(blocks);
@@ -1056,7 +1058,9 @@ export function ContentBlocks({blocks,unitId,unitType="lesson",promptResponses:s
       const items=indexed.filter(item=>item.index>=section.start&&item.index<section.end);
       if(!items.length) return null;
       return <section className={`learning-section learning-mode-${section.mode}`} data-learning-mode={section.mode} id={section.anchor} key={section.anchor}>
+        {sectionGuidance?.(section,"before")}
         {renderIndexedBlocks(items,true,section.context)}
+        {sectionGuidance?.(section,"after")}
       </section>;
     })}
   </div>;
