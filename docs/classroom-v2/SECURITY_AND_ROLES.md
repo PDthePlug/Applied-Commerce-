@@ -1,12 +1,12 @@
 # Security and authenticated-role verification
 
-The final application commit is `be93c24a0b0166a0406ec8226dd951b9542e34a5`. The original classroom key is preserved byte for byte, remains in its ignored private location and is not included in this report or the evidence archive. The existing staging Secret is used without retrieving, replacing or exporting its value.
+The final application commit is `bdf432246cd73be42908724bed728a2f6f4dc4d2`. The original classroom key is preserved byte for byte, remains in its ignored private location and is not included in this report or the evidence archive. The existing staging Secret is used without retrieving, replacing or exporting its value.
 
 | Boundary | Evidence | Result and limit |
 | --- | --- | --- |
 | Server identity, active session and current role before private import | Actual route executed against synthetic auth/database adapters in `tests/classroom-api.test.mjs` | PASS for guests, ordinary learners, inactive sessions, unassigned educators, forged metadata, assigned staff, owners/admins and platform admins. Synthetic tests do not prove deployed assignments or RLS. |
 | Account mismatch, failed lookup, damaged encrypted releases | Same route tests | PASS: fail closed; no partial guide or private configuration error returned. |
-| Real local-mode application | Existing browser acceptance, CI run 39706806515 | PASS: anonymous API 401, no guide, protected workspace gate and unavailable plaintext URL. A classroom URL context grants no access. |
+| Real local-mode application | Existing browser acceptance, CI run 39709085888 | PASS: anonymous API 401, no guide, protected workspace gate and unavailable plaintext URL. A classroom URL context grants no access. |
 | Private state lifecycle | Six-width isolated UI-copy retests | PASS: sign-out, account change, lesson change and revoked revalidation clear private guidance. Fixtures simulate those events. |
 | Public bundles | Final built app scanned against private raw/escaped sentinels | PASS: 77 assets, 2,421 sentinels, zero disclosures. |
 | Learner storage and shared presentation | Isolated UI tests and code review | PASS: guidance is not written to learner storage; separate presentation has original blank disabled fields and no teacher panels. No device synchronisation is claimed. |

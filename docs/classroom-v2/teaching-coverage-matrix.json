@@ -1,8 +1,8 @@
 {
-  "codeCommit": "be93c24a0b0166a0406ec8226dd951b9542e34a5",
+  "codeCommit": "bdf432246cd73be42908724bed728a2f6f4dc4d2",
   "latestUniqueCases": 150,
   "latestPassed": 150,
-  "interpretation": "Latest per-case results after disclosed failures and focused retests; not a single 150/150 clean run. Initial full run: 143 pass, seven fail (six ambiguous alert selectors, one repeated source-table region label). Final built-code retest: 12/12 pass, covering Grade 12 and privacy at all six widths. Final all-plan desktop run: 25/25 pass, including actual stored-key persistence for table controls without DOM IDs.",
+  "interpretation": "Latest per-case results after disclosed failures and focused retests; not a single 150/150 clean run. Initial full run: 143 pass, seven fail (six ambiguous alert selectors, one repeated source-table region label). Final built-code retest: 12/12 pass, covering Grade 12 and privacy at all six widths. The final scaffold consolidation passed 36 cases at bdf4322: all five changed benchmarks and privacy at every width. The other 19 guides retain the identical group rendering verified by the prior all-plan desktop run.",
   "lessons": [
     {
       "lessonId": "g8-t1-l01-001",
@@ -228,27 +228,27 @@
       "viewports": {
         "320": {
           "status": "PASS",
-          "report": "final-browser"
+          "report": "scaffold"
         },
         "360": {
           "status": "PASS",
-          "report": "final-browser"
+          "report": "scaffold"
         },
         "430": {
           "status": "PASS",
-          "report": "final-browser"
+          "report": "scaffold"
         },
         "768": {
           "status": "PASS",
-          "report": "final-browser"
+          "report": "scaffold"
         },
         "1280": {
           "status": "PASS",
-          "report": "desktop-complete"
+          "report": "scaffold"
         },
         "1920": {
           "status": "PASS",
-          "report": "final-browser"
+          "report": "scaffold"
         }
       }
     },
@@ -631,27 +631,27 @@
       "viewports": {
         "320": {
           "status": "PASS",
-          "report": "final-browser"
+          "report": "scaffold"
         },
         "360": {
           "status": "PASS",
-          "report": "final-browser"
+          "report": "scaffold"
         },
         "430": {
           "status": "PASS",
-          "report": "final-browser"
+          "report": "scaffold"
         },
         "768": {
           "status": "PASS",
-          "report": "final-browser"
+          "report": "scaffold"
         },
         "1280": {
           "status": "PASS",
-          "report": "desktop-complete"
+          "report": "scaffold"
         },
         "1920": {
           "status": "PASS",
-          "report": "final-browser"
+          "report": "scaffold"
         }
       }
     },
@@ -662,27 +662,27 @@
       "viewports": {
         "320": {
           "status": "PASS",
-          "report": "final-browser"
+          "report": "scaffold"
         },
         "360": {
           "status": "PASS",
-          "report": "final-browser"
+          "report": "scaffold"
         },
         "430": {
           "status": "PASS",
-          "report": "final-browser"
+          "report": "scaffold"
         },
         "768": {
           "status": "PASS",
-          "report": "final-browser"
+          "report": "scaffold"
         },
         "1280": {
           "status": "PASS",
-          "report": "desktop-complete"
+          "report": "scaffold"
         },
         "1920": {
           "status": "PASS",
-          "report": "final-browser"
+          "report": "scaffold"
         }
       }
     },
@@ -693,27 +693,27 @@
       "viewports": {
         "320": {
           "status": "PASS",
-          "report": "final-browser"
+          "report": "scaffold"
         },
         "360": {
           "status": "PASS",
-          "report": "final-browser"
+          "report": "scaffold"
         },
         "430": {
           "status": "PASS",
-          "report": "final-browser"
+          "report": "scaffold"
         },
         "768": {
           "status": "PASS",
-          "report": "final-browser"
+          "report": "scaffold"
         },
         "1280": {
           "status": "PASS",
-          "report": "desktop-complete"
+          "report": "scaffold"
         },
         "1920": {
           "status": "PASS",
-          "report": "final-browser"
+          "report": "scaffold"
         }
       }
     },
@@ -724,27 +724,27 @@
       "viewports": {
         "320": {
           "status": "PASS",
-          "report": "final-fix-12"
+          "report": "scaffold"
         },
         "360": {
           "status": "PASS",
-          "report": "final-fix-12"
+          "report": "scaffold"
         },
         "430": {
           "status": "PASS",
-          "report": "final-fix-12"
+          "report": "scaffold"
         },
         "768": {
           "status": "PASS",
-          "report": "final-fix-12"
+          "report": "scaffold"
         },
         "1280": {
           "status": "PASS",
-          "report": "desktop-complete"
+          "report": "scaffold"
         },
         "1920": {
           "status": "PASS",
-          "report": "final-fix-12"
+          "report": "scaffold"
         }
       }
     }
@@ -752,27 +752,27 @@
   "privacyLifecycle": {
     "320": {
       "status": "PASS",
-      "report": "final-fix-12"
+      "report": "scaffold"
     },
     "360": {
       "status": "PASS",
-      "report": "final-fix-12"
+      "report": "scaffold"
     },
     "430": {
       "status": "PASS",
-      "report": "final-fix-12"
+      "report": "scaffold"
     },
     "768": {
       "status": "PASS",
-      "report": "final-fix-12"
+      "report": "scaffold"
     },
     "1280": {
       "status": "PASS",
-      "report": "desktop-complete"
+      "report": "scaffold"
     },
     "1920": {
       "status": "PASS",
-      "report": "final-fix-12"
+      "report": "scaffold"
     }
   }
 }
