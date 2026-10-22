@@ -1,5 +1,5 @@
 {
-  "applicationCommit": "be93c24a0b0166a0406ec8226dd951b9542e34a5",
+  "applicationCommit": "bdf432246cd73be42908724bed728a2f6f4dc4d2",
   "runtime": {
     "lessons": 395,
     "assessments": 4,
@@ -9,35 +9,35 @@
   "nodeLocal": {
     "passed": 189,
     "failed": 0,
-    "seconds": 67.23
+    "seconds": 44.49
   },
   "pythonIdentity": {
     "passed": 2,
     "failed": 0
   },
   "typecheck": {
-    "name": "final-types",
+    "name": "scaffold-types",
     "state": "complete",
     "exitCode": 0,
-    "seconds": 15.03
+    "seconds": 13.85
   },
   "lint": {
-    "name": "final-lint",
+    "name": "scaffold-lint",
     "state": "complete",
     "exitCode": 0,
-    "seconds": 46.51
+    "seconds": 35.38
   },
   "build": {
-    "name": "final-app-build",
+    "name": "scaffold-app-build",
     "state": "complete",
     "exitCode": 0,
-    "seconds": 12.4
+    "seconds": 27.25
   },
   "isolatedFixtureBuild": {
-    "name": "final-fixture-build",
+    "name": "scaffold-fixture-build",
     "state": "complete",
     "exitCode": 0,
-    "seconds": 72.07
+    "seconds": 50.94
   },
   "originalRelease": {
     "guides": 5,
@@ -117,6 +117,14 @@
       "skipped": 0,
       "unexpected": 0,
       "flaky": 0
+    },
+    "scaffold": {
+      "startTime": "2026-10-22T02:01:59.307Z",
+      "duration": 360208.984,
+      "expected": 36,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
     }
   },
   "latestTeachingCases": {
@@ -127,7 +135,7 @@
   },
   "print": {
     "guides": 24,
-    "pages": 171,
+    "pages": 169,
     "emptyPages": 0,
     "instructionalFieldsPreserved": 1867,
     "result": "PASS"
@@ -136,12 +144,12 @@
   "authenticatedRoles": "NOT TESTED; AC_ROLE_FIXTURES is unset",
   "educatorModeration": "REVIEW REQUIRED; source review and schema verification do not establish educational acceptance",
   "ci": {
-    "url": "https://github.com/PDthePlug/Applied-Commerce-/actions/runs/39706806515",
+    "url": "https://github.com/PDthePlug/Applied-Commerce-/actions/runs/39709085888",
     "conclusion": "success",
     "nodePassed": 189,
     "pythonIdentityPassed": 2,
     "acceptancePassed": 222,
-    "acceptanceDuration": "3.6 minutes",
+    "acceptanceDuration": "3.7 minutes",
     "syntheticDatabaseDrill": "PASS; not real-account or production evidence"
   },
   "preparationScreenshots": 12,
@@ -149,24 +157,22 @@
     "passed": 2,
     "scope": "Synthetic local copy; Lessons 1 and 20"
   },
-  "printAnnouncerRegression": {
-    "passed": 1,
-    "scope": "Final Grade 12 desktop browser print assertion"
-  },
-  "finalAllPlanDesktop": {
+  "allPlanDesktop": {
+    "applicationCommit": "be93c24a0b0166a0406ec8226dd951b9542e34a5",
     "passed": 25,
     "duration": "5.5 minutes",
-    "scope": "All 24 plans: expanded axe, every field locally accessible, actual stored response key survives mode switch and reload, print, keyboard and learner progress. Plus privacy lifecycle."
+    "scope": "All 24 plans and privacy; unchanged 19 new plans plus five legacy guides later retested at final code."
   },
-  "deliveryLint": {
-    "result": "PASS",
-    "seconds": 13.73,
-    "scope": "Final report and strengthened browser regression edits"
+  "finalScaffoldRegression": {
+    "applicationCommit": "bdf432246cd73be42908724bed728a2f6f4dc4d2",
+    "passed": 36,
+    "duration": "6.0 minutes",
+    "scope": "Five benchmark guides and privacy at all six widths; every field remains locally accessible, actual scaffold cell identities are preserved without paragraph duplication, saved response-key recovery and final print."
   },
   "evidence": {
     "encryptedArtifact": "review-evidence.v2.enc.json",
-    "archiveEntries": 235,
     "roundTripIdentical": true,
-    "keyIncluded": false
+    "keyIncluded": false,
+    "archiveEntries": 239
   }
 }

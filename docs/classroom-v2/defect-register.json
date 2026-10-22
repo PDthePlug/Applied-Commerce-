@@ -61,5 +61,14 @@
     "observed": "An ambiguous locator fails despite private guidance already being cleared. Table response controls without DOM IDs also require actual stored-key verification.",
     "correction": "Scope the revoked-access alert to its message. Verify the stable response key in the learning store for both ordinary and table controls, preserving original identities.",
     "regression": "Six-viewports privacy lifecycle checks; final all-plan desktop response save/reload checks."
+  },
+  {
+    "id": "V2-PRESENT-06",
+    "severity": "S3",
+    "status": "FIXED; 36 FINAL BENCHMARK/PRIVACY CASES AND 24 COMPLETE PDF EXPORTS PASSED",
+    "reproduction": "Expand the approved Grade 8 practical deep support. Scaffold headers and row labels appear as separate field paragraphs, then repeat in the table. The other legacy benchmark scaffolds follow the same rendering.",
+    "observed": "The original text is preserved but repeated in an awkward reading order.",
+    "correction": "Render preserved instructional field identities directly on their original table header/body cells at the relevant teaching moment. Remove the duplicate paragraph representation and the separate end-of-print scaffold.",
+    "regression": "Before/after browser proof verifies the field appears once in the actual table, not as a paragraph; all five benchmark fields are checked locally and in print across six widths. No source content or private field value changes."
   }
 ]

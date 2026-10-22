@@ -1,14 +1,14 @@
 {
-  "id": "dpl_CsQhC3iwHnVAiYGfPsf3RELSe1pa",
+  "id": "dpl_3aK1svGBxqDBuqXRNWyi5ZnBSeVF",
   "name": "applied-commerce-sa-staging",
-  "url": "applied-commerce-sa-staging-j7ndt6jjt.vercel.app",
+  "url": "applied-commerce-sa-staging-iki6enora.vercel.app",
   "state": "READY",
   "target": "production",
   "project": {
     "id": "prj_9MXnYeh3mxtFzcS1xzEDrTjOW2nP",
     "name": "applied-commerce-sa-staging"
   },
-  "commit": "be93c24a0b0166a0406ec8226dd951b9542e34a5",
+  "commit": "bdf432246cd73be42908724bed728a2f6f4dc4d2",
   "serverVerification": [
     {
       "teachingPlans": 24,
@@ -35,7 +35,7 @@
     "body": {
       "status": "ok",
       "projectRef": "inxshlumnhcgiahxqewe",
-      "commit": "be93c24a0b0166a0406ec8226dd951b9542e34a5",
+      "commit": "bdf432246cd73be42908724bed728a2f6f4dc4d2",
       "dependencies": {
         "auth": true,
         "dataAPI": true
