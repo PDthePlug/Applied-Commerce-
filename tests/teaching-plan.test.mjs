@@ -32,3 +32,14 @@ test('a surviving portfolio container does not make a suppressed authored headin
  const review=binding.moments.find(m=>m.id==='l20-stage-4');assert.equal(review.placement.blockId,intact);assert.ok(review.sourceBlockIds.includes(hidden));assert.match(review.placement.review,/suppresses Activity 27/);
  const html=renderToStaticMarkup(React.createElement(ContentBlocks,{blocks:unit.blocks,unitId:unit.id,unitType:unit.type,promptResponses:{},onSavePromptResponse:()=>{}}));assert.ok(!html.includes('Activity 27:'));assert.ok(html.includes('Activity 28:'));
 });
+
+test('contextual delivery distinguishes multiple scrollable source tables without changing learner labels',()=>{
+ const unit=units.find(u=>u.id==='g12-t1-l05-005');
+ const props={blocks:unit.blocks,unitId:unit.id,unitType:unit.type,promptResponses:{},onSavePromptResponse:()=>{}};
+ const learner=renderToStaticMarkup(React.createElement(ContentBlocks,props));
+ const teacher=renderToStaticMarkup(React.createElement(ContentBlocks,{...props,sectionGuidance:()=>null}));
+ const labels=[...teacher.matchAll(/aria-label="(Scrollable curriculum table[^"]*)"/g)].map(match=>match[1]);
+ assert.ok(labels.length>1);assert.equal(new Set(labels).size,labels.length);
+ assert.ok(learner.includes('aria-label="Scrollable curriculum table"'));
+ assert.ok(!learner.includes('aria-label="Scrollable curriculum table 1"'));
+});

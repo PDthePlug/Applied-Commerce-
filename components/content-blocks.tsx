@@ -692,6 +692,7 @@ function TableBlockView({
   promptResponses,
   onSavePromptResponse,
   minimumRows=3,
+  regionLabel,
 }:{
   block:Extract<ContentBlock,{kind:"table"}>;
   unitId:string;
@@ -699,6 +700,7 @@ function TableBlockView({
   promptResponses:Record<string,string>;
   onSavePromptResponse:(promptId:string,value:string)=>void;
   minimumRows?:number;
+  regionLabel?:string;
 }){
   const headers=(block.rows[0]??[]).map(value=>sourceCopy(displayText(value)));
   const headerOnly=block.rows.length===1;
@@ -726,7 +728,7 @@ function TableBlockView({
     className={`source-table-wrap ${hasWorkbookCells?"workbook-table":""} ${responsiveRows?"responsive-row-table":""} ${wideTable?"wide-source-table":""}`}
     tabIndex={wideTable?0:undefined}
     role={wideTable?"region":undefined}
-    aria-label={wideTable?"Scrollable curriculum table":undefined}
+    aria-label={wideTable?(regionLabel??"Scrollable curriculum table"):undefined}
   >
     <table>
       <thead>
@@ -850,6 +852,9 @@ export function ContentBlocks({blocks,unitId,unitType="lesson",promptResponses:s
           block={block}
           unitId={unitId}
           blockIndex={index}
+          // Delivery annotations add distinct table landmarks. Default learner
+          // markup and every original block/response identity remain unchanged.
+          regionLabel={sectionGuidance||partGuidance?`Scrollable curriculum table ${blocks.slice(0,index+1).filter(item=>item.kind==="table").length}`:undefined}
           promptResponses={promptResponses}
           onSavePromptResponse={onSavePromptResponse}
           minimumRows={inferMinimumRows(items,position)}
