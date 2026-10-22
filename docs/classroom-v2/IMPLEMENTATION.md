@@ -43,3 +43,13 @@ A supporting disclosure may be scheduled inside an existing stage without becomi
 Lesson 20 has a reviewed placement exception. The existing learner renderer suppresses Activity 27's log-review heading/prompts while leaving a portfolio notice in that semantic container. V2 does not accept that as a visible heading. Its review moment is placed at the next intact Activity 28 portfolio section, retains both source references, and uses available prior activity responses or paper evidence. The source renderer and all saved-work identities remain unchanged. This ambiguity is recorded for separate source/presentation review.
 
 For an independent fixture copy, use `node scripts/prepare-classroom-fixture.mjs --target work/classroom-v2/fixture-app`. Targets are constrained to ignored `work/`; the real application never receives its synthetic auth implementation.
+
+## Print regression
+
+The teacher print page is named A4 with 12 mm margins. The non-print route announcer is hidden only while a private teacher guide is printed; otherwise Chromium can append an empty final page. The browser regression checks its print visibility. After the desktop export, Poppler can check all release PDFs without logging teaching text:
+
+```sh
+python3 scripts/verify-classroom-print.py --pdf-dir work/classroom-v2/private/evidence --suffix=-complete --report work/classroom-v2/private/print-check.json
+```
+
+The delivered final exports were checked separately under `print-final-evidence/`; all 24 guides and all 1,867 private instructional fields survived PDF export. Geometry and field-preservation reports contain counts, bounds and paths only. See `REPORT.md`, `SECURITY_AND_ROLES.md` and `EVIDENCE.md` for exact commits, test provenance and review limits.

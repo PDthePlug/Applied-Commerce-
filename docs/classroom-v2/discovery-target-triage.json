@@ -1,0 +1,95 @@
+{
+  "heuristicObservations": 600,
+  "uniqueAssessmentRoutes": 4,
+  "disposition": "False positive: the 13px native radios are invisible and non-pointer controls; the labelled choice rows are the visible click targets. All eight sampled route/viewport combinations have targets at least 44px in both dimensions and label click selects the option. No assessment code or saved response identities were changed.",
+  "rows": [
+    {
+      "id": "g9-t1-assessment-1",
+      "width": 320,
+      "radios": 40,
+      "hiddenNativeControls": true,
+      "labelTargetMinimum": {
+        "width": 296,
+        "height": 60
+      },
+      "actualLabelClickWorks": true
+    },
+    {
+      "id": "g9-t2-assessment-2",
+      "width": 320,
+      "radios": 40,
+      "hiddenNativeControls": true,
+      "labelTargetMinimum": {
+        "width": 296,
+        "height": 60
+      },
+      "actualLabelClickWorks": true
+    },
+    {
+      "id": "g9-t3-assessment-2",
+      "width": 320,
+      "radios": 40,
+      "hiddenNativeControls": true,
+      "labelTargetMinimum": {
+        "width": 296,
+        "height": 60
+      },
+      "actualLabelClickWorks": true
+    },
+    {
+      "id": "g9-t4-assessment-3",
+      "width": 320,
+      "radios": 40,
+      "hiddenNativeControls": true,
+      "labelTargetMinimum": {
+        "width": 296,
+        "height": 60
+      },
+      "actualLabelClickWorks": true
+    },
+    {
+      "id": "g9-t1-assessment-1",
+      "width": 1280,
+      "radios": 40,
+      "hiddenNativeControls": true,
+      "labelTargetMinimum": {
+        "width": 840,
+        "height": 62
+      },
+      "actualLabelClickWorks": true
+    },
+    {
+      "id": "g9-t2-assessment-2",
+      "width": 1280,
+      "radios": 40,
+      "hiddenNativeControls": true,
+      "labelTargetMinimum": {
+        "width": 840,
+        "height": 62
+      },
+      "actualLabelClickWorks": true
+    },
+    {
+      "id": "g9-t3-assessment-2",
+      "width": 1280,
+      "radios": 40,
+      "hiddenNativeControls": true,
+      "labelTargetMinimum": {
+        "width": 840,
+        "height": 62
+      },
+      "actualLabelClickWorks": true
+    },
+    {
+      "id": "g9-t4-assessment-3",
+      "width": 1280,
+      "radios": 40,
+      "hiddenNativeControls": true,
+      "labelTargetMinimum": {
+        "width": 840,
+        "height": 62
+      },
+      "actualLabelClickWorks": true
+    }
+  ]
+}

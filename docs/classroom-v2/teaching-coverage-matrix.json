@@ -1,0 +1,778 @@
+{
+  "codeCommit": "be93c24a0b0166a0406ec8226dd951b9542e34a5",
+  "latestUniqueCases": 150,
+  "latestPassed": 150,
+  "interpretation": "Latest per-case results after disclosed failures and focused retests; not a single 150/150 clean run. Initial full run: 143 pass, seven fail (six ambiguous alert selectors, one repeated source-table region label). Final built-code retest: 12/12 pass, covering Grade 12 and privacy at all six widths. Final all-plan desktop run: 25/25 pass, including actual stored-key persistence for table controls without DOM IDs.",
+  "lessons": [
+    {
+      "lessonId": "g8-t1-l01-001",
+      "route": "/learn/8/term/1/g8-t1-l01-001",
+      "role": "synthetic educator in isolated local copy; NOT real-role validation",
+      "viewports": {
+        "320": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "360": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "430": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "768": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "1280": {
+          "status": "PASS",
+          "report": "desktop-complete"
+        },
+        "1920": {
+          "status": "PASS",
+          "report": "final-browser"
+        }
+      }
+    },
+    {
+      "lessonId": "g8-t1-l02-002",
+      "route": "/learn/8/term/1/g8-t1-l02-002",
+      "role": "synthetic educator in isolated local copy; NOT real-role validation",
+      "viewports": {
+        "320": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "360": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "430": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "768": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "1280": {
+          "status": "PASS",
+          "report": "desktop-complete"
+        },
+        "1920": {
+          "status": "PASS",
+          "report": "final-browser"
+        }
+      }
+    },
+    {
+      "lessonId": "g8-t1-l03-003",
+      "route": "/learn/8/term/1/g8-t1-l03-003",
+      "role": "synthetic educator in isolated local copy; NOT real-role validation",
+      "viewports": {
+        "320": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "360": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "430": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "768": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "1280": {
+          "status": "PASS",
+          "report": "desktop-complete"
+        },
+        "1920": {
+          "status": "PASS",
+          "report": "final-browser"
+        }
+      }
+    },
+    {
+      "lessonId": "g8-t1-l04-004",
+      "route": "/learn/8/term/1/g8-t1-l04-004",
+      "role": "synthetic educator in isolated local copy; NOT real-role validation",
+      "viewports": {
+        "320": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "360": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "430": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "768": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "1280": {
+          "status": "PASS",
+          "report": "desktop-complete"
+        },
+        "1920": {
+          "status": "PASS",
+          "report": "final-browser"
+        }
+      }
+    },
+    {
+      "lessonId": "g8-t1-l05-005",
+      "route": "/learn/8/term/1/g8-t1-l05-005",
+      "role": "synthetic educator in isolated local copy; NOT real-role validation",
+      "viewports": {
+        "320": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "360": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "430": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "768": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "1280": {
+          "status": "PASS",
+          "report": "desktop-complete"
+        },
+        "1920": {
+          "status": "PASS",
+          "report": "final-browser"
+        }
+      }
+    },
+    {
+      "lessonId": "g8-t1-l06-006",
+      "route": "/learn/8/term/1/g8-t1-l06-006",
+      "role": "synthetic educator in isolated local copy; NOT real-role validation",
+      "viewports": {
+        "320": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "360": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "430": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "768": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "1280": {
+          "status": "PASS",
+          "report": "desktop-complete"
+        },
+        "1920": {
+          "status": "PASS",
+          "report": "final-browser"
+        }
+      }
+    },
+    {
+      "lessonId": "g8-t1-l07-007",
+      "route": "/learn/8/term/1/g8-t1-l07-007",
+      "role": "synthetic educator in isolated local copy; NOT real-role validation",
+      "viewports": {
+        "320": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "360": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "430": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "768": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "1280": {
+          "status": "PASS",
+          "report": "desktop-complete"
+        },
+        "1920": {
+          "status": "PASS",
+          "report": "final-browser"
+        }
+      }
+    },
+    {
+      "lessonId": "g8-t1-l08-008",
+      "route": "/learn/8/term/1/g8-t1-l08-008",
+      "role": "synthetic educator in isolated local copy; NOT real-role validation",
+      "viewports": {
+        "320": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "360": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "430": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "768": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "1280": {
+          "status": "PASS",
+          "report": "desktop-complete"
+        },
+        "1920": {
+          "status": "PASS",
+          "report": "final-browser"
+        }
+      }
+    },
+    {
+      "lessonId": "g8-t1-l09-009",
+      "route": "/learn/8/term/1/g8-t1-l09-009",
+      "role": "synthetic educator in isolated local copy; NOT real-role validation",
+      "viewports": {
+        "320": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "360": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "430": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "768": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "1280": {
+          "status": "PASS",
+          "report": "desktop-complete"
+        },
+        "1920": {
+          "status": "PASS",
+          "report": "final-browser"
+        }
+      }
+    },
+    {
+      "lessonId": "g8-t1-l10-010",
+      "route": "/learn/8/term/1/g8-t1-l10-010",
+      "role": "synthetic educator in isolated local copy; NOT real-role validation",
+      "viewports": {
+        "320": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "360": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "430": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "768": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "1280": {
+          "status": "PASS",
+          "report": "desktop-complete"
+        },
+        "1920": {
+          "status": "PASS",
+          "report": "final-browser"
+        }
+      }
+    },
+    {
+      "lessonId": "g8-t1-l11-011",
+      "route": "/learn/8/term/1/g8-t1-l11-011",
+      "role": "synthetic educator in isolated local copy; NOT real-role validation",
+      "viewports": {
+        "320": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "360": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "430": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "768": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "1280": {
+          "status": "PASS",
+          "report": "desktop-complete"
+        },
+        "1920": {
+          "status": "PASS",
+          "report": "final-browser"
+        }
+      }
+    },
+    {
+      "lessonId": "g8-t1-l12-012",
+      "route": "/learn/8/term/1/g8-t1-l12-012",
+      "role": "synthetic educator in isolated local copy; NOT real-role validation",
+      "viewports": {
+        "320": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "360": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "430": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "768": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "1280": {
+          "status": "PASS",
+          "report": "desktop-complete"
+        },
+        "1920": {
+          "status": "PASS",
+          "report": "final-browser"
+        }
+      }
+    },
+    {
+      "lessonId": "g8-t1-l13-013",
+      "route": "/learn/8/term/1/g8-t1-l13-013",
+      "role": "synthetic educator in isolated local copy; NOT real-role validation",
+      "viewports": {
+        "320": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "360": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "430": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "768": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "1280": {
+          "status": "PASS",
+          "report": "desktop-complete"
+        },
+        "1920": {
+          "status": "PASS",
+          "report": "final-browser"
+        }
+      }
+    },
+    {
+      "lessonId": "g8-t1-l14-014",
+      "route": "/learn/8/term/1/g8-t1-l14-014",
+      "role": "synthetic educator in isolated local copy; NOT real-role validation",
+      "viewports": {
+        "320": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "360": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "430": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "768": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "1280": {
+          "status": "PASS",
+          "report": "desktop-complete"
+        },
+        "1920": {
+          "status": "PASS",
+          "report": "final-browser"
+        }
+      }
+    },
+    {
+      "lessonId": "g8-t1-l15-015",
+      "route": "/learn/8/term/1/g8-t1-l15-015",
+      "role": "synthetic educator in isolated local copy; NOT real-role validation",
+      "viewports": {
+        "320": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "360": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "430": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "768": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "1280": {
+          "status": "PASS",
+          "report": "desktop-complete"
+        },
+        "1920": {
+          "status": "PASS",
+          "report": "final-browser"
+        }
+      }
+    },
+    {
+      "lessonId": "g8-t1-l16-016",
+      "route": "/learn/8/term/1/g8-t1-l16-016",
+      "role": "synthetic educator in isolated local copy; NOT real-role validation",
+      "viewports": {
+        "320": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "360": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "430": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "768": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "1280": {
+          "status": "PASS",
+          "report": "desktop-complete"
+        },
+        "1920": {
+          "status": "PASS",
+          "report": "final-browser"
+        }
+      }
+    },
+    {
+      "lessonId": "g8-t1-l17-017",
+      "route": "/learn/8/term/1/g8-t1-l17-017",
+      "role": "synthetic educator in isolated local copy; NOT real-role validation",
+      "viewports": {
+        "320": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "360": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "430": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "768": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "1280": {
+          "status": "PASS",
+          "report": "desktop-complete"
+        },
+        "1920": {
+          "status": "PASS",
+          "report": "final-browser"
+        }
+      }
+    },
+    {
+      "lessonId": "g8-t1-l18-018",
+      "route": "/learn/8/term/1/g8-t1-l18-018",
+      "role": "synthetic educator in isolated local copy; NOT real-role validation",
+      "viewports": {
+        "320": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "360": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "430": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "768": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "1280": {
+          "status": "PASS",
+          "report": "desktop-complete"
+        },
+        "1920": {
+          "status": "PASS",
+          "report": "final-browser"
+        }
+      }
+    },
+    {
+      "lessonId": "g8-t1-l19-019",
+      "route": "/learn/8/term/1/g8-t1-l19-019",
+      "role": "synthetic educator in isolated local copy; NOT real-role validation",
+      "viewports": {
+        "320": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "360": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "430": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "768": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "1280": {
+          "status": "PASS",
+          "report": "desktop-complete"
+        },
+        "1920": {
+          "status": "PASS",
+          "report": "final-browser"
+        }
+      }
+    },
+    {
+      "lessonId": "g8-t1-l20-020",
+      "route": "/learn/8/term/1/g8-t1-l20-020",
+      "role": "synthetic educator in isolated local copy; NOT real-role validation",
+      "viewports": {
+        "320": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "360": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "430": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "768": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "1280": {
+          "status": "PASS",
+          "report": "desktop-complete"
+        },
+        "1920": {
+          "status": "PASS",
+          "report": "final-browser"
+        }
+      }
+    },
+    {
+      "lessonId": "g9-t1-l02-002",
+      "route": "/learn/9/term/1/g9-t1-l02-002",
+      "role": "synthetic educator in isolated local copy; NOT real-role validation",
+      "viewports": {
+        "320": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "360": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "430": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "768": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "1280": {
+          "status": "PASS",
+          "report": "desktop-complete"
+        },
+        "1920": {
+          "status": "PASS",
+          "report": "final-browser"
+        }
+      }
+    },
+    {
+      "lessonId": "g10-t2-l19-019",
+      "route": "/learn/10/term/2/g10-t2-l19-019",
+      "role": "synthetic educator in isolated local copy; NOT real-role validation",
+      "viewports": {
+        "320": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "360": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "430": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "768": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "1280": {
+          "status": "PASS",
+          "report": "desktop-complete"
+        },
+        "1920": {
+          "status": "PASS",
+          "report": "final-browser"
+        }
+      }
+    },
+    {
+      "lessonId": "g11-t1-l14-014",
+      "route": "/learn/11/term/1/g11-t1-l14-014",
+      "role": "synthetic educator in isolated local copy; NOT real-role validation",
+      "viewports": {
+        "320": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "360": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "430": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "768": {
+          "status": "PASS",
+          "report": "final-browser"
+        },
+        "1280": {
+          "status": "PASS",
+          "report": "desktop-complete"
+        },
+        "1920": {
+          "status": "PASS",
+          "report": "final-browser"
+        }
+      }
+    },
+    {
+      "lessonId": "g12-t1-l05-005",
+      "route": "/learn/12/term/1/g12-t1-l05-005",
+      "role": "synthetic educator in isolated local copy; NOT real-role validation",
+      "viewports": {
+        "320": {
+          "status": "PASS",
+          "report": "final-fix-12"
+        },
+        "360": {
+          "status": "PASS",
+          "report": "final-fix-12"
+        },
+        "430": {
+          "status": "PASS",
+          "report": "final-fix-12"
+        },
+        "768": {
+          "status": "PASS",
+          "report": "final-fix-12"
+        },
+        "1280": {
+          "status": "PASS",
+          "report": "desktop-complete"
+        },
+        "1920": {
+          "status": "PASS",
+          "report": "final-fix-12"
+        }
+      }
+    }
+  ],
+  "privacyLifecycle": {
+    "320": {
+      "status": "PASS",
+      "report": "final-fix-12"
+    },
+    "360": {
+      "status": "PASS",
+      "report": "final-fix-12"
+    },
+    "430": {
+      "status": "PASS",
+      "report": "final-fix-12"
+    },
+    "768": {
+      "status": "PASS",
+      "report": "final-fix-12"
+    },
+    "1280": {
+      "status": "PASS",
+      "report": "desktop-complete"
+    },
+    "1920": {
+      "status": "PASS",
+      "report": "final-fix-12"
+    }
+  }
+}
