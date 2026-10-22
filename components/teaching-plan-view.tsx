@@ -68,8 +68,16 @@ function fieldLabel(path:string){
  if(!/^(discussion|understandingChecks|preparation\.(misconceptions|vocabulary)|practical)\./.test(path))return undefined;
  return ({question:"Discuss",followUp:"Follow-up",indicativeReasoning:"Indicative reasoning",partialUnderstanding:"Partial understanding",prompt:"Check",secureReasoning:"Secure reasoning",notYetEvidenced:"Not yet evidenced",nextTeachingMove:"Next teaching move",belief:"Common misconception",response:"Response",term:"Vocabulary",explanation:"Plain-language explanation",expectedOutput:"Expected output",inClassScope:"Current classroom scope"} as Record<string,string>)[key];
 }
-function Groups({plan,groups}:{plan:TeachingPlan;groups:TeachingGroup[]}){
- return <>{groups.map((group,index)=><section key={index}><h3>{group.heading}</h3>{group.fields.map(path=><div key={path}>{fieldLabel(path)&&<h4>{fieldLabel(path)}</h4>}<p data-instructional-field={path}>{plan.fields[path]}</p></div>)}</section>)}</>;
+function Groups({plan,groups,guide}:{plan:TeachingPlan;groups:TeachingGroup[];guide?:TeacherGuide|null}){
+ return <>{groups.map((group,index)=>{
+  const firstScaffold=guide?group.fields.find(path=>path.startsWith("practical.scaffold.")):undefined;
+  return <section key={index}><h3>{group.heading}</h3>{group.fields.map(path=>{
+   // Preserve the original field identity on its table cell, rather than
+   // repeating column/row labels as disconnected paragraphs above the table.
+   if(guide&&path.startsWith("practical.scaffold."))return path===firstScaffold?<Scaffold key={path} guide={guide} fields={group.fields}/>:null;
+   return <div key={path}>{fieldLabel(path)&&<h4>{fieldLabel(path)}</h4>}<p data-instructional-field={path}>{plan.fields[path]}</p></div>;
+  })}</section>;
+ })}</>;
 }
 function timing(plan:TeachingPlan,moment:TeachingMoment){
  if(moment.schedule==="support")return "Current classroom support · within the scheduled stage";
@@ -98,23 +106,22 @@ export function TeachingPreparation({plan,unit,active,onStage,onPrint}:{plan:Tea
   <details className="contextual-tools"><summary>Presentation, print and fallback</summary><div className="contextual-body"><div className="contextual-actions"><a href={`${href}?presentation=1`} target="_blank" rel="noopener noreferrer">Open learner presentation in a new window</a><button type="button" onClick={onPrint}>Print complete teacher preparation</button><Link href={`/facilitator/classroom?lesson=${unit.id}`}>Standalone guide</Link></div><p>Keep guidance on your own screen and share only the learner presentation window. No device synchronisation is provided. Learner notes and completion controls are available in Learner View.</p></div></details>
  </aside>;
 }
-function Scaffold({guide}:{guide?:TeacherGuide|null}){
- if(!guide)return null;
+function Scaffold({guide,fields}:{guide:TeacherGuide;fields:string[]}){
  const scaffold=guide.practical.scaffold;
- return <div className="classroom-table" role="region" aria-label="Practical work scaffold" tabIndex={0}><table><caption>Paper or board scaffold · added teaching support</caption><thead><tr>{scaffold.columns.map((column,index)=><th scope="col" key={index}>{column}</th>)}</tr></thead><tbody>{scaffold.rows.map((row,i)=><tr key={i}>{row.map((cell,j)=><td key={j}>{cell||"—"}</td>)}</tr>)}</tbody></table></div>;
+ return <div className="classroom-table" role="region" aria-label="Practical work scaffold" tabIndex={0}><table><caption>Paper or board scaffold · added teaching support</caption><thead><tr>{scaffold.columns.map((column,index)=>{const path=`practical.scaffold.columns.${index}`;return <th scope="col" key={index} data-instructional-field={fields.includes(path)?path:undefined}>{column}</th>;})}</tr></thead><tbody>{scaffold.rows.map((row,i)=><tr key={i}>{row.map((cell,j)=>{const path=`practical.scaffold.rows.${i}.${j}`;return <td key={j} data-instructional-field={fields.includes(path)?path:undefined}>{cell||"—"}</td>;})}</tr>)}</tbody></table></div>;
 }
 export function TeachingGuidance({plan,moment,onStage,guide}:{plan:TeachingPlan;moment:TeachingMoment;onStage:(id:string)=>void;guide?:TeacherGuide|null}){
  const timed=moment.schedule==="classroom";const index=timed?plan.periods[moment.period!].moments.indexOf(moment.id):-1;
  return <details className="contextual-guidance contextual-private contextual-no-print" data-teaching-stage={timed?moment.id:undefined} data-teaching-activity={timed?undefined:moment.id} data-instructional-location={moment.id} data-source-placement={moment.placement.blockId} onToggle={event=>{if(event.target===event.currentTarget&&event.currentTarget.open&&timed)onStage(moment.id);}}>
   <summary id={`teacher-moment-${moment.id}`}><span className="contextual-summary"><strong>Teacher guidance{timed?` · Stage ${index+1} of ${plan.periods[moment.period!].moments.length}`:""}</strong><span data-instructional-field={moment.title}>{plan.fields[moment.title]}</span><small>{timing(plan,moment)}</small></span><span className="contextual-expand" aria-hidden="true">+</span></summary>
-  <div className="contextual-body" role="region" aria-label={`Teaching support: ${plan.fields[moment.title]}`}><Groups plan={plan} groups={moment.core}/>
-   {moment.depth.length>0&&<details className="contextual-depth"><summary>Deeper teaching support and adaptations</summary><div className="contextual-body"><Groups plan={plan} groups={moment.depth}/>{moment.depth.some(group=>group.fields.some(path=>path.startsWith("practical.scaffold.")))&&<Scaffold guide={guide}/>}</div></details>}
+  <div className="contextual-body" role="region" aria-label={`Teaching support: ${plan.fields[moment.title]}`}><Groups plan={plan} groups={moment.core} guide={guide}/>
+   {moment.depth.length>0&&<details className="contextual-depth"><summary>Deeper teaching support and adaptations</summary><div className="contextual-body"><Groups plan={plan} groups={moment.depth} guide={guide}/></div></details>}
    <nav className="contextual-actions contextual-next" aria-label={`Teaching transitions for ${plan.fields[moment.title]}`}>{moment.links.map(id=>{const target=plan.moments.find(m=>m.id===id)!;return <button key={id} type="button" onClick={()=>{if(target.schedule==="classroom")onStage(id);jumpTeaching(`teacher-moment-${id}`);}}>Go to {plan.fields[target.title]}{target.period!==null?` · Period ${target.period+1}`:""}</button>;})}<button type="button" onClick={()=>jumpTeaching("classroom-stage")}>Teaching navigator</button></nav>
   </div>
  </details>;
 }
 export function TeachingPrintGuide({plan,guide,title}:{plan:TeachingPlan;guide?:TeacherGuide|null;title:string}){
- return <div className="contextual-print-guide contextual-private"><article className="classroom-workspace"><h2>{title} · Teacher preparation</h2><p>Private draft instructional enrichment · {plan.periods.length} × 45-minute periods · educator review required</p><Groups plan={plan} groups={plan.preparation}/>{plan.periods.map((period,index)=><section key={index}><h2 data-instructional-field={period.title}>{plan.fields[period.title]}</h2>{period.moments.map(id=>{const moment=plan.moments.find(m=>m.id===id)!;return <section key={id}><h3 data-instructional-field={moment.title}>{timing(plan,moment)} · {plan.fields[moment.title]}</h3><Groups plan={plan} groups={[...moment.core,...moment.depth]}/></section>;})}</section>)}<Scaffold guide={guide}/><h2>Supporting material and later learning</h2>{plan.moments.filter(m=>m.schedule!=="classroom").map(moment=><section key={moment.id}><h3 data-instructional-field={moment.title}>{plan.fields[moment.title]} · {moment.schedule}</h3><Groups plan={plan} groups={[...moment.core,...moment.depth]}/></section>)}</article></div>;
+ return <div className="contextual-print-guide contextual-private"><article className="classroom-workspace"><h2>{title} · Teacher preparation</h2><p>Private draft instructional enrichment · {plan.periods.length} × 45-minute periods · educator review required</p><Groups plan={plan} groups={plan.preparation} guide={guide}/>{plan.periods.map((period,index)=><section key={index}><h2 data-instructional-field={period.title}>{plan.fields[period.title]}</h2>{period.moments.map(id=>{const moment=plan.moments.find(m=>m.id===id)!;return <section key={id}><h3 data-instructional-field={moment.title}>{timing(plan,moment)} · {plan.fields[moment.title]}</h3><Groups plan={plan} groups={[...moment.core,...moment.depth]} guide={guide}/></section>;})}</section>)}<h2>Supporting material and later learning</h2>{plan.moments.filter(m=>m.schedule!=="classroom").map(moment=><section key={moment.id}><h3 data-instructional-field={moment.title}>{plan.fields[moment.title]} · {moment.schedule}</h3><Groups plan={plan} groups={[...moment.core,...moment.depth]} guide={guide}/></section>)}</article></div>;
 }
 export function StandaloneTeachingPlan({plan,guide,title}:{plan:TeachingPlan;guide?:TeacherGuide|null;title:string}){
  return <div className="standalone-teaching-plan"><TeachingPrintGuide plan={plan} guide={guide} title={title}/></div>;

@@ -47,6 +47,13 @@ for(const binding of manifest.plans)test(`${binding.lessonId} · complete local 
  await page.locator('.contextual-private details,details.contextual-guidance').evaluateAll(els=>els.forEach(el=>el.open=true));
  const rendered=await page.locator('[data-instructional-field]').evaluateAll(els=>els.map(el=>({path:el.dataset.instructionalField,text:el.textContent,visible:el.getClientRects().length>0})));
  for(const [path,value]of Object.entries(plan.fields)){const hits=rendered.filter(row=>row.path===path);expect(hits.length,'Local field '+path).toBeGreaterThan(0);expect(hits.some(row=>row.visible&&row.text===value),'Visible preserved field '+path).toBeTruthy();}
+ if(payload.guide){
+  await expect(page.locator('p[data-instructional-field^="practical.scaffold."]')).toHaveCount(0);
+  for(const path of Object.keys(plan.fields).filter(path=>path.startsWith('practical.scaffold.'))){
+   const cell=page.locator('th[data-instructional-field='+JSON.stringify(path)+'],td[data-instructional-field='+JSON.stringify(path)+']');
+   await expect(cell).toHaveCount(1);await expect(cell).toHaveText(plan.fields[path]);
+  }
+ }
  const live=await page.locator('.contextual-private').allTextContents();expect(live.join(' ')).not.toMatch(/sourceBlockIds|Quality self-review|reviewedBy|[a-f0-9]{24}-\d/);
  if(info.project.use.viewport.width===1280){
   const axe=await new AxeBuilder({page}).include('.lesson-document').analyze();expect(axe.violations.map(v=>v.id)).toEqual([]);
