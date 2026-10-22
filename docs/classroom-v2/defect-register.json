@@ -2,7 +2,7 @@
   {
     "id": "V2-A11Y-01",
     "severity": "S2",
-    "status": "FIXED; FULL MATRIX RETEST IN PROGRESS",
+    "status": "FIXED; FINAL 24-PLAN EXPANDED DESKTOP AXE SCAN PASSED",
     "reproduction": "Open Lesson 1 Teacher View, expand preparation and run axe against the lesson document.",
     "observed": "Preparation jumped from the lesson h1 to group h3 headings.",
     "correction": "Added an h2 introducing educator preparation.",
@@ -11,11 +11,38 @@
   {
     "id": "V2-A11Y-02",
     "severity": "S2",
-    "status": "FIXED; FULL MATRIX RETEST IN PROGRESS",
+    "status": "FIXED; FINAL 24-PLAN EXPANDED DESKTOP AXE SCAN PASSED",
     "reproduction": "Open Lesson 1 Teacher View, expand all contextual panels and run axe.",
     "observed": "Every teaching transition navigation landmark had the same accessible name.",
     "correction": "Each transition navigation label includes its actual teaching moment title.",
     "regression": "All-plan desktop axe scan includes expanded panels."
+  },
+  {
+    "id": "V2-A11Y-05",
+    "severity": "S2",
+    "status": "FIXED; FINAL 24-PLAN EXPANDED DESKTOP AXE SCAN PASSED",
+    "reproduction": "Open the two-period Grade 12 benchmark Teacher View, expand all disclosures and run axe on the lesson document.",
+    "observed": "Two existing wide source tables share the Scrollable curriculum table region name. This pre-existing learner label duplication also appears in contextual delivery.",
+    "correction": "Give annotated teaching tables distinct ordinal region labels; preserve the default learner markup exactly.",
+    "regression": "Static actual-source test verifies distinct teaching labels and unchanged learner labels; final six-viewport Grade 12 browser retest includes expanded desktop axe."
+  },
+  {
+    "id": "V2-ALIGN-03",
+    "severity": "S2",
+    "status": "FIXED; SIX-VIEWPORT LESSON 20 RETEST PASSED",
+    "reproduction": "Inspect the original Lesson 20 Activity 27 container: log-review heading and prompts are suppressed while a portfolio notice remains.",
+    "observed": "A non-empty container was incorrectly accepted as proof that the original source heading is visible.",
+    "correction": "Reject removed-log headings as boundaries. Place the review at the next intact Activity 28 section with explicit source-reference and placement rationale; no learner renderer or field changes.",
+    "regression": "Actual-source static test rejects the suppressed boundary; six-width Lesson 20 browser retest verifies the reviewed placement."
+  },
+  {
+    "id": "V2-PRINT-04",
+    "severity": "S3",
+    "status": "FIXED; 24/24 FINAL EXPORTS PASS, 171 POPULATED PAGES, 1,867 FIELDS PRESERVED",
+    "reproduction": "Export all 24 complete guides on named A4 pages; inspect the final page of Lesson 15.",
+    "observed": "The print-only guide retained all fields, but the route announcer produced a trailing blank page in Lesson 15.",
+    "correction": "Use a document-level named A4 teacher page and hide the route announcer only during private teacher printing. Diagnostic exports reproduce six pages before and five populated pages after.",
+    "regression": "All 24 exports must retain every field, stay within A4 margins and contain no empty pages."
   },
   {
     "id": "V2-TEST-01",
@@ -27,12 +54,12 @@
     "regression": "Every plan checks the saved response after leaving Teacher View and after reload."
   },
   {
-    "id": "V2-ALIGN-03",
-    "severity": "S2",
-    "status": "FIXED; FINAL LESSON 20 RETEST PENDING",
-    "reproduction": "Inspect the original Lesson 20 Activity 27 container: log-review heading and prompts are suppressed while a portfolio notice remains.",
-    "observed": "A non-empty container was incorrectly accepted as proof that the original source heading is visible.",
-    "correction": "Reject removed-log headings as boundaries. Place the review at the next intact Activity 28 section with explicit source-reference and placement rationale; no learner renderer or field changes.",
-    "regression": "Actual-source static test rejects the suppressed boundary; six-width Lesson 20 browser retest verifies the reviewed placement."
+    "id": "V2-TEST-02",
+    "severity": "TEST HARNESS",
+    "status": "CORRECTED; SIX PRIVACY RETESTS AND FINAL 25-CASE DESKTOP RUN PASSED",
+    "reproduction": "Revoked-access test queries every alert while local fixture sync warnings are also present.",
+    "observed": "An ambiguous locator fails despite private guidance already being cleared. Table response controls without DOM IDs also require actual stored-key verification.",
+    "correction": "Scope the revoked-access alert to its message. Verify the stable response key in the learning store for both ordinary and table controls, preserving original identities.",
+    "regression": "Six-viewports privacy lifecycle checks; final all-plan desktop response save/reload checks."
   }
 ]

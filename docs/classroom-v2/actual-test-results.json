@@ -1,0 +1,172 @@
+{
+  "applicationCommit": "be93c24a0b0166a0406ec8226dd951b9542e34a5",
+  "runtime": {
+    "lessons": 395,
+    "assessments": 4,
+    "stableBlocks": 20766,
+    "result": "PASS"
+  },
+  "nodeLocal": {
+    "passed": 189,
+    "failed": 0,
+    "seconds": 67.23
+  },
+  "pythonIdentity": {
+    "passed": 2,
+    "failed": 0
+  },
+  "typecheck": {
+    "name": "final-types",
+    "state": "complete",
+    "exitCode": 0,
+    "seconds": 15.03
+  },
+  "lint": {
+    "name": "final-lint",
+    "state": "complete",
+    "exitCode": 0,
+    "seconds": 46.51
+  },
+  "build": {
+    "name": "final-app-build",
+    "state": "complete",
+    "exitCode": 0,
+    "seconds": 12.4
+  },
+  "isolatedFixtureBuild": {
+    "name": "final-fixture-build",
+    "state": "complete",
+    "exitCode": 0,
+    "seconds": 72.07
+  },
+  "originalRelease": {
+    "guides": 5,
+    "periods": 7,
+    "result": "PASS"
+  },
+  "v2Release": {
+    "plans": 24,
+    "termLessons": 20,
+    "periods": 31,
+    "instructionalFields": 1867,
+    "originalAndClarificationFieldsPreserved": 620,
+    "result": "PASS"
+  },
+  "publicBundle": {
+    "assets": 77,
+    "privateRawAndEscapedSentinels": 2421,
+    "disclosures": 0
+  },
+  "learnerRenderer": {
+    "unchangedUnits": 399,
+    "result": "PASS"
+  },
+  "learnerDOM": {
+    "identical": 120,
+    "comparisons": 120
+  },
+  "learnerPixels": {
+    "identical": 120,
+    "comparisons": 120
+  },
+  "browserRuns": {
+    "final-browser": {
+      "startTime": "2026-10-21T20:30:16.512Z",
+      "duration": 2209616.551,
+      "expected": 143,
+      "skipped": 0,
+      "unexpected": 7,
+      "flaky": 0
+    },
+    "final-fix-12": {
+      "startTime": "2026-10-22T01:37:39.190Z",
+      "duration": 132184.72999999998,
+      "expected": 12,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "privacy-retest": {
+      "startTime": "2026-10-22T01:33:53.051Z",
+      "duration": 33376.904,
+      "expected": 6,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "benchmark-final": {
+      "startTime": "2026-10-21T20:48:21.080Z",
+      "duration": 619012.591,
+      "expected": 24,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "discovery": {
+      "startTime": "2026-10-21T20:29:25.113Z",
+      "duration": 2202450.689,
+      "expected": 390,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "desktop-complete": {
+      "startTime": "2026-10-22T01:46:29.572Z",
+      "duration": 328140.734,
+      "expected": 25,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    }
+  },
+  "latestTeachingCases": {
+    "passed": 150,
+    "total": 150,
+    "singleCleanRun": false,
+    "see": "teaching-coverage-matrix.json"
+  },
+  "print": {
+    "guides": 24,
+    "pages": 171,
+    "emptyPages": 0,
+    "instructionalFieldsPreserved": 1867,
+    "result": "PASS"
+  },
+  "interruptedAttempts": "Earlier tool-session-terminated partial runs are retained privately and are not counted as passed.",
+  "authenticatedRoles": "NOT TESTED; AC_ROLE_FIXTURES is unset",
+  "educatorModeration": "REVIEW REQUIRED; source review and schema verification do not establish educational acceptance",
+  "ci": {
+    "url": "https://github.com/PDthePlug/Applied-Commerce-/actions/runs/39706806515",
+    "conclusion": "success",
+    "nodePassed": 189,
+    "pythonIdentityPassed": 2,
+    "acceptancePassed": 222,
+    "acceptanceDuration": "3.6 minutes",
+    "syntheticDatabaseDrill": "PASS; not real-account or production evidence"
+  },
+  "preparationScreenshots": 12,
+  "newGuideStandaloneChecks": {
+    "passed": 2,
+    "scope": "Synthetic local copy; Lessons 1 and 20"
+  },
+  "printAnnouncerRegression": {
+    "passed": 1,
+    "scope": "Final Grade 12 desktop browser print assertion"
+  },
+  "finalAllPlanDesktop": {
+    "passed": 25,
+    "duration": "5.5 minutes",
+    "scope": "All 24 plans: expanded axe, every field locally accessible, actual stored response key survives mode switch and reload, print, keyboard and learner progress. Plus privacy lifecycle."
+  },
+  "deliveryLint": {
+    "result": "PASS",
+    "seconds": 13.73,
+    "scope": "Final report and strengthened browser regression edits"
+  },
+  "evidence": {
+    "encryptedArtifact": "review-evidence.v2.enc.json",
+    "archiveEntries": 235,
+    "roundTripIdentical": true,
+    "keyIncluded": false
+  }
+}

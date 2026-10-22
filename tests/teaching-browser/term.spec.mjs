@@ -14,8 +14,15 @@ for(const binding of manifest.plans)test(`${binding.lessonId} · complete local 
  expect(plan.lessonId).toBe(binding.lessonId);expect(Object.keys(plan.fields).length).toBe(binding.fieldCount);
  await expect(page.locator('.semantic-learning-document')).toBeVisible();
  // Retain an original stable field value before entering Teacher View.
- const answer=page.locator('.semantic-learning-document textarea').first();let answerId;
- if(await answer.count()){answerId=await answer.getAttribute('id');await answer.fill('Existing learner response '+binding.lessonId);await expect(answer).toHaveValue('Existing learner response '+binding.lessonId);}
+ const answer=page.locator('.semantic-learning-document textarea').first();let answerKey;
+ const answerValue='Existing learner response '+binding.lessonId;
+ if(await answer.count()){
+  await answer.fill(answerValue);await expect(answer).toHaveValue(answerValue);
+  // Workbook table controls can intentionally have no DOM id. Verify their
+  // actual persisted response identity as well as ordinary labelled fields.
+  await expect.poll(async()=>Object.values((await page.evaluate(state)).promptResponses??{}).includes(answerValue)).toBeTruthy();
+  answerKey=Object.entries((await page.evaluate(state)).promptResponses).find(([,value])=>value===answerValue)[0];
+ }
  const before=await page.evaluate(state);
  await page.getByRole('button',{name:'Teacher View',exact:true}).click();await expect(page.locator('[data-teaching-stage]')).toHaveCount(plan.moments.filter(m=>m.schedule==='classroom').length);
  await expect(page.locator('.contextual-print-guide')).toHaveCount(0);await expect(page.getByRole('textbox',{name:'Lesson notes',exact:true})).toHaveCount(0);await expect(page.getByRole('button',{name:'Complete and continue',exact:true})).toHaveCount(0);
@@ -45,10 +52,10 @@ for(const binding of manifest.plans)test(`${binding.lessonId} · complete local 
   const axe=await new AxeBuilder({page}).include('.lesson-document').analyze();expect(axe.violations.map(v=>v.id)).toEqual([]);
   await page.evaluate(()=>window.print=()=>{});await page.getByRole('button',{name:'Print complete teacher preparation',exact:true}).click();const print=page.locator('.contextual-print-guide');await expect(print).toHaveCount(1);
   const printFields=await print.locator('[data-instructional-field]').evaluateAll(els=>els.map(el=>el.dataset.instructionalField));for(const path of Object.keys(plan.fields))expect(printFields).toContain(path);
-  await page.emulateMedia({media:'print'});await page.pdf({path:`${folder}/${binding.lessonId}-complete.pdf`,format:'A4',printBackground:true});await page.emulateMedia({media:'screen'});await page.evaluate(()=>window.dispatchEvent(new Event('afterprint')));await expect(print).toHaveCount(0);
+  await page.emulateMedia({media:'print'});await expect(page.locator('next-route-announcer')).toBeHidden();await page.pdf({path:`${folder}/${binding.lessonId}-complete.pdf`,format:'A4',printBackground:true});await page.emulateMedia({media:'screen'});await page.evaluate(()=>window.dispatchEvent(new Event('afterprint')));await expect(print).toHaveCount(0);
  }
  await page.getByRole('button',{name:'Learner View',exact:true}).click();await expect(page.locator('.contextual-guidance')).toHaveCount(0);
- if(answerId){await expect(page.locator('[id='+JSON.stringify(answerId)+']')).toHaveValue('Existing learner response '+binding.lessonId);await page.reload();await expect(page.locator('[id='+JSON.stringify(answerId)+']')).toHaveValue('Existing learner response '+binding.lessonId);}
+ if(answerKey){await expect(answer).toHaveValue(answerValue);await page.reload();await expect(answer).toHaveValue(answerValue);expect((await page.evaluate(state)).promptResponses[answerKey]).toBe(answerValue);}
  expect(errors).toEqual([]);
 });
 

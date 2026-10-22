@@ -1,38 +1,60 @@
-# Grade 8 Term 1 contextual classroom delivery · review report
+# Grade 8 Term 1 contextual classroom delivery
 
-Implementation is on `codex/classroom-v2-g8-term1-2026-10-21`, stacked on the owner-approved PR #43 implementation because main still predates that unmerged PR. Neither PR is merged by this work. This is a term review candidate, not approval to expand to another term.
+All 20 Grade 8 Term 1 lessons now use the approved contextual teaching architecture, including the original Lesson 8 benchmark. The four existing Grade 9–12 benchmarks also use the reusable interface. This is a completed implementation for owner and educator review; real authenticated-role validation and independent educational acceptance remain outstanding.
 
-The release contains 20 Grade 8 Term 1 plans and the four preserved higher-grade benchmarks, 31 periods and 1,867 instructional text fields. The term itself uses 25 periods; Lessons 1, 2, 3, 4 and 20 use two. All 620 original benchmark and clarification fields remain identical. Each field is accessible in preparation, a local teaching moment or a local later-learning disclosure. Complete print content is mounted only for printing. The original standalone benchmark guides remain available.
+The release contains 24 plans, 31 periods and 1,867 instructional text fields. The term itself has 25 periods: Lessons 1, 2, 3, 4 and 20 use two 45-minute periods. Other term lessons use one. All 620 original benchmark and clarification fields are preserved exactly, including the approved Grade 8 guide's 100 fields and 24 clarification fields. No teaching field is accessible only through a fallback document.
 
-All 19 new term plans were written after reading their complete authored lessons. Examples of deliberate instructional differences include the 35-minute learning agreement; a two-direction money-flow audit with labelled unknowns; a fictional five-member rotational saving model; a twelve-contribution SMART arithmetic check; safe initiative and failure discussions; a routine with a protected minimum backup; and a two-period evidence-based portfolio review. These are private draft enrichments, not source-book edits or externally moderated teaching content.
+## Classroom delivery
 
-## Verification recorded so far
+Educators prepare from an opening collapsed disclosure, then teach from the original learner material. Variable teaching stages, period selection, explicit revisits, local deeper support, understanding checks and later/optional activities replace a fixed five-stage implementation. Printing mounts a complete private guide temporarily; the live lesson has no duplicated full-length guide at the bottom. The original standalone benchmark guides remain available, and the 19 new plans have a working standalone view.
 
-| Check | Actual result |
+The 19 new plans were written after reading each complete authored lesson. Deliberate differences include the original 35-minute learning agreement, a labelled money-flow audit, a fictional rotational-saving model, the twelve-contribution SMART arithmetic check, safe initiative/failure activities, a routine with a protected minimum backup, and a two-period evidence-based portfolio review. These are private draft enrichments. See the [term overview](TERM_OVERVIEW.md), [teaching standard](TEACHING_STANDARD_V2.md), [24 field-by-field coverage maps](coverage/) and [educational-quality register](educational-quality-register.json).
+
+Every reviewed insertion is verified against the actual semantic renderer. Lesson 20 needs an explicit placement exception: the existing renderer suppresses Activity 27's heading/prompts although a portfolio notice survives. Its teaching review is placed at the next intact Activity 28 section, with both source references and a documented rationale. No suppressed learner field is restored, moved or renumbered. Current classroom supporting disclosures have an explicit owning stage and add no minutes; the approved Lesson 8 24-hour experiment remains later work.
+
+## Actual verification
+
+| Check | Recorded result |
 | --- | --- |
-| Pre-change Node baseline | 182 passed |
-| Initial V2 Node suite | 186 passed |
-| Runtime integrity | 395 lessons, four assessments, 20,766 stable raw blocks |
-| Original classroom release | Five guides, seven periods, 100 Grade 8 fields and clarification release validated |
-| V2 private release | 24 plans, 20 term lessons, 31 periods, 1,867 fields, 620 original/clarification fields preserved |
-| Default learner renderer | All 399 units match the unchanged main-branch static-markup fixture |
-| Source insertion proof | Every reviewed moment in all 24 plans rendered exactly once |
-| Learner browser regression | 120/120 DOM comparisons and 120/120 screenshot pixel comparisons identical at all six widths |
-| Python identity checks | Two passed using `python3 scripts/test_block_identity.py` |
-| Initial typecheck, lint, build | Passed; final gates running after accessibility corrections |
-| Public client disclosure scan | 77 assets checked against 2,421 raw/escaped private sentinels; no disclosure |
-| 320-pixel smoke | Three passed: Lesson 1, approved Lesson 8, two-period Grade 12 |
-| Desktop preparation/print/accessibility smoke | Passed after two reproduced accessibility corrections |
-| Full V2 and existing acceptance matrices | IN PROGRESS; do not infer a pass from the smoke checks |
+| Final application commit | `be93c24a0b0166a0406ec8226dd951b9542e34a5` |
+| Node tests | 189 passed locally and in GitHub CI; initial pre-change baseline was 182 |
+| Python identity tests | Two passed locally and in CI |
+| Typecheck, lint and production build | Passed locally and in CI |
+| Existing Playwright acceptance | 222 passed in final-code CI, 3.6 minutes |
+| Six-viewport discovery | 390 passed; 480 diagnostic observations across 66 routes, no runtime/console/HTTP or unexpected request failures |
+| Contextual teaching matrix | All 150 latest per-case outcomes pass after disclosed failures and focused retests; 24 lessons × six widths plus six privacy cases |
+| Final all-plan desktop retest | 25 passed in 5.5 minutes: all 24 plans plus privacy; includes actual stored response-key recovery for workbook controls without DOM IDs |
+| Final focused built-code retest | 12 passed: Grade 12 benchmark and private-state lifecycle at every width |
+| Approved Lesson 8 regression | 24 passed across six widths, including local preservation, notes/portfolio, fallback, private print, projection, dark/enlarged text and lifecycle checks |
+| Default learner renderer | All 399 units match the unchanged main-branch markup fixture |
+| Term learner browser comparisons | 120/120 DOM hashes and 120/120 screenshot pixel comparisons identical against the approved pre-rollout PR #43 build |
+| Runtime integrity | 395 lessons, four assessments, 20,766 unchanged stable raw blocks |
+| V2 release integrity | 24 plans; all 1,867 fields placed; all 620 original/clarification fields preserved |
+| Public client disclosure scan | 77 assets, 2,421 raw/escaped private sentinels, zero disclosures |
+| Complete print exports | 24/24 pass; 171 populated A4 pages within 12 mm margins; all 1,867 instructional fields survive exported PDF text |
+| Original key | Preserved byte for byte; never displayed or regenerated |
+| Real authenticated roles and cloud persistence | **NOT TESTED**: isolated `AC_ROLE_FIXTURES` unavailable |
 
-The first browser attempt found a test selector error: stable response IDs contain double colons. The test now uses a quoted ID attribute selector, preserving the identity itself. The first desktop accessibility scan reproduced skipped preparation heading levels and repeated transition landmark names. Both were corrected; the all-plan scan is the regression gate. Original failed logs and traces remain private.
+[Actual results](actual-test-results.json), [CI evidence](ci-evidence.json), [teaching coverage](teaching-coverage-matrix.json), [route/viewport coverage](discovery-coverage-matrix.json), [print geometry](print-verification.json), [PDF text preservation](pdf-field-preservation.json), [security/role report](SECURITY_AND_ROLES.md) and [encrypted review evidence](EVIDENCE.md) provide inspectable records. The viewport widths are 320, 360, 430, 768, 1280 and 1920 pixels.
 
-## Security and release limits
+The initial full teaching run passed 143 cases and failed seven: six failures came from an ambiguous alert selector while fixture sync warnings were also present; one exposed duplicate region names on the Grade 12 source tables. These results are retained, not recast as a clean first run. Focused retests passed. Interrupted earlier local sessions have no completion report and are not counted as passes. GitHub CI independently proves the existing 222-case acceptance suite on the final application commit.
 
-The original key file is unchanged byte for byte. It was neither displayed nor regenerated. Private plaintext, screenshots, PDFs and traces stay in ignored private storage; only encrypted evidence may be committed. Server-side identity, active-session and current-role checks remain mandatory before any private import or decryption. The actual local-mode application denies the classroom API without opening an auth client. Synthetic authorised API tests and the isolated UI copy are explicitly not real-role validation.
+Five reproduced interface defects are corrected in the [severity-ranked register](defect-register.json): skipped preparation heading level, repeated transition landmark names, a suppressed source heading treated as a visible insertion point, an extra blank print page, and repeated source-table region names during teaching. The table correction applies only to annotated delivery; learner markup stays identical. The print regression now suppresses the route announcer during private printing and checks all exported pages. Test-harness corrections are separated from product defects.
 
-`AC_ROLE_FIXTURES` is unset. Real staging educator access, real learner denial, revoked-role behaviour against Supabase and cloud persistence are **NOT TESTED**. The separate production project and production Supabase records are unchanged. No schema migration, security-policy change, source-book edit, response-key change, assessment change or Zimbabwe application change was made.
+Discovery also recorded 600 repeated small-target heuristics. Triage identified four assessment routes' invisible 13-pixel native radios; their visible labelled choice rows are the actual pointer targets. Eight mobile/desktop route checks confirmed at least 44-pixel targets and successful label selection. This is recorded in [target triage](discovery-target-triage.json), with no assessment changes. Automated checks do not constitute complete WCAG certification or a human screen-reader assessment.
 
-The provider integration confirms the staging project as `applied-commerce-sa-staging` / `prj_9MXnYeh3mxtFzcS1xzEDrTjOW2nP`, with deployment protection enabled. Staging deployment and hosted server-decryption verification will be recorded after the implementation gates complete. Deployment protection must not be described as application learner denial. No hosted educator review is claimed.
+## Staging and review
 
-Independent educator moderation, a classroom timing pilot, current product/legal information where relevant and owner acceptance remain required. Source gaps in the educational register are distinct from fixed interface defects. Do not expand another grade-and-term batch until this term is reviewed.
+Draft [PR #44](https://github.com/PDthePlug/Applied-Commerce-/pull/44) is on `codex/classroom-v2-g8-term1-2026-10-21`, stacked on the owner-approved PR #43 branch `codex/contextual-teacher-g8-l8-2026-10-21` because main still predates that unmerged work. Neither PR is merged.
+
+The final application is READY at **https://applied-commerce-sa-staging-j7ndt6jjt.vercel.app**. Deployment `dpl_CsQhC3iwHnVAiYGfPsf3RELSe1pa` belongs to staging project `prj_9MXnYeh3mxtFzcS1xzEDrTjOW2nP`, commit `be93c24`. Its production environment belongs only to this staging project. The server build decrypted and validated all 24 plans without exporting the existing Secret. Health returned 200 with the same commit and isolated project `inxshlumnhcgiahxqewe`. The anonymous classroom request returned 401 without private content; deployment protection may intercept, so this is not real learner-denial evidence. See [staging evidence](staging-evidence.json).
+
+For owner review, open `/learn/8`, select Term 1, then a lesson. An authorised educator can enter Teacher View after server authorisation. Start with Lesson 8 to compare the approved benchmark, Lesson 1 for two-period delivery and Lesson 20 for portfolio continuity. Hosted educator access has not been claimed as passed.
+
+The separate live production project, production Supabase records, canonical books, original lesson identities, four assessments, learner completion/response/portfolio models and Zimbabwe application are unchanged. The evidence/report commit may follow the application commit; staging deliberately identifies the tested application SHA above.
+
+## Outstanding acceptance dependencies
+
+Real staging educator/learner/admin/institution testing, revoked roles and cloud persistence require isolated authenticated fixtures. Independent educator moderation, normal-classroom timing pilots, review of the registered source accuracy/privacy gaps, owner acceptance and human assistive-technology evaluation remain required. The educational register separates proposed source improvements from implementation defects; canonical content was not silently corrected.
+
+Use the [owner/educator review checklist](OWNER_EDUCATOR_REVIEW.md) to record named reviewers and dispositions. Do not proceed to another term, merge either PR or promote to the separate live production project until authorised.
