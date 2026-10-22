@@ -107,7 +107,7 @@ export function LessonReader({grade,term,unitId,classroomContext=false,presentat
       {presentationOnly&&<p className="learner-presentation-notice">Learner presentation · Use your own copy of the lesson for answers.</p>}
       {presentationOnly?<fieldset className="learner-projection" disabled aria-label="Learner presentation material">{lessonContent}</fieldset>:lessonContent}
     </article>
-    {teaching&&printing&&plan&&<TeachingPrintGuide plan={plan} guide={teacher.guide} title={unit.title}/>}
+    {teaching&&printing&&plan&&<TeachingPrintGuide plan={plan} guide={teacher.guide} title={`Grade ${grade} · Term ${term} · ${unit.label} · ${unit.title}`}/>}
     {!presentationOnly&&!teaching&&<>
     <section className="workbook-panel">
       <div className="workbook-title"><NotebookPen/><div><p className="eyebrow">Lesson notes</p><h2>Anything you want to remember</h2></div></div>
