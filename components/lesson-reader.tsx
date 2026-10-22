@@ -8,6 +8,7 @@ import { curriculum } from "@/lib/curriculum";
 import { learningSections } from "@/lib/semantic-learning";
 import type { TermIndex, UnitContent, UnitSummary } from "@/lib/types";
 import { ContentBlocks } from "./content-blocks";
+import { LessonIconKey } from "./presentation-system";
 import { useLearningStore } from "@/lib/learning-store";
 
 const compactQuery="(max-width: 820px)";
@@ -78,6 +79,7 @@ export function LessonReader({grade,term,unitId,classroomContext=false}:{grade:n
     {syncError&&<p role="alert" className="save-error">{syncError}</p>}
     <article className="lesson-document">
       <header className="lesson-heading"><p className="eyebrow">Grade {grade} · Term {term} · {unit.label}</p><h1>{unit.title}</h1>
+        <LessonIconKey/>
         <nav className="lesson-outline" aria-label="In this lesson"><p className="eyebrow">In this lesson</p>
           {classroomContext&&<Link className="teacher-context-link" href={`/facilitator/classroom?${new URLSearchParams({lesson:unitId})}`}>Back to teacher guidance</Link>}
           <ul>{learningSections(unit.blocks,unit.type).filter(section=>section.context&&section.context!=="reflection").map(section=><li key={section.anchor}><a href={`#${section.anchor}`}>{section.title}</a></li>)}</ul>
