@@ -4,7 +4,7 @@ import { responseView, persistResponseKey } from "@/lib/response-identity";
 import { Plus } from "lucide-react";
 import type { ContentBlock, TextBlockType, UnitContent } from "@/lib/types";
 import { cleanMarkup, isRemovedLogBlock, sanitizeRemovedLogReferences } from "@/lib/portfolio-model";
-import { DeepeningInsightPanel, LearningNotice, PortfolioCaptureNotice, ResponseSurface, StoryHeading, ThinkingEquationNotice } from "./presentation-system";
+import { DeepeningInsightPanel, LearningNotice, LessonSectionHeading, PortfolioCaptureNotice, ResponseSurface, StoryHeading, ThinkingEquationNotice } from "./presentation-system";
 import { authoredScale, choiceMeaning, learningSections, sourceCopy, valueSelection } from "@/lib/semantic-learning";
 import { RankingControl, RatingControl, ValuesControl } from "./semantic-controls";
 
@@ -250,7 +250,7 @@ function TextBlockView({block}:{block:Extract<ContentBlock,{kind:"text"}>}) {
   if(/^My Term\s+\d+\s+Portfolio Entry/i.test(text)) return <h3 className="module-section-heading">{text}</h3>;
   switch(block.type){
     case "list": return <li>{text}</li>;
-    case "section": return <h2 className="source-section">{text}</h2>;
+    case "section": return <LessonSectionHeading title={text}/>;
     case "activity": return <LearningNotice tone="activity" title={text.replace(/^✍️\s*/,"")}/>;
     case "reflection": return <LearningNotice tone="reflection" title={text.replace(/^💭\s*/,"")}/>;
     case "checkpoint": return <LearningNotice tone="checkpoint" title={text.replace(/^✅\s*/,"")}/>;

@@ -11,7 +11,7 @@ test("shared learner presentation system is wired into lessons",()=>{
   assert.match(blocks,/LearningNotice/);
   assert.match(blocks,/PortfolioCaptureNotice/);
   assert.match(blocks,/ResponseSurface/);
-  assert.match(system,/<summary>[\s\S]*<span>Portfolio evidence<\/span>[\s\S]*<\/summary>/);
+  assert.match(system,/<summary>[\s\S]*<span><LessonIcon name="portfolio"\/>Portfolio evidence<\/span>[\s\S]*<\/summary>/);
   assert.match(system,/Your responses stay with this lesson on this device/);
   assert.doesNotMatch(system,/Tap to view details|Saved with this lesson automatically/);
 });
