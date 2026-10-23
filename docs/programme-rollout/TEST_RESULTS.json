@@ -28,13 +28,13 @@
   },
   "rollout": {
     "existingPlans": 24,
-    "newCompleted": 30,
+    "newCompleted": 40,
     "privateUnsealedDrafts": 0,
-    "uncompleted": 341,
+    "uncompleted": 331,
     "blocker": null
   },
   "pending": [
-    "Remaining 341 individually reviewed and verified guides",
+    "Remaining 331 individually reviewed and verified guides",
     "Hosted cold-process and server-memory measurements",
     "Configured maximum/inactivity session lifetime",
     "Educator timing trials",
@@ -42,51 +42,58 @@
   ],
   "latestBatch": {
     "projectRef": "inxshlumnhcgiahxqewe",
-    "totalPlans": 54,
-    "newCompletedAcrossRollout": 30,
-    "remaining": 341,
-    "integratedClassroomCommit": "40429954297d1749be28ed9c5b0ed1a2c4ea2bc4",
-    "completeFallbackCommit": "308549ef9862fae6c993314db09aadf4b8db629d",
-    "stagingURL": "https://applied-commerce-sa-staging-agxnfriat.vercel.app",
+    "totalPlans": 64,
+    "newCompletedAcrossRollout": 40,
+    "remaining": 331,
+    "integratedClassroomCommit": "792d40ba693bf9599f4aeb6e42bf450da1f3d26a",
+    "finalPrintCommit": "f097214ac39fffc712c2dca02ec1922e21720a52",
+    "stagingURL": "https://applied-commerce-sa-staging-jifondqth.vercel.app",
+    "currentBuildFields": 3221,
+    "originalBindingsPreserved": 54,
     "genuine": {
-      "instructionalFields": 2871,
-      "centralTargets": 467,
+      "directClassroomPlansThisBatch": 14,
+      "directClassroomFields": 774,
+      "navigatorTargetsThisBatch": 137,
       "responsiveCombinations": 252,
-      "directNewLessonPersistence": 10,
-      "integratedPDFGuides": 54,
-      "integratedPDFPages": 272,
-      "completeFallbacks": 54,
-      "completeFallbackFields": 2871,
-      "benchmarkFallbackPDFs": 5,
-      "benchmarkFallbackPDFPages": 63,
-      "pdfContentChecks": {
-        "pdfs": 59,
-        "fields": 3512,
-        "missingFields": 0,
-        "layoutWhitespaceDifferences": 24
-      },
-      "authRlsChecks": 37
+      "newLessonFirstResponsePersistence": 10,
+      "integratedPDFGuides": 14,
+      "integratedPDFPages": 76,
+      "finalStandalonePlans": 64,
+      "finalStandaloneFields": 3221,
+      "finalStandalonePDFPages": 323,
+      "finalStandalonePDFBoundsPass": 64,
+      "pdfTextFields": 3995,
+      "pdfTextMissing": 0,
+      "threePeriodLesson": "PASS: preparation, all periods 45 minutes, navigator opening/closing targets, all fields and printing",
+      "authRlsChecks": 37,
+      "finalEvidenceReviewAndBoundary": "PASS",
+      "completedLogout": "PASS: Auth 204, no Auth cookies, classroom 401"
     },
     "local": {
       "nodeTests": 210,
+      "syntheticPrintBrowserRegression": 1,
+      "runtime": "395 lessons / four assessments / 20766 stable blocks",
       "typecheck": "PASS",
-      "lint": "PASS",
-      "runtime": {
-        "lessons": 395,
-        "assessments": 4,
-        "stableBlocks": 20766
-      }
+      "lint": "PASS"
     },
     "delivery": {
-      "sequentialFinalRequests": 15,
-      "medianMs": 1000,
+      "sequentialRequests": 55,
+      "newLessonRequests": 50,
+      "newMedianMs": 665.5,
+      "newRangeMs": [
+        475,
+        1047
+      ],
+      "newDecodedBytes": [
+        10569,
+        17880
+      ],
       "coldProcess": "NOT DEMONSTRATED",
       "hostedServerMemory": "NOT MEASURED"
     },
     "sourceChangesApplied": false,
     "pending": [
-      "Remaining 341 guides",
-      "Genuine three-period lesson (next batch)",
+      "Remaining 331 guides",
       "Educator timing trials",
       "Hosted cold-process/server-memory measurements",
       "Configured maximum/inactivity session lifetime"

@@ -1,0 +1,40 @@
+{
+  "authentication": "genuine browser password login",
+  "projectRef": "inxshlumnhcgiahxqewe",
+  "scope": "explicit selected lessons",
+  "releasedPlans": 64,
+  "plans": [
+    {
+      "lessonId": "g8-t3-l60-059",
+      "periodCount": 3,
+      "scheduledMinutes": 135,
+      "preparationAndNavigator": true,
+      "sameLearnerLesson": true,
+      "periods": [
+        {
+          "period": 1,
+          "minutes": 45,
+          "stages": 5,
+          "firstAndLastTargetsFocused": true,
+          "cuesMatchAuthorisedPlan": true
+        },
+        {
+          "period": 2,
+          "minutes": 45,
+          "stages": 4,
+          "firstAndLastTargetsFocused": true,
+          "cuesMatchAuthorisedPlan": true
+        },
+        {
+          "period": 3,
+          "minutes": 45,
+          "stages": 3,
+          "firstAndLastTargetsFocused": true,
+          "cuesMatchAuthorisedPlan": true
+        }
+      ]
+    }
+  ],
+  "pageErrors": [],
+  "commit": "f097214ac39fffc712c2dca02ec1922e21720a52"
+}

@@ -1,0 +1,59 @@
+{
+  "projectRef": "inxshlumnhcgiahxqewe",
+  "totalPlans": 64,
+  "newCompletedAcrossRollout": 40,
+  "remaining": 331,
+  "integratedClassroomCommit": "792d40ba693bf9599f4aeb6e42bf450da1f3d26a",
+  "finalPrintCommit": "f097214ac39fffc712c2dca02ec1922e21720a52",
+  "stagingURL": "https://applied-commerce-sa-staging-jifondqth.vercel.app",
+  "currentBuildFields": 3221,
+  "originalBindingsPreserved": 54,
+  "genuine": {
+    "directClassroomPlansThisBatch": 14,
+    "directClassroomFields": 774,
+    "navigatorTargetsThisBatch": 137,
+    "responsiveCombinations": 252,
+    "newLessonFirstResponsePersistence": 10,
+    "integratedPDFGuides": 14,
+    "integratedPDFPages": 76,
+    "finalStandalonePlans": 64,
+    "finalStandaloneFields": 3221,
+    "finalStandalonePDFPages": 323,
+    "finalStandalonePDFBoundsPass": 64,
+    "pdfTextFields": 3995,
+    "pdfTextMissing": 0,
+    "threePeriodLesson": "PASS: preparation, all periods 45 minutes, navigator opening/closing targets, all fields and printing",
+    "authRlsChecks": 37,
+    "finalEvidenceReviewAndBoundary": "PASS",
+    "completedLogout": "PASS: Auth 204, no Auth cookies, classroom 401"
+  },
+  "local": {
+    "nodeTests": 210,
+    "syntheticPrintBrowserRegression": 1,
+    "runtime": "395 lessons / four assessments / 20766 stable blocks",
+    "typecheck": "PASS",
+    "lint": "PASS"
+  },
+  "delivery": {
+    "sequentialRequests": 55,
+    "newLessonRequests": 50,
+    "newMedianMs": 665.5,
+    "newRangeMs": [
+      475,
+      1047
+    ],
+    "newDecodedBytes": [
+      10569,
+      17880
+    ],
+    "coldProcess": "NOT DEMONSTRATED",
+    "hostedServerMemory": "NOT MEASURED"
+  },
+  "sourceChangesApplied": false,
+  "pending": [
+    "Remaining 331 guides",
+    "Educator timing trials",
+    "Hosted cold-process/server-memory measurements",
+    "Configured maximum/inactivity session lifetime"
+  ]
+}
