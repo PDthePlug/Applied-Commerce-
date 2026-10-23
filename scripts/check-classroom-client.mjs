@@ -1,5 +1,5 @@
 // Run after the real application build, with private input paths only.
-import fs from 'node:fs';import path from 'node:path';import {openContent}from './classroom-content.mjs';
+import fs from 'node:fs';import path from 'node:path';import {createHash}from 'node:crypto';import {openContent}from './classroom-content.mjs';
 const index=process.argv.indexOf('--key-file');if(index<0||!process.argv[index+1])throw new Error('Provide a private --key-file path.');
 const keyText=fs.readFileSync(process.argv[index+1]==='-'?0:process.argv[index+1],'utf8').trim();const envelope=JSON.parse(fs.readFileSync('content/instructional/benchmark-guides.v1.enc.json','utf8'));
 const payload=JSON.parse(openContent(envelope,Buffer.from(keyText,'base64'),'applied-commerce-classroom-v1').toString('utf8'));
@@ -10,5 +10,5 @@ const teaching=JSON.parse(openContent(JSON.parse(fs.readFileSync('content/instru
 // Long instructional fields are unique enough to distinguish disclosure from
 // ordinary shared words such as “Value”. Check raw and JS-escaped forms.
 for(const plan of teaching.plans)for(const value of Object.values(plan.fields))if(value.length>=70)sentinels.push(value,JSON.stringify(value).slice(1,-1));
-let checked=0;function walk(folder){for(const entry of fs.readdirSync(folder,{withFileTypes:true})){const file=path.join(folder,entry.name);if(entry.isDirectory())walk(file);else{const bytes=fs.readFileSync(file);checked++;if(sentinels.some(value=>bytes.includes(Buffer.from(value))))throw new Error('Private classroom material was found in a public asset.');}}}
+let checked=0;function walk(folder){for(const entry of fs.readdirSync(folder,{withFileTypes:true})){const file=path.join(folder,entry.name);if(entry.isDirectory())walk(file);else{const bytes=fs.readFileSync(file);checked++;const match=sentinels.find(value=>bytes.includes(Buffer.from(value)));if(match!==undefined){console.error('AC_ASSET_SCAN_DIAGNOSTIC '+JSON.stringify({file,category:match===keyText?'key':'private-content-sentinel',characters:match.length,...(match===keyText?{}:{sha256:createHash('sha256').update(match).digest('hex')})}));throw new Error('Private classroom material was found in a public asset.');}}}}
 if(!fs.existsSync('.next/static'))throw new Error('Build the real application first.');walk('.next/static');walk('public');console.log(JSON.stringify({ok:true,publicAssetsChecked:checked,privateSentinelsChecked:sentinels.length,keyExported:false}));
