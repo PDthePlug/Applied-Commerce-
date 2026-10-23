@@ -1,0 +1,34 @@
+{
+  "preservedPlans": 99,
+  "addedPlans": 9,
+  "totalPlans": 108,
+  "addedPeriods": 10,
+  "newPlacements": 77,
+  "version": "programme-rollout-g9-t2-lessons17-25-2026-10-23",
+  "originalKeyAuthenticated": true,
+  "keyExported": false,
+  "plaintextWritten": false,
+  "sourceValidationMs": 543,
+  "buildProcessOnly": {
+    "heapBefore": 51678176,
+    "heapAfter": 67341480,
+    "rssAfter": 271646720
+  },
+  "files": [
+    {
+      "name": "teaching-plans.v2.enc.json",
+      "bytes": 1892843,
+      "sha256": "6ac6e909f1c9c7b5b97a00c58bc48d6d4c94f09190ebc170ebb009eec70579a9"
+    },
+    {
+      "name": "teaching-manifest.v2.json",
+      "bytes": 2025968,
+      "sha256": "ca92a852b92cb6348e25c1fe47b9321475b9eadb7a272cb3a7d906b50f68db8f"
+    },
+    {
+      "name": "teaching-availability.v2.json",
+      "bytes": 2311,
+      "sha256": "bd2eb952bbacdbfed509eb83bc6246c74e32a0ed596e94bb9fa2603a3390e789"
+    }
+  ]
+}
