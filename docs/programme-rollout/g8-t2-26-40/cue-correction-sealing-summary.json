@@ -1,0 +1,36 @@
+{
+  "preservedPlans": 41,
+  "amendedPlans": 3,
+  "amendedFields": 3,
+  "addedPlans": 0,
+  "totalPlans": 44,
+  "addedPeriods": 0,
+  "newPlacements": 0,
+  "version": "classroom-v2.g8-t2-cue-references.2026-10-23",
+  "originalKeyAuthenticated": true,
+  "keyExported": false,
+  "plaintextWritten": false,
+  "sourceValidationMs": 450,
+  "buildProcessOnly": {
+    "heapBefore": 52345168,
+    "heapAfter": 62292808,
+    "rssAfter": 270770176
+  },
+  "files": [
+    {
+      "name": "teaching-plans.v2.enc.json",
+      "bytes": 916211,
+      "sha256": "6b32be4ed754b2c50c4f51bbc02e41dc144787883ab3d45282804cab3a04cefd"
+    },
+    {
+      "name": "teaching-manifest.v2.json",
+      "bytes": 975426,
+      "sha256": "c384e2f4754de70d3f75353aadd3d6c2e90107140574fec51b98bc9db5a05e74"
+    },
+    {
+      "name": "teaching-availability.v2.json",
+      "bytes": 967,
+      "sha256": "dd6f2e00febda2d06e225db81609d804e6cc15dca96b2bb987fb400964d654a4"
+    }
+  ]
+}
