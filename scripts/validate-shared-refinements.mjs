@@ -1,6 +1,7 @@
 // Genuine staging validation: real password logins, real classroom API, real
 // learner RPC saves. All authenticated screenshots remain in AC_ROLE_FIXTURES.
 import fs from 'node:fs';
+import {stagingLessonScope} from './lib/staging-lesson-scope.mjs';
 import assert from 'node:assert/strict';
 import {chromium} from '@playwright/test';
 import {loadRoleFixtures} from './lib/validation-target.mjs';
@@ -26,7 +27,8 @@ async function teacher(page,b){await page.goto(route(b));await page.getByRole('b
 const overflow=page=>page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1);
 try{
  const a=await login('facilitator');
- for(const binding of manifest.plans){
+ const selection=stagingLessonScope(manifest.plans,process.env.AC_STAGING_NAV_LESSONS);Object.assign(results,{navigationScope:selection.scope,releasedPlans:selection.releasedPlans});
+ for(const binding of selection.plans){
   const {page}=a;await teacher(page,binding);assert.equal(await page.locator('.contextual-guidance nav').count(),0);assert.equal(await page.getByRole('button',{name:'Teaching navigator',exact:true}).count(),0);assert.equal(await page.getByRole('navigation',{name:'Classroom teaching stages',exact:true}).count(),1);
   const options=await page.locator('#classroom-stage option').evaluateAll(nodes=>nodes.map(n=>n.value));assert.deepEqual([...options].sort(),binding.moments.map(m=>m.id).sort());
   // Navigate every target, including backward revisits and support/later work.
@@ -46,7 +48,7 @@ try{
   const binding=manifest.plans.find(b=>b.lessonId===lessonId);assert.ok(binding,lessonId);const {page}=a;await page.setViewportSize({width,height:900});await teacher(page,binding);
   const prep=page.locator('[data-instructional-location="preparation"]');assert.equal(await prep.getAttribute('open'),null);
   const first=binding.moments.find(m=>m.schedule==='classroom');await page.locator('#classroom-stage').selectOption(first.id);await page.getByRole('button',{name:'Go to stage',exact:true}).click();
-  const stage=page.locator('[data-instructional-location="'+first.id+'"]');assert.equal(await stage.locator('.contextual-depth').getAttribute('open'),null);await stage.locator('.contextual-depth > summary').click();await stage.locator('.contextual-depth p').first().waitFor();await stage.locator('.contextual-depth > summary').click();
+  const stage=page.locator('[data-instructional-location="'+first.id+'"]');const depth=stage.locator('.contextual-depth');if(await depth.count()){assert.equal(await depth.getAttribute('open'),null);await depth.locator(':scope > summary').click();await depth.locator('p').first().waitFor();await depth.locator(':scope > summary').click();}
   for(const scale of [1,1.28,2]){
    await page.evaluate(s=>document.documentElement.style.setProperty('--ac-text-scale',String(s)),scale);assert.equal(await overflow(page),false);await stage.scrollIntoViewIfNeeded();
    if([320,430,1280].includes(width))await page.screenshot({path:out+`/teacher-after-${lessonId}-${width}-${scale}.png`});
@@ -58,7 +60,7 @@ try{
     }
    }
    const question=page.locator('.checkpoint-question').first();if(await question.count()){await question.scrollIntoViewIfNeeded();if([320,430,1280].includes(width))await page.screenshot({path:out+`/checkpoint-after-${lessonId}-${width}-${scale}.png`});}
-   results.responsive.push({lessonId,width,scale,overflow:false,numbersContinuous:true,localDepth:true});save();
+   results.responsive.push({lessonId,width,scale,overflow:false,numbersContinuous:true,localDepth:await depth.count()?'expanded and collapsed':'absent; exact expected presence checked by classroom runner'});save();
   }
  }
  await a.context.close();

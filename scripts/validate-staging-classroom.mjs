@@ -1,6 +1,7 @@
 // Genuine hosted validation. No mocked auth, role or API response. Print-dialog
 // suppression is only to inspect the application's real private print tree.
 import fs from 'node:fs';
+import {stagingLessonScope} from './lib/staging-lesson-scope.mjs';
 import assert from 'node:assert/strict';
 import {chromium} from '@playwright/test';
 import {loadRoleFixtures} from './lib/validation-target.mjs';
@@ -33,7 +34,8 @@ try{
  const {page,context}=await login('facilitator');
  const manifest=JSON.parse(fs.readFileSync('content/instructional/teaching-manifest.v2.json'));
  const cdp=await context.newCDPSession(page);await cdp.send('Performance.enable');
- for(const binding of manifest.plans){
+ const selection=stagingLessonScope(manifest.plans,process.env.AC_STAGING_LESSONS);Object.assign(result,{scope:selection.scope,releasedPlans:selection.releasedPlans});
+ for(const binding of selection.plans){
   if(result.plans.some(p=>p.lessonId===binding.lessonId))continue;
   const route=`/learn/${binding.grade}/term/${binding.term}/${binding.lessonId}`;
   const before=(await cdp.send('Performance.getMetrics')).metrics.find(m=>m.name==='JSHeapUsedSize')?.value;

@@ -1,5 +1,6 @@
 // Genuine hosted fallback regression. Private strings are compared in memory;
 // output contains counts and paths only, never guide prose or auth material.
+import {stagingLessonScope} from './lib/staging-lesson-scope.mjs';
 import fs from 'node:fs';import assert from 'node:assert/strict';import {chromium}from '@playwright/test';import {loadRoleFixtures}from './lib/validation-target.mjs';
 process.umask(0o077);const dir=process.env.AC_ROLE_FIXTURES,{config,fixtures}=loadRoleFixtures(dir);assert.equal(config.projectRef,'inxshlumnhcgiahxqewe');
 const baseURL=process.env.AC_ROLE_BASE_URL;assert.ok(new URL(baseURL).hostname.startsWith('applied-commerce-sa-staging'));
@@ -9,8 +10,8 @@ const save=()=>fs.writeFileSync(process.env.AC_STAGING_RESULTS_FILE??dir+'/rollo
 async function login(role){const context=await browser.newContext({baseURL}),page=await context.newPage();page.on('pageerror',e=>results.pageErrors.push(e.name));await page.goto(access.shareableUrl);const response=await page.request.get('/api/health');assert.equal(response.status(),200,'Vercel access/health failed before application login');const health=await response.json();assert.equal(health.projectRef,config.projectRef);assert.equal(health.commit,process.env.AC_EXPECTED_COMMIT);results.commit=health.commit;await page.goto('/auth');await page.getByLabel('Email address',{exact:true}).fill(fixtures.users[role].email);await page.getByLabel('Password',{exact:true}).fill(fixtures.users[role].password);await page.locator('.auth-form').getByRole('button',{name:'Sign in',exact:true}).click();await page.locator('.auth-panel').getByRole('button',{name:'Sign out',exact:true}).waitFor({timeout:60000});return {page,context};}
 const norm=s=>s.replace(/\s+/g,' ').trim();
 try{const {page,context}=await login('facilitator');const manifest=JSON.parse(fs.readFileSync('content/instructional/teaching-manifest.v2.json'));
-const ids=process.env.AC_STAGING_LESSONS?.split(',').filter(Boolean);if(ids)assert.ok(ids.length&&ids.every(id=>manifest.plans.some(p=>p.lessonId===id)));
-for(const binding of manifest.plans.filter(p=>!ids||ids.includes(p.lessonId))){const r=await page.request.get('/api/classroom?lesson='+binding.lessonId);assert.equal(r.status(),200);const payload=await r.json();assert.equal(payload.plan?.lessonId,binding.lessonId);await page.goto('/facilitator/classroom?lesson='+binding.lessonId);await page.getByRole('button',{name:'Print teacher guide',exact:true}).waitFor();let fields=0;
+const selection=stagingLessonScope(manifest.plans,process.env.AC_STAGING_LESSONS);Object.assign(results,{scope:selection.scope,releasedPlans:selection.releasedPlans});
+for(const binding of selection.plans){const r=await page.request.get('/api/classroom?lesson='+binding.lessonId);assert.equal(r.status(),200);const payload=await r.json();assert.equal(payload.plan?.lessonId,binding.lessonId);await page.goto('/facilitator/classroom?lesson='+binding.lessonId);await page.getByRole('button',{name:'Print teacher guide',exact:true}).waitFor();let fields=0;
  const values=await page.locator('.standalone-teaching-plan [data-instructional-field]').evaluateAll(nodes=>Object.fromEntries(nodes.map(n=>[n.getAttribute('data-instructional-field'),n.textContent])));
  for(const [key,value]of Object.entries(payload.plan.fields)){assert.ok(values[key]&&norm(values[key]).includes(norm(value)),'Standalone plan field absent: '+binding.lessonId+'.'+key);fields++;}
  assert.equal(fields,binding.fieldCount);

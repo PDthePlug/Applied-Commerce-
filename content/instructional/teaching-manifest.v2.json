@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "version": "classroom-v2.g8-t3-first-ten.2026-10-23",
+  "version": "classroom-v2.g8-t3-complete.2026-10-23",
   "status": "educator-review-required",
   "plans": [
     {
@@ -34642,6 +34642,5259 @@
         {
           "blockId": "ec4c1bf6215df41a567830fd-1",
           "momentId": "g8-t3-l50-check",
+          "disposition": "classroom"
+        }
+      ]
+    },
+    {
+      "lessonId": "g8-t3-l51-050",
+      "grade": 8,
+      "term": 3,
+      "title": "THE GARDENERS OF LIMPOPO",
+      "periods": 1,
+      "source": {
+        "id": "g8-t3-l51-050",
+        "sourceUnitSHA256": "d0b95946b657136538f8baba3cb3d948f51a4c1d51e59891f9a084512181d2c3",
+        "blockIds": [
+          "539a96142de3bf8a4b9fc2f4-1",
+          "47f6b4296e644c19aa04bfa7-1",
+          "78c040edaa78039f4fbfe7e7-1",
+          "3c5c4373aaa6eb1c9e7efcd5-1",
+          "541e53f554779829a0d4fb13-1",
+          "3d6928cb0f63afbb93841ff2-1",
+          "03f559a70d878eb7bd23f763-1",
+          "f51369c7b800707ad5575828-1",
+          "40639dd36e74c27ecbaf2788-1",
+          "83ea564747a1b92e490cf46b-1",
+          "a7dc9980c36c7137b656679d-1",
+          "773da1bc9ba9c2a4c7d2850b-1",
+          "85f015cc045e2c762bf8ec7a-1",
+          "27c2bb0bc66507cdde8e8251-1",
+          "d840d6148859df039f4f7cdd-1",
+          "05cc7d1617f31df8e8d3ffd4-1",
+          "a24560a1aa066567389f30d6-1",
+          "9f3b33d9bd93c035701fe2ff-1",
+          "e81d6d2482dd52ddfde0c833-1",
+          "329338742005766f5a0ebc7e-1",
+          "dd5e92c108b6fcc4500f6d54-1",
+          "2ef426f442777a98bbd6b3c6-1",
+          "7a4662f3cc8292ba86780e8e-1",
+          "4366a8a71a6f4c1b34bae61f-1",
+          "41bdce8fa206154ceb8df537-1",
+          "cc1ce9a603ac471eb21531ca-1",
+          "27496ac244f1218865bc9f5a-1",
+          "db776304f1aee17497ceff64-1",
+          "c85c8db49d511a5211685c4d-1",
+          "c515db0a559c1e5d4c004445-1",
+          "c2199ed40895cb6f6d1eaf7d-1",
+          "f4499bafb91a8d88c21f3ee7-1",
+          "69c92582b71a9115c7e8112d-1",
+          "03372f367d40f6a91dff28c8-1",
+          "ed2d129615657d9fc42e89e2-1",
+          "d011e4249b4d7e2e820db3f6-1",
+          "c9cdafb8e20e311b29c5a424-1",
+          "9cb990fa790ab71a2336a352-1",
+          "8a9f44a40c505faaf723ab21-1",
+          "bf6091c022338ca725af702e-1",
+          "b6af3b5c6ec0a55716fb9efd-1",
+          "ba229362aac72788f7611eb3-1",
+          "d7a2b254634734195b01ed70-1",
+          "6e5dde5165f25fb0dac347f0-1",
+          "ec4c1bf6215df41a567830fd-1",
+          "eb5dc62c1438ca38e974fb1a-1",
+          "795b042ebf27c94765794a46-1",
+          "22499840c699d3a0d0c842d7-1",
+          "a94d2058edd3752cad5018f7-1",
+          "34dd7eb045e53317e4635fb6-1",
+          "c42a4de29b27c3911e3f0b26-1",
+          "f5a69e2bfbdb03e63f8e5b92-1",
+          "145a8aeb74b2e0ab3422f00b-1",
+          "0f962cc6773c7fe5b25989f2-1",
+          "9b9d1cde0ba8fa476b71bb15-1",
+          "d4196db04ad537041f38a314-1",
+          "59ce723ec582fe1b6d4b706c-1"
+        ],
+        "sections": [
+          "539a96142de3bf8a4b9fc2f4-1",
+          "3d6928cb0f63afbb93841ff2-1",
+          "f51369c7b800707ad5575828-1",
+          "d840d6148859df039f4f7cdd-1",
+          "dd5e92c108b6fcc4500f6d54-1",
+          "4366a8a71a6f4c1b34bae61f-1",
+          "cc1ce9a603ac471eb21531ca-1",
+          "b6af3b5c6ec0a55716fb9efd-1",
+          "ec4c1bf6215df41a567830fd-1",
+          "22499840c699d3a0d0c842d7-1"
+        ],
+        "headings": [
+          "27496ac244f1218865bc9f5a-1",
+          "69c92582b71a9115c7e8112d-1"
+        ],
+        "activityIds": [
+          "4366a8a71a6f4c1b34bae61f-1",
+          "cc1ce9a603ac471eb21531ca-1",
+          "27496ac244f1218865bc9f5a-1",
+          "69c92582b71a9115c7e8112d-1",
+          "ec4c1bf6215df41a567830fd-1"
+        ]
+      },
+      "fieldCount": 30,
+      "planSHA256": "61cc0cfb33d1a21d58320bddca0189ebfcf39bae6bfe1ac35c57ce8dcb09f149",
+      "coverage": [
+        {
+          "path": "purpose",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "12f3b870d658da53dfc5cc2ea9f401bc1dfbeeea23592e871b7e7a6553d32a4c"
+        },
+        {
+          "path": "objectives",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "91899cf7f04bb673d0e7456883b5ce8067d61444ded2208f84802a2e69f76d3f"
+        },
+        {
+          "path": "outcome",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "1fb30eaff85c8ab3b570b875ca3b0c11560777b6fbd0966a87ec184e91db49bb"
+        },
+        {
+          "path": "prerequisites",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "671f6abd19990e7c7d62c40244d562ca9a3a12af057456038b474bfb00574b38"
+        },
+        {
+          "path": "materials",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "80f209899c9693eb30f7dbbaa11ab4a514852863286399a1612b3500948afd40"
+        },
+        {
+          "path": "vocabulary",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "35b093349d138f38bd358d1f12b37e60fbd50626aa3255476d6860262c4dcc28"
+        },
+        {
+          "path": "misconceptions",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "38ec9233d73505836fd1bac6e1813f973e1c004aaf384860534767e752462e7c"
+        },
+        {
+          "path": "context",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "b97596981ef9366f8aa378f0221e7734668c78a0f8a0f2326c14408c5332a262"
+        },
+        {
+          "path": "access.privacy",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "2294a26edd7a530e92a76cee58ff042aff3efeb3546b4f3686ea645bfea14bbb"
+        },
+        {
+          "path": "periods.0.title",
+          "locations": [
+            "preparation.periods.0"
+          ],
+          "valueSHA256": "2581fbabd199c8ddc16bf1b1dcd3ff111a7bc5527d4329f8b7f39a212cb36075"
+        },
+        {
+          "path": "moments.read.title",
+          "locations": [
+            "g8-t3-l51-read"
+          ],
+          "valueSHA256": "b1296852d6b297af425153dcfd8d570d40b4788eecc24e5dab53c9e6d36cf9d7"
+        },
+        {
+          "path": "moments.read.cue",
+          "locations": [
+            "g8-t3-l51-read"
+          ],
+          "valueSHA256": "ba248beed845b960fbe39c8fd2edaa4392d52055e0c62b2e2da225ea9635ae80"
+        },
+        {
+          "path": "moments.read.support",
+          "locations": [
+            "g8-t3-l51-read"
+          ],
+          "valueSHA256": "7aef60b1fbd17d41d881ed5927b9174ce770636c0b1391df84dc901cbfff2cfa"
+        },
+        {
+          "path": "moments.reflect.title",
+          "locations": [
+            "g8-t3-l51-reflect"
+          ],
+          "valueSHA256": "28b033055da85516fd91a5b3c3ff6487cea701a76053decc1ca1d36293630c06"
+        },
+        {
+          "path": "moments.reflect.cue",
+          "locations": [
+            "g8-t3-l51-reflect"
+          ],
+          "valueSHA256": "4b0341e4755036ed64eef6a1718e99d8f1870315086f74142b98aee012b14037"
+        },
+        {
+          "path": "moments.group.title",
+          "locations": [
+            "g8-t3-l51-group"
+          ],
+          "valueSHA256": "4639f1b16af7e08ef1b5e74189dbfa31e0cdff21fc9b6277c87e7ab6ea4dbc9a"
+        },
+        {
+          "path": "moments.group.cue",
+          "locations": [
+            "g8-t3-l51-group"
+          ],
+          "valueSHA256": "fd656ca178c440d5dcb2cfca5244c4d6d863c12d26267ad5224f8c00fa59a992"
+        },
+        {
+          "path": "moments.group.understanding",
+          "locations": [
+            "g8-t3-l51-group"
+          ],
+          "valueSHA256": "1a774643a83de8fe2cfa6708ea4f2c647c344d2318c3fb57ea019bd9d2c7db74"
+        },
+        {
+          "path": "moments.design.title",
+          "locations": [
+            "g8-t3-l51-design"
+          ],
+          "valueSHA256": "a98b0945ae325e8ff24f71082c7a1602a1f90a694443f195af31f514258ce95b"
+        },
+        {
+          "path": "moments.design.cue",
+          "locations": [
+            "g8-t3-l51-design"
+          ],
+          "valueSHA256": "94c63a7a6e8d01461af74b39a26ebb9a8324ceaa8b0a5d2d481725a9d3280522"
+        },
+        {
+          "path": "moments.design.review",
+          "locations": [
+            "g8-t3-l51-design"
+          ],
+          "valueSHA256": "352633a31ed366f3bc9990a52f9720e1f3bba6d0a110c824a4949f853792cc64"
+        },
+        {
+          "path": "moments.check.title",
+          "locations": [
+            "g8-t3-l51-check"
+          ],
+          "valueSHA256": "76e757d3002bec0bef8ac15ee9da3c81f2442ec52fbc3ed85ad71285c331974d"
+        },
+        {
+          "path": "moments.check.cue",
+          "locations": [
+            "g8-t3-l51-check"
+          ],
+          "valueSHA256": "0154c0a6abaceb3a8f6c33c5962906e42e06df51e5c482da74c98e363b1c3814"
+        },
+        {
+          "path": "moments.check.review",
+          "locations": [
+            "g8-t3-l51-check"
+          ],
+          "valueSHA256": "2c799e624ef1a3aec92aec69c58b0a0de402dedfeaf422f3721e99afe8bbff2d"
+        },
+        {
+          "path": "moments.close.title",
+          "locations": [
+            "g8-t3-l51-close"
+          ],
+          "valueSHA256": "c1dc3a8a6a9906ba74e568c90af85bf3e310ec7484bf56d55b9b6949d211054a"
+        },
+        {
+          "path": "moments.close.cue",
+          "locations": [
+            "g8-t3-l51-close"
+          ],
+          "valueSHA256": "bda1fdbf14e07545cf8f09d3a45b6348615bae4870c835444df64e84853465aa"
+        },
+        {
+          "path": "moments.deepen.title",
+          "locations": [
+            "g8-t3-l51-deepen"
+          ],
+          "valueSHA256": "9e33c7a13805c69793763908ae16d69abcb076fd0b0877e08ceb6ac3c01b37f8"
+        },
+        {
+          "path": "moments.deepen.cue",
+          "locations": [
+            "g8-t3-l51-deepen"
+          ],
+          "valueSHA256": "5d75d88e08a5f62427347480654e91d9ae3a58a24cf0fd704c1e11ef9c807ded"
+        },
+        {
+          "path": "moments.home.title",
+          "locations": [
+            "g8-t3-l51-home"
+          ],
+          "valueSHA256": "23eeaf2b66f183ac2946c0539397a8d340d17b22299a5437e6bc226f6a10f0d2"
+        },
+        {
+          "path": "moments.home.cue",
+          "locations": [
+            "g8-t3-l51-home"
+          ],
+          "valueSHA256": "43018001301ef474f0b756ca7b339eda20527ede761e6f49f53e95539779ac5f"
+        }
+      ],
+      "moments": [
+        {
+          "id": "g8-t3-l51-read",
+          "period": 0,
+          "schedule": "classroom",
+          "minutes": 7,
+          "placement": {
+            "kind": "section",
+            "blockId": "f51369c7b800707ad5575828-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "f51369c7b800707ad5575828-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l51-reflect",
+          "period": 0,
+          "schedule": "classroom",
+          "minutes": 2,
+          "placement": {
+            "kind": "section",
+            "blockId": "4366a8a71a6f4c1b34bae61f-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "4366a8a71a6f4c1b34bae61f-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l51-group",
+          "period": 0,
+          "schedule": "classroom",
+          "minutes": 11,
+          "placement": {
+            "kind": "section",
+            "blockId": "cc1ce9a603ac471eb21531ca-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "cc1ce9a603ac471eb21531ca-1",
+            "27496ac244f1218865bc9f5a-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l51-design",
+          "period": 0,
+          "schedule": "classroom",
+          "minutes": 14,
+          "placement": {
+            "kind": "heading",
+            "blockId": "69c92582b71a9115c7e8112d-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "69c92582b71a9115c7e8112d-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l51-check",
+          "period": 0,
+          "schedule": "classroom",
+          "minutes": 9,
+          "placement": {
+            "kind": "section",
+            "blockId": "ec4c1bf6215df41a567830fd-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "ec4c1bf6215df41a567830fd-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l51-close",
+          "period": 0,
+          "schedule": "classroom",
+          "minutes": 2,
+          "placement": {
+            "kind": "section",
+            "blockId": "ec4c1bf6215df41a567830fd-1",
+            "edge": "after",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "ec4c1bf6215df41a567830fd-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l51-deepen",
+          "period": null,
+          "schedule": "optional",
+          "minutes": 0,
+          "placement": {
+            "kind": "section",
+            "blockId": "b6af3b5c6ec0a55716fb9efd-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "b6af3b5c6ec0a55716fb9efd-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l51-home",
+          "period": null,
+          "schedule": "later",
+          "minutes": 0,
+          "placement": {
+            "kind": "section",
+            "blockId": "22499840c699d3a0d0c842d7-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "22499840c699d3a0d0c842d7-1"
+          ]
+        }
+      ],
+      "activityCoverage": [
+        {
+          "blockId": "4366a8a71a6f4c1b34bae61f-1",
+          "momentId": "g8-t3-l51-reflect",
+          "disposition": "classroom"
+        },
+        {
+          "blockId": "cc1ce9a603ac471eb21531ca-1",
+          "momentId": "g8-t3-l51-group",
+          "disposition": "classroom"
+        },
+        {
+          "blockId": "27496ac244f1218865bc9f5a-1",
+          "momentId": "g8-t3-l51-group",
+          "disposition": "classroom"
+        },
+        {
+          "blockId": "69c92582b71a9115c7e8112d-1",
+          "momentId": "g8-t3-l51-design",
+          "disposition": "classroom"
+        },
+        {
+          "blockId": "ec4c1bf6215df41a567830fd-1",
+          "momentId": "g8-t3-l51-check",
+          "disposition": "classroom"
+        }
+      ]
+    },
+    {
+      "lessonId": "g8-t3-l52-051",
+      "grade": 8,
+      "term": 3,
+      "title": "HABITS THAT FEED FAMILIES",
+      "periods": 1,
+      "source": {
+        "id": "g8-t3-l52-051",
+        "sourceUnitSHA256": "803015c0688fa88d63f52cea8e38e6c159f36388de7c5a24d407b84871b3e533",
+        "blockIds": [
+          "539a96142de3bf8a4b9fc2f4-1",
+          "47f6b4296e644c19aa04bfa7-1",
+          "7377857f35b0941aa2170ae7-1",
+          "367e134360594f6953628d46-1",
+          "76f19062b5ae70b6dc63342a-1",
+          "3d6928cb0f63afbb93841ff2-1",
+          "93bd09dd4210659f2772085f-1",
+          "c25eb19c45b7216826a48242-1",
+          "e65f14273341ab788cbc52c0-1",
+          "9b37145e16c90064a1afb52c-1",
+          "a1257f6ff0625dccc364d0ea-1",
+          "d90dcea74fd772b4a410a4c4-1",
+          "8749f4c4b6a7cdee3e98a9e5-1",
+          "d2caf1ab442cd29e596fff66-1",
+          "e08a1bc0ff2627ffbf592801-1",
+          "491d53edf9b267c93b59998d-1",
+          "2331ba15d0e4e9d571a850f3-1",
+          "24b91e5e5d3389e3556dbec1-1",
+          "4366a8a71a6f4c1b34bae61f-1",
+          "bcbdafeebc8af7c6c02a1590-1",
+          "aa416ab3e39bd76853da733f-1",
+          "9e33f4923616c804d3a44845-1",
+          "70799b9490b17bc8154b98fb-1",
+          "920ab239f791584d5dff2cd0-1",
+          "0c996fba19e561737777634a-1",
+          "c3aca0620860bcdc75ce885c-1",
+          "b53bc4d5365707c43439f880-1",
+          "a98c1a1967551ad9f557cc8b-1",
+          "0f9b0ca85047b137c6f3b952-1",
+          "107b381ce7fdd6a6f13907ae-1",
+          "4bc0cd619a5b2ee666b65ae8-1",
+          "d2337fe484a59b0456e4c207-1",
+          "e769a2119c5d5b958f1a8aff-1",
+          "9e723df1ae0a85b7c1d41f43-1",
+          "27070a2c1b1a921326e39e4b-1",
+          "83e7564efefc6d21a2d7a5b9-1",
+          "c3f79ad4185c5e7339323edf-1",
+          "5b2c55ea3f4485c658c478e3-1",
+          "7abd19f455ec1d5357899914-1",
+          "cc5a71b14fe4371a45bc738b-1",
+          "8eba910f51fb25fd7d13ec7a-1",
+          "3cbd4630366f5017f458eb6a-1",
+          "1e8357621b551417d9b19216-1",
+          "e5ddac99d57ee83978344de0-1",
+          "9d7251c9819a5f472715a722-1",
+          "22499840c699d3a0d0c842d7-1",
+          "a1e9b909db5e1192dbbd2489-1",
+          "f7a8dfade487adb420a81f27-1",
+          "17c4c740c04d0bc73fba3155-1",
+          "405e7119306f564dd1b5c9b9-1",
+          "eba94811ba06c567281d2bd3-1",
+          "9b9d1cde0ba8fa476b71bb15-1",
+          "11878e17638d7340a282a275-1",
+          "59ce723ec582fe1b6d4b706c-1"
+        ],
+        "sections": [
+          "539a96142de3bf8a4b9fc2f4-1",
+          "3d6928cb0f63afbb93841ff2-1",
+          "c25eb19c45b7216826a48242-1",
+          "a1257f6ff0625dccc364d0ea-1",
+          "4366a8a71a6f4c1b34bae61f-1",
+          "aa416ab3e39bd76853da733f-1",
+          "7abd19f455ec1d5357899914-1",
+          "1e8357621b551417d9b19216-1",
+          "22499840c699d3a0d0c842d7-1"
+        ],
+        "headings": [
+          "9e33f4923616c804d3a44845-1",
+          "a98c1a1967551ad9f557cc8b-1",
+          "e769a2119c5d5b958f1a8aff-1"
+        ],
+        "activityIds": [
+          "4366a8a71a6f4c1b34bae61f-1",
+          "aa416ab3e39bd76853da733f-1",
+          "9e33f4923616c804d3a44845-1",
+          "a98c1a1967551ad9f557cc8b-1",
+          "e769a2119c5d5b958f1a8aff-1",
+          "1e8357621b551417d9b19216-1"
+        ]
+      },
+      "fieldCount": 33,
+      "planSHA256": "65c9ee54b5137a9429fcb546b9e7ee6cc2b6bde877b743172f61c0158f3e4e4d",
+      "coverage": [
+        {
+          "path": "purpose",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "3ec3fc5b79b9faecde1e81c73bf6adb4dfe7cc51c3f104a207038aea7aec4c27"
+        },
+        {
+          "path": "objectives",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "b9644b4f7bc492b0526cab33e41d8542b3c76e0cb6c05d9901f04b9edf44f257"
+        },
+        {
+          "path": "outcome",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "e237fa048191e7957ffbefa2cf5f11e366881ed039db9c14a274c78377ac9a82"
+        },
+        {
+          "path": "prerequisites",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "d2117d34f092bd659aef4f1bf7c46cda5398e21e69c48663e317a402a5b35905"
+        },
+        {
+          "path": "materials",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "202cc07e12d9a1ba87aa37b78c34e07cfe9016ba2a39262a58b10ef793d1e479"
+        },
+        {
+          "path": "vocabulary",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "0f3ffe84bfe960093a5337678489cc144f7a124fb8073ecf28b8f85cf2ef7b86"
+        },
+        {
+          "path": "misconceptions",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "88e159ed134d02c99630e317c60da1fcbe5cdb27d0840f43a92154d0e7371969"
+        },
+        {
+          "path": "context",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "b145941b34afebf2ad9d4044f8a928ab7fe3ca7afaeb705ebd5884fec8655b75"
+        },
+        {
+          "path": "access.privacy",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "96bb32c2416c1a6a56f59f01742a9976dd9b88962250a49700fa362db72e23ce"
+        },
+        {
+          "path": "periods.0.title",
+          "locations": [
+            "preparation.periods.0"
+          ],
+          "valueSHA256": "0a51e4d119964cdaa0f6ae1e5040ca7bb1f58044804edd47ae1f438a069628b6"
+        },
+        {
+          "path": "moments.read.title",
+          "locations": [
+            "g8-t3-l52-read"
+          ],
+          "valueSHA256": "3a1192828b8ddb45362d32d7fe53c1417c5005d829f4ca9023f662e165b419ac"
+        },
+        {
+          "path": "moments.read.cue",
+          "locations": [
+            "g8-t3-l52-read"
+          ],
+          "valueSHA256": "d720a23b5736deae7e1122bcf58d4b1e08bbf1c7ea0b1c9454b1f2eb8a4bf059"
+        },
+        {
+          "path": "moments.read.support",
+          "locations": [
+            "g8-t3-l52-read"
+          ],
+          "valueSHA256": "9b196b64dc56ffa54d3ec4d56cf93a653186eb611afad607cda8f23e67a1626d"
+        },
+        {
+          "path": "moments.reflect.title",
+          "locations": [
+            "g8-t3-l52-reflect"
+          ],
+          "valueSHA256": "2eccf77c7f5e940e3aef6cf261332dd67c278ded51fb28f74fe2cd1980eec88e"
+        },
+        {
+          "path": "moments.reflect.cue",
+          "locations": [
+            "g8-t3-l52-reflect"
+          ],
+          "valueSHA256": "6507fafe22dee075daeb2d844d1e3376e31aff8656ba59417f9ee7010fac606e"
+        },
+        {
+          "path": "moments.inventory.title",
+          "locations": [
+            "g8-t3-l52-inventory"
+          ],
+          "valueSHA256": "b26a4eeda0d25681a8959cd0e64d54b43b2fcd2730c9701e35ef87f5200c860e"
+        },
+        {
+          "path": "moments.inventory.cue",
+          "locations": [
+            "g8-t3-l52-inventory"
+          ],
+          "valueSHA256": "53bba3f889886e27c24f937f6f2c2516d805d688fde82f08739d52b21914e386"
+        },
+        {
+          "path": "moments.inventory.understanding",
+          "locations": [
+            "g8-t3-l52-inventory"
+          ],
+          "valueSHA256": "02bcfe9fef330a13257b4e3672405b9a7d18e8224181c5ceb8f5594d67d97efb"
+        },
+        {
+          "path": "moments.ripple.title",
+          "locations": [
+            "g8-t3-l52-ripple"
+          ],
+          "valueSHA256": "ea0d244ae9272374b4496aadd4e2ddbb0ce9ba31cfafcca7215bb43c380326bf"
+        },
+        {
+          "path": "moments.ripple.cue",
+          "locations": [
+            "g8-t3-l52-ripple"
+          ],
+          "valueSHA256": "507c962cc9129880803a1bad6c21d8cf914e22f5a59cd480607c6a3ede3ac11c"
+        },
+        {
+          "path": "moments.ripple.review",
+          "locations": [
+            "g8-t3-l52-ripple"
+          ],
+          "valueSHA256": "27086160f951ee8f5cc48daea3b8830edb371c8b9869adf8fc0b8f26b4b698df"
+        },
+        {
+          "path": "moments.propose.title",
+          "locations": [
+            "g8-t3-l52-propose"
+          ],
+          "valueSHA256": "97c8b7209ca83c8bc49df9ce0229d1a58670d1933191cf9a3ba0cafc0bbd7918"
+        },
+        {
+          "path": "moments.propose.cue",
+          "locations": [
+            "g8-t3-l52-propose"
+          ],
+          "valueSHA256": "67ea411da1b83b9a0c510c6c545c430512790e95ec097a0c5d2c6ca32765c94e"
+        },
+        {
+          "path": "moments.propose.support",
+          "locations": [
+            "g8-t3-l52-propose"
+          ],
+          "valueSHA256": "8e3719bf7dac040a37b8eb9ed261e7a0c78f14a5146a444367271856df04b69d"
+        },
+        {
+          "path": "moments.check.title",
+          "locations": [
+            "g8-t3-l52-check"
+          ],
+          "valueSHA256": "62eb6b2336a0d8f1009e4fbece3293189eb4240fb39eb51c4e82f23f9acadfaf"
+        },
+        {
+          "path": "moments.check.cue",
+          "locations": [
+            "g8-t3-l52-check"
+          ],
+          "valueSHA256": "e25a53eb43eef510bd9257bedec7bec9cd99582b72b9f7a409048336e9ce47c3"
+        },
+        {
+          "path": "moments.check.review",
+          "locations": [
+            "g8-t3-l52-check"
+          ],
+          "valueSHA256": "381195e3f15376245d804c0e05c089238345eedf54b8d521c75ceb4e19ebd5fb"
+        },
+        {
+          "path": "moments.close.title",
+          "locations": [
+            "g8-t3-l52-close"
+          ],
+          "valueSHA256": "9d8e6a10c8626b7e4fe18422bca7b69c93de2c100784a969d5494c6409b28514"
+        },
+        {
+          "path": "moments.close.cue",
+          "locations": [
+            "g8-t3-l52-close"
+          ],
+          "valueSHA256": "547f5eba454c07aa5bdc7a3ed9cc413a6e338397b91d4541a52d2489f7fb061b"
+        },
+        {
+          "path": "moments.deepen.title",
+          "locations": [
+            "g8-t3-l52-deepen"
+          ],
+          "valueSHA256": "b07aa4a8f48c94f3014e4777f5aa69583361f045d2ac40821f8bc2cc4a36ddcc"
+        },
+        {
+          "path": "moments.deepen.cue",
+          "locations": [
+            "g8-t3-l52-deepen"
+          ],
+          "valueSHA256": "dee24f1d884c4ed445df6832903fc31e594e7cea4fb44322521477ca7d728f36"
+        },
+        {
+          "path": "moments.home.title",
+          "locations": [
+            "g8-t3-l52-home"
+          ],
+          "valueSHA256": "b6593d5c480d263bbde9d558a1c37a7c963a6599abf5946f0c362c3ff645ace3"
+        },
+        {
+          "path": "moments.home.cue",
+          "locations": [
+            "g8-t3-l52-home"
+          ],
+          "valueSHA256": "88db13de96839a4c5fd3f6485bed24b88df0ac755ce05b154358299a2578a5ed"
+        }
+      ],
+      "moments": [
+        {
+          "id": "g8-t3-l52-read",
+          "period": 0,
+          "schedule": "classroom",
+          "minutes": 8,
+          "placement": {
+            "kind": "section",
+            "blockId": "c25eb19c45b7216826a48242-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "c25eb19c45b7216826a48242-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l52-reflect",
+          "period": 0,
+          "schedule": "classroom",
+          "minutes": 4,
+          "placement": {
+            "kind": "section",
+            "blockId": "4366a8a71a6f4c1b34bae61f-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "4366a8a71a6f4c1b34bae61f-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l52-inventory",
+          "period": 0,
+          "schedule": "classroom",
+          "minutes": 10,
+          "placement": {
+            "kind": "section",
+            "blockId": "aa416ab3e39bd76853da733f-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "aa416ab3e39bd76853da733f-1",
+            "9e33f4923616c804d3a44845-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l52-ripple",
+          "period": 0,
+          "schedule": "classroom",
+          "minutes": 7,
+          "placement": {
+            "kind": "heading",
+            "blockId": "a98c1a1967551ad9f557cc8b-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "a98c1a1967551ad9f557cc8b-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l52-propose",
+          "period": 0,
+          "schedule": "classroom",
+          "minutes": 7,
+          "placement": {
+            "kind": "heading",
+            "blockId": "e769a2119c5d5b958f1a8aff-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "e769a2119c5d5b958f1a8aff-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l52-check",
+          "period": 0,
+          "schedule": "classroom",
+          "minutes": 7,
+          "placement": {
+            "kind": "section",
+            "blockId": "1e8357621b551417d9b19216-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "1e8357621b551417d9b19216-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l52-close",
+          "period": 0,
+          "schedule": "classroom",
+          "minutes": 2,
+          "placement": {
+            "kind": "section",
+            "blockId": "1e8357621b551417d9b19216-1",
+            "edge": "after",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "1e8357621b551417d9b19216-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l52-deepen",
+          "period": null,
+          "schedule": "optional",
+          "minutes": 0,
+          "placement": {
+            "kind": "section",
+            "blockId": "7abd19f455ec1d5357899914-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "7abd19f455ec1d5357899914-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l52-home",
+          "period": null,
+          "schedule": "later",
+          "minutes": 0,
+          "placement": {
+            "kind": "section",
+            "blockId": "22499840c699d3a0d0c842d7-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "22499840c699d3a0d0c842d7-1"
+          ]
+        }
+      ],
+      "activityCoverage": [
+        {
+          "blockId": "4366a8a71a6f4c1b34bae61f-1",
+          "momentId": "g8-t3-l52-reflect",
+          "disposition": "classroom"
+        },
+        {
+          "blockId": "aa416ab3e39bd76853da733f-1",
+          "momentId": "g8-t3-l52-inventory",
+          "disposition": "classroom"
+        },
+        {
+          "blockId": "9e33f4923616c804d3a44845-1",
+          "momentId": "g8-t3-l52-inventory",
+          "disposition": "classroom"
+        },
+        {
+          "blockId": "a98c1a1967551ad9f557cc8b-1",
+          "momentId": "g8-t3-l52-ripple",
+          "disposition": "classroom"
+        },
+        {
+          "blockId": "e769a2119c5d5b958f1a8aff-1",
+          "momentId": "g8-t3-l52-propose",
+          "disposition": "classroom"
+        },
+        {
+          "blockId": "1e8357621b551417d9b19216-1",
+          "momentId": "g8-t3-l52-check",
+          "disposition": "classroom"
+        }
+      ]
+    },
+    {
+      "lessonId": "g8-t3-l53-052",
+      "grade": 8,
+      "term": 3,
+      "title": "HABITS AND IDENTITY",
+      "periods": 1,
+      "source": {
+        "id": "g8-t3-l53-052",
+        "sourceUnitSHA256": "e2c446203741a41d45659ef8f638c4e2b727eb79ccf5baf09d3d5d6b0ac7148c",
+        "blockIds": [
+          "539a96142de3bf8a4b9fc2f4-1",
+          "47f6b4296e644c19aa04bfa7-1",
+          "12bdaed4ce71e4b8a587577f-1",
+          "ac92f28f0393fddcd5fbdff7-1",
+          "aa62216e7222d480fa6bf7c7-1",
+          "3d6928cb0f63afbb93841ff2-1",
+          "6d2e1ecddd93d88fca4aa776-1",
+          "6e47a55f84e0148edbc1a85c-1",
+          "393d95cbe8308966997c732b-1",
+          "5c9cc3ad08506544efd5a687-1",
+          "421ff7cc3e08c83ccb4c2c3e-1",
+          "f440b6591ce6c9ae2e2c8d5a-1",
+          "5a6e06e17d863a3ba49a2e3a-1",
+          "83107e92c94a1495b1091f7a-1",
+          "10ae85edebcf54d9961f2e68-1",
+          "9d58cc59b00c4273a0765ab5-1",
+          "04f31aac25a732872308b68f-1",
+          "e04407b3962f105baf4fec9e-1",
+          "adbbfe27059b505f16b4ec4c-1",
+          "1b8ce14f95fe28eed7005c3b-1",
+          "dd5e92c108b6fcc4500f6d54-1",
+          "a3f69b03b64545915f6fe58f-1",
+          "726eedf74534f464a30f3025-1",
+          "4366a8a71a6f4c1b34bae61f-1",
+          "dfa09ff5ca5461798aabfbb0-1",
+          "be0d17a9e736d48a4e506e45-1",
+          "52899383e7e61c0feddbaae9-1",
+          "b46c907c45cb9a55798b6c39-1",
+          "985505986be28859e4f5740c-1",
+          "e3c40b0789fe8a51dc8c2105-1",
+          "053f500beca2bde5bb04cd73-1",
+          "1dca37ee5bb91e8742b76626-1",
+          "283344b0c1f42d5f2abfcad0-1",
+          "92bdc1e6e88b189f5626ef98-1",
+          "f7a68f710d61d313aeeddd28-1",
+          "c2ce9280fc4e3a63329abaa4-1",
+          "1e6ebc66f5654b7753ec5285-1",
+          "276777c06b5c5b463be1c323-1",
+          "82ec5a6bda6889dec4db0283-1",
+          "cbdc1552466e83ca191388f7-1",
+          "10785d88f8f4e5ebfbbed673-1",
+          "a0ec72342eb92fdc9cf5ab38-1",
+          "367edae741a14bceefb0ba37-1",
+          "94583264e6b7f94dce322627-1",
+          "ade50c5e89f68bd7a9a06fc0-1",
+          "e10bfbd07f8d0a75f09ceb9c-1",
+          "f9b173ec9c707369444b5f5f-1",
+          "22499840c699d3a0d0c842d7-1",
+          "fa0c034fe253930b7b574c5b-1",
+          "d7be4ad5ebb08c98844bd4ee-1",
+          "8faa4f3131ac909498734128-1",
+          "691eb7e866996338832208fe-1",
+          "9b9d1cde0ba8fa476b71bb15-1",
+          "9c61b22178794ef4ac8eec17-1",
+          "59ce723ec582fe1b6d4b706c-1"
+        ],
+        "sections": [
+          "539a96142de3bf8a4b9fc2f4-1",
+          "3d6928cb0f63afbb93841ff2-1",
+          "6e47a55f84e0148edbc1a85c-1",
+          "04f31aac25a732872308b68f-1",
+          "dd5e92c108b6fcc4500f6d54-1",
+          "4366a8a71a6f4c1b34bae61f-1",
+          "be0d17a9e736d48a4e506e45-1",
+          "10785d88f8f4e5ebfbbed673-1",
+          "ade50c5e89f68bd7a9a06fc0-1",
+          "22499840c699d3a0d0c842d7-1"
+        ],
+        "headings": [
+          "52899383e7e61c0feddbaae9-1",
+          "e3c40b0789fe8a51dc8c2105-1",
+          "283344b0c1f42d5f2abfcad0-1",
+          "276777c06b5c5b463be1c323-1"
+        ],
+        "activityIds": [
+          "4366a8a71a6f4c1b34bae61f-1",
+          "be0d17a9e736d48a4e506e45-1",
+          "52899383e7e61c0feddbaae9-1",
+          "e3c40b0789fe8a51dc8c2105-1",
+          "283344b0c1f42d5f2abfcad0-1",
+          "276777c06b5c5b463be1c323-1",
+          "ade50c5e89f68bd7a9a06fc0-1"
+        ]
+      },
+      "fieldCount": 35,
+      "planSHA256": "f291d76ff3ceeb2620c917e6306ce623a408198497628056f7632ee166be4d77",
+      "coverage": [
+        {
+          "path": "purpose",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "50562d08a376f88f054c1915632c06190908c44216a4212d031197e8a8124eac"
+        },
+        {
+          "path": "objectives",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "8b44037cbc154fcac7e755dc98ca1992e91eb48dd1c09e1b55332c9bcbc74d52"
+        },
+        {
+          "path": "outcome",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "327a08b8706109528dcd0f32a5f11d4375db5255782481f6f07f4d083b57127d"
+        },
+        {
+          "path": "prerequisites",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "29f0e0840cfd026f493f0d8b0571e78a1c23e80e293f7b6032946b001c101b6c"
+        },
+        {
+          "path": "materials",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "579a11a8278d0ecd1e532e4b7949e01d434cd0486fd8fa7010c675e5e7153a4d"
+        },
+        {
+          "path": "vocabulary",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "75f18ce9bf48ebb81a526542351a54c3605df64c938b61f3f6d370132785779c"
+        },
+        {
+          "path": "misconceptions",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "0a20fd6c2767b12ebd4afdce72b38cf88ebca3d5fccb1aabaa860dbc0d272bf7"
+        },
+        {
+          "path": "context",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "19be1786c180af256c241c7234ee55f4f5ef5e50d7547668e6416c2692f5babd"
+        },
+        {
+          "path": "access.privacy",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "b0e56ac8e2884886979c7270e487f23f2beb7849ea1625e82ec93683fb50d881"
+        },
+        {
+          "path": "periods.0.title",
+          "locations": [
+            "preparation.periods.0"
+          ],
+          "valueSHA256": "59e62f7e5307090d280564f159dcb8c318059f2193ccc215062449b772f129ee"
+        },
+        {
+          "path": "moments.read.title",
+          "locations": [
+            "g8-t3-l53-read"
+          ],
+          "valueSHA256": "640d960cebbdb7c1bbc6d9ccb3bc2da883a6b73a11339ad75451fc27d833a7b4"
+        },
+        {
+          "path": "moments.read.cue",
+          "locations": [
+            "g8-t3-l53-read"
+          ],
+          "valueSHA256": "ebace5111d54c8998e624eecfff055bb8110ff28c727a3a70f92d719b798e534"
+        },
+        {
+          "path": "moments.read.clarification",
+          "locations": [
+            "g8-t3-l53-read"
+          ],
+          "valueSHA256": "0e299a7ba66d1502231a208da8f3db9deea238d5d6e154f22417bc3669cd98de"
+        },
+        {
+          "path": "moments.reflect.title",
+          "locations": [
+            "g8-t3-l53-reflect"
+          ],
+          "valueSHA256": "08a52750173d1cb12190911364f2d7b6703c4a9c975b34f5962454a2f33efe03"
+        },
+        {
+          "path": "moments.reflect.cue",
+          "locations": [
+            "g8-t3-l53-reflect"
+          ],
+          "valueSHA256": "748e1735777c463859c0228ad70b0ca78e9c5e3ceb3e885e38984c1f48be69bb"
+        },
+        {
+          "path": "moments.current.title",
+          "locations": [
+            "g8-t3-l53-current"
+          ],
+          "valueSHA256": "ce434dce98434d328a5fda110946b6287302a9ad700a4f111cb1c28e387a8c61"
+        },
+        {
+          "path": "moments.current.cue",
+          "locations": [
+            "g8-t3-l53-current"
+          ],
+          "valueSHA256": "e092b6b2c1189c84e8156103ab6793583cb6a3e31d33df26e3cdde1fbbf6a58b"
+        },
+        {
+          "path": "moments.current.support",
+          "locations": [
+            "g8-t3-l53-current"
+          ],
+          "valueSHA256": "b1ec86c3f1b3534ceb9adf4630b49244a05c915189e5fd31d6b1381bc4d1babd"
+        },
+        {
+          "path": "moments.desired.title",
+          "locations": [
+            "g8-t3-l53-desired"
+          ],
+          "valueSHA256": "bce10d0013c3dc6bf5d53544359cc83d5956e64bfb08c767a8101b054aa46a1f"
+        },
+        {
+          "path": "moments.desired.cue",
+          "locations": [
+            "g8-t3-l53-desired"
+          ],
+          "valueSHA256": "f7174793c59bdada9ef891f22a2a3fb12acf65f3e281515728dd25c67ac6d765"
+        },
+        {
+          "path": "moments.votes.title",
+          "locations": [
+            "g8-t3-l53-votes"
+          ],
+          "valueSHA256": "ba95231864916139c3a64b571e3f3daca889fda17bfd513c713c0fb8a8aa7962"
+        },
+        {
+          "path": "moments.votes.cue",
+          "locations": [
+            "g8-t3-l53-votes"
+          ],
+          "valueSHA256": "00c3f94f7da62d202a4195340aa128a57e8b0f4b243461d385e4c3ee380cff42"
+        },
+        {
+          "path": "moments.votes.review",
+          "locations": [
+            "g8-t3-l53-votes"
+          ],
+          "valueSHA256": "545acf9e6b29783bc2c26b636b9ce604bd563541e8729f93b3718909c281b41b"
+        },
+        {
+          "path": "moments.statement.title",
+          "locations": [
+            "g8-t3-l53-statement"
+          ],
+          "valueSHA256": "501880ce521489bfefcfed962a1ddaa4470048641547653b540bd671b8611b21"
+        },
+        {
+          "path": "moments.statement.cue",
+          "locations": [
+            "g8-t3-l53-statement"
+          ],
+          "valueSHA256": "cba0e71cce90911df7d8229ab45c4ceef8bf8d487bff1e7ead77bdd6c6ef7911"
+        },
+        {
+          "path": "moments.statement.understanding",
+          "locations": [
+            "g8-t3-l53-statement"
+          ],
+          "valueSHA256": "9c4872e6bd7ca28d178842aed5d8d44fc2f592ba8cb26fe115ba4d7a9cc7ed17"
+        },
+        {
+          "path": "moments.check.title",
+          "locations": [
+            "g8-t3-l53-check"
+          ],
+          "valueSHA256": "4598516a665e1642bc25a32a162e29da4584248e6267307db103049d1bd568ab"
+        },
+        {
+          "path": "moments.check.cue",
+          "locations": [
+            "g8-t3-l53-check"
+          ],
+          "valueSHA256": "58d2143b7478f79a00e4a17910bbc0858659ba5654bfc9a5797bdc3428d37616"
+        },
+        {
+          "path": "moments.check.review",
+          "locations": [
+            "g8-t3-l53-check"
+          ],
+          "valueSHA256": "6e7172d878fdc4b65ef0b1b51eff799bab7e34596aef3d642566df55d778efdd"
+        },
+        {
+          "path": "moments.close.title",
+          "locations": [
+            "g8-t3-l53-close"
+          ],
+          "valueSHA256": "b92d3cda43d4cbdbc92435802795419f66b4f0101d4956baadf48d20c42a17d5"
+        },
+        {
+          "path": "moments.close.cue",
+          "locations": [
+            "g8-t3-l53-close"
+          ],
+          "valueSHA256": "a8ee910444e8db484d3d50e504b06ee625f61cc3a413ee186cf9cb462e293751"
+        },
+        {
+          "path": "moments.deepen.title",
+          "locations": [
+            "g8-t3-l53-deepen"
+          ],
+          "valueSHA256": "98b16660e98822f6329e53a1eb1b458a76c811253fdd869472d17a76ece57eb8"
+        },
+        {
+          "path": "moments.deepen.cue",
+          "locations": [
+            "g8-t3-l53-deepen"
+          ],
+          "valueSHA256": "72def122c03a032bdf089e8bce927d239f9f0ae65caa9d4bcfd5703709af6b9c"
+        },
+        {
+          "path": "moments.home.title",
+          "locations": [
+            "g8-t3-l53-home"
+          ],
+          "valueSHA256": "f08a046a02596a91a40fb06b7877b105fe92ca7c43ca06f0887007d04793fcb4"
+        },
+        {
+          "path": "moments.home.cue",
+          "locations": [
+            "g8-t3-l53-home"
+          ],
+          "valueSHA256": "85830bade1e7a47d898e1948dd4d2042cf7fe4e9b0b4847d9b57316fedf1b508"
+        }
+      ],
+      "moments": [
+        {
+          "id": "g8-t3-l53-read",
+          "period": 0,
+          "schedule": "classroom",
+          "minutes": 8,
+          "placement": {
+            "kind": "section",
+            "blockId": "6e47a55f84e0148edbc1a85c-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "6e47a55f84e0148edbc1a85c-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l53-reflect",
+          "period": 0,
+          "schedule": "classroom",
+          "minutes": 3,
+          "placement": {
+            "kind": "section",
+            "blockId": "4366a8a71a6f4c1b34bae61f-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "4366a8a71a6f4c1b34bae61f-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l53-current",
+          "period": 0,
+          "schedule": "classroom",
+          "minutes": 7,
+          "placement": {
+            "kind": "section",
+            "blockId": "be0d17a9e736d48a4e506e45-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "be0d17a9e736d48a4e506e45-1",
+            "52899383e7e61c0feddbaae9-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l53-desired",
+          "period": 0,
+          "schedule": "classroom",
+          "minutes": 6,
+          "placement": {
+            "kind": "heading",
+            "blockId": "e3c40b0789fe8a51dc8c2105-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "e3c40b0789fe8a51dc8c2105-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l53-votes",
+          "period": 0,
+          "schedule": "classroom",
+          "minutes": 10,
+          "placement": {
+            "kind": "heading",
+            "blockId": "283344b0c1f42d5f2abfcad0-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "283344b0c1f42d5f2abfcad0-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l53-statement",
+          "period": 0,
+          "schedule": "classroom",
+          "minutes": 3,
+          "placement": {
+            "kind": "heading",
+            "blockId": "276777c06b5c5b463be1c323-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "276777c06b5c5b463be1c323-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l53-check",
+          "period": 0,
+          "schedule": "classroom",
+          "minutes": 6,
+          "placement": {
+            "kind": "section",
+            "blockId": "ade50c5e89f68bd7a9a06fc0-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "ade50c5e89f68bd7a9a06fc0-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l53-close",
+          "period": 0,
+          "schedule": "classroom",
+          "minutes": 2,
+          "placement": {
+            "kind": "section",
+            "blockId": "ade50c5e89f68bd7a9a06fc0-1",
+            "edge": "after",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "ade50c5e89f68bd7a9a06fc0-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l53-deepen",
+          "period": null,
+          "schedule": "optional",
+          "minutes": 0,
+          "placement": {
+            "kind": "section",
+            "blockId": "10785d88f8f4e5ebfbbed673-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "10785d88f8f4e5ebfbbed673-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l53-home",
+          "period": null,
+          "schedule": "later",
+          "minutes": 0,
+          "placement": {
+            "kind": "section",
+            "blockId": "22499840c699d3a0d0c842d7-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "22499840c699d3a0d0c842d7-1"
+          ]
+        }
+      ],
+      "activityCoverage": [
+        {
+          "blockId": "4366a8a71a6f4c1b34bae61f-1",
+          "momentId": "g8-t3-l53-reflect",
+          "disposition": "classroom"
+        },
+        {
+          "blockId": "be0d17a9e736d48a4e506e45-1",
+          "momentId": "g8-t3-l53-current",
+          "disposition": "classroom"
+        },
+        {
+          "blockId": "52899383e7e61c0feddbaae9-1",
+          "momentId": "g8-t3-l53-current",
+          "disposition": "classroom"
+        },
+        {
+          "blockId": "e3c40b0789fe8a51dc8c2105-1",
+          "momentId": "g8-t3-l53-desired",
+          "disposition": "classroom"
+        },
+        {
+          "blockId": "283344b0c1f42d5f2abfcad0-1",
+          "momentId": "g8-t3-l53-votes",
+          "disposition": "classroom"
+        },
+        {
+          "blockId": "276777c06b5c5b463be1c323-1",
+          "momentId": "g8-t3-l53-statement",
+          "disposition": "classroom"
+        },
+        {
+          "blockId": "ade50c5e89f68bd7a9a06fc0-1",
+          "momentId": "g8-t3-l53-check",
+          "disposition": "classroom"
+        }
+      ]
+    },
+    {
+      "lessonId": "g8-t3-l54-053",
+      "grade": 8,
+      "term": 3,
+      "title": "BECOMING A SAVER",
+      "periods": 1,
+      "source": {
+        "id": "g8-t3-l54-053",
+        "sourceUnitSHA256": "c272eee33b0bda2582cf68f940ff644d0ab2be1f85f670dfaa250a3491f4e0e2",
+        "blockIds": [
+          "539a96142de3bf8a4b9fc2f4-1",
+          "47f6b4296e644c19aa04bfa7-1",
+          "bc93b7e74637f9df364526a7-1",
+          "6686aa225368329c1b1516f5-1",
+          "2f2748d56ee928dec6ca129a-1",
+          "3d6928cb0f63afbb93841ff2-1",
+          "6fb97d3a0785bf77ce2d80b2-1",
+          "b28ec13e8e428f837bee9560-1",
+          "e44d172df65339f91b112860-1",
+          "7d3946218baadec8863b5350-1",
+          "42edff86313db53398492be3-1",
+          "ce456fd9916bc529becd5a0d-1",
+          "25285997932776e758b11ad7-1",
+          "f93710cea93e19b304feeb1b-1",
+          "4366a8a71a6f4c1b34bae61f-1",
+          "282b00e8be6b08267ffa8c56-1",
+          "f7d51e8c2170f1a3a4b49b64-1",
+          "1b99296322eb063c4cc48ee9-1",
+          "1a702eb8d4ba77d560c64084-1",
+          "3c014bcdfce78dd2577bf16b-1",
+          "a678ad7f6186cf10299583b2-1",
+          "39fcf377d5dd88228db2f66c-1",
+          "cc5a57d330ea063e4d7b49f9-1",
+          "e7c0c8ea68eae89552bc8114-1",
+          "79af1874e492c3e15a667f45-1",
+          "201a09038b1e811d34bfde13-1",
+          "e76560fb9d86e7b1a927014b-1",
+          "cc447b882033acb099937db2-1",
+          "695d3d4d3a78883bd4a6c5ad-1",
+          "4715740429cd55b85b1fd0dd-1",
+          "73d6acd70fdfac7b43be2f96-1",
+          "8192738961a610613f14484c-1",
+          "69a2202241c775531a83d922-1",
+          "6cc3abc0d13f365711847dc1-1",
+          "3ee29c1840991755365f6f4a-1",
+          "22499840c699d3a0d0c842d7-1",
+          "7e370d63096522f9325a6733-1",
+          "2814dc0462f96a2ebb1d1bac-1",
+          "b01ed202990317171a3b5b47-1",
+          "ac07beaca0463f7999304200-1",
+          "950b6aca438bba8a5e205460-1",
+          "9b9d1cde0ba8fa476b71bb15-1",
+          "f4afef0b316af81e88580c4c-1",
+          "59ce723ec582fe1b6d4b706c-1"
+        ],
+        "sections": [
+          "539a96142de3bf8a4b9fc2f4-1",
+          "3d6928cb0f63afbb93841ff2-1",
+          "b28ec13e8e428f837bee9560-1",
+          "ce456fd9916bc529becd5a0d-1",
+          "4366a8a71a6f4c1b34bae61f-1",
+          "f7d51e8c2170f1a3a4b49b64-1",
+          "695d3d4d3a78883bd4a6c5ad-1",
+          "69a2202241c775531a83d922-1",
+          "22499840c699d3a0d0c842d7-1"
+        ],
+        "headings": [
+          "1b99296322eb063c4cc48ee9-1",
+          "39fcf377d5dd88228db2f66c-1"
+        ],
+        "activityIds": [
+          "4366a8a71a6f4c1b34bae61f-1",
+          "f7d51e8c2170f1a3a4b49b64-1",
+          "1b99296322eb063c4cc48ee9-1",
+          "39fcf377d5dd88228db2f66c-1",
+          "69a2202241c775531a83d922-1"
+        ]
+      },
+      "fieldCount": 30,
+      "planSHA256": "bd01d65c1113415a9dd7f3f78117ce87927a3ffcd060a811791fcb7580e23902",
+      "coverage": [
+        {
+          "path": "purpose",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "2211f4d5ff0ac931751e26fc47acf9cf343d1428e012d97112342319bdb8fa3b"
+        },
+        {
+          "path": "objectives",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "abc8d0ed7155c9a0a87c7bc5dfeb4ee3b3cb0aa2c6eb44e71627cc707e12321b"
+        },
+        {
+          "path": "outcome",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "7ebd8cbb7689c1aad59ee6c45692a1671398fb746dde5ff5cc4236b19ef75921"
+        },
+        {
+          "path": "prerequisites",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "13b675005eb0bb0495b527d4963b83757a7dc19e66e4fbf4677eec64827ea37f"
+        },
+        {
+          "path": "materials",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "f546ed356c25da6d639f82f7bcf482e5fcc2739811f600ceb4dff723c3d05b7f"
+        },
+        {
+          "path": "vocabulary",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "5bb011034890c4d073774e587c2191be5440dda404550c61d2c3df8e36f6e5e0"
+        },
+        {
+          "path": "misconceptions",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "2833044047267e63072ded850c6b5cf8bd70b9b7d72f02be26da33383c694257"
+        },
+        {
+          "path": "context",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "5bf87fca47fac5ee27badd997eae4e12e55a855d32502e18729c4de8219da44d"
+        },
+        {
+          "path": "access.privacy",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "da8208da78c95e4d349ab0b7332b921a860b9fd246060fb139bc2b676a7c4c39"
+        },
+        {
+          "path": "periods.0.title",
+          "locations": [
+            "preparation.periods.0"
+          ],
+          "valueSHA256": "7ad844ffd4f62441da5af86d9243bec66a88d2a88fe8e0e15f9b0fb3a398158e"
+        },
+        {
+          "path": "moments.read.title",
+          "locations": [
+            "g8-t3-l54-read"
+          ],
+          "valueSHA256": "ff1a2b6eeb14d9d653dd2057c3cfcbb13ba1e3f135ca672f8424761db032fb76"
+        },
+        {
+          "path": "moments.read.cue",
+          "locations": [
+            "g8-t3-l54-read"
+          ],
+          "valueSHA256": "acb570cfcf0ce6adaa1eea8fb94b52a70a7738fbe5da9bfbcad1bfb3e072a8a5"
+        },
+        {
+          "path": "moments.read.support",
+          "locations": [
+            "g8-t3-l54-read"
+          ],
+          "valueSHA256": "03f0451f7f5debd2f8b8b5944b27f07f21daad6537fe71ba17080afa031d822e"
+        },
+        {
+          "path": "moments.reflect.title",
+          "locations": [
+            "g8-t3-l54-reflect"
+          ],
+          "valueSHA256": "1cb47bad82eccefd25136a206d009e0cf6e44a88fec0452ca181abc4d282e496"
+        },
+        {
+          "path": "moments.reflect.cue",
+          "locations": [
+            "g8-t3-l54-reflect"
+          ],
+          "valueSHA256": "35be91e5688ef54876f7f013af94f9af986b7619b177f5dcf041bf7e5c975c63"
+        },
+        {
+          "path": "moments.checklist.title",
+          "locations": [
+            "g8-t3-l54-checklist"
+          ],
+          "valueSHA256": "5c461a1f0a517278204c306918501c12d38a2f156ce7ea03078eec81ae62e6b4"
+        },
+        {
+          "path": "moments.checklist.cue",
+          "locations": [
+            "g8-t3-l54-checklist"
+          ],
+          "valueSHA256": "92c8597362c908bb0708056e426383ad748b0f7a0880382800e694b9b137364e"
+        },
+        {
+          "path": "moments.checklist.understanding",
+          "locations": [
+            "g8-t3-l54-checklist"
+          ],
+          "valueSHA256": "6da22eb330ed307b27af37888e0c880d987fa0d311f0a779b72552f354f99a57"
+        },
+        {
+          "path": "moments.commit.title",
+          "locations": [
+            "g8-t3-l54-commit"
+          ],
+          "valueSHA256": "3138a2402a7e39f0ce64dd7c39e163deb252a47632b45c0d0c89cb178a903aa3"
+        },
+        {
+          "path": "moments.commit.cue",
+          "locations": [
+            "g8-t3-l54-commit"
+          ],
+          "valueSHA256": "8d3b1daa906c928c54356a69c01bb8ac111f58040f6e7d18cbd8454c19913e7d"
+        },
+        {
+          "path": "moments.commit.review",
+          "locations": [
+            "g8-t3-l54-commit"
+          ],
+          "valueSHA256": "687fe821140f5e6d7b87e6aa3cd1514fc3c1b458ec38853c80f20fe820aac326"
+        },
+        {
+          "path": "moments.check.title",
+          "locations": [
+            "g8-t3-l54-check"
+          ],
+          "valueSHA256": "2b41590e3fb3ff9b2ac33178a716fb3894d89cbb57981338dc88ba83dd08af5e"
+        },
+        {
+          "path": "moments.check.cue",
+          "locations": [
+            "g8-t3-l54-check"
+          ],
+          "valueSHA256": "f8b04993b964313d70f7e5a669869da9bffaa2a54911b5f9291dca8b61a80891"
+        },
+        {
+          "path": "moments.check.review",
+          "locations": [
+            "g8-t3-l54-check"
+          ],
+          "valueSHA256": "fd3d45c013419ebf898590323106a736c9dc44955a4c4f337ed6bddcb5f19626"
+        },
+        {
+          "path": "moments.close.title",
+          "locations": [
+            "g8-t3-l54-close"
+          ],
+          "valueSHA256": "b6e31ff22798419fb0bc2f0ee2cd61de045988b217cf804b08088e873ee5e833"
+        },
+        {
+          "path": "moments.close.cue",
+          "locations": [
+            "g8-t3-l54-close"
+          ],
+          "valueSHA256": "e8283f3c01a39c2c023e279de28e27a52e490cec2d99b385be1a24a1acc08fcb"
+        },
+        {
+          "path": "moments.deepen.title",
+          "locations": [
+            "g8-t3-l54-deepen"
+          ],
+          "valueSHA256": "217666263909fe2b404ed4d96f732ca839ab8f056db0f0667b156170a4a83b2b"
+        },
+        {
+          "path": "moments.deepen.cue",
+          "locations": [
+            "g8-t3-l54-deepen"
+          ],
+          "valueSHA256": "7d1425f4e63be591f9dc88bcac2171195373965b85b043b5fa51bc052e895bc3"
+        },
+        {
+          "path": "moments.home.title",
+          "locations": [
+            "g8-t3-l54-home"
+          ],
+          "valueSHA256": "49212e14c563d3888da8bd040085cf896af508929b9bfee4a9d6cd5cdf56719a"
+        },
+        {
+          "path": "moments.home.cue",
+          "locations": [
+            "g8-t3-l54-home"
+          ],
+          "valueSHA256": "bae2342fc384bde72d635aaaf900702cb846cf14a87e41d1a72ed8387c37b888"
+        }
+      ],
+      "moments": [
+        {
+          "id": "g8-t3-l54-read",
+          "period": 0,
+          "schedule": "classroom",
+          "minutes": 8,
+          "placement": {
+            "kind": "section",
+            "blockId": "b28ec13e8e428f837bee9560-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "b28ec13e8e428f837bee9560-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l54-reflect",
+          "period": 0,
+          "schedule": "classroom",
+          "minutes": 4,
+          "placement": {
+            "kind": "section",
+            "blockId": "4366a8a71a6f4c1b34bae61f-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "4366a8a71a6f4c1b34bae61f-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l54-checklist",
+          "period": 0,
+          "schedule": "classroom",
+          "minutes": 12,
+          "placement": {
+            "kind": "section",
+            "blockId": "f7d51e8c2170f1a3a4b49b64-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "f7d51e8c2170f1a3a4b49b64-1",
+            "1b99296322eb063c4cc48ee9-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l54-commit",
+          "period": 0,
+          "schedule": "classroom",
+          "minutes": 12,
+          "placement": {
+            "kind": "heading",
+            "blockId": "39fcf377d5dd88228db2f66c-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "39fcf377d5dd88228db2f66c-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l54-check",
+          "period": 0,
+          "schedule": "classroom",
+          "minutes": 7,
+          "placement": {
+            "kind": "section",
+            "blockId": "69a2202241c775531a83d922-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "69a2202241c775531a83d922-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l54-close",
+          "period": 0,
+          "schedule": "classroom",
+          "minutes": 2,
+          "placement": {
+            "kind": "section",
+            "blockId": "69a2202241c775531a83d922-1",
+            "edge": "after",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "69a2202241c775531a83d922-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l54-deepen",
+          "period": null,
+          "schedule": "optional",
+          "minutes": 0,
+          "placement": {
+            "kind": "section",
+            "blockId": "695d3d4d3a78883bd4a6c5ad-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "695d3d4d3a78883bd4a6c5ad-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l54-home",
+          "period": null,
+          "schedule": "later",
+          "minutes": 0,
+          "placement": {
+            "kind": "section",
+            "blockId": "22499840c699d3a0d0c842d7-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "22499840c699d3a0d0c842d7-1"
+          ]
+        }
+      ],
+      "activityCoverage": [
+        {
+          "blockId": "4366a8a71a6f4c1b34bae61f-1",
+          "momentId": "g8-t3-l54-reflect",
+          "disposition": "classroom"
+        },
+        {
+          "blockId": "f7d51e8c2170f1a3a4b49b64-1",
+          "momentId": "g8-t3-l54-checklist",
+          "disposition": "classroom"
+        },
+        {
+          "blockId": "1b99296322eb063c4cc48ee9-1",
+          "momentId": "g8-t3-l54-checklist",
+          "disposition": "classroom"
+        },
+        {
+          "blockId": "39fcf377d5dd88228db2f66c-1",
+          "momentId": "g8-t3-l54-commit",
+          "disposition": "classroom"
+        },
+        {
+          "blockId": "69a2202241c775531a83d922-1",
+          "momentId": "g8-t3-l54-check",
+          "disposition": "classroom"
+        }
+      ]
+    },
+    {
+      "lessonId": "g8-t3-l55-054",
+      "grade": 8,
+      "term": 3,
+      "title": "BECOMING AN EARNER",
+      "periods": 1,
+      "source": {
+        "id": "g8-t3-l55-054",
+        "sourceUnitSHA256": "18938ed326c4457c291cb0f3bf9321d664dc02153a017036c1f2cb4ee7423405",
+        "blockIds": [
+          "539a96142de3bf8a4b9fc2f4-1",
+          "47f6b4296e644c19aa04bfa7-1",
+          "a5395c9ac6621573a3e5f340-1",
+          "d1357748a126e22074394759-1",
+          "97383633dfe8b6af63a4ac4d-1",
+          "3d6928cb0f63afbb93841ff2-1",
+          "a74b071182a8b96f8b077a4b-1",
+          "fecaa4a84bf343b560ad1218-1",
+          "4ed5af6e8f78e6454c3d6f6f-1",
+          "0dd9a7a0257cf2045dd6b188-1",
+          "7862f64d74ae9d878c1bb53a-1",
+          "3158078117cb44debffaf427-1",
+          "7c4ea2fa3627fc8b4af12607-1",
+          "0393d7ac9e993e39917656b1-1",
+          "abd081e766ae4e56dee29e14-1",
+          "4366a8a71a6f4c1b34bae61f-1",
+          "f23b2efd27e6aaac06c1399a-1",
+          "b902fe78f2d2c5f9177433ae-1",
+          "8f0a7eacbaef46442b284122-1",
+          "1123b4645e437799deddf85c-1",
+          "02d902d1b68c9d1811a80904-1",
+          "4006ab39536e65f3d61890ba-1",
+          "0cb9c995c1e51d226e782228-1",
+          "8bd0b4d55fe294dd4da9806b-1",
+          "b353e5930e5b35e267e74371-1",
+          "2aca64149ead8cf86d0d89dd-1",
+          "e74f11c556bf84adc75d3c8b-1",
+          "97e8f20f60690294ee689091-1",
+          "3159256cc5825b6f950d2ef3-1",
+          "46e19852da83ddd46f710434-1",
+          "a285db2be6ad993e768802d4-1",
+          "a1c97c68a2da8d8bb7dd4a1a-1",
+          "71d405d9318f7976dcd0711f-1",
+          "aba828ae4f4eeec4be71e5d4-1",
+          "219a35bbde53f8a1d7c642eb-1",
+          "08475e6dbd52e4026b2e6457-1",
+          "c84a730e175b8cd6d2082a34-1",
+          "c1777d237626c5958b36d4d6-1",
+          "25ae99252007228415acde4d-1",
+          "ade50c5e89f68bd7a9a06fc0-1",
+          "471c66541a295d67545a18df-1",
+          "19961b812832074684b19a13-1",
+          "22499840c699d3a0d0c842d7-1",
+          "91dfb1a5cc75330bf844cc63-1",
+          "61b98fc5a68ceaf770c273f0-1",
+          "ebe7093489b2bb03d368c5cd-1",
+          "405e7119306f564dd1b5c9b9-1",
+          "39d1771c7dd549be2ac27ad3-1",
+          "9b9d1cde0ba8fa476b71bb15-1",
+          "f69e52b09cbe26c4e2288634-1",
+          "59ce723ec582fe1b6d4b706c-1"
+        ],
+        "sections": [
+          "539a96142de3bf8a4b9fc2f4-1",
+          "3d6928cb0f63afbb93841ff2-1",
+          "fecaa4a84bf343b560ad1218-1",
+          "3158078117cb44debffaf427-1",
+          "4366a8a71a6f4c1b34bae61f-1",
+          "b902fe78f2d2c5f9177433ae-1",
+          "08475e6dbd52e4026b2e6457-1",
+          "ade50c5e89f68bd7a9a06fc0-1",
+          "22499840c699d3a0d0c842d7-1"
+        ],
+        "headings": [
+          "8f0a7eacbaef46442b284122-1",
+          "97e8f20f60690294ee689091-1"
+        ],
+        "activityIds": [
+          "4366a8a71a6f4c1b34bae61f-1",
+          "b902fe78f2d2c5f9177433ae-1",
+          "8f0a7eacbaef46442b284122-1",
+          "97e8f20f60690294ee689091-1",
+          "ade50c5e89f68bd7a9a06fc0-1"
+        ]
+      },
+      "fieldCount": 30,
+      "planSHA256": "7f39c6d9ff84f66389797086da896c543755203731048968713cf54fed6506e1",
+      "coverage": [
+        {
+          "path": "purpose",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "6914bc10714e5907a9604ad0d86a94ade12d9523614ed313ef7a34d6347bb8c0"
+        },
+        {
+          "path": "objectives",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "854018a5dd3e9048a300894a3155a65d3c9b2f8b8caa457a7930d5031d420bc9"
+        },
+        {
+          "path": "outcome",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "ee189b4e8798d8d17a49fa541bd6ea6cac40e0cd76ce1190612936d320bf0d8e"
+        },
+        {
+          "path": "prerequisites",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "7cc7b16b497656890e64128b3419902e15dc178ed5d543d9ed01f53a6a26329c"
+        },
+        {
+          "path": "materials",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "a8d85c60af5f9dc40475052634275981d165e03ef5d68562ba5479b9345bff48"
+        },
+        {
+          "path": "vocabulary",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "2233d0ec558f4a3bd04ba2d767e63202723509ce6c1eeb856a4ae272270a7175"
+        },
+        {
+          "path": "misconceptions",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "26a1ccfc39cdb852dc39ff77046b7a35c1d77d3376244890e74583b6c4a9298f"
+        },
+        {
+          "path": "context",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "1e8f756030479bbc36d7a874df1bfa83689119e774042b3a7d386535a31eb5b1"
+        },
+        {
+          "path": "access.privacy",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "b2699afcb0e7277f81d7c93abbdcdf19209f669b8e8c22fb168f856e69d69f05"
+        },
+        {
+          "path": "periods.0.title",
+          "locations": [
+            "preparation.periods.0"
+          ],
+          "valueSHA256": "8235b294eee21abc4cf64913d788f57bb2b9286971cae2df83fa79d63367fc31"
+        },
+        {
+          "path": "moments.read.title",
+          "locations": [
+            "g8-t3-l55-read"
+          ],
+          "valueSHA256": "f9b57ea1c17e3a8c70235f93f7218ef122d6b10bcb39592dc27f7d622b270369"
+        },
+        {
+          "path": "moments.read.cue",
+          "locations": [
+            "g8-t3-l55-read"
+          ],
+          "valueSHA256": "fa24ca96cbf08856d4dd3331e6fd9b6fc2f7ddfdbc4fe89a0e1be5a8a0d55ddf"
+        },
+        {
+          "path": "moments.read.clarification",
+          "locations": [
+            "g8-t3-l55-read"
+          ],
+          "valueSHA256": "2945503d86814327bda0c78df4375d9b97cfe390436b3dc2be88b22d8fcc45ce"
+        },
+        {
+          "path": "moments.reflect.title",
+          "locations": [
+            "g8-t3-l55-reflect"
+          ],
+          "valueSHA256": "32f1f19b5bbdc9bcf47208da680edb2fc44f2087ddfc871cad9fd2f78f9eea67"
+        },
+        {
+          "path": "moments.reflect.cue",
+          "locations": [
+            "g8-t3-l55-reflect"
+          ],
+          "valueSHA256": "ecde8e9f3353b78cf5fe823a215d5e69aea5b5d1a6e863a01a34a68e8c1df14e"
+        },
+        {
+          "path": "moments.skills.title",
+          "locations": [
+            "g8-t3-l55-skills"
+          ],
+          "valueSHA256": "dbacecf86399c135b15e3abab4eed1855eb390341aae15343864cd9d3d849599"
+        },
+        {
+          "path": "moments.skills.cue",
+          "locations": [
+            "g8-t3-l55-skills"
+          ],
+          "valueSHA256": "1e46a17ec56d140776f40d16d3969cf0d3bb7d3058a43388be40cdd5a42e9e04"
+        },
+        {
+          "path": "moments.skills.understanding",
+          "locations": [
+            "g8-t3-l55-skills"
+          ],
+          "valueSHA256": "f9fb649ec40368e567cfdc64d8322f22eda94b6fdf80d76bcd47f07c115052ff"
+        },
+        {
+          "path": "moments.customer.title",
+          "locations": [
+            "g8-t3-l55-customer"
+          ],
+          "valueSHA256": "a0e8429d81b4ef84aa4bc3c74a175e9c7c825b6311b3cd4b71d81211b7fe62bb"
+        },
+        {
+          "path": "moments.customer.cue",
+          "locations": [
+            "g8-t3-l55-customer"
+          ],
+          "valueSHA256": "d5dae6ebba9d1ddc1a819d0709ef298ef947fe543abce25efa026708643fe700"
+        },
+        {
+          "path": "moments.customer.support",
+          "locations": [
+            "g8-t3-l55-customer"
+          ],
+          "valueSHA256": "0d667194ebeceee84040693795020ff276c3757e95e021ce11978cd7c7b6aecd"
+        },
+        {
+          "path": "moments.checkpoint.title",
+          "locations": [
+            "g8-t3-l55-checkpoint"
+          ],
+          "valueSHA256": "8e84777259f15d32bb38a477d1fcf6a74a886f746306bf5f9b47672644d7e0c2"
+        },
+        {
+          "path": "moments.checkpoint.cue",
+          "locations": [
+            "g8-t3-l55-checkpoint"
+          ],
+          "valueSHA256": "f408cf530ac623ae7b6eabf851b516c69a0c4fe4d9db8623b04dfa4f4f50942c"
+        },
+        {
+          "path": "moments.checkpoint.review",
+          "locations": [
+            "g8-t3-l55-checkpoint"
+          ],
+          "valueSHA256": "b1cba51ef59087fec0d60cd1c77d7dcd4b241ffa1732f5c9d879f797d68dadb1"
+        },
+        {
+          "path": "moments.close.title",
+          "locations": [
+            "g8-t3-l55-close"
+          ],
+          "valueSHA256": "9c8bb331cda2316f6ce81b11c9ccc4b59d7b2e42bf7872f7cbabac31254ec2db"
+        },
+        {
+          "path": "moments.close.cue",
+          "locations": [
+            "g8-t3-l55-close"
+          ],
+          "valueSHA256": "9ae8af7d572b21f96b704bc8264ff59b382eeafda130e3274b977a9f03e898b4"
+        },
+        {
+          "path": "moments.deepen.title",
+          "locations": [
+            "g8-t3-l55-deepen"
+          ],
+          "valueSHA256": "376bf9d4913fcb36685850ec65b857b878cc6e0ac04df1c2f49d590001a9d11f"
+        },
+        {
+          "path": "moments.deepen.cue",
+          "locations": [
+            "g8-t3-l55-deepen"
+          ],
+          "valueSHA256": "549a2188eb538736bdaf4361db80d96eb7d61e5c015db8f3db751b48a54ba0e4"
+        },
+        {
+          "path": "moments.home.title",
+          "locations": [
+            "g8-t3-l55-home"
+          ],
+          "valueSHA256": "ded5cd5da5e4db0f12d3bb98a848d1ac4e40e999c559ea3301fe66452d354b40"
+        },
+        {
+          "path": "moments.home.cue",
+          "locations": [
+            "g8-t3-l55-home"
+          ],
+          "valueSHA256": "3b1c60251738e1a94e25f51fd701e701c2519384f9e686f902d44d3e76ed5923"
+        }
+      ],
+      "moments": [
+        {
+          "id": "g8-t3-l55-read",
+          "period": 0,
+          "schedule": "classroom",
+          "minutes": 8,
+          "placement": {
+            "kind": "section",
+            "blockId": "fecaa4a84bf343b560ad1218-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "fecaa4a84bf343b560ad1218-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l55-reflect",
+          "period": 0,
+          "schedule": "classroom",
+          "minutes": 4,
+          "placement": {
+            "kind": "section",
+            "blockId": "4366a8a71a6f4c1b34bae61f-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "4366a8a71a6f4c1b34bae61f-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l55-skills",
+          "period": 0,
+          "schedule": "classroom",
+          "minutes": 13,
+          "placement": {
+            "kind": "section",
+            "blockId": "b902fe78f2d2c5f9177433ae-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "b902fe78f2d2c5f9177433ae-1",
+            "8f0a7eacbaef46442b284122-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l55-customer",
+          "period": 0,
+          "schedule": "classroom",
+          "minutes": 11,
+          "placement": {
+            "kind": "heading",
+            "blockId": "97e8f20f60690294ee689091-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "97e8f20f60690294ee689091-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l55-checkpoint",
+          "period": 0,
+          "schedule": "classroom",
+          "minutes": 7,
+          "placement": {
+            "kind": "section",
+            "blockId": "ade50c5e89f68bd7a9a06fc0-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "ade50c5e89f68bd7a9a06fc0-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l55-close",
+          "period": 0,
+          "schedule": "classroom",
+          "minutes": 2,
+          "placement": {
+            "kind": "section",
+            "blockId": "ade50c5e89f68bd7a9a06fc0-1",
+            "edge": "after",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "ade50c5e89f68bd7a9a06fc0-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l55-deepen",
+          "period": null,
+          "schedule": "optional",
+          "minutes": 0,
+          "placement": {
+            "kind": "section",
+            "blockId": "08475e6dbd52e4026b2e6457-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "08475e6dbd52e4026b2e6457-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l55-home",
+          "period": null,
+          "schedule": "later",
+          "minutes": 0,
+          "placement": {
+            "kind": "section",
+            "blockId": "22499840c699d3a0d0c842d7-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "22499840c699d3a0d0c842d7-1"
+          ]
+        }
+      ],
+      "activityCoverage": [
+        {
+          "blockId": "4366a8a71a6f4c1b34bae61f-1",
+          "momentId": "g8-t3-l55-reflect",
+          "disposition": "classroom"
+        },
+        {
+          "blockId": "b902fe78f2d2c5f9177433ae-1",
+          "momentId": "g8-t3-l55-skills",
+          "disposition": "classroom"
+        },
+        {
+          "blockId": "8f0a7eacbaef46442b284122-1",
+          "momentId": "g8-t3-l55-skills",
+          "disposition": "classroom"
+        },
+        {
+          "blockId": "97e8f20f60690294ee689091-1",
+          "momentId": "g8-t3-l55-customer",
+          "disposition": "classroom"
+        },
+        {
+          "blockId": "ade50c5e89f68bd7a9a06fc0-1",
+          "momentId": "g8-t3-l55-checkpoint",
+          "disposition": "classroom"
+        }
+      ]
+    },
+    {
+      "lessonId": "g8-t3-l56-055",
+      "grade": 8,
+      "term": 3,
+      "title": "BECOMING A PLANNER",
+      "periods": 1,
+      "source": {
+        "id": "g8-t3-l56-055",
+        "sourceUnitSHA256": "f14a77c95b059ae44694d5b3c5cff09a050e985dc541560aa79267994e4846ed",
+        "blockIds": [
+          "539a96142de3bf8a4b9fc2f4-1",
+          "47f6b4296e644c19aa04bfa7-1",
+          "b35793351c279028a78d7f57-1",
+          "4b7417b3eb2b75be06387817-1",
+          "d542550f78ea46549dd1d37f-1",
+          "3d6928cb0f63afbb93841ff2-1",
+          "d3a79865fcecade4e653f172-1",
+          "8a598098b050e439503bf142-1",
+          "87ea8e253364965b6c4fbed7-1",
+          "0366e1157c8c16062c286f9a-1",
+          "e47c6567f98d91f448084ff0-1",
+          "9c5a1c671184a78ccb4914b7-1",
+          "0b20acb384fb3b3d25374269-1",
+          "dd5e92c108b6fcc4500f6d54-1",
+          "fd52b864ce526761607ad170-1",
+          "c0d5cefe0b0c9b0ee2a06fbb-1",
+          "4366a8a71a6f4c1b34bae61f-1",
+          "594c95bf55042c058012b907-1",
+          "66a24d66fe2d1754a833f8c1-1",
+          "421b79143a3ef732f54f5afd-1",
+          "126f2a96df85cf77367ff659-1",
+          "8a673b63eb450c1282717765-1",
+          "fe40c8e5d9a95ea9fdbac644-1",
+          "946466b63e40d4cd3144a713-1",
+          "50f28918a65449c4bfb76d66-1",
+          "26571b9c5ddef0bc93685eff-1",
+          "c9e65f115199320c318098f7-1",
+          "fb389732c154cc8459dcef5b-1",
+          "75ab45ea11a829cf58aa0733-1",
+          "d76b8f84ea3f6b030b99e373-1",
+          "2c17b41ff7a43c451146802d-1",
+          "e4fa0bcbe0d462453a7f46f0-1",
+          "7cd91968c7abd792b1630c54-1",
+          "eea86ba4508dfd8f7176c937-1",
+          "20d767620e84d2118b9dad81-1",
+          "a3a22996e7962903755e177a-1",
+          "ad4359f3e1c8fb44355d1364-1",
+          "919f2ae6af300098329cfdfc-1",
+          "0071047a076dfd427c564960-1",
+          "4017699df261b68f689387ca-1",
+          "ade50c5e89f68bd7a9a06fc0-1",
+          "81dd37e62b1bb9e1992adfbd-1",
+          "59d259f56a8e4bf879e7d340-1",
+          "22499840c699d3a0d0c842d7-1",
+          "4d3e3694def1eff8f1a74a6e-1",
+          "f7f7961513396bc022874125-1",
+          "7e247ecacb19212755fa55b2-1",
+          "1c6cff50be5a6522b143fbd2-1",
+          "71a5c93e21de9ce85a3f035f-1",
+          "9b9d1cde0ba8fa476b71bb15-1",
+          "1bb788f102eedb8610c9fe41-1",
+          "59ce723ec582fe1b6d4b706c-1"
+        ],
+        "sections": [
+          "539a96142de3bf8a4b9fc2f4-1",
+          "3d6928cb0f63afbb93841ff2-1",
+          "8a598098b050e439503bf142-1",
+          "0366e1157c8c16062c286f9a-1",
+          "dd5e92c108b6fcc4500f6d54-1",
+          "4366a8a71a6f4c1b34bae61f-1",
+          "66a24d66fe2d1754a833f8c1-1",
+          "ad4359f3e1c8fb44355d1364-1",
+          "ade50c5e89f68bd7a9a06fc0-1",
+          "22499840c699d3a0d0c842d7-1"
+        ],
+        "headings": [
+          "421b79143a3ef732f54f5afd-1",
+          "946466b63e40d4cd3144a713-1",
+          "e4fa0bcbe0d462453a7f46f0-1"
+        ],
+        "activityIds": [
+          "4366a8a71a6f4c1b34bae61f-1",
+          "66a24d66fe2d1754a833f8c1-1",
+          "421b79143a3ef732f54f5afd-1",
+          "946466b63e40d4cd3144a713-1",
+          "e4fa0bcbe0d462453a7f46f0-1",
+          "ade50c5e89f68bd7a9a06fc0-1"
+        ]
+      },
+      "fieldCount": 32,
+      "planSHA256": "8e151c0991b397d264a86887f6d03217381f464db6a5b5c0720db7c7012f9394",
+      "coverage": [
+        {
+          "path": "purpose",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "8ef4f0bf3bdb98d1a0885bf6fd0c54ce40efe620f07dae53f5df06bbbfc72928"
+        },
+        {
+          "path": "objectives",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "6754ef429daee6bba29ea70d3233cc9d5d60c7396b9a1f370ccc5c6c10a35be6"
+        },
+        {
+          "path": "outcome",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "36d96804a9de58386baedb56b0d35d542965731767cc20e7c6671773010d83a4"
+        },
+        {
+          "path": "prerequisites",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "b637964bc8d960a577993ff8e4665315e129bd95f8a41bb148cec6f158c3c796"
+        },
+        {
+          "path": "materials",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "d7a1fac25c76c7ce7771af9a8ecf513f7936e9b59d31566459c88a5548b6849e"
+        },
+        {
+          "path": "vocabulary",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "70d5afce1fc156b107bb657636221f338c47024ef20518af608ff5f22fd042c4"
+        },
+        {
+          "path": "misconceptions",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "355fcc11fd8d2613ddc3594d69e8601a044035997812d5ae93c2e363f4fbe200"
+        },
+        {
+          "path": "context",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "e9b833b52f3424010411b7b83a2364eaab240c68813095ac17de35bb77a66af8"
+        },
+        {
+          "path": "access.privacy",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "f8c1fb28d218cecfc4b04272948206a05eb3f3afdbdab7d03cc240c2beee7dcd"
+        },
+        {
+          "path": "periods.0.title",
+          "locations": [
+            "preparation.periods.0"
+          ],
+          "valueSHA256": "19c4ef7a6d674286e7c28a84a66151c9d97f0d30f44009ebce39d3113491aedf"
+        },
+        {
+          "path": "moments.read.title",
+          "locations": [
+            "g8-t3-l56-read"
+          ],
+          "valueSHA256": "e38e2b864976ada6c3e1dd6d3c5106fa143c5252533246a536346371fcda58d7"
+        },
+        {
+          "path": "moments.read.cue",
+          "locations": [
+            "g8-t3-l56-read"
+          ],
+          "valueSHA256": "e2dbfd8270199114240d05b6182ae139db515dea33ba7d864bcda93251f028f3"
+        },
+        {
+          "path": "moments.read.understanding",
+          "locations": [
+            "g8-t3-l56-read"
+          ],
+          "valueSHA256": "d6d54f2fbe8bf9b27fb0f16a870ae02b6a3d2f3377fb715d19c8e660b9f333ae"
+        },
+        {
+          "path": "moments.reflect.title",
+          "locations": [
+            "g8-t3-l56-reflect"
+          ],
+          "valueSHA256": "0fc33d524986c682b36e308b45532313b2dcd11cac7360113c6f8cb20fedb74e"
+        },
+        {
+          "path": "moments.reflect.cue",
+          "locations": [
+            "g8-t3-l56-reflect"
+          ],
+          "valueSHA256": "33346591f8438f5e05efe436b9cc7b4c49c7345c58cf9eef8c4e8db91becb32e"
+        },
+        {
+          "path": "moments.checklist.title",
+          "locations": [
+            "g8-t3-l56-checklist"
+          ],
+          "valueSHA256": "b2930743bb3d353145549eefb57218c0a6f18c8969223e85db22f64d70f86bdb"
+        },
+        {
+          "path": "moments.checklist.cue",
+          "locations": [
+            "g8-t3-l56-checklist"
+          ],
+          "valueSHA256": "32893511518f7ea6af417bacf9d98ec0534098a4987c4cad2c9c5c92239686d3"
+        },
+        {
+          "path": "moments.checklist.review",
+          "locations": [
+            "g8-t3-l56-checklist"
+          ],
+          "valueSHA256": "e84a006980e1f39187bc48e4bd84a61f6859fc027b2f79d47239cde4d9a7f999"
+        },
+        {
+          "path": "moments.template.title",
+          "locations": [
+            "g8-t3-l56-template"
+          ],
+          "valueSHA256": "f05777988b0e5145b53561ddd29bb2fa5c24dd128f4e68e88a6b992b9b15c8f6"
+        },
+        {
+          "path": "moments.template.cue",
+          "locations": [
+            "g8-t3-l56-template"
+          ],
+          "valueSHA256": "91f196dd5a4ba80fb634e1b86293ce159c15ad058d6ce22ede79a41091a6b325"
+        },
+        {
+          "path": "moments.template.support",
+          "locations": [
+            "g8-t3-l56-template"
+          ],
+          "valueSHA256": "4050d65595810a3298c9f4f17a1096514dd8c1d253da4efe14bbbd282806483f"
+        },
+        {
+          "path": "moments.commit.title",
+          "locations": [
+            "g8-t3-l56-commit"
+          ],
+          "valueSHA256": "5e279d5165e142f08507458e5d793e58a4f715d7859f616d367ed2097336bae5"
+        },
+        {
+          "path": "moments.commit.cue",
+          "locations": [
+            "g8-t3-l56-commit"
+          ],
+          "valueSHA256": "f2fdbc4f380800e78fd316bf1a016459365ab1b8aa9860bbfb5b9c98fcf969fb"
+        },
+        {
+          "path": "moments.checkpoint.title",
+          "locations": [
+            "g8-t3-l56-checkpoint"
+          ],
+          "valueSHA256": "8327a3f23b57010ba5b57d532a7f1a4f57a8bc60b6546e45cdadc4075f4bbaab"
+        },
+        {
+          "path": "moments.checkpoint.cue",
+          "locations": [
+            "g8-t3-l56-checkpoint"
+          ],
+          "valueSHA256": "10653c1e557dba1b2dd4777445e63fd5915820238242232387473a989f7f80ee"
+        },
+        {
+          "path": "moments.checkpoint.review",
+          "locations": [
+            "g8-t3-l56-checkpoint"
+          ],
+          "valueSHA256": "1db8e98048c5cacfb30f409df59017202d4a39f218ab58c179616016083cd801"
+        },
+        {
+          "path": "moments.close.title",
+          "locations": [
+            "g8-t3-l56-close"
+          ],
+          "valueSHA256": "29bc07e656351e48dcc2a1b4a1ada8cd2a547e4553287e0cf4958c672cc65983"
+        },
+        {
+          "path": "moments.close.cue",
+          "locations": [
+            "g8-t3-l56-close"
+          ],
+          "valueSHA256": "7ef19a2eafe4accac6f563615cf93e334a356028289939f98d5be4b9145af837"
+        },
+        {
+          "path": "moments.deepen.title",
+          "locations": [
+            "g8-t3-l56-deepen"
+          ],
+          "valueSHA256": "e589af8045d43ed0d4af1de9ae594eef3524d02a8d3e1c951b1f5b68729019f5"
+        },
+        {
+          "path": "moments.deepen.cue",
+          "locations": [
+            "g8-t3-l56-deepen"
+          ],
+          "valueSHA256": "60422a27b7b81edb71a38e45555a7f568786e13f73173bbcb07f83e5e904b29f"
+        },
+        {
+          "path": "moments.home.title",
+          "locations": [
+            "g8-t3-l56-home"
+          ],
+          "valueSHA256": "35cc7abed9740e44c583157ec01a749c003188ba13273e6fd2a0f3eed5a0bcea"
+        },
+        {
+          "path": "moments.home.cue",
+          "locations": [
+            "g8-t3-l56-home"
+          ],
+          "valueSHA256": "e3f62d1e88cbf8fa642c00b95c561a8700c893b7050611df94887f84fcdb91b0"
+        }
+      ],
+      "moments": [
+        {
+          "id": "g8-t3-l56-read",
+          "period": 0,
+          "schedule": "classroom",
+          "minutes": 8,
+          "placement": {
+            "kind": "section",
+            "blockId": "8a598098b050e439503bf142-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "8a598098b050e439503bf142-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l56-reflect",
+          "period": 0,
+          "schedule": "classroom",
+          "minutes": 4,
+          "placement": {
+            "kind": "section",
+            "blockId": "4366a8a71a6f4c1b34bae61f-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "4366a8a71a6f4c1b34bae61f-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l56-checklist",
+          "period": 0,
+          "schedule": "classroom",
+          "minutes": 10,
+          "placement": {
+            "kind": "section",
+            "blockId": "66a24d66fe2d1754a833f8c1-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "66a24d66fe2d1754a833f8c1-1",
+            "421b79143a3ef732f54f5afd-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l56-template",
+          "period": 0,
+          "schedule": "classroom",
+          "minutes": 13,
+          "placement": {
+            "kind": "heading",
+            "blockId": "946466b63e40d4cd3144a713-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "946466b63e40d4cd3144a713-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l56-commit",
+          "period": 0,
+          "schedule": "classroom",
+          "minutes": 3,
+          "placement": {
+            "kind": "heading",
+            "blockId": "e4fa0bcbe0d462453a7f46f0-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "e4fa0bcbe0d462453a7f46f0-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l56-checkpoint",
+          "period": 0,
+          "schedule": "classroom",
+          "minutes": 5,
+          "placement": {
+            "kind": "section",
+            "blockId": "ade50c5e89f68bd7a9a06fc0-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "ade50c5e89f68bd7a9a06fc0-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l56-close",
+          "period": 0,
+          "schedule": "classroom",
+          "minutes": 2,
+          "placement": {
+            "kind": "section",
+            "blockId": "ade50c5e89f68bd7a9a06fc0-1",
+            "edge": "after",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "ade50c5e89f68bd7a9a06fc0-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l56-deepen",
+          "period": null,
+          "schedule": "optional",
+          "minutes": 0,
+          "placement": {
+            "kind": "section",
+            "blockId": "ad4359f3e1c8fb44355d1364-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "ad4359f3e1c8fb44355d1364-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l56-home",
+          "period": null,
+          "schedule": "later",
+          "minutes": 0,
+          "placement": {
+            "kind": "section",
+            "blockId": "22499840c699d3a0d0c842d7-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "22499840c699d3a0d0c842d7-1"
+          ]
+        }
+      ],
+      "activityCoverage": [
+        {
+          "blockId": "4366a8a71a6f4c1b34bae61f-1",
+          "momentId": "g8-t3-l56-reflect",
+          "disposition": "classroom"
+        },
+        {
+          "blockId": "66a24d66fe2d1754a833f8c1-1",
+          "momentId": "g8-t3-l56-checklist",
+          "disposition": "classroom"
+        },
+        {
+          "blockId": "421b79143a3ef732f54f5afd-1",
+          "momentId": "g8-t3-l56-checklist",
+          "disposition": "classroom"
+        },
+        {
+          "blockId": "946466b63e40d4cd3144a713-1",
+          "momentId": "g8-t3-l56-template",
+          "disposition": "classroom"
+        },
+        {
+          "blockId": "e4fa0bcbe0d462453a7f46f0-1",
+          "momentId": "g8-t3-l56-commit",
+          "disposition": "classroom"
+        },
+        {
+          "blockId": "ade50c5e89f68bd7a9a06fc0-1",
+          "momentId": "g8-t3-l56-checkpoint",
+          "disposition": "classroom"
+        }
+      ]
+    },
+    {
+      "lessonId": "g8-t3-l57-056",
+      "grade": 8,
+      "term": 3,
+      "title": "PROJECT LAUNCH — MY HABIT TRACKER",
+      "periods": 1,
+      "source": {
+        "id": "g8-t3-l57-056",
+        "sourceUnitSHA256": "fef93da62f74b480444f75bc57f425f8f8f5b521a233ae431d32149f10853670",
+        "blockIds": [
+          "539a96142de3bf8a4b9fc2f4-1",
+          "47f6b4296e644c19aa04bfa7-1",
+          "9e4fc72753a1fad87289cbbf-1",
+          "5974289c3a1dc5d75014c995-1",
+          "dfa095d47d20a63974e26fd5-1",
+          "3d6928cb0f63afbb93841ff2-1",
+          "08293d0a7df5ac24793d1ec3-1",
+          "4fbeaac129f7cd55c73b32fa-1",
+          "94a6d888ebafcf8bf44a75cd-1",
+          "147a78e8b640f50d6fb2f5e9-1",
+          "1c4cc05c2ed70e5a86d5c2c5-1",
+          "724105e976e28b7497c69c51-1",
+          "e13c72ed29482613f99b703a-1",
+          "f06a95072787af6a0989fbc7-1",
+          "1a8d19ac0ef48844bf64b3f4-1",
+          "541b34f0841a69dfe8290a9c-1",
+          "9485fa481d092ef59742e44f-1",
+          "21df5a5dc2b652e4ccc9291c-1",
+          "b0bd493c598759c3e14ce007-1",
+          "3eb9c0fc5561402ebb7fe9e2-1",
+          "0c587ce2cd8f4b1b939b3700-1",
+          "dab311e0cddb515509e408df-1",
+          "a7de74fb1c6b8df941d10468-1",
+          "4acf9c7554c5a284cce1e2d3-1",
+          "5e6a2bb0ee5cd33d1bb968a5-1",
+          "edea4366a99ce1e8712dd0b1-1",
+          "35d73736d0a1ee50b27f6f2c-1",
+          "144453831b92d743ced198aa-1",
+          "b7da4bb89268946b1cc4a631-1",
+          "a18d999f4b4afc6755231f91-1",
+          "0428329eae3065588fb0029e-1",
+          "21d6f794726add4243ca0008-1",
+          "9ebd4d239433c0d3b54a2efd-1",
+          "2711a56562b0f28a6d98d8fd-1",
+          "d895754dfdbe322229d8065e-1",
+          "409dcc469ee26239dcbf9ebe-1",
+          "378235c7012bb8add4906cda-1",
+          "4366a8a71a6f4c1b34bae61f-1",
+          "9d74d7796974567e87eb8e1c-1",
+          "aa6fa580109e9290c2ff7a74-1",
+          "fef2a443037ebeadd0e6f17a-1",
+          "6fa1669ede9a4c1dd1010b0f-1",
+          "d526e8308189d8c0f57ed4fa-1",
+          "167c60c9334a7c9c4068aed1-1",
+          "ad189e9525623426e6cc0210-1",
+          "2c1e42f7815c3114119842b7-1",
+          "c954523f38dc3072e9d4bd26-1",
+          "985c97e379753bbfbedccecf-1",
+          "9a2fccdbb4c710878a6d1bfc-1",
+          "48e0407373144e1467e1a261-1",
+          "dd1cf3b945a4fb8209fe3797-1",
+          "bdd01899d55a6c48422cc6a3-1",
+          "568f2a6a517f421605e403d1-1",
+          "77835f6c9cf4913b2ab2a2f6-1",
+          "ff1fa3ec98f06ac3988c16a1-1",
+          "750ef3505eeadcbad9a9f451-1",
+          "aecf24d07166f5f5b1b2b9ac-1",
+          "3fca21ebc4366a8937b0f5be-1",
+          "0999baac226629de2ae17e01-1",
+          "8e3dc0cad904d58412f2f2f2-1",
+          "370514050933b55d2272a59f-1",
+          "a628cbf7d7fcbe15c7d2c13f-1",
+          "53cd55c3f0794334aa83bd12-1",
+          "73be091c2c14fc7b699dba4e-1",
+          "ade50c5e89f68bd7a9a06fc0-1",
+          "fa20c19babdab35e343e3600-1",
+          "056f3e3c3401ae74d1c030f6-1",
+          "22499840c699d3a0d0c842d7-1",
+          "7799ff7b4834890af7b2d8ce-1",
+          "b01ed202990317171a3b5b47-1",
+          "7e2ee71dd8f290227b872d1d-1",
+          "4766187e625eaf4d32f91c5c-1",
+          "9b9d1cde0ba8fa476b71bb15-1",
+          "4d156a0aa48bca43e53f3f26-1",
+          "59ce723ec582fe1b6d4b706c-1"
+        ],
+        "sections": [
+          "539a96142de3bf8a4b9fc2f4-1",
+          "3d6928cb0f63afbb93841ff2-1",
+          "4fbeaac129f7cd55c73b32fa-1",
+          "1c4cc05c2ed70e5a86d5c2c5-1",
+          "4366a8a71a6f4c1b34bae61f-1",
+          "aa6fa580109e9290c2ff7a74-1",
+          "77835f6c9cf4913b2ab2a2f6-1",
+          "750ef3505eeadcbad9a9f451-1",
+          "370514050933b55d2272a59f-1",
+          "ade50c5e89f68bd7a9a06fc0-1",
+          "22499840c699d3a0d0c842d7-1"
+        ],
+        "headings": [
+          "fef2a443037ebeadd0e6f17a-1",
+          "ad189e9525623426e6cc0210-1",
+          "9a2fccdbb4c710878a6d1bfc-1"
+        ],
+        "activityIds": [
+          "4366a8a71a6f4c1b34bae61f-1",
+          "aa6fa580109e9290c2ff7a74-1",
+          "fef2a443037ebeadd0e6f17a-1",
+          "ad189e9525623426e6cc0210-1",
+          "9a2fccdbb4c710878a6d1bfc-1",
+          "ade50c5e89f68bd7a9a06fc0-1"
+        ]
+      },
+      "fieldCount": 42,
+      "planSHA256": "b2ec72ebdc2e700081c05055ca8e3f375163b8a11f76ce3fe15b7cdc3af671d0",
+      "coverage": [
+        {
+          "path": "purpose",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "4e57b4c82457041386f40e3ecef4250d4997d7fa341e3e70f0b58811e4b15a75"
+        },
+        {
+          "path": "objectives",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "0fd5dcaa6366fc6ab07d95f96637f79947e4100e324f097ef08da154fe4da769"
+        },
+        {
+          "path": "outcome",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "b64a8731854315ac4638c362966f2bee77616e576474e2de1cddcbe7c533ca32"
+        },
+        {
+          "path": "prerequisites",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "8107b03cb0184db2094016a78e32b66988a9f339402ee6302e28132cf4c5ef10"
+        },
+        {
+          "path": "materials",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "ece58d5638376a4e63572612f6fe08ba75c600c17f5e82a843223aacbebf6c2e"
+        },
+        {
+          "path": "vocabulary",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "52fb1bf74cdc74faa30af53c4f0e9f44110007e060c79b1ddbe0562d810d335f"
+        },
+        {
+          "path": "misconceptions",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "b49e232ef747f000d3a34226fade785413adc23a41fd79decf6ddf4c09a7b4db"
+        },
+        {
+          "path": "context",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "960d33995e937911b086647b7aac172e5adf8911324487525be1def749ef15ae"
+        },
+        {
+          "path": "access.privacy",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "9f993b2482e77fba94f4552ed59c2f6a63df63080f0f2b88757b09fff6794693"
+        },
+        {
+          "path": "periods.0.title",
+          "locations": [
+            "preparation.periods.0"
+          ],
+          "valueSHA256": "fa913777f56d55de0ef9cb7a94bb5c08cc3af6ecf944e5d1b5c18397485e8a99"
+        },
+        {
+          "path": "moments.overview.title",
+          "locations": [
+            "g8-t3-l57-overview"
+          ],
+          "valueSHA256": "37cff0ed8d81026cffc15b24eee176b61b1c6bc29be30764c788f524fc462b0d"
+        },
+        {
+          "path": "moments.overview.cue",
+          "locations": [
+            "g8-t3-l57-overview"
+          ],
+          "valueSHA256": "e08ef30b640872a6f0cf3f2c16876f607a011f0ad0323c9d15a936afa39396e6"
+        },
+        {
+          "path": "moments.overview.support",
+          "locations": [
+            "g8-t3-l57-overview"
+          ],
+          "valueSHA256": "2b90edcc9b2dcfb70e922fc89dddd2e209bd7ccb8b0cb73fa1048fc25c88d738"
+        },
+        {
+          "path": "moments.options.title",
+          "locations": [
+            "g8-t3-l57-options"
+          ],
+          "valueSHA256": "b5ccb03eb09d011da41ace26ff393e0322c9db22e14e39ce87548bc56dc92401"
+        },
+        {
+          "path": "moments.options.cue",
+          "locations": [
+            "g8-t3-l57-options"
+          ],
+          "valueSHA256": "4e7242874d4f308f21b8c006ccb8e3009f4bfbb928eea0edfa96921b19877cbc"
+        },
+        {
+          "path": "moments.options.review",
+          "locations": [
+            "g8-t3-l57-options"
+          ],
+          "valueSHA256": "219d4a38facc6013bf013d9b32cf88263f1d006aaa323790d3d212fb12358866"
+        },
+        {
+          "path": "moments.reflect.title",
+          "locations": [
+            "g8-t3-l57-reflect"
+          ],
+          "valueSHA256": "0151535f314c29b862454379387eb3f1f471dbe7b419d3497c4aa8dbca5c01f5"
+        },
+        {
+          "path": "moments.reflect.cue",
+          "locations": [
+            "g8-t3-l57-reflect"
+          ],
+          "valueSHA256": "a28c75f3f1b6e603db7fe863daabc32a3d75b038c6e1a23dfdac5fa824c7e642"
+        },
+        {
+          "path": "moments.choice.title",
+          "locations": [
+            "g8-t3-l57-choice"
+          ],
+          "valueSHA256": "b7dc7a705fe4903bc8362507d138befa40a8fd000195f358ffccdaaf90a606db"
+        },
+        {
+          "path": "moments.choice.cue",
+          "locations": [
+            "g8-t3-l57-choice"
+          ],
+          "valueSHA256": "c68b561534a3d53daa543a3f71b5833ee058d7817f6c78257fdb46ca5feeb29d"
+        },
+        {
+          "path": "moments.choice.understanding",
+          "locations": [
+            "g8-t3-l57-choice"
+          ],
+          "valueSHA256": "21f30e208bfde7e713e037613755784e81d6fbd30fb8d486765323f8644d57c9"
+        },
+        {
+          "path": "moments.contract.title",
+          "locations": [
+            "g8-t3-l57-contract"
+          ],
+          "valueSHA256": "68c6e566882d686df6b1dc060a392ef0b95928f42b56b348a38406bb77a88813"
+        },
+        {
+          "path": "moments.contract.cue",
+          "locations": [
+            "g8-t3-l57-contract"
+          ],
+          "valueSHA256": "b6d2d0278c4f26dbfb28050a896e98ae01c1f2fc09c2acc3811397c24c61ba21"
+        },
+        {
+          "path": "moments.contract.support",
+          "locations": [
+            "g8-t3-l57-contract"
+          ],
+          "valueSHA256": "5a0b5e607b8de06db95f560651b957ef6b7c12524eb9aec0684dc9878efa7a0e"
+        },
+        {
+          "path": "moments.setup.title",
+          "locations": [
+            "g8-t3-l57-setup"
+          ],
+          "valueSHA256": "243dba6769b67486e180e027eb94fdb3a787bb646c4ffd63ccfb6c3fafcb3bd2"
+        },
+        {
+          "path": "moments.setup.cue",
+          "locations": [
+            "g8-t3-l57-setup"
+          ],
+          "valueSHA256": "e0061f8fa5843c2f6bf2367b0f7ee9c9e121e49d23f5d9446b58b1d80a1e44f0"
+        },
+        {
+          "path": "moments.setup.review",
+          "locations": [
+            "g8-t3-l57-setup"
+          ],
+          "valueSHA256": "9dc64289a210edea71a557483252ee6a28fcff4587b4681e2f751ae1b9693f2f"
+        },
+        {
+          "path": "moments.table.title",
+          "locations": [
+            "g8-t3-l57-table"
+          ],
+          "valueSHA256": "ec899563aad6e02cc522221133b587898e23b382ba2472cfd08f01535eea642b"
+        },
+        {
+          "path": "moments.table.cue",
+          "locations": [
+            "g8-t3-l57-table"
+          ],
+          "valueSHA256": "32207892c99662591a64ad2f26e0a35aa223109a31fd3a64a68deaeda152cba0"
+        },
+        {
+          "path": "moments.table.modelling",
+          "locations": [
+            "g8-t3-l57-table"
+          ],
+          "valueSHA256": "5f187bd23205d7347a6b98b31ee9e7ee3e79d94a16d40b346342b05649c5758f"
+        },
+        {
+          "path": "moments.rules.title",
+          "locations": [
+            "g8-t3-l57-rules"
+          ],
+          "valueSHA256": "090834d7eaf2e16a507adaa3e90a8f003d0285663892145242fc94b8d77ce241"
+        },
+        {
+          "path": "moments.rules.cue",
+          "locations": [
+            "g8-t3-l57-rules"
+          ],
+          "valueSHA256": "57667bf946164479249c791aca4c769786fba5459f18da966dd56308fd72c3f3"
+        },
+        {
+          "path": "moments.rules.clarification",
+          "locations": [
+            "g8-t3-l57-rules"
+          ],
+          "valueSHA256": "0b3d12e4fa798bd0934ccc63c56a120253a069b5d3b7c1c53e1e28d0fac14d9c"
+        },
+        {
+          "path": "moments.checkpoint.title",
+          "locations": [
+            "g8-t3-l57-checkpoint"
+          ],
+          "valueSHA256": "e226816a7494a002c7102577159b89e06fc55e445b6416cf99ce2143f3f591eb"
+        },
+        {
+          "path": "moments.checkpoint.cue",
+          "locations": [
+            "g8-t3-l57-checkpoint"
+          ],
+          "valueSHA256": "0a627f0cb5542631cc1af9720fe3c99727eb7c625dbecd76bd98ea1b612f3bd1"
+        },
+        {
+          "path": "moments.checkpoint.review",
+          "locations": [
+            "g8-t3-l57-checkpoint"
+          ],
+          "valueSHA256": "9b1c2055531a6c51785e6f1970f750777703a96b8ca8a3601fc364634b3200bf"
+        },
+        {
+          "path": "moments.close.title",
+          "locations": [
+            "g8-t3-l57-close"
+          ],
+          "valueSHA256": "b47725accfc0c6070db9d0bf90282e691a9568a1b59a0e8be2fd687f734609a0"
+        },
+        {
+          "path": "moments.close.cue",
+          "locations": [
+            "g8-t3-l57-close"
+          ],
+          "valueSHA256": "2dc64d0dc1766d3c5aef1116e2155c4c496fad2e63346990fcf8fb65eff23980"
+        },
+        {
+          "path": "moments.deepen.title",
+          "locations": [
+            "g8-t3-l57-deepen"
+          ],
+          "valueSHA256": "0e3b883c6d2403e0f624226dcbbf51a1006269697b34128a708ba7bec69e7046"
+        },
+        {
+          "path": "moments.deepen.cue",
+          "locations": [
+            "g8-t3-l57-deepen"
+          ],
+          "valueSHA256": "f63996f1e18e6a589a720654a4018cf2d275427974340d6a34cf3eeead8aee3a"
+        },
+        {
+          "path": "moments.home.title",
+          "locations": [
+            "g8-t3-l57-home"
+          ],
+          "valueSHA256": "47ab12158c3db6e4e9dc4ccc96fee8ff24fcf40f4e76240c209c78ba86e6b7dc"
+        },
+        {
+          "path": "moments.home.cue",
+          "locations": [
+            "g8-t3-l57-home"
+          ],
+          "valueSHA256": "5d4de1031a7d3557bd752aa9f193c9a4c3a6c09b6fb88381421e63b7c58d5160"
+        }
+      ],
+      "moments": [
+        {
+          "id": "g8-t3-l57-overview",
+          "period": 0,
+          "schedule": "classroom",
+          "minutes": 4,
+          "placement": {
+            "kind": "section",
+            "blockId": "4fbeaac129f7cd55c73b32fa-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "4fbeaac129f7cd55c73b32fa-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l57-options",
+          "period": 0,
+          "schedule": "classroom",
+          "minutes": 4,
+          "placement": {
+            "kind": "section",
+            "blockId": "1c4cc05c2ed70e5a86d5c2c5-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "1c4cc05c2ed70e5a86d5c2c5-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l57-reflect",
+          "period": 0,
+          "schedule": "classroom",
+          "minutes": 3,
+          "placement": {
+            "kind": "section",
+            "blockId": "4366a8a71a6f4c1b34bae61f-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "4366a8a71a6f4c1b34bae61f-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l57-choice",
+          "period": 0,
+          "schedule": "classroom",
+          "minutes": 5,
+          "placement": {
+            "kind": "section",
+            "blockId": "aa6fa580109e9290c2ff7a74-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "aa6fa580109e9290c2ff7a74-1",
+            "fef2a443037ebeadd0e6f17a-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l57-contract",
+          "period": 0,
+          "schedule": "classroom",
+          "minutes": 6,
+          "placement": {
+            "kind": "heading",
+            "blockId": "ad189e9525623426e6cc0210-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "ad189e9525623426e6cc0210-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l57-setup",
+          "period": 0,
+          "schedule": "classroom",
+          "minutes": 5,
+          "placement": {
+            "kind": "heading",
+            "blockId": "9a2fccdbb4c710878a6d1bfc-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "9a2fccdbb4c710878a6d1bfc-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l57-table",
+          "period": 0,
+          "schedule": "classroom",
+          "minutes": 6,
+          "placement": {
+            "kind": "section",
+            "blockId": "77835f6c9cf4913b2ab2a2f6-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "77835f6c9cf4913b2ab2a2f6-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l57-rules",
+          "period": 0,
+          "schedule": "classroom",
+          "minutes": 4,
+          "placement": {
+            "kind": "section",
+            "blockId": "750ef3505eeadcbad9a9f451-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "750ef3505eeadcbad9a9f451-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l57-checkpoint",
+          "period": 0,
+          "schedule": "classroom",
+          "minutes": 6,
+          "placement": {
+            "kind": "section",
+            "blockId": "ade50c5e89f68bd7a9a06fc0-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "ade50c5e89f68bd7a9a06fc0-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l57-close",
+          "period": 0,
+          "schedule": "classroom",
+          "minutes": 2,
+          "placement": {
+            "kind": "section",
+            "blockId": "ade50c5e89f68bd7a9a06fc0-1",
+            "edge": "after",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "ade50c5e89f68bd7a9a06fc0-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l57-deepen",
+          "period": null,
+          "schedule": "optional",
+          "minutes": 0,
+          "placement": {
+            "kind": "section",
+            "blockId": "370514050933b55d2272a59f-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "370514050933b55d2272a59f-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l57-home",
+          "period": null,
+          "schedule": "later",
+          "minutes": 0,
+          "placement": {
+            "kind": "section",
+            "blockId": "22499840c699d3a0d0c842d7-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "22499840c699d3a0d0c842d7-1"
+          ]
+        }
+      ],
+      "activityCoverage": [
+        {
+          "blockId": "4366a8a71a6f4c1b34bae61f-1",
+          "momentId": "g8-t3-l57-reflect",
+          "disposition": "classroom"
+        },
+        {
+          "blockId": "aa6fa580109e9290c2ff7a74-1",
+          "momentId": "g8-t3-l57-choice",
+          "disposition": "classroom"
+        },
+        {
+          "blockId": "fef2a443037ebeadd0e6f17a-1",
+          "momentId": "g8-t3-l57-choice",
+          "disposition": "classroom"
+        },
+        {
+          "blockId": "ad189e9525623426e6cc0210-1",
+          "momentId": "g8-t3-l57-contract",
+          "disposition": "classroom"
+        },
+        {
+          "blockId": "9a2fccdbb4c710878a6d1bfc-1",
+          "momentId": "g8-t3-l57-setup",
+          "disposition": "classroom"
+        },
+        {
+          "blockId": "ade50c5e89f68bd7a9a06fc0-1",
+          "momentId": "g8-t3-l57-checkpoint",
+          "disposition": "classroom"
+        }
+      ]
+    },
+    {
+      "lessonId": "g8-t3-l58-057",
+      "grade": 8,
+      "term": 3,
+      "title": "TRACKING FOR 21 DAYS — WEEK 1 CHECK-IN",
+      "periods": 1,
+      "source": {
+        "id": "g8-t3-l58-057",
+        "sourceUnitSHA256": "02e41ff41c09442e7790bdf2a11e76eca4f0a691d0f9f7a716ee2bfab8f2b44d",
+        "blockIds": [
+          "539a96142de3bf8a4b9fc2f4-1",
+          "47f6b4296e644c19aa04bfa7-1",
+          "c02a48f78b7b28fe57223692-1",
+          "eb6a3563ad326fb81122c655-1",
+          "cbfb17c1e0871acadf8decbf-1",
+          "18cd96cbfbaf60d37497dc98-1",
+          "2d636beb8a69d2190a49c48c-1",
+          "2677ed86fb6f07d3dc769faf-1",
+          "3cb6f29a1611c1fe136cc7dc-1",
+          "cb9937b1590c23158cc6288c-1",
+          "9368f81bc9099853f5785045-1",
+          "0ba409722830cb34eac2d02d-1",
+          "92bd9e3f01c34f123aef0eb2-1",
+          "6139068dfc9b445c711f8f01-1",
+          "ed60abd99fb81c8c1e39f33c-1",
+          "8025310d3d11fc0edb83e904-1",
+          "a93d65bba2a917c8c446e716-1",
+          "c4ee506d90cb8baa8d87055a-1",
+          "f4fef5c9ee85755d8c0d965f-1",
+          "611e6256d07876e993ff4a4a-1",
+          "b5ef4d082a421339e86dbcf6-1",
+          "55cbcf5e112d8ff79e7c5eb8-1",
+          "2e9e1c60c410d1aa942cc6c9-1",
+          "f505e31c4c0595bc9be8457d-1",
+          "77b114000309e31d4cd79c4c-1",
+          "911b49d88f48285e274ca06f-1",
+          "791e2b15357ccfe1fd3b7920-1",
+          "02de05ea4f5305c31fcb8346-1",
+          "6641c19cb8739869fa061baf-1",
+          "f24973b20d0f82b258999060-1",
+          "210740641990387a31a0376b-1",
+          "c122825185e2826789b2b793-1",
+          "cf7d1fe8499f73ecbe8612c8-1",
+          "ec4c1bf6215df41a567830fd-1",
+          "0f155f51ba91d16c469f1836-1",
+          "848a18215820274ac2c0d2f7-1",
+          "22499840c699d3a0d0c842d7-1",
+          "c1f1a37cd1db614da371280d-1",
+          "31055d4ddc17c35b39a73001-1",
+          "5d7bd5f4f942b91fc4b5de9c-1",
+          "9c5b675cb4959300324fb248-1",
+          "d5db6942b240bc22d962578a-1",
+          "9b9d1cde0ba8fa476b71bb15-1",
+          "cf974de33d26265e430acd2f-1",
+          "59ce723ec582fe1b6d4b706c-1"
+        ],
+        "sections": [
+          "539a96142de3bf8a4b9fc2f4-1",
+          "18cd96cbfbaf60d37497dc98-1",
+          "3cb6f29a1611c1fe136cc7dc-1",
+          "8025310d3d11fc0edb83e904-1",
+          "f24973b20d0f82b258999060-1",
+          "ec4c1bf6215df41a567830fd-1",
+          "22499840c699d3a0d0c842d7-1"
+        ],
+        "headings": [
+          "a93d65bba2a917c8c446e716-1",
+          "f4fef5c9ee85755d8c0d965f-1",
+          "2e9e1c60c410d1aa942cc6c9-1",
+          "911b49d88f48285e274ca06f-1"
+        ],
+        "activityIds": [
+          "8025310d3d11fc0edb83e904-1",
+          "a93d65bba2a917c8c446e716-1",
+          "f4fef5c9ee85755d8c0d965f-1",
+          "2e9e1c60c410d1aa942cc6c9-1",
+          "911b49d88f48285e274ca06f-1",
+          "ec4c1bf6215df41a567830fd-1"
+        ]
+      },
+      "fieldCount": 34,
+      "planSHA256": "9430730203611cd749de2017b0d0acf1180708b1170d03b6476b5c2f39ed20e5",
+      "coverage": [
+        {
+          "path": "purpose",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "2421738556f89693ccc36371cd34ed7eae5592a466d69a3ce65ba19e754f3def"
+        },
+        {
+          "path": "objectives",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "cd277a4f62a87174098099960d8cbf39be51abc954b944eda28c4ae17ea7ff18"
+        },
+        {
+          "path": "outcome",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "87dd7467f31b370efe8b8f24c87d831b4662a8f72179857a41ee92d23609a9b9"
+        },
+        {
+          "path": "prerequisites",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "dcde3c7f1c92ae0d7ba7a7ab84ef0d51c1dd085d8d7c6b61db1e7e0e920e2a5d"
+        },
+        {
+          "path": "materials",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "f31179bb4e0273d7530a14f4d0344e09e558dab83a50928f03679543e677c6cc"
+        },
+        {
+          "path": "vocabulary",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "69b17695442d5450a8d655b2c9e40f03e73c155d0c7261a576ade3ffe04aee07"
+        },
+        {
+          "path": "misconceptions",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "337888d8d31fda368c71e47832fd1c840bf99fa0d383398762eb0e50d9ef0486"
+        },
+        {
+          "path": "context",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "41b1bff40443315d2536abb1682d48e93db00cb3a66009de8bade1ea25263f32"
+        },
+        {
+          "path": "access.privacy",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "ff768aac477f283db26cc3693f5740c3585aa4e6649871af62656b94e0ffeaec"
+        },
+        {
+          "path": "periods.0.title",
+          "locations": [
+            "preparation.periods.0"
+          ],
+          "valueSHA256": "00f37334c393cba3ccb5365496b69fe59a32626c36f2c19e9463ec215d06e1ed"
+        },
+        {
+          "path": "moments.read.title",
+          "locations": [
+            "g8-t3-l58-read"
+          ],
+          "valueSHA256": "c0ec30cca8fd9ba695421cb51f09796722058bc504247d33fccd1150305a3956"
+        },
+        {
+          "path": "moments.read.cue",
+          "locations": [
+            "g8-t3-l58-read"
+          ],
+          "valueSHA256": "ff103523c469054420396b2c1f254b76e42e52805a2a8c7e4a74b3dfdc4b9bee"
+        },
+        {
+          "path": "moments.read.support",
+          "locations": [
+            "g8-t3-l58-read"
+          ],
+          "valueSHA256": "7b773c966ddb7a0a015da7f27316808f72f461584a6898e0dd33dad94a407ce8"
+        },
+        {
+          "path": "moments.numbers.title",
+          "locations": [
+            "g8-t3-l58-numbers"
+          ],
+          "valueSHA256": "0d04db95dc7863bfbf685b0e985a89782478828e8a22386bb0600c71182c728f"
+        },
+        {
+          "path": "moments.numbers.cue",
+          "locations": [
+            "g8-t3-l58-numbers"
+          ],
+          "valueSHA256": "de0bbe120521bc47ce01b188d51c45556e61a4fd4a07f8c57216aed249e405e9"
+        },
+        {
+          "path": "moments.numbers.review",
+          "locations": [
+            "g8-t3-l58-numbers"
+          ],
+          "valueSHA256": "5f1aec4a8983b69f9c0e62ea210974421654f2453ff723f1ff25133c5a398ca9"
+        },
+        {
+          "path": "moments.analyse.title",
+          "locations": [
+            "g8-t3-l58-analyse"
+          ],
+          "valueSHA256": "04f155c72cd06f3c928816f71cac598990dcd0cdcc47f1e8c6ae00c01b49f980"
+        },
+        {
+          "path": "moments.analyse.cue",
+          "locations": [
+            "g8-t3-l58-analyse"
+          ],
+          "valueSHA256": "8cef172e5f8394daf16094acf2f3787b3b8d625d1dee91b5b74ecb8199671cb2"
+        },
+        {
+          "path": "moments.analyse.understanding",
+          "locations": [
+            "g8-t3-l58-analyse"
+          ],
+          "valueSHA256": "3981883f40bfe8a2bbab6c3b423e0e66e9a58cfe807545da348ce0723f80cdae"
+        },
+        {
+          "path": "moments.adjust.title",
+          "locations": [
+            "g8-t3-l58-adjust"
+          ],
+          "valueSHA256": "afedd77d02ceaaca6bad3f4d0ede19696ef8684e801ad6c15228852889d1f3f5"
+        },
+        {
+          "path": "moments.adjust.cue",
+          "locations": [
+            "g8-t3-l58-adjust"
+          ],
+          "valueSHA256": "5d919db94a68b6da9f09a2734a88367594ea58f2ee804368e734c135e6e6e376"
+        },
+        {
+          "path": "moments.adjust.support",
+          "locations": [
+            "g8-t3-l58-adjust"
+          ],
+          "valueSHA256": "36196aec275aae3d2825b478aaab38de4b59da544e5683ded08a11a05a52a368"
+        },
+        {
+          "path": "moments.group.title",
+          "locations": [
+            "g8-t3-l58-group"
+          ],
+          "valueSHA256": "d759e4c70fae6132859612c9c44b9b3fd7918b6138a07c2af679da625b612613"
+        },
+        {
+          "path": "moments.group.cue",
+          "locations": [
+            "g8-t3-l58-group"
+          ],
+          "valueSHA256": "c53023211073c6834cded3c8e02ca8fffa50802302da6e9bbd2b777fba4b5608"
+        },
+        {
+          "path": "moments.group.review",
+          "locations": [
+            "g8-t3-l58-group"
+          ],
+          "valueSHA256": "cc65bc8657677fb978930b08227a19f80299c7575d376fba1e34921d1911a4b9"
+        },
+        {
+          "path": "moments.checkpoint.title",
+          "locations": [
+            "g8-t3-l58-checkpoint"
+          ],
+          "valueSHA256": "b389bc85ec45320ed378dda9115eb06fe139c481dbd71ec5a63b4756d2954564"
+        },
+        {
+          "path": "moments.checkpoint.cue",
+          "locations": [
+            "g8-t3-l58-checkpoint"
+          ],
+          "valueSHA256": "20efe3ef828b03d1ad556f3dba05aba7d93a91d845a67d4124b797b5630fb27b"
+        },
+        {
+          "path": "moments.checkpoint.review",
+          "locations": [
+            "g8-t3-l58-checkpoint"
+          ],
+          "valueSHA256": "5568f57403bd49891450f9ce5e17f15e232932b3cead508b199dfd3fc0db7749"
+        },
+        {
+          "path": "moments.close.title",
+          "locations": [
+            "g8-t3-l58-close"
+          ],
+          "valueSHA256": "57916281f611d3ac6a02879f8de86e331469e0032d3a6fd32d10a6b015d787b4"
+        },
+        {
+          "path": "moments.close.cue",
+          "locations": [
+            "g8-t3-l58-close"
+          ],
+          "valueSHA256": "9963a9793f40a109339cfd34f6c440482cb12fa75d3024a40cee6a119a9b3004"
+        },
+        {
+          "path": "moments.deepen.title",
+          "locations": [
+            "g8-t3-l58-deepen"
+          ],
+          "valueSHA256": "765a2941a2d9903506d49d4a7d5900c059e528c15e3dcf921caa0d27855131af"
+        },
+        {
+          "path": "moments.deepen.cue",
+          "locations": [
+            "g8-t3-l58-deepen"
+          ],
+          "valueSHA256": "2962cca6f80c39221704cf1c82d5a1280f8493d6d885659d666f61057daab497"
+        },
+        {
+          "path": "moments.home.title",
+          "locations": [
+            "g8-t3-l58-home"
+          ],
+          "valueSHA256": "17ca313afcdcd1fd21f9a21fac66dc65203127d520e12074d95918c9160bf440"
+        },
+        {
+          "path": "moments.home.cue",
+          "locations": [
+            "g8-t3-l58-home"
+          ],
+          "valueSHA256": "015cd74a1623b3b74af1b096000487e462bd8efa090bc4ef0d1529e0f1b0f900"
+        }
+      ],
+      "moments": [
+        {
+          "id": "g8-t3-l58-read",
+          "period": 0,
+          "schedule": "classroom",
+          "minutes": 7,
+          "placement": {
+            "kind": "section",
+            "blockId": "18cd96cbfbaf60d37497dc98-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "18cd96cbfbaf60d37497dc98-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l58-numbers",
+          "period": 0,
+          "schedule": "classroom",
+          "minutes": 6,
+          "placement": {
+            "kind": "section",
+            "blockId": "8025310d3d11fc0edb83e904-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "8025310d3d11fc0edb83e904-1",
+            "a93d65bba2a917c8c446e716-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l58-analyse",
+          "period": 0,
+          "schedule": "classroom",
+          "minutes": 10,
+          "placement": {
+            "kind": "heading",
+            "blockId": "f4fef5c9ee85755d8c0d965f-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "f4fef5c9ee85755d8c0d965f-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l58-adjust",
+          "period": 0,
+          "schedule": "classroom",
+          "minutes": 6,
+          "placement": {
+            "kind": "heading",
+            "blockId": "2e9e1c60c410d1aa942cc6c9-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "2e9e1c60c410d1aa942cc6c9-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l58-group",
+          "period": 0,
+          "schedule": "classroom",
+          "minutes": 8,
+          "placement": {
+            "kind": "heading",
+            "blockId": "911b49d88f48285e274ca06f-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "911b49d88f48285e274ca06f-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l58-checkpoint",
+          "period": 0,
+          "schedule": "classroom",
+          "minutes": 6,
+          "placement": {
+            "kind": "section",
+            "blockId": "ec4c1bf6215df41a567830fd-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "ec4c1bf6215df41a567830fd-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l58-close",
+          "period": 0,
+          "schedule": "classroom",
+          "minutes": 2,
+          "placement": {
+            "kind": "section",
+            "blockId": "ec4c1bf6215df41a567830fd-1",
+            "edge": "after",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "ec4c1bf6215df41a567830fd-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l58-deepen",
+          "period": null,
+          "schedule": "optional",
+          "minutes": 0,
+          "placement": {
+            "kind": "section",
+            "blockId": "f24973b20d0f82b258999060-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "f24973b20d0f82b258999060-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l58-home",
+          "period": null,
+          "schedule": "later",
+          "minutes": 0,
+          "placement": {
+            "kind": "section",
+            "blockId": "22499840c699d3a0d0c842d7-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "22499840c699d3a0d0c842d7-1"
+          ]
+        }
+      ],
+      "activityCoverage": [
+        {
+          "blockId": "8025310d3d11fc0edb83e904-1",
+          "momentId": "g8-t3-l58-numbers",
+          "disposition": "classroom"
+        },
+        {
+          "blockId": "a93d65bba2a917c8c446e716-1",
+          "momentId": "g8-t3-l58-numbers",
+          "disposition": "classroom"
+        },
+        {
+          "blockId": "f4fef5c9ee85755d8c0d965f-1",
+          "momentId": "g8-t3-l58-analyse",
+          "disposition": "classroom"
+        },
+        {
+          "blockId": "2e9e1c60c410d1aa942cc6c9-1",
+          "momentId": "g8-t3-l58-adjust",
+          "disposition": "classroom"
+        },
+        {
+          "blockId": "911b49d88f48285e274ca06f-1",
+          "momentId": "g8-t3-l58-group",
+          "disposition": "classroom"
+        },
+        {
+          "blockId": "ec4c1bf6215df41a567830fd-1",
+          "momentId": "g8-t3-l58-checkpoint",
+          "disposition": "classroom"
+        }
+      ]
+    },
+    {
+      "lessonId": "g8-t3-l59-058",
+      "grade": 8,
+      "term": 3,
+      "title": "MID-PROJECT CHECK — WEEK 2 REVIEW",
+      "periods": 1,
+      "source": {
+        "id": "g8-t3-l59-058",
+        "sourceUnitSHA256": "95009891d0d89552fdcc1d5b3adcb7c06203d94efc205d21aaf99468cd8091d1",
+        "blockIds": [
+          "539a96142de3bf8a4b9fc2f4-1",
+          "47f6b4296e644c19aa04bfa7-1",
+          "1ef177bb5915eb8bd5157b6d-1",
+          "d61cc550bd372583a8b95999-1",
+          "77cdbedcfca54687456f14d8-1",
+          "71f6585e43b8f4d5b162bec6-1",
+          "87665b8da207fc810c73000a-1",
+          "3ab28e04407f5c71ffe49f66-1",
+          "4366a8a71a6f4c1b34bae61f-1",
+          "9f7ccd01d6395f84b9da4f3b-1",
+          "f19de0f6f54a1e7025704e82-1",
+          "a20ecdf2a5e0daf4b5b738ab-1",
+          "96e1e71bd4674b9efec5b10c-1",
+          "3e915cd874db50c602d37a90-1",
+          "140b062708b1a3bc1b72aba8-1",
+          "e9034e56b52fdf7b74fe59ed-1",
+          "9651b37ab747b41814b6e668-1",
+          "f30219e5419dac2f861260f4-1",
+          "bd7b1806c2ae438b86fc2f13-1",
+          "8c6f9c3559d8ee8e81b7ef20-1",
+          "2c3d7075c6549fc296d8bcc7-1",
+          "15c52d976d700b1ba0b764fa-1",
+          "9217c8a47837a1876c40d55e-1",
+          "f1a7dcda54da83f657a345f1-1",
+          "8c33f732a09e4066b7f11ba9-1",
+          "eccdf54b4a4a9358afb1ee78-1",
+          "80ec5b6950763029cc2cb8f8-1",
+          "f5d0a0e1b2918cd4316a2bbe-1",
+          "e66a50938da42c2b2f783214-1",
+          "d74b56109177363ef3c33633-1",
+          "1e8357621b551417d9b19216-1",
+          "e00337cd8b4a6727515e03de-1",
+          "65159123071403304ddc9227-1",
+          "22499840c699d3a0d0c842d7-1",
+          "334d3e64ea0b7ffcce3fdc77-1",
+          "31055d4ddc17c35b39a73001-1",
+          "58b6a545dcfad4e419a511d5-1",
+          "bc9382bc50426eb6820b3e35-1",
+          "1e39942d50a9cc22e15b93ef-1",
+          "9b9d1cde0ba8fa476b71bb15-1",
+          "602d5addb7f27c759dabaaf7-1",
+          "59ce723ec582fe1b6d4b706c-1"
+        ],
+        "sections": [
+          "539a96142de3bf8a4b9fc2f4-1",
+          "71f6585e43b8f4d5b162bec6-1",
+          "4366a8a71a6f4c1b34bae61f-1",
+          "f19de0f6f54a1e7025704e82-1",
+          "80ec5b6950763029cc2cb8f8-1",
+          "1e8357621b551417d9b19216-1",
+          "22499840c699d3a0d0c842d7-1"
+        ],
+        "headings": [
+          "a20ecdf2a5e0daf4b5b738ab-1",
+          "e9034e56b52fdf7b74fe59ed-1",
+          "8c6f9c3559d8ee8e81b7ef20-1",
+          "9217c8a47837a1876c40d55e-1"
+        ],
+        "activityIds": [
+          "4366a8a71a6f4c1b34bae61f-1",
+          "f19de0f6f54a1e7025704e82-1",
+          "a20ecdf2a5e0daf4b5b738ab-1",
+          "e9034e56b52fdf7b74fe59ed-1",
+          "8c6f9c3559d8ee8e81b7ef20-1",
+          "9217c8a47837a1876c40d55e-1",
+          "1e8357621b551417d9b19216-1"
+        ]
+      },
+      "fieldCount": 36,
+      "planSHA256": "8603ac26b03bdc1fd38382210886418367158f196bf980500a2e81cf490bfe92",
+      "coverage": [
+        {
+          "path": "purpose",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "7dcff8a911cd703b95c5207608bb47fed2f9e21e50b53c3fed2470bc5ceacd16"
+        },
+        {
+          "path": "objectives",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "21c59b0f6976392d3b085c1014878c751d86c46f671b82c397ebd69bfb2b91fa"
+        },
+        {
+          "path": "outcome",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "07f70b13443c606d35e8fee4210e795d5f37b695a25189218e25d7a82637d1c4"
+        },
+        {
+          "path": "prerequisites",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "c088cef6f38ea40a78b6493d510d82b2737c4689c92eddc9dfb61147b68648f8"
+        },
+        {
+          "path": "materials",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "d1111690aed140dc828970d773c455fa182d60df724389d257c5d109a0fa2135"
+        },
+        {
+          "path": "vocabulary",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "20da0bdea4cd0b20f8f2bcbbf468f7b396692c8f540afc80321caf7a5baebb1d"
+        },
+        {
+          "path": "misconceptions",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "a7acdd1911ea1672a1c4ef1c09c1223cf172000247128abd2f6bcb49afe94eeb"
+        },
+        {
+          "path": "context",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "5c7e320f56375873fad750ff1305a7852ef93490145c6d52f336ced4ef58cb27"
+        },
+        {
+          "path": "access.privacy",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "4f7f8e9a4afa456f813a3aa880bea83d5ea8a7fde71b6342072cfa5ea58a7e29"
+        },
+        {
+          "path": "periods.0.title",
+          "locations": [
+            "preparation.periods.0"
+          ],
+          "valueSHA256": "7d66e762df42a25ae7a1465934bc92cb605ccc7a7a5cf72cb5e7a23385f44d1c"
+        },
+        {
+          "path": "moments.read.title",
+          "locations": [
+            "g8-t3-l59-read"
+          ],
+          "valueSHA256": "50dc214208a75c5274b41d02e25d46efb2691f85f485ac5acd457dfae48932be"
+        },
+        {
+          "path": "moments.read.cue",
+          "locations": [
+            "g8-t3-l59-read"
+          ],
+          "valueSHA256": "ea71a632d5d1b508ff1b3a0e68a89c08c46fb0b401299297add273743cf0c928"
+        },
+        {
+          "path": "moments.read.review",
+          "locations": [
+            "g8-t3-l59-read"
+          ],
+          "valueSHA256": "70082566674974167abc7ae7331f51e841736535e9ef4e6780c28cb88711fd99"
+        },
+        {
+          "path": "moments.reflect.title",
+          "locations": [
+            "g8-t3-l59-reflect"
+          ],
+          "valueSHA256": "4dfd635c3b64d27bc284d929741976f154d2fefabba6d11058f65dc5e4dad31e"
+        },
+        {
+          "path": "moments.reflect.cue",
+          "locations": [
+            "g8-t3-l59-reflect"
+          ],
+          "valueSHA256": "0a352aae1ef91a0e403654fd0c251091aa0838bf7c0b8026d458a8c79e79b0ed"
+        },
+        {
+          "path": "moments.numbers.title",
+          "locations": [
+            "g8-t3-l59-numbers"
+          ],
+          "valueSHA256": "22358ce7d1bcaa1baf65c3ce64061443de8b09f7731caac63bd31124285d9184"
+        },
+        {
+          "path": "moments.numbers.cue",
+          "locations": [
+            "g8-t3-l59-numbers"
+          ],
+          "valueSHA256": "bbcc4bdadba94f1a323e5cf35999fed3cb691610634e9c0d1b9d8f6394ef1c00"
+        },
+        {
+          "path": "moments.numbers.understanding",
+          "locations": [
+            "g8-t3-l59-numbers"
+          ],
+          "valueSHA256": "194d768a62a0bb765e2b176332b167b2e4437ed4b4a6568bf03dfa8ed89a00b8"
+        },
+        {
+          "path": "moments.analyse.title",
+          "locations": [
+            "g8-t3-l59-analyse"
+          ],
+          "valueSHA256": "484223249bef314e45b3ec6f876d554be1f4e51896a5cb43f180755e4f09219e"
+        },
+        {
+          "path": "moments.analyse.cue",
+          "locations": [
+            "g8-t3-l59-analyse"
+          ],
+          "valueSHA256": "990b308eabc9d3d199b1e1d1ac308227d6c60da59f30514b94d264f6ee77239c"
+        },
+        {
+          "path": "moments.analyse.support",
+          "locations": [
+            "g8-t3-l59-analyse"
+          ],
+          "valueSHA256": "1b9fd1b6dc96beee44ebd6f0045a42ac38a56bc1d5abd76eac44c5b9a43d9f54"
+        },
+        {
+          "path": "moments.pivot.title",
+          "locations": [
+            "g8-t3-l59-pivot"
+          ],
+          "valueSHA256": "40d01d330b54102355089dc7382473339b6583c810611f437ea0fbb5a790f40b"
+        },
+        {
+          "path": "moments.pivot.cue",
+          "locations": [
+            "g8-t3-l59-pivot"
+          ],
+          "valueSHA256": "ffb1ff6ff947bc11796124cafa8868ea4a7e4c72de30836ba3fd51a9350011b0"
+        },
+        {
+          "path": "moments.pivot.review",
+          "locations": [
+            "g8-t3-l59-pivot"
+          ],
+          "valueSHA256": "918ee9e316689ac11298750656cafad8f25df5b1c9765f68a1c86db6a797ab51"
+        },
+        {
+          "path": "moments.group.title",
+          "locations": [
+            "g8-t3-l59-group"
+          ],
+          "valueSHA256": "9718b5140b96cb1d0f80b91418c46329f61e4cbf2a843fb75f7c755eac82b429"
+        },
+        {
+          "path": "moments.group.cue",
+          "locations": [
+            "g8-t3-l59-group"
+          ],
+          "valueSHA256": "5d7f18b82b2c53713eb6e9eabcbddd076bb2c777bf190f446acb62525b526ca1"
+        },
+        {
+          "path": "moments.group.understanding",
+          "locations": [
+            "g8-t3-l59-group"
+          ],
+          "valueSHA256": "4b72b2badfedd8983083d3a4ca3fcd0ef67b127a9d24fe0b16a45212e0b47ef3"
+        },
+        {
+          "path": "moments.checkpoint.title",
+          "locations": [
+            "g8-t3-l59-checkpoint"
+          ],
+          "valueSHA256": "8f2cad97f66f5ba57604a1930a0e09ecf4863f047c3e26bdd24636a97e308d0c"
+        },
+        {
+          "path": "moments.checkpoint.cue",
+          "locations": [
+            "g8-t3-l59-checkpoint"
+          ],
+          "valueSHA256": "2fd5619a3de0941ceb823d30ad349895007aa089e1c1f86414a97236f45c69a5"
+        },
+        {
+          "path": "moments.checkpoint.review",
+          "locations": [
+            "g8-t3-l59-checkpoint"
+          ],
+          "valueSHA256": "a18160b4ea7b279eac93eda2a919c2766d99dda8049dddef151dfb45ec732a4a"
+        },
+        {
+          "path": "moments.close.title",
+          "locations": [
+            "g8-t3-l59-close"
+          ],
+          "valueSHA256": "9822618f90be92d0b764c03a08db19d612865c5f88d448b5a229dade561a0f6d"
+        },
+        {
+          "path": "moments.close.cue",
+          "locations": [
+            "g8-t3-l59-close"
+          ],
+          "valueSHA256": "9adaf9d30167d1a14bac1c2e0f34fff7aaed410ff2cfc76ad1eef18f598a2065"
+        },
+        {
+          "path": "moments.deepen.title",
+          "locations": [
+            "g8-t3-l59-deepen"
+          ],
+          "valueSHA256": "4ad7c1ef8e3cf9146ccdaea448e23289b95ad21537642599492e6269b0cc398f"
+        },
+        {
+          "path": "moments.deepen.cue",
+          "locations": [
+            "g8-t3-l59-deepen"
+          ],
+          "valueSHA256": "a66d0f5bea3403a2030d055b1938bd27a6085f8295ef16da54ddf4e43570e5d7"
+        },
+        {
+          "path": "moments.home.title",
+          "locations": [
+            "g8-t3-l59-home"
+          ],
+          "valueSHA256": "2315be6b8d9e85b5b270c0e47c54df5ecf268eb534e2e7f545536b86040e4731"
+        },
+        {
+          "path": "moments.home.cue",
+          "locations": [
+            "g8-t3-l59-home"
+          ],
+          "valueSHA256": "9c5982e751c6cd6886a72b2d18eaa5b2dbce4d5d80cdb6528f893463c5a02c89"
+        }
+      ],
+      "moments": [
+        {
+          "id": "g8-t3-l59-read",
+          "period": 0,
+          "schedule": "classroom",
+          "minutes": 6,
+          "placement": {
+            "kind": "section",
+            "blockId": "71f6585e43b8f4d5b162bec6-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "71f6585e43b8f4d5b162bec6-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l59-reflect",
+          "period": 0,
+          "schedule": "classroom",
+          "minutes": 4,
+          "placement": {
+            "kind": "section",
+            "blockId": "4366a8a71a6f4c1b34bae61f-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "4366a8a71a6f4c1b34bae61f-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l59-numbers",
+          "period": 0,
+          "schedule": "classroom",
+          "minutes": 7,
+          "placement": {
+            "kind": "section",
+            "blockId": "f19de0f6f54a1e7025704e82-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "f19de0f6f54a1e7025704e82-1",
+            "a20ecdf2a5e0daf4b5b738ab-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l59-analyse",
+          "period": 0,
+          "schedule": "classroom",
+          "minutes": 9,
+          "placement": {
+            "kind": "heading",
+            "blockId": "e9034e56b52fdf7b74fe59ed-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "e9034e56b52fdf7b74fe59ed-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l59-pivot",
+          "period": 0,
+          "schedule": "classroom",
+          "minutes": 7,
+          "placement": {
+            "kind": "heading",
+            "blockId": "8c6f9c3559d8ee8e81b7ef20-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "8c6f9c3559d8ee8e81b7ef20-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l59-group",
+          "period": 0,
+          "schedule": "classroom",
+          "minutes": 6,
+          "placement": {
+            "kind": "heading",
+            "blockId": "9217c8a47837a1876c40d55e-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "9217c8a47837a1876c40d55e-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l59-checkpoint",
+          "period": 0,
+          "schedule": "classroom",
+          "minutes": 4,
+          "placement": {
+            "kind": "section",
+            "blockId": "1e8357621b551417d9b19216-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "1e8357621b551417d9b19216-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l59-close",
+          "period": 0,
+          "schedule": "classroom",
+          "minutes": 2,
+          "placement": {
+            "kind": "section",
+            "blockId": "1e8357621b551417d9b19216-1",
+            "edge": "after",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "1e8357621b551417d9b19216-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l59-deepen",
+          "period": null,
+          "schedule": "optional",
+          "minutes": 0,
+          "placement": {
+            "kind": "section",
+            "blockId": "80ec5b6950763029cc2cb8f8-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "80ec5b6950763029cc2cb8f8-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l59-home",
+          "period": null,
+          "schedule": "later",
+          "minutes": 0,
+          "placement": {
+            "kind": "section",
+            "blockId": "22499840c699d3a0d0c842d7-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "22499840c699d3a0d0c842d7-1"
+          ]
+        }
+      ],
+      "activityCoverage": [
+        {
+          "blockId": "4366a8a71a6f4c1b34bae61f-1",
+          "momentId": "g8-t3-l59-reflect",
+          "disposition": "classroom"
+        },
+        {
+          "blockId": "f19de0f6f54a1e7025704e82-1",
+          "momentId": "g8-t3-l59-numbers",
+          "disposition": "classroom"
+        },
+        {
+          "blockId": "a20ecdf2a5e0daf4b5b738ab-1",
+          "momentId": "g8-t3-l59-numbers",
+          "disposition": "classroom"
+        },
+        {
+          "blockId": "e9034e56b52fdf7b74fe59ed-1",
+          "momentId": "g8-t3-l59-analyse",
+          "disposition": "classroom"
+        },
+        {
+          "blockId": "8c6f9c3559d8ee8e81b7ef20-1",
+          "momentId": "g8-t3-l59-pivot",
+          "disposition": "classroom"
+        },
+        {
+          "blockId": "9217c8a47837a1876c40d55e-1",
+          "momentId": "g8-t3-l59-group",
+          "disposition": "classroom"
+        },
+        {
+          "blockId": "1e8357621b551417d9b19216-1",
+          "momentId": "g8-t3-l59-checkpoint",
+          "disposition": "classroom"
+        }
+      ]
+    },
+    {
+      "lessonId": "g8-t3-l60-059",
+      "grade": 8,
+      "term": 3,
+      "title": "WHAT HABITS TAUGHT ME AND TERM REFLECTION",
+      "periods": 3,
+      "source": {
+        "id": "g8-t3-l60-059",
+        "sourceUnitSHA256": "e58745954984602ff013cf282225d628c453203605c6c94f010c52ee57b19813",
+        "blockIds": [
+          "539a96142de3bf8a4b9fc2f4-1",
+          "47f6b4296e644c19aa04bfa7-1",
+          "30a79b5fc3d030afc97e3325-1",
+          "1236d8228f5f4a8ccc985432-1",
+          "10bff70693c33e1014057670-1",
+          "279017e97213e6f68a5fcce0-1",
+          "13929943aa0adf4129e3838c-1",
+          "e42aaec53f2d40dd7a09ec22-1",
+          "b089e93c40f5d27743027ba3-1",
+          "6b718bcbb686f47bfd02fd05-1",
+          "e3feb397a90848ec42878328-1",
+          "4366a8a71a6f4c1b34bae61f-1",
+          "43c24c0d662f6d6cb43d9c82-1",
+          "c039dc3e3187a29cad4b04d7-1",
+          "e78e7336991ba01f5895b673-1",
+          "7fe1677fb5e5bf3c4c672718-1",
+          "21a6df315e671695016a65f1-1",
+          "4665b8e4df4badc61c6d077f-1",
+          "94b685509ea411480f1ba4ee-1",
+          "426424493483d57a50b6c19d-1",
+          "7f4448806185a90036be8a56-1",
+          "e6b67f3b1c58a66a62523b3e-1",
+          "45641132371daf33e3cc21bf-1",
+          "3251aefe90ac4d8767bbc62c-1",
+          "a585f612ac72bf1fd5595f6f-1",
+          "6e236e81e78070cd1ab08960-1",
+          "347b526b869f9d5394594646-1",
+          "04cf75117568b50b2845b038-1",
+          "1b83292eaa48f2cc7fa4c9ae-1",
+          "f6da5bb963510ba3c260ac62-1",
+          "3118e4e96ff078f138635f6e-1",
+          "3a71fb724a1c5ad1bc8cc2b2-1",
+          "4fbb391b72728503095043ba-1",
+          "fd3c8cc26b04313d67b6002d-1",
+          "1057438be79686daa3e7d8aa-1",
+          "c22c1cff5992bf8122e66366-1",
+          "b461f1ba489ad7b95a468dce-1",
+          "1029123ccac9b5c364156c22-1",
+          "4b2d61ee0ab90446391c4997-1",
+          "234a29cc9cb7d7c41c4facd4-1",
+          "3f9fb57a049a089b1cea14cc-1",
+          "016877811b5698262e970baf-1",
+          "00d9ba7a780e549a8d2dde7f-1",
+          "e0b754b32c569b6a64a2901a-1",
+          "df56ec32573379dc9c253672-1",
+          "a60f8fbc853d7b3e9a38e116-1",
+          "dfbd8c84883538f4b211edcb-1",
+          "70599bbd3508fc9f8b205804-1",
+          "107452e871a3df90471a803c-1",
+          "025752337a97828db9fc5a8b-1",
+          "763d284428a3d49626555c54-1",
+          "f08c272430ecabfbfacdd554-1",
+          "69a7c8177f475bac986eb612-1",
+          "54d62baec3481d411e824801-1",
+          "739d25320f2876b8b557caaf-1",
+          "654c50a6e89102e6108671e7-1",
+          "f27ba9bd065056855fca44c4-1",
+          "ae3994534c1df396516e1a17-1",
+          "891ac0cecbf4513aa564aada-1",
+          "df13a7188e1718337c98a6fa-1",
+          "093f2f9a4eaceb3d69e524d3-1",
+          "6d58bdb654c2d9f5f6301e94-1",
+          "800482c813b4e32219debcc4-1",
+          "2b2773d8baf68fdd931996ca-1",
+          "cb5af9b33f6ce9c6a9fe91e5-1",
+          "569df092a1b0deefeee41762-1",
+          "6a4f5cdc09da3554c52e3614-1",
+          "a9df221a137724b4c2faa1a2-1",
+          "7d4d0b72bb4f7f7f56db1d31-1",
+          "123f0e6b8e9a4e2a527b9c89-1",
+          "ed2077dd056973a41855efe3-1",
+          "21adcbc260478d24c5f57589-1",
+          "50690cd3b6d99bd6fa6268e3-1",
+          "004f945deaf5adefd40c7f4c-1",
+          "47bbdc1f368ca3be42d691e8-1",
+          "c15ec820522f70c8500c03f4-1",
+          "950d61a6725ee1416d4c058f-1",
+          "5d3d20f640aa23e2fd6e766a-1",
+          "22499840c699d3a0d0c842d7-1",
+          "d27374e5cce261dabb491ce4-1",
+          "31055d4ddc17c35b39a73001-1",
+          "7e2ee71dd8f290227b872d1d-1",
+          "405e7119306f564dd1b5c9b9-1",
+          "69de0d12aa4cc5a2140bfb26-1",
+          "9b9d1cde0ba8fa476b71bb15-1",
+          "4c3cc13be4c3bf114b805a89-1",
+          "59ce723ec582fe1b6d4b706c-1",
+          "fd8f28fcba793e54394a7054-1",
+          "0482b1a48e8b179be28d1b34-1",
+          "0d7536c802cd1a0cb1c84b19-1",
+          "26505f704cf9c68aee793151-1",
+          "ba01b2b7e7b83b89ed9c0d0c-1"
+        ],
+        "sections": [
+          "539a96142de3bf8a4b9fc2f4-1",
+          "13929943aa0adf4129e3838c-1",
+          "4366a8a71a6f4c1b34bae61f-1",
+          "c039dc3e3187a29cad4b04d7-1",
+          "3a71fb724a1c5ad1bc8cc2b2-1",
+          "00d9ba7a780e549a8d2dde7f-1",
+          "f27ba9bd065056855fca44c4-1",
+          "7d4d0b72bb4f7f7f56db1d31-1",
+          "c15ec820522f70c8500c03f4-1",
+          "22499840c699d3a0d0c842d7-1",
+          "fd8f28fcba793e54394a7054-1"
+        ],
+        "headings": [
+          "e78e7336991ba01f5895b673-1",
+          "45641132371daf33e3cc21bf-1",
+          "04cf75117568b50b2845b038-1"
+        ],
+        "activityIds": [
+          "4366a8a71a6f4c1b34bae61f-1",
+          "c039dc3e3187a29cad4b04d7-1",
+          "e78e7336991ba01f5895b673-1",
+          "45641132371daf33e3cc21bf-1",
+          "04cf75117568b50b2845b038-1",
+          "3a71fb724a1c5ad1bc8cc2b2-1",
+          "00d9ba7a780e549a8d2dde7f-1",
+          "107452e871a3df90471a803c-1",
+          "f27ba9bd065056855fca44c4-1"
+        ]
+      },
+      "fieldCount": 48,
+      "planSHA256": "c8a88626a64d62a46deb7bd3e549dc6e093309efad379be2fdee9fb13be2456e",
+      "coverage": [
+        {
+          "path": "purpose",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "901978d6e5ee5382b5078cf7f209e931282bce7b40b925e37eb7c2d93d443409"
+        },
+        {
+          "path": "objectives",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "241f28b03ae3d25a834eea96a6280ca4369da0c36642d576618fb5c0a6029126"
+        },
+        {
+          "path": "outcome",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "6c9d74565fc221142e2ed3a059806e97eef620e79dc4ed89cd0d4b0975a7ca9a"
+        },
+        {
+          "path": "prerequisites",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "a3d981f321ca227332bd1e0bb0954157ee0f27048604a3e2510d9a1137dda372"
+        },
+        {
+          "path": "materials",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "ae7677d31206b168bcfdafdf2167a0346f741fc739fb933bc681f23bb07aa5ee"
+        },
+        {
+          "path": "vocabulary",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "e478794336ed66fb4533a7e99b95b0818c636d04297db7054adaed05103e3ee9"
+        },
+        {
+          "path": "misconceptions",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "63f7f90b5978c3818e1b54c0aa7c7d4e44931b3dbb4b0c9a42f41a9daa8e409d"
+        },
+        {
+          "path": "context",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "3a084ed023d2faccf744b00c0e26f4da73654ad8e73c91b0095d88fe5da16c24"
+        },
+        {
+          "path": "access.privacy",
+          "locations": [
+            "preparation"
+          ],
+          "valueSHA256": "8676f7d28b45166d74e59e82f7517677193d6ccae52a64025325c2eba220f760"
+        },
+        {
+          "path": "periods.0.title",
+          "locations": [
+            "preparation.periods.0"
+          ],
+          "valueSHA256": "3edcb82ec6216d39d74883f248fb94cf90e8c3eab5dccb012547f6d727996693"
+        },
+        {
+          "path": "periods.1.title",
+          "locations": [
+            "preparation.periods.1"
+          ],
+          "valueSHA256": "e60597d3a34acc6d4e66908d96c97b6f26a4cf85b990391bb79a9caa49c55a53"
+        },
+        {
+          "path": "periods.2.title",
+          "locations": [
+            "preparation.periods.2"
+          ],
+          "valueSHA256": "7544af979a6188ef49ebe0470c6b55dac8328455eb1eb15fa0b2cbeecf033922"
+        },
+        {
+          "path": "moments.read.title",
+          "locations": [
+            "g8-t3-l60-read"
+          ],
+          "valueSHA256": "1d45ea15ec17ba1ce95a7a11afc8bb8a0c3d2778126eecfb4425e47e3febce60"
+        },
+        {
+          "path": "moments.read.cue",
+          "locations": [
+            "g8-t3-l60-read"
+          ],
+          "valueSHA256": "7dd47c9009bb424ae6d6eb1ffe960036acd1b60456a5964db645ef3044ef872d"
+        },
+        {
+          "path": "moments.read.support",
+          "locations": [
+            "g8-t3-l60-read"
+          ],
+          "valueSHA256": "b67f8cdc20072d8e680afdef9965fcc451d44b947e8ffb93ab060e97a5bd9d8b"
+        },
+        {
+          "path": "moments.reflect.title",
+          "locations": [
+            "g8-t3-l60-reflect"
+          ],
+          "valueSHA256": "72a0d29392b8a2628adecf98962450759f1f7fd2f928c50543e044a83265651d"
+        },
+        {
+          "path": "moments.reflect.cue",
+          "locations": [
+            "g8-t3-l60-reflect"
+          ],
+          "valueSHA256": "0368e453ae3228bcc525e073d033fa02709ee744ca23761562a8a16befe4a9f5"
+        },
+        {
+          "path": "moments.habit-reflections.title",
+          "locations": [
+            "g8-t3-l60-habit-reflections"
+          ],
+          "valueSHA256": "9f5c3badffb972ec11c8e96fe1bd5ea737aaba20ad3d743b84d9baf3cdd677f4"
+        },
+        {
+          "path": "moments.habit-reflections.cue",
+          "locations": [
+            "g8-t3-l60-habit-reflections"
+          ],
+          "valueSHA256": "0d59e07a521f9151abbb1a3f644e39cf60d67f4ae825f85620975efec142c42d"
+        },
+        {
+          "path": "moments.habit-reflections.review",
+          "locations": [
+            "g8-t3-l60-habit-reflections"
+          ],
+          "valueSHA256": "28bc6d3c310d19977a818f86217005f5e94eb75afc6d37dbbd63e69412ad3064"
+        },
+        {
+          "path": "moments.legacy.title",
+          "locations": [
+            "g8-t3-l60-legacy"
+          ],
+          "valueSHA256": "7b624fbb8e0ffd94b4e761cab0d1dfb9cdc165993e331183ec35296822836f82"
+        },
+        {
+          "path": "moments.legacy.cue",
+          "locations": [
+            "g8-t3-l60-legacy"
+          ],
+          "valueSHA256": "47a1d71b26d06eeb66bd16753bfc86cf0f0564c546b1aa93bed62492e1b02846"
+        },
+        {
+          "path": "moments.legacy.understanding",
+          "locations": [
+            "g8-t3-l60-legacy"
+          ],
+          "valueSHA256": "e55194897986a4ecc4d4ec035fd181e359b71c90c2655d543426cdbd6beaf586"
+        },
+        {
+          "path": "moments.p1-close.title",
+          "locations": [
+            "g8-t3-l60-p1-close"
+          ],
+          "valueSHA256": "1b289f7d8d0126647ec979654df03d39dc9197042b936886e174abb33119be2c"
+        },
+        {
+          "path": "moments.p1-close.cue",
+          "locations": [
+            "g8-t3-l60-p1-close"
+          ],
+          "valueSHA256": "524ee4244e1b140a3f7dc9b58e566da20e4c4a7dffb9f8f776325d99d08897cb"
+        },
+        {
+          "path": "moments.transfer.title",
+          "locations": [
+            "g8-t3-l60-transfer"
+          ],
+          "valueSHA256": "b343de78e405fdc83cf716ca46187b703d074f3090824f259666500dba843fc0"
+        },
+        {
+          "path": "moments.transfer.cue",
+          "locations": [
+            "g8-t3-l60-transfer"
+          ],
+          "valueSHA256": "6ee958a185c344e5df93d7000abc4ef2d39f8d442e035b3c01e2c9be5326ea59"
+        },
+        {
+          "path": "moments.transfer.support",
+          "locations": [
+            "g8-t3-l60-transfer"
+          ],
+          "valueSHA256": "8c58b77948d8f6142d52a87f5d79e643cab8cadf24ac9214f771348091dc353d"
+        },
+        {
+          "path": "moments.term.title",
+          "locations": [
+            "g8-t3-l60-term"
+          ],
+          "valueSHA256": "a72f051c87b116f15c1d7d31c49c1070e109c4e1dd0851d0fef1903a025b4041"
+        },
+        {
+          "path": "moments.term.cue",
+          "locations": [
+            "g8-t3-l60-term"
+          ],
+          "valueSHA256": "ed966b1ef1dba3a7743bb9951544ae8efb97985e1ceb70d1c280c79342adb2a6"
+        },
+        {
+          "path": "moments.term.review",
+          "locations": [
+            "g8-t3-l60-term"
+          ],
+          "valueSHA256": "37eb41d4d2e4c0af6d6a57bdcbfb09c0fd9397090255aa2165533fde741396cf"
+        },
+        {
+          "path": "moments.equation.title",
+          "locations": [
+            "g8-t3-l60-equation"
+          ],
+          "valueSHA256": "6158dbdb314b1de43d0eb90ed3f3bc8aa68b9799998cab8d4cc5c2686c163bf0"
+        },
+        {
+          "path": "moments.equation.cue",
+          "locations": [
+            "g8-t3-l60-equation"
+          ],
+          "valueSHA256": "c8fba9c2df75576374725504c8b994f415567222f387c8d446cec778ca3bb629"
+        },
+        {
+          "path": "moments.equation.understanding",
+          "locations": [
+            "g8-t3-l60-equation"
+          ],
+          "valueSHA256": "db2c74465a4cf0f683d5030b7506af52602d0528e9a2c3fee437dc3e821e590e"
+        },
+        {
+          "path": "moments.p2-close.title",
+          "locations": [
+            "g8-t3-l60-p2-close"
+          ],
+          "valueSHA256": "327b365daaab2c9a0a8c3259da6e36df86de2478043ccaa0c7971349b40cf6c0"
+        },
+        {
+          "path": "moments.p2-close.cue",
+          "locations": [
+            "g8-t3-l60-p2-close"
+          ],
+          "valueSHA256": "669bd4ec9e83f2d843b8aaf13fb0146529dbe85c0702178378ad94ce7360afb7"
+        },
+        {
+          "path": "moments.letter.title",
+          "locations": [
+            "g8-t3-l60-letter"
+          ],
+          "valueSHA256": "9200a7161d871cce3b44d1207cc37e805861f96f91eb144415c6ee70dd3cf69b"
+        },
+        {
+          "path": "moments.letter.cue",
+          "locations": [
+            "g8-t3-l60-letter"
+          ],
+          "valueSHA256": "3f6c174264baf948ba435a5f135d5d1c80a314ce94aab5fee1fcabaefdc6072d"
+        },
+        {
+          "path": "moments.letter.support",
+          "locations": [
+            "g8-t3-l60-letter"
+          ],
+          "valueSHA256": "b63b502714564a8777db8ea7db0d13f7a8eb1d23145984db9e73420f43d65747"
+        },
+        {
+          "path": "moments.checkpoint.title",
+          "locations": [
+            "g8-t3-l60-checkpoint"
+          ],
+          "valueSHA256": "7b252ab2c52d6f5c49f9bed65500fb13a63f567703fd2ae030e210e3fd895265"
+        },
+        {
+          "path": "moments.checkpoint.cue",
+          "locations": [
+            "g8-t3-l60-checkpoint"
+          ],
+          "valueSHA256": "78550a4ba6a67df79ffdf36d2bb45b0357d7c49d4583f36a7c176c292bb33932"
+        },
+        {
+          "path": "moments.checkpoint.review",
+          "locations": [
+            "g8-t3-l60-checkpoint"
+          ],
+          "valueSHA256": "19aa34d20a944f8f912ebcfbc5ff5c87b75d2db6aabb3b54a41ed497e43a5938"
+        },
+        {
+          "path": "moments.close.title",
+          "locations": [
+            "g8-t3-l60-close"
+          ],
+          "valueSHA256": "2e0f24ac5cfccad4efd535923417cb2b6f13344aaf3476e2adeeb2b851068e6c"
+        },
+        {
+          "path": "moments.close.cue",
+          "locations": [
+            "g8-t3-l60-close"
+          ],
+          "valueSHA256": "69c86b102881af6f129bcc68489ba87892424c18ffe3ce1e3d0a9548ea7c1c53"
+        },
+        {
+          "path": "moments.deepen.title",
+          "locations": [
+            "g8-t3-l60-deepen"
+          ],
+          "valueSHA256": "11d3452c39fef3d00c82aa7c64c57175a6358d44940690d32dbadcf02774ac85"
+        },
+        {
+          "path": "moments.deepen.cue",
+          "locations": [
+            "g8-t3-l60-deepen"
+          ],
+          "valueSHA256": "920659a9ef7e4c671f51cd27a1c8c0c5b453e19619c27b6febd0f79baab69ce8"
+        },
+        {
+          "path": "moments.home.title",
+          "locations": [
+            "g8-t3-l60-home"
+          ],
+          "valueSHA256": "02462fc442dfc6a530a0a8aef1151ecc60a9fcdf04ed3273d24e7fc844d7cf51"
+        },
+        {
+          "path": "moments.home.cue",
+          "locations": [
+            "g8-t3-l60-home"
+          ],
+          "valueSHA256": "1c3a191c440533e2d8650a2abc70758baef3acf5304179cb86992fc7a61d91ad"
+        }
+      ],
+      "moments": [
+        {
+          "id": "g8-t3-l60-read",
+          "period": 0,
+          "schedule": "classroom",
+          "minutes": 8,
+          "placement": {
+            "kind": "section",
+            "blockId": "13929943aa0adf4129e3838c-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "13929943aa0adf4129e3838c-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l60-reflect",
+          "period": 0,
+          "schedule": "classroom",
+          "minutes": 4,
+          "placement": {
+            "kind": "section",
+            "blockId": "4366a8a71a6f4c1b34bae61f-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "4366a8a71a6f4c1b34bae61f-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l60-habit-reflections",
+          "period": 0,
+          "schedule": "classroom",
+          "minutes": 23,
+          "placement": {
+            "kind": "section",
+            "blockId": "c039dc3e3187a29cad4b04d7-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "c039dc3e3187a29cad4b04d7-1",
+            "e78e7336991ba01f5895b673-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l60-legacy",
+          "period": 0,
+          "schedule": "classroom",
+          "minutes": 8,
+          "placement": {
+            "kind": "heading",
+            "blockId": "45641132371daf33e3cc21bf-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "45641132371daf33e3cc21bf-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l60-p1-close",
+          "period": 0,
+          "schedule": "classroom",
+          "minutes": 2,
+          "placement": {
+            "kind": "heading",
+            "blockId": "04cf75117568b50b2845b038-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "04cf75117568b50b2845b038-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l60-transfer",
+          "period": 1,
+          "schedule": "classroom",
+          "minutes": 8,
+          "placement": {
+            "kind": "heading",
+            "blockId": "04cf75117568b50b2845b038-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "04cf75117568b50b2845b038-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l60-term",
+          "period": 1,
+          "schedule": "classroom",
+          "minutes": 25,
+          "placement": {
+            "kind": "section",
+            "blockId": "3a71fb724a1c5ad1bc8cc2b2-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "3a71fb724a1c5ad1bc8cc2b2-1",
+            "107452e871a3df90471a803c-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l60-equation",
+          "period": 1,
+          "schedule": "classroom",
+          "minutes": 10,
+          "placement": {
+            "kind": "section",
+            "blockId": "00d9ba7a780e549a8d2dde7f-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "00d9ba7a780e549a8d2dde7f-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l60-p2-close",
+          "period": 1,
+          "schedule": "classroom",
+          "minutes": 2,
+          "placement": {
+            "kind": "section",
+            "blockId": "f27ba9bd065056855fca44c4-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "f27ba9bd065056855fca44c4-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l60-letter",
+          "period": 2,
+          "schedule": "classroom",
+          "minutes": 20,
+          "placement": {
+            "kind": "section",
+            "blockId": "f27ba9bd065056855fca44c4-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "f27ba9bd065056855fca44c4-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l60-checkpoint",
+          "period": 2,
+          "schedule": "classroom",
+          "minutes": 20,
+          "placement": {
+            "kind": "section",
+            "blockId": "c15ec820522f70c8500c03f4-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "c15ec820522f70c8500c03f4-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l60-close",
+          "period": 2,
+          "schedule": "classroom",
+          "minutes": 5,
+          "placement": {
+            "kind": "section",
+            "blockId": "c15ec820522f70c8500c03f4-1",
+            "edge": "after",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "c15ec820522f70c8500c03f4-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l60-deepen",
+          "period": null,
+          "schedule": "optional",
+          "minutes": 0,
+          "placement": {
+            "kind": "section",
+            "blockId": "7d4d0b72bb4f7f7f56db1d31-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "7d4d0b72bb4f7f7f56db1d31-1"
+          ]
+        },
+        {
+          "id": "g8-t3-l60-home",
+          "period": null,
+          "schedule": "later",
+          "minutes": 0,
+          "placement": {
+            "kind": "section",
+            "blockId": "22499840c699d3a0d0c842d7-1",
+            "edge": "before",
+            "review": "Full learner text read; explicit source index reviewed. Live rendered staging placement remains pending until sealed."
+          },
+          "sourceBlockIds": [
+            "22499840c699d3a0d0c842d7-1"
+          ]
+        }
+      ],
+      "activityCoverage": [
+        {
+          "blockId": "4366a8a71a6f4c1b34bae61f-1",
+          "momentId": "g8-t3-l60-reflect",
+          "disposition": "classroom"
+        },
+        {
+          "blockId": "c039dc3e3187a29cad4b04d7-1",
+          "momentId": "g8-t3-l60-habit-reflections",
+          "disposition": "classroom"
+        },
+        {
+          "blockId": "e78e7336991ba01f5895b673-1",
+          "momentId": "g8-t3-l60-habit-reflections",
+          "disposition": "classroom"
+        },
+        {
+          "blockId": "45641132371daf33e3cc21bf-1",
+          "momentId": "g8-t3-l60-legacy",
+          "disposition": "classroom"
+        },
+        {
+          "blockId": "04cf75117568b50b2845b038-1",
+          "momentId": "g8-t3-l60-transfer",
+          "disposition": "classroom"
+        },
+        {
+          "blockId": "3a71fb724a1c5ad1bc8cc2b2-1",
+          "momentId": "g8-t3-l60-term",
+          "disposition": "classroom"
+        },
+        {
+          "blockId": "107452e871a3df90471a803c-1",
+          "momentId": "g8-t3-l60-term",
+          "disposition": "classroom"
+        },
+        {
+          "blockId": "00d9ba7a780e549a8d2dde7f-1",
+          "momentId": "g8-t3-l60-equation",
+          "disposition": "classroom"
+        },
+        {
+          "blockId": "f27ba9bd065056855fca44c4-1",
+          "momentId": "g8-t3-l60-letter",
+          "disposition": "classroom"
+        },
+        {
+          "blockId": "c15ec820522f70c8500c03f4-1",
+          "momentId": "g8-t3-l60-checkpoint",
           "disposition": "classroom"
         }
       ]
