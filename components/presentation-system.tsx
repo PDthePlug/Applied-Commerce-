@@ -46,6 +46,17 @@ export function LessonSectionHeading({title}:{title:string}){
   return <h2 className="source-section">{/^Learning Outcomes$/i.test(text)?null:<LessonIcon name="read"/>}{text}</h2>;
 }
 
+export function LearningOutcomesIntro({text,symbols=""}:{text:string;symbols?:string}){
+  const authored=text.match(/^(?:(?:🔍|💡|🛠️?|🔬|⚖️?|🌟)\s*)+/u)?.[0];
+  const levels=(authored??symbols).match(/🔍|💡|🛠️?|🔬|⚖️?|🌟/gu)??[];
+  return <p className="learning-outcomes-intro">
+    {levels.length>0&&<span className="learning-outcomes-symbols" aria-hidden="true" data-outcome-icons="true">
+      {levels.map((symbol,index)=><span className="lesson-symbol" key={index}>{symbol}</span>)}
+    </span>}
+    {authored?text.slice(authored.length).trimStart():text}
+  </p>;
+}
+
 export function LearningNotice({
   tone,
   title,
