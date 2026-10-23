@@ -52,6 +52,8 @@ export function validateTeachingPlan(value:unknown,source:TeachingSource):assert
  }
  for(const moment of plan.moments){
   field(moment.title);groups(moment.core);groups(moment.depth);
+  const cues=moment.core.filter(group=>group.heading==="Facilitation cue");
+  if(cues.length>1||cues.some(group=>group.fields.length!==1||moment.schedule!=="classroom"))fail();
   if(!/^[a-z0-9-]+$/.test(moment.id)||!moment.placement?.review||!moment.sourceBlockIds?.length||moment.sourceBlockIds.some(id=>!blocks.has(id))||moment.links.some(id=>!ids.has(id)))fail();
   if(!["before","after"].includes(moment.placement.edge))fail();
   if(moment.placement.kind==="section"){

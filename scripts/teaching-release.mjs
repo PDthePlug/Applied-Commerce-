@@ -6,7 +6,7 @@ export async function validateTeachingRelease(key){
  const manifest=JSON.parse(fs.readFileSync('content/instructional/teaching-manifest.v2.json'));
  const payload=JSON.parse(openContent(JSON.parse(fs.readFileSync('content/instructional/teaching-plans.v2.enc.json')),key,'applied-commerce-classroom-v1').toString('utf8'));
  const units=await runtimeUnits();
- if(payload.version!==manifest.version||payload.plans?.length!==24||new Set(payload.plans.map(p=>p.lessonId)).size!==24)throw Error('Teaching release identities differ.');
+ if(payload.version!==manifest.version||payload.plans?.length!==manifest.plans.length||new Set(payload.plans.map(p=>p.lessonId)).size!==manifest.plans.length)throw Error('Teaching release identities differ.');
  const term=units.filter(u=>u.grade===8&&u.term===1&&u.type==='lesson');
  if(term.length!==20||term.some(u=>!payload.plans.some(p=>p.lessonId===u.id)))throw Error('The term is incomplete.');
  for(const plan of payload.plans){

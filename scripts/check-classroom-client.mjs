@@ -1,7 +1,7 @@
 // Run after the real application build, with private input paths only.
 import fs from 'node:fs';import path from 'node:path';import {openContent}from './classroom-content.mjs';
 const index=process.argv.indexOf('--key-file');if(index<0||!process.argv[index+1])throw new Error('Provide a private --key-file path.');
-const keyText=fs.readFileSync(process.argv[index+1],'utf8').trim();const envelope=JSON.parse(fs.readFileSync('content/instructional/benchmark-guides.v1.enc.json','utf8'));
+const keyText=fs.readFileSync(process.argv[index+1]==='-'?0:process.argv[index+1],'utf8').trim();const envelope=JSON.parse(fs.readFileSync('content/instructional/benchmark-guides.v1.enc.json','utf8'));
 const payload=JSON.parse(openContent(envelope,Buffer.from(keyText,'base64'),'applied-commerce-classroom-v1').toString('utf8'));
 const sentinels=[keyText,...payload.guides.flatMap(guide=>[...guide.understandingChecks.map(check=>check.secureReasoning),...guide.discussion.map(item=>item.indicativeReasoning)])];
 const contextual=JSON.parse(openContent(JSON.parse(fs.readFileSync('content/instructional/g8-t1-l08-008.contextual.v1.enc.json','utf8')),Buffer.from(keyText,'base64'),'applied-commerce-classroom-v1').toString('utf8'));

@@ -5,7 +5,7 @@
     {
       "lessonId": "g8-t2-l21-021",
       "sourceUnitSHA256": "475c9bef8c884de30295ec2b100076f289f3ed27d95b71c3617952276c7a796c",
-      "planSHA256": "4673b5e157283d7e0bfc9464bb9ce68ccfaf3a588ca92be552632f7898ab4ed5",
+      "planSHA256": "4e5ed2d0aee3b20f463489e42515bcc7de1d32a44c712d6ab3d7ff8688e88bd0",
       "sourceBlocksRead": 62,
       "sourceRead": true,
       "individualDraft": true,
@@ -17,12 +17,14 @@
       "privateDraftFile": "g8-t2-l21-021.json",
       "stageReview": "PENDING_ORIGINAL_KEY_SEALING_AND_HOSTED_RENDERING",
       "complete": false,
-      "fieldCoverage": 34
+      "fieldCoverage": 34,
+      "actualRendererInsertions": "PASS; every explicit draft insertion rendered once using the actual unchanged learner renderer",
+      "briefCueMarkup": "Explicit cue field; no redundant disclosure when optional support is absent"
     },
     {
       "lessonId": "g8-t2-l22-022",
       "sourceUnitSHA256": "4ef091eb93edff903772a184863e6ca2493e8ca31b8b123f1b9d10a0caec6a3a",
-      "planSHA256": "9458492769b4c232dd83401415018b1d4b61922f82f85a7d967b4a7cc3234b14",
+      "planSHA256": "f1f00c3de77417a26674f3fa2f97c77f0e3fb03c8a7195d108e9d1e7bacd6606",
       "sourceBlocksRead": 64,
       "sourceRead": true,
       "individualDraft": true,
@@ -34,12 +36,14 @@
       "privateDraftFile": "g8-t2-l22-022.json",
       "stageReview": "PENDING_ORIGINAL_KEY_SEALING_AND_HOSTED_RENDERING",
       "complete": false,
-      "fieldCoverage": 37
+      "fieldCoverage": 37,
+      "actualRendererInsertions": "PASS; every explicit draft insertion rendered once using the actual unchanged learner renderer",
+      "briefCueMarkup": "Explicit cue field; no redundant disclosure when optional support is absent"
     },
     {
       "lessonId": "g8-t2-l23-023",
       "sourceUnitSHA256": "39b893e99beea0706893f5f19069fad171abb09bf50c04a70539999c0a09939d",
-      "planSHA256": "5b4a76f9ee9e86bf4647ab6120a1db6033c1feb1bc7878557abac420668a81d4",
+      "planSHA256": "8219dbc77999bd40099712da96f68240c02df9569c16d098004e954a2d9aacc6",
       "sourceBlocksRead": 58,
       "sourceRead": true,
       "individualDraft": true,
@@ -51,12 +55,14 @@
       "privateDraftFile": "g8-t2-l23-023.json",
       "stageReview": "PENDING_ORIGINAL_KEY_SEALING_AND_HOSTED_RENDERING",
       "complete": false,
-      "fieldCoverage": 37
+      "fieldCoverage": 37,
+      "actualRendererInsertions": "PASS; every explicit draft insertion rendered once using the actual unchanged learner renderer",
+      "briefCueMarkup": "Explicit cue field; no redundant disclosure when optional support is absent"
     },
     {
       "lessonId": "g8-t2-l24-024",
       "sourceUnitSHA256": "c303de3aa5571f2c3820b88656de94d02e190fd67fe05c1ad567a74dd2125d08",
-      "planSHA256": "0f9d4b8fcd8e9c4c0be97b1ad59c92955de0c7de776938be1f8a2a7a719c3f80",
+      "planSHA256": "5c36f50fd14ff77e4d403ac407761c56e273256a0855a7ca34d3a369cf167e77",
       "sourceBlocksRead": 69,
       "sourceRead": true,
       "individualDraft": true,
@@ -68,12 +74,14 @@
       "privateDraftFile": "g8-t2-l24-024.json",
       "stageReview": "PENDING_ORIGINAL_KEY_SEALING_AND_HOSTED_RENDERING",
       "complete": false,
-      "fieldCoverage": 42
+      "fieldCoverage": 42,
+      "actualRendererInsertions": "PASS; every explicit draft insertion rendered once using the actual unchanged learner renderer",
+      "briefCueMarkup": "Explicit cue field; no redundant disclosure when optional support is absent"
     },
     {
       "lessonId": "g8-t2-l25-025",
       "sourceUnitSHA256": "966e673900e6b346f563d587f05319c6fe694375821d36c0c975385a78ecf266",
-      "planSHA256": "2093f743b21fd2da1cd94d1fe29a4bdbc2a98e2dc78a56353619ae180b60ed03",
+      "planSHA256": "7657df98d1545191b2fe1a18b3729b938a3a46d62a0b297f579b576393f8701e",
       "sourceBlocksRead": 73,
       "sourceRead": true,
       "individualDraft": true,
@@ -85,7 +93,9 @@
       "privateDraftFile": "g8-t2-l25-025.json",
       "stageReview": "PENDING_ORIGINAL_KEY_SEALING_AND_HOSTED_RENDERING",
       "complete": false,
-      "fieldCoverage": 49
+      "fieldCoverage": 49,
+      "actualRendererInsertions": "PASS; every explicit draft insertion rendered once using the actual unchanged learner renderer",
+      "briefCueMarkup": "Explicit cue field; no redundant disclosure when optional support is absent"
     }
   ]
 }

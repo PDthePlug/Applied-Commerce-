@@ -14,6 +14,8 @@ const representative:Record<string,{field:string;sentence?:number}>={
 };
 export function facilitationCue(plan:TeachingPlan,moment:TeachingMoment){
  if(moment.schedule!=="classroom")return null;
+ const explicit=moment.core.find(group=>group.heading==="Facilitation cue");
+ if(explicit)return plan.fields[explicit.fields[0]];
  const reference=plan.lessonId==="g8-t1-l01-001"?representative[moment.id]:undefined;
  if(!reference){
   const instruction=moment.core.find(group=>group.heading==="Explain");

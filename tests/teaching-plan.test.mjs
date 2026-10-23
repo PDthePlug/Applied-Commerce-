@@ -3,10 +3,14 @@ import {runtimeUnits} from '../scripts/semantic-census.mjs';import {digest} from
 const {teachingSource,validateTeachingPlan,teachingCoverage}=await import(renderModule('lib/classroom/teaching-plan.ts'));
 const {ContentBlocks}=await import(renderModule('components/content-blocks.tsx'));
 const units=await runtimeUnits();const manifest=JSON.parse(fs.readFileSync('content/instructional/teaching-manifest.v2.json'));
-test('the reviewed batch includes exactly 20 term lessons and four preserved additional benchmarks',()=>{
- assert.equal(manifest.plans.length,24);const term=units.filter(u=>u.grade===8&&u.term===1&&u.type==='lesson');assert.equal(term.length,20);assert.deepEqual(manifest.plans.filter(p=>p.grade===8).map(p=>p.lessonId).sort(),term.map(u=>u.id).sort());
- assert.equal(new Set(manifest.plans.map(p=>p.lessonId)).size,24);assert.ok(new Set(manifest.plans.map(p=>p.moments.filter(m=>m.schedule==='classroom').length)).size>=4);assert.equal(manifest.plans.reduce((s,p)=>s+p.periods,0),31);
+test('the 24 accepted plans retain exact hashes while appended batches use original lesson identities',()=>{
+ const baseline=JSON.parse(fs.readFileSync('tests/fixtures/teaching-pr48-baseline.json'));assert.equal(baseline.plans.length,24);assert.equal(baseline.plans.reduce((sum,row)=>sum+row.periods,0),31);
+ for(const row of baseline.plans){const current=manifest.plans.find(plan=>plan.lessonId===row.lessonId);assert.ok(current);for(const key of ['periods','planSHA256','fieldCount'])assert.equal(current[key],row[key],row.lessonId+' '+key);}
+ const term=units.filter(u=>u.grade===8&&u.term===1&&u.type==='lesson');assert.equal(term.length,20);assert.deepEqual(manifest.plans.filter(p=>p.grade===8&&p.term===1).map(p=>p.lessonId).sort(),term.map(u=>u.id).sort());
+ assert.equal(new Set(manifest.plans.map(p=>p.lessonId)).size,manifest.plans.length);assert.ok(manifest.plans.every(plan=>units.some(unit=>unit.type==='lesson'&&unit.id===plan.lessonId)));assert.ok(new Set(manifest.plans.map(p=>p.moments.filter(m=>m.schedule==='classroom').length)).size>=4);
+ const availability=JSON.parse(fs.readFileSync('content/instructional/teaching-availability.v2.json'));assert.deepEqual([...availability.lessonIds].sort(),manifest.plans.map(plan=>plan.lessonId).sort());
 });
+
 test('all placements actually render once and source bindings match unchanged runtime units',()=>{
  for(const binding of manifest.plans){const unit=units.find(u=>u.id===binding.lessonId);assert.deepEqual(teachingSource(unit,digest(unit)),binding.source);const hits=[];
  const hit=(kind,id,edge)=>binding.moments.filter(m=>m.placement.kind===kind&&m.placement.blockId===id&&m.placement.edge===edge).map(m=>{hits.push(m.id);return React.createElement('aside',{key:m.id,'data-alignment':m.id},'SYNTHETIC');});
