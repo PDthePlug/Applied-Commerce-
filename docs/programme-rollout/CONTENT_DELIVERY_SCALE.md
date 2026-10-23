@@ -1,6 +1,6 @@
 # Private content delivery: measured growth
 
-The original classroom key remains server-bound. Packaging and Supabase access are separate capabilities: genuine staging login demonstrates permissions, while guarded build-time sealing demonstrates that the original key opens and extends the existing encrypted release without export. Neither proves 395-plan performance. The 84-plan candidate subsequently passes its recorded hosted acceptance; that does not demonstrate the missing cold/server-memory measurements.
+The original classroom key remains server-bound. Packaging and Supabase access are separate capabilities: genuine staging login demonstrates permissions, while guarded build-time sealing demonstrates that the original key opens and extends the existing encrypted release without export. Neither proves 395-plan performance. The 99-plan release passes its recorded hosted acceptance; that does not demonstrate the missing cold/server-memory measurements.
 
 | Released/candidate plans | Ciphertext bytes | Hash/placement manifest bytes |
 | --- | ---: | ---: |
@@ -9,12 +9,15 @@ The original classroom key remains server-bound. Packaging and Supabase access a
 | 54 | 1,065,947 | 1,136,659 |
 | 64 | 1,229,967 | 1,310,414 |
 | 84 | 1,530,595 | 1,635,662 |
+| 99 | 1,760,831 | 1,880,353 |
 
 Exact per-operation hashes and correction sizes remain in their batch summaries. The early reduction from the original pretty-printed 24-plan file reflected compact serialization, not content removal; preserved plan hashes establish that distinction. Do not extrapolate one fixed size per lesson across unreviewed higher-grade content.
 
 Each selected-plan API request still opens and validates the entire release after current server-side authorisation. The reader requests `catalog=omit`, avoiding a redundant full catalogue. For the unchanged Lesson 1 shape, earlier measurements show 20,092 decoded bytes without the catalogue versus 101,791 with it. Responses remain private/no-store. The encrypted server release and the authenticated selected-response payload are different sizes.
 
 At 64 plans, a sequential final run made five genuine requests per lesson across an unchanged baseline and ten additions. The 50 new-lesson requests had median 665.5 ms, range 475–1,047 ms, with 10,569–17,880 decoded bytes. The proxy, Auth checks and server work all contribute. Earlier 44-/54-plan measurements ran under different validation loads; their medians do not establish a causal performance trend. First observed requests are not guaranteed cold, and subsequent requests do not establish a server cache hit.
+
+At 99 plans, 80 sequential authenticated requests include 75 requests to the fifteen additions: median 662 ms, range 493–4,223 ms, with 10,094–14,940 decoded bytes. The slowest sample was Lesson 10’s first observed request. It was not a demonstrated cold start, and no causal diagnosis is claimed. Conditions differ across batches, so these observations do not isolate release-size effects.
 
 Current browser-heap observations describe browser navigation and PDF generation. Sealing summaries describe the trusted build process. Neither measures hosted function RSS, per-request server heap or a guaranteed cold process. Those tests remain explicitly pending, along with concurrency behaviour and separate decryption/validation timings.
 

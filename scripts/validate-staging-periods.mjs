@@ -37,10 +37,20 @@ try{
     await page.locator('#classroom-stage').selectOption(id);await page.getByRole('button',{name:'Go to stage',exact:true}).click();assert.equal(await page.evaluate(()=>document.activeElement?.id),'teacher-moment-'+id);
     const moment=plan.moments.find(row=>row.id===id),target=page.locator(`[data-instructional-location="${id}"]`);assert.equal(await target.getAttribute('open'),'');assert.ok((await target.locator(':scope > summary').innerText()).includes(`Period ${index+1}`));
     const cue=moment.core.find(group=>group.heading==='Facilitation cue');if(cue)assert.equal(await target.locator('[data-facilitation-cue]').innerText(),plan.fields[cue.fields[0]]);
+    if(process.env.AC_PERIOD_CAPTURE_DIR){
+     fs.mkdirSync(process.env.AC_PERIOD_CAPTURE_DIR,{recursive:true,mode:0o700});
+     for(const width of [320,1280]){
+      await page.setViewportSize({width,height:900});
+      // A desktop-to-mobile resize animates the existing term rail away. Do
+      // not mistake an in-flight transition for the settled reading layout.
+      if(width===320){const dialog=page.getByRole('dialog',{name:'Term map',exact:true});if(await dialog.count())await dialog.getByRole('button',{name:'Close term map',exact:true}).click();await page.waitForFunction(()=>{const rail=document.querySelector('.reader-rail');return rail?.getAttribute('aria-hidden')==='true'&&rail.getBoundingClientRect().right<=1;});}
+      assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1),false);await target.scrollIntoViewIfNeeded();await page.screenshot({path:process.env.AC_PERIOD_CAPTURE_DIR+`/period-${index+1}-${id}-${width}.png`,animations:'disabled'});
+     }
+    }
    }
    periods.push({period:index+1,minutes:45,stages:period.moments.length,firstAndLastTargetsFocused:true,cuesMatchAuthorisedPlan:true});
   }
-  results.plans.push({lessonId:binding.lessonId,periodCount:plan.periods.length,scheduledMinutes:45*plan.periods.length,preparationAndNavigator:true,sameLearnerLesson:true,periods});save();
+  results.plans.push({lessonId:binding.lessonId,periodCount:plan.periods.length,scheduledMinutes:45*plan.periods.length,preparationAndNavigator:true,sameLearnerLesson:true,...(process.env.AC_PERIOD_CAPTURE_DIR?{capturedWidths:[320,1280],noHorizontalOverflow:true}:{}),periods});save();
  }
  assert.equal(results.pageErrors.length,0);console.log(JSON.stringify({plans:results.plans.length,periods:results.plans.map(plan=>plan.periodCount),pageErrors:results.pageErrors}));
 }catch(error){results.failure=error.message;save();throw error;}finally{await browser.close();}

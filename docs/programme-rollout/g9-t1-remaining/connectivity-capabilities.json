@@ -1,0 +1,45 @@
+{
+  "projectRef": "inxshlumnhcgiahxqewe",
+  "projectName": "Applied Commerce Staging",
+  "status": "ACTIVE_HEALTHY",
+  "observedRegion": "eu-west-1",
+  "managedSql": {
+    "connection": "Primary",
+    "mode": "read-only catalog/function/policy inspection",
+    "publicTables": 22,
+    "allPublicTablesRlsEnabled": true,
+    "restrictiveActiveSessionPolicies": 22,
+    "allSessionPoliciesRestrictive": true,
+    "detailedPoliciesInspected": 45,
+    "institutionSessionHelpersInspected": 7,
+    "publicSessionWrapperSecurityDefiner": false,
+    "privateHelpersFixedEmptySearchPath": true,
+    "sessionChecks": [
+      "issued session_id row exists and matches auth.uid",
+      "not_after is null or in future",
+      "Auth user not deleted or banned",
+      "learner profile active"
+    ],
+    "institutionChecks": [
+      "active learner enrolment and active cohort staff",
+      "active school owner/admin for that school",
+      "active platform administrator"
+    ],
+    "privateInspectionHashes": {
+      "policies": "a59a5934e31a722b3e01c9ef849bc9bcf231b8ab68b6c70551e2681618881f0b",
+      "helpers": "176f49112514d5d8deaace978afac3e1244c61abdfcd9d207923fa0c158cfaa2"
+    }
+  },
+  "codingCapabilities": {
+    "supportedAuthAdminFixtureRead": 200,
+    "postgrestRpc": "PASS: genuine roles and synthetic evidence tests",
+    "directPostgresTcp": "NOT CONFIGURED/TESTED",
+    "classroomKeyVisibleInCodingProcess": false,
+    "originalServerBoundKey": "AUTHENTICATED BY GUARDED STAGING BUILD; NOT EXPORTED"
+  },
+  "applicationCapabilities": "Genuine password login, role checks, revocation, logout and persistence separately recorded in batch evidence",
+  "savedDigitalWorkVisibility": "Scoped select policies use can_view_learner, not a per-row submission-status predicate; authorised assigned staff/admins can review saved digital evidence within their permissions. Do not promise that only the learner can read saved notes/answers.",
+  "previousConnectorProbe": "SA-named connection returned INVALID_ARGUMENT; Primary now succeeds. This was not an application authentication or demonstrated network failure.",
+  "maximumInactivityAuthConfiguration": "NOT OBSERVED: project metadata and SQL inspection do not expose the Auth service configuration",
+  "writesPerformedByThisInspection": false
+}
