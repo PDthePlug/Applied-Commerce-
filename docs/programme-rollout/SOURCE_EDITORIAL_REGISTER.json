@@ -100,7 +100,14 @@
       "concern": "The table may encourage minors to copy unsupervised taxi-rank or other unsafe work. Age/work rules and school safeguards require current local verification before any practical task.",
       "proposedWording": "Consider only safe, age-appropriate possibilities with the necessary adult and school permission. Planning or the existing advert alternative is sufficient; no paid or street work is required.",
       "implementationImpact": "Separate owner-reviewed editorial correction only; preserve canonical blocks, prompt splitting, response count and saved identities. Current teacher support provides the relevant local clarification or safeguard without rewriting the learner source.",
-      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED",
+      "externalVerification": {
+        "checkedAt": "2026-10-23",
+        "officialActPage": "https://www.gov.za/documents/basic-conditions-employment-act",
+        "officialOriginalAct": "https://www.gov.za/sites/default/files/gcis_document/201409/a75-97.pdf",
+        "finding": "Original Act section 43 restricts employment under 15/minimum school-leaving age and age-inappropriate or harmful employment; its child definition is under 18. This does not classify every ordinary learning activity as employment.",
+        "limits": "Original official Act read; government page links amended version updated to January 2020, but that consolidated source returned HTTP 403. Full current amendments, regulations and exceptions are not claimed verified."
+      }
     },
     {
       "lessonId": "g8-t2-l27-027",
@@ -210,7 +217,13 @@
       "concern": "Fifty repetitions do not establish automaticity across behaviours and circumstances. The number is not verified and should not become a classroom guarantee.",
       "proposedWording": "Repeated practice can make an action feel more familiar. How long this takes varies; there is no fixed repetition count for every habit.",
       "implementationImpact": "Separate owner-reviewed editorial correction only. Preserve source/response identities; teacher support gives the relevant local distinction without rewriting learner content.",
-      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED",
+      "externalVerification": {
+        "checkedAt": "2026-10-23",
+        "source": "https://doi.org/10.1002/ejsp.674",
+        "retrievedMetadataAndAbstract": "https://api.crossref.org/works/10.1002/ejsp.674",
+        "finding": "The primary study reports substantial variation in modelled automaticity times, not a universal 21-day or fixed-repetition rule. This is a study result, not an individual deadline."
+      }
     },
     {
       "lessonId": "g8-t3-l42-041",
