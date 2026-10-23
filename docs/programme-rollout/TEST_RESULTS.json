@@ -28,18 +28,34 @@
   },
   "rollout": {
     "existingPlans": 24,
-    "newCompleted": 0,
-    "privateUnsealedDrafts": 5,
-    "uncompleted": 371,
-    "notYetDrafted": 366,
-    "blocker": "Original content key or approved secure sealing workflow unavailable"
+    "newCompleted": 5,
+    "privateUnsealedDrafts": 0,
+    "uncompleted": 366,
+    "blocker": null
   },
   "pending": [
-    "First draft batch encryption and genuine rendered/print/responsive verification",
-    "Remaining 371 completed guides",
+    "Remaining 366 individually reviewed and verified guides",
     "Hosted cold-process and server-memory measurements",
     "Configured maximum/inactivity session lifetime",
     "Educator timing trials",
     "Isolated synthetic teaching browser harness rerun (original key dependency)"
-  ]
+  ],
+  "latestBatch": {
+    "commit": "e0e1e6a210b042a6c11c05e186e40d4cc8991d5c",
+    "newPlans": 5,
+    "totalPlans": 29,
+    "nodeTests": 205,
+    "typecheck": "PASS",
+    "lint": "PASS",
+    "stagingBuildAndOriginalKeyScan": "PASS",
+    "genuineCentralTargets": 248,
+    "responsiveCombinations": 162,
+    "instructionalFields": 2066,
+    "printedGuides": 29,
+    "printedPages": 190,
+    "fallbacks": 29,
+    "genuineAuthRlsChecks": 37,
+    "newLessonPersistence": 5,
+    "pageErrors": 0
+  }
 }
