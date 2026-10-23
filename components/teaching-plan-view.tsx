@@ -6,6 +6,7 @@ import availability from "@/content/instructional/teaching-availability.v2.json"
 import type {ClassroomPayload,TeacherGuide} from "@/lib/classroom/model";
 import {validateTeachingPlan,teachingSource,type TeachingPlan,type TeachingMoment,type TeachingGroup} from "@/lib/classroom/teaching-plan";
 import type {UnitContent} from "@/lib/types";
+import {facilitationCue,periodContinuation} from "@/lib/classroom/facilitation";
 
 // Identity/session objects and request generation bind every private response.
 // No URL, mode flag or client-side role claim grants access to the API.
@@ -97,7 +98,7 @@ export function TeachingPreparation({plan,unit,active,onStage,onPrint}:{plan:Tea
  const selected=timed.includes(active)?active:timed[0];
  const href=`/learn/${unit.grade}/term/${unit.term}/${unit.id}`;
  return <aside className="contextual-preparation contextual-private contextual-no-print" aria-label="Teacher preparation and delivery">
-  <details data-instructional-location="preparation"><summary>Prepare to teach · {plan.periods.length} × 45 minutes</summary><div className="contextual-body">
+  <details data-instructional-location="preparation"><summary>Prepare to teach · {plan.periods.length} × 45 minutes · provisional</summary><div className="contextual-body">
    <h2>Educator preparation</h2><Groups plan={plan} groups={plan.preparation}/><h3>Teaching sequence and timing</h3>
    {plan.periods.map((period,index)=><section key={index}><h4 data-instructional-field={period.title}>{plan.fields[period.title]}</h4><ol>{period.moments.map(id=>{const moment=plan.moments.find(m=>m.id===id)!;return <li key={id}>{timing(plan,moment)} · {plan.fields[moment.title]}</li>;})}</ol></section>)}
    <p>Follow teaching order using the navigator. A stage can revisit earlier learner material; the learner reading order remains intact. Later and optional panels describe work outside the scheduled core. Review the draft with your educator team before expanding the programme.</p>
@@ -112,10 +113,12 @@ function Scaffold({guide,fields}:{guide:TeacherGuide;fields:string[]}){
 }
 export function TeachingGuidance({plan,moment,onStage,guide}:{plan:TeachingPlan;moment:TeachingMoment;onStage:(id:string)=>void;guide?:TeacherGuide|null}){
  const timed=moment.schedule==="classroom";const index=timed?plan.periods[moment.period!].moments.indexOf(moment.id):-1;
+ const cue=facilitationCue(plan,moment);const continuation=periodContinuation(plan,moment);
  return <details className="contextual-guidance contextual-private contextual-no-print" data-teaching-stage={timed?moment.id:undefined} data-teaching-activity={timed?undefined:moment.id} data-instructional-location={moment.id} data-source-placement={moment.placement.blockId} onToggle={event=>{if(event.target===event.currentTarget&&event.currentTarget.open&&timed)onStage(moment.id);}}>
   <summary id={`teacher-moment-${moment.id}`}><span className="contextual-summary"><strong>Teacher guidance{timed?` · Stage ${index+1} of ${plan.periods[moment.period!].moments.length}`:""}</strong><span data-instructional-field={moment.title}>{plan.fields[moment.title]}</span><small>{timing(plan,moment)}</small></span><span className="contextual-expand" aria-hidden="true">+</span></summary>
-  <div className="contextual-body" role="region" aria-label={`Teaching support: ${plan.fields[moment.title]}`}><Groups plan={plan} groups={moment.core} guide={guide}/>
-   {moment.depth.length>0&&<details className="contextual-depth"><summary>Deeper teaching support and adaptations</summary><div className="contextual-body"><Groups plan={plan} groups={moment.depth} guide={guide}/></div></details>}
+  <div className="contextual-body" role="region" aria-label={`Teaching support: ${plan.fields[moment.title]}`}>
+   {cue?<><p data-facilitation-cue={moment.id}>{cue}</p>{continuation&&<p className="contextual-period-close">{continuation}</p>}</>:<Groups plan={plan} groups={moment.core} guide={guide}/>}
+   {(cue||moment.depth.length>0)&&<details className="contextual-depth"><summary>Deeper teaching support and adaptations</summary><div className="contextual-body">{cue&&<p>Use the workbook’s existing reading, reflection and activities. The prompts below are optional support; they do not add required learner work.</p>}<Groups plan={plan} groups={cue?[...moment.core,...moment.depth]:moment.depth} guide={guide}/></div></details>}
    <nav className="contextual-actions contextual-next" aria-label={`Teaching transitions for ${plan.fields[moment.title]}`}>{moment.links.map(id=>{const target=plan.moments.find(m=>m.id===id)!;return <button key={id} type="button" onClick={()=>{if(target.schedule==="classroom")onStage(id);jumpTeaching(`teacher-moment-${id}`);}}>Go to {plan.fields[target.title]}{target.period!==null?` · Period ${target.period+1}`:""}</button>;})}<button type="button" onClick={()=>jumpTeaching("classroom-stage")}>Teaching navigator</button></nav>
   </div>
  </details>;

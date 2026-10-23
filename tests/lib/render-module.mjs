@@ -8,6 +8,9 @@ export function renderModule(entry,overrides={}){
  const cache=new Map();
  function url(file){
   file=path.resolve(file);if(cache.has(file))return cache.get(file);
+  if(file.endsWith('.json')){
+   const result='data:text/javascript;base64,'+Buffer.from('export default '+fs.readFileSync(file,'utf8')+';').toString('base64');cache.set(file,result);return result;
+  }
   let code=ts.transpileModule(overrides[file]??fs.readFileSync(file,'utf8'),{compilerOptions:{module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022,jsx:ts.JsxEmit.ReactJSX}}).outputText;
   code=code.replace(/from "([^"]+)"/g,(_,ref)=>{
    if(ref.startsWith('@/')||ref.startsWith('.')){

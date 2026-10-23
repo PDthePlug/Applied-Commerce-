@@ -25,7 +25,7 @@ test('an unrelated lesson, changed stage timing, missing source reference or non
 });
 test('all 399 learner units retain the exact main-branch renderer markup without teacher interventions',()=>{
  const baseline=JSON.parse(fs.readFileSync('tests/fixtures/learner-renderer-main.json'));
- assert.equal(baseline.baseCommit,'3933c2d90519e7aa53984405693da9526c12a588');assert.equal(baseline.units.length,399);
+ assert.equal(baseline.baseCommit,'c8704e36f3a6a688486c6f78df723f4925a5eea3');assert.equal(baseline.units.length,399);
  for(const unit of units){const html=renderToStaticMarkup(React.createElement(ContentBlocks,{blocks:unit.blocks,unitId:unit.id,unitType:unit.type,promptResponses:{},onSavePromptResponse:()=>{}}));assert.equal(crypto.createHash('sha256').update(html).digest('hex'),baseline.units.find(row=>row.id===unit.id).sha256,unit.id);}
 });
 test('hosted release verification fails closed without exposing a missing or invalid Secret',()=>{

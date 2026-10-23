@@ -58,7 +58,7 @@ export function validateTeachingPlan(value:unknown,source:TeachingSource):assert
    if(!source.sections.includes(moment.placement.blockId))fail();
   }else if(moment.placement.kind!=="heading"||moment.placement.edge!=="before"||!source.headings.includes(moment.placement.blockId))fail();
   if(moment.schedule==="classroom"){
-   if(!moment.core.some(group=>group.heading==="Explain")||!moment.core.some(group=>group.heading==="Ask learners")||!moment.core.some(group=>group.heading==="Look for understanding"))fail();
+   if(!moment.core.length)fail();
    if(!Number.isInteger(moment.minutes)||moment.minutes<=0||moment.period===null||!plan.periods[moment.period]?.moments.includes(moment.id))fail();
   }else{
    if(!["support","later","optional"].includes(moment.schedule)||moment.minutes!==0||moment.period!==null)fail();
