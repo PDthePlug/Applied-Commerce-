@@ -425,7 +425,8 @@
 }
 .structured-part-label{
   margin-bottom:8px;
-  font-size:9px;
+  font-size:14px;
+  letter-spacing:0;
 }
 .structured-prompt-helper{
   margin-top:8px;
@@ -695,3 +696,33 @@
 .portfolio-capture-body>p{margin:10px 0 0!important;color:var(--muted)!important;font-size:11px!important;line-height:1.55!important}
 .portfolio-capture-disclosure>summary:focus-visible{outline:3px solid color-mix(in srgb,var(--ac-user-accent,#8b713e) 50%,white);outline-offset:-3px}
 @media(max-width:520px){.portfolio-capture-disclosure>summary{padding:11px}.portfolio-capture-body{padding:0 11px 11px}}
+
+/* Restore the learner books' visual language without changing curriculum or fields. */
+.lesson-symbol{
+  display:inline-block;
+  flex:none;
+  font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif;
+  font-size:22px;
+  font-weight:400;
+  line-height:1.25;
+  letter-spacing:0;
+  text-transform:none;
+  vertical-align:middle;
+}
+.source-section>.lesson-symbol{margin-right:10px}
+.learning-outcomes-symbols{display:inline-flex;align-items:center;gap:7px;margin-right:10px;vertical-align:baseline;white-space:nowrap}
+.story-heading-block>span,.portfolio-capture-disclosure>summary>span{display:flex;align-items:center;gap:9px}
+.lesson-level-symbol{margin-right:5px;font-size:19px}
+.lesson-icon-key{margin:18px 0;color:var(--ink)}
+.lesson-icon-key>summary{display:flex;align-items:center;gap:8px;width:fit-content;min-height:44px;cursor:pointer;list-style:none;font-size:13px;font-weight:700}
+.lesson-icon-key>summary::-webkit-details-marker{display:none}
+.lesson-icon-key>summary>svg{width:16px;height:16px;transition:transform .18s ease}
+.lesson-icon-key[open]>summary>svg{transform:rotate(180deg)}
+.lesson-icon-key>summary:focus-visible{outline:2px solid var(--teal);outline-offset:4px;border-radius:4px}
+.lesson-icon-key>dl{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 24px;margin:12px 0 20px}
+.lesson-icon-key dt{display:flex;align-items:center;gap:9px;font-size:13px;font-weight:700}
+.lesson-icon-key dd{margin:5px 0 0 31px;color:var(--muted);font-size:13px;line-height:1.55}
+.lesson-icon-key .lesson-level-key-label{margin:0 0 8px;font-size:13px;font-weight:700}
+.lesson-icon-key>ul{display:flex;flex-wrap:wrap;gap:12px 20px;list-style:none;margin:0 0 20px;padding:0}
+.lesson-icon-key>ul>li{display:flex;align-items:center;gap:7px;font-size:13px}
+@media(max-width:520px){.lesson-icon-key>dl{grid-template-columns:1fr}.lesson-symbol{font-size:21px}.lesson-level-symbol{font-size:18px}}
