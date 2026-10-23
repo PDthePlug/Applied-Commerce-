@@ -709,6 +709,7 @@
   vertical-align:middle;
 }
 .source-section>.lesson-symbol{margin-right:10px}
+.learning-outcomes-symbols{display:inline-flex;align-items:center;gap:7px;margin-right:10px;vertical-align:baseline;white-space:nowrap}
 .story-heading-block>span,.portfolio-capture-disclosure>summary>span{display:flex;align-items:center;gap:9px}
 .lesson-level-symbol{margin-right:5px;font-size:19px}
 .lesson-icon-key{margin:18px 0;color:var(--ink)}

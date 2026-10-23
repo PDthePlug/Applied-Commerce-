@@ -4,7 +4,7 @@ import fs from "node:fs";
 import ts from "typescript";
 import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
-import { typescriptModule } from "../scripts/semantic-census.mjs";
+import { typescriptModule, runtimeUnits } from "../scripts/semantic-census.mjs";
 
 const iconsUrl=typescriptModule("lib/lesson-icons.ts");
 const {lessonHeadingText}=await import(iconsUrl);
@@ -56,4 +56,32 @@ test("icon key explains the seven active learning cues and six learning levels",
   assert.equal((html.match(/<li>/g)||[]).length,6);
   assert.match(html,/<summary>Lesson icons/);
   assert.doesNotMatch(html,/Tension|Experiment Log/);
+});
+
+test("outcome introductions restore the original symbols once beside unchanged text",()=>{
+  const text="By the end of this lesson, you will be able to:";
+  for(const authored of [false,true]){
+    const html=render("LearningOutcomesIntro",{text:authored?`🔍💡🛠️ ${text}`:text,symbols:"🔍💡🛠️"});
+    for(const symbol of ["🔍","💡","🛠️"]) assert.equal(html.split(symbol).length-1,1);
+    assert.ok(html.includes(text));
+    assert.match(html,/aria-hidden="true" data-outcome-icons="true"/);
+  }
+  assert.doesNotMatch(render("LearningOutcomesIntro",{text}),/data-outcome-icons/);
+});
+
+test("source-mapped outcome symbols cover the full Grade 8 term without guessing missing levels",async()=>{
+  const metadata=JSON.parse(fs.readFileSync("lib/lesson-outcome-icons.json","utf8"));
+  const units=await runtimeUnits();
+  const byId=new Map(units.map(unit=>[unit.id,unit]));
+  for(const [id,symbols] of Object.entries(metadata.symbolsByUnit)){
+    assert.ok(byId.has(id),id);
+    assert.match(symbols,/^(?:🔍|💡|🛠️|🔬|⚖️|🌟)+$/u,id);
+  }
+  for(const unit of units.filter(unit=>unit.grade===8&&unit.term===1)){
+    assert.ok(metadata.symbolsByUnit[unit.id],unit.id);
+  }
+  assert.equal(metadata.symbolsByUnit["g8-t1-l01-001"],"🔍💡🛠️");
+  assert.equal(metadata.symbolsByUnit["g8-t1-l02-002"],"🔍💡🛠️");
+  assert.equal(metadata.symbolsByUnit["g8-t1-l20-020"],"⚖️🌟");
+  for(const id of metadata.unmatchedIntroductions) assert.equal(metadata.symbolsByUnit[id],undefined);
 });

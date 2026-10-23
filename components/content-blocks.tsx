@@ -4,7 +4,8 @@ import { responseView, persistResponseKey } from "@/lib/response-identity";
 import { Plus } from "lucide-react";
 import type { ContentBlock, TextBlockType, UnitContent } from "@/lib/types";
 import { cleanMarkup, isRemovedLogBlock, sanitizeRemovedLogReferences } from "@/lib/portfolio-model";
-import { DeepeningInsightPanel, LearningNotice, LessonSectionHeading, PortfolioCaptureNotice, ResponseSurface, StoryHeading, ThinkingEquationNotice } from "./presentation-system";
+import { DeepeningInsightPanel, LearningNotice, LearningOutcomesIntro, LessonSectionHeading, PortfolioCaptureNotice, ResponseSurface, StoryHeading, ThinkingEquationNotice } from "./presentation-system";
+import outcomeIcons from "@/lib/lesson-outcome-icons.json";
 import { authoredScale, choiceMeaning, learningSections, sourceCopy, valueSelection } from "@/lib/semantic-learning";
 import { RankingControl, RatingControl, ValuesControl } from "./semantic-controls";
 
@@ -244,8 +245,11 @@ function looksLikeEquationValue(block?:ContentBlock){
   return true;
 }
 
-function TextBlockView({block}:{block:Extract<ContentBlock,{kind:"text"}>}) {
+function TextBlockView({block,unitId}:{block:Extract<ContentBlock,{kind:"text"}>;unitId:string}) {
   const text=displayText(block.text);
+  if(/^(?:(?:🔍|💡|🛠️?|🔬|⚖️?|🌟)\s*)*By the end of this lesson, you will be able to:$/u.test(text)){
+    return <LearningOutcomesIntro text={text} symbols={(outcomeIcons.symbolsByUnit as Record<string,string>)[unitId]}/>;
+  }
   if(PART_HEADING_RE.test(text)) return <h3 className="module-part-heading">{text}</h3>;
   if(/^My Term\s+\d+\s+Portfolio Entry/i.test(text)) return <h3 className="module-section-heading">{text}</h3>;
   switch(block.type){
@@ -857,7 +861,7 @@ export function ContentBlocks({blocks,unitId,unitType="lesson",promptResponses:s
 
       if(block.type==="activity"||block.type==="reflection"||block.type==="checkpoint"){
         context=block.type;
-        views.push(<TextBlockView block={block} key={`text-${index}`}/>);
+        views.push(<TextBlockView block={block} unitId={unitId} key={`text-${index}`}/>);
         continue;
       }
 
@@ -866,7 +870,7 @@ export function ContentBlocks({blocks,unitId,unitType="lesson",promptResponses:s
           views.push(<p className="equation-reference" key={`formula-${index}`}>{displayText(block.text)}</p>);
           continue;
         }
-        views.push(<TextBlockView block={block} key={`text-${index}`}/>);
+        views.push(<TextBlockView block={block} unitId={unitId} key={`text-${index}`}/>);
         continue;
       }
 
@@ -1044,7 +1048,7 @@ export function ContentBlocks({blocks,unitId,unitType="lesson",promptResponses:s
         continue;
       }
 
-      views.push(<TextBlockView block={block} key={`text-${index}`}/>);
+      views.push(<TextBlockView block={block} unitId={unitId} key={`text-${index}`}/>);
     }
 
     flush();
