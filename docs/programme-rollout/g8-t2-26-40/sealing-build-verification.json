@@ -1,0 +1,51 @@
+[
+  {
+    "preservedPlans": 29,
+    "addedPlans": 15,
+    "totalPlans": 44,
+    "addedPeriods": 17,
+    "newPlacements": 130,
+    "version": "classroom-v2.g8-t2-complete.2026-10-23",
+    "originalKeyAuthenticated": true,
+    "keyExported": false,
+    "plaintextWritten": false,
+    "sourceValidationMs": 699,
+    "buildProcessOnly": {
+      "heapBefore": 49477400,
+      "heapAfter": 67437896,
+      "rssAfter": 241217536
+    },
+    "files": [
+      {
+        "name": "teaching-plans.v2.enc.json",
+        "bytes": 916203,
+        "sha256": "37297aaf0202fe9c7d62d8d6608c3e60800900430330c8e523c1f5b146fb1fac"
+      },
+      {
+        "name": "teaching-manifest.v2.json",
+        "bytes": 975420,
+        "sha256": "d224c00c8f9fe6ddb45ce91f7d9ff64a163be55c8dec7049f2b80b063a38e4c3"
+      },
+      {
+        "name": "teaching-availability.v2.json",
+        "bytes": 967,
+        "sha256": "dd6f2e00febda2d06e225db81609d804e6cc15dca96b2bb987fb400964d654a4"
+      }
+    ],
+    "stagingBuildSealing": "PASS",
+    "hostedRoleTesting": "NOT_RUN"
+  },
+  {
+    "teachingPlans": 44,
+    "termLessons": 20,
+    "teachingPeriods": 55,
+    "instructionalFields": 2546,
+    "classroomServerBuildVerification": "PASS",
+    "guides": 5,
+    "periods": 7,
+    "contextualEnrichment": "PASS",
+    "contextualInstructionalFields": 100,
+    "privateKeyExported": false,
+    "runtimeEducatorLearnerAccess": "NOT TESTED"
+  }
+]
