@@ -35,4 +35,7 @@
 
 @page classroom-teacher{size:A4;margin:12mm}
 @media print{body:has(.contextual-printing),body:has(.standalone-teaching-plan){page:classroom-teacher}}
+/* The named page already supplies teacher-guide margins. Staff report padding
+   would add a second margin and can spill an empty final page. */
+@media print{body:has(.standalone-teaching-plan) .facilitator-shell{padding:0}}
 @media print{body:has(.contextual-printing)>next-route-announcer,body:has(.standalone-teaching-plan)>next-route-announcer{display:none!important}}

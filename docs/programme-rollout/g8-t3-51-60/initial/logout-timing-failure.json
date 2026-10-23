@@ -1,0 +1,7 @@
+{
+  "scope": "Initial runner sampled immediately after clicking Sign out without waiting for asynchronous completion",
+  "observedStatus": 403,
+  "expectedCompletedStatus": 401,
+  "retainedSessionAfterCompletedLogout": "NOT DEMONSTRATED; focused completed-logout checks subsequently pass with Auth 204, zero Auth cookies and API 401",
+  "runnerCorrection": "Wait for the signed-out form before testing API denial; do not accept a 403 as proof of completed logout"
+}
