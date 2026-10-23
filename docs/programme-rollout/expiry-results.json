@@ -1,0 +1,17 @@
+{
+  "scope": "Genuine naturally expired original JWT; no refresh. Does not certify configured maximum/inactivity session lifetime.",
+  "status": "PASS",
+  "secondsRemaining": -2391,
+  "checks": [
+    {
+      "endpoint": "/auth/v1/user",
+      "status": 403,
+      "expiryReason": true
+    },
+    {
+      "endpoint": "/rest/v1/prompt_responses?select=id&limit=1",
+      "status": 401,
+      "expiryReason": true
+    }
+  ]
+}

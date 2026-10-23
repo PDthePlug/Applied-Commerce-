@@ -23,10 +23,10 @@ test('an unrelated lesson, changed stage timing, missing source reference or non
  const missing=structuredClone(unit);missing.blocks=missing.blocks.filter(b=>b.id!=='c9786145cf517bdd5a05c00d-1');assert.throws(()=>contextualAlignment(missing,structuralGuide));
  const ungrouped=structuredClone(unit);ungrouped.blocks.find(b=>b.id==='c9786145cf517bdd5a05c00d-1').type='paragraph';assert.throws(()=>contextualAlignment(ungrouped,structuralGuide));
 });
-test('all 399 learner units retain the exact main-branch renderer markup without teacher interventions',()=>{
+test('all 399 learner units preserve main-branch wording and controls apart from the approved checkpoint layout wrapper',()=>{
  const baseline=JSON.parse(fs.readFileSync('tests/fixtures/learner-renderer-main.json'));
  assert.equal(baseline.baseCommit,'c8704e36f3a6a688486c6f78df723f4925a5eea3');assert.equal(baseline.units.length,399);
- for(const unit of units){const html=renderToStaticMarkup(React.createElement(ContentBlocks,{blocks:unit.blocks,unitId:unit.id,unitType:unit.type,promptResponses:{},onSavePromptResponse:()=>{}}));assert.equal(crypto.createHash('sha256').update(html).digest('hex'),baseline.units.find(row=>row.id===unit.id).sha256,unit.id);}
+ for(const unit of units){const html=renderToStaticMarkup(React.createElement(ContentBlocks,{blocks:unit.blocks,unitId:unit.id,unitType:unit.type,promptResponses:{},onSavePromptResponse:()=>{}}));const preserved=html.replace(/<div class="checkpoint-question">([^]*?)<\/div>/g,'$1');assert.equal(crypto.createHash('sha256').update(preserved).digest('hex'),baseline.units.find(row=>row.id===unit.id).sha256,unit.id);}
 });
 test('hosted release verification fails closed without exposing a missing or invalid Secret',()=>{
  for(const key of ['', 'SYNTHETIC_INVALID_KEY_SENTINEL']){

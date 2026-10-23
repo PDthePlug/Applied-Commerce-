@@ -53,6 +53,9 @@ export function alignedTeachingPlan(unit:UnitContent,plan:TeachingPlan|null){
 }
 export function jumpTeaching(id:string){
  const target=document.getElementById(id);if(!target)return;
+ // The central navigator must also reveal targets inside a collapsed source
+ // deepening passage or contextual disclosure, including deliberate revisits.
+ for(let parent=target.parentElement;parent;parent=parent.parentElement)if(parent instanceof HTMLDetailsElement)parent.open=true;
  let focus=target;
  if(target instanceof HTMLDetailsElement)focus=target.querySelector<HTMLElement>(":scope > summary")??target;
  if(target.matches(".learning-section")){
@@ -95,7 +98,7 @@ export function TeachingModeControl({teacher}:{teacher:ReturnType<typeof useTeac
 }
 export function TeachingPreparation({plan,unit,active,onStage,onPrint}:{plan:TeachingPlan;unit:UnitContent;active:string;onStage:(id:string)=>void;onPrint:()=>void}){
  const timed=plan.periods.flatMap(period=>period.moments);
- const selected=timed.includes(active)?active:timed[0];
+ const selected=plan.moments.some(moment=>moment.id===active)?active:timed[0];
  const href=`/learn/${unit.grade}/term/${unit.term}/${unit.id}`;
  return <aside className="contextual-preparation contextual-private contextual-no-print" aria-label="Teacher preparation and delivery">
   <details data-instructional-location="preparation"><summary>Prepare to teach · {plan.periods.length} × 45 minutes · provisional</summary><div className="contextual-body">
@@ -103,7 +106,7 @@ export function TeachingPreparation({plan,unit,active,onStage,onPrint}:{plan:Tea
    {plan.periods.map((period,index)=><section key={index}><h4 data-instructional-field={period.title}>{plan.fields[period.title]}</h4><ol>{period.moments.map(id=>{const moment=plan.moments.find(m=>m.id===id)!;return <li key={id}>{timing(plan,moment)} · {plan.fields[moment.title]}</li>;})}</ol></section>)}
    <p>Follow teaching order using the navigator. A stage can revisit earlier learner material; the learner reading order remains intact. Later and optional panels describe work outside the scheduled core. Review the draft with your educator team before expanding the programme.</p>
   </div></details>
-  <nav aria-label="Classroom teaching stages"><label htmlFor="classroom-stage">Teaching sequence · {plan.periods.length===1?"45 minutes":"two 45-minute periods"}</label><div className="contextual-stage-picker"><select id="classroom-stage" value={selected} onChange={event=>onStage(event.target.value)}>{plan.periods.map((period,index)=><optgroup key={index} label={`Period ${index+1}`}>{period.moments.map(id=>{const moment=plan.moments.find(m=>m.id===id)!;return <option key={id} value={id}>{timing(plan,moment)} · {plan.fields[moment.title]}</option>;})}</optgroup>)}</select><button type="button" onClick={()=>jumpTeaching(`teacher-moment-${selected}`)}>Go to stage</button></div></nav>
+  <nav aria-label="Classroom teaching stages"><label htmlFor="classroom-stage">Teaching sequence · {plan.periods.length===1?"45 minutes":"two 45-minute periods"}</label><div className="contextual-stage-picker"><select id="classroom-stage" value={selected} onChange={event=>onStage(event.target.value)}>{plan.periods.map((period,index)=><optgroup key={index} label={`Period ${index+1}`}>{period.moments.map(id=>{const moment=plan.moments.find(m=>m.id===id)!;return <option key={id} value={id}>{timing(plan,moment)} · {plan.fields[moment.title]}</option>;})}</optgroup>)}{plan.moments.some(moment=>moment.schedule!=="classroom")&&<optgroup label="Contextual support and later work">{plan.moments.filter(moment=>moment.schedule!=="classroom").map(moment=><option key={moment.id} value={moment.id}>{timing(plan,moment)} · {plan.fields[moment.title]}</option>)}</optgroup>}</select><button type="button" onClick={()=>jumpTeaching(`teacher-moment-${selected}`)}>Go to stage</button></div></nav>
   <details className="contextual-tools"><summary>Presentation, print and fallback</summary><div className="contextual-body"><div className="contextual-actions"><a href={`${href}?presentation=1`} target="_blank" rel="noopener noreferrer">Open learner presentation in a new window</a><button type="button" onClick={onPrint}>Print complete teacher preparation</button><Link href={`/facilitator/classroom?lesson=${unit.id}`}>Standalone guide</Link></div><p>Keep guidance on your own screen and share only the learner presentation window. No device synchronisation is provided. Learner notes and completion controls are available in Learner View.</p></div></details>
  </aside>;
 }
@@ -119,7 +122,6 @@ export function TeachingGuidance({plan,moment,onStage,guide}:{plan:TeachingPlan;
   <div className="contextual-body" role="region" aria-label={`Teaching support: ${plan.fields[moment.title]}`}>
    {cue?<><p data-facilitation-cue={moment.id}>{cue}</p>{continuation&&<p className="contextual-period-close">{continuation}</p>}{timed&&moment.period!<plan.periods.length-1&&index===plan.periods[moment.period!].moments.length-1&&!continuation&&<p className="contextual-period-close">End of Period {moment.period!+1}. Keep your work; continue this same lesson in Period {moment.period!+2}.</p>}{timed&&moment.period!>0&&index===0&&<p>Continue the same learner lesson. Reopen your earlier work before starting this period.</p>}</>:<Groups plan={plan} groups={moment.core} guide={guide}/>}
    {(cue||moment.depth.length>0)&&<details className="contextual-depth"><summary>Deeper teaching support and adaptations</summary><div className="contextual-body">{cue&&<p>Use the workbook’s existing reading, reflection and activities. The prompts below are optional support; they do not add required learner work.</p>}<Groups plan={plan} groups={cue?[...moment.core,...moment.depth]:moment.depth} guide={guide}/></div></details>}
-   <nav className="contextual-actions contextual-next" aria-label={`Teaching transitions for ${plan.fields[moment.title]}`}>{moment.links.map(id=>{const target=plan.moments.find(m=>m.id===id)!;return <button key={id} type="button" onClick={()=>{if(target.schedule==="classroom")onStage(id);jumpTeaching(`teacher-moment-${id}`);}}>Go to {plan.fields[target.title]}{target.period!==null?` · Period ${target.period+1}`:""}</button>;})}<button type="button" onClick={()=>jumpTeaching("classroom-stage")}>Teaching navigator</button></nav>
   </div>
  </details>;
 }

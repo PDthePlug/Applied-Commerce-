@@ -405,9 +405,15 @@ function StructuredResponseGroup({
           compact={compact}
           tone={tone}
           prompt={<>
-            {(tone==="checkpoint"||(many&&tone!=="assessment"))&&<span className="structured-part-label">{startNumber+index}.</span>}
+            {tone==="checkpoint"?<div className="checkpoint-question">
+              <span className="structured-part-label">{startNumber+index}.</span>
+              <p className="question-prompt">{part.prompt}</p>
+              {part.helper&&<small className="structured-prompt-helper">{part.helper}</small>}
+            </div>:<>
+            {(many&&tone!=="assessment")&&<span className="structured-part-label">{startNumber+index}.</span>}
             <p className="question-prompt">{part.prompt}</p>
             {part.helper&&<small className="structured-prompt-helper">{part.helper}</small>}
+            </>}
           </>}
         >
           <ResponseArea
