@@ -28,35 +28,68 @@
   },
   "rollout": {
     "existingPlans": 24,
-    "newCompleted": 20,
+    "newCompleted": 30,
     "privateUnsealedDrafts": 0,
-    "uncompleted": 351,
+    "uncompleted": 341,
     "blocker": null
   },
   "pending": [
-    "Remaining 351 individually reviewed and verified guides",
+    "Remaining 341 individually reviewed and verified guides",
     "Hosted cold-process and server-memory measurements",
     "Configured maximum/inactivity session lifetime",
     "Educator timing trials",
     "Isolated synthetic teaching browser harness rerun (original key dependency)"
   ],
   "latestBatch": {
-    "testedCommit": "a2fce914c52b6a08f7b5e7252dea4ca2c17c60ea",
-    "totalPlans": 44,
-    "newPlansInThisBatch": 15,
-    "newCompletedAcrossRollout": 20,
-    "remaining": 351,
-    "nodeTests": 206,
-    "finalInstructionalFields": 2546,
-    "finalNavigatorTargets": 378,
-    "initialNewLessonResponsiveCombinations": 270,
-    "correctedGuideResponsiveCombinations": 54,
-    "printedGuides": 44,
-    "printedPages": 240,
-    "genuineNewLessonPersistence": 15,
-    "correctedGuideFreshLoginRechecks": 3,
-    "fallbacks": 44,
-    "originalLearnerUnits": 399,
-    "sourceChangesApplied": false
+    "projectRef": "inxshlumnhcgiahxqewe",
+    "totalPlans": 54,
+    "newCompletedAcrossRollout": 30,
+    "remaining": 341,
+    "integratedClassroomCommit": "40429954297d1749be28ed9c5b0ed1a2c4ea2bc4",
+    "completeFallbackCommit": "308549ef9862fae6c993314db09aadf4b8db629d",
+    "stagingURL": "https://applied-commerce-sa-staging-agxnfriat.vercel.app",
+    "genuine": {
+      "instructionalFields": 2871,
+      "centralTargets": 467,
+      "responsiveCombinations": 252,
+      "directNewLessonPersistence": 10,
+      "integratedPDFGuides": 54,
+      "integratedPDFPages": 272,
+      "completeFallbacks": 54,
+      "completeFallbackFields": 2871,
+      "benchmarkFallbackPDFs": 5,
+      "benchmarkFallbackPDFPages": 63,
+      "pdfContentChecks": {
+        "pdfs": 59,
+        "fields": 3512,
+        "missingFields": 0,
+        "layoutWhitespaceDifferences": 24
+      },
+      "authRlsChecks": 37
+    },
+    "local": {
+      "nodeTests": 210,
+      "typecheck": "PASS",
+      "lint": "PASS",
+      "runtime": {
+        "lessons": 395,
+        "assessments": 4,
+        "stableBlocks": 20766
+      }
+    },
+    "delivery": {
+      "sequentialFinalRequests": 15,
+      "medianMs": 1000,
+      "coldProcess": "NOT DEMONSTRATED",
+      "hostedServerMemory": "NOT MEASURED"
+    },
+    "sourceChangesApplied": false,
+    "pending": [
+      "Remaining 341 guides",
+      "Genuine three-period lesson (next batch)",
+      "Educator timing trials",
+      "Hosted cold-process/server-memory measurements",
+      "Configured maximum/inactivity session lifetime"
+    ]
   }
 }

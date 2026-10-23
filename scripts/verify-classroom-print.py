@@ -13,11 +13,19 @@ parser = argparse.ArgumentParser()
 parser.add_argument("--pdf-dir", required=True, type=pathlib.Path)
 parser.add_argument("--suffix", default="")
 parser.add_argument("--report", required=True, type=pathlib.Path)
+parser.add_argument("--lessons", help="Explicit comma-separated subset; default requires every released guide")
 args = parser.parse_args()
 manifest = json.loads(pathlib.Path("content/instructional/teaching-manifest.v2.json").read_text())
+selected = manifest["plans"]
+if args.lessons:
+    lesson_ids = args.lessons.split(",")
+    known = {plan["lessonId"] for plan in selected}
+    if len(set(lesson_ids)) != len(lesson_ids) or not all(item in known for item in lesson_ids):
+        parser.error("Every selected lesson must be a unique released identity")
+    selected = [plan for plan in selected if plan["lessonId"] in lesson_ids]
 results = []
 namespace = "{http://www.w3.org/1999/xhtml}"
-for plan in manifest["plans"]:
+for plan in selected:
     pdf = args.pdf_dir / (plan["lessonId"] + args.suffix + ".pdf")
     raw = subprocess.run(["pdftotext", "-bbox", str(pdf), "-"],
                          check=True, capture_output=True).stdout
@@ -38,9 +46,11 @@ for plan in manifest["plans"]:
                     "pageBounds": pages})
 passed = sum(row["marginsPass"] for row in results)
 report = {"guides": len(results), "guidesPassing": passed,
+          "releasedGuides": len(manifest["plans"]),
+          "scope": "explicit selected lessons" if args.lessons else "all released guides",
           "check": "Text stays within 12 mm A4 margins, allowing 2 pt measurement tolerance; all pages contain text.",
           "results": results}
 args.report.write_text(json.dumps(report, indent=2) + "\n")
 print(json.dumps({"guides": len(results), "guidesPassing": passed,
                   "pages": sum(row["pages"] for row in results)}))
-raise SystemExit(0 if passed == len(manifest["plans"]) else 1)
+raise SystemExit(0 if passed == len(selected) else 1)
