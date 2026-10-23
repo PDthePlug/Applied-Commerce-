@@ -1,5 +1,5 @@
 {
-  "scope": "Preliminary source reading: Grade 8 Term 2 Lessons 21–25; not a completed teaching-plan batch",
+  "scope": "Individually read Grade 8 Term 2 Lessons 21–40; separate unapplied source proposals",
   "sourceChangesApplied": false,
   "entries": [
     {
@@ -61,6 +61,136 @@
       "proposedWording": "For this simplified example, subtract the listed cash payments from the listed cash receipts to find the cash surplus or shortfall. A full profit calculation also considers stock, credit and the period to which costs belong.",
       "implementationImpact": "Conceptual wording needs separate owner review; this is not an authorised canonical rewrite. Preserve journals and answers. Optional teacher explanation can distinguish cash records from a complete profit calculation without adding an activity.",
       "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g8-t2-l26-026",
+      "blockId": "426529c8ec49b03b3a447a2b-1",
+      "exactPassage": "Myah thinks about her own income — the coins from her mother, the occasional R5 from helping a neighbour. All active. All requiring someone's effort. She writes: Is there a way to earn money that does not require trading time for it? Is that even possible for someone my age?",
+      "category": "Material classification inaccuracy",
+      "concern": "Money given to Myah is a transfer to her, not her active earnings merely because someone else worked for it.",
+      "proposedWording": "Myah receives gifts from her mother and sometimes earns R5 by helping a neighbour. The first is a transfer to her; the second is active income.",
+      "implementationImpact": "Separate owner-reviewed editorial correction only; preserve canonical blocks, prompt splitting, response count and saved identities. Current teacher support provides the relevant local clarification or safeguard without rewriting the learner source.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g8-t2-l26-026",
+      "blockId": "ffe7c0075c864516ffde79a1-1",
+      "exactPassage": "Passive income: A small stokvel payout once a year. Interest on savings (very small, but something).",
+      "category": "Material classification inaccuracy",
+      "concern": "A stokvel payout may return contributions and is not automatically additional passive income. Different arrangements need distinction.",
+      "proposedWording": "Investment returns may include savings interest. A stokvel payout can include money previously contributed; identify any actual return separately.",
+      "implementationImpact": "Separate owner-reviewed editorial correction only; preserve canonical blocks, prompt splitting, response count and saved identities. Current teacher support provides the relevant local clarification or safeguard without rewriting the learner source.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g8-t2-l26-026",
+      "blockId": "b92388435f1ddbbe15d7809f-1",
+      "exactPassage": "Passive income = money comes in without active work. Examples: interest from savings, rent from property, dividends from shares.",
+      "category": "Missing contextual explanation",
+      "concern": "The introductory definition can imply effortless, risk-free receipts; rent and investments require resources and may need continuing work.",
+      "proposedWording": "Passive income is less directly tied to current working hours, such as some investment returns. It can require resources, prior work, ongoing management and risk.",
+      "implementationImpact": "Separate owner-reviewed editorial correction only; preserve canonical blocks, prompt splitting, response count and saved identities. Current teacher support provides the relevant local clarification or safeguard without rewriting the learner source.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g8-t2-l27-027",
+      "blockId": "81b4ea62c2a98c11a1c9ef7d-1",
+      "exactPassage": "[[\"Way to Earn\",\"Example\"],[\"Helping neighbours\",\"Wash car, walk dog, fetch goods\"],[\"Selling things\",\"Sweets, cool drink, handmade items\"],[\"Skills\",\"Braiding hair, fixing phones, tutoring\"],[\"Chores at home\",\"Sometimes paid, sometimes not\"],[\"Small jobs\",\"Assist at spaza shop, help at taxi rank\"]]",
+      "category": "Specific classroom safety concern",
+      "concern": "The table may encourage minors to copy unsupervised taxi-rank or other unsafe work. Age/work rules and school safeguards require current local verification before any practical task.",
+      "proposedWording": "Consider only safe, age-appropriate possibilities with the necessary adult and school permission. Planning or the existing advert alternative is sufficient; no paid or street work is required.",
+      "implementationImpact": "Separate owner-reviewed editorial correction only; preserve canonical blocks, prompt splitting, response count and saved identities. Current teacher support provides the relevant local clarification or safeguard without rewriting the learner source.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g8-t2-l27-027",
+      "blockId": "1a03c0f4dfebec71cea30e11-1",
+      "exactPassage": "But: R10 a day = R70 a week = R280 a month = R3,360 a year",
+      "category": "Material arithmetic/time-model inconsistency",
+      "concern": "The daily and weekly amounts are correct, but twelve four-week months cover only 48 weeks, not a full calendar year.",
+      "proposedWording": "R10 a day is R70 in seven days, R280 in four weeks and R3,650 across 365 days. State the period used; actual earnings may vary.",
+      "implementationImpact": "Separate owner-reviewed editorial correction only; preserve canonical blocks, prompt splitting, response count and saved identities. Current teacher support provides the relevant local clarification or safeguard without rewriting the learner source.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g8-t2-l31-031",
+      "blockId": "3e9b207b9bde5d76c5de6d4e-1",
+      "exactPassage": "Music (upbeat = spend more)",
+      "category": "Claim requiring current external verification",
+      "concern": "The asserted universal music/spending relationship is unsupported here and may depend on conditions. No external verification is claimed.",
+      "proposedWording": "Music and other shop design choices may influence attention and purchasing. Notice the possible influence without assuming it affects everyone in the same way.",
+      "implementationImpact": "Separate owner-reviewed editorial correction only; preserve canonical blocks, prompt splitting, response count and saved identities. Current teacher support provides the relevant local clarification or safeguard without rewriting the learner source.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g8-t2-l34-034",
+      "blockId": "4bec2b93898968218e6c5ae1-1",
+      "exactPassage": "[[\"Item\",\"Cheap Price\",\"What Happens\",\"Real Cost\"],[\"Shoes\",\"R80\",\"Fall apart in 2 months\",\"Buy again = R160\"],[\"Phone\",\"R500\",\"Breaks quickly\",\"Buy again = R1000\"],[\"Food\",\"R5\",\"Makes you sick\",\"Medicine + suffering\"]]",
+      "category": "Missing context with a specific food-safety implication",
+      "concern": "The table links low price to illness. Price alone does not establish safety; unsafe practical tasting must not follow from it.",
+      "proposedWording": "Low price alone does not show whether food is safe or good value. Consider condition, storage and whether it can be used safely in time.",
+      "implementationImpact": "Separate owner-reviewed editorial correction only; preserve canonical blocks, prompt splitting, response count and saved identities. Current teacher support provides the relevant local clarification or safeguard without rewriting the learner source.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g8-t2-l35-035",
+      "blockId": "5b472358eb86cc8c47a6c8bf-1",
+      "exactPassage": "Myah walks through her neighbourhood, notebook open. She counts: five spaza shops, three hair salons, two car washes, a woman selling vegetables on the corner, a man fixing shoes under a tree. None of these are in the formal economy. None have payslips or tax numbers. But all of them are creating value. All of them are feeding families. She writes: There is an economy here that the textbooks do not see. It runs on cash, trust, and relationships. It is invisible to the government but visible to anyone who bothers to look.",
+      "category": "Material overgeneralisation",
+      "concern": "Appearance and business size cannot establish formal status, tax registration or banking, and informal activity can be included in statistical estimates.",
+      "proposedWording": "Myah notices several local businesses creating value. Their appearance alone does not tell her their registration, tax or banking arrangements. Some informal activity is included in official estimates.",
+      "implementationImpact": "Separate owner-reviewed editorial correction only; preserve canonical blocks, prompt splitting, response count and saved identities. Current teacher support provides the relevant local clarification or safeguard without rewriting the learner source.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g8-t2-l35-035",
+      "blockId": "131197502c9756fddbacb30a-1",
+      "exactPassage": "In South Africa, millions of people work in the informal economy. They do not have: employment contracts, payslips, tax numbers, bank statements. But they have: customers, income, dignity, community.",
+      "category": "Material overgeneralisation; current quantities require verification",
+      "concern": "The categorical list excludes arrangements some informal workers have. The unquantified millions claim needs a dated official source if retained as a current statistic.",
+      "proposedWording": "Many people work in informal arrangements, which vary. Some use contracts, bank accounts or other formal services. Distinguish observed work from assumptions about its registration. Any numerical claim should cite a current official source.",
+      "implementationImpact": "Separate owner-reviewed editorial correction only; preserve canonical blocks, prompt splitting, response count and saved identities. Current teacher support provides the relevant local clarification or safeguard without rewriting the learner source.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g8-t2-l36-checkpoint-20261004",
+      "blockId": "46ef0da44728481078b1b934-1",
+      "exactPassage": "If you cannot observe a real corner: Draw an imaginary corner for your community. What businesses SHOULD be there? How would they connect? The imagining is also data.",
+      "category": "Missing contextual explanation",
+      "concern": "Imagination supports a hypothesis or design; it is not observed evidence of actual businesses, payments or demand.",
+      "proposedWording": "If you cannot observe a real corner, draw an imaginary one and label the proposed connections. Use it to develop ideas, while distinguishing imagined possibilities from observed evidence.",
+      "implementationImpact": "Separate owner-reviewed editorial correction only; preserve canonical blocks, prompt splitting, response count and saved identities. Current teacher support provides the relevant local clarification or safeguard without rewriting the learner source.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g8-t2-l37-036",
+      "blockId": "fdf6a412f95a739304ccd47e-1",
+      "exactPassage": "If balance is zero → you spent everything (no saving).",
+      "category": "Material allocation ambiguity",
+      "concern": "A zero unallocated balance may include the savings allocation explicitly required by the activity. Zero does not necessarily imply no saving.",
+      "proposedWording": "If no money is left unallocated, check the categories: some may already be set aside as savings. Distinguish money saved from money spent.",
+      "implementationImpact": "Separate owner-reviewed editorial correction only; preserve canonical blocks, prompt splitting, response count and saved identities. Current teacher support provides the relevant local clarification or safeguard without rewriting the learner source.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g8-t2-l38-037",
+      "blockId": "38be8b00a391c7851409059f-1",
+      "exactPassage": "Question 2: Themba spent R14 on cool drink in one weekend. If he cut that to R7 and saved the other R7, how much would he save in a month? In a year? Do the math. What could he buy with that money?",
+      "category": "Missing calculation assumption",
+      "concern": "The weekly saving has no specified month/year model. Four-week months and a 52-week year give different annual totals.",
+      "proposedWording": "Assume R7 saved each week. Calculate a four-week month and a 52-week year, stating those assumptions. What could the saved money help pay for?",
+      "implementationImpact": "Separate owner-reviewed editorial correction only; preserve canonical blocks, prompt splitting, response count and saved identities. Current teacher support provides the relevant local clarification or safeguard without rewriting the learner source.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g8-t2-l39-038",
+      "blockId": "aa993916d03c5050d1a98a10-1",
+      "exactPassage": "One day, Busisiwe starts a notebook. She writes down everything her mother spends:",
+      "category": "Specific privacy concern",
+      "concern": "The story can be read as approving a child monitoring a relative’s spending without their knowledge. Do not require family records.",
+      "proposedWording": "With her mother’s agreement, Busisiwe helps record expenses they choose to share. Learners may use the story instead of private household figures.",
+      "implementationImpact": "Separate owner-reviewed editorial correction only; preserve canonical blocks, prompt splitting, response count and saved identities. Current teacher support provides the relevant local clarification or safeguard without rewriting the learner source.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
     }
   ],
   "retainedPerspectives": [
@@ -88,6 +218,31 @@
       "lesson": 25,
       "passage": "A single receipt means nothing.",
       "decision": "Rhetorical emphasis on patterns; no isolated correction needed."
+    },
+    {
+      "lesson": 28,
+      "passage": "Every Problem = A Signal",
+      "decision": "Useful noticing metaphor; retain, alongside the source’s own limits on which problems a learner can address."
+    },
+    {
+      "lesson": 29,
+      "passage": "Price = Problem Solved / Not Hours Worked",
+      "decision": "A thinking frame about customer benefit; retain with costs and personal dignity distinguished locally."
+    },
+    {
+      "lesson": 33,
+      "passage": "Generosity is not subtraction. It is multiplication.",
+      "decision": "Ethical metaphor, not an investment claim. Retain its voice and the source’s acknowledgement of constraints."
+    },
+    {
+      "lesson": 37,
+      "passage": "A Budget Is Not a Cage / It Is a Map",
+      "decision": "Legitimate planning metaphor; retain, without promising budgeting creates resources."
+    },
+    {
+      "lesson": 40,
+      "passage": "predictions are always wrong",
+      "decision": "Rhetorical encouragement to revise plans; do not turn it into a corrective lecture or a general claim about forecasting accuracy."
     }
   ]
 }
