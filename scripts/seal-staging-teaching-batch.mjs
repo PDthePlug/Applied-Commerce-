@@ -1,7 +1,7 @@
 // Trusted staging BUILD job only. There is no HTTP sealing endpoint. The
 // original key never leaves the staging build/runtime secret binding.
 import fs from 'node:fs';import path from 'node:path';import assert from 'node:assert/strict';import zlib from 'node:zlib';import {spawnSync}from 'node:child_process';
-import {openContent,sealContent}from './classroom-content.mjs';import {runtimeUnits}from './semantic-census.mjs';import {digest}from './classroom-inventory.mjs';import {assembleTeachingBatch}from './lib/teaching-batch.mjs';
+import {openContent,sealContent}from './classroom-content.mjs';import {runtimeUnits}from './semantic-census.mjs';import {digest}from './classroom-inventory.mjs';import {assembleTeachingBatch,amendTeachingFields}from './lib/teaching-batch.mjs';
 process.umask(0o077);let phase='staging-target';
 const prefix='AC_STAGE_TEACHING_BATCH_';
 try{
@@ -11,7 +11,10 @@ try{
  phase='original-key-authentication';const keyText=process.env.AC_CLASSROOM_CONTENT_KEY;assert.ok(keyText);const key=Buffer.from(keyText.trim(),'base64');assert.equal(key.length,32);const context='applied-commerce-classroom-v1';
  const root='content/instructional/',names=['teaching-plans.v2.enc.json','teaching-manifest.v2.json','teaching-availability.v2.json'];const envelope=JSON.parse(fs.readFileSync(root+names[0])),manifest=JSON.parse(fs.readFileSync(root+names[1])),availability=JSON.parse(fs.readFileSync(root+names[2]));assert.equal(digest(manifest),input.originalManifestSHA256);
  const payload=JSON.parse(openContent(envelope,key,context));
- phase='source-and-draft-review';const start=performance.now(),before=process.memoryUsage();const assembled=assembleTeachingBatch({payload,manifest,availability,drafts:input.plans,units:await runtimeUnits(),version:input.version});const sourceValidationMs=Math.round(performance.now()-start);
+ phase='source-and-draft-review';const start=performance.now(),before=process.memoryUsage();
+ const args={payload,manifest,availability,units:await runtimeUnits(),version:input.version};
+ if(input.fieldPatches)assert.equal(input.plans.length,0,'Do not combine append and field correction');
+ const assembled=input.fieldPatches?amendTeachingFields({...args,fieldPatches:input.fieldPatches}):assembleTeachingBatch({...args,drafts:input.plans});const sourceValidationMs=Math.round(performance.now()-start);
  phase='encryption';const sealed=sealContent(Buffer.from(JSON.stringify(assembled.payload)),key,context);assert.equal(sealed.keyId,envelope.keyId);assert.equal(digest(JSON.parse(openContent(sealed,key,context))),digest(assembled.payload));
  const values=[sealed,assembled.manifest,assembled.availability];for(let i=0;i<names.length;i++)fs.writeFileSync(root+names[i],JSON.stringify(values[i],null,2)+'\n');
  // Only encrypted/public-metadata artefacts are made retrievable from this
