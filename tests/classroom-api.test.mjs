@@ -16,6 +16,12 @@ test('existing assigned staff, institution owners/admins and platform admins may
 test('role lookup failure and changed accounts fail closed before private content loading',async()=>{
  reset();state.platform=true;state.fail=true;assert.equal((await GET(request())).status,503);assert.equal(state.loads,0);assert.equal(state.contextualLoads,0);assert.equal(state.planLoads,0);reset();state.staff=true;assert.equal((await GET(request('another-user'))).status,409);assert.equal(state.loads,0);assert.equal(state.contextualLoads,0);assert.equal(state.planLoads,0);
 });
+test('the authenticated reader can omit catalogue overhead without changing its private plan',async()=>{
+ reset();state.staff=true;
+ const response=await GET(new Request('https://fixture.invalid/api/classroom?lesson=g8-t1-l08-008&catalog=omit'));
+ assert.equal(response.status,200);const payload=await response.json();assert.deepEqual(payload.catalog,[]);assert.equal(payload.plan.privateText,'PRIVATE_PLAN_FIXTURE');
+ reset();assert.equal((await GET(new Request('https://fixture.invalid/api/classroom?catalog=omit'))).status,403);assert.equal(state.loads,0);
+});
 test('local-only mode never opens an auth client or private teacher payload',async()=>{
  reset();state.mode='local';state.platform=true;assert.equal((await GET(request())).status,401);assert.equal(state.created,0);assert.equal(state.loads,0);assert.equal(state.contextualLoads,0);assert.equal(state.planLoads,0);
 });

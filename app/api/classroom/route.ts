@@ -20,7 +20,10 @@ export async function GET(request:Request){
   const guide=selected.benchmark?(await loadClassroomGuides()).find(item=>item.lessonId===id)??null:null;
   const contextual=guide?await loadContextualEnrichment(guide):null;
   const plan=await loadTeachingPlan(id);
-  return Response.json({catalog:classroomCatalog,selected,guide,contextual,plan},{headers});
+  // The lesson reader already has curriculum navigation. The standalone
+  // workspace still receives the complete catalogue by default.
+  const catalog=new URL(request.url).searchParams.get("catalog")==="omit"?[]:classroomCatalog;
+  return Response.json({catalog,selected,guide,contextual,plan},{headers});
  }catch{
   console.error("Classroom guidance could not be loaded.");
   return Response.json({error:"Teacher guidance is not available just now. Ask your administrator to check the private classroom release."},{status:503,headers});

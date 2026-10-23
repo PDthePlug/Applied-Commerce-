@@ -13,8 +13,25 @@ const representative:Record<string,{field:string;sentence?:number}>={
  "l1-stage-8":{field:"stages.7.explain.0",sentence:0},
 };
 export function facilitationCue(plan:TeachingPlan,moment:TeachingMoment){
- if(plan.lessonId!=="g8-t1-l01-001")return null;
- const reference=representative[moment.id];if(!reference)return null;
+ if(moment.schedule!=="classroom")return null;
+ const reference=plan.lessonId==="g8-t1-l01-001"?representative[moment.id]:undefined;
+ if(!reference){
+  const instruction=moment.core.find(group=>group.heading==="Explain");
+  if(!instruction)return null;
+  const fields=[...instruction.fields];
+  if(moment.id==="g11-do")return plan.fields["practical.instructions.0"];
+  if(moment.id==="g10-p1-do")return plan.fields[instruction.fields[0]].split(/(?<=[.!?])\s+(?=[A-Z])/u)[0];
+  // Keep task-specific safeguards at the point of use, rather than moving
+  // every warning to preparation or requiring all deeper panels to be opened.
+  const safeguards:Record<string,string[]>={
+   "l14-stage-5":["stages.4.misconception.0"],
+   "l15-stage-2":["stages.1.misconception.0"],
+   "l16-stage-2":["stages.1.misconception.0"],
+   "l19-stage-2":["stages.1.misconception.0"],
+  };
+  fields.push(...safeguards[moment.id]??[]);
+  return fields.map(field=>plan.fields[field]).join(" ");
+ }
  const text=plan.fields[reference.field];if(!text)throw new Error("Facilitation reference differs from the private release.");
  return reference.sentence===undefined?text:text.split(/(?<=[.!?])\s+(?=[A-Z])/u)[reference.sentence]??text;
 }
