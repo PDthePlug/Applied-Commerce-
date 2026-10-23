@@ -1,0 +1,93 @@
+{
+  "scope": "Preliminary source reading: Grade 8 Term 2 Lessons 21–25; not a completed teaching-plan batch",
+  "sourceChangesApplied": false,
+  "entries": [
+    {
+      "lessonId": "g8-t2-l22-022",
+      "blockId": "2bd84439c5ed22a5db0586d3-1",
+      "exactPassage": "\"Create more value. Solve more problems. Serve more people. That is the only source there is.\"",
+      "category": "Material conceptual inaccuracy if taught as monetary origin",
+      "concern": "The exclusive claim confuses earning receipts through value exchange with the creation and other transfers of money. It also implies that more valuable work necessarily earns more.",
+      "proposedWording": "Creating useful goods or services is one way to earn money. Money also reaches people through transfers such as gifts, grants and loans. In this lesson, trace payments and the work behind them; this is not a complete explanation of how money is created.",
+      "implementationImpact": "Separate learner editorial review. Keep this prompt identity and all response fields; add a short local distinction beside Money Flows in teacher support. Do not turn the water metaphor into a monetary theory lecture.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g8-t2-l23-023",
+      "blockId": "8950bcd17c8e1b24cbee2245-1",
+      "exactPassage": "Compare this \"phantom salary\" to the actual household income. Who in your household pays this invisible tax most heavily? What would happen to your family's finances if that person went on strike for a week?",
+      "category": "Specific privacy concern",
+      "concern": "The required comparison with actual household income can require sensitive financial disclosure. A family power comparison may be uncomfortable or unsafe for some learners.",
+      "proposedWording": "Use estimates for your own household, or use the Ndlovu household from the story. You do not need to disclose actual household income. Who carries most of the unpaid work in the example, and how could that work be acknowledged or shared?",
+      "implementationImpact": "Separate wording review; retain current saved prompt and response identities. Place an optional existing-story alternative beside Activity 23. No compulsory presentation at a family meeting or to classmates.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g8-t2-l24-024",
+      "blockId": "56c87a765b141225c0ef093d-1",
+      "exactPassage": "Question 1: Calculate: If Emmanuel's shop sells 10 loaves at R10 each, but 2 go stale, what is the profit? (Cost per loaf is R8.) Show your working.",
+      "category": "Material ambiguity in a calculation prompt",
+      "concern": "The shop cannot both sell all ten loaves and have two of those same ten go stale unsold. Activity 24 implies eight sales, but the checkpoint wording contradicts that setup.",
+      "proposedWording": "Emmanuel buys 10 loaves at R8 each. He sells 8 at R10 each, and 2 go stale. What is the profit before any other shop costs? Show your working.",
+      "implementationImpact": "Separate source wording correction. Preserve existing combined/split answer identities, field count and saved work. Teacher support can state the eight-sold assumption and credit a different interpretation when stated clearly.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g8-t2-l24-024",
+      "blockId": "1c1d4bf44d6beabfccdc459c-1",
+      "exactPassage": "What you own = What you have + What you owe",
+      "category": "Missing contextual explanation",
+      "concern": "The ordinary-language distinction between what you own and what you have is unclear. Equity is the residual interest in assets after liabilities, not a second pile of assets.",
+      "proposedWording": "Assets (what the business owns) = Owner’s equity (the owner’s share) + Liabilities (what the business owes).",
+      "implementationImpact": "Separate source wording review. Retain the table and controls. Local teacher support should use the workbook’s existing R500 = R500 + R0 example and explain that equity is R500 − R0.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g8-t2-l25-025",
+      "blockId": "1c42051445831701ad1a0713-1",
+      "exactPassage": "Question 1: Emmanuel's shop had total income of R89 and total expenses of R170 in the examples above. What was their profit or loss? What does a negative number mean for a business?",
+      "category": "Ambiguous reference; arithmetic verified",
+      "concern": "R89 and R170 correctly total the Activity 25 and 25B tables. The earlier worked examples instead total R114 and R166, so “the examples above” can send learners to the wrong pair of tables.",
+      "proposedWording": "Use the Activity 25 and Activity 25B tables: total income is R89 and total expenses are R170. What is the difference? What does a negative result mean for the business in this simplified exercise?",
+      "implementationImpact": "Separate source-reference correction. No response restructuring. Teacher cue should identify the activity tables explicitly. Do not silently replace either set of numbers.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g8-t2-l25-025",
+      "blockId": "f35e89f732f060b9ef7155b0-1",
+      "exactPassage": "Total Income – Total Expenses = Profit",
+      "category": "Missing contextual explanation",
+      "concern": "Cash received minus cash paid is not a general definition of accounting profit when stock, credit and timing differ. This introductory cash-record task can remain, with its simplifying assumptions identified.",
+      "proposedWording": "For this simplified example, subtract the listed cash payments from the listed cash receipts to find the cash surplus or shortfall. A full profit calculation also considers stock, credit and the period to which costs belong.",
+      "implementationImpact": "Conceptual wording needs separate owner review; this is not an authorised canonical rewrite. Preserve journals and answers. Optional teacher explanation can distinguish cash records from a complete profit calculation without adding an activity.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    }
+  ],
+  "retainedPerspectives": [
+    {
+      "lesson": 21,
+      "passage": "Identity Informs Action / Action Informs Identity",
+      "decision": "Legitimate developmental framing; no corrective lecture."
+    },
+    {
+      "lesson": 22,
+      "passage": "Money is like water. It flows.",
+      "decision": "Useful circulation metaphor; retain. Exclusive monetary-origin claims are reviewed separately."
+    },
+    {
+      "lesson": 23,
+      "passage": "All work has value. All work has dignity.",
+      "decision": "Ethical perspective; retain. Do not equate wages with human worth."
+    },
+    {
+      "lesson": 24,
+      "passage": "Profit = Survival, Not Greed",
+      "decision": "Motivational framing; retain with existing discussion of fair and unfair profit."
+    },
+    {
+      "lesson": 25,
+      "passage": "A single receipt means nothing.",
+      "decision": "Rhetorical emphasis on patterns; no isolated correction needed."
+    }
+  ]
+}

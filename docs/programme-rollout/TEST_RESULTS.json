@@ -1,0 +1,45 @@
+{
+  "testedApplicationCommit": "21a2939dc39bbc1df23cefaa586a2ae5e5c55ea0",
+  "projectRef": "inxshlumnhcgiahxqewe",
+  "local": {
+    "runtime": {
+      "lessons": 395,
+      "assessments": 4,
+      "stableBlocks": 20766
+    },
+    "nodeTests": 196,
+    "existingBrowserTests": 249,
+    "targetedBrowserTests": 15,
+    "typecheck": "PASS",
+    "lint": "PASS",
+    "productionBuild": "PASS"
+  },
+  "genuineStaging": {
+    "existingPlans": 24,
+    "centralTargets": 193,
+    "responsiveCombinations": 72,
+    "instructionalFieldsPreserved": 1867,
+    "privatePDFGuides": 24,
+    "privatePDFPages": 169,
+    "authRlsChecks": 37,
+    "standaloneFallbacks": 24,
+    "browserPageErrors": 0,
+    "naturalOriginalJwtExpiry": "PASS_AUTH_403_DATA_401_WITH_EXPLICIT_EXPIRY_REASON"
+  },
+  "rollout": {
+    "existingPlans": 24,
+    "newCompleted": 0,
+    "privateUnsealedDrafts": 5,
+    "uncompleted": 371,
+    "notYetDrafted": 366,
+    "blocker": "Original content key or approved secure sealing workflow unavailable"
+  },
+  "pending": [
+    "First draft batch encryption and genuine rendered/print/responsive verification",
+    "Remaining 371 completed guides",
+    "Hosted cold-process and server-memory measurements",
+    "Configured maximum/inactivity session lifetime",
+    "Educator timing trials",
+    "Isolated synthetic teaching browser harness rerun (original key dependency)"
+  ]
+}
