@@ -1,0 +1,576 @@
+{
+  "codeCommit": "c68efc48bf5a27fb58225388e6bc0606f83bf5ad",
+  "definition": "Every non-empty instructional string in the existing Grade 8 guide, including source stage titles, presentation tasks and all practical scaffold text. Governance fields and source IDs are preserved in the unchanged encrypted payload, not displayed as teaching content.",
+  "rows": [
+    {
+      "width": 320,
+      "instructionalTextFields": 100,
+      "allAccessible": true
+    },
+    {
+      "width": 360,
+      "instructionalTextFields": 100,
+      "allAccessible": true
+    },
+    {
+      "width": 430,
+      "instructionalTextFields": 100,
+      "allAccessible": true
+    },
+    {
+      "width": 768,
+      "instructionalTextFields": 100,
+      "allAccessible": true
+    },
+    {
+      "width": 1280,
+      "instructionalTextFields": 100,
+      "allAccessible": true
+    },
+    {
+      "width": 1920,
+      "instructionalTextFields": 100,
+      "allAccessible": true
+    }
+  ],
+  "fields": [
+    {
+      "path": "centralConcept",
+      "sha256": "f1cc6e778be9723c9bd0d03d70b9e60639db162d741659f9044900937d8ea02b",
+      "accessible": true
+    },
+    {
+      "path": "prerequisites.0",
+      "sha256": "3bba8b31a9d4dcc545e2c3b5dfd9e74368b5a48f3fbd386174165029080e3e20",
+      "accessible": true
+    },
+    {
+      "path": "prerequisites.1",
+      "sha256": "61aaf3496575dd010a093212cf8fa091169faf1dd79d998d7c094cc566d053ad",
+      "accessible": true
+    },
+    {
+      "path": "objectives.0",
+      "sha256": "1e2f2b460cde32a016e41f5fc3ff5b0f0cd5fa5772955507c3ae5e46525db4db",
+      "accessible": true
+    },
+    {
+      "path": "objectives.1",
+      "sha256": "3d7116d15a4a35692170d9125486dd4f6cecca8fff3025e349c80bbb6fd2cf82",
+      "accessible": true
+    },
+    {
+      "path": "objectives.2",
+      "sha256": "1a5f0a980515e19aa3db086f504a6ca449fd6f440495e6df81ce7b37ff3c4267",
+      "accessible": true
+    },
+    {
+      "path": "observableOutcome",
+      "sha256": "1a7f6601f142b57c6c1117185d4d2c813e42f12079ab394c75069577143ad679",
+      "accessible": true
+    },
+    {
+      "path": "preparation.knowledge.0",
+      "sha256": "fb306debf14fe0de887f185bd3bac6a5ab1c6664e0dd14aaa9860f46b36c9625",
+      "accessible": true
+    },
+    {
+      "path": "preparation.knowledge.1",
+      "sha256": "82ac353b64a89a768afa23a2440cffe8f06d2c4b05f6c94e11a1218bcdc3bd7b",
+      "accessible": true
+    },
+    {
+      "path": "preparation.materials.0",
+      "sha256": "26a71826cb2da34d1c69fed1ce17a61fb91ed33dfa22ad05ef6f2f31a05931fa",
+      "accessible": true
+    },
+    {
+      "path": "preparation.materials.1",
+      "sha256": "1d53d52686ee89a8c08b3723008d2729206c1b5b7e8ed43b330227604e624b92",
+      "accessible": true
+    },
+    {
+      "path": "preparation.vocabulary.0.term",
+      "sha256": "4c2bc9a00002d1d632007b9f2302612aa9cb636ec0ae35386180e3ce26ee0f67",
+      "accessible": true
+    },
+    {
+      "path": "preparation.vocabulary.0.explanation",
+      "sha256": "e0aabc4219ede2b7b2499d309a7cedfe16967adadd5da6a8427df7f20fadfbbd",
+      "accessible": true
+    },
+    {
+      "path": "preparation.vocabulary.1.term",
+      "sha256": "6494242475d5ebf20ec5d8de4a71fddd9198dc27c16ee5d08dcd46ac0fb60fdc",
+      "accessible": true
+    },
+    {
+      "path": "preparation.vocabulary.1.explanation",
+      "sha256": "01e8983a243ebd9adb48cd39b5dd7e36b47b28f003bbc40f6309fbed4e24535e",
+      "accessible": true
+    },
+    {
+      "path": "preparation.vocabulary.2.term",
+      "sha256": "d60dbba079223254d4c49c230a515bc107a997e69f811365da2387f8557b9cec",
+      "accessible": true
+    },
+    {
+      "path": "preparation.vocabulary.2.explanation",
+      "sha256": "50a70cd7ee173c2598bb8c72137f2d0336ffd9f529874282a21af29367cd318c",
+      "accessible": true
+    },
+    {
+      "path": "preparation.misconceptions.0.belief",
+      "sha256": "ebb6b41e6ddde0d3774e2b84ab29b3279c06dd488ff3e0d2cf2cad3f13c96edd",
+      "accessible": true
+    },
+    {
+      "path": "preparation.misconceptions.0.response",
+      "sha256": "96caaa68bb1680715fa090d5eaab7356def784865aec4f9749b275c2b351a061",
+      "accessible": true
+    },
+    {
+      "path": "preparation.misconceptions.1.belief",
+      "sha256": "4a1a4e4f632a3e21fd646c635ebc5b53e1691572c44c0fba5ec67481d1819348",
+      "accessible": true
+    },
+    {
+      "path": "preparation.misconceptions.1.response",
+      "sha256": "3fa5e5e684c6d7834e1511c35f1e8256e80332ac1472ba6f9c79bbfdb03ff352",
+      "accessible": true
+    },
+    {
+      "path": "preparation.southAfricanContext",
+      "sha256": "9bb1519986e8f7647d2027ed19b1ada99c506947d523a77c06883ee8a892ea41",
+      "accessible": true
+    },
+    {
+      "path": "preparation.privacy.0",
+      "sha256": "0dd776e8a780d3561459dbed2c66a7dede6497e5dc235ad4a2767811d292f14d",
+      "accessible": true
+    },
+    {
+      "path": "preparation.privacy.1",
+      "sha256": "6f6a5b16b92cd2c3f5492760c1d415085dc5b98786820c1979dff5c207359c0b",
+      "accessible": true
+    },
+    {
+      "path": "periods.0.title",
+      "sha256": "2e9b53212b7abb1c1d23d1fd85cd3f22206b539c5ba7a6e9dad48e1f251da124",
+      "accessible": true
+    },
+    {
+      "path": "periods.0.stages.0.title",
+      "sha256": "cd6a9ed3b4475ef296751fc88da6edab2714686e004828719286a8bd56f07452",
+      "accessible": true
+    },
+    {
+      "path": "periods.0.stages.0.teacher.0",
+      "sha256": "beadb1ee0566186543f59437beea17ffd5f5477f9ee40f25bc377f3ba9e4af88",
+      "accessible": true
+    },
+    {
+      "path": "periods.0.stages.0.learners.0",
+      "sha256": "b2caee7d47ee70a40df93fb89d2789ad6a3ffcef73ae5dda755e0636f4174e97",
+      "accessible": true
+    },
+    {
+      "path": "periods.0.stages.0.successfulParticipation",
+      "sha256": "e3567c42cadc80f8a9750058b78545a275ba5c83e91fce36d205d451e2e0be55",
+      "accessible": true
+    },
+    {
+      "path": "periods.0.stages.0.presentation.question",
+      "sha256": "881785fd1d92d3a8c7c2a6c486e24db7b1ebe5600407ab1304e7ad75da8ba899",
+      "accessible": true
+    },
+    {
+      "path": "periods.0.stages.0.presentation.task",
+      "sha256": "38eee47f67399c5256648d1a279f3f048f890fee227f7f4ecd6fc7f70153107e",
+      "accessible": true
+    },
+    {
+      "path": "periods.0.stages.1.title",
+      "sha256": "fdda78ff32ac5d49225efc9cf3d47839281589cfe32dd60ced147c0270b951b5",
+      "accessible": true
+    },
+    {
+      "path": "periods.0.stages.1.teacher.0",
+      "sha256": "d82d42419fecd4d985630ee56cbef7d6f0bc34b401684698df90df477b8eeed6",
+      "accessible": true
+    },
+    {
+      "path": "periods.0.stages.1.learners.0",
+      "sha256": "c78a179a9989ab2e4d6c082534a9e439e2c945a3cd9c08efd84bc9845a9c961a",
+      "accessible": true
+    },
+    {
+      "path": "periods.0.stages.1.successfulParticipation",
+      "sha256": "3969c0c0ad213524e3ea8587a8772c20dc46a50d499713b5fe1d17e8395eadd4",
+      "accessible": true
+    },
+    {
+      "path": "periods.0.stages.1.presentation.question",
+      "sha256": "aba25c80fce396d018a77ef2c3d3fd54c8116946b098c81c29b7bb51127a5ebc",
+      "accessible": true
+    },
+    {
+      "path": "periods.0.stages.1.presentation.task",
+      "sha256": "aaecd43c46b3cba46486106df0817d7621985a00cca91fd2aa32e34afeb65226",
+      "accessible": true
+    },
+    {
+      "path": "periods.0.stages.2.title",
+      "sha256": "12ad3ea7e30295e8711e33e0db724b0b950b8458f1326c3ece5c35f41ba70b25",
+      "accessible": true
+    },
+    {
+      "path": "periods.0.stages.2.teacher.0",
+      "sha256": "1e062d018ef9cb635df0401e4909bb4295b10467d3c084ad82f13301b7eba477",
+      "accessible": true
+    },
+    {
+      "path": "periods.0.stages.2.learners.0",
+      "sha256": "1cc7d7be3ceed637e523c6186d42e9710cf2da0b27014a3e88d0d10de76ab949",
+      "accessible": true
+    },
+    {
+      "path": "periods.0.stages.2.successfulParticipation",
+      "sha256": "4eaa6648c1fce06afbecb25807dcf8ac021020e881fba12b2bed9c9c53ead908",
+      "accessible": true
+    },
+    {
+      "path": "periods.0.stages.2.presentation.question",
+      "sha256": "0b5f882a7b3d89d8a9c6180c29941f61ca42d480aef12708256fa36267ff66fc",
+      "accessible": true
+    },
+    {
+      "path": "periods.0.stages.2.presentation.task",
+      "sha256": "63669064a0dd79f1958103bd9a550ef0770baa8388c5cb91021111723d78ac24",
+      "accessible": true
+    },
+    {
+      "path": "periods.0.stages.3.title",
+      "sha256": "e5ef183fda34c9fcb14376b2598e0100a06fe03ad56795fc6ef248be44691160",
+      "accessible": true
+    },
+    {
+      "path": "periods.0.stages.3.teacher.0",
+      "sha256": "1c3789480fd90a97244294227feb9c9131ee07d328200df567f82b3d42a417d2",
+      "accessible": true
+    },
+    {
+      "path": "periods.0.stages.3.learners.0",
+      "sha256": "8f77f7c10f8adb38c264bf41b3c196892daaba2df0b4464da5186b5f4953adfe",
+      "accessible": true
+    },
+    {
+      "path": "periods.0.stages.3.successfulParticipation",
+      "sha256": "6a1619ec8c92c37516ccbd0fadfabf72d9bbc7878c592e769056d3d0dc6ab0b2",
+      "accessible": true
+    },
+    {
+      "path": "periods.0.stages.3.presentation.question",
+      "sha256": "cab07ff605751dc0ea1590a2d19cabf16ebf58cabec003ca900d5a7456f82ca2",
+      "accessible": true
+    },
+    {
+      "path": "periods.0.stages.3.presentation.task",
+      "sha256": "01b607358ffe9f5e3f47a18b6e67abca4c61a4578113bf354e0e46ccdeb2f761",
+      "accessible": true
+    },
+    {
+      "path": "periods.0.stages.4.title",
+      "sha256": "fbae1e336e481c88216183aa71db802a708d61472b330189eb89120e96f8107e",
+      "accessible": true
+    },
+    {
+      "path": "periods.0.stages.4.teacher.0",
+      "sha256": "20d1de8c25931e66fc1e81b652bc4d81fba66ece6f2f1b2bebba1da84c3ac958",
+      "accessible": true
+    },
+    {
+      "path": "periods.0.stages.4.learners.0",
+      "sha256": "ddbe256ff4e3c1faa15169c1abdbb35402368146def61b291b32bd1e95fdef2b",
+      "accessible": true
+    },
+    {
+      "path": "periods.0.stages.4.successfulParticipation",
+      "sha256": "7f49776d488d7981d738e62794e479b2f53bba25e08adfc07115df2775abb050",
+      "accessible": true
+    },
+    {
+      "path": "periods.0.stages.4.presentation.question",
+      "sha256": "be42751550cae8b1e44efba565bdea87289963316d7f97467f37c788b20e7a9a",
+      "accessible": true
+    },
+    {
+      "path": "periods.0.stages.4.presentation.task",
+      "sha256": "ecc849d6f66fc9c0b59662936c159a2bd38c2a5c0dd2eb0739b420ac7a76338c",
+      "accessible": true
+    },
+    {
+      "path": "discussion.0.question",
+      "sha256": "3c4391a0029e70d47ef6d3d81540fcbec37633eea96c19403658d1e1dd561015",
+      "accessible": true
+    },
+    {
+      "path": "discussion.0.followUp",
+      "sha256": "ebadb1254b02e1ccc1e0b24c0ba780b24247399963dd32b275a4b822ffb53b65",
+      "accessible": true
+    },
+    {
+      "path": "discussion.0.indicativeReasoning",
+      "sha256": "f3170757c51ef64dfe0bc1e0a488b058e52cc82c75cad9369682454525efe411",
+      "accessible": true
+    },
+    {
+      "path": "discussion.0.partialUnderstanding",
+      "sha256": "0d0d5ed26ed72267931bc3bdbe2f3f69a497a3e84f458c3e59b3457286cd5763",
+      "accessible": true
+    },
+    {
+      "path": "discussion.1.question",
+      "sha256": "e2e914b7ae86a80d846e7268a5a35764622df60073eb6f3d41ab1481fa1afa1f",
+      "accessible": true
+    },
+    {
+      "path": "discussion.1.followUp",
+      "sha256": "2d7a9a449601862d6aad1a862f5d4d3b152f5531013c0204c9696b2cd3a00d83",
+      "accessible": true
+    },
+    {
+      "path": "discussion.1.indicativeReasoning",
+      "sha256": "92e9341aa3aecc23368ea711c461df62fb5bacb0732badebbe96c632625db567",
+      "accessible": true
+    },
+    {
+      "path": "discussion.1.partialUnderstanding",
+      "sha256": "7704b28bfd440e55d22da5744f35251b2637a52e19b4647370573cb7d3d4eb20",
+      "accessible": true
+    },
+    {
+      "path": "practical.instructions.0",
+      "sha256": "6630099450d78911069dec11abe65f6764fb9d55b7ec3b0cab22747c7e2d0c8b",
+      "accessible": true
+    },
+    {
+      "path": "practical.instructions.1",
+      "sha256": "953678a8dda6d903afce24f8fb9248dcfe8ce188eb31e411f31f776c196a2645",
+      "accessible": true
+    },
+    {
+      "path": "practical.instructions.2",
+      "sha256": "14d4badd5a5b7c6d72bbff387451a63bbf3d1edf3ef51a79f2cb7a2bfa905a31",
+      "accessible": true
+    },
+    {
+      "path": "practical.expectedOutput",
+      "sha256": "d0d560bcbfba1f1881893a9bf38132d206fdb114893e15de34e288eeea4540a7",
+      "accessible": true
+    },
+    {
+      "path": "practical.inClassScope",
+      "sha256": "8ff133d7953181d13cc424fd28ad76f757903c9b2cce18bd7daeb34a3f354654",
+      "accessible": true
+    },
+    {
+      "path": "practical.followUp",
+      "sha256": "5e50b8e8a71cd1df851c0635eec87094c5ea237a6d87bd14457d7b3f8f9e290a",
+      "accessible": true
+    },
+    {
+      "path": "practical.scaffold.columns.0",
+      "sha256": "fceca5d0997698e016e9063d807a1767e44805b09263a8eee01e979bcbbe1562",
+      "accessible": true
+    },
+    {
+      "path": "practical.scaffold.columns.1",
+      "sha256": "d4e8830a71c73edffe0115b8abad16b0b5cb2e121047c64cd01995203cfad062",
+      "accessible": true
+    },
+    {
+      "path": "practical.scaffold.columns.2",
+      "sha256": "c8c01985b4ad8a3b6939ebcf3c20ba7c03de04caeadb34f1fc2160bd3ee90701",
+      "accessible": true
+    },
+    {
+      "path": "practical.scaffold.columns.3",
+      "sha256": "f81ab834de5f84918dc040b884267c2b61cb1a52d46442de10e97f35a94d0500",
+      "accessible": true
+    },
+    {
+      "path": "practical.scaffold.rows.0.0",
+      "sha256": "febf56f0a0e0493faa23db92e5ce47c26ac8d0f4c86964748c2ce7852ef36f6c",
+      "accessible": true
+    },
+    {
+      "path": "practical.scaffold.rows.1.0",
+      "sha256": "c80c9107fa558b45da6876844b4b97868ebe933791e33f64cd0b0fe8a00dcc9e",
+      "accessible": true
+    },
+    {
+      "path": "practical.scaffold.rows.2.0",
+      "sha256": "526ace5af7448767f51ebdd54eee19d4b090dc8b1f93ba6d729bb17c42505165",
+      "accessible": true
+    },
+    {
+      "path": "practical.scaffold.rows.3.0",
+      "sha256": "c9b2dc08c32620d23d2fab89056d3736f7b6702e4ba96c761b8061013ce4eb1d",
+      "accessible": true
+    },
+    {
+      "path": "practical.scaffold.rows.4.0",
+      "sha256": "1ce7f486d11cc0176219ead45d20e010aedfc8ccf46481fd65ffb4acfabdbfae",
+      "accessible": true
+    },
+    {
+      "path": "understandingChecks.0.prompt",
+      "sha256": "674bbc3560f4f4b1d689d90e946ab9ce9dd4ece6f9244b62cc1aaf9e9636fabd",
+      "accessible": true
+    },
+    {
+      "path": "understandingChecks.0.secureReasoning",
+      "sha256": "ff5c31075aac44a8cbc3731cfc003dede6b8be519a9c87d6414bb0b72829e8b0",
+      "accessible": true
+    },
+    {
+      "path": "understandingChecks.0.partialUnderstanding",
+      "sha256": "0e63277ce3f20e070b177f32e1ad6041b6b55c683f0511663cfc70e5b040efb7",
+      "accessible": true
+    },
+    {
+      "path": "understandingChecks.0.notYetEvidenced",
+      "sha256": "1f95b8cb4a3c6e84c9081baf932796ca77363c413820c600f251c0c5eb3f3806",
+      "accessible": true
+    },
+    {
+      "path": "understandingChecks.0.nextTeachingMove",
+      "sha256": "6df8d5d49ae08b70027434002768749df43eccd83bdec7823780896d28820023",
+      "accessible": true
+    },
+    {
+      "path": "understandingChecks.1.prompt",
+      "sha256": "8e86b379b578544473f90da5ba857559d200de7172b58eb2b2a85c828f3765b6",
+      "accessible": true
+    },
+    {
+      "path": "understandingChecks.1.secureReasoning",
+      "sha256": "58af63943a3a8aae08f02a28d9b9b524fceb95316cd9c86a374cc15f64025f1f",
+      "accessible": true
+    },
+    {
+      "path": "understandingChecks.1.partialUnderstanding",
+      "sha256": "95c7f2102538582c81a15d82766d8fc8d028f5679a180127f981f714f0393927",
+      "accessible": true
+    },
+    {
+      "path": "understandingChecks.1.notYetEvidenced",
+      "sha256": "9989a72a572094ea453c685f21230e30ca547e868b2d5b8d1ce074c47d2237f6",
+      "accessible": true
+    },
+    {
+      "path": "understandingChecks.1.nextTeachingMove",
+      "sha256": "9c7b15a0e1e9eda9538d720699181ab55397df5c243d2be5a927b5021c77abba",
+      "accessible": true
+    },
+    {
+      "path": "differentiation.support.0",
+      "sha256": "5ac2b5d66d3162d5b91eb1c609e403dc3e1cdca632c9fec140d3f6338ab02d12",
+      "accessible": true
+    },
+    {
+      "path": "differentiation.extension.0",
+      "sha256": "226dc4b1bdf7719833f2271d3fa5d3fe6144ba23170336958ceb71b54e9bfbd9",
+      "accessible": true
+    },
+    {
+      "path": "differentiation.quietParticipation.0",
+      "sha256": "cd0f820cbc3e78a50610aca82ae9da0ab4d3cdee5520d78274e9cc1effd56d4b",
+      "accessible": true
+    },
+    {
+      "path": "differentiation.largeClass.0",
+      "sha256": "c6c5fa69a7e287edafa364aa41f230e822f7c8e2176a87812a614dc1193c07aa",
+      "accessible": true
+    },
+    {
+      "path": "differentiation.lowTechnology.0",
+      "sha256": "d28ffe7c6f8e3a9c4a6bc53d8d5767453f2c2f2b9e533946bdb2e4cc32c1d1fa",
+      "accessible": true
+    },
+    {
+      "path": "differentiation.readingSupport.0",
+      "sha256": "84f7c691aa8fe3cf08bb83bf94159adb1644f2b7a1d6cc8236f5b7e6b25912a3",
+      "accessible": true
+    },
+    {
+      "path": "continuity.connection",
+      "sha256": "84e8d649478a15588d77b7409cf10188451e26eeadfaee6e2f1a5bda4dd13f4c",
+      "accessible": true
+    },
+    {
+      "path": "continuity.nextUse",
+      "sha256": "71af2ae12f4a57791c56510b76de06851708a8ce30e123e0b0cf5b752514ed44",
+      "accessible": true
+    },
+    {
+      "path": "independentLearning.0",
+      "sha256": "13d9190030c7144af5d187d78a794df29089ef3a2aaded555eb73717e2e8dd7a",
+      "accessible": true
+    },
+    {
+      "path": "independentLearning.1",
+      "sha256": "aadfcac7d930fa2397d19d0e857759bd88e31f0513afa7191ce157e69bc1f262",
+      "accessible": true
+    },
+    {
+      "path": "independentLearning.2",
+      "sha256": "62d4c5d642c5fc68be2b9ee7b7a4e75c35000cac0cdc7e684e2cdb14944572ad",
+      "accessible": true
+    },
+    {
+      "path": "originalTitle",
+      "sha256": "920fa0b3cbb768fa44a65172e2408fdee34ccc20ceff6740a04857a7d55a364e",
+      "accessible": true
+    }
+  ],
+  "unchangedFoundations": [
+    {
+      "path": "content/instructional/benchmark-guides.v1.enc.json",
+      "byteIdenticalToMain": true,
+      "sha256": "298e942fa0d5a5812ab4a2be152492eb8f4382aec5c479368f54b9283ec2500c"
+    },
+    {
+      "path": "content/instructional/benchmark-manifest.v1.json",
+      "byteIdenticalToMain": true,
+      "sha256": "105b640d93ce58ca890def097b92f0639f2e53a115d97039e6fd4a9311cc5fc9"
+    },
+    {
+      "path": "lib/classroom/model.ts",
+      "byteIdenticalToMain": true,
+      "sha256": "8e38f22de7825c8cd5b85644d3f34800478e8b6098ee5786012d523442a56395"
+    },
+    {
+      "path": "lib/classroom/access.ts",
+      "byteIdenticalToMain": true,
+      "sha256": "b0b19a395825391316e2fadaf0267df425a17fc91a4f6d0ce1d29e07c1f36264"
+    },
+    {
+      "path": "app/api/classroom/route.ts",
+      "byteIdenticalToMain": true,
+      "sha256": "703df0699f9ce35ad503689b72965df7a60a9cc3532d45e85d05c734dc6622fc"
+    },
+    {
+      "path": "lib/response-identity.ts",
+      "byteIdenticalToMain": true,
+      "sha256": "f4bed625e4e6c1ffb2d23cfad4ff807ad79571163efa1b840587f27100cde892"
+    },
+    {
+      "path": "lib/learning-store.ts",
+      "byteIdenticalToMain": true,
+      "sha256": "e611b787be3fa8d6c93df3d773a4f8c02c1b6e748bd13d5e2e2ede6840bcdfb8"
+    }
+  ],
+  "originalKeyUnchanged": true
+}

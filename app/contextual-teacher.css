@@ -1,0 +1,38 @@
+.contextual-mode,.contextual-actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.contextual-mode{margin:18px 0}
+.contextual-private{color:var(--ink);font:400 calc(15px * var(--ac-text-scale,1))/1.6 var(--sans);overflow-wrap:anywhere}
+.contextual-private :is(button,a){min-height:44px;display:inline-flex;align-items:center;padding:9px 12px;border:1px solid var(--line);border-radius:6px;background:var(--paper);color:var(--ink);font:inherit;cursor:pointer;text-underline-offset:3px}
+.contextual-private button[aria-pressed="true"],.contextual-private button[aria-current="step"]{background:var(--warm);border-color:var(--ink);font-weight:700}
+.contextual-private :focus-visible{outline:3px solid var(--ac-user-accent-text,var(--ink));outline-offset:3px}
+.contextual-private summary{cursor:pointer;min-height:48px;padding:12px;font-weight:700;scroll-margin-top:100px}
+.contextual-guidance,.contextual-preparation{border:1px solid var(--line);border-left:3px solid var(--ac-user-accent-text,var(--ink));border-radius:7px;background:var(--warm);margin:18px 0 24px}
+.contextual-guidance>summary{display:flex;gap:12px;align-items:center;justify-content:space-between}
+.contextual-summary{display:grid;gap:2px}.contextual-summary strong{font-size:.867em;letter-spacing:.02em}.contextual-summary small{font-weight:400;font-size:.867em}.contextual-expand{font-size:24px;flex:none}.contextual-guidance[open]>.contextual-expand{transform:rotate(45deg)}
+.contextual-guidance[open]>summary .contextual-expand{transform:rotate(45deg)}
+.contextual-body{padding:0 16px 16px}.contextual-body :is(h2,h3){font:700 1.133em/1.4 var(--sans);margin:18px 0 8px}.contextual-body h4{font-size:1.067em;line-height:1.4}.contextual-body ul{padding-left:22px}.contextual-body li{margin:8px 0}.contextual-body dl>div{margin:10px 0}.contextual-body dt{font-weight:700}.contextual-body dd{margin:4px 0 0}
+.contextual-guidance>.contextual-body{overflow:visible}
+.contextual-depth,.contextual-source-links{border-top:1px solid var(--line);margin-top:16px}
+.contextual-depth>summary,.contextual-source-links>summary{padding-left:0;font-weight:600}
+.contextual-depth>.contextual-body{padding-left:0;padding-right:0}
+.contextual-transition{border-left:2px solid var(--line);padding-left:12px;font-size:.933em}
+.contextual-next{margin-top:18px}
+.contextual-activity{background:var(--paper)}
+.contextual-print-guide{display:none}
+.contextual-stage-picker{display:flex;gap:8px;align-items:start;margin-top:8px}
+.contextual-stage-picker select{font:inherit;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:6px;min-height:44px;min-width:0;width:100%;padding:8px}
+.contextual-stage-picker button{flex:none}
+.contextual-preparation label{font-weight:700}
+.contextual-tools>summary{font-weight:600;border-top:1px solid var(--line)}
+.contextual-preparation>nav,.contextual-preparation>.contextual-actions,.contextual-preparation>.contextual-note{margin:12px 16px}
+.contextual-note{font-size:.933em!important}
+.learner-presentation-notice{font-size:.933em!important}.learner-projection{margin:0;padding:0;border:0;min-width:0}
+@media(max-width:430px){.contextual-preparation ol{grid-template-columns:1fr}.contextual-private .contextual-actions>*{width:100%;justify-content:flex-start}.contextual-stage-picker{flex-wrap:wrap}.contextual-stage-picker button{width:100%}}
+@media print{.contextual-private{display:none!important}.contextual-printing .lesson-document,.contextual-printing .workbook-panel,.contextual-printing .reader-stage>.save-error{display:none!important}.contextual-printing .contextual-print-guide{display:block!important;background:white;border:0;margin:0;padding:0}.contextual-print-guide>.classroom-workspace{display:block!important;padding:0}.contextual-print-guide .classroom-guide-outline{display:none!important}.contextual-print-addendum{break-before:page}.contextual-print-addendum h4{break-after:avoid}}
+
+.standalone-teaching-plan .contextual-print-guide{display:block}
+.contextual-body section{margin:14px 0}.contextual-print-guide h3{break-after:avoid}
+@media print{.standalone-teaching-plan .contextual-print-guide{display:block!important}}
+
+@page classroom-teacher{size:A4;margin:12mm}
+@media print{body:has(.contextual-printing),body:has(.standalone-teaching-plan){page:classroom-teacher}}
+@media print{body:has(.contextual-printing)>next-route-announcer,body:has(.standalone-teaching-plan)>next-route-announcer{display:none!important}}

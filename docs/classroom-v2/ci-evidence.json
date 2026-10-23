@@ -1,0 +1,25 @@
+{
+  "implementationCommit": "bdf432246cd73be42908724bed728a2f6f4dc4d2",
+  "runId": 39709085888,
+  "jobId": 119595853064,
+  "url": "https://github.com/PDthePlug/Applied-Commerce-/actions/runs/39709085888",
+  "conclusion": "success",
+  "nodeTests": 189,
+  "nodePassed": 189,
+  "pythonIdentityTests": 2,
+  "playwrightAcceptance": {
+    "passed": 222,
+    "duration": "3.7 minutes",
+    "realRoles": "NOT TESTED"
+  },
+  "successfulSteps": [
+    "Curriculum tests",
+    "Synthetic database restore and volume drill",
+    "Typecheck",
+    "Lint",
+    "Production build",
+    "Browser presentation acceptance",
+    "Refresh presentation census evidence"
+  ],
+  "provenance": "Counts read from the completed GitHub Actions job log; synthetic database drills are not production or real-account evidence."
+}

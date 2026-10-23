@@ -2,8 +2,11 @@
 // Private guidance and browser evidence stay under ignored work/.
 import fs from 'node:fs';
 import path from 'node:path';
-const root=process.cwd();const target=path.join(root,'work/classroom/fixture-app');
-if(!fs.existsSync('work/classroom/private/content.classroom-key'))throw new Error('Private classroom release key is required; see docs/classroom/IMPLEMENTATION.md.');
+process.umask(0o077);
+const root=process.cwd();const argument=process.argv.indexOf('--target');
+const target=path.resolve(root,argument>=0?process.argv[argument+1]??'': 'work/classroom/fixture-app');
+if(!target.startsWith(path.join(root,'work')+path.sep)||target===path.join(root,'work'))throw new Error('Fixture copies must stay inside ignored work/.');
+if(!process.env.AC_CLASSROOM_CONTENT_KEY&&!process.env.AC_CLASSROOM_CONTENT_KEY_FILE&&!fs.existsSync('work/classroom/private/content.classroom-key'))throw new Error('Private classroom release key is required; see docs/classroom/IMPLEMENTATION.md.');
 fs.mkdirSync(target,{recursive:true});
 for(const name of ['app','components','lib','content/instructional','public']){
  fs.rmSync(path.join(target,name),{recursive:true,force:true});fs.cpSync(name,path.join(target,name),{recursive:true});
@@ -21,8 +24,8 @@ export function AuthProvider({children}:{children:React.ReactNode}){const [user,
 export function useAuth(){return useContext(Context);}
 `);
 fs.writeFileSync(path.join(target,'app/api/classroom/route.ts'),`// ISOLATED GENERATED FIXTURE ONLY. Not copied into the production application.
-import {classroomCatalog,loadClassroomGuides} from "@/lib/classroom/private-library";
+import {classroomCatalog,loadClassroomGuides,loadContextualEnrichment,loadTeachingPlan} from "@/lib/classroom/private-library";
 export const dynamic="force-dynamic";
-export async function GET(request:Request){const id=new URL(request.url).searchParams.get("lesson")??"g8-t1-l08-008";const selected=classroomCatalog.find(item=>item.id===id);if(!selected)return Response.json({error:"Unknown fixture lesson"},{status:404});const guide=selected.benchmark?(await loadClassroomGuides()).find(item=>item.lessonId===id):null;return Response.json({catalog:classroomCatalog,selected,guide},{headers:{"Cache-Control":"private, no-store","X-AC-Fixture":"synthetic-classroom-ui"}});}
+export async function GET(request:Request){const id=new URL(request.url).searchParams.get("lesson")??"g8-t1-l08-008";const selected=classroomCatalog.find(item=>item.id===id);if(!selected)return Response.json({error:"Unknown fixture lesson"},{status:404});const guide=selected.benchmark?(await loadClassroomGuides()).find(item=>item.lessonId===id):null;const contextual=guide?await loadContextualEnrichment(guide):null;const plan=await loadTeachingPlan(id);return Response.json({catalog:classroomCatalog,selected,guide,contextual,plan},{headers:{"Cache-Control":"private, no-store","X-AC-Fixture":"synthetic-classroom-ui"}});}
 `);
 console.log('Prepared isolated classroom UI fixture copy. No real-role validation or database access.');

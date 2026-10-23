@@ -1,0 +1,46 @@
+{
+  "id": "dpl_3aK1svGBxqDBuqXRNWyi5ZnBSeVF",
+  "name": "applied-commerce-sa-staging",
+  "url": "applied-commerce-sa-staging-iki6enora.vercel.app",
+  "state": "READY",
+  "target": "production",
+  "project": {
+    "id": "prj_9MXnYeh3mxtFzcS1xzEDrTjOW2nP",
+    "name": "applied-commerce-sa-staging"
+  },
+  "commit": "bdf432246cd73be42908724bed728a2f6f4dc4d2",
+  "serverVerification": [
+    {
+      "teachingPlans": 24,
+      "termLessons": 20,
+      "teachingPeriods": 31,
+      "instructionalFields": 1867,
+      "classroomServerBuildVerification": "PASS",
+      "guides": 5,
+      "periods": 7,
+      "contextualEnrichment": "PASS",
+      "contextualInstructionalFields": 100,
+      "privateKeyExported": false,
+      "runtimeEducatorLearnerAccess": "NOT TESTED"
+    }
+  ],
+  "guestAPI": {
+    "status": 401,
+    "privateGuideReturned": false,
+    "roleValidation": "NOT TESTED",
+    "boundary": "Deployment protection may intercept; not real learner denial evidence."
+  },
+  "health": {
+    "status": 200,
+    "body": {
+      "status": "ok",
+      "projectRef": "inxshlumnhcgiahxqewe",
+      "commit": "bdf432246cd73be42908724bed728a2f6f4dc4d2",
+      "dependencies": {
+        "auth": true,
+        "dataAPI": true
+      }
+    }
+  },
+  "realEducatorLearnerAccess": "NOT TESTED; isolated AC_ROLE_FIXTURES unavailable"
+}

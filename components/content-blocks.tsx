@@ -1,8 +1,11 @@
 "use client";
+import {teachingHeading} from "@/lib/classroom/teaching-plan";
 
 import { responseView, persistResponseKey } from "@/lib/response-identity";
+import {Fragment} from "react";
 import { Plus } from "lucide-react";
 import type { ContentBlock, TextBlockType, UnitContent } from "@/lib/types";
+import type {LearningSection} from "@/lib/semantic-learning";
 import { cleanMarkup, isRemovedLogBlock, sanitizeRemovedLogReferences } from "@/lib/portfolio-model";
 import { DeepeningInsightPanel, LearningNotice, LearningOutcomesIntro, LessonSectionHeading, PortfolioCaptureNotice, ResponseSurface, StoryHeading, ThinkingEquationNotice } from "./presentation-system";
 import outcomeIcons from "@/lib/lesson-outcome-icons.json";
@@ -21,6 +24,8 @@ type Props = {
   unitType?: UnitContent["type"];
   promptResponses: Record<string,string>;
   onSavePromptResponse: (promptId:string,value:string)=>void;
+  partGuidance?: (block:ContentBlock)=>React.ReactNode;
+  sectionGuidance?: (section:LearningSection,edge:"before"|"after")=>React.ReactNode;
 };
 
 const BLANK_RE= /_{3,}/;
@@ -400,9 +405,15 @@ function StructuredResponseGroup({
           compact={compact}
           tone={tone}
           prompt={<>
-            {(tone==="checkpoint"||(many&&tone!=="assessment"))&&<span className="structured-part-label">{startNumber+index}.</span>}
+            {tone==="checkpoint"?<div className="checkpoint-question">
+              <span className="structured-part-label">{startNumber+index}.</span>
+              <p className="question-prompt">{part.prompt}</p>
+              {part.helper&&<small className="structured-prompt-helper">{part.helper}</small>}
+            </div>:<>
+            {(many&&tone!=="assessment")&&<span className="structured-part-label">{startNumber+index}.</span>}
             <p className="question-prompt">{part.prompt}</p>
             {part.helper&&<small className="structured-prompt-helper">{part.helper}</small>}
+            </>}
           </>}
         >
           <ResponseArea
@@ -698,6 +709,7 @@ function TableBlockView({
   promptResponses,
   onSavePromptResponse,
   minimumRows=3,
+  regionLabel,
 }:{
   block:Extract<ContentBlock,{kind:"table"}>;
   unitId:string;
@@ -705,6 +717,7 @@ function TableBlockView({
   promptResponses:Record<string,string>;
   onSavePromptResponse:(promptId:string,value:string)=>void;
   minimumRows?:number;
+  regionLabel?:string;
 }){
   const headers=(block.rows[0]??[]).map(value=>sourceCopy(displayText(value)));
   const headerOnly=block.rows.length===1;
@@ -732,7 +745,7 @@ function TableBlockView({
     className={`source-table-wrap ${hasWorkbookCells?"workbook-table":""} ${responsiveRows?"responsive-row-table":""} ${wideTable?"wide-source-table":""}`}
     tabIndex={wideTable?0:undefined}
     role={wideTable?"region":undefined}
-    aria-label={wideTable?"Scrollable curriculum table":undefined}
+    aria-label={wideTable?(regionLabel??"Scrollable curriculum table"):undefined}
   >
     <table>
       <thead>
@@ -793,7 +806,7 @@ function TableBlockView({
   </div>;
 }
 
-export function ContentBlocks({blocks,unitId,unitType="lesson",promptResponses:storedResponses,onSavePromptResponse:saveResponse}:Props) {
+export function ContentBlocks({blocks,unitId,unitType="lesson",promptResponses:storedResponses,onSavePromptResponse:saveResponse,sectionGuidance,partGuidance}:Props) {
   const promptResponses=responseView(unitId,blocks,storedResponses);
   const onSavePromptResponse=(key:string,value:string)=>saveResponse(persistResponseKey(unitId,blocks,key),value);
   const indexed=pruneTensionContent(blocks);
@@ -819,6 +832,13 @@ export function ContentBlocks({blocks,unitId,unitType="lesson",promptResponses:s
         continue;
       }
       flush();
+
+      // Only reviewed standalone Part/Step headings are eligible; grouped lists,
+      // tables and Deepening Insight contents are never split by annotations.
+      if(teachingHeading(block)){
+        const guidance=partGuidance?.(block);
+        if(guidance)views.push(<Fragment key={`part-guidance-${index}`}>{guidance}</Fragment>);
+      }
 
       if(allowInsightGrouping&&isDeepeningInsight(block)){
         context=null;
@@ -850,6 +870,9 @@ export function ContentBlocks({blocks,unitId,unitType="lesson",promptResponses:s
           block={block}
           unitId={unitId}
           blockIndex={index}
+          // Delivery annotations add distinct table landmarks. Default learner
+          // markup and every original block/response identity remain unchanged.
+          regionLabel={sectionGuidance||partGuidance?`Scrollable curriculum table ${blocks.slice(0,index+1).filter(item=>item.kind==="table").length}`:undefined}
           promptResponses={promptResponses}
           onSavePromptResponse={onSavePromptResponse}
           minimumRows={inferMinimumRows(items,position)}
@@ -1075,7 +1098,9 @@ export function ContentBlocks({blocks,unitId,unitType="lesson",promptResponses:s
       const items=indexed.filter(item=>item.index>=section.start&&item.index<section.end);
       if(!items.length) return null;
       return <section className={`learning-section learning-mode-${section.mode}`} data-learning-mode={section.mode} id={section.anchor} key={section.anchor}>
+        {sectionGuidance?.(section,"before")}
         {renderIndexedBlocks(items,true,section.context)}
+        {sectionGuidance?.(section,"after")}
       </section>;
     })}
   </div>;

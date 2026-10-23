@@ -1,0 +1,473 @@
+{
+  "lessonId": "g8-t1-l08-008",
+  "baseCommit": "3933c2d90519e7aa53984405693da9526c12a588",
+  "placementReview": "Source and renderer inspection by implementation agent; owner/educator review pending",
+  "sourceUnitSHA256": "dcaa46780a3842b11f38afabffa8e636a19b9eef200d9150c9af88453d4910e3",
+  "sourceOrderUnchanged": true,
+  "deliveryOrder": "Opening at phone/data examples; return to definitions; revisit examples; Activity 12; checkpoint",
+  "stages": [
+    {
+      "stageId": "g8-open",
+      "title": "One phone, two purposes",
+      "start": 0,
+      "end": 5,
+      "boundaryBlockId": "c9786145cf517bdd5a05c00d-1",
+      "edge": "before",
+      "purpose": "Launch at the authored phone/data examples; then return to the definitions.",
+      "sectionAnchor": "learning-c9786145cf517bdd5a05c00d-1",
+      "supportingSections": [],
+      "originalStageTitle": "One phone, two purposes",
+      "sourceBlockIds": [
+        "9c6bc29e786a33dbdb791752-1",
+        "18c66777fc39ec5c0fe17feb-1",
+        "6743ed0df8a54108f96ebc62-1"
+      ],
+      "minutes": 5
+    },
+    {
+      "stageId": "g8-explore",
+      "title": "Teach the distinction and its limits",
+      "start": 5,
+      "end": 14,
+      "boundaryBlockId": "c69226c6e29eef870006fa8f-1",
+      "edge": "before",
+      "purpose": "Teach alongside the original definitions and comparison table; vocabulary remains just above.",
+      "sectionAnchor": "learning-c69226c6e29eef870006fa8f-1",
+      "supportingSections": [
+        {
+          "anchor": "learning-3d6928cb0f63afbb93841ff2-1",
+          "title": "Key Vocabulary"
+        },
+        {
+          "anchor": "learning-c9786145cf517bdd5a05c00d-1",
+          "title": "Needs and Wants Are Not Always Clear"
+        }
+      ],
+      "originalStageTitle": "Teach the distinction and its limits",
+      "sourceBlockIds": [
+        "21c7eaf7a34088e6f1152869-1",
+        "7060b9224079c87f7bdd4e0a-1",
+        "377b1021a8412affc1731968-1",
+        "6f8b4ce18841e9a5becc852a-1",
+        "6743ed0df8a54108f96ebc62-1"
+      ],
+      "minutes": 9
+    },
+    {
+      "stageId": "g8-discuss",
+      "title": "Data under different constraints",
+      "start": 14,
+      "end": 24,
+      "boundaryBlockId": "c9786145cf517bdd5a05c00d-1",
+      "edge": "after",
+      "purpose": "Discuss after the complete phone/data list. Deepening Insight is supporting material later in the lesson.",
+      "sectionAnchor": "learning-c9786145cf517bdd5a05c00d-1",
+      "supportingSections": [
+        {
+          "anchor": "learning-52e5abf1875a06c6ea81ce7f-1",
+          "title": "Deepening Insight"
+        }
+      ],
+      "originalStageTitle": "Data under different constraints",
+      "sourceBlockIds": [
+        "9c6bc29e786a33dbdb791752-1",
+        "18c66777fc39ec5c0fe17feb-1",
+        "d44e1ef88ac8fdb3ec5b41b3-1"
+      ],
+      "minutes": 10
+    },
+    {
+      "stageId": "g8-do",
+      "title": "Practical application",
+      "start": 24,
+      "end": 40,
+      "boundaryBlockId": "e00c9dfcd0c93b42a6968deb-1",
+      "edge": "before",
+      "purpose": "Use the intact Activity 12 section: Part A and one Part C explanation. Part B remains later follow-up.",
+      "sectionAnchor": "learning-e00c9dfcd0c93b42a6968deb-1",
+      "supportingSections": [],
+      "originalStageTitle": "Activity 12 · Five purchases with reasons",
+      "sourceBlockIds": [
+        "e00c9dfcd0c93b42a6968deb-1",
+        "0db6daaf1a230989b45fb2b6-1",
+        "fc947cf7beb7930a7a1200ab-1",
+        "5adb2788d8302c1e0d4bd09e-1",
+        "8e8cbeabb2a5ce2d287114da-1",
+        "6ff9073fd6956e002a93b926-1",
+        "abc43a1245f4ec230266d505-1"
+      ],
+      "minutes": 16
+    },
+    {
+      "stageId": "g8-check",
+      "title": "Reflection and understanding check",
+      "start": 40,
+      "end": 45,
+      "boundaryBlockId": "1e8357621b551417d9b19216-1",
+      "edge": "before",
+      "purpose": "Use checkpoint Question 1 now; plan the later observation without claiming it has happened.",
+      "sectionAnchor": "learning-1e8357621b551417d9b19216-1",
+      "supportingSections": [
+        {
+          "anchor": "learning-e00c9dfcd0c93b42a6968deb-1",
+          "title": "Activity 12: My Needs vs Wants — With 24-Hour Pause Experiment"
+        },
+        {
+          "anchor": "learning-22499840c699d3a0d0c842d7-1",
+          "title": "Try This at Home — Behavioral Experiment"
+        }
+      ],
+      "originalStageTitle": "Exit explanation and later observation",
+      "sourceBlockIds": [
+        "01de18888911c71dd325fc3b-1",
+        "2a6b84a03790bd1225b10984-1",
+        "679e54be33c1e1e6f9a975ae-1",
+        "4545e2ea9ee33317323627ba-1",
+        "59d1c2b019b78c54acc6b457-1"
+      ],
+      "minutes": 5
+    }
+  ],
+  "referenceCoverage": [
+    {
+      "sourceBlockId": "539a96142de3bf8a4b9fc2f4-1",
+      "originalIndex": 0,
+      "sourceKind": "text",
+      "sourceType": "section",
+      "renderedSection": "Learning Outcomes",
+      "renderedAnchor": "learning-539a96142de3bf8a4b9fc2f4-1",
+      "renderTreatment": "Existing semantic block rendering",
+      "teachingStageIds": [],
+      "additionalUse": "Source basis and educator preparation"
+    },
+    {
+      "sourceBlockId": "47f6b4296e644c19aa04bfa7-1",
+      "originalIndex": 1,
+      "sourceKind": "text",
+      "sourceType": "paragraph",
+      "renderedSection": "Learning Outcomes",
+      "renderedAnchor": "learning-539a96142de3bf8a4b9fc2f4-1",
+      "renderTreatment": "Existing semantic block rendering",
+      "teachingStageIds": [],
+      "additionalUse": "Source basis and educator preparation"
+    },
+    {
+      "sourceBlockId": "587d026c0067c2f2cc7736e0-1",
+      "originalIndex": 2,
+      "sourceKind": "text",
+      "sourceType": "list",
+      "renderedSection": "Learning Outcomes",
+      "renderedAnchor": "learning-539a96142de3bf8a4b9fc2f4-1",
+      "renderTreatment": "Grouped authored list",
+      "teachingStageIds": [],
+      "additionalUse": "Source basis and educator preparation"
+    },
+    {
+      "sourceBlockId": "3641381418d3c00f9a7300d0-1",
+      "originalIndex": 3,
+      "sourceKind": "text",
+      "sourceType": "list",
+      "renderedSection": "Learning Outcomes",
+      "renderedAnchor": "learning-539a96142de3bf8a4b9fc2f4-1",
+      "renderTreatment": "Grouped authored list",
+      "teachingStageIds": [],
+      "additionalUse": "Source basis and educator preparation"
+    },
+    {
+      "sourceBlockId": "97e23c867a040acba3d2ed80-1",
+      "originalIndex": 4,
+      "sourceKind": "text",
+      "sourceType": "list",
+      "renderedSection": "Learning Outcomes",
+      "renderedAnchor": "learning-539a96142de3bf8a4b9fc2f4-1",
+      "renderTreatment": "Grouped authored list",
+      "teachingStageIds": [],
+      "additionalUse": "Source basis and educator preparation"
+    },
+    {
+      "sourceBlockId": "3d6928cb0f63afbb93841ff2-1",
+      "originalIndex": 5,
+      "sourceKind": "text",
+      "sourceType": "section",
+      "renderedSection": "Key Vocabulary",
+      "renderedAnchor": "learning-3d6928cb0f63afbb93841ff2-1",
+      "renderTreatment": "Existing semantic block rendering",
+      "teachingStageIds": [],
+      "additionalUse": "Source basis and educator preparation"
+    },
+    {
+      "sourceBlockId": "21c7eaf7a34088e6f1152869-1",
+      "originalIndex": 6,
+      "sourceKind": "table",
+      "sourceType": "table",
+      "renderedSection": "Key Vocabulary",
+      "renderedAnchor": "learning-3d6928cb0f63afbb93841ff2-1",
+      "renderTreatment": "Existing responsive/workbook table",
+      "teachingStageIds": [
+        "g8-explore"
+      ],
+      "additionalUse": "Source basis and educator preparation"
+    },
+    {
+      "sourceBlockId": "7060b9224079c87f7bdd4e0a-1",
+      "originalIndex": 9,
+      "sourceKind": "table",
+      "sourceType": "table",
+      "renderedSection": "The Difference",
+      "renderedAnchor": "learning-c69226c6e29eef870006fa8f-1",
+      "renderTreatment": "Existing responsive/workbook table",
+      "teachingStageIds": [
+        "g8-explore"
+      ],
+      "additionalUse": "Source basis and educator preparation"
+    },
+    {
+      "sourceBlockId": "377b1021a8412affc1731968-1",
+      "originalIndex": 10,
+      "sourceKind": "text",
+      "sourceType": "paragraph",
+      "renderedSection": "The Difference",
+      "renderedAnchor": "learning-c69226c6e29eef870006fa8f-1",
+      "renderTreatment": "Existing semantic block rendering",
+      "teachingStageIds": [
+        "g8-explore"
+      ],
+      "additionalUse": "Source basis and educator preparation"
+    },
+    {
+      "sourceBlockId": "6f8b4ce18841e9a5becc852a-1",
+      "originalIndex": 11,
+      "sourceKind": "text",
+      "sourceType": "paragraph",
+      "renderedSection": "The Difference",
+      "renderedAnchor": "learning-c69226c6e29eef870006fa8f-1",
+      "renderTreatment": "Existing semantic block rendering",
+      "teachingStageIds": [
+        "g8-explore"
+      ],
+      "additionalUse": "Source basis and educator preparation"
+    },
+    {
+      "sourceBlockId": "9c6bc29e786a33dbdb791752-1",
+      "originalIndex": 14,
+      "sourceKind": "text",
+      "sourceType": "list",
+      "renderedSection": "Needs and Wants Are Not Always Clear",
+      "renderedAnchor": "learning-c9786145cf517bdd5a05c00d-1",
+      "renderTreatment": "Grouped authored list",
+      "teachingStageIds": [
+        "g8-open",
+        "g8-discuss"
+      ],
+      "additionalUse": "Discussion"
+    },
+    {
+      "sourceBlockId": "18c66777fc39ec5c0fe17feb-1",
+      "originalIndex": 15,
+      "sourceKind": "text",
+      "sourceType": "list",
+      "renderedSection": "Needs and Wants Are Not Always Clear",
+      "renderedAnchor": "learning-c9786145cf517bdd5a05c00d-1",
+      "renderTreatment": "Grouped authored list",
+      "teachingStageIds": [
+        "g8-open",
+        "g8-discuss"
+      ],
+      "additionalUse": "Discussion"
+    },
+    {
+      "sourceBlockId": "6743ed0df8a54108f96ebc62-1",
+      "originalIndex": 16,
+      "sourceKind": "text",
+      "sourceType": "paragraph",
+      "renderedSection": "Needs and Wants Are Not Always Clear",
+      "renderedAnchor": "learning-c9786145cf517bdd5a05c00d-1",
+      "renderTreatment": "Existing semantic block rendering",
+      "teachingStageIds": [
+        "g8-open",
+        "g8-explore"
+      ],
+      "additionalUse": "Discussion"
+    },
+    {
+      "sourceBlockId": "e00c9dfcd0c93b42a6968deb-1",
+      "originalIndex": 19,
+      "sourceKind": "text",
+      "sourceType": "activity",
+      "renderedSection": "Activity 12: My Needs vs Wants — With 24-Hour Pause Experiment",
+      "renderedAnchor": "learning-e00c9dfcd0c93b42a6968deb-1",
+      "renderTreatment": "Existing semantic block rendering",
+      "teachingStageIds": [
+        "g8-do"
+      ],
+      "additionalUse": "Practical preparation"
+    },
+    {
+      "sourceBlockId": "0db6daaf1a230989b45fb2b6-1",
+      "originalIndex": 21,
+      "sourceKind": "text",
+      "sourceType": "paragraph",
+      "renderedSection": "Activity 12: My Needs vs Wants — With 24-Hour Pause Experiment",
+      "renderedAnchor": "learning-e00c9dfcd0c93b42a6968deb-1",
+      "renderTreatment": "Existing semantic block rendering",
+      "teachingStageIds": [
+        "g8-do"
+      ],
+      "additionalUse": "Practical preparation"
+    },
+    {
+      "sourceBlockId": "fc947cf7beb7930a7a1200ab-1",
+      "originalIndex": 22,
+      "sourceKind": "table",
+      "sourceType": "table",
+      "renderedSection": "Activity 12: My Needs vs Wants — With 24-Hour Pause Experiment",
+      "renderedAnchor": "learning-e00c9dfcd0c93b42a6968deb-1",
+      "renderTreatment": "Existing responsive/workbook table",
+      "teachingStageIds": [
+        "g8-do"
+      ],
+      "additionalUse": "Practical preparation"
+    },
+    {
+      "sourceBlockId": "5adb2788d8302c1e0d4bd09e-1",
+      "originalIndex": 23,
+      "sourceKind": "text",
+      "sourceType": "paragraph",
+      "renderedSection": "Activity 12: My Needs vs Wants — With 24-Hour Pause Experiment",
+      "renderedAnchor": "learning-e00c9dfcd0c93b42a6968deb-1",
+      "renderTreatment": "Existing semantic block rendering",
+      "teachingStageIds": [
+        "g8-do"
+      ],
+      "additionalUse": "Practical preparation"
+    },
+    {
+      "sourceBlockId": "01de18888911c71dd325fc3b-1",
+      "originalIndex": 25,
+      "sourceKind": "text",
+      "sourceType": "paragraph",
+      "renderedSection": "Activity 12: My Needs vs Wants — With 24-Hour Pause Experiment",
+      "renderedAnchor": "learning-e00c9dfcd0c93b42a6968deb-1",
+      "renderTreatment": "Existing semantic block rendering",
+      "teachingStageIds": [
+        "g8-check"
+      ],
+      "additionalUse": "Source basis and educator preparation"
+    },
+    {
+      "sourceBlockId": "2a6b84a03790bd1225b10984-1",
+      "originalIndex": 29,
+      "sourceKind": "text",
+      "sourceType": "paragraph",
+      "renderedSection": "Activity 12: My Needs vs Wants — With 24-Hour Pause Experiment",
+      "renderedAnchor": "learning-e00c9dfcd0c93b42a6968deb-1",
+      "renderTreatment": "Existing semantic block rendering",
+      "teachingStageIds": [
+        "g8-check"
+      ],
+      "additionalUse": "Source basis and educator preparation"
+    },
+    {
+      "sourceBlockId": "8e8cbeabb2a5ce2d287114da-1",
+      "originalIndex": 31,
+      "sourceKind": "text",
+      "sourceType": "paragraph",
+      "renderedSection": "Activity 12: My Needs vs Wants — With 24-Hour Pause Experiment",
+      "renderedAnchor": "learning-e00c9dfcd0c93b42a6968deb-1",
+      "renderTreatment": "Existing semantic block rendering",
+      "teachingStageIds": [
+        "g8-do"
+      ],
+      "additionalUse": "Practical preparation"
+    },
+    {
+      "sourceBlockId": "6ff9073fd6956e002a93b926-1",
+      "originalIndex": 32,
+      "sourceKind": "text",
+      "sourceType": "paragraph",
+      "renderedSection": "Activity 12: My Needs vs Wants — With 24-Hour Pause Experiment",
+      "renderedAnchor": "learning-e00c9dfcd0c93b42a6968deb-1",
+      "renderTreatment": "Existing semantic block rendering",
+      "teachingStageIds": [
+        "g8-do"
+      ],
+      "additionalUse": "Discussion"
+    },
+    {
+      "sourceBlockId": "abc43a1245f4ec230266d505-1",
+      "originalIndex": 33,
+      "sourceKind": "text",
+      "sourceType": "paragraph",
+      "renderedSection": "Activity 12: My Needs vs Wants — With 24-Hour Pause Experiment",
+      "renderedAnchor": "learning-e00c9dfcd0c93b42a6968deb-1",
+      "renderTreatment": "Existing semantic block rendering",
+      "teachingStageIds": [
+        "g8-do"
+      ],
+      "additionalUse": "Practical preparation"
+    },
+    {
+      "sourceBlockId": "4d3712db4ea5cb8bbc6c2e70-1",
+      "originalIndex": 34,
+      "sourceKind": "text",
+      "sourceType": "portfolio",
+      "renderedSection": "Activity 12: My Needs vs Wants — With 24-Hour Pause Experiment",
+      "renderedAnchor": "learning-e00c9dfcd0c93b42a6968deb-1",
+      "renderTreatment": "Existing semantic block rendering",
+      "teachingStageIds": [],
+      "additionalUse": "Practical preparation"
+    },
+    {
+      "sourceBlockId": "d44e1ef88ac8fdb3ec5b41b3-1",
+      "originalIndex": 36,
+      "sourceKind": "text",
+      "sourceType": "paragraph",
+      "renderedSection": "Deepening Insight",
+      "renderedAnchor": "learning-52e5abf1875a06c6ea81ce7f-1",
+      "renderTreatment": "Grouped disclosure",
+      "teachingStageIds": [
+        "g8-discuss"
+      ],
+      "additionalUse": "Source basis and educator preparation"
+    },
+    {
+      "sourceBlockId": "679e54be33c1e1e6f9a975ae-1",
+      "originalIndex": 40,
+      "sourceKind": "text",
+      "sourceType": "paragraph",
+      "renderedSection": "Checkpoint ( Evaluate)",
+      "renderedAnchor": "learning-1e8357621b551417d9b19216-1",
+      "renderTreatment": "Existing structured checkpoint renderer",
+      "teachingStageIds": [
+        "g8-check"
+      ],
+      "additionalUse": "Understanding check"
+    },
+    {
+      "sourceBlockId": "4545e2ea9ee33317323627ba-1",
+      "originalIndex": 44,
+      "sourceKind": "text",
+      "sourceType": "paragraph",
+      "renderedSection": "Try This at Home — Behavioral Experiment",
+      "renderedAnchor": "learning-22499840c699d3a0d0c842d7-1",
+      "renderTreatment": "Existing semantic block rendering",
+      "teachingStageIds": [
+        "g8-check"
+      ],
+      "additionalUse": "Source basis and educator preparation"
+    },
+    {
+      "sourceBlockId": "59d1c2b019b78c54acc6b457-1",
+      "originalIndex": 49,
+      "sourceKind": "text",
+      "sourceType": "paragraph",
+      "renderedSection": "Try This at Home — Behavioral Experiment",
+      "renderedAnchor": "learning-22499840c699d3a0d0c842d7-1",
+      "renderTreatment": "Existing semantic block rendering",
+      "teachingStageIds": [
+        "g8-check"
+      ],
+      "additionalUse": "Source basis and educator preparation"
+    }
+  ]
+}

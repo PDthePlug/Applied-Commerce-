@@ -1,0 +1,104 @@
+[
+  {
+    "role": "platformAdmin",
+    "login": true,
+    "commit": "bdf432246cd73be42908724bed728a2f6f4dc4d2",
+    "samples": [
+      {
+        "status": 200,
+        "ms": 1090,
+        "bytes": 101791,
+        "cacheControl": "private, no-store, max-age=0"
+      }
+    ]
+  },
+  {
+    "role": "facilitator",
+    "login": true,
+    "commit": "bdf432246cd73be42908724bed728a2f6f4dc4d2",
+    "samples": [
+      {
+        "status": 200,
+        "ms": 910,
+        "bytes": 101791,
+        "cacheControl": "private, no-store, max-age=0"
+      },
+      {
+        "status": 200,
+        "ms": 825,
+        "bytes": 101791,
+        "cacheControl": "private, no-store, max-age=0"
+      },
+      {
+        "status": 200,
+        "ms": 959,
+        "bytes": 101791,
+        "cacheControl": "private, no-store, max-age=0"
+      },
+      {
+        "status": 200,
+        "ms": 966,
+        "bytes": 101791,
+        "cacheControl": "private, no-store, max-age=0"
+      },
+      {
+        "status": 200,
+        "ms": 713,
+        "bytes": 101791,
+        "cacheControl": "private, no-store, max-age=0"
+      }
+    ]
+  },
+  {
+    "role": "learner",
+    "login": true,
+    "commit": "bdf432246cd73be42908724bed728a2f6f4dc4d2",
+    "samples": [
+      {
+        "status": 403,
+        "ms": 493,
+        "bytes": 100,
+        "cacheControl": "private, no-store, max-age=0"
+      }
+    ]
+  },
+  {
+    "role": "unassigned",
+    "login": true,
+    "commit": "bdf432246cd73be42908724bed728a2f6f4dc4d2",
+    "samples": [
+      {
+        "status": 403,
+        "ms": 640,
+        "bytes": 100,
+        "cacheControl": "private, no-store, max-age=0"
+      }
+    ]
+  },
+  {
+    "role": "schoolAdmin",
+    "login": true,
+    "commit": "bdf432246cd73be42908724bed728a2f6f4dc4d2",
+    "samples": [
+      {
+        "status": 200,
+        "ms": 741,
+        "bytes": 101791,
+        "cacheControl": "private, no-store, max-age=0"
+      }
+    ]
+  },
+  {
+    "role": "other",
+    "login": true,
+    "commit": "bdf432246cd73be42908724bed728a2f6f4dc4d2",
+    "samples": [
+      {
+        "status": 403,
+        "ms": 904,
+        "bytes": 100,
+        "cacheControl": "private, no-store, max-age=0"
+      }
+    ]
+  }
+]

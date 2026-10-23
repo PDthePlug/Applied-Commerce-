@@ -1,0 +1,31 @@
+{
+  "preservedPlans": 24,
+  "addedPlans": 5,
+  "totalPlans": 29,
+  "addedPeriods": 7,
+  "newPlacements": 55,
+  "source": "24 previously authorised unchanged staging payloads and five individually written private drafts",
+  "validation": "Source hashes, schema, activity coverage, actual renderer insertions and exact preservation of existing plans",
+  "encryption": "PENDING_ORIGINAL_KEY_BINDING_IN_ACTIVE_WORKER",
+  "hosted": "NOT_TESTED_FOR_NEW_DRAFTS",
+  "runtimeKeyBinding": {
+    "ownerReported": "Coding environment; configuration applied",
+    "observedActiveRevision": "15",
+    "keyVariablePresent": false,
+    "keyFileVariablePresent": false,
+    "readySecretNames": [
+      "VERCEL_TOKEN",
+      "SUPABASE_SECRET_KEY"
+    ],
+    "observationsCurrent": true
+  },
+  "localChecks": {
+    "nodePassed": 199,
+    "typecheck": "PASS",
+    "lint": "PASS",
+    "runtime": "PASS: 395 lessons, 4 assessments, 20766 stable blocks",
+    "productionBuild": "PASS_LOCAL_MODE; does not establish original-key decryption"
+  },
+  "newCompletedPlans": 0,
+  "at": "2026-10-23T11:38:05.183131+00:00"
+}

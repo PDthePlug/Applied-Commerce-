@@ -1,0 +1,94 @@
+{
+  "runId": 39629359362,
+  "jobId": 119323039084,
+  "commit": "c68efc48bf5a27fb58225388e6bc0606f83bf5ad",
+  "url": "https://github.com/PDthePlug/Applied-Commerce-/actions/runs/39629359362",
+  "status": "completed",
+  "conclusion": "success",
+  "steps": [
+    {
+      "name": "Set up job",
+      "conclusion": "success"
+    },
+    {
+      "name": "Checkout",
+      "conclusion": "success"
+    },
+    {
+      "name": "Node 22",
+      "conclusion": "success"
+    },
+    {
+      "name": "Install dependencies",
+      "conclusion": "success"
+    },
+    {
+      "name": "Python 3",
+      "conclusion": "success"
+    },
+    {
+      "name": "Task identity tests",
+      "conclusion": "success"
+    },
+    {
+      "name": "Curriculum tests",
+      "conclusion": "success"
+    },
+    {
+      "name": "Synthetic database restore and volume drill",
+      "conclusion": "success"
+    },
+    {
+      "name": "Typecheck",
+      "conclusion": "success"
+    },
+    {
+      "name": "Lint",
+      "conclusion": "success"
+    },
+    {
+      "name": "Production build",
+      "conclusion": "success"
+    },
+    {
+      "name": "Install Chromium",
+      "conclusion": "success"
+    },
+    {
+      "name": "Browser presentation acceptance",
+      "conclusion": "success"
+    },
+    {
+      "name": "Refresh presentation census evidence",
+      "conclusion": "success"
+    },
+    {
+      "name": "Upload presentation evidence",
+      "conclusion": "success"
+    },
+    {
+      "name": "Post Python 3",
+      "conclusion": "success"
+    },
+    {
+      "name": "Post Node 22",
+      "conclusion": "success"
+    },
+    {
+      "name": "Post Checkout",
+      "conclusion": "success"
+    },
+    {
+      "name": "Complete job",
+      "conclusion": "success"
+    }
+  ],
+  "selectedLogEvidence": [
+    "2026-10-21T15:51:03.5835542Z Ran 2 tests in 0.000s",
+    "2026-10-21T15:51:10.6571997Z # tests 178",
+    "2026-10-21T15:51:10.6572220Z # pass 178",
+    "2026-10-21T15:51:10.6572334Z # fail 0",
+    "2026-10-21T15:51:17.5823930Z {\"passed\":7,\"failed\":0,\"learners\":500,\"answers\":10000,\"timings\":{\"learnerAnswers\":{\"samples\":20,\"p50Ms\":2.62,\"p95Ms\":3.82,\"maxMs\":3.92},\"facilitatorPage\":{\"samples\":20,\"p50Ms\":75.9,\"p95Ms\":78.3,\"maxMs\":78.82},\"administratorCohort\":{\"samples\":20,\"p50Ms\":32.7,\"p95Ms\":42.62,\"maxMs\":49.35},\"revisionSave\":{\"samples\":20,\"p50Ms\":0.96,\"p95Ms\":1.16,\"maxMs\":1.21}},\"backup\":{\"bytes\":7074851,\"sha256\":\"0f9a5b77b2a5114f21111f2b0865c05335e75f146e861b461515afb967afac3b\",\"backupMs\":530,\"restoreMs\":591,\"tablesVerified\":26}}",
+    "2026-10-21T15:54:30.4750189Z   222 passed (2.6m)"
+  ]
+}

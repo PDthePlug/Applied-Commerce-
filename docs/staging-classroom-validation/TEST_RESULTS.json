@@ -1,0 +1,58 @@
+{
+  "commit": "a4242c0da553a9055b625ebf754ff7de309ae287",
+  "authentication": "real browser password login",
+  "plans": 24,
+  "fields": 1867,
+  "roles": [
+    {
+      "role": "facilitator existing session after revocation",
+      "status": 403
+    },
+    {
+      "role": "platformAdmin",
+      "status": 200
+    },
+    {
+      "role": "schoolAdmin",
+      "status": 200
+    },
+    {
+      "role": "learner",
+      "status": 403
+    },
+    {
+      "role": "unassigned",
+      "status": 403
+    },
+    {
+      "role": "other",
+      "status": 403
+    }
+  ],
+  "persistence": [
+    "browser save and reload",
+    "portfolio contains synthetic original response",
+    "fresh browser password login restores answers, reflection, note and completion"
+  ],
+  "delivery": {
+    "include": {
+      "samples": 15,
+      "bytes": 101791,
+      "medianMs": 781,
+      "minMs": 538,
+      "maxMs": 1006
+    },
+    "omit": {
+      "samples": 15,
+      "bytes": 20092,
+      "medianMs": 729,
+      "minMs": 533,
+      "maxMs": 1214
+    }
+  },
+  "byteReductionPercent": 80.26,
+  "chromiumHeapMiB": {
+    "minimumBefore": 6.49,
+    "maximumAfter": 56.23
+  }
+}

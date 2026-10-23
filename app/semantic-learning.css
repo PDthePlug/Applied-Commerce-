@@ -23,6 +23,22 @@
 .semantic-learning-document .choice-option strong{font-size:14px;line-height:1.5}
 .semantic-learning-document .structured-prompt-helper{font-size:13px;line-height:1.6;font-weight:400}
 .semantic-learning-document .response-status{font-size:11px;line-height:1.5}
+/* Checkpoint responses retain their original controls and identity. Numbers
+   and wrapped text share one row; helper copy sits under the question text. */
+.checkpoint-question{display:grid;grid-template-columns:2ch minmax(0,1fr);column-gap:.65em;row-gap:.4em;align-items:baseline}
+.checkpoint-question>.structured-part-label{grid-column:1;margin:0;font-size:1em;line-height:1.5;font-weight:650;letter-spacing:0;text-transform:none;color:var(--ink)}
+.checkpoint-question>.question-prompt{grid-column:2;margin:0!important}
+.checkpoint-question>.structured-prompt-helper{grid-column:2;margin:0;color:var(--muted);font-size:.875em;line-height:1.55;font-weight:400}
+.semantic-learning-document .structured-response-group:has(.checkpoint-question){margin:22px 0 24px}
+.semantic-learning-document .response-surface-checkpoint:has(.checkpoint-question){margin:0 0 18px;padding:0 0 18px!important;border-top:0;border-radius:0;background:transparent;font-size:calc(16px * var(--ac-text-scale))}
+.response-surface-checkpoint:has(.checkpoint-question)>.response-surface-prompt{margin-bottom:10px}
+.response-surface-checkpoint:has(.checkpoint-question)>.response-surface-control{margin-inline-start:calc(2ch + .65em)}
+.response-surface-checkpoint:has(.checkpoint-question) textarea{min-height:6em;padding:12px 14px;border-radius:10px;resize:vertical}
+@media print{
+ .checkpoint-question{break-inside:avoid}
+ .response-surface-checkpoint:has(.checkpoint-question){break-inside:avoid}
+ .response-surface-checkpoint:has(.checkpoint-question) .printed-response{white-space:pre-wrap}
+}
 .semantic-learning-document .source-table-wrap thead th{font-size:12px;line-height:1.45}
 .rating-options{display:flex;flex-wrap:wrap;gap:5px;min-width:0}
 .rating-options button{flex:0 0 44px;min-height:44px;border:1px solid #bbc5bf;border-radius:9px;background:#fff;color:var(--ink);font-size:14px;font-weight:700}
