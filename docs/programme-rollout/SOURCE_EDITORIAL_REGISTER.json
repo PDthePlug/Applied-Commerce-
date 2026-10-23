@@ -1,5 +1,5 @@
 {
-  "scope": "Individually read Grade 8 Terms 2–4 and Grade 9 Term 1; separate unapplied proposals",
+  "scope": "Individually read Grade 8 Terms 2–4, Grade 9 Term 1 and Grade 9 Term 2 Lessons 17–25; separate unapplied proposals",
   "sourceChangesApplied": false,
   "entries": [
     {
@@ -603,6 +603,156 @@
       "concern": "The printed 40% weighting is not established by application configuration or the instructional audit. It must agree with the institution’s actual assessment policy and calendar.",
       "proposedWording": "Confirm the project weighting, dates and presentation arrangements set by your institution. Allow the agreed real project period and retain the three equally valid options.",
       "implementationImpact": "Separate source-table review; no marks, assessment records or responses changed. Preparation requires confirmation before teaching; the guide does not fabricate an institutional policy.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g9-t2-l17-018",
+      "blockId": "f0ed9a1ba806b079cf5561e6-1",
+      "exactPassage": "Explain that all money ultimately comes from someone, somewhere, solving a problem.",
+      "category": "Material conceptual overgeneralisation",
+      "concern": "The outcome conflates tracing payments or income with monetary creation. The later claim that every rand was created by a problem-solver repeats the issue; transfers and borrowing also break the implied exchange-for-work chain.",
+      "proposedWording": "Trace known payments and the work, goods, services or transfers connected to them. Distinguish a payment path from the separate question of how money is created, and label links you cannot establish.",
+      "implementationImpact": "Separate source/outcome review, never silently applied through a guide. Preserve learner tasks and saved identities; any future source release must review SHA bindings and identity preservation explicitly. Current optional clarification stays beside the tracing task.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g9-t2-l17-018",
+      "blockId": "95fec4afb4cb3ac1365fe982-1",
+      "exactPassage": "Subject | CAPS Topic | CAPS Code | Specific Competency\nEMS | Economic Cycles | EMS-G9-T2-01 | Understanding the flow of money in the economy\nBus Stud | Value Creation | BS-G9-T2-01 | Understanding how value is created and exchanged\nLO | Financial Awareness | LO-G9-T2-01 | Understanding the origins of money",
+      "category": "Curriculum mapping requiring current external verification",
+      "concern": "The CAPS Integration table presents subject/code/competency mappings without an official source establishing those exact codes or the role of Business Studies at this grade. They may be author-supplied alignment labels rather than official codes.",
+      "proposedWording": "Label these as author-supplied curriculum alignment references pending verification against the current official subject/grade documents; only retain a claim of official code status after that check.",
+      "implementationImpact": "Separate source metadata review; no change to canonical tables, learning outcomes or saved fields now. No official certification or CAPS-code verification is claimed by the teacher guide.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g9-t2-l18-019",
+      "blockId": "24a74dc55830dd8964391c61-1",
+      "exactPassage": "Child support grant: R510",
+      "category": "Current benefit amount requiring verification",
+      "concern": "R510 is presented without a date. The audit has not verified it as a current official child-support-grant amount or entitlement. Narrative figures must not be repeated as current advice.",
+      "proposedWording": "Identify the ledger’s grant figure as illustrative and dated; use the current official schedule only after verifying the relevant date and programme.",
+      "implementationImpact": "Separate source-table/figure review; no benefit rate substituted or eligibility advice added. Teacher support treats the story amount as illustrative and preserves calculations/identities.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g9-t2-l18-019",
+      "blockId": "48a0ebfa90e3b9a36e6c6b35-1",
+      "exactPassage": "\"The crèche pays the rent,\" Grace says. \"The baking pays for everything else. The grant covers food. Thabo's money covers his own costs, mostly. The stokvel is for December — school uniforms for the new year, Christmas food, the one time of year we do not count every rand.\"",
+      "category": "Missing numerical context",
+      "concern": "The stated grant of R510 is smaller than the listed R1,200 food expense. Household funds can be pooled, but “covers food” should not be taught as complete coverage by that one stream.",
+      "proposedWording": "The grant contributes toward food, and the household pools its other receipts to meet the rest of its expenses. The baking, wages and other contributions can vary.",
+      "implementationImpact": "Separate narrative wording review; preserve the ledger amounts and existing map/analysis fields. Current optional support distinguishes contribution from full coverage without silently rewriting the story.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g9-t2-l18-019",
+      "blockId": "0a8b1b122e4cb5805676dc5c-1",
+      "exactPassage": "Look at your expense arrows. Your biggest expenses are not just bills. They are monuments to fear — fear of sickness, fear of losing shelter, fear of your children not being educated, fear of being unable to travel to work. What is your household trying to protect itself from?",
+      "category": "Interpretation needing contextual/privacy qualification",
+      "concern": "The fear metaphor can support personal reflection, but expense arrows alone do not establish a household’s emotions. Actual financial disclosure or a prescribed anxiety judgement is unnecessary for the map.",
+      "proposedWording": "Consider whether some expenses protect against a risk or meet an ordinary need or obligation. Use your own safe example or Grace’s household. You may say that the reason is unknown rather than infer a fear from spending alone.",
+      "implementationImpact": "Proposed meaning qualification requires separate source review; keep all current fields and personal reflection. Local optional support allows uncertainty and a source-household alternative where disclosure would be sensitive.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g9-t2-l19-020",
+      "blockId": "b428c1b84af3159add42cc53-1",
+      "exactPassage": "\"And not all of them paid fairly,\" Emmanuel says quietly. \"The farm workers — I read that some of them earn R23 an hour. The truck driver might earn more. The bakery owner earns the most. The farmer depends on the weather and the global wheat price. One bad season and the whole chain feels it.\"",
+      "category": "Wage/earnings claims requiring dated evidence and contextual explanation",
+      "concern": "The R23 hourly example is unverified as a current rate, and the hierarchy of who earns most cannot be established from the chain alone without hours, costs and ownership. A character’s claim is not sufficient evidence for a real-world ranking.",
+      "proposedWording": "Treat wage examples as dated and illustrative unless verified. Earnings and conditions differ by role and situation; use relevant costs, hours and conditions before ranking pay or judging fairness. Where information is missing, say Unsure and identify what is needed.",
+      "implementationImpact": "Separate story/context review; no rate, response count or source identity changed now. Teacher support uses the source’s existing Unsure option and distinguishes receipts, wages and margins.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g9-t2-l21-022",
+      "blockId": "1f54524aa56b413c70b2f2e1-1",
+      "exactPassage": "Supermarket: They buy at R13, sell at R18. Margin: R5 per bottle — the biggest single margin in the chain. For putting it on a shelf.",
+      "category": "Material accounting distinction",
+      "concern": "The R5 selling-minus-buying difference is compared with a factory figure after several operating costs. It is not established as supermarket net profit, and shelf placement is not its only cost or contribution.",
+      "proposedWording": "Supermarket: it buys at R13 and sells at R18. The R5 difference must also cover its operating costs; this does not establish its net profit or the personal earnings of its workers or owners.",
+      "implementationImpact": "Separate story/terminology review, also checking the distributor and vocabulary examples. Current optional clarification distinguishes cost bases; no figure or response identity changed.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g9-t2-l22-023",
+      "blockId": "f4870017abe07f83a47e2c80-1",
+      "exactPassage": "Person | Employer? | Employee? | Both? | Why?\nMrs. Mkhize (crèche owner) | ✓ |  |  | She runs the business, hires others\nA teacher at the crèche |  | ✓ |  | Works for Mrs. Mkhize under a contract\nA taxi driver who owns his taxi |  |  |  | \nA taxi driver who drives someone else's taxi |  |  |  | \nMama Rose |  |  |  | \nMr. Ndlovu (warehouse worker + car wash owner) |  |  |  | ",
+      "category": "Missing classification option or evidence",
+      "concern": "A sole owner-driver may be self-employed without employing anyone, while driving another person’s taxi does not alone establish an employment relationship. Employer/Employee/Both excludes a possible neither case.",
+      "proposedWording": "Explain that self-employment without staff is possible. Specify whether each example hires workers or works under an employment arrangement, or allow Not enough information/self-employed in the existing explanation.",
+      "implementationImpact": "Proposed category/meaning changes require separate owner review. No column, tick count or response identity changed; current guidance uses the existing Why space to state uncertainty.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g9-t2-l23-024",
+      "blockId": "d6c2b2babaab40dd1411ce61-1",
+      "exactPassage": "Element | Description\nDuration | 3 weeks of observation and mapping\nWhat you will create | A visual money map with analysis and reflection\nPresentation | 5-7 minute presentation to the class\nWeight | 40% of Term 2 grade",
+      "category": "Assessment-policy claim requiring institutional verification",
+      "concern": "The 40% weighting is presented as a rule without verified institutional authority. Duration and presentation requirements remain the authored tasks, but the weighting cannot be certified by this guide.",
+      "proposedWording": "Proposed project contribution: confirm the assessment weighting with the institution’s approved assessment plan before using it as a grading rule.",
+      "implementationImpact": "Separate source/policy review; no automatic grading or assessment-schema change. Retain the authored project and later Lesson 30 presentation.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g9-t2-l23-024",
+      "blockId": "20a7b76bb0d736366a81bf5c-1",
+      "exactPassage": "Walk through your chosen community area. Just observe. Do not take notes yet. Just look. What do you notice about money flows? What do you see that you have never noticed before?",
+      "category": "Specific observation safeguard missing",
+      "concern": "An unqualified community walk can be unsuitable for minors or unsafe locations. It should not require solo unfamiliar travel or following people/transactions.",
+      "proposedWording": "Observe only in a safe, permitted area with appropriate supervision and arrangements. Where access is unsuitable, arrange a supported accessible opportunity and state the evidence source honestly.",
+      "implementationImpact": "Separate activity-safeguard wording proposal. Current local later-work cue supplies the necessary safeguard without changing the task or adding fields.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g9-t2-l24-025",
+      "blockId": "416787d6dfc7c06a91e6b516-1",
+      "exactPassage": "Time | What Was Exchanged | How Much | Who Was Involved | Where Does the Money Go?",
+      "category": "Missing digital response structure",
+      "concern": "The observation log has a header row only, so the existing digital table has no transaction rows. The task still requires a thirty-minute record.",
+      "proposedWording": "Retain the observation headings and provide an explicitly reviewed way to record transaction rows; agree row count/expansion and migration before changing digital response structure.",
+      "implementationImpact": "Consequential response-structure decision remains separate; no rows, prompts or saved IDs added now. Use the existing workbook/writing medium, disclosed locally, rather than claim digital record coverage.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g9-t2-l24-025",
+      "blockId": "636c1b98967f58890608c6b0-1",
+      "exactPassage": "Identify ONE leak — a place where money leaves your community and does not return. Name it. Describe it.",
+      "category": "Unsupported inference from a short sample",
+      "concern": "A thirty-minute observation cannot establish that a payment never returns or validate a weekly total. An outside purchase can bring useful goods/services, so outward flow alone is not proof of harm.",
+      "proposedWording": "Identify one observed or supported payment outside your defined community boundary. Explain what is known, what is estimated and what further evidence would show its longer-term effect or weekly amount.",
+      "implementationImpact": "Source meaning qualification needs separate review. Current support keeps boundary/sample limits and labelled estimates beside the analysis; existing fields unchanged.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g9-t2-l25-026",
+      "blockId": "291880c52925d6231737ea15-1",
+      "exactPassage": "Money In | Amount | Money Out | Amount\nTotal In | R | Total Out | R",
+      "category": "Missing digital line-item response structure",
+      "concern": "Only a Total In/Total Out row exists, leaving no digital line-item rows for the requested household table. Adding rows silently would change saved response structure.",
+      "proposedWording": "Provide a separately reviewed line-item recording arrangement for the authored income/expenditure task, preserving existing totals and planning any new response identities explicitly.",
+      "implementationImpact": "No response fields or table rows added now. Teacher cue acknowledges the current limitation and uses the normal workbook/writing medium for line items.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g9-t2-l25-026",
+      "blockId": "e62603f172bf0e5e2c1b93ff-1",
+      "exactPassage": "Ask one person in your household: \"What is the biggest financial worry you have right now?\" Listen without trying to solve it. Just listen. Write down what they say.",
+      "category": "Sensitive financial disclosure without an alternative",
+      "concern": "Asking and recording a household member’s biggest financial worry may expose private or distressing information and offers no explicit alternative in this lesson.",
+      "proposedWording": "Ask only a willing person who is comfortable discussing a general concern; they may decline. Do not record identifying or sensitive details. If unsuitable, reflect on Grace’s stated worry and label it as the source example.",
+      "implementationImpact": "Separate source safeguard/alternative review. A brief local later-work safeguard is included now; no compulsory new response field or class disclosure.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g9-t2-l25-026",
+      "blockId": "fbb8c391d866fff5dc1c97f0-1",
+      "exactPassage": "The Truth: Grace's household has a surplus on paper. But that surplus is not extra. It is protection. It is the buffer between survival and disaster. Most households are like this — one missed paycheck away from crisis.",
+      "category": "Prevalence claim requiring external evidence",
+      "concern": "Most households being one missed paycheck from crisis is a broad empirical claim, unsupported by a cited population, date or measure. The story’s vulnerable budget remains a legitimate example.",
+      "proposedWording": "Grace’s example shows how a small surplus can protect against unexpected costs. The extent of this vulnerability across households requires dated evidence and varies by circumstances.",
+      "implementationImpact": "Separate source factual review; no universal prevalence statistic added or silently changed. Teacher guidance analyses the stated example and avoids inferring every household’s circumstances.",
       "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
     }
   ],
