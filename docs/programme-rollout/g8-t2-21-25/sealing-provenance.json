@@ -1,0 +1,15 @@
+{
+  "keyRemainedInStaging": true,
+  "keyExported": false,
+  "temporaryInputSecretsRemoved": 5,
+  "projectBuildCommandRemainsUnchanged": true,
+  "failedPrivacyScans": {
+    "classification": "False positive: exact 72-character canonical originalTitle for the same public catalogue lesson",
+    "lessonId": "g10-t2-l19-019",
+    "sha256": "d72bafe3624546eaf929fdfa59cc6223b9709a25f83048ca016e23befdc38088",
+    "correction": "Exempt only a verified originalTitle for that lesson; identical text in any private reasoning field remains scanned"
+  },
+  "successfulSealingDeployment": "dpl_5gmntucopVtpyihUwdMptxqzBkTT",
+  "successfulSealingCommit": "db75e98d617ca81943804bcf4b24c541e74fc991",
+  "finalHostedVerification": "PENDING"
+}

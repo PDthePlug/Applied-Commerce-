@@ -38,12 +38,13 @@ try{
   const route=`/learn/${binding.grade}/term/${binding.term}/${binding.lessonId}`;
   const before=(await cdp.send('Performance.getMetrics')).metrics.find(m=>m.name==='JSHeapUsedSize')?.value;
   const response=await page.request.get('/api/classroom?lesson='+binding.lessonId+'&catalog=omit');assert.equal(response.status(),200);const payload=await response.json();
-  await page.goto(route);await page.getByRole('button',{name:'Teacher View',exact:true}).click();await page.locator('[data-instructional-location="preparation"]').waitFor();
+  await page.goto(route);await page.locator('.lesson-document').waitFor();const responseControls=()=>page.locator('.lesson-document input,.lesson-document textarea,.lesson-document select').evaluateAll(nodes=>nodes.filter(node=>!node.closest('.contextual-private')).map(node=>({tag:node.tagName,type:node.getAttribute('type'),label:node.getAttribute('aria-label'),id:node.getAttribute('id')})));const learnerControls=await responseControls();await page.getByRole('button',{name:'Teacher View',exact:true}).click();await page.locator('[data-instructional-location="preparation"]').waitFor();
+  assert.deepEqual(await responseControls(),learnerControls,'Teacher mode changed original response controls: '+binding.lessonId);
   const originals=await page.locator('[data-instructional-field]').evaluateAll(nodes=>Object.fromEntries(nodes.map(n=>[n.getAttribute('data-instructional-field'),n.textContent])));
   for(const [field,value]of Object.entries(payload.plan.fields))assert.equal(originals[field],value,binding.lessonId+' '+field);
   assert.equal(await page.locator('[data-facilitation-cue]').count(),payload.plan.moments.filter(m=>m.schedule==='classroom').length);
   // Inspect every local disclosure and every teaching-stage navigation target.
-  for(const moment of payload.plan.moments){const target=page.locator('[data-instructional-location="'+moment.id+'"]');assert.equal(await target.count(),1);}
+  for(const moment of payload.plan.moments){const target=page.locator('[data-instructional-location="'+moment.id+'"]');assert.equal(await target.count(),1);const explicit=moment.core.find(group=>group.heading==='Facilitation cue');if(explicit){assert.equal(await target.locator('[data-facilitation-cue]').getAttribute('data-instructional-field'),explicit.fields[0]);const expectedDepth=[...moment.core.filter(group=>group!==explicit),...moment.depth].length?1:0;assert.equal(await target.locator('.contextual-depth').count(),expectedDepth,'Redundant or missing deeper panel: '+moment.id);}}
   await page.evaluate(()=>{window.print=()=>{window.__acPrintRequested=true;};});
   await page.locator('.contextual-tools > summary').click();await page.getByRole('button',{name:'Print complete teacher preparation',exact:true}).click();await page.locator('.contextual-print-guide').waitFor({state:'attached'});
   const printFields=await page.locator('.contextual-print-guide [data-instructional-field]').evaluateAll(nodes=>Object.fromEntries(nodes.map(n=>[n.getAttribute('data-instructional-field'),n.textContent])));
@@ -53,7 +54,7 @@ try{
   }
   await page.pdf({path:evidence+'/'+binding.lessonId+'.pdf',format:'A4',printBackground:true});await page.evaluate(()=>window.dispatchEvent(new Event('afterprint')));
   const after=(await cdp.send('Performance.getMetrics')).metrics.find(m=>m.name==='JSHeapUsedSize')?.value;
-  result.plans.push({lessonId:binding.lessonId,fields:Object.keys(originals).length,originalFieldsPreserved:true,printFieldsPreserved:true,heapBefore:before,heapAfter:after});save();
+  result.plans.push({lessonId:binding.lessonId,fields:Object.keys(originals).length,originalFieldsPreserved:true,originalResponseControlsPreserved:true,noRedundantDepthPanels:true,printFieldsPreserved:true,heapBefore:before,heapAfter:after});save();
  }
  for(const catalog of ['include','omit'])for(let i=0;i<5;i++){
   const started=performance.now(),r=await page.request.get('/api/classroom?lesson=g8-t1-l01-001'+(catalog==='omit'?'&catalog=omit':'')),body=await r.body();assert.equal(r.status(),200);

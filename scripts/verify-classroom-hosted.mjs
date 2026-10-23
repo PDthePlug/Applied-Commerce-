@@ -14,5 +14,7 @@ try{
  const teachingResult=spawnSync(process.execPath,['scripts/teaching-release.mjs','--key-file','-'],{input:key,encoding:'utf8',timeout:60_000});
  if(teachingResult.status!==0)throw new Error();
  const teaching=JSON.parse(teachingResult.stdout);if(teaching.ok!==true||teaching.grade8Term1!==20||teaching.teachingPlans!==expectedPlans||teaching.privateKeyExported!==false)throw new Error();
- console.log(JSON.stringify({teachingPlans:teaching.teachingPlans,termLessons:teaching.grade8Term1,teachingPeriods:teaching.periods,instructionalFields:teaching.instructionalFields,classroomServerBuildVerification:'PASS',guides:summary.guides,periods:summary.periods,contextualEnrichment:summary.contextualEnrichment,contextualInstructionalFields:summary.contextualInstructionalFields,privateKeyExported:false,runtimeEducatorLearnerAccess:'NOT TESTED'}));
+ let assetScan;
+ if(process.argv.includes('--scan-client')){const scan=spawnSync(process.execPath,['scripts/check-classroom-client.mjs','--key-file','-'],{input:key,encoding:'utf8',timeout:60_000});if(scan.status!==0)throw new Error();assetScan=JSON.parse(scan.stdout);if(assetScan.ok!==true||assetScan.keyExported!==false)throw new Error();}
+ console.log(JSON.stringify({assetScan,teachingPlans:teaching.teachingPlans,termLessons:teaching.grade8Term1,teachingPeriods:teaching.periods,instructionalFields:teaching.instructionalFields,classroomServerBuildVerification:'PASS',guides:summary.guides,periods:summary.periods,contextualEnrichment:summary.contextualEnrichment,contextualInstructionalFields:summary.contextualInstructionalFields,privateKeyExported:false,runtimeEducatorLearnerAccess:'NOT TESTED'}));
 }catch{console.error('Private classroom release verification returned an invalid summary.');process.exit(1);}
