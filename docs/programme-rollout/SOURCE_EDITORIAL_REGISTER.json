@@ -1,5 +1,5 @@
 {
-  "scope": "Individually read Grade 8 Term 2 Lessons 21–40; separate unapplied source proposals",
+  "scope": "Individually read Grade 8 Term 2 and Term 3 first ten lessons; separate unapplied proposals",
   "sourceChangesApplied": false,
   "entries": [
     {
@@ -191,6 +191,96 @@
       "proposedWording": "With her mother’s agreement, Busisiwe helps record expenses they choose to share. Learners may use the story instead of private household figures.",
       "implementationImpact": "Separate owner-reviewed editorial correction only; preserve canonical blocks, prompt splitting, response count and saved identities. Current teacher support provides the relevant local clarification or safeguard without rewriting the learner source.",
       "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g8-t3-l41-040",
+      "blockId": "d8e2a78b59deba473ce953f4-1",
+      "exactPassage": "Every habit has three parts:",
+      "category": "Missing context for an introductory model",
+      "concern": "A three-part loop is a useful teaching model, not a complete account of all habits. Avoid presenting it as a universal diagnostic claim.",
+      "proposedWording": "One useful way to investigate a familiar habit is to look for a cue, a routine and a possible reward.",
+      "implementationImpact": "Separate owner-reviewed editorial correction only. Preserve source/response identities; teacher support gives the relevant local distinction without rewriting learner content.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g8-t3-l42-041",
+      "blockId": "0c153b9fec945c247b2a6758-1",
+      "exactPassage": "Do it fifty times → it is automatic.",
+      "category": "Material unsupported fixed threshold",
+      "concern": "Fifty repetitions do not establish automaticity across behaviours and circumstances. The number is not verified and should not become a classroom guarantee.",
+      "proposedWording": "Repeated practice can make an action feel more familiar. How long this takes varies; there is no fixed repetition count for every habit.",
+      "implementationImpact": "Separate owner-reviewed editorial correction only. Preserve source/response identities; teacher support gives the relevant local distinction without rewriting learner content.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g8-t3-l42-041",
+      "blockId": "b0f484333411765926151d11-1",
+      "exactPassage": "Your brain loves shortcuts. When you do something new, your brain works hard. When you do it again, it works less. When you have done it many times, your brain barely works at all.",
+      "category": "Missing context in a brain metaphor",
+      "concern": "The brain continues working during familiar actions; less conscious attention is different from barely working.",
+      "proposedWording": "Familiar actions may need less conscious attention than new ones. The path-through-grass image is a metaphor for increasing familiarity.",
+      "implementationImpact": "Separate owner-reviewed editorial correction only. Preserve source/response identities; teacher support gives the relevant local distinction without rewriting learner content.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g8-t3-l45-044",
+      "blockId": "dea4c87885348140caed30ab-1",
+      "exactPassage": "R5 a day = R35 a week = R140 a month = R1,680 a year",
+      "category": "Material calendar-model inconsistency",
+      "concern": "Twelve four-week months cover 48 weeks, not a full calendar year. State assumptions and separate daily from weekly models.",
+      "proposedWording": "R5 a day gives R35 over seven days, R140 over four weeks and R1,825 over a 365-day year.",
+      "implementationImpact": "Separate owner-reviewed editorial correction only. Preserve source/response identities; teacher support gives the relevant local distinction without rewriting learner content.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g8-t3-l45-044",
+      "blockId": "1bacb59bed56673a84ddd5a5-1",
+      "exactPassage": "Fifth year — in just six weeks, the bamboo grows 27 metres.",
+      "category": "Claim requiring external verification",
+      "concern": "The precise bamboo growth chronology is not established here; it is a motivational story and should not be offered as verified botany.",
+      "proposedWording": "In this story, growth becomes visible after a long wait. Use the story to discuss patience, while checking real plants and conditions rather than treating its timing as a botanical rule.",
+      "implementationImpact": "Separate owner-reviewed editorial correction only. Preserve source/response identities; teacher support gives the relevant local distinction without rewriting learner content.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g8-t3-l46-045",
+      "blockId": "c070a54d4a7b86c4b796e0fe-1",
+      "exactPassage": "Now imagine that money earns interest. If you put money in a bank account, the bank pays you for keeping it there. It is small — maybe 2% or 3% a year. But over time, it adds up.",
+      "category": "Claim requiring current external verification",
+      "concern": "The 2% or 3% annual figure is not a current verified bank quotation. Interest, fees and terms vary.",
+      "proposedWording": "For an illustrative calculation, assume a stated annual interest rate. Actual account rates, charges and terms vary and must be checked from current provider information.",
+      "implementationImpact": "Separate owner-reviewed editorial correction only. Preserve source/response identities; teacher support gives the relevant local distinction without rewriting learner content.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g8-t3-l47-046",
+      "blockId": "efc997d470443f0e116857b6-1",
+      "exactPassage": "If you do not miss anything this week: Deliberately skip one day of something — just to practice restarting. The skill of restarting is more important than the skill of never missing.",
+      "category": "Specific safety concern",
+      "concern": "An unrestricted instruction to deliberately skip something could include medication, essential care, school or a safety duty.",
+      "proposedWording": "Use a naturally missed ordinary routine if one occurs. Deliberate restart practice must involve only a harmless optional activity; do not skip medication, essential care, school or safety duties.",
+      "implementationImpact": "Separate owner-reviewed editorial correction only. Preserve source/response identities; teacher support gives the relevant local distinction without rewriting learner content.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g8-t3-l48-047",
+      "blockId": "10f28b8372cac328e6fba183-1",
+      "exactPassage": "[[\"If this happens...\",\"I will...\"]]",
+      "category": "Response-structure gap requiring separate review",
+      "concern": "The recovery table contains only column headings, so the original digital renderer provides no body cells here. Teacher guidance can use ordinary written working; adding table rows or digital controls changes the response structure and needs separate review.",
+      "proposedWording": "Keep the two headings and provide space for matching recovery responses to the three obstacles. Any new digital fields need a reviewed identity and saved-work plan before implementation.",
+      "implementationImpact": "Separate source/response-structure review; no table rows or fields added in this rollout. Existing saved identities remain.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g8-t3-l50-049",
+      "blockId": "e64a9f6a55e4ab3d155462cd-1",
+      "exactPassage": "And Thabo learned something else. All that time he spent at Mr. Daniels' bike repair shop in Term 1 — watching, asking questions, learning how things work — his hands were learning too. Last month, when his grandmother's kettle broke, he fixed it. He did not even think about it. He just saw what was wrong and fixed it. His grandmother said: \"You have your grandfather's hands.\" The grandfather who made clay pots. The grandfather whose hands created value. Thabo is becoming someone — not just someone who delivers parcels, but someone who can fix things, who can create value with his hands, who learns from every mistake and every broken thing.",
+      "category": "Specific electrical-safety concern",
+      "concern": "The unsupervised kettle-repair story could invite minors to copy a mains-appliance repair without competence or isolation safeguards.",
+      "proposedWording": "Thabo notices a problem with the kettle and asks an appropriate competent adult to handle the electrical repair safely. He continues practising safe, age-appropriate skills.",
+      "implementationImpact": "Separate owner-reviewed editorial correction only. Preserve source/response identities; teacher support gives the relevant local distinction without rewriting learner content.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
     }
   ],
   "retainedPerspectives": [
@@ -243,6 +333,26 @@
       "lesson": 40,
       "passage": "predictions are always wrong",
       "decision": "Rhetorical encouragement to revise plans; do not turn it into a corrective lecture or a general claim about forecasting accuracy."
+    },
+    {
+      "lesson": 41,
+      "passage": "Cue → Routine → Reward = Habit Loop",
+      "decision": "Useful introductory model, retained with its limits; do not turn it into diagnosis or require a corrective lecture."
+    },
+    {
+      "lesson": 45,
+      "passage": "You are not a flood. You are a river.",
+      "decision": "Legitimate metaphor about patient practice; retain without guaranteeing results."
+    },
+    {
+      "lesson": 46,
+      "passage": "The most important thing that compounds is you.",
+      "decision": "Developmental analogy; retain while keeping numeric compound interest distinct."
+    },
+    {
+      "lesson": 49,
+      "passage": "resilience is a muscle",
+      "decision": "Metaphor for practice and recovery; retain with the source’s own acknowledgement of unequal resources."
     }
   ]
 }

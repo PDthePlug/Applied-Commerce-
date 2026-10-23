@@ -40,7 +40,7 @@ export function validateTeachingPlan(value:unknown,source:TeachingSource):assert
  const field=(id:string)=>{if(!Object.hasOwn(plan.fields,id))fail();};
  const groups=(items:TeachingGroup[])=>{if(!Array.isArray(items)||items.some(group=>!group.heading||!Array.isArray(group.fields)||!group.fields.length))fail();for(const group of items)group.fields.forEach(field);};
  groups(plan.preparation);
- if(!plan.periods?.length||plan.periods.length>2||!plan.moments?.length)fail();
+ if(!Array.isArray(plan.periods)||!plan.periods.length||!plan.moments?.length)fail();
  const ids=new Set(plan.moments.map(moment=>moment.id));
  if(ids.size!==plan.moments.length)fail();
  const blocks=new Set(source.blockIds);
