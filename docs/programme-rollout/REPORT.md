@@ -1,68 +1,64 @@
 # Applied Commerce classroom rollout
 
-**64 of 395 lessons have individually reviewed teaching support in verified staging; 331 remain.** All 60 Grade 8 lessons in Terms 1–3 and the four higher-grade benchmarks are available. New guides still require owner classroom review and educator timing trials. “Completed” records source/instructional review and demonstrated staging checks, not owner approval of every new lesson.
+**84 of 395 lessons have individually reviewed teaching support in verified staging; 311 remain.** All 80 Grade 8 lessons are complete. Completed status records source/instructional review and demonstrated staging checks; new content still needs owner classroom review and educator timing trials.
 
-The open, unmerged stack is PR #48 → [#49](https://github.com/PDthePlug/Applied-Commerce-/pull/49) shared refinements → [#51](https://github.com/PDthePlug/Applied-Commerce-/pull/51) Lessons 21–25 → [#52](https://github.com/PDthePlug/Applied-Commerce-/pull/52) Lessons 26–40 → [#54](https://github.com/PDthePlug/Applied-Commerce-/pull/54) Lessons 41–50 → [#55](https://github.com/PDthePlug/Applied-Commerce-/pull/55) Lessons 51–60 and standalone print correction.
+Current staging: https://applied-commerce-sa-staging-ou9dqvhu9.vercel.app . Deployment protection and genuine application login apply. Tested application/content commit: `ffc42dc5554abbc99e4c2b6c4a4e487cdf8e2136`. Later documentation commits do not imply another deployment or rerun.
 
-Current staging: https://applied-commerce-sa-staging-jifondqth.vercel.app . Vercel protection and genuine application login apply. Latest application/print commit: `f097214ac39fffc712c2dca02ec1922e21720a52`. Integrated classroom/navigation/responsive evidence for this batch is from `792d40ba693bf9599f4aeb6e42bf450da1f3d26a`. The later product change is scoped to standalone print padding; encrypted content and integrated teaching UI are unchanged. Documentation and test-runner commits do not imply another deployment or rerun.
+The open, unmerged stack retains PR #48 as the accepted benchmark, then #49, #51, #52, #54, #55, #56. Latest review: [PR #56](https://github.com/PDthePlug/Applied-Commerce-/pull/56). Exact current evidence: [g8-t4-61-80/RESULTS.json](g8-t4-61-80/RESULTS.json); earlier batch records remain alongside it.
 
-## Behaviour and preservation
+## Preservation and teaching experience
 
-Contextual panels have no repeated previous/next-stage or teaching-navigator button groups. One navigator at the beginning reaches source, support and later-work targets, including earlier sections. Normal application, term and lesson navigation remain. Checkpoints retain continuous numbers beside hanging question text, quiet supporting instructions and original controls. Longer fields remain resizable; wording, splitting, field counts, answer identities, placeholders, saved feedback and icons remain.
+The workbook leads the learning. Every new lesson was read before individual authoring. Complete preparation, brief contextual cues, useful local optional support, clear period navigation, later work, private printing and full fallback remain. No empty deeper panel or repeated stage-navigation toolbar is added. The single central navigator retains source anchors, earlier-section revisits and support/later targets.
 
-Every new lesson was read before individual authoring. Preparation, brief cues, targeted optional support, later work and provisional timing follow actual source/rendered material. No empty deeper panel is added. The first 54 plan bindings remain exact in this release, including the accepted 24 hashes and the three previously reviewed teacher-field corrections. All 395 lessons, four assessments, canonical books, 20,766 stable blocks, saved-work contracts, private authorisation and institutional boundaries remain. No excluded milestone, source rewrite, migration, merge, separate live deployment or Zimbabwe change is included.
+Continuous checkpoint numbers, hanging question text, quiet instructions, original controls, resizable longer answers, placeholders, saved feedback and restored icons remain. All 395 lessons, four assessments, canonical books, 20,766 blocks and saved-work identities remain. No source rewrite, new learner activity, hidden-log recreation, learning-store/schema/RLS change, excluded milestone, merge, separate live deployment or Zimbabwe change is included.
 
-A stronger earlier fallback audit found omitted contextual enrichment in the benchmark renderer; PR #54 fixes complete-plan fallback while retaining the original scaffold and presentation mode. The current all-plan PDF check then found a genuine blank final page in Lesson 55. A duplicated 12 mm staff-shell padding combined with the named teacher page’s own 12 mm margins. PR #55 removes only the extra standalone shell padding; institution report padding and integrated print behaviour remain. Initial failures and corrections are retained, not hidden.
+The prior complete-fallback correction and standalone print-padding fix remain. Initial failures, test-runner logout timing correction and final proof are preserved in the earlier batch records; they are not concealed by later passing results.
 
-## Demonstrated verification
+## Actual verification
 
-| Scope | Actual result |
+| Scope | Current batch evidence |
 | --- | --- |
-| Current local suite | 210 Node tests, runtime, typecheck and lint pass; 395 lessons / four assessments / 20,766 stable blocks |
-| Local synthetic print regression | One browser test passes: teacher shell avoids duplicate padding; ordinary reports retain 12 mm |
-| Final normal staging build | All 64 plans / 3,221 fields validate with original key; 77 public assets / 4,291 private sentinels plus bound key scanned |
-| Direct integrated classroom this batch | Ten additions plus G8 1/8/10 and G12 5: 14 plans / 774 exact fields, original controls retained |
-| Direct navigator / Learner View | 137 targets reached/focused for those 14; source placement and absence of repeated panel controls pass |
-| Responsive | 252 combinations: all ten additions plus four benchmarks, six widths × three text scales |
-| New first-response persistence | All ten: genuine edit, clear, reload, direct cloud check and fresh password login |
-| Existing evidence / combined answers | Answer, reflection, note, completion, portfolio and earlier combined/split answers recover through reload/fresh login |
-| Integrated private printing this batch | 14 guides / 76 pages; exact DOM fields, PDF text and A4 margins pass |
-| Final full standalone fallback | All 64 plans / 3,221 fields; learner and revoked educator denied |
-| Final full fallback printing | 64 guides / 323 nonempty A4 pages; all margins and instructional text pass |
-| Physical PDF content | 78 PDFs / 3,995 expected field occurrences / zero missing; wrapped scaffold cells verified within their fixed columns |
-| Genuine three-period lesson | Lesson 60: preparation, 3 × 45-minute periods, opening/closing navigator targets and all print/fallback fields pass |
-| Supported Auth/RLS/RPC | 37 pass, including revoked role, logged-out JWT and refresh-token denial |
-| Role checks | Assigned educator and administrators allowed; learner, revoked and unrelated accounts denied; in-session assignment revocation removes panels |
-| Final evidence review / institution boundary | Assigned educator sees synthetic submission; learner/revoked users have no private cards; unrelated-institution educator has zero learner rows and guidance 403 |
-| Completed logout | Educator and learner: supported Auth 204, zero Auth cookies and classroom 401 |
-| Natural original JWT expiry | Earlier genuine issued token explicitly rejected for expiry: Auth 403 / data 401 |
+| Local gates | 213 Node tests; runtime, typecheck and lint pass |
+| Normal staging build | 84 plans / 3880 fields; original key authenticates; 77 public assets / 5143 private sentinels plus key scanned |
+| Preserved release | All 64 prior bindings unchanged, including accepted 24 hashes |
+| Direct integrated classroom | 24 explicitly selected plans / 1083 exact fields; original controls and appropriate disclosures retained |
+| Navigation and Learner View | 228 direct targets reached/focused; source placement and absence of repeated panel controls pass |
+| Responsive | 432 combinations at six widths and three text scales |
+| New first-response persistence | 20 lessons: edit, clear, reload, direct cloud check and fresh password login |
+| Integrated private print | 24 guides / 106 nonempty A4 pages; exact fields and margins pass |
+| Complete selected fallback | 24 guides / 109 nonempty A4 pages; all fields and margins pass |
+| Physical PDF content | 2166 field occurrences; zero missing; fixed-column extraction handles wrapped scaffold cells |
+| Multi-period delivery | 8 current new multi-period guides: exact 45-minute periods and opening/closing navigator targets pass |
+| Supported Auth/RLS/RPC | 37 genuine operations pass, including revocation, logged-out JWT and refresh-token denial |
+| Evidence review and boundary | Assigned educator sees synthetic evidence; learner/revoked users lack private cards; unrelated-institution educator has zero learner rows and guidance 403 |
 
-Widths are 320/360/430/768/1280/1920 CSS pixels; text scales 1/1.28/2. Earlier all-54 integrated runs and original PR #49 local browser suites remain historical, not claimed as rerun. The new explicit batch-scope guard rejects empty, duplicate or unknown selections; default full-release checks remain. Current final fallback/print checks cover all 64. Exact scope/provenance: [RESULTS.json](g8-t3-51-60/RESULTS.json), its initial/final evidence directories and earlier batch records.
+Direct scope includes every addition and unchanged benchmarks; exact lesson lists are in the results. Earlier full-release runs remain historical. At 64 plans, the strengthened full fallback/print pass covers all 64 plans / 3,221 fields / 323 pages. This batch preserves those bindings and tests every new plan directly. It does not relabel earlier browser checks as new runs.
 
-The initial logout runner checked immediately after dispatching an asynchronous click and observed 403 before completed logout had been established. It now waits for the signed-out form before requiring 401. Focused genuine checks confirm completed logout, cookie removal and supported Auth success. The initial timing failure is retained. The PDF checker separately handles Poppler’s interleaving of wrapped table cells; it does not discard non-whitespace field characters or use loose subsequence matching.
+Widths are 320/360/430/768/1280/1920 CSS pixels; text scales 1/1.28/2. Natural original JWT expiry and completed browser logout were genuinely demonstrated earlier. The local synthetic print-style regression passed at the print fix; original PR #49 local browser suites remain historical. Private captures/PDFs/payloads/sessions stay protected; public evidence manifests contain paths, bytes and hashes only.
 
-Authenticated captures, PDFs, payloads, sessions and credentials remain protected outside Git. Public evidence manifests contain only paths, sizes and hashes. Local synthetic layout checks, genuine hosted checks and classroom trials are distinct.
+## Authored lessons and provisional contact periods
 
-## Connectivity and protected packaging
+| Grade | Term | Authored lessons | Recommended contacts | Raw guide-period allocations |
+| --- | --- | ---: | ---: | ---: |
+| 8 | 1 | 20 | 25 | 25 |
+| 8 | 2 | 20 | 24 | 24 |
+| 8 | 3 | 20 | 23 | 23 |
+| 8 | 4 | 20 | 26 | 30 |
 
-Only staging Supabase `inxshlumnhcgiahxqewe` and Vercel `applied-commerce-sa-staging` are targets. Hosted health and genuine password login demonstrate website configuration; supported Auth Admin, PostgREST and RPC operations demonstrate coding access separately. Application permission is tested with actual roles. No direct PostgreSQL connection or raw TCP grant is claimed. HTTP uses the enforced proxy; expected permission denials are not network failures.
+Grade 8 Term 4 has three alternative project-planning guides sharing two contacts for the one chosen project. Their six raw allocations therefore count as two recommended contacts. Twenty authored lessons remain; the term totals 26 recommended contacts, not 30. Presentation estimates assume 30 learners and preserve the original speaking time; enrolment and educator trials can change them. No completion rule or learner sequence is changed.
 
-Observed environment revision 40 reports ready VERCEL_TOKEN and SUPABASE_SECRET_KEY, but no coding-process classroom key binding. A guarded staging build packages with the original server-bound key without exporting it: existing ciphertext authenticates the key, prior hashes are validated, private input is processed in memory, and only ciphertext/hash metadata are returned. All eight temporary input Secrets and the sealing deployment were removed. Final normal builds use committed encrypted files, no temporary input and the unchanged project default build command. Protected fixtures and ignored backups are excluded from Git. No public plaintext guide asset, key or sealing endpoint exists.
+[coverage.json](coverage.json) and [grade-term.csv](grade-term.csv) cover all 395 identities. Individual timing rationales and actual source/rendered differences are recorded in each batch review. Project tracking and fieldwork use real elapsed time; independent/later work is distinguished from class contacts.
 
-## Instructional coverage and timing
+## Connectivity, source review and delivery scale
 
-[coverage.json](coverage.json) records all 395 authored lessons; [grade-term.csv](grade-term.csv) separates lessons and provisional contacts. Grade 8 Term 1 retains 20 lessons / 25 contacts; Term 2 retains 20 / 24; Term 3 now has 20 / 23. Term 3 Lesson 46 uses two contacts for calculation and application. Lesson 60 uses three for existing habit reflections/legacy, term reflection/equation retrieval, then letter/final checkpoint. Each continuation reopens the same lesson. All other Term 3 lessons provisionally use one contact.
+Only Supabase `inxshlumnhcgiahxqewe` and Vercel `applied-commerce-sa-staging` are targets. Hosted health/password login, supported Auth Admin and PostgREST/RPC demonstrate website, coding and role capabilities separately. No direct PostgreSQL/TCP connection is claimed. The read-only Management metadata probe returned INVALID_ARGUMENT and supplied no settings; this is not evidence of network or application-login failure. Maximum/inactivity configuration remains unobserved.
 
-The 21-day habit project uses real calendar days. Lessons 58/59 depend on actual seven-/fourteen-day evidence; future records are not fabricated. A weekly planning habit uses the existing Notes column to distinguish unscheduled opportunities. Source calendar/weighting claims need institution confirmation. Lesson 60’s separate Activity 63 log-review heading is suppressed by the learner renderer; guidance uses visible reflection and existing evidence without recreating hidden work or adding responses.
+Observed coding configuration exposes VERCEL_TOKEN and SUPABASE_SECRET_KEY, without a coding-process classroom key. Guarded staging builds use the original server-bound key without export and return only ciphertext/hash metadata. Temporary inputs and sealing deployments are removed; normal builds use committed encrypted content and unchanged project defaults. Credentials, draft prose and authenticated evidence are excluded from Git and protected by restricted permissions.
 
-Thirty-five focused [editorial proposals](SOURCE_EDITORIAL_REGISTER.json) remain separate and unapplied, alongside the earlier staging register. They distinguish arithmetic, contextual safeguards, attribution and current-verification needs from retained metaphors. Earlier [factual checks](g8-t3-41-50/FACT_CHECKS.md) retain primary-source support and unresolved legal/attribution limits. Further private Grade 8 Term 4 and initial Grade 9 drafts are not counted as completed or released; their batch registers advance with actual verification.
+There are 42 separate [editorial proposals](SOURCE_EDITORIAL_REGISTER.json), plus the earlier staging register. None is applied. They distinguish material arithmetic, task safeguards, privacy, missing source structure and verification needs from retained metaphors. The earlier [factual checks](g8-t3-41-50/FACT_CHECKS.md) preserve primary-source evidence and unresolved current legal/attribution limits.
 
-## Delivery and scale
+The final sequential measurement made 105 requests, including 100 to additions: median 609 ms, range 492–1382 ms; selected responses 9239–16270 decoded bytes through the coding proxy. Responses remain private/no-store. First observed requests are not guaranteed cold. Browser heap and sealing-process memory are not hosted function RSS.
 
-The current ciphertext is 1,229,967 bytes; public hash/placement manifest 1,310,414 bytes. Build-process memory is recorded separately from hosted request memory. The final sequential authenticated run made 55 requests across 11 lessons. The ten additions produced 10,569–17,880 decoded bytes; median 665.5 ms across 50 new-lesson requests, range 475–1,047 ms through the coding proxy. First observed requests are not guaranteed cold. Responses remain private/no-store.
+[CONTENT_DELIVERY_SCALE.md](CONTENT_DELIVERY_SCALE.md) records release growth and recommendations. Every request still opens/validates the whole release after current authorisation. Guaranteed cold-process, concurrency, server-memory and separate decryption/validation measurements are pending; 395-plan suitability is not claimed. Smaller authenticated releases, versioned manifests and bounded server caching remain measured proposals, with fresh permission checks on every response. No production architecture change or migration is implemented.
 
-Browser heap across the selected 14-plan navigation/PDF run ranged approximately 6.60–42.60 MiB. This is neither hosted server RSS nor a comparable all-plan leak test. Each request still decrypts/validates the whole release; no plaintext cache is introduced. Current measurements do not establish suitability for 395 plans. Measure guaranteed cold processes, concurrent server memory and decryption/validation before choosing smaller authenticated lesson/term releases, versioned manifests or a server cache. Retain fresh authorisation on every response. No architecture migration is included.
-
-## Remaining work
-
-Continue 331 lessons in individually reviewed grade/term batches. Configured maximum/inactivity session lifetime, hosted cold-process/server-memory measurements and educator timing trials remain pending. Natural JWT expiry and a genuine three-period lesson are now demonstrated. The isolated synthetic teaching browser harness still lacks its original-key fixture; genuine hosted checks cover teaching behaviour. Owner approval remains required for merging the classroom stack or deploying the separate live application.
+Continue the remaining 311 individually reviewed lessons in grade/term batches. Educator timing trials, hosted cold/server-memory measurements and configured maximum/inactivity limits remain pending. The isolated synthetic teaching browser harness still lacks its original-key fixture; genuine hosted tests cover teaching behaviour. Owner approval remains required for merging the classroom stack or deploying the separate live application.

@@ -28,72 +28,93 @@
   },
   "rollout": {
     "existingPlans": 24,
-    "newCompleted": 40,
+    "newCompleted": 60,
     "privateUnsealedDrafts": 0,
-    "uncompleted": 331,
+    "uncompleted": 311,
     "blocker": null
   },
   "pending": [
-    "Remaining 331 individually reviewed and verified guides",
-    "Hosted cold-process and server-memory measurements",
-    "Configured maximum/inactivity session lifetime",
+    "Remaining 311 individually reviewed guides",
     "Educator timing trials",
-    "Isolated synthetic teaching browser harness rerun (original key dependency)"
+    "Hosted cold-process/server-memory measurements",
+    "Configured maximum/inactivity session lifetime"
   ],
   "latestBatch": {
     "projectRef": "inxshlumnhcgiahxqewe",
-    "totalPlans": 64,
-    "newCompletedAcrossRollout": 40,
-    "remaining": 331,
-    "integratedClassroomCommit": "792d40ba693bf9599f4aeb6e42bf450da1f3d26a",
-    "finalPrintCommit": "f097214ac39fffc712c2dca02ec1922e21720a52",
-    "stagingURL": "https://applied-commerce-sa-staging-jifondqth.vercel.app",
-    "currentBuildFields": 3221,
-    "originalBindingsPreserved": 54,
-    "genuine": {
-      "directClassroomPlansThisBatch": 14,
-      "directClassroomFields": 774,
-      "navigatorTargetsThisBatch": 137,
-      "responsiveCombinations": 252,
-      "newLessonFirstResponsePersistence": 10,
-      "integratedPDFGuides": 14,
-      "integratedPDFPages": 76,
-      "finalStandalonePlans": 64,
-      "finalStandaloneFields": 3221,
-      "finalStandalonePDFPages": 323,
-      "finalStandalonePDFBoundsPass": 64,
-      "pdfTextFields": 3995,
-      "pdfTextMissing": 0,
-      "threePeriodLesson": "PASS: preparation, all periods 45 minutes, navigator opening/closing targets, all fields and printing",
-      "authRlsChecks": 37,
-      "finalEvidenceReviewAndBoundary": "PASS",
-      "completedLogout": "PASS: Auth 204, no Auth cookies, classroom 401"
-    },
-    "local": {
-      "nodeTests": 210,
-      "syntheticPrintBrowserRegression": 1,
-      "runtime": "395 lessons / four assessments / 20766 stable blocks",
-      "typecheck": "PASS",
-      "lint": "PASS"
-    },
+    "totalPlans": 84,
+    "newCompletedAcrossRollout": 60,
+    "remaining": 311,
+    "testedCommit": "ffc42dc5554abbc99e4c2b6c4a4e487cdf8e2136",
+    "stagingURL": "https://applied-commerce-sa-staging-ou9dqvhu9.vercel.app",
+    "priorBindingsPreserved": 64,
+    "newPlans": 20,
+    "directClassroomPlans": 24,
+    "directFields": 1083,
+    "navigatorTargets": 228,
+    "responsiveCombinations": 432,
+    "newFirstResponsePersistence": 20,
+    "integratedPDFs": 24,
+    "integratedPDFPages": 106,
+    "fallbacks": 24,
+    "fallbackPDFPages": 109,
+    "pdfTextFields": 2166,
+    "pdfMissing": 0,
+    "multiPeriodLessons": [
+      {
+        "lessonId": "g8-t4-l67-066",
+        "periodCount": 2
+      },
+      {
+        "lessonId": "g8-t4-l68-067",
+        "periodCount": 2
+      },
+      {
+        "lessonId": "g8-t4-l69-068",
+        "periodCount": 2
+      },
+      {
+        "lessonId": "g8-t4-l73-072",
+        "periodCount": 2
+      },
+      {
+        "lessonId": "g8-t4-l75-074",
+        "periodCount": 3
+      },
+      {
+        "lessonId": "g8-t4-l76-075",
+        "periodCount": 3
+      },
+      {
+        "lessonId": "g8-t4-l78-077",
+        "periodCount": 2
+      },
+      {
+        "lessonId": "g8-t4-l80-079",
+        "periodCount": 2
+      }
+    ],
+    "authRlsChecks": 37,
+    "nodeTests": 213,
+    "typecheck": "PASS",
+    "lint": "PASS",
+    "sourceChangesApplied": false,
     "delivery": {
-      "sequentialRequests": 55,
-      "newLessonRequests": 50,
-      "newMedianMs": 665.5,
-      "newRangeMs": [
-        475,
-        1047
+      "requests": 105,
+      "newRequests": 100,
+      "newMedianMs": 609,
+      "rangeMs": [
+        492,
+        1382
       ],
-      "newDecodedBytes": [
-        10569,
-        17880
+      "decodedBytes": [
+        9239,
+        16270
       ],
       "coldProcess": "NOT DEMONSTRATED",
       "hostedServerMemory": "NOT MEASURED"
     },
-    "sourceChangesApplied": false,
     "pending": [
-      "Remaining 331 guides",
+      "Remaining 311 individually reviewed guides",
       "Educator timing trials",
       "Hosted cold-process/server-memory measurements",
       "Configured maximum/inactivity session lifetime"
