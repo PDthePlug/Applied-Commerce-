@@ -267,7 +267,7 @@ function TextBlockView({block,unitId}:{block:Extract<ContentBlock,{kind:"text"}>
 }
 
 function ResponseStatus({value}:{value:string}){
-  return <span className={value.trim()?"response-status saved":"response-status"}>{value.trim()?"Captured":"Type your response"}</span>;
+  return value.trim()?<span className="response-status saved">Captured</span>:null;
 }
 
 function ResponseArea({
@@ -364,6 +364,7 @@ function StructuredResponseGroup({
   promptResponses,
   onSavePromptResponse,
   tone="default",
+  startNumber=1,
 }:{
   breakdown:PromptBreakdown;
   unitId:string;
@@ -371,14 +372,20 @@ function StructuredResponseGroup({
   promptResponses:Record<string,string>;
   onSavePromptResponse:(promptId:string,value:string)=>void;
   tone?:"default"|"activity"|"reflection"|"checkpoint"|"home"|"assessment";
+  startNumber?:number;
 }){
   const many=breakdown.prompts.length>1;
   const legacyId=promptId(unitId,blockIndex,"response");
   const legacyValue=many?(promptResponses[legacyId]??""):"";
+  // Source question numbers group compound prompts; visible checkpoint numbers
+  // instead count each existing response in order. Storage slots stay untouched.
+  const groupLabel=tone==="checkpoint"
+    ?breakdown.groupLabel?.replace(/^(?:Question|Q)\s*\d+\s*(?:[—-]\s*)?/i,"").trim()
+    :breakdown.groupLabel;
 
   return <section className="structured-response-group">
-    {(breakdown.groupLabel||breakdown.intro)&&<header className="structured-response-heading">
-      {breakdown.groupLabel&&<strong>{breakdown.groupLabel}</strong>}
+    {(groupLabel||breakdown.intro)&&<header className="structured-response-heading">
+      {groupLabel&&<strong>{groupLabel}</strong>}
       {breakdown.intro&&<p>{breakdown.intro}</p>}
     </header>}
 
@@ -393,7 +400,7 @@ function StructuredResponseGroup({
           compact={compact}
           tone={tone}
           prompt={<>
-            {many&&<span className="structured-part-label">Part {index+1} of {breakdown.prompts.length}</span>}
+            {(tone==="checkpoint"||(many&&tone!=="assessment"))&&<span className="structured-part-label">{startNumber+index}.</span>}
             <p className="question-prompt">{part.prompt}</p>
             {part.helper&&<small className="structured-prompt-helper">{part.helper}</small>}
           </>}
@@ -795,6 +802,7 @@ export function ContentBlocks({blocks,unitId,unitType="lesson",promptResponses:s
     const views:React.ReactNode[]=[];
     let list:Array<{text:string;index:number}>=[];
     let context:PromptContext=initialContext;
+    let checkpointQuestionNumber=1;
 
     const flush=()=>{
       if(list.length){
@@ -861,6 +869,7 @@ export function ContentBlocks({blocks,unitId,unitType="lesson",promptResponses:s
 
       if(block.type==="activity"||block.type==="reflection"||block.type==="checkpoint"){
         context=block.type;
+        if(block.type==="checkpoint") checkpointQuestionNumber=1;
         views.push(<TextBlockView block={block} unitId={unitId} key={`text-${index}`}/>);
         continue;
       }
@@ -995,8 +1004,10 @@ export function ContentBlocks({blocks,unitId,unitType="lesson",promptResponses:s
               promptResponses={promptResponses}
               onSavePromptResponse={onSavePromptResponse}
               tone="checkpoint"
+              startNumber={checkpointQuestionNumber}
               key={`structured-checkpoint-${index}`}
             />);
+            checkpointQuestionNumber+=breakdown.prompts.length;
             continue;
           }
         }
@@ -1042,7 +1053,11 @@ export function ContentBlocks({blocks,unitId,unitType="lesson",promptResponses:s
       if(isAnswerPrompt(block.text,context,block.type,nextBlock)){
         const id=promptId(unitId,index,"response");
         const compact=/^(?:Date|Name|Education|Skills)\b/i.test(displayText(block.text).trim());
-        views.push(<ResponseSurface key={`prompt-${index}`} compact={compact} tone={context??"default"} prompt={<p className={block.type==="equation"?"question-prompt equation-question":"question-prompt"}>{displayText(block.text)}</p>}>
+        const checkpointNumber=context==="checkpoint"?checkpointQuestionNumber++:undefined;
+        views.push(<ResponseSurface key={`prompt-${index}`} compact={compact} tone={context??"default"} prompt={<>
+          {checkpointNumber!==undefined&&<span className="structured-part-label">{checkpointNumber}.</span>}
+          <p className={block.type==="equation"?"question-prompt equation-question":"question-prompt"}>{displayText(block.text)}</p>
+        </>}>
           <ResponseArea compact={compact} id={id} value={promptResponses[id]??""} onChange={value=>onSavePromptResponse(id,value)} label={displayText(block.text)}/>
         </ResponseSurface>);
         continue;
