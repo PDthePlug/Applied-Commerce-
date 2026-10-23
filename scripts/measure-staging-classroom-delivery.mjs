@@ -27,7 +27,7 @@ try{
   const cache=response.headers()['cache-control'];assert.match(cache,/private/);assert.match(cache,/no-store/);
   result.samples.push({lessonId,request,ms:Math.round(performance.now()-started),decodedBytes:body.length,cache});
  }
- const median=values=>[...values].sort((a,b)=>a-b)[Math.floor(values.length/2)];
+ const median=values=>{const sorted=[...values].sort((a,b)=>a-b),middle=Math.floor(sorted.length/2);return sorted.length%2?sorted[middle]:(sorted[middle-1]+sorted[middle])/2;};
  result.lessons=ids.map(lessonId=>{const rows=result.samples.filter(r=>r.lessonId===lessonId);return {lessonId,decodedBytes:rows[0].decodedBytes,firstSampleMs:rows[0].ms,repeatedMedianMs:median(rows.slice(1).map(r=>r.ms)),rangeMs:[Math.min(...rows.map(r=>r.ms)),Math.max(...rows.map(r=>r.ms))]};});
  fs.writeFileSync(process.env.AC_STAGING_RESULTS_FILE,JSON.stringify(result,null,2)+'\n');
  console.log(JSON.stringify({lessons:ids.length,requests:result.samples.length,coldProcess:result.coldProcess,serverMemory:result.serverMemory}));

@@ -1,19 +1,17 @@
 {
-  "at": "2026-10-23T12:36:27.050Z",
+  "at": "2026-10-23T16:19:31.444Z",
   "projectRef": "inxshlumnhcgiahxqewe",
-  "websiteBackend": "Verified through genuine hosted health and role tests",
-  "codingDatabase": "Genuine PostgREST/RPC access verified with fixture sessions",
+  "websiteBackend": "Verified by hosted health and genuine role sessions",
+  "codingDatabase": "Genuine staging PostgREST/RPC access verified",
   "authAdministration": {
     "secretPresent": true,
-    "status": 200,
-    "supportedRead": "PASS"
+    "supportedFixtureUserRead": 200
   },
   "classroomSealing": {
     "keyPresentInCodingProcess": false,
-    "currentCloudRevision": 20,
-    "originalKeyAuthenticatedInIsolatedStagingBuild": true,
+    "keyFileConfigured": false,
+    "originalKeyAuthenticatedInIsolatedStaging": true,
     "keyExported": false,
-    "expanded29PlanRelease": "PASS",
     "temporaryInputsRemoved": true
   },
   "directDatabaseConfiguration": {
@@ -22,5 +20,5 @@
     "pgHostPresent": false
   },
   "networkFailures": [],
-  "applicationPermissionFailures": "Expected learner, revoked and unrelated-staff denials; see genuine results"
+  "applicationPermissionResults": "Expected learner, revoked and unrelated-staff denials verified separately"
 }

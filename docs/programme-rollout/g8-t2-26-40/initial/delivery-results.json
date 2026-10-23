@@ -574,7 +574,7 @@
       "lessonId": "g8-t1-l01-001",
       "decodedBytes": 20092,
       "firstSampleMs": 609,
-      "repeatedMedianMs": 641,
+      "repeatedMedianMs": 588.5,
       "rangeMs": [
         473,
         733
@@ -584,7 +584,7 @@
       "lessonId": "g8-t2-l26-026",
       "decodedBytes": 12779,
       "firstSampleMs": 544,
-      "repeatedMedianMs": 547,
+      "repeatedMedianMs": 543,
       "rangeMs": [
         508,
         569
@@ -594,7 +594,7 @@
       "lessonId": "g8-t2-l27-027",
       "decodedBytes": 11814,
       "firstSampleMs": 517,
-      "repeatedMedianMs": 649,
+      "repeatedMedianMs": 603,
       "rangeMs": [
         517,
         735
@@ -604,7 +604,7 @@
       "lessonId": "g8-t2-l28-028",
       "decodedBytes": 10673,
       "firstSampleMs": 495,
-      "repeatedMedianMs": 524,
+      "repeatedMedianMs": 523.5,
       "rangeMs": [
         495,
         561
@@ -614,7 +614,7 @@
       "lessonId": "g8-t2-l29-029",
       "decodedBytes": 10791,
       "firstSampleMs": 593,
-      "repeatedMedianMs": 619,
+      "repeatedMedianMs": 592.5,
       "rangeMs": [
         522,
         663
@@ -624,7 +624,7 @@
       "lessonId": "g8-t2-l30-030",
       "decodedBytes": 11670,
       "firstSampleMs": 627,
-      "repeatedMedianMs": 766,
+      "repeatedMedianMs": 748,
       "rangeMs": [
         501,
         832
@@ -634,7 +634,7 @@
       "lessonId": "g8-t2-l31-031",
       "decodedBytes": 10508,
       "firstSampleMs": 813,
-      "repeatedMedianMs": 704,
+      "repeatedMedianMs": 630,
       "rangeMs": [
         548,
         813
@@ -644,7 +644,7 @@
       "lessonId": "g8-t2-l32-032",
       "decodedBytes": 10359,
       "firstSampleMs": 1000,
-      "repeatedMedianMs": 760,
+      "repeatedMedianMs": 657.5,
       "rangeMs": [
         536,
         1000
@@ -654,7 +654,7 @@
       "lessonId": "g8-t2-l33-033",
       "decodedBytes": 10700,
       "firstSampleMs": 704,
-      "repeatedMedianMs": 590,
+      "repeatedMedianMs": 582.5,
       "rangeMs": [
         522,
         704
@@ -664,7 +664,7 @@
       "lessonId": "g8-t2-l34-034",
       "decodedBytes": 10514,
       "firstSampleMs": 823,
-      "repeatedMedianMs": 631,
+      "repeatedMedianMs": 594,
       "rangeMs": [
         544,
         823
@@ -674,7 +674,7 @@
       "lessonId": "g8-t2-l35-035",
       "decodedBytes": 11849,
       "firstSampleMs": 531,
-      "repeatedMedianMs": 616,
+      "repeatedMedianMs": 602,
       "rangeMs": [
         501,
         776
@@ -684,7 +684,7 @@
       "lessonId": "g8-t2-l36-checkpoint-20261004",
       "decodedBytes": 13785,
       "firstSampleMs": 511,
-      "repeatedMedianMs": 571,
+      "repeatedMedianMs": 551,
       "rangeMs": [
         503,
         592
@@ -694,7 +694,7 @@
       "lessonId": "g8-t2-l37-036",
       "decodedBytes": 10773,
       "firstSampleMs": 575,
-      "repeatedMedianMs": 771,
+      "repeatedMedianMs": 758.5,
       "rangeMs": [
         575,
         959
@@ -704,7 +704,7 @@
       "lessonId": "g8-t2-l38-037",
       "decodedBytes": 11369,
       "firstSampleMs": 702,
-      "repeatedMedianMs": 595,
+      "repeatedMedianMs": 571,
       "rangeMs": [
         527,
         916
@@ -714,7 +714,7 @@
       "lessonId": "g8-t2-l39-038",
       "decodedBytes": 10803,
       "firstSampleMs": 585,
-      "repeatedMedianMs": 601,
+      "repeatedMedianMs": 565,
       "rangeMs": [
         500,
         895
@@ -724,11 +724,12 @@
       "lessonId": "g8-t2-l40-039",
       "decodedBytes": 13716,
       "firstSampleMs": 695,
-      "repeatedMedianMs": 584,
+      "repeatedMedianMs": 559.5,
       "rangeMs": [
         515,
         744
       ]
     }
-  ]
+  ],
+  "summaryMethod": "Median averages the two central observations for even-sized samples; raw observations unchanged."
 }

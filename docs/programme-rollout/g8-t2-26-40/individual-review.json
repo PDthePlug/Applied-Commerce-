@@ -1,5 +1,5 @@
 {
-  "status": "SEALED_PENDING_NORMAL_STAGING_VERIFICATION",
+  "status": "COMPLETED_INDIVIDUAL_REVIEW; OWNER_CLASSROOM_REVIEW_AND_TIMING_TRIALS_PENDING",
   "sourceChangesApplied": false,
   "plans": [
     {
@@ -14,11 +14,15 @@
       "fields": 36,
       "periods": 1,
       "timingRationale": "One provisional 45-minute period: 10 reading and examples, 4 reflection, 10 inventory, 6 analysis, 5 seed, 8 checkpoint and 2 close. Home enquiry or research happens later. The period supports classification and reasoning, not financial product selection.",
-      "stageReview": "PENDING_GENUINE_NORMAL_STAGING",
-      "complete": false,
+      "stageReview": "PASS: genuine final field/control/source/navigation/print/fallback review",
+      "complete": true,
       "fieldCoverage": 36,
       "actualRendererInsertions": "PASS",
-      "renderedReferenceReview": "Source reading and visible insertion sequence reviewed; suppressed standalone log is not recreated."
+      "renderedReferenceReview": "Source reading and visible insertion sequence reviewed; suppressed standalone log is not recreated.",
+      "responsive": "18 combinations on initial release; exact plan hash preserved in final release",
+      "persistence": "Genuine edit/clear/reload/fresh password login PASS",
+      "responsiveAndPersistenceCommit": "f62dae045ec2032a4f683c1f43d226bda2d39e83",
+      "finalClassroomAndPrintCommit": "a2fce914c52b6a08f7b5e7252dea4ca2c17c60ea"
     },
     {
       "lessonId": "g8-t2-l27-027",
@@ -32,11 +36,15 @@
       "fields": 33,
       "periods": 1,
       "timingRationale": "One provisional period: 8 minutes reading, 4 reflection, 12 inventory, 7 visibility, 3 Small Adds Up, 9 checkpoint and 2 close. Any actual offer or advert practice is later work, not a condition for passing the lesson.",
-      "stageReview": "PENDING_GENUINE_NORMAL_STAGING",
-      "complete": false,
+      "stageReview": "PASS: genuine final field/control/source/navigation/print/fallback review",
+      "complete": true,
       "fieldCoverage": 33,
       "actualRendererInsertions": "PASS",
-      "renderedReferenceReview": "Source reading and visible insertion sequence reviewed; suppressed standalone log is not recreated."
+      "renderedReferenceReview": "Source reading and visible insertion sequence reviewed; suppressed standalone log is not recreated.",
+      "responsive": "18 combinations on initial release; exact plan hash preserved in final release",
+      "persistence": "Genuine edit/clear/reload/fresh password login PASS",
+      "responsiveAndPersistenceCommit": "f62dae045ec2032a4f683c1f43d226bda2d39e83",
+      "finalClassroomAndPrintCommit": "a2fce914c52b6a08f7b5e7252dea4ca2c17c60ea"
     },
     {
       "lessonId": "g8-t2-l28-028",
@@ -50,16 +58,20 @@
       "fields": 30,
       "periods": 1,
       "timingRationale": "One provisional period: 8 reading, 4 reflection, 10 five-problem list, 13 five-whys/pivot, 8 checkpoint and 2 closing. The family conversation or hypothetical test is later work. The small test is a plan, not compulsory spending.",
-      "stageReview": "PENDING_GENUINE_NORMAL_STAGING",
-      "complete": false,
+      "stageReview": "PASS: genuine final field/control/source/navigation/print/fallback review",
+      "complete": true,
       "fieldCoverage": 30,
       "actualRendererInsertions": "PASS",
-      "renderedReferenceReview": "Source reading and visible insertion sequence reviewed; suppressed standalone log is not recreated."
+      "renderedReferenceReview": "Source reading and visible insertion sequence reviewed; suppressed standalone log is not recreated.",
+      "responsive": "18 combinations on initial release; exact plan hash preserved in final release",
+      "persistence": "Genuine edit/clear/reload/fresh password login PASS",
+      "responsiveAndPersistenceCommit": "f62dae045ec2032a4f683c1f43d226bda2d39e83",
+      "finalClassroomAndPrintCommit": "a2fce914c52b6a08f7b5e7252dea4ca2c17c60ea"
     },
     {
       "lessonId": "g8-t2-l29-029",
       "sourceUnitSHA256": "99e46501405b49a56738ac277dec14fec2934a465ff5a15161651021c7939cb5",
-      "planSHA256": "9fcfd17dbbc71eac4d6698428ce0fce6232e061ba566462044c4286292f67c30",
+      "planSHA256": "751504f7b6d067027622028fac11fc1cb445f92d4ed04df5c7a6f2c5ca14b0bb",
       "sourceBlocksRead": 57,
       "sourceRead": true,
       "individualDraft": true,
@@ -68,11 +80,17 @@
       "fields": 30,
       "periods": 1,
       "timingRationale": "One provisional period: 9 story, 4 reflection, 11 calculations, 10 own-pricing and justification, 9 checkpoint and 2 close. Optional deeper pricing discussion and later price enquiry should not crowd out the learner calculations.",
-      "stageReview": "PENDING_GENUINE_NORMAL_STAGING",
-      "complete": false,
+      "stageReview": "PASS: genuine final field/control/source/navigation/print/fallback review",
+      "complete": true,
       "fieldCoverage": 30,
       "actualRendererInsertions": "PASS",
-      "renderedReferenceReview": "Source reading and visible insertion sequence reviewed; suppressed standalone log is not recreated."
+      "renderedReferenceReview": "Source reading and visible insertion sequence reviewed; suppressed standalone log is not recreated.",
+      "previousPlanSHA256": "9fcfd17dbbc71eac4d6698428ce0fce6232e061ba566462044c4286292f67c30",
+      "followupCorrection": "Rendered checkpoint references identify the calculation by content rather than canonical question number/count; final revalidation pending.",
+      "responsive": "18 combinations on corrected final release, plus initial pass",
+      "persistence": "Genuine edit/clear/reload/fresh password login PASS",
+      "responsiveAndPersistenceCommit": "a2fce914c52b6a08f7b5e7252dea4ca2c17c60ea",
+      "finalClassroomAndPrintCommit": "a2fce914c52b6a08f7b5e7252dea4ca2c17c60ea"
     },
     {
       "lessonId": "g8-t2-l30-030",
@@ -86,11 +104,15 @@
       "fields": 33,
       "periods": 1,
       "timingRationale": "One provisional period: 9 reading, 4 reflection, 12 audit, 6 pattern, 5 intervention, 7 checkpoint and 2 close. The 24-hour pause and later log occur outside class; learners do not need to buy anything for the experiment.",
-      "stageReview": "PENDING_GENUINE_NORMAL_STAGING",
-      "complete": false,
+      "stageReview": "PASS: genuine final field/control/source/navigation/print/fallback review",
+      "complete": true,
       "fieldCoverage": 33,
       "actualRendererInsertions": "PASS",
-      "renderedReferenceReview": "Source reading and visible insertion sequence reviewed; suppressed standalone log is not recreated."
+      "renderedReferenceReview": "Source reading and visible insertion sequence reviewed; suppressed standalone log is not recreated.",
+      "responsive": "18 combinations on initial release; exact plan hash preserved in final release",
+      "persistence": "Genuine edit/clear/reload/fresh password login PASS",
+      "responsiveAndPersistenceCommit": "f62dae045ec2032a4f683c1f43d226bda2d39e83",
+      "finalClassroomAndPrintCommit": "a2fce914c52b6a08f7b5e7252dea4ca2c17c60ea"
     },
     {
       "lessonId": "g8-t2-l31-031",
@@ -104,11 +126,15 @@
       "fields": 30,
       "periods": 1,
       "timingRationale": "One provisional period: 9 reading, 4 reflection, 10 peer check, 12 advertising audit, 8 checkpoint and 2 close. The later observation/log is independent practice; no online research session is necessary.",
-      "stageReview": "PENDING_GENUINE_NORMAL_STAGING",
-      "complete": false,
+      "stageReview": "PASS: genuine final field/control/source/navigation/print/fallback review",
+      "complete": true,
       "fieldCoverage": 30,
       "actualRendererInsertions": "PASS",
-      "renderedReferenceReview": "Source reading and visible insertion sequence reviewed; suppressed standalone log is not recreated."
+      "renderedReferenceReview": "Source reading and visible insertion sequence reviewed; suppressed standalone log is not recreated.",
+      "responsive": "18 combinations on initial release; exact plan hash preserved in final release",
+      "persistence": "Genuine edit/clear/reload/fresh password login PASS",
+      "responsiveAndPersistenceCommit": "f62dae045ec2032a4f683c1f43d226bda2d39e83",
+      "finalClassroomAndPrintCommit": "a2fce914c52b6a08f7b5e7252dea4ca2c17c60ea"
     },
     {
       "lessonId": "g8-t2-l32-032",
@@ -122,11 +148,15 @@
       "fields": 30,
       "periods": 1,
       "timingRationale": "One provisional period: 8 reading, 4 reflection, 11 table, 12 trade-off simulation, 8 checkpoint and 2 close. Home observation or the existing imagined R100 choice happens later.",
-      "stageReview": "PENDING_GENUINE_NORMAL_STAGING",
-      "complete": false,
+      "stageReview": "PASS: genuine final field/control/source/navigation/print/fallback review",
+      "complete": true,
       "fieldCoverage": 30,
       "actualRendererInsertions": "PASS",
-      "renderedReferenceReview": "Source reading and visible insertion sequence reviewed; suppressed standalone log is not recreated."
+      "renderedReferenceReview": "Source reading and visible insertion sequence reviewed; suppressed standalone log is not recreated.",
+      "responsive": "18 combinations on initial release; exact plan hash preserved in final release",
+      "persistence": "Genuine edit/clear/reload/fresh password login PASS",
+      "responsiveAndPersistenceCommit": "f62dae045ec2032a4f683c1f43d226bda2d39e83",
+      "finalClassroomAndPrintCommit": "a2fce914c52b6a08f7b5e7252dea4ca2c17c60ea"
     },
     {
       "lessonId": "g8-t2-l33-033",
@@ -140,11 +170,15 @@
       "fields": 30,
       "periods": 1,
       "timingRationale": "One provisional period: 9 story, 4 quiet reflection, 11 authored small-group discussion, 10 private values check, 9 checkpoint and 2 close. Home storytelling or the existing written reflection is later work.",
-      "stageReview": "PENDING_GENUINE_NORMAL_STAGING",
-      "complete": false,
+      "stageReview": "PASS: genuine final field/control/source/navigation/print/fallback review",
+      "complete": true,
       "fieldCoverage": 30,
       "actualRendererInsertions": "PASS",
-      "renderedReferenceReview": "Source reading and visible insertion sequence reviewed; suppressed standalone log is not recreated."
+      "renderedReferenceReview": "Source reading and visible insertion sequence reviewed; suppressed standalone log is not recreated.",
+      "responsive": "18 combinations on initial release; exact plan hash preserved in final release",
+      "persistence": "Genuine edit/clear/reload/fresh password login PASS",
+      "responsiveAndPersistenceCommit": "f62dae045ec2032a4f683c1f43d226bda2d39e83",
+      "finalClassroomAndPrintCommit": "a2fce914c52b6a08f7b5e7252dea4ca2c17c60ea"
     },
     {
       "lessonId": "g8-t2-l34-034",
@@ -158,11 +192,15 @@
       "fields": 30,
       "periods": 1,
       "timingRationale": "One provisional period: 9 reading, 4 reflection, 13 table analysis, 9 own example, 8 checkpoint and 2 close. Later purchase observation can use memory; no practical shopping task is needed.",
-      "stageReview": "PENDING_GENUINE_NORMAL_STAGING",
-      "complete": false,
+      "stageReview": "PASS: genuine final field/control/source/navigation/print/fallback review",
+      "complete": true,
       "fieldCoverage": 30,
       "actualRendererInsertions": "PASS",
-      "renderedReferenceReview": "Source reading and visible insertion sequence reviewed; suppressed standalone log is not recreated."
+      "renderedReferenceReview": "Source reading and visible insertion sequence reviewed; suppressed standalone log is not recreated.",
+      "responsive": "18 combinations on initial release; exact plan hash preserved in final release",
+      "persistence": "Genuine edit/clear/reload/fresh password login PASS",
+      "responsiveAndPersistenceCommit": "f62dae045ec2032a4f683c1f43d226bda2d39e83",
+      "finalClassroomAndPrintCommit": "a2fce914c52b6a08f7b5e7252dea4ca2c17c60ea"
     },
     {
       "lessonId": "g8-t2-l35-035",
@@ -176,11 +214,15 @@
       "fields": 33,
       "periods": 1,
       "timingRationale": "One provisional period: 8 reading, 3 reflection, 10 census list, 5 patterns, 9 connections, 8 checkpoint and 2 close. The list uses existing knowledge, not in-class fieldwork. A later exchange can be observed instead of making a purchase.",
-      "stageReview": "PENDING_GENUINE_NORMAL_STAGING",
-      "complete": false,
+      "stageReview": "PASS: genuine final field/control/source/navigation/print/fallback review",
+      "complete": true,
       "fieldCoverage": 33,
       "actualRendererInsertions": "PASS",
-      "renderedReferenceReview": "Source reading and visible insertion sequence reviewed; suppressed standalone log is not recreated."
+      "renderedReferenceReview": "Source reading and visible insertion sequence reviewed; suppressed standalone log is not recreated.",
+      "responsive": "18 combinations on initial release; exact plan hash preserved in final release",
+      "persistence": "Genuine edit/clear/reload/fresh password login PASS",
+      "responsiveAndPersistenceCommit": "f62dae045ec2032a4f683c1f43d226bda2d39e83",
+      "finalClassroomAndPrintCommit": "a2fce914c52b6a08f7b5e7252dea4ca2c17c60ea"
     },
     {
       "lessonId": "g8-t2-l36-checkpoint-20261004",
@@ -194,11 +236,15 @@
       "fields": 38,
       "periods": 2,
       "timingRationale": "Two provisional periods support distinct existing work. Period 1: 9 minutes case reading, 4 reflection, 15 source web, 15 own/imagined corner and 2 close. Period 2: 3 reintroduction, 12 gap analysis, 24 checkpoint design and closure reasoning, 4 feedback and 2 close. The second period supports design, causal reasoning and revision of the same maps, not a longer teacher script. Field observation remains later work.",
-      "stageReview": "PENDING_GENUINE_NORMAL_STAGING",
-      "complete": false,
+      "stageReview": "PASS: genuine final field/control/source/navigation/print/fallback review",
+      "complete": true,
       "fieldCoverage": 38,
       "actualRendererInsertions": "PASS",
-      "renderedReferenceReview": "Source reading and visible insertion sequence reviewed; suppressed standalone log is not recreated."
+      "renderedReferenceReview": "Source reading and visible insertion sequence reviewed; suppressed standalone log is not recreated.",
+      "responsive": "18 combinations on initial release; exact plan hash preserved in final release",
+      "persistence": "Genuine edit/clear/reload/fresh password login PASS",
+      "responsiveAndPersistenceCommit": "f62dae045ec2032a4f683c1f43d226bda2d39e83",
+      "finalClassroomAndPrintCommit": "a2fce914c52b6a08f7b5e7252dea4ca2c17c60ea"
     },
     {
       "lessonId": "g8-t2-l37-036",
@@ -212,16 +258,20 @@
       "fields": 30,
       "periods": 1,
       "timingRationale": "One provisional period: 9 reading and formula, 4 reflection, 17 budget, 6 reflection/adjustment, 7 checkpoint and 2 close. The later feedback or self-review remains outside class. Learners need time to reconcile the table, not an extended lecture about budgeting.",
-      "stageReview": "PENDING_GENUINE_NORMAL_STAGING",
-      "complete": false,
+      "stageReview": "PASS: genuine final field/control/source/navigation/print/fallback review",
+      "complete": true,
       "fieldCoverage": 30,
       "actualRendererInsertions": "PASS",
-      "renderedReferenceReview": "Source reading and visible insertion sequence reviewed; suppressed standalone log is not recreated."
+      "renderedReferenceReview": "Source reading and visible insertion sequence reviewed; suppressed standalone log is not recreated.",
+      "responsive": "18 combinations on initial release; exact plan hash preserved in final release",
+      "persistence": "Genuine edit/clear/reload/fresh password login PASS",
+      "responsiveAndPersistenceCommit": "f62dae045ec2032a4f683c1f43d226bda2d39e83",
+      "finalClassroomAndPrintCommit": "a2fce914c52b6a08f7b5e7252dea4ca2c17c60ea"
     },
     {
       "lessonId": "g8-t2-l38-037",
       "sourceUnitSHA256": "f6d0d6deb9d5efb7e6bc9d72946c27f16f2fd9585598686693682495916e503c",
-      "planSHA256": "bd9244a3c7a18f2a84eec92028a0a31799935d9cb43c39d08eefa47643ec2477",
+      "planSHA256": "66c4c51748e30348431565eea2ae4039383baa208357de15b54926e52831a381",
       "sourceBlocksRead": 48,
       "sourceRead": true,
       "individualDraft": true,
@@ -230,11 +280,17 @@
       "fields": 31,
       "periods": 1,
       "timingRationale": "One provisional contact period: 10 minutes story/table, 4 reflection, 8 tracker setup, 6 explaining the later hunt, 14 checkpoint arithmetic and evidence planning, 3 close. The actual one-week money record or three-day time record and tracker-dependent checkpoint answer happen later. Review during the existing Term 2 portfolio work where feasible; no week-long classroom observation is claimed.",
-      "stageReview": "PENDING_GENUINE_NORMAL_STAGING",
-      "complete": false,
+      "stageReview": "PASS: genuine final field/control/source/navigation/print/fallback review",
+      "complete": true,
       "fieldCoverage": 31,
       "actualRendererInsertions": "PASS",
-      "renderedReferenceReview": "Source reading and visible insertion sequence reviewed; suppressed standalone log is not recreated."
+      "renderedReferenceReview": "Source reading and visible insertion sequence reviewed; suppressed standalone log is not recreated.",
+      "previousPlanSHA256": "bd9244a3c7a18f2a84eec92028a0a31799935d9cb43c39d08eefa47643ec2477",
+      "followupCorrection": "Rendered checkpoint references identify the calculation by content rather than canonical question number/count; final revalidation pending.",
+      "responsive": "18 combinations on corrected final release, plus initial pass",
+      "persistence": "Genuine edit/clear/reload/fresh password login PASS",
+      "responsiveAndPersistenceCommit": "a2fce914c52b6a08f7b5e7252dea4ca2c17c60ea",
+      "finalClassroomAndPrintCommit": "a2fce914c52b6a08f7b5e7252dea4ca2c17c60ea"
     },
     {
       "lessonId": "g8-t2-l39-038",
@@ -248,11 +304,15 @@
       "fields": 30,
       "periods": 1,
       "timingRationale": "One provisional period: 9 minutes story, 4 reflection, 14 expense analysis including percentage support, 7 insight, 9 checkpoint and 2 close. Any voluntary household enquiry or continued record is later work; no family interview is required in contact time.",
-      "stageReview": "PENDING_GENUINE_NORMAL_STAGING",
-      "complete": false,
+      "stageReview": "PASS: genuine final field/control/source/navigation/print/fallback review",
+      "complete": true,
       "fieldCoverage": 30,
       "actualRendererInsertions": "PASS",
-      "renderedReferenceReview": "Source reading and visible insertion sequence reviewed; suppressed standalone log is not recreated."
+      "renderedReferenceReview": "Source reading and visible insertion sequence reviewed; suppressed standalone log is not recreated.",
+      "responsive": "18 combinations on initial release; exact plan hash preserved in final release",
+      "persistence": "Genuine edit/clear/reload/fresh password login PASS",
+      "responsiveAndPersistenceCommit": "f62dae045ec2032a4f683c1f43d226bda2d39e83",
+      "finalClassroomAndPrintCommit": "a2fce914c52b6a08f7b5e7252dea4ca2c17c60ea"
     },
     {
       "lessonId": "g8-t2-l40-039",
@@ -266,11 +326,15 @@
       "fields": 36,
       "periods": 2,
       "timingRationale": "Two provisional periods support the authored consolidation. Period 1: 8 minutes rule/example, 5 tracker reflection, 30 realistic budget with evidence retrieval and feedback, and 2 close. Period 2: 3 reintroduction plus 22 minutes seven-question reflection using available portfolio evidence, 8 equation retrieval, 9 final checkpoint and 3 close. The live reader omits the separate Part D log review, so no time or new response is assigned to it. The second period protects reflection and evidence retrieval rather than adding teacher talk. Home exhibition or self-review is later work.",
-      "stageReview": "PENDING_GENUINE_NORMAL_STAGING",
-      "complete": false,
+      "stageReview": "PASS: genuine final field/control/source/navigation/print/fallback review",
+      "complete": true,
       "fieldCoverage": 36,
       "actualRendererInsertions": "PASS",
-      "renderedReferenceReview": "Suppressed Part D is not recreated. Its source reference supports the visible seven-question reflection using existing evidence."
+      "renderedReferenceReview": "Suppressed Part D is not recreated. Its source reference supports the visible seven-question reflection using existing evidence.",
+      "responsive": "18 combinations on initial release; exact plan hash preserved in final release",
+      "persistence": "Genuine edit/clear/reload/fresh password login PASS",
+      "responsiveAndPersistenceCommit": "f62dae045ec2032a4f683c1f43d226bda2d39e83",
+      "finalClassroomAndPrintCommit": "a2fce914c52b6a08f7b5e7252dea4ca2c17c60ea"
     }
   ]
 }
