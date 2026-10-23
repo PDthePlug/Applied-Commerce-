@@ -1,5 +1,5 @@
 {
-  "scope": "Individually read Grade 8 Term 2 and Term 3; separate unapplied proposals",
+  "scope": "Individually read Grade 8 Terms 2–4; separate unapplied proposals",
   "sourceChangesApplied": false,
   "entries": [
     {
@@ -363,6 +363,76 @@
       "concern": "The scale asserts every learner began at 1, which is not an observed baseline. Reflection can acknowledge different starting points without becoming a measured psychological assessment.",
       "proposedWording": "Think back to your own starting point on the 1–10 scale. Where would you place yourself then and now, and what evidence supports your estimate? What is one useful next step?",
       "implementationImpact": "Separate prompt wording review; retain its stable response identity and field count. Teacher support treats the number as a personal estimate and does not require a 1 baseline or public disclosure.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g8-t4-l62-061",
+      "blockId": "7681725ad7b64e55116d7068-1",
+      "exactPassage": "Money comes from value created — and you can trace it",
+      "category": "Missing contextual explanation",
+      "concern": "This review repeats the earlier claim that money comes from value creation. Value exchange can earn income but is not a full account of monetary creation or transfers.",
+      "proposedWording": "Creating useful goods or services is one way people earn money. People can also receive gifts, grants or loans. Trace the payments in the examples without treating them as a complete explanation of how money is created.",
+      "implementationImpact": "Separate source wording review; preserve this block, associated prompt identities and responses. Local optional support recalls the distinction without another monetary-theory activity.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g8-t4-l63-062",
+      "blockId": "2a0503403c7f3b348d7a3671-1",
+      "exactPassage": "Small steps compound into big results — R5 a day becomes R1,680 a year",
+      "category": "Material arithmetic/calendar ambiguity",
+      "concern": "R5 × 365 = R1,825, while R1,680 is R5 × 28 × 12. The earlier simplified 28-day-month model is incorrectly called a calendar year here. This is fixed saving, not compound-interest growth.",
+      "proposedWording": "Saving R5 on each of 365 days totals R1,825 before interest. In the earlier simplified model of twelve 28-day months, the total is R1,680.",
+      "implementationImpact": "Separate source correction; do not change saved work or force learners to reproduce an incorrect calendar claim. Local support states the period assumption and distinguishes repeated saving from interest.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g8-t4-l71-070",
+      "blockId": "ee369496050842e5fdffd96c-1",
+      "exactPassage": "Myah knocks on her first neighbour's door. Mrs. Dlamini. She asks if she needs help with anything — shopping, cleaning, carrying things. Mrs. Dlamini says yes. She needs someone to fetch her medication from the clinic once a week. She will pay R15. Myah writes it down. Her first earning. Her first customer. She thinks: This is not a big business. It is not even really a business. But it is something. It is a start. And every big thing started small.",
+      "category": "Specific safety concern",
+      "concern": "Myah’s first paid task involves another person’s medication. It must not be treated as a model assignment for unsupervised child work, health-data handling or collecting medication for a neighbour. Current jurisdiction-specific clinic and child-work requirements have not been verified.",
+      "proposedWording": "Myah agrees on a safe, age-appropriate task with a trusted adult, such as helping organise materials in a familiar setting. She records the agreed task and payment.",
+      "implementationImpact": "Any story-task substitution requires separate owner/editorial review; retain block and response identities. Current classroom safeguard beside the story states that the medication errand is not assigned or modelled.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g8-t4-l72-071",
+      "blockId": "da4dcedbb2a249362f4ff895-1",
+      "exactPassage": "Your Next Step: Which is it for you — life happening, or avoidance? Be honest. No one will read this but you. What is the truth?",
+      "category": "Misleading privacy statement",
+      "concern": "Submitted digital responses can be reviewed by authorised educators and institution administrators within their permissions. The absolute statement that only the learner can read the answer is inaccurate.",
+      "proposedWording": "Reflect honestly and choose what to include. You do not need to read this answer to classmates. Authorised educators may review submitted learning evidence within their permissions.",
+      "implementationImpact": "Separate reviewed source wording correction; keep prompt splitting, field count and stable answers. Current local guidance explains the actual visibility beside the relevant work.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g8-t4-l72-071",
+      "blockId": "4e45313b4e02acb62c8e9441-1",
+      "exactPassage": "Myah is three weeks into her earning and saving. She sits at Mama Rose's kitchen — not in the story, but in her mind — and looks at her tracker. Week 1: R30 earned, R20 saved. Week 2: R45 earned, R30 saved. Week 3: R25 earned, R15 saved — she was sick one day and could not work. Total: R100 earned, R65 saved. Her goal is R120. She is more than halfway there. She writes: I am ahead on savings but behind on earnings. I need to find one more customer. Or I need to ask Mrs. Dlamini if she knows anyone else who needs help. The goal is still reachable. I just need to adjust.",
+      "category": "Missing calculation reference",
+      "concern": "The savings total R65 is above half of the R120 savings goal. The passage says Myah is behind on earnings, but provides no separate earnings target against which that can be calculated. The lesson’s Week 2 title and three-week example also require an explicit actual project calendar.",
+      "proposedWording": "Her recorded earnings total R100 and savings R65. Her savings goal is R120, so she has saved more than half. She considers whether her remaining plan is realistic for the weeks she actually has left.",
+      "implementationImpact": "Separate source narrative/calendar review; preserve tracker, project option and saved identities. Local support calculates only stated values and schedules each learner’s review at the agreed actual midpoint.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g8-t4-l75-074",
+      "blockId": "529fa456e8e75fbbe590d894-1",
+      "exactPassage": "You have done the work. Now you share it. This is not a test. It is a celebration of what you have learned and who you have become.",
+      "category": "Institution-specific assessment claim requiring verification",
+      "concern": "The celebratory statement “This is not a test” may conflict with the institution’s actual final-project assessment. Neither the application nor the timing audit establishes whether the presentation carries marks.",
+      "proposedWording": "This is a chance to share and celebrate your learning. Your educator will explain any agreed assessment criteria and how they apply.",
+      "implementationImpact": "Separate source wording/policy review; no assessment or mark is changed during rollout. Preparation requires confirming real arrangements and preserves respectful celebration.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g8-t4-l76-075",
+      "blockId": "5236185f734041aafa0b9520-1",
+      "exactPassage": "Here’s the tension: witnessing is also a burden. Once you have seen what your classmates are capable of, you cannot pretend they are less than they are. Once they have seen you, you cannot hide. Being known is vulnerable. Being celebrated is vulnerable. Some of you will feel uncomfortable with the attention. Some of you will feel unworthy of the praise. Sit with that discomfort. It is not a sign that something is wrong. It is a sign that something is true. Growth is uncomfortable. Being seen is uncomfortable. Do not run from it. Let it sink in. You are more than you think you are. The evidence is in this room.",
+      "category": "Specific participation safeguard",
+      "concern": "The instruction to sit with discomfort and not run can be interpreted as requiring unwanted public attention or overriding a learner’s communication/access needs. Retain the perspective that recognition can feel unfamiliar without making it compulsory.",
+      "proposedWording": "Recognition can feel unfamiliar. You can receive it quietly, pause or ask for an appropriate form of acknowledgement. Respect each person’s comfort and boundaries while recognising their work.",
+      "implementationImpact": "Separate editorial wording review; no new activity, response field or outcome. Local optional support beside the recognition allows quiet acknowledgement and reasonable adaptations.",
       "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
     }
   ],
