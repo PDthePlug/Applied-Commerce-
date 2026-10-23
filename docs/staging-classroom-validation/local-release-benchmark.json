@@ -1,0 +1,132 @@
+{
+  "scope": "Local parsing/hash/schema validation of all 24 authorised retrieved original plans. Excludes AES, key loading, HTTP, auth and hosted server RSS; not a hosted cold-start measurement.",
+  "bytes": 450243,
+  "samples": [
+    {
+      "request": 1,
+      "ms": 8.43,
+      "heapDelta": 3719072,
+      "rss": 138653696
+    },
+    {
+      "request": 2,
+      "ms": 8.3,
+      "heapDelta": -2434776,
+      "rss": 141451264
+    },
+    {
+      "request": 3,
+      "ms": 5.81,
+      "heapDelta": 3590160,
+      "rss": 141582336
+    },
+    {
+      "request": 4,
+      "ms": 5.41,
+      "heapDelta": 3530144,
+      "rss": 143810560
+    },
+    {
+      "request": 5,
+      "ms": 5.38,
+      "heapDelta": 3599992,
+      "rss": 147349504
+    },
+    {
+      "request": 6,
+      "ms": 6.16,
+      "heapDelta": -12217552,
+      "rss": 150495232
+    },
+    {
+      "request": 7,
+      "ms": 5.12,
+      "heapDelta": 3550616,
+      "rss": 150495232
+    },
+    {
+      "request": 8,
+      "ms": 4.33,
+      "heapDelta": 3525952,
+      "rss": 150757376
+    },
+    {
+      "request": 9,
+      "ms": 5.6,
+      "heapDelta": 3552440,
+      "rss": 154165248
+    },
+    {
+      "request": 10,
+      "ms": 5.37,
+      "heapDelta": 3526048,
+      "rss": 157573120
+    },
+    {
+      "request": 11,
+      "ms": 5.26,
+      "heapDelta": -12425088,
+      "rss": 158621696
+    },
+    {
+      "request": 12,
+      "ms": 4.07,
+      "heapDelta": 3526048,
+      "rss": 158621696
+    },
+    {
+      "request": 13,
+      "ms": 4.47,
+      "heapDelta": 3550272,
+      "rss": 158621696
+    },
+    {
+      "request": 14,
+      "ms": 4.42,
+      "heapDelta": 3528160,
+      "rss": 158752768
+    },
+    {
+      "request": 15,
+      "ms": 7.69,
+      "heapDelta": -12563792,
+      "rss": 158883840
+    },
+    {
+      "request": 16,
+      "ms": 4.24,
+      "heapDelta": 3412000,
+      "rss": 158883840
+    },
+    {
+      "request": 17,
+      "ms": 4.42,
+      "heapDelta": 3407096,
+      "rss": 158883840
+    },
+    {
+      "request": 18,
+      "ms": 5.18,
+      "heapDelta": 3412560,
+      "rss": 158883840
+    },
+    {
+      "request": 19,
+      "ms": 4.31,
+      "heapDelta": 3406736,
+      "rss": 159014912
+    },
+    {
+      "request": 20,
+      "ms": 5.19,
+      "heapDelta": -12464584,
+      "rss": 159014912
+    },
+    {
+      "request": 21,
+      "ms": 4.66,
+      "heapDelta": 3453272,
+      "rss": 159014912
+    }
+  ]
+}
