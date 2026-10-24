@@ -1,0 +1,34 @@
+{
+  "preservedPlans": 117,
+  "addedPlans": 20,
+  "totalPlans": 137,
+  "addedPeriods": 24,
+  "newPlacements": 178,
+  "version": "programme-rollout-g9-t3-lessons35-54-2026-10-24",
+  "originalKeyAuthenticated": true,
+  "keyExported": false,
+  "plaintextWritten": false,
+  "sourceValidationMs": 392,
+  "buildProcessOnly": {
+    "heapBefore": 54019720,
+    "heapAfter": 97889560,
+    "rssAfter": 294875136
+  },
+  "files": [
+    {
+      "name": "teaching-plans.v2.enc.json",
+      "bytes": 2323835,
+      "sha256": "7a7c7eb8c39dc99035a67b299465387e069fbb39183319d022d945063f48b37d"
+    },
+    {
+      "name": "teaching-manifest.v2.json",
+      "bytes": 2491766,
+      "sha256": "6ae8145795ad502d0c960cb3c886dea62e89bc4d915f1629b83c1d31bef63153"
+    },
+    {
+      "name": "teaching-availability.v2.json",
+      "bytes": 2920,
+      "sha256": "9bac6c5ab157eb14e6e0cc9d56c1fc898711551a478aafcf07c15852f513df6d"
+    }
+  ]
+}
