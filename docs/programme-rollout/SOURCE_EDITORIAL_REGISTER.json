@@ -283,7 +283,14 @@
       "concern": "The recovery table contains only column headings, so the original digital renderer provides no body cells here. Teacher guidance can use ordinary written working; adding table rows or digital controls changes the response structure and needs separate review.",
       "proposedWording": "Keep the two headings and provide space for matching recovery responses to the three obstacles. Any new digital fields need a reviewed identity and saved-work plan before implementation.",
       "implementationImpact": "Separate source/response-structure review; no table rows or fields added in this rollout. Existing saved identities remain.",
-      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+      "status": "WITHDRAWN_RENDERER_ALREADY_PROVIDES_EDITABLE_ROWS; NO SOURCE CHANGE REQUIRED",
+      "originalStatus": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED",
+      "reviewCorrection": {
+        "at": "2026-10-24",
+        "reason": "The original concern inferred missing controls from a header-only source table. Actual ContentBlocks SSR and genuine authenticated staging expose editable rows and the existing Add another row control.",
+        "evidence": "g9-t3-35-54/table-before-results.json",
+        "implementation": "Existing source, learner fields, row-count control and stable answers retained. Teacher references corrected separately."
+      }
     },
     {
       "lessonId": "g8-t3-l50-049",
@@ -503,7 +510,14 @@
       "concern": "The source grouping table contains only its two header cells. Adding digital rows or fields would alter the response structure and is not authorised as a teacher-guidance fix.",
       "proposedWording": "Editorially review whether the table should include existing-writing-space instructions or a defined set of blank grouping rows. Decide the intended response structure explicitly before implementation.",
       "implementationImpact": "No rows or controls added in rollout. Current teacher cue uses the learner’s existing writing medium for the original grouping task. Any source/control change needs separate review and preservation planning for saved identities.",
-      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+      "status": "WITHDRAWN_RENDERER_ALREADY_PROVIDES_EDITABLE_ROWS; NO SOURCE CHANGE REQUIRED",
+      "originalStatus": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED",
+      "reviewCorrection": {
+        "at": "2026-10-24",
+        "reason": "The original concern inferred missing controls from a header-only source table. Actual ContentBlocks SSR and genuine authenticated staging expose editable rows and the existing Add another row control.",
+        "evidence": "g9-t3-35-54/table-before-results.json",
+        "implementation": "Existing source, learner fields, row-count control and stable answers retained. Teacher references corrected separately."
+      }
     },
     {
       "lessonId": "g9-t1-l10-010",
@@ -713,7 +727,14 @@
       "concern": "The observation log has a header row only, so the existing digital table has no transaction rows. The task still requires a thirty-minute record.",
       "proposedWording": "Retain the observation headings and provide an explicitly reviewed way to record transaction rows; agree row count/expansion and migration before changing digital response structure.",
       "implementationImpact": "Consequential response-structure decision remains separate; no rows, prompts or saved IDs added now. Use the existing workbook/writing medium, disclosed locally, rather than claim digital record coverage.",
-      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+      "status": "WITHDRAWN_RENDERER_ALREADY_PROVIDES_EDITABLE_ROWS; NO SOURCE CHANGE REQUIRED",
+      "originalStatus": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED",
+      "reviewCorrection": {
+        "at": "2026-10-24",
+        "reason": "The original concern inferred missing controls from a header-only source table. Actual ContentBlocks SSR and genuine authenticated staging expose editable rows and the existing Add another row control.",
+        "evidence": "g9-t3-35-54/table-before-results.json",
+        "implementation": "Existing source, learner fields, row-count control and stable answers retained. Teacher references corrected separately."
+      }
     },
     {
       "lessonId": "g9-t2-l24-025",
@@ -893,7 +914,14 @@
       "concern": "The priority matrix has only a header row, while the activity asks learners to list current tasks. It does not currently expose blank digital task rows.",
       "proposedWording": "Agree an explicit reviewed way to record the existing task entries; retain the importance/urgency/action headings and plan any added response identities before digital structural changes.",
       "implementationImpact": "Separate response-structure decision, not silently implemented. The local cue uses the normal workbook/writing medium and preserves the authored matrix task, original controls and saved identities.",
-      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+      "status": "WITHDRAWN_RENDERER_ALREADY_PROVIDES_EDITABLE_ROWS; NO SOURCE CHANGE REQUIRED",
+      "originalStatus": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED",
+      "reviewCorrection": {
+        "at": "2026-10-24",
+        "reason": "The original concern inferred missing controls from a header-only source table. Actual ContentBlocks SSR and genuine authenticated staging expose editable rows and the existing Add another row control.",
+        "evidence": "g9-t3-35-54/table-before-results.json",
+        "implementation": "Existing source, learner fields, row-count control and stable answers retained. Teacher references corrected separately."
+      }
     },
     {
       "lessonId": "g9-t3-l40-029",
@@ -903,7 +931,14 @@
       "concern": "The resource map has two headings without blank entry rows, so the requested map cannot be represented as entries in this digital table.",
       "proposedWording": "Agree a reviewed recording arrangement for internal/external resources while retaining the existing headings and mapping task.",
       "implementationImpact": "No rows or response identities added now. The local activity cue explicitly uses the existing workbook/writing medium; any later digital structure change needs separate review.",
-      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+      "status": "WITHDRAWN_RENDERER_ALREADY_PROVIDES_EDITABLE_ROWS; NO SOURCE CHANGE REQUIRED",
+      "originalStatus": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED",
+      "reviewCorrection": {
+        "at": "2026-10-24",
+        "reason": "The original concern inferred missing controls from a header-only source table. Actual ContentBlocks SSR and genuine authenticated staging expose editable rows and the existing Add another row control.",
+        "evidence": "g9-t3-35-54/table-before-results.json",
+        "implementation": "Existing source, learner fields, row-count control and stable answers retained. Teacher references corrected separately."
+      }
     },
     {
       "lessonId": "g9-t3-l41-030",
@@ -953,7 +988,14 @@
       "concern": "The activity asks for three pairs of statements but the table contains headings only.",
       "proposedWording": "Agree a reviewed way to record the three authored pairs, retaining their meaning and explicitly planning any future digital response identities.",
       "implementationImpact": "No rows/fields added silently. The local cue uses the ordinary workbook/writing medium and preserves the task.",
-      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+      "status": "WITHDRAWN_RENDERER_ALREADY_PROVIDES_EDITABLE_ROWS; NO SOURCE CHANGE REQUIRED",
+      "originalStatus": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED",
+      "reviewCorrection": {
+        "at": "2026-10-24",
+        "reason": "The original concern inferred missing controls from a header-only source table. Actual ContentBlocks SSR and genuine authenticated staging expose editable rows and the existing Add another row control.",
+        "evidence": "g9-t3-35-54/table-before-results.json",
+        "implementation": "Existing source, learner fields, row-count control and stable answers retained. Teacher references corrected separately."
+      }
     },
     {
       "lessonId": "g9-t3-l44-033",
@@ -1207,5 +1249,12 @@
       "passage": "resilience is a muscle",
       "decision": "Metaphor for practice and recovery; retain with the source’s own acknowledgement of unequal resources."
     }
-  ]
+  ],
+  "auditCorrection": {
+    "at": "2026-10-24",
+    "withdrawn": 6,
+    "activeProposals": 106,
+    "totalHistoricalEntries": 112,
+    "sourceChangesApplied": false
+  }
 }

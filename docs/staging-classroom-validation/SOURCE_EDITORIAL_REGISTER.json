@@ -287,10 +287,19 @@
       "blockId": "5f0c22bc894983d67228d043-1",
       "exactPassage": "[[\"Criterion\",\"Weight\",\"Why It Matters\"]]",
       "category": "Worksheet gap",
-      "concern": "Header-only criteria table and totals-only scoring table provide no editable criterion rows. The existing paper scaffold is necessary.",
-      "proposedWording": "Provide a reviewed usable criterion/weight/reason and weighted-score grid, preserving existing fields and a documented identity map.",
-      "implementationImpact": "Separate editorial and renderer approval; do not silently create response identities.",
-      "status": "PROPOSED — separate editorial review"
+      "concern": "The header-only criteria table already provides four editable rows with twelve fields. That part of the original claim is withdrawn. The separate scoring table exposes four Total fields but no criterion-by-option scoring rows.",
+      "proposedWording": "Review only whether the separate scoring table needs a usable criterion-by-option score grid, preserving existing totals and documenting stable identities. No change is proposed for the already editable criteria table.",
+      "implementationImpact": "Separate review of the scoring-grid gap only; no source, field or key change now. Existing optional paper scaffold remains useful for full weighted-score working.",
+      "status": "PARTIALLY_WITHDRAWN_RENDERER_VERIFIED; SCORING_GRID_GAP_REMAINS_PROPOSED",
+      "originalConcern": "Header-only criteria table and totals-only scoring table provide no editable criterion rows. The existing paper scaffold is necessary.",
+      "originalProposedWording": "Provide a reviewed usable criterion/weight/reason and weighted-score grid, preserving existing fields and a documented identity map.",
+      "originalImplementationImpact": "Separate editorial and renderer approval; do not silently create response identities.",
+      "reviewCorrection": {
+        "at": "2026-10-24",
+        "evidence": "../programme-rollout/g9-t3-35-54/table-before-results.json",
+        "criteriaControls": 12,
+        "scoreTotalControls": 4
+      }
     }
   ],
   "principle": "Metaphors and personal-development perspectives are retained unless their wording asserts a material falsehood or creates a specific risk. Source and interface changes remain separate."
