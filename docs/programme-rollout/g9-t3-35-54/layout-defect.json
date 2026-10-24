@@ -1,0 +1,38 @@
+{
+  "lessonId": "g9-t3-l39-028",
+  "severity": "S2: narrow-screen reading overflow",
+  "initialApplicationCommit": "7becdccf023f45e6750b85499cdbf46b63f19d28",
+  "initialSharedResponsiveCombinationsPassed": 162,
+  "initialFailure": "document width 337px at a 320px viewport",
+  "cause": "Long unbroken word in the authored h1 title; the block box fit but its text did not wrap",
+  "genuineBaseline": {
+    "cases": 30,
+    "overflowCases": 6,
+    "views": [
+      "learner",
+      "teacher"
+    ],
+    "testWaitsForActualHeading": true
+  },
+  "change": "overflow-wrap:anywhere on .lesson-heading h1; preserve copy, type size and visible overflow rather than clip",
+  "localRegression": {
+    "failedBefore": true,
+    "passedAfter": true,
+    "widths": [
+      320,
+      360,
+      430,
+      1280
+    ],
+    "textScales": [
+      1,
+      1.28,
+      2
+    ],
+    "controlsAndColumnHeadersRetained": true,
+    "printHeaderVisibility": "PASS",
+    "authentication": "Local CSS/renderer check only"
+  },
+  "guideOrSourceTextChanged": false,
+  "finalGenuineAcceptance": "PENDING"
+}
