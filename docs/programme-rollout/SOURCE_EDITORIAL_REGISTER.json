@@ -1,5 +1,5 @@
 {
-  "scope": "Individually read Grade 8 Terms 2–4, Grade 9 Term 1 and Grade 9 Term 2 Lessons 17–25; separate unapplied proposals",
+  "scope": "Individually read Grade 8 Terms 2–4, Grade 9 Term 1 and Grade 9 Term 2 Lessons 17–34; separate unapplied proposals",
   "sourceChangesApplied": false,
   "entries": [
     {
@@ -753,6 +753,116 @@
       "concern": "Most households being one missed paycheck from crisis is a broad empirical claim, unsupported by a cited population, date or measure. The story’s vulnerable budget remains a legitimate example.",
       "proposedWording": "Grace’s example shows how a small surplus can protect against unexpected costs. The extent of this vulnerability across households requires dated evidence and varies by circumstances.",
       "implementationImpact": "Separate source factual review; no universal prevalence statistic added or silently changed. Teacher guidance analyses the stated example and avoids inferring every household’s circumstances.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g9-t2-l26-027",
+      "blockId": "2059b59762328501fd9eedf2-1",
+      "exactPassage": "Term | Definition | isiZulu | Afrikaans\nStokvel | A community savings group where members contribute regularly and take turns receiving the lump sum | Istokvel | Stokvel\nContribution | Money paid into the stokvel each month | Umnikelo | Bydrae\nPayout | The lump sum received by a member | Imali ekhishwayo | Uitbetaling",
+      "category": "Missing scope qualification",
+      "concern": "The definition describes a rotating savings model as the whole category; stokvel arrangements can have other savings, purpose and payout structures. The specific example’s arithmetic is correct.",
+      "proposedWording": "This lesson uses a rotating stokvel: members contribute regularly and receive the pool in an agreed order. Other stokvels organise saving and payouts differently.",
+      "implementationImpact": "Separate vocabulary review; no contribution field or real group created. Local optional support explains the example’s rotation and avoids guaranteed returns. The trust metaphor remains.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g9-t2-l26-027",
+      "blockId": "e54e293040f70973e93f4d35-1",
+      "exactPassage": "The Truth: Stokvels are not just savings groups. They are trust networks. They are community safety nets. They are a way to build dignity without relying on banks that are far away or hostile. In South Africa, stokvels handle billions of rands every year. They are not informal. They are essential.",
+      "category": "Scale claim requiring dated verification",
+      "concern": "The billions-of-rands claim has no date, population or cited estimate. It may be supportable but has not been currently verified in this audit.",
+      "proposedWording": "Stokvels play an important role in community savings. Add a dated attributable estimate of their scale only after verifying its scope and method.",
+      "implementationImpact": "Separate empirical-source review; no fabricated estimate or official endorsement. Teacher guidance does not rely on the scale claim.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g9-t2-l27-028",
+      "blockId": "3ee21867ed44472f0d4ba93b-1",
+      "exactPassage": "Term | Definition | isiZulu | Afrikaans\nLeakage | Money that enters a community and then leaves without benefiting local people | Ukuvuzela | Leking\nRetention | Money that stays in a community and circulates locally | Ukugcina | Retensie\nMultiplier effect | When money spent locally creates more economic activity | Umphumela wokuphinda | Vermenigvuldiger-effek",
+      "category": "Material missing distinction in leakage definition",
+      "concern": "An outward payment can return useful goods/services, and a geographic payment boundary does not alone establish no local benefit. The multiplier description also supplies no estimate that could be used as a fixed numerical rule.",
+      "proposedWording": "In a defined local-flow model, distinguish spending outside the boundary from the benefits or later flows it may bring. State the boundary, evidence and limits before concluding a payment creates no local benefit.",
+      "implementationImpact": "Conceptual wording requires separate source review; keep all audit fields and current source. Local optional clarification supports evidence limits and feasible comparisons.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g9-t2-l27-028",
+      "blockId": "1d1dd05626d6707e6771d57d-1",
+      "exactPassage": "This week, make ONE purchase from a local business instead of a chain. Notice the difference. Write down what you observe.",
+      "category": "Compulsory spending safeguard missing",
+      "concern": "A required new purchase can be unaffordable or unsuitable and is not necessary to explore a local alternative. The log pre-fills a purchase claim even if none occurred.",
+      "proposedWording": "Where a suitable purchase is already planned and permitted, compare the local option without additional spending. Otherwise compare existing options without buying and label the activity accurately. Record only an action actually taken.",
+      "implementationImpact": "Separate activity/log wording review; no new compulsory exercise or response control. Later-work cue offers an appropriate no-purchase alternative and rejects fabricated transaction evidence.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g9-t2-l28-029",
+      "blockId": "c2b81e766e20d80b58339e6f-1",
+      "exactPassage": "She has observed the taxi rank for three weeks",
+      "category": "Material chronology inconsistency",
+      "concern": "A three-week project cannot be at its halfway point after three project weeks. Earlier observation could be separate, but the text does not establish that chronology.",
+      "proposedWording": "At the halfway point of her agreed three-week project, she reviews the observations collected so far. If some observations predate the project, state that explicitly.",
+      "implementationImpact": "Separate story correction; teacher scheduling uses the actual project midpoint without changing learner source or saved records.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g9-t2-l28-029",
+      "blockId": "22577b371478064876d38e68-1",
+      "exactPassage": "If you are behind: is it because of situation beyond your control, or because you are avoiding something? Be honest. No one reads this but you.",
+      "category": "Misleading exclusive visibility statement",
+      "concern": "No one reads this but you is false for answers saved in the institution workspace: scoped SELECT permits authorised assigned staff/admin review without a per-row submission flag. It may also pressure personal disclosure under a mistaken assurance.",
+      "proposedWording": "Reflect honestly using details you are comfortable recording. You need not read this to classmates. Authorised educators and institution administrators may review saved digital work within their permissions; it is not an exclusively private diary.",
+      "implementationImpact": "Separate learner visibility correction requiring review. Accurate local clarification is beside Part C now. No RLS, sharing setting, answer identity or submission structure changed.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g9-t2-l29-030",
+      "blockId": "49442b907e17082ce507b833-1",
+      "exactPassage": "Money saved in stokvels (all of it)",
+      "category": "Unsupported absolute retention claim",
+      "concern": "Membership in a stokvel does not establish that all pooled money or payouts remain within the community; recipients may save or spend outside the boundary.",
+      "proposedWording": "Some money may circulate locally through stokvel contributions and spending, but where payouts go must be established rather than assumed.",
+      "implementationImpact": "Separate example correction; actual map/analysis fields unchanged. Optional support keeps all/proportion claims tied to evidence.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g9-t2-l30-031",
+      "blockId": "c3e8dac523fce3e43b04444e-1",
+      "exactPassage": "Section | What to Include\nIntroduction (30 sec) | Your name, your community area, what you set out to do\nThe Map (2 min) | Show your map. Explain the flows.\nThe Findings (2 min) | What did you discover? What surprised you?\nThe Leaks (1 min) | What are the biggest leaks? Where does money leave?\nThe Strengths (1 min) | What money stays? What works?\nWhat You Learned (1 min) | What did this teach you about your community?\nConclusion (30 sec) | Thank you, any questions?",
+      "category": "Material timing inconsistency",
+      "concern": "The outline totals eight minutes (0.5+2+2+1+1+1+0.5), whereas the presentation guideline says five to seven. The source does not specify whether questions fit within either total.",
+      "proposedWording": "Reconcile the guideline and outline in a reviewed source edit. One option is to allow an eight-minute outline plus a stated question allowance; another requires explicitly revising component allocations to match five to seven minutes.",
+      "implementationImpact": "Owner/editorial choice pending; neither outline nor guideline silently changed. Conservative provisional classroom estimate reserves the complete outline and questions for actual enrolment; no new lesson or learner activity. Timing trials remain pending.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g9-t2-l30-031",
+      "blockId": "0b37714577f21a82736c4f13-1",
+      "exactPassage": "\"Do not be nervous. You are not being judged. You are being witnessed.\"",
+      "category": "Assessment expectation ambiguity",
+      "concern": "Not being judged can be read as no assessment, while the project overview states a 40% term contribution. The intended supportive witness framing can remain, but actual institutional assessment should be clear.",
+      "proposedWording": "The audience listens respectfully. Your educator will explain whether and how the presentation forms part of the institution’s approved assessment; questions concern the evidence and reasoning.",
+      "implementationImpact": "Separate narrative/policy clarification tied to the earlier unverified weighting. Do not create or change grading rules through a guide. Preparation distinguishes support from actual assessment policy.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g9-t2-l31-032",
+      "blockId": "9f5f78fc4292faf776044d25-1",
+      "exactPassage": "My action plan: I will start a community savings group with my friends. We will each save R10 a week. We will use the money to buy things from local businesses. We will keep the money in the community.",
+      "category": "Specific money-handling safeguard missing",
+      "concern": "The minor character starts a peer savings group and pools money without explaining consent, supervision, safeguarding or resource limits. This example should not become an instruction to collect learners’ money.",
+      "proposedWording": "This is one proposed plan, not an instruction to pool class funds. Any real money-handling project requires appropriate adult/institution approval and safeguards. A feasible first step may be a permission or information request without spending.",
+      "implementationImpact": "Separate example safeguard review. Current local cue keeps the authored planning task and checks permissions before later action; no class fund, mandatory purchase or new response field.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g9-t2-l33-034",
+      "blockId": "772ca989878c7cc81008e0e2-1",
+      "exactPassage": "8. The 1-10 Scale: At the start of the term, you were a \"1\" on the community money awareness scale. Where are you now — honestly? What is the exact number? What is the ONE thing you need to do in Term 3 to move up by a single point?",
+      "category": "Unsupported imposed baseline",
+      "concern": "The source asserts every learner started at one on an undefined awareness scale. This is not an observed baseline and can imply a compulsory increase rather than honest reflection.",
+      "proposedWording": "If a genuine earlier self-rating exists, reflect on it. Otherwise give an honest current judgement, explain its basis and state one feasible next step without assuming an initial score of one.",
+      "implementationImpact": "Separate scale/prompt meaning review; no scale response split, key or number of controls changed now. Local optional support permits acknowledging the unsupported premise and explaining actual learning evidence.",
       "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
     }
   ],
