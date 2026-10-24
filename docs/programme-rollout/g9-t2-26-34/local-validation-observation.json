@@ -1,0 +1,19 @@
+{
+  "initialRun": {
+    "tests": 213,
+    "passed": 212,
+    "failed": 1,
+    "failingTest": "staging build sealing rejects every other project before reading private input or modifying release files",
+    "cause": "The agent replaced the 108-plan files with the 117-plan release concurrently with a test comparing before/after hashes. Expected/actual match those two valid releases.",
+    "productDefectEstablished": false
+  },
+  "correction": "Hold local release files stable and rerun the entire suite; retain initial failure log in protected evidence.",
+  "stableFileRerun": {
+    "tests": 213,
+    "passed": 213,
+    "failed": 0,
+    "typecheck": "PASS",
+    "lint": "PASS",
+    "runtime": "PASS"
+  }
+}

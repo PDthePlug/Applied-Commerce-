@@ -1,6 +1,6 @@
 # Private content delivery: measured growth
 
-The original classroom key remains server-bound. Packaging and Supabase access are separate capabilities: genuine staging login demonstrates permissions, while guarded build-time sealing demonstrates that the original key opens and extends the existing encrypted release without export. Neither proves 395-plan performance. The 108-plan release passes its recorded hosted acceptance; that does not demonstrate the missing cold/server-memory measurements.
+The original classroom key remains server-bound. Packaging and Supabase access are separate capabilities: genuine staging login demonstrates permissions, while guarded build-time sealing demonstrates that the original key opens and extends the existing encrypted release without export. Neither proves 395-plan performance. The 117-plan release passes its recorded hosted acceptance; that does not demonstrate the missing cold/server-memory measurements.
 
 | Released/candidate plans | Ciphertext bytes | Hash/placement manifest bytes |
 | --- | ---: | ---: |
@@ -11,6 +11,7 @@ The original classroom key remains server-bound. Packaging and Supabase access a
 | 84 | 1,530,595 | 1,635,662 |
 | 99 | 1,760,831 | 1,880,353 |
 | 108 | 1,892,843 | 2,025,968 |
+| 117 | 2,029,199 | 2,168,900 |
 
 Exact per-operation hashes and correction sizes remain in their batch summaries. The early reduction from the original pretty-printed 24-plan file reflected compact serialization, not content removal; preserved plan hashes establish that distinction. Do not extrapolate one fixed size per lesson across unreviewed higher-grade content.
 
@@ -27,3 +28,5 @@ Retain the current architecture while gathering those missing measurements. If r
 No smaller-release or caching architecture is implemented here. Do not expose plaintext guides or keys in public assets, add a public sealing route or change a database schema as a shortcut. Any production architecture change or migration requires separate owner approval after a concrete measured proposal.
 
 At 108 plans, the latest sequential run made 50 authenticated requests, including 45 to additions: median 595 ms, range 535–973 ms, 9541–14812 decoded bytes. These proxy-observed samples do not demonstrate guaranteed cold starts, per-request server memory or a causal release-size trend.
+
+At 117 plans, 50 sequential authenticated requests include 45 to additions: median 670 ms, range 531–1040 ms, 9307–18404 decoded bytes. The normal build scanned 77 public assets against 6,517 private sentinels plus the original key. No plaintext guide or key was exposed by that scan. These samples still do not measure a guaranteed cold process, concurrency or hosted function memory.
