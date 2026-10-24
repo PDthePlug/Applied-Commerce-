@@ -1,0 +1,1040 @@
+{
+  "guides": 14,
+  "guidesPassing": 13,
+  "releasedGuides": 64,
+  "scope": "explicit selected lessons",
+  "check": "Text stays within 12 mm A4 margins, allowing 2 pt measurement tolerance; all pages contain text.",
+  "results": [
+    {
+      "lessonId": "g8-t1-l01-001",
+      "pages": 8,
+      "allPagesHaveText": true,
+      "marginsPass": true,
+      "pageBounds": [
+        {
+          "page": 1,
+          "words": 213,
+          "bounds": {
+            "xMin": 68.50781,
+            "yMin": 69.994626,
+            "xMax": 526.48826,
+            "yMax": 766.475066
+          },
+          "inside12mmWithTolerance": true
+        },
+        {
+          "page": 2,
+          "words": 265,
+          "bounds": {
+            "xMin": 68.50781,
+            "yMin": 36.244627,
+            "xMax": 522.012427,
+            "yMax": 785.975065
+          },
+          "inside12mmWithTolerance": true
+        },
+        {
+          "page": 3,
+          "words": 185,
+          "bounds": {
+            "xMin": 68.50781,
+            "yMin": 35.170897,
+            "xMax": 527.853492,
+            "yMax": 737.225067
+          },
+          "inside12mmWithTolerance": true
+        },
+        {
+          "page": 4,
+          "words": 201,
+          "bounds": {
+            "xMin": 68.50781,
+            "yMin": 35.170897,
+            "xMax": 526.452372,
+            "yMax": 770.975066
+          },
+          "inside12mmWithTolerance": true
+        },
+        {
+          "page": 5,
+          "words": 212,
+          "bounds": {
+            "xMin": 68.50781,
+            "yMin": 35.170897,
+            "xMax": 520.833228,
+            "yMax": 792.725065
+          },
+          "inside12mmWithTolerance": true
+        },
+        {
+          "page": 6,
+          "words": 196,
+          "bounds": {
+            "xMin": 68.50781,
+            "yMin": 35.170897,
+            "xMax": 513.911111,
+            "yMax": 759.725066
+          },
+          "inside12mmWithTolerance": true
+        },
+        {
+          "page": 7,
+          "words": 190,
+          "bounds": {
+            "xMin": 68.50781,
+            "yMin": 35.170897,
+            "xMax": 522.617407,
+            "yMax": 755.975066
+          },
+          "inside12mmWithTolerance": true
+        },
+        {
+          "page": 8,
+          "words": 110,
+          "bounds": {
+            "xMin": 68.50781,
+            "yMin": 35.170897,
+            "xMax": 516.142066,
+            "yMax": 405.725081
+          },
+          "inside12mmWithTolerance": true
+        }
+      ]
+    },
+    {
+      "lessonId": "g8-t1-l08-008",
+      "pages": 13,
+      "allPagesHaveText": true,
+      "marginsPass": true,
+      "pageBounds": [
+        {
+          "page": 1,
+          "words": 210,
+          "bounds": {
+            "xMin": 68.50781,
+            "yMin": 69.994626,
+            "xMax": 527.467508,
+            "yMax": 787.475065
+          },
+          "inside12mmWithTolerance": true
+        },
+        {
+          "page": 2,
+          "words": 295,
+          "bounds": {
+            "xMin": 68.50781,
+            "yMin": 35.170897,
+            "xMax": 527.836646,
+            "yMax": 779.225065
+          },
+          "inside12mmWithTolerance": true
+        },
+        {
+          "page": 3,
+          "words": 161,
+          "bounds": {
+            "xMin": 68.50781,
+            "yMin": 35.170897,
+            "xMax": 527.687965,
+            "yMax": 802.475064
+          },
+          "inside12mmWithTolerance": true
+        },
+        {
+          "page": 4,
+          "words": 229,
+          "bounds": {
+            "xMin": 68.50781,
+            "yMin": 35.455077,
+            "xMax": 527.918677,
+            "yMax": 803.975064
+          },
+          "inside12mmWithTolerance": true
+        },
+        {
+          "page": 5,
+          "words": 145,
+          "bounds": {
+            "xMin": 68.50781,
+            "yMin": 35.170897,
+            "xMax": 527.288062,
+            "yMax": 758.225066
+          },
+          "inside12mmWithTolerance": true
+        },
+        {
+          "page": 6,
+          "words": 325,
+          "bounds": {
+            "xMin": 68.50781,
+            "yMin": 35.170897,
+            "xMax": 527.836646,
+            "yMax": 794.975065
+          },
+          "inside12mmWithTolerance": true
+        },
+        {
+          "page": 7,
+          "words": 162,
+          "bounds": {
+            "xMin": 68.50781,
+            "yMin": 35.170897,
+            "xMax": 526.683082,
+            "yMax": 719.225068
+          },
+          "inside12mmWithTolerance": true
+        },
+        {
+          "page": 8,
+          "words": 183,
+          "bounds": {
+            "xMin": 68.50781,
+            "yMin": 35.170897,
+            "xMax": 528.415994,
+            "yMax": 746.975067
+          },
+          "inside12mmWithTolerance": true
+        },
+        {
+          "page": 9,
+          "words": 224,
+          "bounds": {
+            "xMin": 68.50781,
+            "yMin": 35.170897,
+            "xMax": 522.561011,
+            "yMax": 753.725066
+          },
+          "inside12mmWithTolerance": true
+        },
+        {
+          "page": 10,
+          "words": 208,
+          "bounds": {
+            "xMin": 68.50781,
+            "yMin": 34.815672,
+            "xMax": 526.108865,
+            "yMax": 757.475066
+          },
+          "inside12mmWithTolerance": true
+        },
+        {
+          "page": 11,
+          "words": 244,
+          "bounds": {
+            "xMin": 68.50781,
+            "yMin": 35.170897,
+            "xMax": 524.934791,
+            "yMax": 794.975065
+          },
+          "inside12mmWithTolerance": true
+        },
+        {
+          "page": 12,
+          "words": 241,
+          "bounds": {
+            "xMin": 68.50781,
+            "yMin": 34.815672,
+            "xMax": 521.945777,
+            "yMax": 746.225067
+          },
+          "inside12mmWithTolerance": true
+        },
+        {
+          "page": 13,
+          "words": 187,
+          "bounds": {
+            "xMin": 68.50781,
+            "yMin": 35.170897,
+            "xMax": 526.677954,
+            "yMax": 432.72508
+          },
+          "inside12mmWithTolerance": true
+        }
+      ]
+    },
+    {
+      "lessonId": "g8-t1-l10-010",
+      "pages": 6,
+      "allPagesHaveText": true,
+      "marginsPass": true,
+      "pageBounds": [
+        {
+          "page": 1,
+          "words": 199,
+          "bounds": {
+            "xMin": 68.50781,
+            "yMin": 69.994626,
+            "xMax": 521.207497,
+            "yMax": 761.975066
+          },
+          "inside12mmWithTolerance": true
+        },
+        {
+          "page": 2,
+          "words": 263,
+          "bounds": {
+            "xMin": 68.50781,
+            "yMin": 35.170897,
+            "xMax": 518.569313,
+            "yMax": 788.975065
+          },
+          "inside12mmWithTolerance": true
+        },
+        {
+          "page": 3,
+          "words": 191,
+          "bounds": {
+            "xMin": 68.50781,
+            "yMin": 35.170897,
+            "xMax": 521.422828,
+            "yMax": 755.225066
+          },
+          "inside12mmWithTolerance": true
+        },
+        {
+          "page": 4,
+          "words": 200,
+          "bounds": {
+            "xMin": 68.50781,
+            "yMin": 35.170897,
+            "xMax": 501.535378,
+            "yMax": 788.975065
+          },
+          "inside12mmWithTolerance": true
+        },
+        {
+          "page": 5,
+          "words": 169,
+          "bounds": {
+            "xMin": 68.50781,
+            "yMin": 35.170897,
+            "xMax": 527.765602,
+            "yMax": 691.475069
+          },
+          "inside12mmWithTolerance": true
+        },
+        {
+          "page": 6,
+          "words": 141,
+          "bounds": {
+            "xMin": 68.50781,
+            "yMin": 35.455077,
+            "xMax": 521.581764,
+            "yMax": 409.475081
+          },
+          "inside12mmWithTolerance": true
+        }
+      ]
+    },
+    {
+      "lessonId": "g12-t1-l05-005",
+      "pages": 15,
+      "allPagesHaveText": true,
+      "marginsPass": true,
+      "pageBounds": [
+        {
+          "page": 1,
+          "words": 211,
+          "bounds": {
+            "xMin": 68.50781,
+            "yMin": 69.994626,
+            "xMax": 524.32981,
+            "yMax": 793.475065
+          },
+          "inside12mmWithTolerance": true
+        },
+        {
+          "page": 2,
+          "words": 291,
+          "bounds": {
+            "xMin": 68.50781,
+            "yMin": 35.170897,
+            "xMax": 527.267554,
+            "yMax": 730.475067
+          },
+          "inside12mmWithTolerance": true
+        },
+        {
+          "page": 3,
+          "words": 85,
+          "bounds": {
+            "xMin": 68.50781,
+            "yMin": 35.170897,
+            "xMax": 486.995339,
+            "yMax": 736.475067
+          },
+          "inside12mmWithTolerance": true
+        },
+        {
+          "page": 4,
+          "words": 189,
+          "bounds": {
+            "xMin": 68.50781,
+            "yMin": 34.815672,
+            "xMax": 521.60227,
+            "yMax": 746.225067
+          },
+          "inside12mmWithTolerance": true
+        },
+        {
+          "page": 5,
+          "words": 141,
+          "bounds": {
+            "xMin": 68.50781,
+            "yMin": 35.170897,
+            "xMax": 514.409156,
+            "yMax": 767.975066
+          },
+          "inside12mmWithTolerance": true
+        },
+        {
+          "page": 6,
+          "words": 171,
+          "bounds": {
+            "xMin": 68.50781,
+            "yMin": 34.815672,
+            "xMax": 521.392067,
+            "yMax": 768.725066
+          },
+          "inside12mmWithTolerance": true
+        },
+        {
+          "page": 7,
+          "words": 212,
+          "bounds": {
+            "xMin": 68.50781,
+            "yMin": 35.170897,
+            "xMax": 526.30369,
+            "yMax": 796.475064
+          },
+          "inside12mmWithTolerance": true
+        },
+        {
+          "page": 8,
+          "words": 184,
+          "bounds": {
+            "xMin": 68.50781,
+            "yMin": 36.244627,
+            "xMax": 522.617408,
+            "yMax": 753.725066
+          },
+          "inside12mmWithTolerance": true
+        },
+        {
+          "page": 9,
+          "words": 200,
+          "bounds": {
+            "xMin": 68.50781,
+            "yMin": 34.815672,
+            "xMax": 527.857154,
+            "yMax": 799.475064
+          },
+          "inside12mmWithTolerance": true
+        },
+        {
+          "page": 10,
+          "words": 190,
+          "bounds": {
+            "xMin": 68.50781,
+            "yMin": 35.170897,
+            "xMax": 524.340064,
+            "yMax": 762.725066
+          },
+          "inside12mmWithTolerance": true
+        },
+        {
+          "page": 11,
+          "words": 197,
+          "bounds": {
+            "xMin": 68.50781,
+            "yMin": 34.815672,
+            "xMax": 522.845192,
+            "yMax": 757.475066
+          },
+          "inside12mmWithTolerance": true
+        },
+        {
+          "page": 12,
+          "words": 219,
+          "bounds": {
+            "xMin": 68.50781,
+            "yMin": 35.170897,
+            "xMax": 524.155494,
+            "yMax": 771.725065
+          },
+          "inside12mmWithTolerance": true
+        },
+        {
+          "page": 13,
+          "words": 228,
+          "bounds": {
+            "xMin": 68.50781,
+            "yMin": 34.815672,
+            "xMax": 523.770976,
+            "yMax": 792.725065
+          },
+          "inside12mmWithTolerance": true
+        },
+        {
+          "page": 14,
+          "words": 199,
+          "bounds": {
+            "xMin": 68.50781,
+            "yMin": 35.170897,
+            "xMax": 518.500465,
+            "yMax": 805.475064
+          },
+          "inside12mmWithTolerance": true
+        },
+        {
+          "page": 15,
+          "words": 95,
+          "bounds": {
+            "xMin": 68.50781,
+            "yMin": 36.244627,
+            "xMax": 528.431372,
+            "yMax": 288.725086
+          },
+          "inside12mmWithTolerance": true
+        }
+      ]
+    },
+    {
+      "lessonId": "g8-t3-l51-050",
+      "pages": 4,
+      "allPagesHaveText": true,
+      "marginsPass": true,
+      "pageBounds": [
+        {
+          "page": 1,
+          "words": 200,
+          "bounds": {
+            "xMin": 68.50781,
+            "yMin": 69.994626,
+            "xMax": 527.252174,
+            "yMax": 801.725064
+          },
+          "inside12mmWithTolerance": true
+        },
+        {
+          "page": 2,
+          "words": 239,
+          "bounds": {
+            "xMin": 68.50781,
+            "yMin": 35.170897,
+            "xMax": 528.441628,
+            "yMax": 785.975065
+          },
+          "inside12mmWithTolerance": true
+        },
+        {
+          "page": 3,
+          "words": 216,
+          "bounds": {
+            "xMin": 68.50781,
+            "yMin": 35.170897,
+            "xMax": 528.426246,
+            "yMax": 752.225066
+          },
+          "inside12mmWithTolerance": true
+        },
+        {
+          "page": 4,
+          "words": 43,
+          "bounds": {
+            "xMin": 68.50781,
+            "yMin": 35.170897,
+            "xMax": 527.821265,
+            "yMax": 146.225092
+          },
+          "inside12mmWithTolerance": true
+        }
+      ]
+    },
+    {
+      "lessonId": "g8-t3-l52-051",
+      "pages": 4,
+      "allPagesHaveText": true,
+      "marginsPass": true,
+      "pageBounds": [
+        {
+          "page": 1,
+          "words": 201,
+          "bounds": {
+            "xMin": 68.50781,
+            "yMin": 69.994626,
+            "xMax": 527.703344,
+            "yMax": 801.725064
+          },
+          "inside12mmWithTolerance": true
+        },
+        {
+          "page": 2,
+          "words": 227,
+          "bounds": {
+            "xMin": 68.50781,
+            "yMin": 35.170897,
+            "xMax": 527.057353,
+            "yMax": 763.475066
+          },
+          "inside12mmWithTolerance": true
+        },
+        {
+          "page": 3,
+          "words": 237,
+          "bounds": {
+            "xMin": 68.50781,
+            "yMin": 35.170897,
+            "xMax": 521.458716,
+            "yMax": 748.475066
+          },
+          "inside12mmWithTolerance": true
+        },
+        {
+          "page": 4,
+          "words": 92,
+          "bounds": {
+            "xMin": 68.50781,
+            "yMin": 35.455077,
+            "xMax": 527.272681,
+            "yMax": 311.225085
+          },
+          "inside12mmWithTolerance": true
+        }
+      ]
+    },
+    {
+      "lessonId": "g8-t3-l53-052",
+      "pages": 4,
+      "allPagesHaveText": true,
+      "marginsPass": true,
+      "pageBounds": [
+        {
+          "page": 1,
+          "words": 164,
+          "bounds": {
+            "xMin": 68.50781,
+            "yMin": 69.994626,
+            "xMax": 526.593727,
+            "yMax": 737.975067
+          },
+          "inside12mmWithTolerance": true
+        },
+        {
+          "page": 2,
+          "words": 257,
+          "bounds": {
+            "xMin": 68.50781,
+            "yMin": 35.170897,
+            "xMax": 523.735088,
+            "yMax": 782.225065
+          },
+          "inside12mmWithTolerance": true
+        },
+        {
+          "page": 3,
+          "words": 229,
+          "bounds": {
+            "xMin": 68.50781,
+            "yMin": 35.170897,
+            "xMax": 519.710426,
+            "yMax": 744.725067
+          },
+          "inside12mmWithTolerance": true
+        },
+        {
+          "page": 4,
+          "words": 133,
+          "bounds": {
+            "xMin": 68.50781,
+            "yMin": 35.170897,
+            "xMax": 525.290016,
+            "yMax": 506.975077
+          },
+          "inside12mmWithTolerance": true
+        }
+      ]
+    },
+    {
+      "lessonId": "g8-t3-l54-053",
+      "pages": 4,
+      "allPagesHaveText": true,
+      "marginsPass": true,
+      "pageBounds": [
+        {
+          "page": 1,
+          "words": 166,
+          "bounds": {
+            "xMin": 68.50781,
+            "yMin": 69.994626,
+            "xMax": 526.65232,
+            "yMax": 737.975067
+          },
+          "inside12mmWithTolerance": true
+        },
+        {
+          "page": 2,
+          "words": 254,
+          "bounds": {
+            "xMin": 68.50781,
+            "yMin": 35.170897,
+            "xMax": 526.503637,
+            "yMax": 759.725066
+          },
+          "inside12mmWithTolerance": true
+        },
+        {
+          "page": 3,
+          "words": 238,
+          "bounds": {
+            "xMin": 68.50781,
+            "yMin": 35.170897,
+            "xMax": 527.66233,
+            "yMax": 800.975064
+          },
+          "inside12mmWithTolerance": true
+        },
+        {
+          "page": 4,
+          "words": 37,
+          "bounds": {
+            "xMin": 68.50781,
+            "yMin": 35.170897,
+            "xMax": 519.659156,
+            "yMax": 130.475092
+          },
+          "inside12mmWithTolerance": true
+        }
+      ]
+    },
+    {
+      "lessonId": "g8-t3-l55-054",
+      "pages": 4,
+      "allPagesHaveText": false,
+      "marginsPass": false,
+      "pageBounds": [
+        {
+          "page": 1,
+          "words": 192,
+          "bounds": {
+            "xMin": 68.50781,
+            "yMin": 69.994626,
+            "xMax": 526.447241,
+            "yMax": 801.725064
+          },
+          "inside12mmWithTolerance": true
+        },
+        {
+          "page": 2,
+          "words": 260,
+          "bounds": {
+            "xMin": 68.50781,
+            "yMin": 35.170897,
+            "xMax": 528.246802,
+            "yMax": 759.725066
+          },
+          "inside12mmWithTolerance": true
+        },
+        {
+          "page": 3,
+          "words": 265,
+          "bounds": {
+            "xMin": 68.50781,
+            "yMin": 35.170897,
+            "xMax": 521.397196,
+            "yMax": 797.225064
+          },
+          "inside12mmWithTolerance": true
+        },
+        {
+          "page": 4,
+          "words": 0,
+          "bounds": null,
+          "inside12mmWithTolerance": false
+        }
+      ]
+    },
+    {
+      "lessonId": "g8-t3-l56-055",
+      "pages": 4,
+      "allPagesHaveText": true,
+      "marginsPass": true,
+      "pageBounds": [
+        {
+          "page": 1,
+          "words": 166,
+          "bounds": {
+            "xMin": 68.50781,
+            "yMin": 69.994626,
+            "xMax": 524.145243,
+            "yMax": 737.975067
+          },
+          "inside12mmWithTolerance": true
+        },
+        {
+          "page": 2,
+          "words": 238,
+          "bounds": {
+            "xMin": 68.50781,
+            "yMin": 35.170897,
+            "xMax": 524.140115,
+            "yMax": 763.475066
+          },
+          "inside12mmWithTolerance": true
+        },
+        {
+          "page": 3,
+          "words": 235,
+          "bounds": {
+            "xMin": 68.50781,
+            "yMin": 35.170897,
+            "xMax": 526.981911,
+            "yMax": 763.475066
+          },
+          "inside12mmWithTolerance": true
+        },
+        {
+          "page": 4,
+          "words": 83,
+          "bounds": {
+            "xMin": 68.50781,
+            "yMin": 35.455077,
+            "xMax": 506.257301,
+            "yMax": 311.225085
+          },
+          "inside12mmWithTolerance": true
+        }
+      ]
+    },
+    {
+      "lessonId": "g8-t3-l57-056",
+      "pages": 5,
+      "allPagesHaveText": true,
+      "marginsPass": true,
+      "pageBounds": [
+        {
+          "page": 1,
+          "words": 182,
+          "bounds": {
+            "xMin": 68.50781,
+            "yMin": 69.994626,
+            "xMax": 525.555152,
+            "yMax": 752.975066
+          },
+          "inside12mmWithTolerance": true
+        },
+        {
+          "page": 2,
+          "words": 274,
+          "bounds": {
+            "xMin": 68.50781,
+            "yMin": 35.170897,
+            "xMax": 523.786353,
+            "yMax": 756.725066
+          },
+          "inside12mmWithTolerance": true
+        },
+        {
+          "page": 3,
+          "words": 248,
+          "bounds": {
+            "xMin": 68.50781,
+            "yMin": 35.170897,
+            "xMax": 522.008767,
+            "yMax": 797.225064
+          },
+          "inside12mmWithTolerance": true
+        },
+        {
+          "page": 4,
+          "words": 223,
+          "bounds": {
+            "xMin": 68.50781,
+            "yMin": 35.170897,
+            "xMax": 526.657447,
+            "yMax": 677.225069
+          },
+          "inside12mmWithTolerance": true
+        },
+        {
+          "page": 5,
+          "words": 133,
+          "bounds": {
+            "xMin": 68.50781,
+            "yMin": 35.170897,
+            "xMax": 527.03318,
+            "yMax": 443.225079
+          },
+          "inside12mmWithTolerance": true
+        }
+      ]
+    },
+    {
+      "lessonId": "g8-t3-l58-057",
+      "pages": 4,
+      "allPagesHaveText": true,
+      "marginsPass": true,
+      "pageBounds": [
+        {
+          "page": 1,
+          "words": 175,
+          "bounds": {
+            "xMin": 68.50781,
+            "yMin": 69.994626,
+            "xMax": 528.462134,
+            "yMax": 737.975067
+          },
+          "inside12mmWithTolerance": true
+        },
+        {
+          "page": 2,
+          "words": 256,
+          "bounds": {
+            "xMin": 68.50781,
+            "yMin": 35.170897,
+            "xMax": 524.750221,
+            "yMax": 779.428678
+          },
+          "inside12mmWithTolerance": true
+        },
+        {
+          "page": 3,
+          "words": 236,
+          "bounds": {
+            "xMin": 68.50781,
+            "yMin": 35.170897,
+            "xMax": 521.448462,
+            "yMax": 778.475065
+          },
+          "inside12mmWithTolerance": true
+        },
+        {
+          "page": 4,
+          "words": 138,
+          "bounds": {
+            "xMin": 68.50781,
+            "yMin": 35.170897,
+            "xMax": 523.765845,
+            "yMax": 506.975077
+          },
+          "inside12mmWithTolerance": true
+        }
+      ]
+    },
+    {
+      "lessonId": "g8-t3-l59-058",
+      "pages": 4,
+      "allPagesHaveText": true,
+      "marginsPass": true,
+      "pageBounds": [
+        {
+          "page": 1,
+          "words": 175,
+          "bounds": {
+            "xMin": 68.50781,
+            "yMin": 69.994626,
+            "xMax": 524.914283,
+            "yMax": 737.975067
+          },
+          "inside12mmWithTolerance": true
+        },
+        {
+          "page": 2,
+          "words": 233,
+          "bounds": {
+            "xMin": 68.50781,
+            "yMin": 35.170897,
+            "xMax": 528.482642,
+            "yMax": 767.225066
+          },
+          "inside12mmWithTolerance": true
+        },
+        {
+          "page": 3,
+          "words": 240,
+          "bounds": {
+            "xMin": 68.50781,
+            "yMin": 35.170897,
+            "xMax": 527.78025,
+            "yMax": 744.92868
+          },
+          "inside12mmWithTolerance": true
+        },
+        {
+          "page": 4,
+          "words": 168,
+          "bounds": {
+            "xMin": 68.50781,
+            "yMin": 35.170897,
+            "xMax": 523.160866,
+            "yMax": 620.225072
+          },
+          "inside12mmWithTolerance": true
+        }
+      ]
+    },
+    {
+      "lessonId": "g8-t3-l60-059",
+      "pages": 5,
+      "allPagesHaveText": true,
+      "marginsPass": true,
+      "pageBounds": [
+        {
+          "page": 1,
+          "words": 187,
+          "bounds": {
+            "xMin": 68.50781,
+            "yMin": 69.994626,
+            "xMax": 525.867896,
+            "yMax": 760.475066
+          },
+          "inside12mmWithTolerance": true
+        },
+        {
+          "page": 2,
+          "words": 262,
+          "bounds": {
+            "xMin": 68.50781,
+            "yMin": 35.170897,
+            "xMax": 526.119117,
+            "yMax": 775.475065
+          },
+          "inside12mmWithTolerance": true
+        },
+        {
+          "page": 3,
+          "words": 244,
+          "bounds": {
+            "xMin": 68.50781,
+            "yMin": 35.170897,
+            "xMax": 515.593482,
+            "yMax": 782.225065
+          },
+          "inside12mmWithTolerance": true
+        },
+        {
+          "page": 4,
+          "words": 228,
+          "bounds": {
+            "xMin": 68.50781,
+            "yMin": 35.170897,
+            "xMax": 515.588355,
+            "yMax": 718.475068
+          },
+          "inside12mmWithTolerance": true
+        },
+        {
+          "page": 5,
+          "words": 201,
+          "bounds": {
+            "xMin": 68.50781,
+            "yMin": 35.170897,
+            "xMax": 527.231665,
+            "yMax": 601.475073
+          },
+          "inside12mmWithTolerance": true
+        }
+      ]
+    }
+  ]
+}

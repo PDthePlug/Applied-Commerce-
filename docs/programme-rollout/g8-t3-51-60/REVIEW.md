@@ -1,0 +1,11 @@
+# Grade 8 Term 3 Lessons 51–60
+
+Ten lessons were individually read and authored from their actual workbook material. The first nine provisionally use one classroom contact each. Lesson 60 uses three, for twelve contacts across ten authored lessons. Project tracking occurs over real elapsed days, separately from classroom contact time.
+
+Lesson 51 retains the garden story and personal habit reflection. Lesson 52 distinguishes a proposed family routine from responsibility for changing others. Lesson 53 retains identity votes while avoiding fixed negative labels. Lessons 54–56 preserve the saver, earner and planner choices; no learner must earn or save unavailable money. Safety support sits beside actual earning plans. Lesson 57 launches one chosen habit, with existing contract, tracker and checkpoint; weekly planning uses the existing Notes column to distinguish unscheduled opportunities. Lessons 58 and 59 depend on seven and fourteen real days of evidence. No invented tracking results or universal automaticity deadline is introduced.
+
+Lesson 60 provisionally allocates three 45-minute periods: habit reflections and legacy; term reflection and equation retrieval; letter and final checkpoint. Each continuation returns to the same source lesson. Its separate Activity 63 log-review heading is suppressed by the live learner renderer; guidance uses the visible term reflection and existing evidence without recreating hidden work or adding fields. The period count follows learner reading/thinking/writing, not teacher script length.
+
+Source/schema checks and actual-renderer insertion checks pass for all ten. The batch brings verified coverage to 64 of 395. Original-key sealing and genuine hosted navigation, roles, responsive, printing and persistence checks pass. The real three-period Lesson 60 now passes preparation, period grouping, timing, opening/closing navigator targets and complete print/fallback checks. Educator timing trials remain pending.
+
+Seven focused editorial proposals are recorded separately, including attribution, fixed baseline, weekly tracker interpretation, earning safety and institutional calendar/weighting. No source correction, response restructuring or saved identity change is applied. No merge, separate live deployment, migration or Zimbabwe change is included.

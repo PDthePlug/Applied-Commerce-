@@ -1,0 +1,22 @@
+{
+  "authentication": "genuine browser password login",
+  "commit": "792d40ba693bf9599f4aeb6e42bf450da1f3d26a",
+  "checks": [
+    {
+      "role": "facilitator",
+      "immediateStatus": 401,
+      "completedStatus": 401,
+      "supportedAuthLogoutStatus": 204,
+      "authCookiesAfterCompletion": 0,
+      "ms": 500
+    },
+    {
+      "role": "learner",
+      "immediateStatus": 401,
+      "completedStatus": 401,
+      "supportedAuthLogoutStatus": 204,
+      "authCookiesAfterCompletion": 0,
+      "ms": 699
+    }
+  ]
+}

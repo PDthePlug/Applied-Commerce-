@@ -1,6 +1,7 @@
 // Genuine hosted validation. No mocked auth, role or API response. Print-dialog
 // suppression is only to inspect the application's real private print tree.
 import fs from 'node:fs';
+import {stagingLessonScope} from './lib/staging-lesson-scope.mjs';
 import assert from 'node:assert/strict';
 import {chromium} from '@playwright/test';
 import {loadRoleFixtures} from './lib/validation-target.mjs';
@@ -33,7 +34,8 @@ try{
  const {page,context}=await login('facilitator');
  const manifest=JSON.parse(fs.readFileSync('content/instructional/teaching-manifest.v2.json'));
  const cdp=await context.newCDPSession(page);await cdp.send('Performance.enable');
- for(const binding of manifest.plans){
+ const selection=stagingLessonScope(manifest.plans,process.env.AC_STAGING_LESSONS);Object.assign(result,{scope:selection.scope,releasedPlans:selection.releasedPlans});
+ for(const binding of selection.plans){
   if(result.plans.some(p=>p.lessonId===binding.lessonId))continue;
   const route=`/learn/${binding.grade}/term/${binding.term}/${binding.lessonId}`;
   const before=(await cdp.send('Performance.getMetrics')).metrics.find(m=>m.name==='JSHeapUsedSize')?.value;
@@ -83,7 +85,7 @@ try{
  for(let i=0;i<20;i++){const rows=await api('learner','/rest/v1/prompt_responses?select=response&learner_id=eq.'+fixtures.users.learner.id);if(rows.data.some(row=>row.response===marker)&&rows.data.some(row=>row.response===reflection))break;if(i===19)throw Error('Cloud response persistence timed out');await new Promise(resolve=>setTimeout(resolve,500));}
  await a.page.reload();await baseline(a.page);assert.equal(await a.page.locator('.lesson-document textarea').first().inputValue(),marker);result.persistence.push('browser save and reload');
  await a.page.goto('/portfolio');await a.page.waitForFunction(value=>document.querySelector('main')?.textContent?.includes(value),marker,{timeout:30000});result.persistence.push('portfolio contains synthetic original response');
- await a.page.goto('/auth');await a.page.locator('.auth-panel').getByRole('button',{name:'Sign out',exact:true}).click();const afterLogout=await a.page.request.get('/api/classroom');assert.equal(afterLogout.status(),401);await a.context.close();
+ await a.page.goto('/auth');await a.page.locator('.auth-panel').getByRole('button',{name:'Sign out',exact:true}).click();await a.page.getByLabel('Email address',{exact:true}).waitFor({timeout:60000});const afterLogout=await a.page.request.get('/api/classroom');assert.equal(afterLogout.status(),401);await a.context.close();
  const b=await login('learner');await b.page.goto(lesson);await baseline(b.page);assert.equal(await b.page.locator('.lesson-document textarea').first().inputValue(),marker);assert.equal(await b.page.locator('.lesson-document textarea').nth(1).inputValue(),reflection);assert.equal(await b.page.getByLabel('Lesson notes',{exact:true}).inputValue(),marker+' note');assert.equal(await b.page.getByRole('button',{name:'Completed',exact:true}).count(),1);result.persistence.push('fresh browser password login restores answers, reflection, note and completion');await b.context.close();save();
  console.log(JSON.stringify({plans:result.plans.length,roles:result.roles,persistence:result.persistence,delivery:result.delivery,commit:result.commit}));
 }catch(error){result.failure=error.message;save();throw error;}finally{await browser.close();}

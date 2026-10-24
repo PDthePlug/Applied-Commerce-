@@ -1,0 +1,45 @@
+{
+  "scope": "Encrypted release artifacts; 84-plan hosted acceptance PASS, with exact scope in RESULTS.json",
+  "releases": [
+    {
+      "plans": 29,
+      "ciphertextBytes": 691991,
+      "manifestBytes": 737807,
+      "keyExported": false,
+      "plaintextWritten": false,
+      "source": "g8-t2-21-25/sealing-summary.json"
+    },
+    {
+      "plans": 44,
+      "ciphertextBytes": 916203,
+      "manifestBytes": 975420,
+      "keyExported": false,
+      "plaintextWritten": false,
+      "source": "g8-t2-26-40/sealing-summary.json"
+    },
+    {
+      "plans": 54,
+      "ciphertextBytes": 1065947,
+      "manifestBytes": 1136659,
+      "keyExported": false,
+      "plaintextWritten": false,
+      "source": "g8-t3-41-50/sealing-summary.json"
+    },
+    {
+      "plans": 64,
+      "ciphertextBytes": 1229967,
+      "manifestBytes": 1310414,
+      "keyExported": false,
+      "plaintextWritten": false,
+      "source": "g8-t3-51-60/sealing-summary.json"
+    },
+    {
+      "plans": 84,
+      "ciphertextBytes": 1530595,
+      "manifestBytes": 1635662,
+      "keyExported": false,
+      "plaintextWritten": false,
+      "source": "g8-t4-61-80/sealing-summary.json"
+    }
+  ]
+}

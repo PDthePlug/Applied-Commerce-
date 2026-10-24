@@ -1,0 +1,133 @@
+{
+  "lessonId": "g8-t1-l08-008",
+  "planFields": 125,
+  "missingCompletePlanFields": 25,
+  "missingEnrichmentFields": 24,
+  "missing": [
+    {
+      "field": "delivery.later.title",
+      "characters": 49,
+      "sha256": "b4c3c1b2ff19c2276bc9491fb0a299e4a66eacab5939fb2fa631fcd33fdacf92"
+    },
+    {
+      "field": "enrichment.distinction.survival",
+      "characters": 174,
+      "sha256": "5c90618ab3f5d7d90fd347460358de61d78ef94a2997ec6e0b8a95008a9d980c"
+    },
+    {
+      "field": "enrichment.distinction.functional",
+      "characters": 298,
+      "sha256": "834edc948aa1064520b2f8053068ec4102d5128a898d73aa3370d9a47ca103bc"
+    },
+    {
+      "field": "enrichment.distinction.preference",
+      "characters": 247,
+      "sha256": "372fb3341da2408f4672f21efd20ecbf1f53e9d21e1fb8dbd6aa8e82e63402b8"
+    },
+    {
+      "field": "enrichment.distinction.example",
+      "characters": 313,
+      "sha256": "5ae5a8e3f4d574d73b9e0cb858550b3ca29ffca2025da124ae2f5d0f9c874c1b"
+    },
+    {
+      "field": "enrichment.distinction.caution",
+      "characters": 255,
+      "sha256": "14b03bed2c1652c02f39b0be1618b2c2eb6e2425891a1392c5e8c41556d377bf"
+    },
+    {
+      "field": "enrichment.transitions.g8-open",
+      "characters": 195,
+      "sha256": "a133123df26827bd3f393f076913dd547549ae9b12bf7882b5441693eebe7c36"
+    },
+    {
+      "field": "enrichment.transitions.g8-explore",
+      "characters": 243,
+      "sha256": "ee5b0f5af011524c2a98e3eb1c797db1c3ab3078e8cc34d7107f2bd116e75917"
+    },
+    {
+      "field": "enrichment.transitions.g8-discuss",
+      "characters": 225,
+      "sha256": "225c5497f3d400aca44441cb540be2e805debe4801fe2bbb97cee994bef8b3cb"
+    },
+    {
+      "field": "enrichment.transitions.g8-do",
+      "characters": 307,
+      "sha256": "7dc82cc14a98b51723086e75418fbf07a6daa1e6f10bbfd4fa2ac0050014be1e"
+    },
+    {
+      "field": "enrichment.transitions.g8-check",
+      "characters": 355,
+      "sha256": "ce72a0771348bc46bad1fe3230cd17cfdeb31a499f533a0d64cd34a37708c9a9"
+    },
+    {
+      "field": "enrichment.activities.reflection.title",
+      "characters": 47,
+      "sha256": "77d115648dd9e2cdb972e3b85c55432713a62e3cd0c9d81a83c86901156b9c03"
+    },
+    {
+      "field": "enrichment.activities.reflection.text",
+      "characters": 241,
+      "sha256": "53d45827e6eb462912fb14bc7f930944741f4a30be168be95c937f1386135fe0"
+    },
+    {
+      "field": "enrichment.activities.partA.title",
+      "characters": 39,
+      "sha256": "4447b05085b3d37a4dbab8c20b9c899544a78e415002374ee8ae36ce6f22e839"
+    },
+    {
+      "field": "enrichment.activities.partA.text",
+      "characters": 223,
+      "sha256": "5db52ed688d97cb74b712061fc98358c9190b9e0518c92524ecfeaac5c7b4d7a"
+    },
+    {
+      "field": "enrichment.activities.partB.title",
+      "characters": 49,
+      "sha256": "158fb63ceb1a38ab5b3df8ec9703b8de6cbd7d7fbbf87f961333ad2fbcd80eb2"
+    },
+    {
+      "field": "enrichment.activities.partB.text",
+      "characters": 338,
+      "sha256": "2369116bd4b37fbcae706530609b5b841872469deaadde5d22683f3fcb7109c5"
+    },
+    {
+      "field": "enrichment.activities.partC.title",
+      "characters": 32,
+      "sha256": "16ff33a85f76be8c404e279ecadeecbb5785f50c3f904a067d900caf05ea394c"
+    },
+    {
+      "field": "enrichment.activities.partC.text",
+      "characters": 380,
+      "sha256": "57f6f6bf1a7cff734ad9ee3e1673249c5f05bfe91e836eed57b6df759d6442ab"
+    },
+    {
+      "field": "enrichment.activities.deepening.title",
+      "characters": 51,
+      "sha256": "3cae60c3c7f4464d776c286bf32c50480477613510de335a9f847aa6daa08de7"
+    },
+    {
+      "field": "enrichment.activities.deepening.text",
+      "characters": 275,
+      "sha256": "15ebc06def10cdc3215fc4686f7adec97a7cf0c0925574d481777b73fde193c3"
+    },
+    {
+      "field": "enrichment.activities.checkpoint.title",
+      "characters": 44,
+      "sha256": "5614401c5842ebf010554654e9bbd009ab3db1f3f61ee376387b9db0cb858b81"
+    },
+    {
+      "field": "enrichment.activities.checkpoint.text",
+      "characters": 339,
+      "sha256": "f1e286d2b8efd933945f41ad8e51cec5f0c6eb8301eb3bc37d29ba7ada1d0053"
+    },
+    {
+      "field": "enrichment.activities.home.title",
+      "characters": 41,
+      "sha256": "9954ef1d2f6ea681c311b193079c759fff6b03877492a4cac4d155686de54f79"
+    },
+    {
+      "field": "enrichment.activities.home.text",
+      "characters": 411,
+      "sha256": "20b104cd94afdff0426c90541ef49609976162a668a93fea42591ee123eb0fc7"
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "projectRef": "inxshlumnhcgiahxqewe",
+  "totalPlans": 84,
+  "newCompletedAcrossRollout": 60,
+  "remaining": 311,
+  "testedCommit": "ffc42dc5554abbc99e4c2b6c4a4e487cdf8e2136",
+  "stagingURL": "https://applied-commerce-sa-staging-ou9dqvhu9.vercel.app",
+  "priorBindingsPreserved": 64,
+  "newPlans": 20,
+  "directClassroomPlans": 24,
+  "directFields": 1083,
+  "navigatorTargets": 228,
+  "responsiveCombinations": 432,
+  "newFirstResponsePersistence": 20,
+  "integratedPDFs": 24,
+  "integratedPDFPages": 106,
+  "fallbacks": 24,
+  "fallbackPDFPages": 109,
+  "pdfTextFields": 2166,
+  "pdfMissing": 0,
+  "multiPeriodLessons": [
+    {
+      "lessonId": "g8-t4-l67-066",
+      "periodCount": 2
+    },
+    {
+      "lessonId": "g8-t4-l68-067",
+      "periodCount": 2
+    },
+    {
+      "lessonId": "g8-t4-l69-068",
+      "periodCount": 2
+    },
+    {
+      "lessonId": "g8-t4-l73-072",
+      "periodCount": 2
+    },
+    {
+      "lessonId": "g8-t4-l75-074",
+      "periodCount": 3
+    },
+    {
+      "lessonId": "g8-t4-l76-075",
+      "periodCount": 3
+    },
+    {
+      "lessonId": "g8-t4-l78-077",
+      "periodCount": 2
+    },
+    {
+      "lessonId": "g8-t4-l80-079",
+      "periodCount": 2
+    }
+  ],
+  "authRlsChecks": 37,
+  "nodeTests": 213,
+  "typecheck": "PASS",
+  "lint": "PASS",
+  "sourceChangesApplied": false,
+  "delivery": {
+    "requests": 105,
+    "newRequests": 100,
+    "newMedianMs": 609,
+    "rangeMs": [
+      492,
+      1382
+    ],
+    "decodedBytes": [
+      9239,
+      16270
+    ],
+    "coldProcess": "NOT DEMONSTRATED",
+    "hostedServerMemory": "NOT MEASURED"
+  },
+  "pending": [
+    "Remaining 311 individually reviewed guides",
+    "Educator timing trials",
+    "Hosted cold-process/server-memory measurements",
+    "Configured maximum/inactivity session lifetime"
+  ]
+}

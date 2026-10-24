@@ -1,6 +1,7 @@
 // Genuine staging validation: real password logins, real classroom API, real
 // learner RPC saves. All authenticated screenshots remain in AC_ROLE_FIXTURES.
 import fs from 'node:fs';
+import {stagingLessonScope} from './lib/staging-lesson-scope.mjs';
 import assert from 'node:assert/strict';
 import {chromium} from '@playwright/test';
 import {loadRoleFixtures} from './lib/validation-target.mjs';
@@ -26,7 +27,8 @@ async function teacher(page,b){await page.goto(route(b));await page.getByRole('b
 const overflow=page=>page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1);
 try{
  const a=await login('facilitator');
- for(const binding of manifest.plans){
+ const selection=stagingLessonScope(manifest.plans,process.env.AC_STAGING_NAV_LESSONS);Object.assign(results,{navigationScope:selection.scope,releasedPlans:selection.releasedPlans});
+ for(const binding of selection.plans){
   const {page}=a;await teacher(page,binding);assert.equal(await page.locator('.contextual-guidance nav').count(),0);assert.equal(await page.getByRole('button',{name:'Teaching navigator',exact:true}).count(),0);assert.equal(await page.getByRole('navigation',{name:'Classroom teaching stages',exact:true}).count(),1);
   const options=await page.locator('#classroom-stage option').evaluateAll(nodes=>nodes.map(n=>n.value));assert.deepEqual([...options].sort(),binding.moments.map(m=>m.id).sort());
   // Navigate every target, including backward revisits and support/later work.
@@ -46,7 +48,7 @@ try{
   const binding=manifest.plans.find(b=>b.lessonId===lessonId);assert.ok(binding,lessonId);const {page}=a;await page.setViewportSize({width,height:900});await teacher(page,binding);
   const prep=page.locator('[data-instructional-location="preparation"]');assert.equal(await prep.getAttribute('open'),null);
   const first=binding.moments.find(m=>m.schedule==='classroom');await page.locator('#classroom-stage').selectOption(first.id);await page.getByRole('button',{name:'Go to stage',exact:true}).click();
-  const stage=page.locator('[data-instructional-location="'+first.id+'"]');assert.equal(await stage.locator('.contextual-depth').getAttribute('open'),null);await stage.locator('.contextual-depth > summary').click();await stage.locator('.contextual-depth p').first().waitFor();await stage.locator('.contextual-depth > summary').click();
+  const stage=page.locator('[data-instructional-location="'+first.id+'"]');const depth=stage.locator('.contextual-depth');if(await depth.count()){assert.equal(await depth.getAttribute('open'),null);await depth.locator(':scope > summary').click();await depth.locator('p').first().waitFor();await depth.locator(':scope > summary').click();}
   for(const scale of [1,1.28,2]){
    await page.evaluate(s=>document.documentElement.style.setProperty('--ac-text-scale',String(s)),scale);assert.equal(await overflow(page),false);await stage.scrollIntoViewIfNeeded();
    if([320,430,1280].includes(width))await page.screenshot({path:out+`/teacher-after-${lessonId}-${width}-${scale}.png`});
@@ -58,7 +60,7 @@ try{
     }
    }
    const question=page.locator('.checkpoint-question').first();if(await question.count()){await question.scrollIntoViewIfNeeded();if([320,430,1280].includes(width))await page.screenshot({path:out+`/checkpoint-after-${lessonId}-${width}-${scale}.png`});}
-   results.responsive.push({lessonId,width,scale,overflow:false,numbersContinuous:true,localDepth:true});save();
+   results.responsive.push({lessonId,width,scale,overflow:false,numbersContinuous:true,localDepth:await depth.count()?'expanded and collapsed':'absent; exact expected presence checked by classroom runner'});save();
   }
  }
  await a.context.close();
@@ -82,7 +84,7 @@ try{
   const value='Synthetic new-lesson evidence '+lessonId+' '+Date.now();await input.fill(value+' initial');const handle=await b.page.waitForFunction(({storage,value})=>Object.entries(JSON.parse(localStorage.getItem(storage)||'{}').promptResponses??{}).find(([,text])=>text===value)?.[0],{storage:'applied-commerce-learning-state-v1:user:'+credentials.id,value:value+' initial'});const responseKey=await handle.jsonValue();assert.ok(responseKey.startsWith(lessonId+'::'));await waitCloud(responseKey,value+' initial');
   await input.fill(value+' edited');await waitCloud(responseKey,value+' edited');await b.page.reload();await baseline(b.page);assert.equal(await input.inputValue(),value+' edited');await input.fill('');await waitCloud(responseKey,'');await b.page.reload();await baseline(b.page);assert.equal(await input.inputValue(),'');await input.fill(value+' final');await waitCloud(responseKey,value+' final');newLessonEvidence.push({lessonId,responseKey,value:value+' final'});
  }
- await b.page.goto('/auth');await b.page.locator('.auth-panel').getByRole('button',{name:'Sign out',exact:true}).click();assert.equal((await b.page.request.get('/api/classroom')).status(),401);await b.context.close();
+ await b.page.goto('/auth');await b.page.locator('.auth-panel').getByRole('button',{name:'Sign out',exact:true}).click();await b.page.getByLabel('Email address',{exact:true}).waitFor({timeout:60000});assert.equal((await b.page.request.get('/api/classroom')).status(),401);await b.context.close();
  const c=await login('learner');await c.page.goto(route(manifest.plans.find(x=>x.lessonId===unit.id)));await baseline(c.page);const fresh=c.page.locator('.learning-section.learning-mode-prove').first();assert.equal(await fresh.getByRole('textbox',{name:'Choose one item from your list.',exact:true}).inputValue(),'');await fresh.getByText('Previous combined response',{exact:true}).click();assert.equal(await fresh.getByText(marker+' previous combined',{exact:true}).count(),1);assert.equal(await fresh.getByRole('textbox').nth(1).inputValue(),marker+' longer explanation');assert.equal(await c.page.getByRole('button',{name:'Teacher View',exact:true}).count(),0);for(const row of newLessonEvidence){await c.page.goto(route(manifest.plans.find(binding=>binding.lessonId===row.lessonId)));await baseline(c.page);assert.equal(await c.page.locator('.lesson-document').getByRole('textbox').first().inputValue(),row.value);}results.newLessonPersistence=newLessonEvidence.map(({lessonId,responseKey})=>({lessonId,responseKey,editClearReloadAndFreshLogin:true}));await c.context.close();
  results.persistence=['supported learner RPC saves actual stable combined and split keys','genuine browser edit, clear and reload','logout and fresh password login retains cleared short answer, combined answer and longer response','learner denied teacher view'];assert.equal(results.errors.length,0);save();console.log(JSON.stringify({commit:results.commit,plans:results.plans.length,responsive:results.responsive.length,persistence:results.persistence,errors:results.errors}));
  async function waitCloud(promptKey,value){for(let i=0;i<40;i++){const rows=await api('/rest/v1/prompt_responses?select=response&learner_id=eq.'+credentials.id+'&prompt_key=eq.'+encodeURIComponent(promptKey));if(rows[0]?.response===value)return;await new Promise(r=>setTimeout(r,500));}throw Error('Cloud save did not persist expected synthetic response');}

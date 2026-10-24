@@ -1,0 +1,735 @@
+{
+  "at": "2026-10-23T12:57:39.922Z",
+  "projectRef": "inxshlumnhcgiahxqewe",
+  "baseURL": "https://applied-commerce-sa-staging-gh8hjzgra.vercel.app",
+  "authentication": "genuine browser password login",
+  "measurement": "sequential end-to-end through coding proxy; decoded response bytes",
+  "coldProcess": "NOT DEMONSTRATED",
+  "serverMemory": "NOT MEASURED",
+  "samples": [
+    {
+      "lessonId": "g8-t1-l01-001",
+      "request": 1,
+      "ms": 609,
+      "decodedBytes": 20092,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "lessonId": "g8-t1-l01-001",
+      "request": 2,
+      "ms": 473,
+      "decodedBytes": 20092,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "lessonId": "g8-t1-l01-001",
+      "request": 3,
+      "ms": 641,
+      "decodedBytes": 20092,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "lessonId": "g8-t1-l01-001",
+      "request": 4,
+      "ms": 733,
+      "decodedBytes": 20092,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "lessonId": "g8-t1-l01-001",
+      "request": 5,
+      "ms": 536,
+      "decodedBytes": 20092,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "lessonId": "g8-t2-l26-026",
+      "request": 1,
+      "ms": 544,
+      "decodedBytes": 12779,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "lessonId": "g8-t2-l26-026",
+      "request": 2,
+      "ms": 508,
+      "decodedBytes": 12779,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "lessonId": "g8-t2-l26-026",
+      "request": 3,
+      "ms": 547,
+      "decodedBytes": 12779,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "lessonId": "g8-t2-l26-026",
+      "request": 4,
+      "ms": 569,
+      "decodedBytes": 12779,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "lessonId": "g8-t2-l26-026",
+      "request": 5,
+      "ms": 539,
+      "decodedBytes": 12779,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "lessonId": "g8-t2-l27-027",
+      "request": 1,
+      "ms": 517,
+      "decodedBytes": 11814,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "lessonId": "g8-t2-l27-027",
+      "request": 2,
+      "ms": 557,
+      "decodedBytes": 11814,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "lessonId": "g8-t2-l27-027",
+      "request": 3,
+      "ms": 545,
+      "decodedBytes": 11814,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "lessonId": "g8-t2-l27-027",
+      "request": 4,
+      "ms": 735,
+      "decodedBytes": 11814,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "lessonId": "g8-t2-l27-027",
+      "request": 5,
+      "ms": 649,
+      "decodedBytes": 11814,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "lessonId": "g8-t2-l28-028",
+      "request": 1,
+      "ms": 495,
+      "decodedBytes": 10673,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "lessonId": "g8-t2-l28-028",
+      "request": 2,
+      "ms": 501,
+      "decodedBytes": 10673,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "lessonId": "g8-t2-l28-028",
+      "request": 3,
+      "ms": 523,
+      "decodedBytes": 10673,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "lessonId": "g8-t2-l28-028",
+      "request": 4,
+      "ms": 561,
+      "decodedBytes": 10673,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "lessonId": "g8-t2-l28-028",
+      "request": 5,
+      "ms": 524,
+      "decodedBytes": 10673,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "lessonId": "g8-t2-l29-029",
+      "request": 1,
+      "ms": 593,
+      "decodedBytes": 10791,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "lessonId": "g8-t2-l29-029",
+      "request": 2,
+      "ms": 566,
+      "decodedBytes": 10791,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "lessonId": "g8-t2-l29-029",
+      "request": 3,
+      "ms": 663,
+      "decodedBytes": 10791,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "lessonId": "g8-t2-l29-029",
+      "request": 4,
+      "ms": 619,
+      "decodedBytes": 10791,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "lessonId": "g8-t2-l29-029",
+      "request": 5,
+      "ms": 522,
+      "decodedBytes": 10791,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "lessonId": "g8-t2-l30-030",
+      "request": 1,
+      "ms": 627,
+      "decodedBytes": 11670,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "lessonId": "g8-t2-l30-030",
+      "request": 2,
+      "ms": 501,
+      "decodedBytes": 11670,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "lessonId": "g8-t2-l30-030",
+      "request": 3,
+      "ms": 832,
+      "decodedBytes": 11670,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "lessonId": "g8-t2-l30-030",
+      "request": 4,
+      "ms": 730,
+      "decodedBytes": 11670,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "lessonId": "g8-t2-l30-030",
+      "request": 5,
+      "ms": 766,
+      "decodedBytes": 11670,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "lessonId": "g8-t2-l31-031",
+      "request": 1,
+      "ms": 813,
+      "decodedBytes": 10508,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "lessonId": "g8-t2-l31-031",
+      "request": 2,
+      "ms": 704,
+      "decodedBytes": 10508,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "lessonId": "g8-t2-l31-031",
+      "request": 3,
+      "ms": 556,
+      "decodedBytes": 10508,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "lessonId": "g8-t2-l31-031",
+      "request": 4,
+      "ms": 744,
+      "decodedBytes": 10508,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "lessonId": "g8-t2-l31-031",
+      "request": 5,
+      "ms": 548,
+      "decodedBytes": 10508,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "lessonId": "g8-t2-l32-032",
+      "request": 1,
+      "ms": 1000,
+      "decodedBytes": 10359,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "lessonId": "g8-t2-l32-032",
+      "request": 2,
+      "ms": 760,
+      "decodedBytes": 10359,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "lessonId": "g8-t2-l32-032",
+      "request": 3,
+      "ms": 781,
+      "decodedBytes": 10359,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "lessonId": "g8-t2-l32-032",
+      "request": 4,
+      "ms": 536,
+      "decodedBytes": 10359,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "lessonId": "g8-t2-l32-032",
+      "request": 5,
+      "ms": 555,
+      "decodedBytes": 10359,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "lessonId": "g8-t2-l33-033",
+      "request": 1,
+      "ms": 704,
+      "decodedBytes": 10700,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "lessonId": "g8-t2-l33-033",
+      "request": 2,
+      "ms": 590,
+      "decodedBytes": 10700,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "lessonId": "g8-t2-l33-033",
+      "request": 3,
+      "ms": 575,
+      "decodedBytes": 10700,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "lessonId": "g8-t2-l33-033",
+      "request": 4,
+      "ms": 600,
+      "decodedBytes": 10700,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "lessonId": "g8-t2-l33-033",
+      "request": 5,
+      "ms": 522,
+      "decodedBytes": 10700,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "lessonId": "g8-t2-l34-034",
+      "request": 1,
+      "ms": 823,
+      "decodedBytes": 10514,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "lessonId": "g8-t2-l34-034",
+      "request": 2,
+      "ms": 557,
+      "decodedBytes": 10514,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "lessonId": "g8-t2-l34-034",
+      "request": 3,
+      "ms": 544,
+      "decodedBytes": 10514,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "lessonId": "g8-t2-l34-034",
+      "request": 4,
+      "ms": 757,
+      "decodedBytes": 10514,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "lessonId": "g8-t2-l34-034",
+      "request": 5,
+      "ms": 631,
+      "decodedBytes": 10514,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "lessonId": "g8-t2-l35-035",
+      "request": 1,
+      "ms": 531,
+      "decodedBytes": 11849,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "lessonId": "g8-t2-l35-035",
+      "request": 2,
+      "ms": 776,
+      "decodedBytes": 11849,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "lessonId": "g8-t2-l35-035",
+      "request": 3,
+      "ms": 588,
+      "decodedBytes": 11849,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "lessonId": "g8-t2-l35-035",
+      "request": 4,
+      "ms": 616,
+      "decodedBytes": 11849,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "lessonId": "g8-t2-l35-035",
+      "request": 5,
+      "ms": 501,
+      "decodedBytes": 11849,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "lessonId": "g8-t2-l36-checkpoint-20261004",
+      "request": 1,
+      "ms": 511,
+      "decodedBytes": 13785,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "lessonId": "g8-t2-l36-checkpoint-20261004",
+      "request": 2,
+      "ms": 503,
+      "decodedBytes": 13785,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "lessonId": "g8-t2-l36-checkpoint-20261004",
+      "request": 3,
+      "ms": 592,
+      "decodedBytes": 13785,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "lessonId": "g8-t2-l36-checkpoint-20261004",
+      "request": 4,
+      "ms": 531,
+      "decodedBytes": 13785,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "lessonId": "g8-t2-l36-checkpoint-20261004",
+      "request": 5,
+      "ms": 571,
+      "decodedBytes": 13785,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "lessonId": "g8-t2-l37-036",
+      "request": 1,
+      "ms": 575,
+      "decodedBytes": 10773,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "lessonId": "g8-t2-l37-036",
+      "request": 2,
+      "ms": 771,
+      "decodedBytes": 10773,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "lessonId": "g8-t2-l37-036",
+      "request": 3,
+      "ms": 959,
+      "decodedBytes": 10773,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "lessonId": "g8-t2-l37-036",
+      "request": 4,
+      "ms": 607,
+      "decodedBytes": 10773,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "lessonId": "g8-t2-l37-036",
+      "request": 5,
+      "ms": 746,
+      "decodedBytes": 10773,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "lessonId": "g8-t2-l38-037",
+      "request": 1,
+      "ms": 702,
+      "decodedBytes": 11369,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "lessonId": "g8-t2-l38-037",
+      "request": 2,
+      "ms": 595,
+      "decodedBytes": 11369,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "lessonId": "g8-t2-l38-037",
+      "request": 3,
+      "ms": 547,
+      "decodedBytes": 11369,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "lessonId": "g8-t2-l38-037",
+      "request": 4,
+      "ms": 527,
+      "decodedBytes": 11369,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "lessonId": "g8-t2-l38-037",
+      "request": 5,
+      "ms": 916,
+      "decodedBytes": 11369,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "lessonId": "g8-t2-l39-038",
+      "request": 1,
+      "ms": 585,
+      "decodedBytes": 10803,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "lessonId": "g8-t2-l39-038",
+      "request": 2,
+      "ms": 500,
+      "decodedBytes": 10803,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "lessonId": "g8-t2-l39-038",
+      "request": 3,
+      "ms": 529,
+      "decodedBytes": 10803,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "lessonId": "g8-t2-l39-038",
+      "request": 4,
+      "ms": 895,
+      "decodedBytes": 10803,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "lessonId": "g8-t2-l39-038",
+      "request": 5,
+      "ms": 601,
+      "decodedBytes": 10803,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "lessonId": "g8-t2-l40-039",
+      "request": 1,
+      "ms": 695,
+      "decodedBytes": 13716,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "lessonId": "g8-t2-l40-039",
+      "request": 2,
+      "ms": 584,
+      "decodedBytes": 13716,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "lessonId": "g8-t2-l40-039",
+      "request": 3,
+      "ms": 515,
+      "decodedBytes": 13716,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "lessonId": "g8-t2-l40-039",
+      "request": 4,
+      "ms": 744,
+      "decodedBytes": 13716,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "lessonId": "g8-t2-l40-039",
+      "request": 5,
+      "ms": 535,
+      "decodedBytes": 13716,
+      "cache": "private, no-store, max-age=0"
+    }
+  ],
+  "commit": "f62dae045ec2032a4f683c1f43d226bda2d39e83",
+  "lessons": [
+    {
+      "lessonId": "g8-t1-l01-001",
+      "decodedBytes": 20092,
+      "firstSampleMs": 609,
+      "repeatedMedianMs": 588.5,
+      "rangeMs": [
+        473,
+        733
+      ]
+    },
+    {
+      "lessonId": "g8-t2-l26-026",
+      "decodedBytes": 12779,
+      "firstSampleMs": 544,
+      "repeatedMedianMs": 543,
+      "rangeMs": [
+        508,
+        569
+      ]
+    },
+    {
+      "lessonId": "g8-t2-l27-027",
+      "decodedBytes": 11814,
+      "firstSampleMs": 517,
+      "repeatedMedianMs": 603,
+      "rangeMs": [
+        517,
+        735
+      ]
+    },
+    {
+      "lessonId": "g8-t2-l28-028",
+      "decodedBytes": 10673,
+      "firstSampleMs": 495,
+      "repeatedMedianMs": 523.5,
+      "rangeMs": [
+        495,
+        561
+      ]
+    },
+    {
+      "lessonId": "g8-t2-l29-029",
+      "decodedBytes": 10791,
+      "firstSampleMs": 593,
+      "repeatedMedianMs": 592.5,
+      "rangeMs": [
+        522,
+        663
+      ]
+    },
+    {
+      "lessonId": "g8-t2-l30-030",
+      "decodedBytes": 11670,
+      "firstSampleMs": 627,
+      "repeatedMedianMs": 748,
+      "rangeMs": [
+        501,
+        832
+      ]
+    },
+    {
+      "lessonId": "g8-t2-l31-031",
+      "decodedBytes": 10508,
+      "firstSampleMs": 813,
+      "repeatedMedianMs": 630,
+      "rangeMs": [
+        548,
+        813
+      ]
+    },
+    {
+      "lessonId": "g8-t2-l32-032",
+      "decodedBytes": 10359,
+      "firstSampleMs": 1000,
+      "repeatedMedianMs": 657.5,
+      "rangeMs": [
+        536,
+        1000
+      ]
+    },
+    {
+      "lessonId": "g8-t2-l33-033",
+      "decodedBytes": 10700,
+      "firstSampleMs": 704,
+      "repeatedMedianMs": 582.5,
+      "rangeMs": [
+        522,
+        704
+      ]
+    },
+    {
+      "lessonId": "g8-t2-l34-034",
+      "decodedBytes": 10514,
+      "firstSampleMs": 823,
+      "repeatedMedianMs": 594,
+      "rangeMs": [
+        544,
+        823
+      ]
+    },
+    {
+      "lessonId": "g8-t2-l35-035",
+      "decodedBytes": 11849,
+      "firstSampleMs": 531,
+      "repeatedMedianMs": 602,
+      "rangeMs": [
+        501,
+        776
+      ]
+    },
+    {
+      "lessonId": "g8-t2-l36-checkpoint-20261004",
+      "decodedBytes": 13785,
+      "firstSampleMs": 511,
+      "repeatedMedianMs": 551,
+      "rangeMs": [
+        503,
+        592
+      ]
+    },
+    {
+      "lessonId": "g8-t2-l37-036",
+      "decodedBytes": 10773,
+      "firstSampleMs": 575,
+      "repeatedMedianMs": 758.5,
+      "rangeMs": [
+        575,
+        959
+      ]
+    },
+    {
+      "lessonId": "g8-t2-l38-037",
+      "decodedBytes": 11369,
+      "firstSampleMs": 702,
+      "repeatedMedianMs": 571,
+      "rangeMs": [
+        527,
+        916
+      ]
+    },
+    {
+      "lessonId": "g8-t2-l39-038",
+      "decodedBytes": 10803,
+      "firstSampleMs": 585,
+      "repeatedMedianMs": 565,
+      "rangeMs": [
+        500,
+        895
+      ]
+    },
+    {
+      "lessonId": "g8-t2-l40-039",
+      "decodedBytes": 13716,
+      "firstSampleMs": 695,
+      "repeatedMedianMs": 559.5,
+      "rangeMs": [
+        515,
+        744
+      ]
+    }
+  ],
+  "summaryMethod": "Median averages the two central observations for even-sized samples; raw observations unchanged."
+}

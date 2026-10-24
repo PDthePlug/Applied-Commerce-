@@ -1,0 +1,80 @@
+{
+  "observedAt": "2026-10-24T03:53:53.743Z",
+  "applicationContentCommit": "687ab7c41ddbb076a6d7d39aa8baf0a5ff1d71a7",
+  "closedReferencePullRequests": [
+    48,
+    49,
+    51
+  ],
+  "currentBatchPullRequest": 59,
+  "noMergePerformed": true,
+  "referenceHeadsUnchanged": true,
+  "pullRequests": [
+    {
+      "number": 48,
+      "state": "closed",
+      "merged": false,
+      "head": "2d1937a3bf39c21f422e563ac2a548b36ae46799"
+    },
+    {
+      "number": 49,
+      "state": "closed",
+      "merged": false,
+      "head": "ffc60d742e46bd290dcce6c11e34964823c9b7bf"
+    },
+    {
+      "number": 51,
+      "state": "closed",
+      "merged": false,
+      "head": "a9dcd0bde3e67aeef3c4c4c5a07706341bf56c19",
+      "base": "codex/classroom-programme-rollout-2026-10-23"
+    },
+    {
+      "number": 52,
+      "state": "open",
+      "merged": false,
+      "head": "bbb14bb8531109fcc21492892390481f55c36cd2",
+      "base": "codex/g8-term2-lessons21-25-2026-10-23"
+    },
+    {
+      "number": 54,
+      "state": "open",
+      "merged": false,
+      "head": "eacd7f4b9d492a47a8162e8c77ad9cffc282bdaf",
+      "base": "codex/g8-term2-lessons26-40-2026-10-23"
+    },
+    {
+      "number": 55,
+      "state": "open",
+      "merged": false,
+      "head": "1a35a770972c80920cd2bc485794317682db44f1",
+      "base": "codex/g8-term3-lessons41-50-2026-10-23"
+    },
+    {
+      "number": 56,
+      "state": "open",
+      "merged": false,
+      "head": "d84f8adb200c1b03df30db12faa75387053a2844",
+      "base": "codex/g8-term3-lessons51-60-2026-10-23"
+    },
+    {
+      "number": 57,
+      "state": "open",
+      "merged": false,
+      "head": "1391b445a8eaddfaf3a41bc7e55ef1586294dac2"
+    },
+    {
+      "number": 58,
+      "state": "open",
+      "merged": false,
+      "head": "f3781a19fbbc1c71ac22b0cf5ae400cc4e2d8cde"
+    },
+    {
+      "number": 59,
+      "state": "open",
+      "merged": false,
+      "head": "6a505dc70d80a28c54b38602e77ea68c2b642f75"
+    }
+  ],
+  "allRecordedHeadsAreAncestorsOfImplementation": true
+}

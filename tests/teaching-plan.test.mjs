@@ -25,6 +25,13 @@ test('variable-stage validator rejects orphans, wrong timings, unsafe boundaries
  const brief=structuredClone(plan);brief.moments[0].core=brief.moments[0].core.filter(g=>g.heading!=='Ask learners');validateTeachingPlan(brief,source);
  for(const mutate of [p=>p.fields.orphan='PRIVATE_SYNTHETIC',p=>p.moments[0].minutes=44,p=>p.moments[0].placement.blockId=source.blockIds.find(id=>!source.sections.includes(id)),p=>p.activityCoverage.pop(),p=>p.fields.outcome={value:'wrong type'},p=>p.moments[0].links.push('missing'),p=>p.moments[0].schedule='later',p=>p.moments[0].core=[],p=>{delete p.fields['vocabulary.0'];p.preparation[0].fields=p.preparation[0].fields.filter(id=>id!=='vocabulary.0');p.moments[0].core[0].fields=p.moments[0].core[0].fields.filter(id=>id!=='vocabulary.0');}]){const copy=structuredClone(plan);mutate(copy);assert.throws(()=>validateTeachingPlan(copy,source));}
 });
+test('a substantial original lesson may use three provisional periods while each remains exactly 45 minutes',()=>{
+ const {source,plan}=sample(),original=plan.moments[0];
+ plan.moments=['one','two','three'].map((id,period)=>({...structuredClone(original),id,period}));plan.periods=plan.moments.map(stage=>({title:'period.title',minutes:45,moments:[stage.id]}));
+ validateTeachingPlan(plan,source);
+ const incomplete=structuredClone(plan);incomplete.moments[2].minutes=44;assert.throws(()=>validateTeachingPlan(incomplete,source));
+ const unlisted=structuredClone(plan);unlisted.periods[2].moments=[];assert.throws(()=>validateTeachingPlan(unlisted,source));
+});
 test('coverage maps retain the approved 100 Grade 8 fields and all 24 contextual clarification fields',()=>{
  const binding=manifest.plans.find(p=>p.lessonId==='g8-t1-l08-008');const old=JSON.parse(fs.readFileSync('docs/contextual-teacher/owner-review/instructional-field-map.json'));
  for(const row of old.fields)assert.equal(binding.coverage.find(item=>item.path===row.path).valueSHA256,row.valueSHA256??row.sha256);

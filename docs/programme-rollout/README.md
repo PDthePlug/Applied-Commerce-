@@ -1,9 +1,7 @@
 # Programme rollout from PR #48
 
-The accepted brief facilitation approach is being extended through individually reviewed batches. Shared navigation/checkpoint refinements are verified in [PR #49](https://github.com/PDthePlug/Applied-Commerce-/pull/49). [PR #51](https://github.com/PDthePlug/Applied-Commerce-/pull/51) adds verified Grade 8 Term 2 Lessons 21–25.
+**117 of 395 plans are available in verified staging; 278 remain.** All 80 Grade 8 lessons and all 34 Grade 9 Terms 1–2 lessons are complete. New content requires owner classroom review and educator timing trials.
 
-**29 of 395 plans are available in verified staging; 366 remain.** Original accepted plans and learner content/identities remain intact. [coverage.json](coverage.json) records review, provisional periods and actual checks; [grade-term.csv](grade-term.csv) summarises them. Schema validity does not confer educational approval.
+Latest [PR #59](https://github.com/PDthePlug/Applied-Commerce-/pull/59) remains open and unmerged. [REPORT.md](REPORT.md), [coverage.json](coverage.json), [grade-term.csv](grade-term.csv) and [batch evidence](g9-t2-26-34/RESULTS.json) record exact scope, provisional contact periods and limitations.
 
-The original key stays in staging. Guarded build-time sealing packages individual drafts without exporting it. Temporary inputs/deployments were removed. Authenticated captures and authoring prose stay protected outside Git; only encrypted guides and sanitised results are committed.
-
-See [REPORT.md](REPORT.md) and [TEST_RESULTS.json](TEST_RESULTS.json) for tests, links, measurements and limitations. Editorial proposals remain separate and unapplied. Timing trials and hosted cold-process/server-memory measurements remain pending. No merge, separate live deployment, migration or Zimbabwe change is included.
+The original key stays in staging; private drafts, sessions and captures remain protected outside Git. Source proposals are separate and unapplied. No merge, separate live deployment, migration or Zimbabwe change is included.

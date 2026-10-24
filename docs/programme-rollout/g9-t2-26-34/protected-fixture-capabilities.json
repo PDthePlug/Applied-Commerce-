@@ -1,0 +1,29 @@
+{
+  "projectRef": "inxshlumnhcgiahxqewe",
+  "fixtureRoot": "AC_ROLE_FIXTURES",
+  "privateBackup": "Outside Git worktree; restricted directory",
+  "fileMode": "0600",
+  "directoryMode": "0700",
+  "filesChecked": 3348,
+  "directoriesChecked": 47,
+  "genuineRoles": [
+    "platform administrator",
+    "active assigned educator",
+    "ordinary learner",
+    "revoked educator",
+    "institution administrator",
+    "unassigned ordinary user",
+    "separate-institution educator"
+  ],
+  "supportedAuthAdministration": true,
+  "authentication": "Supported genuine password login; no fabricated session or password-hash SQL",
+  "repeatableEntryPoints": [
+    "scripts/prepare-role-fixtures.mjs",
+    "scripts/validate-role-sessions.mjs",
+    "scripts/validate-staging-classroom.mjs",
+    "scripts/validate-staging-institution-boundary.mjs"
+  ],
+  "credentialsPublished": false,
+  "privateEvidenceInGit": false,
+  "observedAt": "2026-10-24T03:52:28.046523+00:00"
+}
