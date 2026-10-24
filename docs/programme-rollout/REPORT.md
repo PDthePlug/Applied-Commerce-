@@ -1,10 +1,10 @@
 # Applied Commerce classroom rollout
 
-**99 of 395 lessons have individually reviewed teaching support in verified staging; 296 remain.** All 80 Grade 8 lessons and all 16 Grade 9 Term 1 lessons are complete. Completed status records source/instructional review and demonstrated staging checks; new content still needs owner classroom review and educator timing trials.
+**108 of 395 lessons have individually reviewed teaching support in verified staging; 287 remain.** All 80 Grade 8 lessons and all 16 Grade 9 Term 1 lessons are complete. Completed status records source/instructional review and demonstrated staging checks; new content still needs owner classroom review and educator timing trials.
 
-Current staging: https://applied-commerce-sa-staging-lxwxane1n.vercel.app . Deployment protection and genuine application login apply. Tested application/content commit: `8eb991ec2c4d8c05bfd30b723d7f7e95e1ed35cf`. Later documentation commits do not imply another deployment or rerun.
+Current staging: https://applied-commerce-sa-staging-7mgeloaqw.vercel.app . Deployment protection and genuine application login apply. Tested application/content commit: `45fd258dc8fb8acb9c8077b6f28f399fcb4eb04d`. Later documentation commits do not imply another deployment or rerun.
 
-The open, unmerged stack retains PR #48 as the accepted benchmark, then #49, #51, #52, #54, #55, #56, and #57. Latest review: [PR #57](https://github.com/PDthePlug/Applied-Commerce-/pull/57). Exact current evidence: [g9-t1-remaining/RESULTS.json](g9-t1-remaining/RESULTS.json); earlier batch records remain alongside it.
+The open, unmerged stack retains PR #48 as the accepted benchmark, then #49, #51, #52, #54, #55, #56, #57, and #58. Latest review: [PR #58](https://github.com/PDthePlug/Applied-Commerce-/pull/58). Exact current evidence: [g9-t2-17-25/RESULTS.json](g9-t2-17-25/RESULTS.json); earlier batch records remain alongside it.
 
 ## Preservation and teaching experience
 
@@ -19,16 +19,16 @@ The prior complete-fallback correction and standalone print-padding fix remain. 
 | Scope | Current batch evidence |
 | --- | --- |
 | Local gates | 213 Node tests; runtime, typecheck and lint pass |
-| Normal staging build | 99 plans / 4354 fields; original key authenticates; 77 public assets / 5781 private sentinels plus key scanned |
-| Preserved release | All 84 prior bindings unchanged, including accepted 24 hashes |
-| Direct integrated classroom | 20 explicitly selected plans / 999 exact fields; original controls and appropriate disclosures retained |
-| Navigation and Learner View | 180 direct targets reached/focused; source placement and absence of repeated panel controls pass |
-| Responsive | 360 combinations at six widths and three text scales |
-| New first-response persistence | 15 lessons: edit, clear, reload, direct cloud check and fresh password login |
-| Integrated private print | 20 guides / 98 nonempty A4 pages; exact fields and margins pass |
-| Complete selected fallback | 20 guides / 102 nonempty A4 pages; all fields and margins pass |
-| Physical PDF content | 1998 field occurrences; zero missing; fixed-column extraction handles wrapped scaffold cells |
-| Multi-period delivery | 4 current new multi-period guides: exact 45-minute periods and opening/closing navigator targets pass |
+| Normal staging build | 108 plans / 4625 fields; original key authenticates; 77 public assets / 6149 private sentinels plus key scanned |
+| Preserved release | All 99 prior bindings unchanged, including accepted 24 hashes |
+| Direct integrated classroom | 14 explicitly selected plans / 796 exact fields; original controls and appropriate disclosures retained |
+| Navigation and Learner View | 125 direct targets reached/focused; source placement and absence of repeated panel controls pass |
+| Responsive | 252 combinations at six widths and three text scales |
+| New first-response persistence | 9 lessons: edit, clear, reload, direct cloud check and fresh password login |
+| Integrated private print | 14 guides / 76 nonempty A4 pages; exact fields and margins pass |
+| Complete selected fallback | 14 guides / 78 nonempty A4 pages; all fields and margins pass |
+| Physical PDF content | 1592 field occurrences; zero missing; fixed-column extraction handles wrapped scaffold cells |
+| Multi-period delivery | 1 current new multi-period guides: exact 45-minute periods and opening/closing navigator targets pass |
 | Supported Auth/RLS/RPC | 37 genuine operations pass, including revocation, logged-out JWT and refresh-token denial |
 | Evidence review and boundary | Assigned educator sees synthetic evidence; learner/revoked users lack private cards; unrelated-institution educator has zero learner rows and guidance 403 |
 
@@ -58,10 +58,10 @@ Observed coding configuration exposes VERCEL_TOKEN and SUPABASE_SECRET_KEY, with
 
 Scoped SELECT policies allow authorised assigned staff/admins to review saved digital answers, notes, progress and portfolios; they are not gated by a per-row submission flag. Personal answers need not be read to classmates. Lesson 8’s header-only grouping table remains a separate source/response-structure issue; no fields were invented.
 
-There are 59 separate [editorial proposals](SOURCE_EDITORIAL_REGISTER.json), plus the earlier staging register. None is applied. All 59 exact quoted passages and stable block references were checked against the current source, including table-cell serialization; that technical match is not editorial approval. They distinguish material arithmetic, task safeguards, privacy, missing source structure and verification needs from retained metaphors. The earlier [factual checks](g8-t3-41-50/FACT_CHECKS.md) preserve primary-source evidence and unresolved current legal/attribution limits.
+There are 74 separate [editorial proposals](SOURCE_EDITORIAL_REGISTER.json), plus the earlier staging register. None is applied. All 74 exact quoted passages and stable block references were checked against the current source, including table-cell serialization; that technical match is not editorial approval. They distinguish material arithmetic, task safeguards, privacy, missing source structure and verification needs from retained metaphors. The earlier [factual checks](g8-t3-41-50/FACT_CHECKS.md) preserve primary-source evidence and unresolved current legal/attribution limits.
 
-The final sequential measurement made 80 requests, including 75 to additions: median 662 ms, range 493–4223 ms; selected responses 10094–14940 decoded bytes through the coding proxy. Responses remain private/no-store. First observed requests are not guaranteed cold. Browser heap and sealing-process memory are not hosted function RSS.
+The final sequential measurement made 50 requests, including 45 to additions: median 595 ms, range 535–973 ms; selected responses 9541–14812 decoded bytes through the coding proxy. Responses remain private/no-store. First observed requests are not guaranteed cold. Browser heap and sealing-process memory are not hosted function RSS.
 
 [CONTENT_DELIVERY_SCALE.md](CONTENT_DELIVERY_SCALE.md) records release growth and recommendations. Every request still opens/validates the whole release after current authorisation. Guaranteed cold-process, concurrency, server-memory and separate decryption/validation measurements are pending; 395-plan suitability is not claimed. Smaller authenticated releases, versioned manifests and bounded server caching remain measured proposals, with fresh permission checks on every response. No production architecture change or migration is implemented.
 
-Four Grade 9 Term 2 plans have individually read, technically checked private drafts but are unsealed and unreleased; they are included in the remaining count and are not completed. Continue the remaining 296 individually reviewed lessons in grade/term batches. Educator timing trials, hosted cold/server-memory measurements and configured maximum/inactivity limits remain pending. The isolated synthetic teaching browser harness still lacks its original-key fixture; genuine hosted tests cover teaching behaviour. Owner approval remains required for merging the classroom stack or deploying the separate live application.
+Nine remaining Grade 9 Term 2 plans have individually read, technically checked private drafts but are unsealed and unreleased; they are included in the remaining count and are not completed. Continue the remaining 287 individually reviewed lessons in grade/term batches. Educator timing trials, hosted cold/server-memory measurements and configured maximum/inactivity limits remain pending. The isolated synthetic teaching browser harness still lacks its original-key fixture; genuine hosted tests cover teaching behaviour. Owner approval remains required for merging the classroom stack or deploying the separate live application.

@@ -1,0 +1,7 @@
+{
+  "initialGuard": "STOPPED: connector create-deployment snapshot omitted projectId",
+  "mutationBeforeGuardFailure": false,
+  "resolution": "Read-only authenticated REST metadata verified exact staging project and operation purpose before helper retried deletion",
+  "temporarySealingDeploymentDeleted": true,
+  "normalReviewDeploymentRetained": true
+}

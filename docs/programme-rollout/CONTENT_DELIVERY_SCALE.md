@@ -1,6 +1,6 @@
 # Private content delivery: measured growth
 
-The original classroom key remains server-bound. Packaging and Supabase access are separate capabilities: genuine staging login demonstrates permissions, while guarded build-time sealing demonstrates that the original key opens and extends the existing encrypted release without export. Neither proves 395-plan performance. The 99-plan release passes its recorded hosted acceptance; that does not demonstrate the missing cold/server-memory measurements.
+The original classroom key remains server-bound. Packaging and Supabase access are separate capabilities: genuine staging login demonstrates permissions, while guarded build-time sealing demonstrates that the original key opens and extends the existing encrypted release without export. Neither proves 395-plan performance. The 108-plan release passes its recorded hosted acceptance; that does not demonstrate the missing cold/server-memory measurements.
 
 | Released/candidate plans | Ciphertext bytes | Hash/placement manifest bytes |
 | --- | ---: | ---: |
@@ -10,6 +10,7 @@ The original classroom key remains server-bound. Packaging and Supabase access a
 | 64 | 1,229,967 | 1,310,414 |
 | 84 | 1,530,595 | 1,635,662 |
 | 99 | 1,760,831 | 1,880,353 |
+| 108 | 1,892,843 | 2,025,968 |
 
 Exact per-operation hashes and correction sizes remain in their batch summaries. The early reduction from the original pretty-printed 24-plan file reflected compact serialization, not content removal; preserved plan hashes establish that distinction. Do not extrapolate one fixed size per lesson across unreviewed higher-grade content.
 
@@ -24,3 +25,5 @@ Current browser-heap observations describe browser navigation and PDF generation
 Retain the current architecture while gathering those missing measurements. If release-wide work becomes material, compare a smaller authenticated lesson/term release bound to a versioned manifest and original source identity with a bounded server-side cache keyed by release digest. Preserve the original key and fresh educator/session authorisation before every response. A cached plan must not cache a permission decision, leak across roles or survive a release update under a stale identity.
 
 No smaller-release or caching architecture is implemented here. Do not expose plaintext guides or keys in public assets, add a public sealing route or change a database schema as a shortcut. Any production architecture change or migration requires separate owner approval after a concrete measured proposal.
+
+At 108 plans, the latest sequential run made 50 authenticated requests, including 45 to additions: median 595 ms, range 535–973 ms, 9541–14812 decoded bytes. These proxy-observed samples do not demonstrate guaranteed cold starts, per-request server memory or a causal release-size trend.
