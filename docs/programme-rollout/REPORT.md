@@ -4,7 +4,7 @@
 
 Current staging: https://applied-commerce-sa-staging-dl2cjdjzb.vercel.app . Deployment protection and genuine application login apply. Tested application/content commit: `687ab7c41ddbb076a6d7d39aa8baf0a5ff1d71a7`. Later documentation commits do not imply another deployment or rerun.
 
-The open, unmerged stack retains PR #48 as the accepted benchmark, then #49, #51, #52, #54, #55, #56, #57, #58, and #59. Latest review: [PR #59](https://github.com/PDthePlug/Applied-Commerce-/pull/59). Exact current evidence: [g9-t2-26-34/RESULTS.json](g9-t2-26-34/RESULTS.json); earlier batch records remain alongside it.
+Reference ancestry retains accepted PR #48, then #49, #51, #52, #54, #55, #56, #57, #58 and #59. The latest read-only check finds #48, #49 and #51 closed without merging; their recorded heads are unchanged and remain ancestors of this implementation. #52, #54–#59 remain open and unmerged. Current review: [PR #59](https://github.com/PDthePlug/Applied-Commerce-/pull/59). [Repository-state evidence](g9-t2-26-34/repository-state.json) records the observed heads. Exact classroom evidence: [g9-t2-26-34/RESULTS.json](g9-t2-26-34/RESULTS.json); earlier batch records remain alongside it.
 
 ## Preservation and teaching experience
 
