@@ -1,5 +1,5 @@
 {
-  "scope": "Individually read Grade 8 Terms 2–4, Grade 9 Term 1 and Grade 9 Term 2 Lessons 17–34; separate unapplied proposals",
+  "scope": "Individually read Grade 8 Terms 2–4, Grade 9 Terms 1–3; separate unapplied proposals",
   "sourceChangesApplied": false,
   "entries": [
     {
@@ -863,6 +863,276 @@
       "concern": "The source asserts every learner started at one on an undefined awareness scale. This is not an observed baseline and can imply a compulsory increase rather than honest reflection.",
       "proposedWording": "If a genuine earlier self-rating exists, reflect on it. Otherwise give an honest current judgement, explain its basis and state one feasible next step without assuming an initial score of one.",
       "implementationImpact": "Separate scale/prompt meaning review; no scale response split, key or number of controls changed now. Local optional support permits acknowledging the unsupported premise and explaining actual learning evidence.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g9-t3-l35-024",
+      "blockId": "bf9740a58a6b4c6922f12af8-1",
+      "exactPassage": "If you cannot observe your own habit: Observe someone else's — a family member, a friend. What is their loop? What identity are they voting for? Do they know it?",
+      "category": "Specific observation/privacy safeguard",
+      "concern": "The other-person alternative invites observing and interpreting someone’s habits/identity without consent or a distinction between their account and the learner’s inference.",
+      "proposedWording": "If appropriate, ask a willing person to describe an ordinary habit and what it means to them. Do not monitor private behaviour or present your interpretation of their identity as established fact.",
+      "implementationImpact": "Separate activity safeguard review; retain personal observation as the main task and all current fields. The local later-work cue supplies consent and avoids surveillance. The identity-voting metaphor itself is retained.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g9-t3-l36-025",
+      "blockId": "2e5cd529947c6ce7ce5232b7-1",
+      "exactPassage": "The Truth: Themba's R5 a day was not about the money. It was about the identity. Every time he saved R5, he cast a vote for \"I am a saver.\" The R5 itself was almost meaningless. The vote was everything. At first, the votes feel insignificant. R5? That is nothing. Ten push-ups? That will not change my body. But after thirty votes, something shifts. After a hundred votes, the identity starts to lock. After 365 votes, you no longer have to think about it. You just are a saver. You just are someone who exercises. The compound effect works on money. But it works more powerfully on identity. Small actions, repeated, do not just change what you have. They change who you believe you are.",
+      "category": "Fixed habit/identity thresholds requiring evidence",
+      "concern": "The thirty/hundred/365-repetition statements imply general stages of identity or automaticity without supporting evidence. The illustrative time window does not establish a universal habit-formation threshold.",
+      "proposedWording": "Small repeated actions can support learning and a sense of capability, but timing differs by action, person and conditions. Treat the repetition totals as practice counts rather than guaranteed stages of automaticity or identity.",
+      "implementationImpact": "Separate factual wording review, with earlier habit-study evidence available in the existing audit. No tracker duration or response structure changed. Conditional arithmetic and the motivational metaphor remain useful; missed days are not declared to erase all progress.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g9-t3-l38-027",
+      "blockId": "83e8f6a3a4e6a8dab8513116-1",
+      "exactPassage": "Task | Important? | Urgent? | Action",
+      "category": "Missing digital task-row response structure",
+      "concern": "The priority matrix has only a header row, while the activity asks learners to list current tasks. It does not currently expose blank digital task rows.",
+      "proposedWording": "Agree an explicit reviewed way to record the existing task entries; retain the importance/urgency/action headings and plan any added response identities before digital structural changes.",
+      "implementationImpact": "Separate response-structure decision, not silently implemented. The local cue uses the normal workbook/writing medium and preserves the authored matrix task, original controls and saved identities.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g9-t3-l40-029",
+      "blockId": "c87a9ed047a14279252f9c37-1",
+      "exactPassage": "Internal Resources (Skills, Mindset, Knowledge) | External Resources (People, Money, Time, Tools)",
+      "category": "Missing digital response structure",
+      "concern": "The resource map has two headings without blank entry rows, so the requested map cannot be represented as entries in this digital table.",
+      "proposedWording": "Agree a reviewed recording arrangement for internal/external resources while retaining the existing headings and mapping task.",
+      "implementationImpact": "No rows or response identities added now. The local activity cue explicitly uses the existing workbook/writing medium; any later digital structure change needs separate review.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g9-t3-l41-030",
+      "blockId": "111fbdd7e0baf376e2a8f0bf-1",
+      "exactPassage": "Understand that grit matters more than talent for long-term success.",
+      "category": "Comparative claim requiring external verification",
+      "concern": "The outcome asserts grit matters more than talent for long-term success without a defined population, outcome or evidence. The narrative alone does not establish a universal comparison.",
+      "proposedWording": "Understand how sustained interest, practice, opportunities, support and other factors can contribute to progress over time. Evaluate when persistence or adaptation is appropriate.",
+      "implementationImpact": "Separate outcome/source review; no current learner outcome rewritten. Optional support retains the source’s strong conditions/pivot discussion and avoids diagnostic interpretation of its five-item exercise.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g9-t3-l41-030",
+      "blockId": "1fda1fcbe6c70a8e572d9cfc-1",
+      "exactPassage": "Talent | Grit\nNatural ability — what you are born with | Passion and perseverance — what you build\nCan you grow it? Somewhat, but has limits | Can you grow it? Yes, unlimited\nWhat it predicts | Early success, quick wins\nWithout the other | Talent without grit = wasted potential. Grit without talent = slow but steady progress.",
+      "category": "Malformed comparison and unsupported unlimited claim",
+      "concern": "The row headed What it predicts places Early success, quick wins in the Grit column rather than clearly comparing predictions; other rows imply unlimited grit growth and talent as merely innate.",
+      "proposedWording": "Rebuild the comparison with correctly aligned cells and qualified explanations of ability, practice and context; do not certify unlimited effects or an empirical prediction ranking without evidence.",
+      "implementationImpact": "Separate table/content review; current source and learner identities unchanged. Do not treat this table as a validated assessment or predictive scale.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g9-t3-l42-031",
+      "blockId": "5511cc3c6db8adffcd57d790-1",
+      "exactPassage": "Person | Failure | What Happened Next\nThomas Edison | 10,000 failed experiments | Invented the light bulb\nJ.K. Rowling | 12 rejections | Harry Potter sold millions\nWalt Disney | Fired from newspaper for \"lack of imagination\" | Created Disney\nSteve Jobs | Fired from Apple, the company he started | Returned and made it bigger\nMichael Jordan | Cut from his high school basketball team | Became the greatest basketball player",
+      "category": "Historical anecdotes requiring attribution checks",
+      "concern": "Exact Edison/Rowling counts, the Disney dismissal and Jordan school-team claim are not verified by primary evidence here. Several common versions omit context or compress a disputed history.",
+      "proposedWording": "Replace with accurately sourced, appropriately qualified examples after checking each account; otherwise label them as unverified anecdotes and rely on the complete Sipho story for this task.",
+      "implementationImpact": "Separate attribution review. No invented corrected biography or external research task is added; teacher optional clarification avoids certifying the claims.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g9-t3-l42-031",
+      "blockId": "65d9749b575709f99540db5d-1",
+      "exactPassage": "Your Move: What is the most expensive failure you have experienced — not just in money, but in time, trust, or opportunity? Did you extract the lesson? Was the tuition worth it? If you have not extracted it yet, what would it take to do so now?",
+      "category": "Specific sensitive-disclosure safeguard missing",
+      "concern": "The request for the most expensive failure may prompt distressing loss or private financial information even though an ordinary example suffices.",
+      "proposedWording": "Choose an appropriate ordinary setback you are comfortable reflecting on, or use a suitable source example where personal disclosure is sensitive. You need not describe your most painful experience or share it with classmates.",
+      "implementationImpact": "Separate prompt/safeguard review; fields and personal reflection remain. Current local cue permits proportionate examples and does not require a positive meaning from harm.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g9-t3-l43-032",
+      "blockId": "2484c5d0ddb94968b6e7fd38-1",
+      "exactPassage": "\"I am not good at...\" | \"I am not good at... yet\"",
+      "category": "Missing digital response structure",
+      "concern": "The activity asks for three pairs of statements but the table contains headings only.",
+      "proposedWording": "Agree a reviewed way to record the three authored pairs, retaining their meaning and explicitly planning any future digital response identities.",
+      "implementationImpact": "No rows/fields added silently. The local cue uses the ordinary workbook/writing medium and preserves the task.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g9-t3-l44-033",
+      "blockId": "b95c1f0ae3b2b664f107a123-1",
+      "exactPassage": "\"Yes. The struggle IS the growth. The mistake IS the learning. You do not learn from getting it right. You learn from getting it wrong and figuring out why.\"",
+      "category": "Material overstatement about learning",
+      "concern": "This states that struggle itself is growth and that learning does not occur from correct answers. Adjacent text also says easy work is not learning. These are not valid universal inferences from performance or effort.",
+      "proposedWording": "Learning can involve challenge, feedback, successful practice and correcting mistakes. Difficulty alone does not show learning; use suitable strategies, support and checks of understanding.",
+      "implementationImpact": "Separate story/outcome wording review. A short local clarification supports the task now, without rewriting the canonical passage, adding a neuroscience lesson or changing responses.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g9-t3-l44-033",
+      "blockId": "0800b9cc99b7f08023951264-1",
+      "exactPassage": "The Truth: The words you use shape the minds of others. When you praise effort, you teach that struggle is normal. When you praise talent, you teach that failure is shameful. Choose your words carefully. They are building someone's mindset.",
+      "category": "Unqualified causal claim requiring contextual evidence",
+      "concern": "The passage treats praising effort or talent as deterministically teaching particular beliefs and shame. Effects and interpretations depend on feedback, task, learner and context.",
+      "proposedWording": "Give specific, accurate feedback about useful strategies, effort and progress. Consider how the person understands the feedback rather than assume one phrase guarantees a particular mindset or reaction.",
+      "implementationImpact": "Separate source qualification and checkpoint-meaning review if wording is changed. Current guide supports honest specific encouragement and records actual responses, without inventing an outcome.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g9-t3-l46-035",
+      "blockId": "f432a0ac99c6d09641256ba7-1",
+      "exactPassage": "He thinks about consequences. If he goes, he will have fun now but nothing later. If he does not go, he will feel sad but still have his savings. If he suggests something cheaper, maybe everyone can still be together.",
+      "category": "Material numerical implication",
+      "concern": "The given R200 savings and R150 entry leave R50 before unspecified food/other spending. The claim of nothing later is not established by the stated amounts.",
+      "proposedWording": "If he pays R150 entry, R50 remains before food or other costs. He compares that reduced balance and possible further costs with the other choices.",
+      "implementationImpact": "Separate narrative arithmetic clarification, also checking the nearby savings-gone wording. No amount or answer identity changed now; optional modelling states R200 − R150 = R50.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g9-t3-l47-036",
+      "blockId": "af05d87ee8e72dec9a0e9feb-1",
+      "exactPassage": "The Danger: Saying no can cost you. It can cost you invitations. It can cost you belonging. It can cost you relationships. The people who say no to the group sometimes find themselves outside the group. That is a real cost. Do not pretend it is not. The question is: which cost is higher — the cost of saying no, or the cost of saying yes to something that violates your values? There is no universal answer. There is only the answer that lets you sleep at night. Make your choice. Pay the cost. Do not pretend it was free.",
+      "category": "Specific safety context missing",
+      "concern": "The social-cost framing can be read as a private cost–benefit choice even in the supplied harmful-pressure scenarios. Threats, coercion or harmful activity may require leaving and trusted-adult support, rather than preserving a relationship alone.",
+      "proposedWording": "Recognise that saying no can have real social costs. Where pressure involves threats, coercion or harm, prioritise safety and seek appropriate adult/school support; you do not have to manage it alone.",
+      "implementationImpact": "Separate safeguard qualification. Current local support stays beside the written scenarios, with no compulsory role-play, confrontation or public disclosure.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g9-t3-l48-037",
+      "blockId": "f2b7233d64ebe4e082b23744-1",
+      "exactPassage": "The Danger: Digital literacy is not equally distributed. The people most vulnerable to digital spending traps are often the people least equipped to detect them. The digital economy runs on attention extraction. Even if you protect your money, your attention is still being harvested, packaged, and sold. You are not just a consumer. You are the product. Every free app, every social media platform, every \"free\" service — you pay with your attention, your data, your preferences. The price is just hidden.",
+      "category": "Material universal business-model overgeneralisation",
+      "concern": "Every free app/service requiring attention/data payment is false as a universal description; public, charitable and other models differ. The critical consumer perspective remains useful when qualified.",
+      "proposedWording": "Many services fund themselves through advertising, data use or other indirect models, while others use different funding. Check the particular service’s terms, permissions and controls rather than assume all free services sell personal data.",
+      "implementationImpact": "Separate explanatory source review; current optional support distinguishes business models without rewriting the lesson or removing its attention-reflection purpose.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g9-t3-l48-037",
+      "blockId": "02c629d04c928a93005a5305-1",
+      "exactPassage": "Question 2: Digital products are designed to be addictive. Whose responsibility is it to protect you — yours, or the companies'? If yours, what is your plan? If the companies', what should they be required to do?",
+      "category": "Universal addiction premise requiring qualification",
+      "concern": "The question presumes all digital products are designed to be addictive and frames responsibility as yours or companies’, though responsibilities can be shared and vary by service.",
+      "proposedWording": "Some products use features that encourage repeated engagement or spending. How should users, companies and other responsible parties help protect people, and what practical boundary or design change would help?",
+      "implementationImpact": "Question-meaning change requires separate reviewed editorial work; no prompt splitting or response count changed now. Guidance accepts reasoned shared responsibility without certifying a diagnosis or universal design intent.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g9-t3-l49-038",
+      "blockId": "e246e0e3ae78f71770e5f435-1",
+      "exactPassage": "Scenario | Scam? | Why?\nEmail from \"your bank\" saying your account is locked — click this link to verify |  | \nFriend WhatsApps from their usual number asking for urgent airtime |  | \nOnline ad for new phone for R200 (usually R2,000) |  | \nSomeone you have been chatting with online for weeks asks for money for a \"family emergency\" |  | \nMessage saying you won a competition you never entered — just pay R50 to claim your prize |  | ",
+      "category": "Insufficient evidence for compulsory binary classification",
+      "concern": "A request from a friend’s usual number may be genuine or compromised; the brief scenarios provide red flags, not definitive proof in every case.",
+      "proposedWording": "Ask learners to identify suspicious features, state uncertainty where appropriate and explain independent verification before payment or disclosure. Add any explicit uncertainty option only through a reviewed response-structure decision.",
+      "implementationImpact": "No new option or field added now. Existing Why responses can explain uncertainty and a safe check; the guide does not grade unsupported certainty as understanding.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g9-t3-l49-038",
+      "blockId": "23cacb67de06a8dccfab043a-1",
+      "exactPassage": "The Danger: Atlehang was saved because she remembered something someone told her. She had access to knowledge about scams. Not everyone has that. Scammers often target the most vulnerable — those with less education, less access to information, more desperation, more hope that something good might finally happen to them. Digital safety is not just about individual vigilance. It is also about community protection. If you know how to spot a scam, you have a responsibility to share that knowledge — with your grandmother, your neighbour, your younger sibling. The people least likely to be in a classroom learning about phishing are the people most likely to fall for it.",
+      "category": "Demographic vulnerability claim requiring external verification",
+      "concern": "The final comparison asserts who is most likely to fall for scams without a dated population, measure or evidence. It risks stigmatising people by education or classroom access.",
+      "proposedWording": "Anyone can be targeted. Access to relevant information and support can help; share practical advice respectfully without ranking a relative’s vulnerability or assuming education prevents scams.",
+      "implementationImpact": "Separate factual/context review; no invented statistic. Current guide avoids collecting family incidents or identifying vulnerable people while retaining the authored advice-sharing task.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g9-t3-l50-039",
+      "blockId": "710bdca63e65c4337306fa81-1",
+      "exactPassage": "Element | Description\nDuration | 21 days of tracking\nWhat you will create | Tracker + daily notes + midpoint review + reflection + presentation\nWeight | 40% of Term 3 grade",
+      "category": "Assessment-policy and presentation-format gaps",
+      "concern": "The overview states 40% of the term grade without verified institutional authority and names a presentation without a specified format/time or dedicated presentation activity in the completion lesson.",
+      "proposedWording": "Confirm weighting and any formal presentation requirements with the institution’s approved assessment plan. Explain an appropriate format for presenting existing findings, with privacy and access alternatives.",
+      "implementationImpact": "Separate policy/source clarification. No new grading rule, public speech, rubric or learner field is created. Current guide uses the existing sharing/self-reading choices and flags formal expectations as unverified.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g9-t3-l50-039",
+      "blockId": "066ca56de40efc8e339a955b-1",
+      "exactPassage": "Save R_____ every day/week",
+      "category": "Frequency versus daily-count context missing",
+      "concern": "Every day/week choices feed a daily twenty-one-row tracker and later counts out of ten/twenty-one, without explaining how weekly or non-due days should be interpreted.",
+      "proposedWording": "State the chosen frequency and how due/non-due days are described in existing notes. Interpret counts against that schedule rather than compare different habits as equivalent effort; review any formal scoring separately.",
+      "implementationImpact": "No checkbox meaning, extra status or response count changed. The current guide asks for actual frequency and notes, avoids invented scores and does not rank learners by raw ticks.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g9-t3-l50-039",
+      "blockId": "7f46ec8b1c4866baf9e8d5ed-1",
+      "exactPassage": "My Habit Stokvel members are: ______________________________________________",
+      "category": "Missing contextual explanation",
+      "concern": "Habit Stokvel is required but not defined here; its financial-savings meaning could imply money contributions or exposure of personal records.",
+      "proposedWording": "In this project a Habit Stokvel is a mutual-support check-in group, with no pooled money. Agree suitable check-in times and what each person is comfortable sharing; use an appropriate individual support route where needed.",
+      "implementationImpact": "Separate concise source explanation proposal. Current contextual support defines the term beside the commitment and organises the existing check-in without a new learner activity or disclosure field.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g9-t3-l52-041",
+      "blockId": "5e9046654af9805005b5166e-1",
+      "exactPassage": "The Truth: When a habit breaks, it is easy to blame yourself. \"I have no discipline.\" \"I am just not a saver.\" \"I knew I could not stick with it.\" But often, the problem is not you. It is the system. Lethabo's saving habit did not have a buffer for emergencies. When life happened, the habit broke. That is not a character flaw. That is a design flaw. The solution is not to try harder. It is to design a better system — one with a buffer, one that expects obstacles and has a plan for them, one that makes restarting easy and shame-free.",
+      "category": "Missing context and apparent narrative inconsistency",
+      "concern": "The story says savings performed their emergency-buffer function, whereas this passage presents the absence of a buffer/design flaw as established. Depleting a buffer does not itself prove poor design.",
+      "proposedWording": "The savings helped during the emergency. Restarting may require resources or flexibility; consider what can appropriately change without assuming the interruption proves a personal or design failure.",
+      "implementationImpact": "Separate narrative qualification. Current local story support preserves the original resource-aware lesson and does not demand a second fund or additional money.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g9-t3-l53-042",
+      "blockId": "10858ed827fdabad4656e9bc-1",
+      "exactPassage": "The Truth: You did not just track a habit for twenty-one days. You built a review habit: the habit of noticing and adjusting your habits. That review habit is more valuable than any single habit you tracked. It is the operating system upgrade. It does not just change what you do. It changes what you can do. Once you know how to change a habit, you can change any habit. Once you have evidence that you can keep a promise to yourself, you have evidence that you can keep bigger promises.",
+      "category": "Overgeneralised transfer claim",
+      "concern": "One successful tracking project does not establish that the learner can change any habit under all conditions. The operating-system metaphor can remain without that universal guarantee.",
+      "proposedWording": "The project gives evidence about this habit under these conditions. Use what you learned to notice and adjust another suitable habit, recognising that different habits may need different strategies, resources or support.",
+      "implementationImpact": "Separate source qualification; do not rewrite the metaphor or add a compulsory new habit experiment. Current guide recognises limits in the existing reflections and maintenance plans.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g9-t3-l54-043",
+      "blockId": "07c778e048170be241fd1b78-1",
+      "exactPassage": "At the start of the term, you were a \"1\" on the self-mastery scale. Where are you now — honestly?",
+      "category": "Unsupported imposed baseline",
+      "concern": "The source asserts all learners started at one on an undefined self-mastery scale, rather than using an observed earlier rating.",
+      "proposedWording": "If a genuine earlier self-rating exists, reflect on it. Otherwise give an honest current judgement with reasons and a feasible next step, without assuming an initial score of one.",
+      "implementationImpact": "Separate scale/prompt-meaning review. The current control, response identity and count remain; local guidance permits stating the unsupported premise.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g9-t3-l54-043",
+      "blockId": "d0cbdc7d42f5b5e6ff04034c-1",
+      "exactPassage": "\"Here is the truth: Both paths are valid. The world needs university graduates. And the world needs people who can fix a car, sell a vetkoek, or look after elders. There is no shame in either road. The only shame is standing at the fork and refusing to walk.\"",
+      "category": "School-leaving/work safeguard requiring current legal context",
+      "concern": "The dignified-paths message can be read as endorsing minors leaving schooling for work without checking compulsory-schooling, age, child-work protections or supported educational alternatives. Current law/application has not been fully verified for each learner’s situation.",
+      "proposedWording": "Different education, training and work routes have dignity and can combine or change. Before a school-leaving or work decision, use qualified school/career advice and current compulsory-schooling and child-work rules. Needing advice or being unsure is not shameful.",
+      "implementationImpact": "Separate reviewed safeguard/source correction. No legal age cutoff is invented or canonical text changed. Local pathways support avoids advising departure from school or prohibited/unsafe work and retains Not sure yet.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g9-t3-l54-043",
+      "blockId": "949a34c90f9f1ae53ff367be-1",
+      "exactPassage": "If you are heading toward further study (Grade 10-12)... | If you might be working or starting a business sooner...\nChoose subjects that open the doors you want to walk through. Maths Core is often required for university degrees. Business Studies, Economics, and Accounting will give you a strong foundation. | Choose subjects that are useful right now. Maths Literacy is vital — it teaches you budgeting, interest, and profit calculations. Business Studies teaches the basics of enterprise. Consumer Studies teaches about products and food.\nThink about your career vision. If you want to be an accountant, you need specific subjects. | Think about your immediate needs. What skills will help you earn money tomorrow?\nYour choice is an investment in a long-term asset — your education. | Your choice is an investment in a short-term asset — your ability to generate income quickly.",
+      "category": "Subject/admissions guidance requiring current specific verification",
+      "concern": "The table can imply Mathematics versus Mathematical Literacy maps directly onto academic versus immediate-income routes. Actual subject offerings and admission requirements vary by institution, qualification and year; vocational study is also education.",
+      "proposedWording": "Use current official subject names and the requirements of the particular programme/year. Check Mathematics/Mathematical Literacy and other prerequisites through qualified school/official guidance; education, vocational training and work routes are not an exclusive binary.",
+      "implementationImpact": "Separate table/meaning review; current choices/controls remain. The guide uses prepared current school information and identifies unconfirmed requirements instead of giving individual admissions certification.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g9-t3-l54-043",
+      "blockId": "df42cb89fe802c506c40fdb1-1",
+      "exactPassage": "1. What is my most likely path next year? ☐ Continue to Grade 10 and beyond (Academic Path) ☐ Work, business, or vocational training (Productivity Path) ☐ I am not sure yet",
+      "category": "Misleading exclusive route classification",
+      "concern": "The Academic/Productivity labels can suggest education is not productive or vocational training is outside further education, and that the declaration fixes a person into one of two permanent routes.",
+      "proposedWording": "Frame this as a first exploration of education, training and work possibilities, including combinations and uncertainty. Review any changed choice labels separately.",
+      "implementationImpact": "Choice-label/meaning changes require owner editorial review. No option or saved value changed now; local support preserves Not sure yet and a provisional declaration.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g9-t3-l54-043",
+      "blockId": "c19e5cea341828109bfa8b43-1",
+      "exactPassage": "Lesson 40: Resilience. The bike that broke again. Internal strength plus external resources.",
+      "category": "Specific inaccurate retrospective reference",
+      "concern": "The recap calls Lesson 40 the bike breaking again, but its actual setback is losing Mrs October as a customer. Its title evokes the earlier bike experience.",
+      "proposedWording": "Lesson 40: A customer leaves. Skills, relationships and external resources help recovery.",
+      "implementationImpact": "Separate targeted recap correction; no lesson/block identity changed. The teacher cue refers to the actual lost-customer story.",
       "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
     }
   ],
