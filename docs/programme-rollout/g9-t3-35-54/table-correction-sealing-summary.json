@@ -1,0 +1,36 @@
+{
+  "preservedPlans": 130,
+  "amendedPlans": 7,
+  "amendedFields": 15,
+  "addedPlans": 0,
+  "totalPlans": 137,
+  "addedPeriods": 0,
+  "newPlacements": 0,
+  "version": "ac-classroom-137-table-reference-corrections-2026-10-24",
+  "originalKeyAuthenticated": true,
+  "keyExported": false,
+  "plaintextWritten": false,
+  "sourceValidationMs": 1037,
+  "buildProcessOnly": {
+    "heapBefore": 46993496,
+    "heapAfter": 92675832,
+    "rssAfter": 299909120
+  },
+  "files": [
+    {
+      "name": "teaching-plans.v2.enc.json",
+      "bytes": 2323527,
+      "sha256": "41202f8959cc8fb7adbb0e1fb6153ae6beb538f8ad350b24118207a45680d852"
+    },
+    {
+      "name": "teaching-manifest.v2.json",
+      "bytes": 2491774,
+      "sha256": "d2816a1ee7d9ef5f8fa5022dcf0b1d7513a3a9f20c40b532af25288477723efd"
+    },
+    {
+      "name": "teaching-availability.v2.json",
+      "bytes": 2920,
+      "sha256": "9bac6c5ab157eb14e6e0cc9d56c1fc898711551a478aafcf07c15852f513df6d"
+    }
+  ]
+}
