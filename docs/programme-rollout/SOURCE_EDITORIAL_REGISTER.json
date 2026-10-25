@@ -1548,6 +1548,156 @@
       "proposedWording": "If your total is zero, record that the percentage is undefined. You can use the supplied case to understand the arithmetic, labelling it as that case rather than your own income.",
       "implementationImpact": "Separate owner-reviewed source proposal only; no canonical wording, learner activity, control, field or saved-work identity changes now.",
       "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g10-t1-l05-005",
+      "blockId": "c9dc418cc85f43453243dbd7-1",
+      "exactPassage": "[[\"Known Costs (Budgeted)\",\"Amount\",\"Hidden Costs (Often Missed)\",\"Amount\"],[\"\",\"R\",\"\",\"R\"],[\"\",\"R\",\"\",\"R\"],[\"\",\"R\",\"\",\"R\"],[\"Total Known\",\"R\",\"Total Hidden\",\"R\"]]",
+      "category": "Renderer/source response-structure limitation",
+      "concern": "All amount cells contain fixed R text and no amount input; only six item-name textareas are editable. The totals also have no response controls.",
+      "proposedWording": "Record figures beside the existing item text or ordinary written working. Separately review explicit amount/total controls if desired.",
+      "implementationImpact": "Any later amount or total field is a separate consequential response-structure decision. Preserve existing keys/records; no new fields now.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g10-t1-l05-005",
+      "blockId": "21bdd0d74384b1b39ca4ec49-1",
+      "exactPassage": "Thabo's hidden costs were R680 — 28% of his revenue. If you had to estimate your hidden costs as a percentage, what would they be?",
+      "category": "Missing denominator/context explanation",
+      "concern": "The source uses revenue for Thabo’s ratio but a personal/family cost audit may not have a known corresponding revenue denominator. An unlabeled percentage is ambiguous.",
+      "proposedWording": "State the denominator and time period for your estimate. If it is unknown or zero, explain why a meaningful percentage cannot yet be calculated; do not invent income.",
+      "implementationImpact": "Separate owner-reviewed learner-source proposal only. No canonical wording, activity, control, field or saved identity is changed now.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g10-t1-l05-005",
+      "blockId": "a88b3eae4a10ed9750f974b9-1",
+      "exactPassage": "Question 2: If Thabo had continued NOT tracking his hidden costs, what would have happened the next time his bike broke? Write the scene. Then write: what is the ONE system change Thabo made that will prevent it from happening again?",
+      "category": "Overstated prevention claim",
+      "concern": "Tracking makes overlooked costs visible but cannot guarantee no future repair, cash shortfall or business disruption. The same question should permit a reasoned explanation of limits.",
+      "proposedWording": "What record system did Thabo introduce, and how could it improve his preparation for future costs? What else would still need to be planned or checked?",
+      "implementationImpact": "Separate question-meaning review; retain current saved answer identities and review any future wording/answer-rationale mapping explicitly. No learner question changed now.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g10-t1-l07-007",
+      "blockId": "86560c5fa4275bc19eaa646e-1",
+      "exactPassage": "[[\"Feature\",\"Sole Proprietorship\",\"Partnership\",\"Cooperative\"],[\"Ownership\",\"One person\",\"Two or more\",\"Members (3+)\"],[\"Decision-making\",\"Owner decides\",\"Partners together\",\"Democratic (one member, one vote)\"],[\"Profit\",\"Owner keeps all\",\"Shared per agreement\",\"Shared per agreement\"],[\"Key strength\",\"Speed, control\",\"Complementary skills\",\"Collective power, bulk buying\"],[\"Key danger\",\"Isolation, capacity\",\"Trust breakdown\",\"Free riders, no enforcement\"]]",
+      "category": "Claim requiring current legal verification",
+      "concern": "The cooperative ownership shorthand Members (3+) is not established as current South African formation advice. The activity’s five-person imaginary group can remain without treating the table as a registration rule. Two attempted CIPC URLs returned an ERROR404 page with HTTP200; that is not verification.",
+      "proposedWording": "Use current official South African requirements for the relevant type of cooperative, including eligible member types, number and constitution. Label simplified comparisons appropriately rather than certifying a universal 3+ minimum.",
+      "implementationImpact": "Separate owner-reviewed learner-source proposal only. No canonical wording, activity, control, field or saved identity is changed now.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g10-t1-l07-007",
+      "blockId": "fbc6ef4b67850081b60a5a05-1",
+      "exactPassage": "How do we make decisions? ☐ One person, one vote ☐ Based on investment ☐ Other: _________________________________",
+      "category": "Conceptual conflict in response choices",
+      "concern": "Investment-based voting is offered alongside one-person/one-vote although democratic control is a defining concept in this lesson. It must not imply all options preserve the same cooperative principle.",
+      "proposedWording": "Explain how the decision arrangement preserves applicable democratic member control, and distinguish voting rights from the method for allocating work or surplus.",
+      "implementationImpact": "Separate choice-meaning/possible response-structure review. Preserve all current options and saved selections now; any future choice change needs explicit mapping.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g10-t1-l08-008",
+      "blockId": "a33ab28018804eb120d87f77-1",
+      "exactPassage": "Lethabo is quiet for a long moment. \"Option two. Train someone. But that means trusting them. And after Sizwe...\"",
+      "category": "Specific source reference mismatch",
+      "concern": "Training someone was the first option in the preceding list, but Lethabo calls it option two. The intended action is clear from the words.",
+      "proposedWording": "I choose training someone to do the quality check.",
+      "implementationImpact": "Separate small source-reference correction; preserve sequence, actions, fields and saved identities. Teacher guidance uses the option wording now.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g10-t1-l08-008",
+      "blockId": "f54893ba939dd8f24146d144-1",
+      "exactPassage": "This week, identify ONE thing you always do yourself because you believe no one else can do it right. Let someone else do it. Do not check. Do not correct. Just observe. Write down: What happened? Was it as bad as you feared? What did you learn about yourself?",
+      "category": "Specific safety concern",
+      "concern": "The blanket do-not-check/do-not-correct instruction could be copied for medicine reminders, care, tools or other tasks requiring competent checks. The original written alternative is useful and retained.",
+      "proposedWording": "Choose an agreed low-risk task with a willing suitable person. Keep necessary safety/quality checks. If delegation is unsuitable, use the written alternative and consider a safe redesign rather than carrying out the test.",
+      "implementationImpact": "Separate owner-reviewed learner-source proposal only. No canonical wording, activity, control, field or saved identity is changed now.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g10-t1-l08-008",
+      "blockId": "d424ac4022a33935ed41501a-1",
+      "exactPassage": "He tried to scale. He hired three helpers — younger kids from the neighbourhood. He trained them. He built a system. And for a while, it worked. Production went from eight clocks a week to fifteen. Then eighteen. But it has stalled at eighteen. No matter what he does, he cannot get past eighteen.",
+      "category": "Specific age/safety context requiring current verification",
+      "concern": "Hiring younger neighbourhood children is presented without age, schooling, task, supervision or legal conditions. The story is not an authorisation for learners to employ children or copy workshop work.",
+      "proposedWording": "If retaining the helpers, make the age-appropriate lawful scope, schooling and supervision context clear. No learner employment, paid helper arrangement or workshop task is required by the activity.",
+      "implementationImpact": "Separate owner-reviewed learner-source proposal only. No canonical wording, activity, control, field or saved identity is changed now.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g10-t1-l09-009",
+      "blockId": "db93bb7f83dd12c854822d81-1",
+      "exactPassage": "IP Protects Expression, Not Ideas",
+      "category": "Material IP-category overgeneralisation",
+      "concern": "The expression-not-ideas distinction applies to copyright; applying it to all IP obscures patents for qualifying technical inventions. WIPO’s separate copyright and patent FAQs support this distinction.",
+      "proposedWording": "Copyright protects qualifying expression rather than ideas as such. Different rights protect different subject matter; patents can protect qualifying inventions subject to applicable requirements.",
+      "implementationImpact": "Separate owner-reviewed learner-source proposal only. No canonical wording, activity, control, field or saved identity is changed now.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g10-t1-l09-009",
+      "blockId": "420b82c80721b777792369e6-1",
+      "exactPassage": "\"It depends,\" Ms. Daniels says. \"The reminder card — if you wrote original instructions, that is automatically protected by copyright. You do not need to register it. But the idea itself — putting a reminder inside a clock — ideas cannot be copyrighted. Only the expression of the idea. The specific words you wrote. The specific design. Not the concept.\"",
+      "category": "Missing originality and rights context",
+      "concern": "The story can imply any exact short instruction or specific design is automatically protected and copying it establishes infringement. Ordinary labels such as PILLS or CLINIC may lack sufficient authorship; no individual right or infringement has been determined.",
+      "proposedWording": "Original qualifying expression may receive copyright protection. Short labels, generic instructions and ordinary designs need assessment under applicable law; copying exact words does not alone settle protection or infringement.",
+      "implementationImpact": "Separate owner-reviewed learner-source proposal only. No canonical wording, activity, control, field or saved identity is changed now.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g10-t1-l09-009",
+      "blockId": "f6130f3f181fcab5b09f9060-1",
+      "exactPassage": "[[\"Type\",\"What It Protects\",\"Example\",\"How Long It Lasts\"],[\"Copyright\",\"Written work, art, music, videos\",\"This textbook, a song, a drawing\",\"Life of author + 50 years\"],[\"Trademark\",\"Brand names, logos, slogans\",\"\\\"Coca-Cola,\\\" the Nike swoosh\",\"10 years (renewable)\"],[\"Patent\",\"Inventions, new processes\",\"A new type of engine, a medicine\",\"20 years\"]]",
+      "category": "Current jurisdiction/category-specific term verification",
+      "concern": "Life plus50, ten-year renewal and twenty-year protection are simplified category claims. They are not exhaustive rules for every work, territory, start date, registration or renewal condition.",
+      "proposedWording": "Label the jurisdiction and relevant right/work category, and state that duration and maintenance depend on applicable rules. Verify current national information before a real decision; do not imply one universal rule covers every work.",
+      "implementationImpact": "Separate owner-reviewed learner-source proposal only. No canonical wording, activity, control, field or saved identity is changed now.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g10-t1-l09-009",
+      "blockId": "a3139080ca8730ac89378ab9-1",
+      "exactPassage": "[[\"What I Created\",\"Type (Copyright/Trademark/Patent)\",\"Should I Protect It?\"],[\"1.\",\"\",\"\"],[\"2.\",\"\",\"\"],[\"3.\",\"\",\"\"]]",
+      "category": "Renderer/source response-structure limitation",
+      "concern": "The inventory’s first column contains fixed1./2./3. labels without item-description controls. The remaining two columns supply six textareas.",
+      "proposedWording": "Include what you created in the existing response text or ordinary working, and record a relevant category or uncertainty.",
+      "implementationImpact": "Any later description-field addition requires separate response-structure and saved-record review. No controls are added now.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g10-t1-l09-009",
+      "blockId": "99fc58d641fe6336162b7c38-1",
+      "exactPassage": "Find one product in your home that is a \"copy\" of something else — a generic version of a branded product. Compare them. Is the copy as good? Why do people buy the copy instead of the original? What can the original do that the copy cannot?",
+      "category": "Missing distinction between lawful generic alternatives and infringement",
+      "concern": "A generic product is not necessarily an unlawful copy, and lower price or similarity does not establish quality or infringement. A household comparison must not become medicine substitution or unsafe product testing.",
+      "proposedWording": "Compare suitable familiar alternatives and identify what you can observe. Generic products can be lawful; do not assume a copy is illegal or inferior. No purchase, medicine change or unsafe test is required.",
+      "implementationImpact": "Separate owner-reviewed learner-source proposal only. No canonical wording, activity, control, field or saved identity is changed now.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g10-t1-l11-011",
+      "blockId": "15afc4c5d895aee3c1ff975b-1",
+      "exactPassage": "[[\"Force\",\"What It Means\",\"Emmanuel's Example\"],[\"Threat of new entrants\",\"How easy is it for new competitors to start?\",\"Very easy — anyone can open a spaza shop\"],[\"Bargaining power of suppliers\",\"How much power do your suppliers have over you?\",\"Medium — can switch wholesalers, but prices are rising\"],[\"Bargaining power of buyers\",\"How much power do your customers have?\",\"High — customers can go to the mall\"],[\"Threat of substitutes\",\"What else could customers do instead?\",\"Very High — mall, street vendors, online delivery\"],[\"Industry rivalry\",\"How intense is the competition?\",\"High — many spaza shops in Katlehong\"]]",
+      "category": "Material framework classification ambiguity",
+      "concern": "The table labels the mall, street vendors and online delivery as substitutes without defining the industry. For grocery retail these can be direct rivals/channels; substitution concerns another way of meeting the need.",
+      "proposedWording": "Define the industry and customer need. Distinguish competitors offering similar goods within that industry from alternative products/services or ways to meet the need, and explain borderline classifications.",
+      "implementationImpact": "Separate owner-reviewed learner-source proposal only. No canonical wording, activity, control, field or saved identity is changed now.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g10-t1-l11-011",
+      "blockId": "15afc4c5d895aee3c1ff975b-1",
+      "exactPassage": "[[\"Force\",\"What It Means\",\"Emmanuel's Example\"],[\"Threat of new entrants\",\"How easy is it for new competitors to start?\",\"Very easy — anyone can open a spaza shop\"],[\"Bargaining power of suppliers\",\"How much power do your suppliers have over you?\",\"Medium — can switch wholesalers, but prices are rising\"],[\"Bargaining power of buyers\",\"How much power do your customers have?\",\"High — customers can go to the mall\"],[\"Threat of substitutes\",\"What else could customers do instead?\",\"Very High — mall, street vendors, online delivery\"],[\"Industry rivalry\",\"How intense is the competition?\",\"High — many spaza shops in Katlehong\"]]",
+      "category": "Unverified entry-barrier/legal generalisation",
+      "concern": "Very easy—anyone can open a spaza shop omits capital, access, skills, compliance and current legal requirements. The case statement is not verified current formation advice.",
+      "proposedWording": "Assess actual entry barriers and applicable requirements for the defined business and setting. Do not equate an informal appearance with unrestricted legal or practical entry.",
+      "implementationImpact": "Separate owner-reviewed learner-source proposal only. No canonical wording, activity, control, field or saved identity is changed now.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
     }
   ],
   "retainedPerspectives": [
