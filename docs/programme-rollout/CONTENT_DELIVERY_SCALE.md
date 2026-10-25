@@ -1,6 +1,6 @@
 # Private content delivery: measured growth
 
-The original classroom key remains server-bound. Packaging and Supabase access are separate capabilities: genuine staging login demonstrates permissions, while guarded build-time sealing demonstrates that the original key opens and extends the existing encrypted release without export. Neither proves 395-plan performance. The 162-plan release passes its recorded hosted acceptance; that does not demonstrate the missing cold/server-memory measurements.
+The original classroom key remains server-bound. Packaging and Supabase access are separate capabilities: genuine staging login demonstrates permissions, while guarded build-time sealing demonstrates that the original key opens and extends the existing encrypted release without export. Neither proves 395-plan performance. The 170-plan release passes its recorded hosted acceptance; that does not demonstrate the missing cold/server-memory measurements.
 
 | Released/candidate plans | Ciphertext bytes | Hash/placement manifest bytes |
 | --- | ---: | ---: |
@@ -16,6 +16,7 @@ The original classroom key remains server-bound. Packaging and Supabase access a
 | 147 | 2,457,643 | 2,644,782 |
 | 158 | 2,624,607 | 2,828,350 |
 | 162 | 2,700,579 | 2,901,439 |
+| 170 | 2,844,515 | 3,043,000 |
 
 Exact per-operation hashes and correction sizes remain in their batch summaries. The early reduction from the original pretty-printed 24-plan file reflected compact serialization, not content removal; preserved plan hashes establish that distinction. Do not extrapolate one fixed size per lesson across unreviewed higher-grade content.
 
@@ -44,3 +45,5 @@ For the 147-plan run, the ten first-observed new-lesson requests had median 706.
 At 158 plans, 60 genuine sequential authenticated requests include 55 to additions: median 669ms, range 549–995ms and 7,894–18,894 decoded bytes. The guarded normal build scans 77 assets against 8,137 private sentinels plus key. Build RSS 291,880,960 bytes is not hosted runtime memory. Cross-batch differences do not establish a release-size causal effect. Cold-process, concurrency and hosted memory evidence remain pending; current server-side authorisation is preserved.
 
 At 162 plans, 25 genuine sequential requests include 20 to additions: median 800ms, range 593–1195ms, 13,500–16,547 decoded bytes. The build scans 77 assets against 8,341 private sentinels plus key; build RSS 307,154,944 bytes is not hosted runtime memory. Different batch contents/conditions do not establish a size/latency relationship. Fresh authorisation remains mandatory; cold-process, concurrency and hosted server-memory evidence remain pending.
+
+At 170 plans, 45 genuine sequential requests include 40 to additions: median 756.5ms, range 552–1216ms, 12560–16632 decoded bytes. Build RSS 297095168 bytes is not hosted runtime memory; 77 assets pass 8739 private sentinels plus key. Different content/conditions prevent a causal size/latency conclusion. Fresh authorisation remains required; hosted cold, concurrency and server-memory evidence is pending.

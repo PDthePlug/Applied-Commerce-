@@ -1,6 +1,6 @@
 # Grade 10 Term 1: Lessons 5–12
 
-Every actual learner block was read before individual authoring. Private source/schema/activity coverage and actual ContentBlocks insertion pass. These eight guides remain within the uncompleted count until original-key sealing and genuine hosted acceptance pass; technical validity does not establish educational quality alone.
+Every actual learner block was read before individual authoring. Private source/schema/activity coverage and actual ContentBlocks insertion pass. All eight now pass original-key sealing and genuine hosted acceptance; educational review was performed by reading the material and considering classroom use, separately from technical checks.
 
 | Lesson | Individual instructional review | Provisional contacts |
 | --- | --- | ---: |
@@ -18,3 +18,5 @@ Every actual learner block was read before individual authoring. Private source/
 The actual renderer was inspected locally for four target tables: Lesson 5 has six editable item cells and fixed amount/total cells; Lesson 9 has six editable cells with fixed item labels; Lesson 11 has six PESTLE and ten five-forces textareas. No rows, prompts, controls or saved identities change. Genuine persistence, responsive use and complete printing remain acceptance checks.
 
 Fifteen focused editorial proposals remain separate and unapplied. WIPO’s official copyright scope/originality and patent key-requirement explanations support the IP distinction; no individual infringement, registration outcome, national term or current fee is certified. Attempted CIPC URLs returned an ERROR 404 page despite HTTP 200, so no current cooperative minimum is verified from them. Metaphors, pricing confidence and truthful branding retain their educational purpose rather than receiving corrective lectures after each paragraph.
+
+Genuine acceptance: 13 selected lessons / 814 exact fields / 129 navigator targets / 234 responsive cases. All 8 additions pass first-response edit/clear/reload/fresh-login persistence; 4 actual tables pass fresh-login persistence and restoration. Complete integrated/fallback PDF text retains 1628 fields with none missing. See RESULTS.json and the protected capture hashes. Educator trials remain pending.
