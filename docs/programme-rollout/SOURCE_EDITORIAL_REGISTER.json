@@ -1738,6 +1738,106 @@
       "proposedWording": "Sharing with family or classmates is optional. Authorised educators and institution administrators may review saved digital learning evidence within permissions; use suitable detail or an appropriate personally kept paper alternative.",
       "implementationImpact": "Separate owner-reviewed wording proposal only. No canonical source, activity, response control, field count or saved identity is changed now.",
       "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g10-t2-l17-017",
+      "blockId": "f3b35ff88b4c45763b2b975c-1",
+      "exactPassage": "Key idea: Myah's R800 is safe. The bank will not lose it. No one will steal it. But safety is not the same as growth. While her money sits in savings earning R1.50 a month, the price of everything she needs — bread, transport, airtime — is rising faster. She is not being robbed by a thief. She is being eroded by time. Saving protects the number. Investing protects the value. They are different tools for different purposes.",
+      "category": "Specific financial-safety overstatement",
+      "concern": "The bank will not lose it/no one will steal it claims imply unconditional safety. Savings arrangements, access, fraud and applicable protection conditions differ; a jar, stokvel and bank account are not equivalent guarantees.",
+      "proposedWording": "Saving can support safety and access, but risks and applicable protections depend on the arrangement. Do not treat any account or saving method as an unconditional guarantee.",
+      "implementationImpact": "Separate owner-reviewed source proposal only. No learner source, activity, field, response structure or saved identity changes now.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g10-t2-l17-017",
+      "blockId": "e4b452c25aab612a65f2d0e0-1",
+      "exactPassage": "Here’s the tension: investing requires risk. You cannot protect the value of your money without exposing it to the possibility of loss. The people who cannot tolerate any risk — who need their money to be there, exactly as it is, tomorrow — must accept the slow erosion of inflation. The people who want growth must accept the possibility of loss. There is no third option. The question is not whether you will take risk. The question is which risk you will take: the certain, slow loss of purchasing power through saving, or the uncertain but potentially rewarding path of investing. Not choosing is also a choice. It is choosing the first option by default.",
+      "category": "Material categorical overgeneralisation",
+      "concern": "The passage treats saving as certain real loss and investing as the only possible value protection. Real outcomes depend on interest/inflation, costs, tax, terms and investment results; accessible savings can serve essential needs.",
+      "proposedWording": "Compare purchasing power under the relevant assumptions. Saving may gain or lose real value; investment offers potential growth with loss risk. Purpose, access, time horizon and capacity matter.",
+      "implementationImpact": "Separate owner-reviewed source proposal only. No learner source, activity, field, response structure or saved identity changes now.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g10-t2-l17-017",
+      "blockId": "b8b98c08e9605f8270ddd382-1",
+      "exactPassage": "[[\"Goal\",\"Time Frame\",\"Recommended\"],[\"Emergency fund\",\"Now\",\"Save\"],[\"School fees next year\",\"1 year\",\"Save\"],[\"University in 3 years\",\"3 years\",\"Mostly save, some invest\"],[\"House deposit in 7 years\",\"7 years\",\"Invest\"],[\"Retirement\",\"40+ years\",\"Invest\"]]",
+      "category": "Missing suitability context",
+      "concern": "The fixed three-year/house-deposit recommendations are not enough for an individual financial decision. A time horizon alone does not establish acceptable risk or ability to lose essential funds.",
+      "proposedWording": "Treat these as time-horizon examples, not individual recommendations. Consider when money is needed, access, capacity for loss and appropriate current information before any actual decision.",
+      "implementationImpact": "Separate owner-reviewed source proposal only. No learner source, activity, field, response structure or saved identity changes now.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g10-t2-l17-017",
+      "blockId": "7a5938ff7756604687461a6c-1",
+      "exactPassage": "If inflation is 6% per year and your savings earn 2% interest, are you gaining or losing purchasing power? By how much per year? If your R800 sits in savings for 5 years at 2% interest while inflation is 6%, what can it buy then that it can buy now?",
+      "category": "Missing rate/real-return calculation conventions",
+      "concern": "The four-percentage-point spread approximates the annual purchasing-power loss; exact annual real change is1.02/1.06−1≈−3.77%. The five-year comparison needs repeated growth and a clear price-base interpretation.",
+      "proposedWording": "State the hypothetical assumptions and distinguish rate spread from exact real return. Over five years, R800 grows nominally to aboutR883.26 while its purchasing power is aboutR660.03 in today’s money under the given rates.",
+      "implementationImpact": "Separate wording/answer-rationale review. Preserve current prompt/answer identities and accept clearly labelled approximations; no rate or field changes now.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g10-t2-l17-017",
+      "blockId": "e5acd3d6093d1ac41f706b86-1",
+      "exactPassage": "[[\"Where It Is\",\"Amount\",\"What Is It For?\",\"When Do I Need It?\"],[\"\",\"R\",\"\",\"\"],[\"\",\"R\",\"\",\"\"],[\"\",\"R\",\"\",\"\"]]",
+      "category": "Renderer/source response-structure limitation",
+      "concern": "Amount cells contain fixedR text without their own input; the three rows provide nine textareas in other columns.",
+      "proposedWording": "Record an appropriate approximate amount alongside the existing description or ordinary working. Review any future explicit amount control separately.",
+      "implementationImpact": "Any added amount field is a separate consequential response-structure decision. Preserve current answer keys and records now.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g10-t2-l18-018",
+      "blockId": "688185dd69f910cbffa02aca-1",
+      "exactPassage": "Savings account → Government bonds → Property → Unit trusts → ETFs → Individual stocks → Starting a business → Cryptocurrency",
+      "category": "Material risk-category overgeneralisation",
+      "concern": "The fixed ladder ranks overlapping structures and assets as a universal risk/return order. ETFs and unit trusts can hold different asset classes; issuer, holdings, terms, concentration and other risks matter.",
+      "proposedWording": "Use examples to ask about underlying assets, terms and risks rather than assigning one universal order. Distinguish investment structure from what it holds and potential/expected return from outcome.",
+      "implementationImpact": "Separate owner-reviewed source proposal only. No learner source, activity, field, response structure or saved identity changes now.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g10-t2-l18-018",
+      "blockId": "c9c277dfb7b67aae6cbb9414-1",
+      "exactPassage": "Question 1: Why are risk and return locked together? Why can you not have high returns with low risk?",
+      "category": "Missing expected-versus-realised return context",
+      "concern": "Risk and return are framed as unconditionally locked together. Taking more risk does not guarantee realised reward, and not every additional risk earns a higher expected return.",
+      "proposedWording": "Explain the relationship between risk and potential or expected return. Higher risk does not guarantee a higher realised result; scrutinise promises of high returns with little risk.",
+      "implementationImpact": "Separate question-meaning/answer-rationale review. Preserve current questions, controls and saved identities now; no new learner activity.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g10-t2-l18-018",
+      "blockId": "20329522e667bc9e11399f34-1",
+      "exactPassage": "If you invested R500 and it dropped to R250, how would you feel? ☐ I would panic and sell immediately ☐ I would be uncomfortable but hold on ☐ I would see it as a buying opportunity ☐ I do not know — I have never been tested",
+      "category": "Missing limit of hypothetical risk assessment",
+      "concern": "A response to an imagined loss is a stated preference, not observation of tested behaviour or a validated measure of financial capacity. The existing do-not-know choice is useful.",
+      "proposedWording": "Use this as a reflective hypothetical. Distinguish feelings, possible behaviour and practical capacity to lose money; not knowing is valid and no real investment test is required.",
+      "implementationImpact": "Separate owner-reviewed source proposal only. No learner source, activity, field, response structure or saved identity changes now.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g10-t2-l20-020",
+      "blockId": "446658e3ccb44d84b35c55af-1",
+      "exactPassage": "[[\"Term\",\"Definition\",\"isiZulu\",\"Afrikaans\"],[\"Asset\",\"Something that puts money IN your pocket\",\"Impahla\",\"Bates\"],[\"Liability\",\"Something that takes money OUT of your pocket\",\"Isikweletu\",\"Las\"],[\"Depreciation\",\"When something loses value over time\",\"Ukwehla kwenani\",\"Waardevermindering\"],[\"Appreciation\",\"When something gains value over time\",\"Ukwenyuka kwenani\",\"Waardestydging\"]]",
+      "category": "Missing distinction for a legitimate personal-finance perspective",
+      "concern": "The money-in/money-out heuristic can be useful for cash-flow reflection but is not the formal accounting definition of an asset or liability. An owned car, its loan and running expenses need not receive the same accounting label.",
+      "proposedWording": "Label the cash-flow lens explicitly while distinguishing formal accounting: a controlled economic resource with potential benefit is an asset, a present obligation is a liability, and an expense is not automatically a liability. Retain the nonfinancial trade-off metaphor.",
+      "implementationImpact": "Separate owner-reviewed source proposal only. No learner source, activity, field, response structure or saved identity changes now.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g10-t2-l20-020",
+      "blockId": "736739a3f46100a35be5e449-1",
+      "exactPassage": "[[\"Item/Activity\",\"Asset or Liability?\",\"Monthly Financial Impact (+ or −)\"],[\"\",\"\",\"R\"],[\"\",\"\",\"R\"],[\"\",\"\",\"R\"],[\"\",\"\",\"R\"]]",
+      "category": "Renderer/source response-structure limitation",
+      "concern": "The four monthly-impact cells printR and provide no amount input; the other columns have eight textareas.",
+      "proposedWording": "Include the signed approximate amount in existing text or ordinary working. Separately review any future amount controls.",
+      "implementationImpact": "Any new amount field requires separate response-structure and saved-record review. No control or identity changes now.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
     }
   ],
   "retainedPerspectives": [

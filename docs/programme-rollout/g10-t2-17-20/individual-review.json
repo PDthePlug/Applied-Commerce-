@@ -1,0 +1,58 @@
+{
+  "status": "PRIVATE_DRAFTS_PENDING_SEALING_AND_GENUINE_VERIFICATION",
+  "sourceChangesApplied": false,
+  "preservedApprovedBenchmark": "g10-t2-l19-019",
+  "plans": [
+    {
+      "lessonId": "g10-t2-l17-017",
+      "sourceUnitSHA256": "175d51530b1d4cf1d3d3672edfc840210c5c51950276705980bfa6e9e652d2cf",
+      "planSHA256": "d8db4ed669335ecc9a85f70c14a0f8e82bedf65791fd5a35213a26af9eab521c",
+      "sourceBlocksRead": 51,
+      "sourceRead": true,
+      "individualDraft": true,
+      "schemaAndSourceBoundaryValidation": "PASS",
+      "activityBoundariesCovered": 6,
+      "fields": 43,
+      "periods": 2,
+      "timingRationale": "Two provisional 45-minute contacts protect work on two audits/classification and a nontrivial five-year inflation/compound comparison before Lesson19 formally develops compounding. First: story7, comparisons7, reflection3, audit14, classification12 and pause2. Second: return3, original calculation24, checkpoint13 and finish/save5. Current-rate research or the original willing-family alternative happens later; no financial transaction is required.",
+      "stageReview": "PENDING_ORIGINAL_KEY_SEALING_AND_HOSTED_RENDERING",
+      "complete": false,
+      "fieldCoverage": 43,
+      "actualRendererInsertions": "PASS"
+    },
+    {
+      "lessonId": "g10-t2-l18-018",
+      "sourceUnitSHA256": "98d505af44169ad6ac1cdc7659c33ba3a03f73093318d1dd127c87fa360119d2",
+      "planSHA256": "17ed9f31dbdd5cc3ee3f8a56200992a5da040c1c83a6cfc5ee83fbbdacffceec",
+      "sourceBlocksRead": 49,
+      "sourceRead": true,
+      "individualDraft": true,
+      "schemaAndSourceBoundaryValidation": "PASS",
+      "activityBoundariesCovered": 6,
+      "fields": 36,
+      "periods": 1,
+      "timingRationale": "One provisional 45-minute contact: story8, spectrum5, reflection3, financial response8, nonfinancial cost5, capacity question7, checkpoint7 and close2. The willing loss-story conversation or original research alternative happens later. This is a reflection, not a validated risk-profile assessment or instruction to trade.",
+      "stageReview": "PENDING_ORIGINAL_KEY_SEALING_AND_HOSTED_RENDERING",
+      "complete": false,
+      "fieldCoverage": 36,
+      "actualRendererInsertions": "PASS"
+    },
+    {
+      "lessonId": "g10-t2-l20-020",
+      "sourceUnitSHA256": "965176231f0bc5f19a078fc024f6e6373c0ee9a271dc3eaa2c4f0efdc2b60113",
+      "planSHA256": "869c1e760823e24cb0f09a3035ecd0d59b6687fca7383675315f75f5f1eb5e81",
+      "sourceBlocksRead": 51,
+      "sourceRead": true,
+      "individualDraft": true,
+      "schemaAndSourceBoundaryValidation": "PASS",
+      "activityBoundariesCovered": 6,
+      "fields": 36,
+      "periods": 1,
+      "timingRationale": "One provisional 45-minute contact: story8, asset/liability lens7, reflection3, financial audit8, nonfinancial audit6, decision5, checkpoint6 and close2. Later household discussion is willing and appropriate; no real sale, purchase, loan, employment decision or household record is required.",
+      "stageReview": "PENDING_ORIGINAL_KEY_SEALING_AND_HOSTED_RENDERING",
+      "complete": false,
+      "fieldCoverage": 36,
+      "actualRendererInsertions": "PASS"
+    }
+  ]
+}
