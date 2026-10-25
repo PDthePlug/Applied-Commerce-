@@ -1,5 +1,5 @@
 {
-  "status": "PRIVATE_DRAFTS_ONLY; NOT RELEASED OR COMPLETED",
+  "status": "FIVE_PRIVATE_DRAFTS_AND_TEN_SEALED_CANDIDATES; HOSTED_ACCEPTANCE_PENDING",
   "sourceChangesApplied": false,
   "plans": [
     {
@@ -14,7 +14,8 @@
       "activityBoundariesCovered": 6,
       "fields": 27,
       "periods": 1,
-      "complete": false
+      "complete": false,
+      "status": "SEALED_CANDIDATE_PENDING_GENUINE_ACCEPTANCE"
     },
     {
       "lessonId": "g9-t4-l56-046",
@@ -28,7 +29,8 @@
       "activityBoundariesCovered": 7,
       "fields": 29,
       "periods": 1,
-      "complete": false
+      "complete": false,
+      "status": "SEALED_CANDIDATE_PENDING_GENUINE_ACCEPTANCE"
     },
     {
       "lessonId": "g9-t4-l57-047",
@@ -42,7 +44,8 @@
       "activityBoundariesCovered": 5,
       "fields": 26,
       "periods": 1,
-      "complete": false
+      "complete": false,
+      "status": "SEALED_CANDIDATE_PENDING_GENUINE_ACCEPTANCE"
     },
     {
       "lessonId": "g9-t4-l58-048",
@@ -56,7 +59,8 @@
       "activityBoundariesCovered": 7,
       "fields": 37,
       "periods": 2,
-      "complete": false
+      "complete": false,
+      "status": "SEALED_CANDIDATE_PENDING_GENUINE_ACCEPTANCE"
     },
     {
       "lessonId": "g9-t4-l59-049",
@@ -70,7 +74,8 @@
       "activityBoundariesCovered": 3,
       "fields": 25,
       "periods": 1,
-      "complete": false
+      "complete": false,
+      "status": "SEALED_CANDIDATE_PENDING_GENUINE_ACCEPTANCE"
     },
     {
       "lessonId": "g9-t4-l60-050",
@@ -84,7 +89,8 @@
       "activityBoundariesCovered": 6,
       "fields": 28,
       "periods": 1,
-      "complete": false
+      "complete": false,
+      "status": "SEALED_CANDIDATE_PENDING_GENUINE_ACCEPTANCE"
     },
     {
       "lessonId": "g9-t4-l61-051",
@@ -98,7 +104,8 @@
       "activityBoundariesCovered": 6,
       "fields": 29,
       "periods": 1,
-      "complete": false
+      "complete": false,
+      "status": "SEALED_CANDIDATE_PENDING_GENUINE_ACCEPTANCE"
     },
     {
       "lessonId": "g9-t4-l62-052",
@@ -112,7 +119,8 @@
       "activityBoundariesCovered": 6,
       "fields": 28,
       "periods": 1,
-      "complete": false
+      "complete": false,
+      "status": "SEALED_CANDIDATE_PENDING_GENUINE_ACCEPTANCE"
     },
     {
       "lessonId": "g9-t4-l63-053",
@@ -126,7 +134,8 @@
       "activityBoundariesCovered": 5,
       "fields": 30,
       "periods": 1,
-      "complete": false
+      "complete": false,
+      "status": "SEALED_CANDIDATE_PENDING_GENUINE_ACCEPTANCE"
     },
     {
       "lessonId": "g9-t4-l64-054",
@@ -140,7 +149,8 @@
       "activityBoundariesCovered": 5,
       "fields": 27,
       "periods": 1,
-      "complete": false
+      "complete": false,
+      "status": "SEALED_CANDIDATE_PENDING_GENUINE_ACCEPTANCE"
     },
     {
       "lessonId": "g9-t4-l65-055",
@@ -154,7 +164,8 @@
       "activityBoundariesCovered": 7,
       "fields": 30,
       "periods": 1,
-      "complete": false
+      "complete": false,
+      "status": "PRIVATE_DRAFT"
     },
     {
       "lessonId": "g9-t4-l66-056",
@@ -168,7 +179,8 @@
       "activityBoundariesCovered": 4,
       "fields": 30,
       "periods": 2,
-      "complete": false
+      "complete": false,
+      "status": "PRIVATE_DRAFT"
     },
     {
       "lessonId": "g9-t4-l67-057",
@@ -182,7 +194,8 @@
       "activityBoundariesCovered": 5,
       "fields": 26,
       "periods": 1,
-      "complete": false
+      "complete": false,
+      "status": "PRIVATE_DRAFT"
     },
     {
       "lessonId": "g9-t4-l68-058",
@@ -196,7 +209,8 @@
       "activityBoundariesCovered": 7,
       "fields": 35,
       "periods": 2,
-      "complete": false
+      "complete": false,
+      "status": "PRIVATE_DRAFT"
     },
     {
       "lessonId": "g9-t4-l69-059",
@@ -210,14 +224,16 @@
       "activityBoundariesCovered": 2,
       "fields": 43,
       "periods": 4,
-      "complete": false
+      "complete": false,
+      "status": "PRIVATE_DRAFT"
     }
   ],
-  "privateDrafts": 15,
+  "privateDrafts": 5,
   "provisionalContacts": 21,
   "hostedVerification": "NOT RUN",
   "printing": "NOT RUN",
   "responsive": "NOT RUN",
   "timingTrials": "NOT RUN",
-  "storage": "Protected persistent workspace directory outside Git; no plaintext guides published"
+  "storage": "Protected persistent workspace directory outside Git; no plaintext guides published",
+  "stagedPendingVerification": 10
 }

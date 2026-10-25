@@ -6,4 +6,4 @@
 
 See [current report](REPORT.md), [coverage](coverage.json), [grade-and-term counts](grade-term.csv), and [exact batch results](g9-t3-35-54/RESULTS.json). The original key stays in staging; private guides, credentials and captures are protected outside Git.
 
-Fifteen Grade 9 Term 4 lessons (55–69) have individually reviewed private drafts and technical source/rendering checks. They remain unsealed and unreleased, are included in the remaining 258, and have no hosted acceptance. See [private-draft status](g9-t4-private-drafts/review-status.json).
+Ten Grade 9 Term 4 lessons (55–64) form a sealed 147-plan candidate preserving all 137 verified bindings; full hosted acceptance is pending. Five further lessons (65–69) remain private drafts. All fifteen remain within the uncompleted 258 until their own acceptance passes. See [private-draft status](g9-t4-private-drafts/review-status.json).

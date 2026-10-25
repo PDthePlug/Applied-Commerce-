@@ -29,11 +29,10 @@
   "rollout": {
     "existingPlans": 24,
     "newCompleted": 113,
-    "privateUnsealedDrafts": 15,
+    "privateUnsealedDrafts": 5,
     "uncompleted": 258,
-    "blocker": "New Grade 9 Term 4 candidate requires original-key staging release and its own full genuine acceptance; prior 137 remain verified.",
-    "stagedPendingVerification": 0,
-    "candidatePendingSealing": 10
+    "blocker": "Sealed 147-plan candidate requires normal staging build and full genuine acceptance; verified coverage remains 137.",
+    "stagedPendingVerification": 10
   },
   "pending": [
     "Remaining 258 individually reviewed guides",

@@ -63,4 +63,4 @@ The final sequential measurement made 105 authenticated requests, including 100 
 
 Natural original JWT expiry was genuinely demonstrated in [earlier expiry evidence](expiry-results.json). Configured maximum/inactivity limits, hosted cold-start/concurrency/server-memory measurements and educator timing trials remain pending. Continue the remaining 258 individual lessons in passing grade/term batches. Merging the follow-up and deploying to the separate live application require owner approval.
 
-Fifteen Grade 9 Term 4 lessons (55–69) have individually reviewed private drafts and technical source/rendering checks. They remain unsealed and unreleased, are included in the remaining 258, and have no hosted acceptance. See [private-draft status](g9-t4-private-drafts/review-status.json).
+Ten Grade 9 Term 4 lessons (55–64) form a sealed 147-plan candidate preserving all 137 verified bindings; full hosted acceptance is pending. Five further lessons (65–69) remain private drafts. All fifteen remain within the uncompleted 258 until their own acceptance passes. See [private-draft status](g9-t4-private-drafts/review-status.json).
