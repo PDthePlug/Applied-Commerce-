@@ -1,5 +1,5 @@
 {
-  "status": "PRIVATE_DRAFTS_PENDING_SEALING_AND_GENUINE_VERIFICATION",
+  "status": "COMPLETED_INDIVIDUAL_REVIEW_AND_GENUINE_STAGING",
   "sourceChangesApplied": false,
   "plans": [
     {
@@ -14,10 +14,12 @@
       "fields": 36,
       "periods": 1,
       "timingRationale": "One provisional 45-minute contact: story 6, factors/ranges 5, reflection 3, four-factor knowledge check 8, future 18 plan/risk 10, red line 4, checkpoint 7 and close 2. The later willing conversation or public-information research is separate; no account, credit application or report access is required.",
-      "stageReview": "PENDING_ORIGINAL_KEY_SEALING_AND_HOSTED_RENDERING",
-      "complete": false,
+      "stageReview": "PASS: genuine exact fields/controls, placement, navigator, Learner View, 18 responsive combinations and first-response persistence",
+      "complete": true,
       "fieldCoverage": 36,
-      "actualRendererInsertions": "PASS"
+      "actualRendererInsertions": "PASS",
+      "printing": "PASS: integrated/fallback fields, PDF text and A4 bounds",
+      "timingStatus": "PROVISIONAL; educator trials pending"
     },
     {
       "lessonId": "g10-t2-l26-026",
@@ -31,10 +33,12 @@
       "fields": 36,
       "periods": 1,
       "timingRationale": "One provisional 45-minute contact: story 6, comparison 5, reflection 3, four-goal match 10, hypothetical 5000allocation 10, mistake reflection 3, checkpoint 6 and close 2. Later research or the source’s conversation alternative remains separate. No actual allocation or account is opened.",
-      "stageReview": "PENDING_ORIGINAL_KEY_SEALING_AND_HOSTED_RENDERING",
-      "complete": false,
+      "stageReview": "PASS: genuine exact fields/controls, placement, navigator, Learner View, 18 responsive combinations and first-response persistence",
+      "complete": true,
       "fieldCoverage": 36,
-      "actualRendererInsertions": "PASS"
+      "actualRendererInsertions": "PASS",
+      "printing": "PASS: integrated/fallback fields, PDF text and A4 bounds",
+      "timingStatus": "PROVISIONAL; educator trials pending"
     },
     {
       "lessonId": "g10-t2-l27-027",
@@ -48,10 +52,12 @@
       "fields": 36,
       "periods": 1,
       "timingRationale": "One provisional 45-minute contact with a prepared calculator/worked-model scaffold: story 5, comparison 5, reflection 3, original fee calculation 16, one-sentence lesson 3, application 5, checkpoint 6 and close 2. The goal is the existing approximate fee comparison, not a new required annuity derivation. Actual calculator access, support needs and educator timing trials may require adjustment. Later fee research/conversation is separate.",
-      "stageReview": "PENDING_ORIGINAL_KEY_SEALING_AND_HOSTED_RENDERING",
-      "complete": false,
+      "stageReview": "PASS: genuine exact fields/controls, placement, navigator, Learner View, 18 responsive combinations and first-response persistence",
+      "complete": true,
       "fieldCoverage": 36,
-      "actualRendererInsertions": "PASS"
+      "actualRendererInsertions": "PASS",
+      "printing": "PASS: integrated/fallback fields, PDF text and A4 bounds",
+      "timingStatus": "PROVISIONAL; educator trials pending"
     },
     {
       "lessonId": "g10-t2-l28-028",
@@ -65,10 +71,13 @@
       "fields": 36,
       "periods": 1,
       "timingRationale": "One provisional 45-minute contact: story 8, table 5, reflection 3, original ratio 7, personal hypothetical plan 10, trade-off 4, checkpoint 6 and close 2. The later willing story or authored R1,000 hypothetical alternative remains separate. No actual spending, income diversion, course purchase or business operation is required.",
-      "stageReview": "PENDING_ORIGINAL_KEY_SEALING_AND_HOSTED_RENDERING",
-      "complete": false,
+      "stageReview": "PASS: genuine exact fields/controls, placement, navigator, Learner View, 18 responsive combinations and first-response persistence",
+      "complete": true,
       "fieldCoverage": 36,
-      "actualRendererInsertions": "PASS"
+      "actualRendererInsertions": "PASS",
+      "printing": "PASS: integrated/fallback fields, PDF text and A4 bounds",
+      "timingStatus": "PROVISIONAL; educator trials pending"
     }
-  ]
+  ],
+  "testedCommit": "0fec33cb34a11beef12049d78025caa247d1a1c0"
 }

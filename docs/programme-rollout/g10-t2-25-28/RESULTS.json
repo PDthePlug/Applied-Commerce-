@@ -1,0 +1,57 @@
+{
+  "projectRef": "inxshlumnhcgiahxqewe",
+  "totalPlans": 185,
+  "newCompletedAcrossRollout": 161,
+  "remaining": 210,
+  "testedCommit": "0fec33cb34a11beef12049d78025caa247d1a1c0",
+  "stagingURL": "https://applied-commerce-sa-staging-mnrlszig7.vercel.app",
+  "priorBindingsPreserved": 181,
+  "newPlans": 4,
+  "directClassroomPlans": 9,
+  "directFields": 722,
+  "navigatorTargets": 93,
+  "responsiveCombinations": 162,
+  "newFirstResponsePersistence": 4,
+  "renderedTablesVerified": 2,
+  "tableFreshLoginPersistence": 2,
+  "approved24Unchanged": true,
+  "integratedPDFs": 9,
+  "integratedPDFPages": 68,
+  "fallbacks": 9,
+  "fallbackPDFPages": 69,
+  "pdfTextFields": 1444,
+  "pdfMissing": 0,
+  "periodRegression": [
+    {
+      "lessonId": "g10-t2-l19-019",
+      "periodCount": 2
+    }
+  ],
+  "multiPeriodLessons": [],
+  "authRlsChecks": 37,
+  "nodeTests": 213,
+  "typecheck": "PASS",
+  "lint": "PASS",
+  "sourceChangesApplied": false,
+  "delivery": {
+    "requests": 25,
+    "newRequests": 20,
+    "newMedianMs": 844,
+    "rangeMs": [
+      632,
+      1080
+    ],
+    "decodedBytes": [
+      14102,
+      14961
+    ],
+    "coldProcess": "NOT DEMONSTRATED",
+    "hostedServerMemory": "NOT MEASURED"
+  },
+  "pending": [
+    "Remaining 210 guides to complete in verified staging; 8 have private individual drafts",
+    "Educator timing trials",
+    "Hosted cold-process/server-memory measurements",
+    "Configured maximum/inactivity session lifetime"
+  ]
+}

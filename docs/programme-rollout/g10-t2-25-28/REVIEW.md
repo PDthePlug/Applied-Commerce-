@@ -1,6 +1,6 @@
 # Grade 10 Term 2: Lessons 25–28
 
-Every actual learner block was read before individual authoring. Existing identities are checked before writing; private assembly preserves all 181 previous bindings. Source/schema/activity coverage and actual ContentBlocks insertion pass. These four are sealed under the original staging key; genuine hosted acceptance remains pending. All 181 previous bindings compare identical and the four private draft hashes match.
+Every actual learner block was read before individual authoring. Existing identities are checked before writing; private assembly preserves all 181 previous bindings. Source/schema/activity coverage and actual ContentBlocks insertion pass. These four pass original-key sealing and genuine hosted acceptance. All 181 previous bindings compare identical and the four private draft hashes match.
 
 | Lesson | Individual instructional review | Provisional contacts |
 | --- | --- | ---: |
@@ -14,3 +14,5 @@ Every actual learner block was read before individual authoring. Existing identi
 Actual local rendering confirms eight editable goal-match cells and eight allocation cells, with fixed amount text. No prompt splitting, field count, control or stable answer identity changes. Complete preparation, compact contextual cues, optional local depth, central navigation and full private printing/fallback remain.
 
 Eight separate source proposals address unnecessary-credit instruction, scoring bands, product/structure assumptions, fund management/TER scope, calculation conventions and the reinvestment claims. Dated NCR articles and selected fixed-rate RSA bond clauses were read with their limits; no comprehensive current law, bureau model, provider fee, tax limit or individual product advice is certified. Motivational and personal-development perspectives remain.
+
+Genuine acceptance: 9 selected lessons / 722 exact fields / 93 navigator targets / 162 responsive cases. All 4 additions pass first-response edit/clear/reload/fresh-login persistence; 2 actual tables pass fresh-login persistence and restoration. Complete integrated/fallback PDF text retains 1444 fields with none missing. See RESULTS.json and the protected capture hashes. Educator trials remain pending.
