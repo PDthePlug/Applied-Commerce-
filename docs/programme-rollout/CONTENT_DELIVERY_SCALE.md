@@ -1,6 +1,6 @@
 # Private content delivery: measured growth
 
-The original classroom key remains server-bound. Packaging and Supabase access are separate capabilities: genuine staging login demonstrates permissions, while guarded build-time sealing demonstrates that the original key opens and extends the existing encrypted release without export. Neither proves 395-plan performance. The 174-plan release passes its recorded hosted acceptance; that does not demonstrate the missing cold/server-memory measurements.
+The original classroom key remains server-bound. Packaging and Supabase access are separate capabilities: genuine staging login demonstrates permissions, while guarded build-time sealing demonstrates that the original key opens and extends the existing encrypted release without export. Neither proves 395-plan performance. The 177-plan release passes its recorded hosted acceptance; that does not demonstrate the missing cold/server-memory measurements.
 
 | Released/candidate plans | Ciphertext bytes | Hash/placement manifest bytes |
 | --- | ---: | ---: |
@@ -16,6 +16,7 @@ The original classroom key remains server-bound. Packaging and Supabase access a
 | 147 | 2,457,643 | 2,644,782 |
 | 158 | 2,624,607 | 2,828,350 |
 | 162 | 2,700,579 | 2,901,439 |
+| 177 | 2,983,283 | 3,173,491 |
 | 174 | 2,923,891 | 3,117,389 |
 | 170 | 2,844,515 | 3,043,000 |
 
@@ -50,3 +51,5 @@ At 162 plans, 25 genuine sequential requests include 20 to additions: median 800
 At 170 plans, 45 genuine sequential requests include 40 to additions: median 756.5ms, range 552–1216ms, 12560–16632 decoded bytes. Build RSS 297095168 bytes is not hosted runtime memory; 77 assets pass 8739 private sentinels plus key. Different content/conditions prevent a causal size/latency conclusion. Fresh authorisation remains required; hosted cold, concurrency and server-memory evidence is pending.
 
 At 174 plans, 25 genuine sequential requests include 20 to additions: median 777.5ms, range 581–1044ms, 13859–16831 decoded bytes. Build RSS 300613632 bytes is not hosted runtime memory; 77 assets pass 8951 private sentinels plus key. Different content/conditions prevent a causal size/latency conclusion. Fresh authorisation remains required; hosted cold, concurrency and server-memory evidence is pending.
+
+At 177 plans, 20 genuine sequential requests include 15 to additions: median 746ms, range 599–953ms, 14014–16913 decoded bytes. Build RSS 293978112 bytes is not hosted runtime memory; 77 assets pass 9107 private sentinels plus key. Different content/conditions prevent a causal size/latency conclusion. Fresh authorisation remains required; hosted cold, concurrency and server-memory evidence is pending.

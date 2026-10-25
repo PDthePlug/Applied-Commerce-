@@ -1,5 +1,5 @@
 {
-  "status": "PRIVATE_DRAFTS_PENDING_SEALING_AND_GENUINE_VERIFICATION",
+  "status": "COMPLETED_INDIVIDUAL_REVIEW_AND_GENUINE_STAGING",
   "sourceChangesApplied": false,
   "preservedApprovedBenchmark": "g10-t2-l19-019",
   "plans": [
@@ -15,10 +15,12 @@
       "fields": 43,
       "periods": 2,
       "timingRationale": "Two provisional 45-minute contacts protect work on two audits/classification and a nontrivial five-year inflation/compound comparison before Lesson19 formally develops compounding. First: story7, comparisons7, reflection3, audit14, classification12 and pause2. Second: return3, original calculation24, checkpoint13 and finish/save5. Current-rate research or the original willing-family alternative happens later; no financial transaction is required.",
-      "stageReview": "PENDING_ORIGINAL_KEY_SEALING_AND_HOSTED_RENDERING",
-      "complete": false,
+      "stageReview": "PASS: genuine exact fields/controls, placement, navigator, Learner View, 18 responsive combinations and first-response persistence",
+      "complete": true,
       "fieldCoverage": 43,
-      "actualRendererInsertions": "PASS"
+      "actualRendererInsertions": "PASS",
+      "printing": "PASS: integrated/fallback fields, PDF text and A4 bounds",
+      "timingStatus": "PROVISIONAL; educator trials pending"
     },
     {
       "lessonId": "g10-t2-l18-018",
@@ -32,10 +34,12 @@
       "fields": 36,
       "periods": 1,
       "timingRationale": "One provisional 45-minute contact: story8, spectrum5, reflection3, financial response8, nonfinancial cost5, capacity question7, checkpoint7 and close2. The willing loss-story conversation or original research alternative happens later. This is a reflection, not a validated risk-profile assessment or instruction to trade.",
-      "stageReview": "PENDING_ORIGINAL_KEY_SEALING_AND_HOSTED_RENDERING",
-      "complete": false,
+      "stageReview": "PASS: genuine exact fields/controls, placement, navigator, Learner View, 18 responsive combinations and first-response persistence",
+      "complete": true,
       "fieldCoverage": 36,
-      "actualRendererInsertions": "PASS"
+      "actualRendererInsertions": "PASS",
+      "printing": "PASS: integrated/fallback fields, PDF text and A4 bounds",
+      "timingStatus": "PROVISIONAL; educator trials pending"
     },
     {
       "lessonId": "g10-t2-l20-020",
@@ -49,10 +53,13 @@
       "fields": 36,
       "periods": 1,
       "timingRationale": "One provisional 45-minute contact: story8, asset/liability lens7, reflection3, financial audit8, nonfinancial audit6, decision5, checkpoint6 and close2. Later household discussion is willing and appropriate; no real sale, purchase, loan, employment decision or household record is required.",
-      "stageReview": "PENDING_ORIGINAL_KEY_SEALING_AND_HOSTED_RENDERING",
-      "complete": false,
+      "stageReview": "PASS: genuine exact fields/controls, placement, navigator, Learner View, 18 responsive combinations and first-response persistence",
+      "complete": true,
       "fieldCoverage": 36,
-      "actualRendererInsertions": "PASS"
+      "actualRendererInsertions": "PASS",
+      "printing": "PASS: integrated/fallback fields, PDF text and A4 bounds",
+      "timingStatus": "PROVISIONAL; educator trials pending"
     }
-  ]
+  ],
+  "testedCommit": "1cb3a1fcfe999e156bcff9381f52cf62eebcca82"
 }
