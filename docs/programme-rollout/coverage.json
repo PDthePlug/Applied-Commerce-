@@ -4741,7 +4741,19 @@
       "issues": [
         "Original-key staging release and genuine acceptance pending"
       ],
-      "timingStatus": "PROVISIONAL; educator trials pending"
+      "timingStatus": "PROVISIONAL; educator trials pending",
+      "editorialReview": {
+        "status": "SEPARATE_UNAPPLIED_PROPOSALS_REQUIRE_REVIEW",
+        "proposals": [
+          {
+            "register": "docs/programme-rollout/SOURCE_EDITORIAL_REGISTER.json",
+            "entry": 178,
+            "blockId": "4ba50c15b1f34ef95b9cc4a8-1",
+            "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+          }
+        ],
+        "withdrawn": []
+      }
     },
     {
       "lessonId": "g10-t2-l23-023",
@@ -4759,7 +4771,37 @@
       "issues": [
         "Original-key staging release and genuine acceptance pending"
       ],
-      "timingStatus": "PROVISIONAL; educator trials pending"
+      "timingStatus": "PROVISIONAL; educator trials pending",
+      "editorialReview": {
+        "status": "SEPARATE_UNAPPLIED_PROPOSALS_REQUIRE_REVIEW",
+        "proposals": [
+          {
+            "register": "docs/programme-rollout/SOURCE_EDITORIAL_REGISTER.json",
+            "entry": 179,
+            "blockId": "c1e029b1ef354d181c56718c-1",
+            "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+          },
+          {
+            "register": "docs/programme-rollout/SOURCE_EDITORIAL_REGISTER.json",
+            "entry": 180,
+            "blockId": "fb1b3c2224cd334efecfa8ef-1",
+            "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+          },
+          {
+            "register": "docs/programme-rollout/SOURCE_EDITORIAL_REGISTER.json",
+            "entry": 181,
+            "blockId": "894918a79faa9d9288cd2db4-1",
+            "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+          },
+          {
+            "register": "docs/programme-rollout/SOURCE_EDITORIAL_REGISTER.json",
+            "entry": 182,
+            "blockId": "3a71b0d9a3544a7d82a65ff2-1",
+            "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+          }
+        ],
+        "withdrawn": []
+      }
     },
     {
       "lessonId": "g10-t2-l24-024",
@@ -4775,9 +4817,34 @@
       "printing": "NOT RUN",
       "responsive": "NOT RUN",
       "issues": [
-        "Original-key staging release and genuine acceptance pending"
+        "Private draft; sealing and genuine acceptance pending",
+        "Material canonical payoff errors remain; separate owner-reviewed source/answer correction required"
       ],
-      "timingStatus": "PROVISIONAL; educator trials pending"
+      "timingStatus": "PROVISIONAL; educator trials pending",
+      "editorialReview": {
+        "status": "SEPARATE_UNAPPLIED_PROPOSALS_REQUIRE_REVIEW",
+        "proposals": [
+          {
+            "register": "docs/programme-rollout/SOURCE_EDITORIAL_REGISTER.json",
+            "entry": 183,
+            "blockId": "5da46f98b27115d2fbd3f2a0-1",
+            "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+          },
+          {
+            "register": "docs/programme-rollout/SOURCE_EDITORIAL_REGISTER.json",
+            "entry": 184,
+            "blockId": "71fb0eda24981db1cd130168-1",
+            "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+          },
+          {
+            "register": "docs/programme-rollout/SOURCE_EDITORIAL_REGISTER.json",
+            "entry": 185,
+            "blockId": "57a423c4d83738c79468491e-1",
+            "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+          }
+        ],
+        "withdrawn": []
+      }
     },
     {
       "lessonId": "g10-t2-l25-025",
