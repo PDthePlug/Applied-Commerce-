@@ -1,5 +1,5 @@
 {
-  "scope": "Individually read Grade 8 Terms 2–4, Grade 9 Terms 1–3; separate unapplied proposals",
+  "scope": "Separate source review for expanded Grade 8–12 rollout; current reviewed additions include Grade 9 Term 4 Lessons 55–64",
   "sourceChangesApplied": false,
   "entries": [
     {
@@ -1176,6 +1176,136 @@
       "proposedWording": "Lesson 40: A customer leaves. Skills, relationships and external resources help recovery.",
       "implementationImpact": "Separate targeted recap correction; no lesson/block identity changed. The teacher cue refers to the actual lost-customer story.",
       "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g9-t4-l55-045",
+      "blockId": "2eea84dc60bec7ce0f350166-1",
+      "exactPassage": "[[\"Subject\",\"CAPS Topic\",\"CAPS Code\",\"Specific Competency\"],[\"LO\",\"Self-Awareness\",\"LO-G9-T3-21\",\"Reviewing learning across the year\"],[\"EMS\",\"Integration\",\"EMS-G9-T3-21\",\"bringing together learning across economic concepts\"],[\"Bus Stud\",\"Integration\",\"BS-G9-T3-21\",\"bringing together learning across business concepts\"]]",
+      "category": "Claims requiring current external verification",
+      "concern": "This Term 4 lesson displays Term 3 CAPS-code labels. Similar labels recur in Lessons 56–58. These mappings have not been verified against official current guidance.",
+      "proposedWording": "Verify the grade, term, topic and competence mapping against official applicable CAPS documentation. Label author-derived codes as internal mappings rather than imply official codes.",
+      "implementationImpact": "Separate owner-reviewed source proposal only; no canonical wording, response field, source identity or saved answer changes in this rollout.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g9-t4-l57-047",
+      "blockId": "490b6d9b7e7b3abcba213723-1",
+      "exactPassage": "Profit + Impact = Double Bottom Line Purpose Serves Profit, Not the Other Way Around",
+      "category": "Material internal contradiction",
+      "concern": "The equation says purpose serves profit; the story explicitly says profit serves purpose.",
+      "proposedWording": "Profit + Impact = Double Bottom Line. Financial sustainability supports the social purpose.",
+      "implementationImpact": "Separate owner-reviewed source proposal only; no canonical wording, response field, source identity or saved answer changes in this rollout.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g9-t4-l57-047",
+      "blockId": "00c22878a73621f39bc743fe-1",
+      "exactPassage": "[[\"\",\"Regular Business\",\"Social Enterprise\"],[\"Main goal\",\"Make profit\",\"Create social impact\"],[\"Profit used for\",\"Owners, growth, shareholders\",\"Mission, community, sustainability\"],[\"Success measured by\",\"Money earned\",\"Lives changed, problems solved\"],[\"Examples\",\"Spaza shop, car wash, factory\",\"Community kitchen, stokvel that funds education, youth skills programme\"]]",
+      "category": "Missing contextual explanation",
+      "concern": "The two-column comparison presents ordinary businesses as exclusively profit-driven and social-enterprise impact and resource models as uniform. The learner needs a useful working distinction without treating all cases as identical.",
+      "proposedWording": "This is a simplified comparison of priorities. Ordinary businesses can have social aims too; social enterprises pursue a social purpose and need a viable resource model. Examine each example’s actual purpose and funding.",
+      "implementationImpact": "Separate owner-reviewed source proposal only; no canonical wording, response field, source identity or saved answer changes in this rollout.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g9-t4-l58-048",
+      "blockId": "7aee6c774c152b121098e1cc-1",
+      "exactPassage": "[[\"Step\",\"Question\",\"Action\"],[\"1. The Asset Audit\",\"What do I already own or control?\",\"List: Your hands, skills, tools, space, relationships, knowledge\"],[\"2. The Immediate Need\",\"What problem can I solve today?\",\"Not \\\"climate change.\\\" But: \\\"People are hungry at the taxi rank.\\\" \\\"Elders cannot carry parcels.\\\" \\\"Phones need charging.\\\"\"],[\"3. The Zero-Cost Prototype\",\"How can I test with zero money?\",\"Offer the service to one person for feedback, not cash. Use borrowed tools. Use what you already have.\"],[\"4. The First Rand\",\"What is the smallest unit of sale?\",\"A single vetkoek. A 15-minute tutoring session. A delivery of one parcel. A repair of one appliance.\"],[\"5. The Survival Loop\",\"How do I turn that first rand into tomorrow's stock?\",\"The 50% Rule: Reinvest half of everything you earn. Never eat your seed capital.\"]]",
+      "category": "Specific safety concern",
+      "concern": "The zero-cost first-sale framework includes appliance repair for minors without a competence or safe-scope qualification.",
+      "proposedWording": "Use an age-appropriate, school-approved low-risk service with the necessary consent and supervision. Electrical appliance repair is not an independent learner project task.",
+      "implementationImpact": "Separate owner-reviewed source proposal only; no canonical wording, response field, source identity or saved answer changes in this rollout.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g9-t4-l58-048",
+      "blockId": "7aee6c774c152b121098e1cc-1",
+      "exactPassage": "[[\"Step\",\"Question\",\"Action\"],[\"1. The Asset Audit\",\"What do I already own or control?\",\"List: Your hands, skills, tools, space, relationships, knowledge\"],[\"2. The Immediate Need\",\"What problem can I solve today?\",\"Not \\\"climate change.\\\" But: \\\"People are hungry at the taxi rank.\\\" \\\"Elders cannot carry parcels.\\\" \\\"Phones need charging.\\\"\"],[\"3. The Zero-Cost Prototype\",\"How can I test with zero money?\",\"Offer the service to one person for feedback, not cash. Use borrowed tools. Use what you already have.\"],[\"4. The First Rand\",\"What is the smallest unit of sale?\",\"A single vetkoek. A 15-minute tutoring session. A delivery of one parcel. A repair of one appliance.\"],[\"5. The Survival Loop\",\"How do I turn that first rand into tomorrow's stock?\",\"The 50% Rule: Reinvest half of everything you earn. Never eat your seed capital.\"]]",
+      "category": "Material financial overgeneralisation",
+      "concern": "Reinvesting half of everything earned does not distinguish revenue, costs, obligations and safely available surplus. It is not a universal budgeting rule.",
+      "proposedWording": "Calculate costs and agreed obligations first. Decide what surplus can safely be reinvested using the project budget and actual needs; do not treat one percentage as a universal rule.",
+      "implementationImpact": "Separate consequential meaning review: the existing R50 split prompt also uses the rule. Any later wording/response-meaning decision needs explicit review and stable saved-work handling. No prompt or answer structure changes now.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g9-t4-l59-049",
+      "blockId": "e4be5156f2d819c84959999a-1",
+      "exactPassage": "Myah writes it all down. Four customers. And something else — something she had not planned for. Reading letters. Helping with clinic visits. Reading bills. The need is bigger than parcels. The need is presence. The need is being seen.",
+      "category": "Missing contextual explanation",
+      "concern": "One person’s statement about neighbours is recorded as four customers although the neighbours’ demand, consent and willingness to pay are unconfirmed.",
+      "proposedWording": "Myah notes one person’s expressed interest and three possible contacts. She still needs each person’s consent and their own account before treating them as customers.",
+      "implementationImpact": "Separate owner-reviewed source proposal only; no canonical wording, response field, source identity or saved answer changes in this rollout.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g9-t4-l59-049",
+      "blockId": "5eca420d7999cce3c8fa086e-1",
+      "exactPassage": "If you cannot talk to anyone this week: Write a letter to yourself from the perspective of someone who needs help. What would they say? What would they ask for? What would they be afraid to ask for?",
+      "category": "Missing contextual explanation",
+      "concern": "The imagined letter is a useful perspective exercise but cannot establish actual interview testimony or validate community demand; the later generic log wording could imply that a conversation occurred.",
+      "proposedWording": "If a conversation is not possible, write the perspective letter and label it imagined. Use it to prepare questions; do not describe it as an interview or evidence that actual people need the service.",
+      "implementationImpact": "Separate owner-reviewed source proposal only; no canonical wording, response field, source identity or saved answer changes in this rollout.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g9-t4-l60-050",
+      "blockId": "48038b2a9519b01e391a38d3-1",
+      "exactPassage": "Project: Elder Delivery and Visit Service (Expanded) Need: Elders in my route need parcels delivered AND someone to check on them. Solution: Weekly deliveries plus a 10-minute wellness check. R20 per delivery — R5 more than before, because the visit adds value. Free for those who genuinely cannot pay. Beneficiaries: Mrs. Nkosi, Mrs. Dube, Mrs. Moloi, Mrs. September. Start with four. Grow slowly. Resources needed: My bike (already have). Airtime for communication. A simple checklist for each visit — medication taken? Food in the house? Anything broken? Anyone to contact? Who can help: Myah (partnering on visits). Mr. Daniels (bike repairs). Emmanuel (discounted supplies for elders). Steps:",
+      "category": "Specific safety concern",
+      "concern": "The visit checklist includes medication and household checks that could be copied as unsupervised health-assessment work by minors.",
+      "proposedWording": "Keep any learner project within approved competence, consent and supervision. Learners should not assess medication use or inspect private health information; refer such needs to an appropriate responsible adult or professional.",
+      "implementationImpact": "Separate owner-reviewed source proposal only; no canonical wording, response field, source identity or saved answer changes in this rollout.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g9-t4-l60-050",
+      "blockId": "82ac70b424a961a440c62979-1",
+      "exactPassage": "[[\"Element\",\"My Plan\"],[\"Problem I am addressing\",\"\"],[\"My solution\",\"\"],[\"Who will benefit\",\"\"],[\"What success looks like (specific, measurable)\",\"\"],[\"Resources I need\",\"\"],[\"People who can help\",\"\"],[\"Steps (in order)\",\"1. 2. 3. 4. 5.\"],[\"Timeline (what by when)\",\"\"]]",
+      "category": "Response-structure gap verified against actual renderer",
+      "concern": "The design table has seven editable cells, but its Steps cell contains printed numbering and no response control. This is not a header-only generated-row case.",
+      "proposedWording": "Review an appropriate way to record the original ordered steps while preserving existing responses. Ordinary written working supports the task until a separate response-structure decision.",
+      "implementationImpact": "Local actual ContentBlocks review verifies the printed Steps cell has zero controls. No field is added during the teacher rollout; any later response-structure change requires reviewed identity preservation.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g9-t4-l61-051",
+      "blockId": "dce57e6213606d013450ef18-1",
+      "exactPassage": "They decide to print five copies first. Cost: R68. They will take pre-orders — ask five families to pay R30 each before the books are made. If all five say yes, the project funds itself. If only three say yes, they print three copies. No debt. No risk.",
+      "category": "Material financial inaccuracy",
+      "concern": "Prepayment can reduce cash required but does not eliminate delivery, refund, price or cost risk. The source’s No risk claim is absolute.",
+      "proposedWording": "Pre-orders may reduce the cash needed before production, but the learner must still plan costs and meet delivery or refund obligations.",
+      "implementationImpact": "Separate owner-reviewed source proposal only; no canonical wording, response field, source identity or saved answer changes in this rollout.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g9-t4-l61-051",
+      "blockId": "dce57e6213606d013450ef18-1",
+      "exactPassage": "They decide to print five copies first. Cost: R68. They will take pre-orders — ask five families to pay R30 each before the books are made. If all five say yes, the project funds itself. If only three say yes, they print three copies. No debt. No risk.",
+      "category": "Missing contextual explanation",
+      "concern": "The R68 smaller print-run cost is approximately one third of R205. It assumes proportional costs rather than a verified price; real runs can include fixed costs.",
+      "proposedWording": "For illustration, one third of R205 is about R68.33. Check a current quote for the smaller run because costs may not scale proportionally.",
+      "implementationImpact": "Separate owner-reviewed source proposal only; no canonical wording, response field, source identity or saved answer changes in this rollout.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g9-t4-l61-051",
+      "blockId": "ba72bf9a8d99645dbcfe7040-1",
+      "exactPassage": "[[\"Item\",\"Estimated Cost (R)\"],[\"Total\",\"R\"]]",
+      "category": "Response-structure gap verified against actual renderer",
+      "concern": "The activity budget has only a printed Total/R body row and zero editable controls. Unlike a header-only table, it does not generate item rows.",
+      "proposedWording": "Review an item-and-cost budget space with appropriate total handling. Use ordinary written working for the existing task until a separately approved response-structure change.",
+      "implementationImpact": "Local actual ContentBlocks review verifies zero controls. No rows, prompts or answer identities are added now; any later structure change needs reviewed saved-work preservation.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g9-t4-l64-054",
+      "blockId": "b7dc9329c3ce214c2510c8d1-1",
+      "exactPassage": "If you are behind: is it because of situation beyond your control, or because you are avoiding something? Be honest. No one reads this but you.",
+      "category": "Misleading visibility statement",
+      "concern": "No one reads this but you is inaccurate for digital saved learning evidence, which authorised educators and institution administrators can review within their permissions.",
+      "proposedWording": "This is personal reflection. You do not need to read it to classmates. Authorised educators and institution administrators may review saved learning evidence within their permissions.",
+      "implementationImpact": "Separate owner-reviewed source proposal only; no canonical wording, response field, source identity or saved answer changes in this rollout.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
     }
   ],
   "retainedPerspectives": [
@@ -1253,8 +1383,8 @@
   "auditCorrection": {
     "at": "2026-10-24",
     "withdrawn": 6,
-    "activeProposals": 106,
-    "totalHistoricalEntries": 112,
+    "activeProposals": 119,
+    "totalHistoricalEntries": 125,
     "sourceChangesApplied": false
   }
 }

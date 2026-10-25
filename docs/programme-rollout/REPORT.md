@@ -57,7 +57,7 @@ Current coding configuration exposes VERCEL_TOKEN and SUPABASE_SECRET_KEY. Guard
 
 Authorised assigned educators and institution administrators can review saved evidence within their permissions. Personal answers need not be read to classmates; saved rows are not protected by a separate submission flag. Misleading source visibility statements remain separate editorial proposals, with relevant local guidance.
 
-The rollout register contains 112 historical entries: 106 active separate proposals and six withdrawn table claims. The earlier staging register includes the explicitly corrected Grade 12 table entry. None is applied to learner source. Exact quoted passages and block identities are technical evidence, not approval of a proposed concern. Metaphors remain where legitimate.
+The rollout register contains 125 historical entries: 119 active separate proposals and six withdrawn table claims. Thirteen proposals concern the unreleased Grade 9 Term 4 candidate. The earlier staging register includes the explicitly corrected Grade 12 table entry. None is applied to learner source. Exact quoted passages and block identities are technical evidence, not approval of a proposed concern. Metaphors remain where legitimate.
 
 The final sequential measurement made 105 authenticated requests, including 100 to additions: median 592.5ms, range 513–998ms; selected responses 8933–18586 decoded bytes through the coding proxy. Responses remain private/no-store. Every selected-plan request still opens/validates the entire release after fresh server authorisation. These samples do not establish a guaranteed cold process, cache hits, hosted memory or 395-plan suitability. See [delivery recommendations](CONTENT_DELIVERY_SCALE.md).
 
