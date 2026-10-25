@@ -28,51 +28,57 @@
   },
   "rollout": {
     "existingPlans": 24,
-    "newCompleted": 93,
-    "privateUnsealedDrafts": 0,
-    "uncompleted": 278,
-    "blocker": "Candidate137 software checks passed; fifteen teacher-reference corrections in seven plans require original-key sealing and genuine staging retest before instructional acceptance.",
-    "stagedPendingVerification": 20
+    "newCompleted": 113,
+    "privateUnsealedDrafts": 15,
+    "uncompleted": 258,
+    "blocker": null
   },
   "pending": [
-    "Remaining 278 individually reviewed guides",
+    "Remaining 258 individually reviewed guides",
     "Educator timing trials",
     "Hosted cold-process/server-memory measurements",
-    "Configured maximum/inactivity session lifetime",
-    "Separate source review of presentation guideline/outline timing inconsistency"
+    "Configured maximum/inactivity session lifetime"
   ],
   "latestBatch": {
     "projectRef": "inxshlumnhcgiahxqewe",
-    "totalPlans": 117,
-    "newCompletedAcrossRollout": 93,
-    "remaining": 278,
-    "testedCommit": "687ab7c41ddbb076a6d7d39aa8baf0a5ff1d71a7",
-    "stagingURL": "https://applied-commerce-sa-staging-dl2cjdjzb.vercel.app",
-    "priorBindingsPreserved": 108,
-    "newPlans": 9,
-    "directClassroomPlans": 14,
-    "directFields": 809,
-    "navigatorTargets": 129,
-    "responsiveCombinations": 252,
-    "newFirstResponsePersistence": 9,
-    "integratedPDFs": 14,
-    "integratedPDFPages": 78,
-    "fallbacks": 14,
-    "fallbackPDFPages": 80,
-    "pdfTextFields": 1618,
+    "totalPlans": 137,
+    "newCompletedAcrossRollout": 113,
+    "remaining": 258,
+    "testedCommit": "7751ac35ec5b4be13d15ae1051ea9095f018f715",
+    "stagingURL": "https://applied-commerce-sa-staging-lim9942my.vercel.app",
+    "priorBindingsPreserved": 113,
+    "earlierPlanFieldCorrections": 4,
+    "newPlanFieldCorrections": 3,
+    "totalTeacherFieldsCorrected": 15,
+    "unchangedPlansWithin137": 130,
+    "approved24Unchanged": true,
+    "renderedTablesVerified": 9,
+    "tableFreshLoginPersistence": 8,
+    "newPlans": 20,
+    "directClassroomPlans": 29,
+    "directFields": 1256,
+    "navigatorTargets": 263,
+    "responsiveCombinations": 522,
+    "newFirstResponsePersistence": 24,
+    "newGuideFirstResponsePersistence": 20,
+    "integratedPDFs": 29,
+    "integratedPDFPages": 125,
+    "fallbacks": 29,
+    "fallbackPDFPages": 128,
+    "pdfTextFields": 2512,
     "pdfMissing": 0,
     "multiPeriodLessons": [
       {
-        "lessonId": "g9-t2-l29-030",
+        "lessonId": "g9-t3-l38-027",
         "periodCount": 2
       },
       {
-        "lessonId": "g9-t2-l30-031",
-        "periodCount": 9
+        "lessonId": "g9-t3-l53-042",
+        "periodCount": 2
       },
       {
-        "lessonId": "g9-t2-l33-034",
-        "periodCount": 2
+        "lessonId": "g9-t3-l54-043",
+        "periodCount": 3
       }
     ],
     "authRlsChecks": 37,
@@ -81,26 +87,25 @@
     "lint": "PASS",
     "sourceChangesApplied": false,
     "delivery": {
-      "requests": 50,
-      "newRequests": 45,
-      "newMedianMs": 670,
+      "requests": 105,
+      "newRequests": 100,
+      "newMedianMs": 592.5,
       "rangeMs": [
-        531,
-        1040
+        513,
+        998
       ],
       "decodedBytes": [
-        9307,
-        18404
+        8933,
+        18586
       ],
       "coldProcess": "NOT DEMONSTRATED",
       "hostedServerMemory": "NOT MEASURED"
     },
     "pending": [
-      "Remaining 278 individually reviewed guides",
+      "Remaining 258 individually reviewed guides",
       "Educator timing trials",
       "Hosted cold-process/server-memory measurements",
-      "Configured maximum/inactivity session lifetime",
-      "Separate source review of presentation guideline/outline timing inconsistency"
+      "Configured maximum/inactivity session lifetime"
     ]
   }
 }

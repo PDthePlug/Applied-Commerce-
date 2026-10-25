@@ -1,7 +1,9 @@
 # Programme rollout from PR #48
 
-**117 of 395 plans are available in verified staging; 278 remain.** All 80 Grade 8 lessons and all 34 Grade 9 Terms 1–2 lessons are complete. New content requires owner classroom review and educator timing trials.
+**137 of 395 lessons have individually reviewed support in verified staging; 258 remain.** Grade 8 is complete and Grade 9 Terms 1–3 are complete. New content still needs owner classroom review and educator timing trials.
 
-Latest [PR #59](https://github.com/PDthePlug/Applied-Commerce-/pull/59) remains open and unmerged. [REPORT.md](REPORT.md), [coverage.json](coverage.json), [grade-term.csv](grade-term.csv) and [batch evidence](g9-t2-26-34/RESULTS.json) record exact scope, provisional contact periods and limitations.
+[PR #62](https://github.com/PDthePlug/Applied-Commerce-/pull/62) follows up the owner-merged initial PR #61 candidate with title reflow, accurate references to existing workbook tables and complete genuine verification. The agent did not merge either PR or deploy to the separate live application.
 
-The original key stays in staging; private drafts, sessions and captures remain protected outside Git. Source proposals are separate and unapplied. No merge, separate live deployment, migration or Zimbabwe change is included.
+See [current report](REPORT.md), [coverage](coverage.json), [grade-and-term counts](grade-term.csv), and [exact batch results](g9-t3-35-54/RESULTS.json). The original key stays in staging; private guides, credentials and captures are protected outside Git.
+
+Fifteen Grade 9 Term 4 lessons (55–69) have individually reviewed private drafts and technical source/rendering checks. They remain unsealed and unreleased, are included in the remaining 258, and have no hosted acceptance. See [private-draft status](g9-t4-private-drafts/review-status.json).

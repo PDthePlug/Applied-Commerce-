@@ -1,5 +1,5 @@
 {
-  "status": "PRIVATE_DRAFTS_PENDING_SEALING_AND_GENUINE_VERIFICATION",
+  "status": "COMPLETED_INDIVIDUAL_REVIEW_AND_GENUINE_STAGING",
   "sourceChangesApplied": false,
   "plans": [
     {
@@ -14,10 +14,12 @@
       "fields": 30,
       "periods": 1,
       "timingRationale": "One provisional contact: 7 minutes story/recall, 3 reflection, 11 loop, 7 identity audit, 6 smallest change, 5 existing identity check, 4 checkpoint/deeper reading and 2 close. Three days of noticing occur later; no extra tracker or response field is added.",
-      "stageReview": "PENDING_ORIGINAL_KEY_SEALING_AND_HOSTED_RENDERING",
-      "complete": false,
+      "stageReview": "PASS: genuine exact fields/controls, placement, navigator, Learner View, 18 responsive combinations and first-response persistence",
+      "complete": true,
       "fieldCoverage": 30,
-      "actualRendererInsertions": "PASS"
+      "actualRendererInsertions": "PASS",
+      "printing": "PASS: integrated/fallback fields, PDF text and A4 bounds",
+      "timingStatus": "PROVISIONAL; educator trials pending"
     },
     {
       "lessonId": "g9-t3-l36-025",
@@ -31,10 +33,12 @@
       "fields": 28,
       "periods": 1,
       "timingRationale": "One provisional contact: 7 minutes story/examples, 3 reflection, 10 habit choice, 12 calculation, 4 identity response, 7 checkpoint/deeper reading and 2 close. The original seven-day record occurs later, with no invented completion or automatic-habit claim.",
-      "stageReview": "PENDING_ORIGINAL_KEY_SEALING_AND_HOSTED_RENDERING",
-      "complete": false,
+      "stageReview": "PASS: genuine exact fields/controls, placement, navigator, Learner View, 18 responsive combinations and first-response persistence",
+      "complete": true,
       "fieldCoverage": 28,
-      "actualRendererInsertions": "PASS"
+      "actualRendererInsertions": "PASS",
+      "printing": "PASS: integrated/fallback fields, PDF text and A4 bounds",
+      "timingStatus": "PROVISIONAL; educator trials pending"
     },
     {
       "lessonId": "g9-t3-l37-026",
@@ -48,10 +52,12 @@
       "fields": 24,
       "periods": 1,
       "timingRationale": "One provisional contact: 8 minutes story/framework, 15 goal elements, 12 four-step plan/obstacles, 8 deeper reading/checkpoint and 2 close. The willing-person conversation or signed-paper alternative is later. Time supports thoughtful writing without adding another discussion or response field.",
-      "stageReview": "PENDING_ORIGINAL_KEY_SEALING_AND_HOSTED_RENDERING",
-      "complete": false,
+      "stageReview": "PASS: genuine exact fields/controls, placement, navigator, Learner View, 18 responsive combinations and first-response persistence",
+      "complete": true,
       "fieldCoverage": 24,
-      "actualRendererInsertions": "PASS"
+      "actualRendererInsertions": "PASS",
+      "printing": "PASS: integrated/fallback fields, PDF text and A4 bounds",
+      "timingStatus": "PROVISIONAL; educator trials pending"
     },
     {
       "lessonId": "g9-t3-l38-027",
@@ -65,12 +71,14 @@
       "fields": 38,
       "periods": 2,
       "timingRationale": "Two provisional contacts. First: 11 minutes story/matrix/tools, 3 reflection, 7 audit preparation, 20 existing current-task matrix and 4 close. After a real recorded day: 4 return, 8 record completion, 12 audit analysis, 10 matrix review, 8 deeper reading/checkpoint and 3 close. The elapsed day and optional later family conversation are not invented classroom time. Independent preparation may reduce supported contacts after trials.",
-      "stageReview": "PENDING_ORIGINAL_KEY_SEALING_AND_HOSTED_RENDERING",
-      "complete": false,
+      "stageReview": "PASS: genuine exact fields/controls, placement, navigator, Learner View, 18 responsive combinations and first-response persistence",
+      "complete": true,
       "fieldCoverage": 38,
       "actualRendererInsertions": "PASS",
       "preTableAuditPlanSHA256": "262f976ebe0e85bbf7a91cf3b5a628ca50aaf26337233e11bf67bc80c28d66b7",
-      "teacherReferenceAmendment": "table-reference-amendments.json"
+      "teacherReferenceAmendment": "table-reference-amendments.json",
+      "printing": "PASS: integrated/fallback fields, PDF text and A4 bounds",
+      "timingStatus": "PROVISIONAL; educator trials pending"
     },
     {
       "lessonId": "g9-t3-l39-028",
@@ -84,10 +92,12 @@
       "fields": 28,
       "periods": 1,
       "timingRationale": "One provisional contact: 8 minutes story/strategies, 3 reflection, 10 task and possible reason, 7 specific commitment, 5 prediction, 10 deeper reading/checkpoint and 2 close. The actual five-minute test and outcome record are later; do not confuse a prediction or prefilled log with a completed experiment.",
-      "stageReview": "PENDING_ORIGINAL_KEY_SEALING_AND_HOSTED_RENDERING",
-      "complete": false,
+      "stageReview": "PASS: genuine exact fields/controls, placement, navigator, Learner View, 18 responsive combinations and first-response persistence",
+      "complete": true,
       "fieldCoverage": 28,
-      "actualRendererInsertions": "PASS"
+      "actualRendererInsertions": "PASS",
+      "printing": "PASS: integrated/fallback fields, PDF text and A4 bounds",
+      "timingStatus": "PROVISIONAL; educator trials pending"
     },
     {
       "lessonId": "g9-t3-l40-029",
@@ -101,12 +111,14 @@
       "fields": 28,
       "periods": 1,
       "timingRationale": "One provisional contact: 7 minutes story/strategies, 3 reflection, 8 setback account, 12 resource map, 7 gap, 6 checkpoint/deeper reading and 2 close. The willing-person conversation or source character alternative is later.",
-      "stageReview": "PENDING_ORIGINAL_KEY_SEALING_AND_HOSTED_RENDERING",
-      "complete": false,
+      "stageReview": "PASS: genuine exact fields/controls, placement, navigator, Learner View, 18 responsive combinations and first-response persistence",
+      "complete": true,
       "fieldCoverage": 28,
       "actualRendererInsertions": "PASS",
       "preTableAuditPlanSHA256": "b001a1c5d700ecd683bb1f57d2010822481f888af47efda966db7fe2df483061",
-      "teacherReferenceAmendment": "table-reference-amendments.json"
+      "teacherReferenceAmendment": "table-reference-amendments.json",
+      "printing": "PASS: integrated/fallback fields, PDF text and A4 bounds",
+      "timingStatus": "PROVISIONAL; educator trials pending"
     },
     {
       "lessonId": "g9-t3-l41-030",
@@ -120,10 +132,12 @@
       "fields": 28,
       "periods": 1,
       "timingRationale": "One provisional contact: 8 minutes story/comparison, 3 reflection, 10 assessment, 6 analysis, 8 growth plan, 8 checkpoint/deeper reading and 2 close. The existing interview or admired-person alternative is later.",
-      "stageReview": "PENDING_ORIGINAL_KEY_SEALING_AND_HOSTED_RENDERING",
-      "complete": false,
+      "stageReview": "PASS: genuine exact fields/controls, placement, navigator, Learner View, 18 responsive combinations and first-response persistence",
+      "complete": true,
       "fieldCoverage": 28,
-      "actualRendererInsertions": "PASS"
+      "actualRendererInsertions": "PASS",
+      "printing": "PASS: integrated/fallback fields, PDF text and A4 bounds",
+      "timingStatus": "PROVISIONAL; educator trials pending"
     },
     {
       "lessonId": "g9-t3-l42-031",
@@ -137,10 +151,12 @@
       "fields": 30,
       "periods": 1,
       "timingRationale": "One provisional contact: 8 minutes story/scale/anecdote reading, 3 reflection, 8 account, 6 lesson, 7 tuition audit, 5 application, 6 checkpoint/deeper reading and 2 close. The existing interview or story/public-figure alternative is later.",
-      "stageReview": "PENDING_ORIGINAL_KEY_SEALING_AND_HOSTED_RENDERING",
-      "complete": false,
+      "stageReview": "PASS: genuine exact fields/controls, placement, navigator, Learner View, 18 responsive combinations and first-response persistence",
+      "complete": true,
       "fieldCoverage": 30,
-      "actualRendererInsertions": "PASS"
+      "actualRendererInsertions": "PASS",
+      "printing": "PASS: integrated/fallback fields, PDF text and A4 bounds",
+      "timingStatus": "PROVISIONAL; educator trials pending"
     },
     {
       "lessonId": "g9-t3-l43-032",
@@ -154,12 +170,14 @@
       "fields": 28,
       "periods": 1,
       "timingRationale": "One provisional contact: 10 minutes story/comparison/origins, 3 reflection, 8 classification, 9 three yet rewrites, 7 strategy, 6 checkpoint/deeper reading and 2 close. The language-noticing experiment is later.",
-      "stageReview": "PENDING_ORIGINAL_KEY_SEALING_AND_HOSTED_RENDERING",
-      "complete": false,
+      "stageReview": "PASS: genuine exact fields/controls, placement, navigator, Learner View, 18 responsive combinations and first-response persistence",
+      "complete": true,
       "fieldCoverage": 28,
       "actualRendererInsertions": "PASS",
       "preTableAuditPlanSHA256": "5017ed94f84183ea850f3eaa515f0fc199892159fe05a2714216379ce1064b20",
-      "teacherReferenceAmendment": "table-reference-amendments.json"
+      "teacherReferenceAmendment": "table-reference-amendments.json",
+      "printing": "PASS: integrated/fallback fields, PDF text and A4 bounds",
+      "timingStatus": "PROVISIONAL; educator trials pending"
     },
     {
       "lessonId": "g9-t3-l44-033",
@@ -173,10 +191,12 @@
       "fields": 26,
       "periods": 1,
       "timingRationale": "One provisional contact: 7 minutes story/examples, 3 reflection, 15 six alternatives, 10 praise plan, 8 deeper reading/checkpoint and 2 close. Actual praise/observation or the source self-letter alternative is later.",
-      "stageReview": "PENDING_ORIGINAL_KEY_SEALING_AND_HOSTED_RENDERING",
-      "complete": false,
+      "stageReview": "PASS: genuine exact fields/controls, placement, navigator, Learner View, 18 responsive combinations and first-response persistence",
+      "complete": true,
       "fieldCoverage": 26,
-      "actualRendererInsertions": "PASS"
+      "actualRendererInsertions": "PASS",
+      "printing": "PASS: integrated/fallback fields, PDF text and A4 bounds",
+      "timingStatus": "PROVISIONAL; educator trials pending"
     },
     {
       "lessonId": "g9-t3-l45-034",
@@ -190,10 +210,12 @@
       "fields": 28,
       "periods": 1,
       "timingRationale": "One provisional contact: 8 minutes story/strategies, 3 reflection, 6 build/break choice, 10 environment scan, 10 friction plan, 6 checkpoint/deeper reading and 2 close. Actual permitted change and observation are later.",
-      "stageReview": "PENDING_ORIGINAL_KEY_SEALING_AND_HOSTED_RENDERING",
-      "complete": false,
+      "stageReview": "PASS: genuine exact fields/controls, placement, navigator, Learner View, 18 responsive combinations and first-response persistence",
+      "complete": true,
       "fieldCoverage": 28,
-      "actualRendererInsertions": "PASS"
+      "actualRendererInsertions": "PASS",
+      "printing": "PASS: integrated/fallback fields, PDF text and A4 bounds",
+      "timingStatus": "PROVISIONAL; educator trials pending"
     },
     {
       "lessonId": "g9-t3-l46-035",
@@ -207,10 +229,12 @@
       "fields": 30,
       "periods": 1,
       "timingRationale": "One provisional contact: 7 minutes story/process, 3 reflection, 4 defining decision, 8 options, 12 trade-off table, 4 choice, 5 checkpoint/deeper reading and 2 close. The trusted-person conversation or source individual alternative is later.",
-      "stageReview": "PENDING_ORIGINAL_KEY_SEALING_AND_HOSTED_RENDERING",
-      "complete": false,
+      "stageReview": "PASS: genuine exact fields/controls, placement, navigator, Learner View, 18 responsive combinations and first-response persistence",
+      "complete": true,
       "fieldCoverage": 30,
-      "actualRendererInsertions": "PASS"
+      "actualRendererInsertions": "PASS",
+      "printing": "PASS: integrated/fallback fields, PDF text and A4 bounds",
+      "timingStatus": "PROVISIONAL; educator trials pending"
     },
     {
       "lessonId": "g9-t3-l47-036",
@@ -224,10 +248,12 @@
       "fields": 25,
       "periods": 1,
       "timingRationale": "One provisional contact: 8 minutes story/types, 4 reflection, 5 refusal strategies, 17 four written scenarios, 9 deeper reading/checkpoint and 2 close. The family conversation or source character alternative is later.",
-      "stageReview": "PENDING_ORIGINAL_KEY_SEALING_AND_HOSTED_RENDERING",
-      "complete": false,
+      "stageReview": "PASS: genuine exact fields/controls, placement, navigator, Learner View, 18 responsive combinations and first-response persistence",
+      "complete": true,
       "fieldCoverage": 25,
-      "actualRendererInsertions": "PASS"
+      "actualRendererInsertions": "PASS",
+      "printing": "PASS: integrated/fallback fields, PDF text and A4 bounds",
+      "timingStatus": "PROVISIONAL; educator trials pending"
     },
     {
       "lessonId": "g9-t3-l48-037",
@@ -241,10 +267,12 @@
       "fields": 28,
       "periods": 1,
       "timingRationale": "One provisional contact: 8 minutes story/traps, 3 reflection, 12 audit, 6 analysis, 8 protection plan, 6 checkpoint/deeper reading and 2 close. Actual account review is later with permission or the existing no-account alternative.",
-      "stageReview": "PENDING_ORIGINAL_KEY_SEALING_AND_HOSTED_RENDERING",
-      "complete": false,
+      "stageReview": "PASS: genuine exact fields/controls, placement, navigator, Learner View, 18 responsive combinations and first-response persistence",
+      "complete": true,
       "fieldCoverage": 28,
-      "actualRendererInsertions": "PASS"
+      "actualRendererInsertions": "PASS",
+      "printing": "PASS: integrated/fallback fields, PDF text and A4 bounds",
+      "timingStatus": "PROVISIONAL; educator trials pending"
     },
     {
       "lessonId": "g9-t3-l49-038",
@@ -258,10 +286,12 @@
       "fields": 30,
       "periods": 1,
       "timingRationale": "One provisional contact: 8 minutes story/scam types, 4 protection/reporting reading, 3 reflection, 12 five scenarios, 6 red flags, 6 protocol, 4 checkpoint/deeper reading and 2 close. Sharing advice or the existing written-warning alternative is later; no real scam is solicited.",
-      "stageReview": "PENDING_ORIGINAL_KEY_SEALING_AND_HOSTED_RENDERING",
-      "complete": false,
+      "stageReview": "PASS: genuine exact fields/controls, placement, navigator, Learner View, 18 responsive combinations and first-response persistence",
+      "complete": true,
       "fieldCoverage": 30,
-      "actualRendererInsertions": "PASS"
+      "actualRendererInsertions": "PASS",
+      "printing": "PASS: integrated/fallback fields, PDF text and A4 bounds",
+      "timingStatus": "PROVISIONAL; educator trials pending"
     },
     {
       "lessonId": "g9-t3-l50-039",
@@ -275,10 +305,12 @@
       "fields": 30,
       "periods": 1,
       "timingRationale": "One provisional launch contact: 7 minutes story, 3 overview, 7 choice, 8 commitment/support arrangements, 6 tracker set-up, 5 sheet/rules, 7 checkpoint/deeper reading and 2 close. Twenty-one days are elapsed practice, not twenty-one contacts. Later check-ins/review are authored Lessons 51–53; no invented daily results.",
-      "stageReview": "PENDING_ORIGINAL_KEY_SEALING_AND_HOSTED_RENDERING",
-      "complete": false,
+      "stageReview": "PASS: genuine exact fields/controls, placement, navigator, Learner View, 18 responsive combinations and first-response persistence",
+      "complete": true,
       "fieldCoverage": 30,
-      "actualRendererInsertions": "PASS"
+      "actualRendererInsertions": "PASS",
+      "printing": "PASS: integrated/fallback fields, PDF text and A4 bounds",
+      "timingStatus": "PROVISIONAL; educator trials pending"
     },
     {
       "lessonId": "g9-t3-l51-040",
@@ -292,10 +324,12 @@
       "fields": 28,
       "periods": 1,
       "timingRationale": "One provisional contact after the actual first ten days: 7 minutes story, 4 numbers, 10 analysis, 9 pivot, 8 existing check-in, 5 checkpoint/deeper reading and 2 close. Eleven further days remain real practice; later family feedback or the source self-letter is separate.",
-      "stageReview": "PENDING_ORIGINAL_KEY_SEALING_AND_HOSTED_RENDERING",
-      "complete": false,
+      "stageReview": "PASS: genuine exact fields/controls, placement, navigator, Learner View, 18 responsive combinations and first-response persistence",
+      "complete": true,
       "fieldCoverage": 28,
-      "actualRendererInsertions": "PASS"
+      "actualRendererInsertions": "PASS",
+      "printing": "PASS: integrated/fallback fields, PDF text and A4 bounds",
+      "timingStatus": "PROVISIONAL; educator trials pending"
     },
     {
       "lessonId": "g9-t3-l52-041",
@@ -309,10 +343,12 @@
       "fields": 28,
       "periods": 1,
       "timingRationale": "One provisional contact: 8 minutes story/strategies, 3 reflection, 10 forecast, 12 matched responses, 5 restart sentence, 5 checkpoint/deeper reading and 2 close. Ongoing tracking and the later conversation/individual alternative remain separate real practice.",
-      "stageReview": "PENDING_ORIGINAL_KEY_SEALING_AND_HOSTED_RENDERING",
-      "complete": false,
+      "stageReview": "PASS: genuine exact fields/controls, placement, navigator, Learner View, 18 responsive combinations and first-response persistence",
+      "complete": true,
       "fieldCoverage": 28,
-      "actualRendererInsertions": "PASS"
+      "actualRendererInsertions": "PASS",
+      "printing": "PASS: integrated/fallback fields, PDF text and A4 bounds",
+      "timingStatus": "PROVISIONAL; educator trials pending"
     },
     {
       "lessonId": "g9-t3-l53-042",
@@ -326,10 +362,12 @@
       "fields": 39,
       "periods": 2,
       "timingRationale": "Two provisional contacts after the real window. First: 6 minutes opening, 9 tracker checking, 5 count, 23 six reflections and 2 close. Second: 3 return, 10 review-habit plan, 8 habit to keep, 7 existing portfolio organisation, 7 checkpoint/deeper reading, 8 existing sharing/self-reading choice and 2 close. Suitable small-group sharing uses existing support groups, not thirty new full-class speeches; source format remains unspecified and no timed assessment is invented.",
-      "stageReview": "PENDING_ORIGINAL_KEY_SEALING_AND_HOSTED_RENDERING",
-      "complete": false,
+      "stageReview": "PASS: genuine exact fields/controls, placement, navigator, Learner View, 18 responsive combinations and first-response persistence",
+      "complete": true,
       "fieldCoverage": 39,
-      "actualRendererInsertions": "PASS"
+      "actualRendererInsertions": "PASS",
+      "printing": "PASS: integrated/fallback fields, PDF text and A4 bounds",
+      "timingStatus": "PROVISIONAL; educator trials pending"
     },
     {
       "lessonId": "g9-t3-l54-043",
@@ -343,10 +381,13 @@
       "fields": 48,
       "periods": 3,
       "timingRationale": "Three provisional contacts. First: 7 minutes story/recap, 7 existing evidence recall, 25 eight reflections, 4 current scale and 2 close. Second: 4 return, 25 existing portfolio compilation, 14 checking gaps and 2 close. Third: 3 return, 10 pathways reading, 5 current school information, 17 declaration, 8 deeper reading/checkpoint and 2 close. Qualified preparation/advice is arranged before the contact, not invented as a five-minute admissions certification. Later family conversation/paper choice remains separate.",
-      "stageReview": "PENDING_ORIGINAL_KEY_SEALING_AND_HOSTED_RENDERING",
-      "complete": false,
+      "stageReview": "PASS: genuine exact fields/controls, placement, navigator, Learner View, 18 responsive combinations and first-response persistence",
+      "complete": true,
       "fieldCoverage": 48,
-      "actualRendererInsertions": "PASS"
+      "actualRendererInsertions": "PASS",
+      "printing": "PASS: integrated/fallback fields, PDF text and A4 bounds",
+      "timingStatus": "PROVISIONAL; educator trials pending"
     }
-  ]
+  ],
+  "testedCommit": "7751ac35ec5b4be13d15ae1051ea9095f018f715"
 }

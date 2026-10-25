@@ -1,0 +1,21 @@
+{
+  "at": "2026-10-25",
+  "observedEnvironmentRevision": 55,
+  "observationsCurrent": true,
+  "httpPolicy": "unrestricted/enforced",
+  "tcpGrants": "none",
+  "codingSecretBindings": [
+    "VERCEL_TOKEN",
+    "SUPABASE_SECRET_KEY"
+  ],
+  "codingClassroomKeyObserved": false,
+  "originalKeyDelivery": "Guarded original server-bound staging key used without export; current hash-matching authorised recovery of 137 plans",
+  "readOnlyDatabaseInspection": "Historical managed SQL inspection; direct TCP not configured",
+  "networkOrApplicationBlocker": null,
+  "supportedAuthAdmin": "Genuine fixture operations demonstrated",
+  "applicationLogin": "Genuine password login and full exact-commit suite PASS",
+  "authenticatedEvidenceStorage": "Protected persistent workspace directory outside Git; temporary symlink restored on environment startup as needed",
+  "environmentRestart": "Temporary captures lost; complete exact-commit acceptance and before-fix captures repeated",
+  "genuineChecks": 37,
+  "sourceOrProductionMutation": false
+}

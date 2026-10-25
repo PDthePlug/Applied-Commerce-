@@ -34,5 +34,19 @@
     "authentication": "Local CSS/renderer check only"
   },
   "guideOrSourceTextChanged": false,
-  "finalGenuineAcceptance": "PENDING"
+  "finalGenuineAcceptance": {
+    "status": "PASS",
+    "commit": "7751ac35ec5b4be13d15ae1051ea9095f018f715",
+    "cases": 30,
+    "overflowCases": 0,
+    "evidence": "evidence/title-results.json",
+    "beforeEvidence": "evidence/title-before-recaptured-results.json"
+  },
+  "environmentRestart": {
+    "at": "2026-10-25",
+    "temporaryEvidenceLost": true,
+    "publicHistoricalResultsRetained": true,
+    "beforeEvidenceRecaptured": "Original initial deployment 7becdcc; genuine login; 30 cases/6 overflows",
+    "currentEvidenceStorage": "Protected persistent workspace directory, outside Git"
+  }
 }

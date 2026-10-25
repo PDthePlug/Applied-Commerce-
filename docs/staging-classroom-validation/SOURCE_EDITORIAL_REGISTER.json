@@ -284,8 +284,8 @@
     },
     {
       "lessonId": "g12-t1-l05-005",
-      "blockId": "5f0c22bc894983d67228d043-1",
-      "exactPassage": "[[\"Criterion\",\"Weight\",\"Why It Matters\"]]",
+      "blockId": "c867069c610f02cce9d8979f-1",
+      "exactPassage": "[[\"Criterion (Weight)\",\"Option 1\",\"Option 2\",\"Option 3\",\"Option 4\"],[\"Total\",\"\",\"\",\"\",\"\"]]",
       "category": "Worksheet gap",
       "concern": "The header-only criteria table already provides four editable rows with twelve fields. That part of the original claim is withdrawn. The separate scoring table exposes four Total fields but no criterion-by-option scoring rows.",
       "proposedWording": "Review only whether the separate scoring table needs a usable criterion-by-option score grid, preserving existing totals and documenting stable identities. No change is proposed for the already editable criteria table.",
@@ -299,7 +299,9 @@
         "evidence": "../programme-rollout/g9-t3-35-54/table-before-results.json",
         "criteriaControls": 12,
         "scoreTotalControls": 4
-      }
+      },
+      "originalBlockId": "5f0c22bc894983d67228d043-1",
+      "originalExactPassage": "[[\"Criterion\",\"Weight\",\"Why It Matters\"]]"
     }
   ],
   "principle": "Metaphors and personal-development perspectives are retained unless their wording asserts a material falsehood or creates a specific risk. Source and interface changes remain separate."
