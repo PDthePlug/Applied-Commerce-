@@ -1,0 +1,362 @@
+{
+  "sourceChangesApplied": false,
+  "entries": [
+    {
+      "lessonId": "g10-t3-l41-041",
+      "blockId": "f696f348aae7a79254bffaa2-1",
+      "exactPassage": "[[\"Income Range\", \"Tax Rate\"], [\"R0 \u2013 R95,750\", \"18%\"], [\"R95,751 \u2013 R191,250\", \"26%\"], [\"R191,251 \u2013 R305,850\", \"31%\"], [\"R305,851 \u2013 R431,600\", \"36%\"], [\"R431,601 \u2013 R575,350\", \"39%\"], [\"R575,351 and above\", \"41%\"]]",
+      "category": "Material tax-band inaccuracy",
+      "concern": "The table uses theR95,750under65threshold as the end of the18%band. The named2026taxyear rebateR17,235and thresholdR95,750are consistent with SARS2025/26, but its first band isR237,100and there are seven rates up to45%. Do not confuse Budget2026/27with2026taxyear.",
+      "proposedWording": "For2026taxyear(1March2025\u201328February2026), use a correctly dated SARS table:1\u2013237,100at18%;237,101\u2013370,500base42,678+26%above237,100;370,501\u2013512,800base77,362+31%above370,500;512,801\u2013673,000base121,475+36%above512,800;673,001\u2013857,900base179,147+39%above673,000;857,901\u20131,817,000base251,258+41%above857,900;above1,817,000base644,489+45%. State the appropriate age rebate and threshold separately.",
+      "implementationImpact": "Separate owner-reviewed source correction only. Preserve canonical block/prompt identities and existing response count; update linked wording, teacher source binding and compiled learner release only in an approved editorial change. No learner rewrite is applied by this teacher-support batch.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED",
+      "externalVerification": {
+        "url": "https://www.sars.gov.za/tax-rates/income-tax/rates-of-tax-for-individuals/",
+        "reviewed": "Actual2026and2027taxyear sections, table, rebates and thresholds read on2026-10-25; page lastupdated17March2026.",
+        "limits": "Introductory under65examples omit other adjustments and do not constitute individual advice."
+      }
+    },
+    {
+      "lessonId": "g10-t3-l41-041",
+      "blockId": "d48f42fb480223023e1652e2-1",
+      "exactPassage": "If you earn R100,000 per year:",
+      "category": "Consequential calculation correction",
+      "concern": "TheR100,000andR120,000examples inherit the wrong brackets. For2026taxyear under65/no other adjustments, the correct tax isR765andR4,365. The existing three exercise amounts should be recalculated consistently asR0/R9,765/R22,365.",
+      "proposedWording": "ForR100,000in2026taxyear, gross tax isR18,000, lessR17,235primary rebate, givingR765. ForR120,000, gross taxR21,600lessR17,235givesR4,365. Keep the marginal-rate explanation and update all connected totals and percentages consistently.",
+      "implementationImpact": "Separate owner-reviewed source correction only. Preserve canonical block/prompt identities and existing response count; update linked wording, teacher source binding and compiled learner release only in an approved editorial change. No learner rewrite is applied by this teacher-support batch.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED",
+      "externalVerification": {
+        "url": "https://www.sars.gov.za/tax-rates/income-tax/rates-of-tax-for-individuals/",
+        "method": "Independent arithmetic against the dated2026taxyear table; original printed-table arithmetic is separately retained in evidence, not certified as actual tax."
+      },
+      "relatedPassages": [
+        {
+          "blockId": "70aa19177b342e98a4d40ccd-1",
+          "exactPassage": "First R95,750 taxed at 18% = R17,235"
+        },
+        {
+          "blockId": "9341732ae48dbf41439477ab-1",
+          "exactPassage": "Remaining R4,250 taxed at 26% = R1,105"
+        },
+        {
+          "blockId": "053302f792f940e8a45916e8-1",
+          "exactPassage": "Gross tax = R18,340"
+        },
+        {
+          "blockId": "0f70632f56145c3d9c3e5334-1",
+          "exactPassage": "Minus primary rebate: R18,340 \u2212 R17,235 = R1,105"
+        },
+        {
+          "blockId": "62e00d890f9b188ba878b304-1",
+          "exactPassage": "Tax payable: R1,105 \u2014 about 1.1% of income"
+        },
+        {
+          "blockId": "eb28032c433a1ef845d0c118-1",
+          "exactPassage": "\"Someone earning R100,000 pays R1,105. That is barely over 1%. But most people think they pay 18% on everything. They do not understand the brackets. They do not understand the rebate. They fear earning more because they think tax will eat it all. That fear keeps people poor. Do not let fear of tax keep you from earning more. Understand the system. Then navigate it.\""
+        },
+        {
+          "blockId": "04fab6af2bf31a2edafe5a5c-1",
+          "exactPassage": "If you earn R120,000 per year:"
+        },
+        {
+          "blockId": "95baa140f33250dbf1743e2f-1",
+          "exactPassage": "First R95,750 @ 18% = R17,235"
+        },
+        {
+          "blockId": "c6eacd1cf87574453469e262-1",
+          "exactPassage": "Remaining R24,250 @ 26% = R6,305"
+        },
+        {
+          "blockId": "0fea6d1388c039aadc4ff326-1",
+          "exactPassage": "Gross tax = R23,540"
+        },
+        {
+          "blockId": "444e41b98a3cf0ad1e72649d-1",
+          "exactPassage": "Minus rebate R17,235"
+        },
+        {
+          "blockId": "df9af6d25b2f4235e07fb0db-1",
+          "exactPassage": "Tax payable = R6,305"
+        },
+        {
+          "blockId": "f46c0599243cabc68b9fbc54-1",
+          "exactPassage": "[[\"Income\", \"Tax Calculation\", \"Tax Payable\"], [\"R80,000\", \"\", \"R\"], [\"R150,000\", \"\", \"R\"], [\"R220,000\", \"\", \"R\"]]"
+        }
+      ]
+    },
+    {
+      "lessonId": "g10-t3-l42-042",
+      "blockId": "5935480317b4c09e6e84bbe0-1",
+      "exactPassage": "[[\"Strategy\", \"How It Works\", \"Benefit\"], [\"Tax-free savings account\", \"Invest up to R36,000/year\", \"Growth is tax-free forever\"], [\"Retirement annuity\", \"Contributions reduce taxable income\", \"Pay less tax now, save for later\"], [\"Business deductions\", \"Legitimate business expenses reduce profit\", \"Pay tax on what you actually keep\"], [\"Donations\", \"Donations to registered charities\", \"Deductible within limits\"], [\"Medical aid credits\", \"Contributions reduce tax\", \"Additional rebate\"]]",
+      "category": "Tax-treatment distinctions and dated figures",
+      "concern": "The table mixes income deductions, credits and exemptions. TFSA contributions do not reduce taxable income; medical credits reduce tax, and donations need qualifying conditions. The printedR36,000limit is outdated against the published2026/27Budget guide.",
+      "proposedWording": "Separate the benefit types: qualifying retirement contributions may reduce taxable income within limits; qualifying business expenses have conditions; certainPBOdonations may qualify within limits; medical scheme tax credits reduce tax. TFSA contributions do not give an income deduction, while qualifying returns are exempt. State the tax year and verified current annual limit(R46,000reported in the2026/27Budget guide), with other eligibility/lifetime conditions checked separately.",
+      "implementationImpact": "Separate owner-reviewed source correction only. Preserve canonical block/prompt identities and existing response count; update linked wording, teacher source binding and compiled learner release only in an approved editorial change. No learner rewrite is applied by this teacher-support batch.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED",
+      "externalVerification": {
+        "url": "https://www.treasury.gov.za/documents/national%20budget/2026/sars/Budget%202026%20Tax%20Guide.pdf",
+        "reviewed": "Selected first-page TFSA/deduction/credit/donation sections read and figures visually checked.",
+        "limits": "Budget summary not a full consolidated-law, lifetime/ownership or subsequent-amendment review."
+      },
+      "relatedPassages": [
+        {
+          "blockId": "edf5219734c4857991596d00-1",
+          "exactPassage": "\"The most powerful one for someone your age is the tax-free savings account. You can invest up to R36,000 per year. All growth is tax-free. Start early. The compound effect plus zero tax is a powerful combination. The government wants you to save. They reward it. Take the reward. That is not cheating. That is playing the game as it was designed.\""
+        },
+        {
+          "blockId": "81e77fc85edf78050be23d86-1",
+          "exactPassage": "[[\"Feature\", \"Detail\"], [\"Maximum per year\", \"R36,000\"], [\"Lifetime limit\", \"R500,000\"], [\"What is taxed?\", \"Nothing \u2014 all growth is tax-free\"], [\"Who can open?\", \"Anyone with an ID\"], [\"Why use it?\", \"Over time, tax-free growth compounds dramatically\"]]"
+        },
+        {
+          "blockId": "4b59472db0acc369d0a7c87b-1",
+          "exactPassage": "If you were earning R150,000 per year in your first job, what is ONE legal strategy you could use to reduce your taxable income?"
+        },
+        {
+          "blockId": "ff2ef293e7694d0b81b76b48-1",
+          "exactPassage": "Question 2: A tax-free savings account allows you to invest R36,000 per year with no tax on growth. Who benefits most from this incentive \u2014 the rich, the poor, or everyone? Defend your answer. If it mainly benefits the rich, is the incentive fair?"
+        }
+      ]
+    },
+    {
+      "lessonId": "g10-t3-l42-042",
+      "blockId": "3bdd639ad2c4c26ce1bf9140-1",
+      "exactPassage": "He moves a pawn. \"There is a line. On one side: tax avoidance. Legal. Smart. Using deductions, tax-free accounts, retirement contributions \u2014 all within the rules. On the other side: tax evasion. Illegal. Criminal. Lying about income. Hiding money. Falsifying records. One side makes you smart. The other makes you a criminal. Know the line. Respect it.\"",
+      "category": "Missing legal qualification",
+      "concern": "\u201cAvoidance is legal\u201d as an unqualified label may imply every strategy given that label is permissible. The source later recognises ethical complexity, but does not explain that actual legal permissibility also requires checking applicable anti-avoidance rules.",
+      "proposedWording": "Lawful tax planning uses available provisions within their conditions. Concealing income or falsifying records can be tax evasion. A strategy is not automatically lawful because someone calls it avoidance; check applicable rules and seek qualified help when uncertain.",
+      "implementationImpact": "Separate owner-reviewed source correction only. Preserve canonical block/prompt identities and existing response count; update linked wording, teacher source binding and compiled learner release only in an approved editorial change. No learner rewrite is applied by this teacher-support batch.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED",
+      "externalVerification": {
+        "status": "Specific current anti-avoidance provisions not independently reviewed; no classroom approval of an arrangement is claimed."
+      },
+      "relatedPassages": [
+        {
+          "blockId": "fedcdf805e59372b09edd0dd-1",
+          "exactPassage": "\"Avoidance is legal. Evasion is a crime. Avoidance uses the rules. Evasion breaks them. The difference is not just legal. It is moral. When you evade tax, you steal from everyone. From the clinic. From the school. From the road. When you avoid tax legally, you are using incentives the government created. They want you to save for retirement. They want you to invest. They want you to donate. They wrote the rules to encourage these things. Following the rules as written is not a loophole. It is participation.\""
+        }
+      ]
+    },
+    {
+      "lessonId": "g10-t3-l43-043",
+      "blockId": "a2dff9015419ce7ab5bdde1f-1",
+      "exactPassage": "If you save R200 per month starting at age 20, at 8% growth, about how much will you have at 65? (Use the Rule of 72: 72 \u00f7 8 = 9 years to double. In 45 years, about 5 doubles.)",
+      "category": "Material mathematical error and proposed task-method change",
+      "concern": "The Ruleof72can approximate doubling a lump sum, but cannot double all45years of future contributions as if already deposited on dayone. R200\u00d712\u00d745=R108,000; multiplying that by32givesR3,456,000and substantially overstates a regular-contribution projection.",
+      "proposedWording": "Calculate the total contributions:R200\u00d712\u00d745=R108,000. Then use a stated regular-contribution model to estimate the final value. For example, with8%nominal annual rate divided monthly and month-end payments, final value is aboutR1,054,908. Keep two existing response identities, labelled total contributions and modelled final value under the stated assumptions.",
+      "implementationImpact": "Separate owner-reviewed source correction only. Preserve canonical block/prompt identities and existing response count; update linked wording, teacher source binding and compiled learner release only in an approved editorial change. No learner rewrite is applied by this teacher-support batch.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED",
+      "proposedMeaningChange": true,
+      "proposedResponseFieldCountChange": false,
+      "ownerReviewRequired": "This changes the faulty calculation instruction and labels; it is a separate editorial/task-method proposal, not a silent presentation change.",
+      "relatedPassages": [
+        {
+          "blockId": "1074d4024f3bd9ea98b09b64-1",
+          "exactPassage": "Starting amount after 45 years of R200/month: about R _______ After 5 doubles: about R _______"
+        }
+      ]
+    },
+    {
+      "lessonId": "g10-t3-l43-043",
+      "blockId": "1341aef8b65652d0e7b5fdc9-1",
+      "exactPassage": "[[\"Start Age\", \"Monthly Save\", \"Years\", \"Total Saved\", \"At 8% Growth\"], [\"20\", \"R500\", \"45\", \"R270,000\", \"R2.3 million\"], [\"25\", \"R500\", \"40\", \"R240,000\", \"R1.5 million\"], [\"30\", \"R500\", \"35\", \"R210,000\", \"R1.1 million\"], [\"35\", \"R500\", \"30\", \"R180,000\", \"R780,000\"], [\"40\", \"R500\", \"25\", \"R150,000\", \"R475,000\"], [\"50\", \"R500\", \"15\", \"R90,000\", \"R170,000\"]]",
+      "category": "Underspecified projection conventions",
+      "concern": "The firstR2.3millionrow is compatible with annual-end-year grouping ofR6,000at8%, so it is not simply false. Other rows and story comparisons need one consistent contribution/rate convention. Actual return, costs and purchasing power are not guaranteed.",
+      "proposedWording": "State one consistent hypothetical convention and recalculate every row and connected story comparison using it. For actualR500month-end payments with8%nominal annual rate divided monthly, use the supplied independent calculation register for45/40/35/30/25/15years; label figures as projections before fees, taxes and inflation, not promises.",
+      "implementationImpact": "Separate owner-reviewed source correction only. Preserve canonical block/prompt identities and existing response count; update linked wording, teacher source binding and compiled learner release only in an approved editorial change. No learner rewrite is applied by this teacher-support batch.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED",
+      "calculationEvidence": "tax-retirement-independent-calculations.json has annual-end-year, nominal-monthly and effective-annual-monthly comparisons. Correct connected passages together.",
+      "relatedPassages": [
+        {
+          "blockId": "b4f6a8c1074a7881f00b8f95-1",
+          "exactPassage": "\"Look at this,\" she says, pointing at the difference between starting at 20 and starting at 30. \"Same R500 a month. Start at 20, you have over R2 million. Start at 30, you have R1.1 million. The difference is not the money you put in. You put in R60,000 more if you start at 20. The difference is the TIME. Those ten extra years of compounding are worth over R1 million. Time is the ingredient you cannot buy. You either have it or you do not. And you \u2014\" she points at Myah \"\u2014 you have it. I did not. I learned this at 65. You are learning it at 16. Do not waste it.\""
+        },
+        {
+          "blockId": "930ef2f0f538ae7c7ab5791b-1",
+          "exactPassage": "Every five years you delay costs you hundreds of thousands \u2014 not because you save less, but because you lose compounding time."
+        },
+        {
+          "blockId": "3e79ff04ef1f770f3a73ee71-1",
+          "exactPassage": "Key idea: Gogo Maria's table does not lie. R500 a month from age 20 becomes R2.3 million. The same R500 from age 30 becomes R1.1 million. The difference is not the money. The difference is the time. Time is the ingredient you cannot buy more of. You either start early or you pay for the delay \u2014 in rands, in freedom, in options. The math is indifferent to your feelings. It does not care if you are ready. It only cares if you start."
+        }
+      ]
+    },
+    {
+      "lessonId": "g10-t3-l43-043",
+      "blockId": "ac645330af9336d4e2d929c0-1",
+      "exactPassage": "Myah stares at the numbers. She has seen them before. But something is different now. She is 16. If she starts at 20, she has 45 years of compounding. Forty-five years. She does the math in her head. R500 a month is not possible right now. But R100? R100 a month from age 20 to 65 at 8% \u2014 that is still over R450,000. From R36,000 saved. Time does the heavy lifting.",
+      "category": "Material contribution-total arithmetic",
+      "concern": "R100permonthfor45years totalsR54,000, notR36,000. A growth projection depends on the convention and should be labelled.",
+      "proposedWording": "R100a month for45years contributesR54,000. At an illustrative stated growth convention it may grow further; specify the convention and keep the projection conditional. No actual payment is required by the lesson.",
+      "implementationImpact": "Separate owner-reviewed source correction only. Preserve canonical block/prompt identities and existing response count; update linked wording, teacher source binding and compiled learner release only in an approved editorial change. No learner rewrite is applied by this teacher-support batch.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g10-t3-l44-044",
+      "blockId": "5f2b8a0c8de5a5e703935f83-1",
+      "exactPassage": "[[\"Feature\", \"Pension Fund\", \"Provident Fund\", \"RA\", \"TFSA\"], [\"Set up by\", \"Employer\", \"Employer\", \"You\", \"You\"], [\"Contributions from salary\", \"Yes\", \"Yes\", \"You arrange\", \"You arrange\"], [\"Tax-deductible contributions\", \"Yes\", \"Yes\", \"Yes\", \"No (but growth tax-free)\"], [\"Growth tax-free\", \"Yes\", \"Yes\", \"Yes\", \"Yes\"], [\"Access before retirement\", \"No\", \"No\", \"No (generally)\", \"Yes (but lose tax benefit)\"], [\"Best for\", \"Formal employees\", \"Formal employees\", \"Everyone\", \"Everyone\"]]",
+      "category": "Retirement access and tax-treatment incompleteness",
+      "concern": "Blanket no-access cells omit conditional savings-component withdrawals documented by SARS. \u201cTFSA access loses tax benefit\u201d can imply automatic retrospective tax on earlier exempt growth, which does not distinguish withdrawal from contribution-room rules. Broad \u201ceveryone\u201d suitability is also unqualified.",
+      "proposedWording": "Describe retirement access by relevant component, conditions and fund rules rather than a blanketNo. For TFSA, distinguish access, treatment of qualifying returns and the effect of withdrawals on contribution limits; verify current rules before specifying them. Suitability depends on needs, resources and eligibility.",
+      "implementationImpact": "Separate owner-reviewed source correction only. Preserve canonical block/prompt identities and existing response count; update linked wording, teacher source binding and compiled learner release only in an approved editorial change. No learner rewrite is applied by this teacher-support batch.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED",
+      "externalVerification": {
+        "url": "https://www.sars.gov.za/two-pot-retirement-system/",
+        "reviewed": "Root FAQs and2024reform/access paragraphs read; linked26August2024selfhelpPDF read.",
+        "limits": "Establishes conditional access exists; not full current component, provident-benefit, TFSA-limit or consolidated-law advice."
+      },
+      "relatedPassages": [
+        {
+          "blockId": "c7a696dabb1775b601f9d7dc-1",
+          "exactPassage": "[[\"Term\", \"Definition\", \"isiZulu\", \"Afrikaans\"], [\"Pension fund\", \"Employer-sponsored retirement plan\", \"Isikhwama sempesheni\", \"Pensioenfonds\"], [\"Provident fund\", \"Similar to pension, but lump sum at retirement\", \"Isikhwama sempesheni\", \"Voorsorgfonds\"], [\"Retirement annuity\", \"Personal retirement savings \u2014 you set it up, you control it\", \"I-annuity yomhlalaphansi\", \"Langlewe-annu\u00efteit\"], [\"Preservation fund\", \"Holds retirement savings when you change jobs \u2014 protects your money from yourself\", \"Isikhwama sokulondoloza\", \"Bewaringsfonds\"]]"
+        }
+      ]
+    },
+    {
+      "lessonId": "g10-t3-l44-044",
+      "blockId": "f87fcbf59078a003b1dbb138-1",
+      "exactPassage": "[[\"\", \"Without RA\", \"With RA\"], [\"Income\", \"R200,000\", \"R200,000\"], [\"RA contribution\", \"R0\", \"R20,000\"], [\"Taxable income\", \"R200,000\", \"R180,000\"], [\"Tax (approx)\", \"R31,000\", \"R26,000\"]]",
+      "category": "Material dated/underspecified tax illustration",
+      "concern": "TheR31,000/R26,000tax values andR5,000saving do not match the dated simple2026/27under65example. At a fully eligibleR20,000deduction within the18%marginal band, the reduction isR3,600.",
+      "proposedWording": "Label the year, age and assumptions. For2026/27under65/no other adjustments, tax before the eligible deduction isR18,180and after itR14,580, savingR3,600. A deduction reduces taxable income within conditions; it is not a government deposit into the retirement account.",
+      "implementationImpact": "Separate owner-reviewed source correction only. Preserve canonical block/prompt identities and existing response count; update linked wording, teacher source binding and compiled learner release only in an approved editorial change. No learner rewrite is applied by this teacher-support batch.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED",
+      "externalVerification": {
+        "url": "https://www.sars.gov.za/tax-rates/income-tax/rates-of-tax-for-individuals/",
+        "method": "Independent18%arithmetic with2027taxyearR17,820primary rebate; source2026taxyear uses a different rebate but the same marginal saving for these amounts."
+      },
+      "relatedPassages": [
+        {
+          "blockId": "3681a43ed087704e99b82dde-1",
+          "exactPassage": "You save about R5,000 in tax AND have R20,000 in retirement savings. The government gave you R5,000 to save for yourself."
+        }
+      ]
+    },
+    {
+      "lessonId": "g10-t3-l44-044",
+      "blockId": "cbd08dee2e3d34c577a03adb-1",
+      "exactPassage": "If you contribute R500/month to an RA (R6,000/year) and you are in the 18% tax bracket, how much tax do you save per year? R _______",
+      "category": "Missing conditions on tax saving",
+      "concern": "R6,000\u00d718%=R1,080only when the deduction is eligible and offsets sufficient tax at that rate. The source can be read as a guaranteed refund regardless of liability.",
+      "proposedWording": "If the wholeR6,000annual contribution qualifies and reduces income taxed at18%, the tax reduction isR1,080. Actual benefit depends on eligibility, limits, taxable income and liability. This is a hypothetical calculation, not a required contribution.",
+      "implementationImpact": "Separate owner-reviewed source correction only. Preserve canonical block/prompt identities and existing response count; update linked wording, teacher source binding and compiled learner release only in an approved editorial change. No learner rewrite is applied by this teacher-support batch.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g10-t3-l45-045",
+      "blockId": "7275832ac5b2e067a2e216fb-1",
+      "exactPassage": "[[\"Situation\", \"Without Insurance\", \"With Insurance\"], [\"Car accident\", \"You pay everything\", \"Insurance pays (minus excess)\"], [\"House fire\", \"You lose everything\", \"Insurance helps you rebuild\"], [\"Theft\", \"You replace everything\", \"Insurance covers some or all\"], [\"Medical emergency\", \"Huge bills\", \"Medical aid covers most\"], [\"Death\", \"Family struggles\", \"Life insurance helps family\"]]",
+      "category": "Cover and medical-product scope",
+      "concern": "The comparison may imply any insurance automatically pays every listed event, and medical aid covers most costs. Cover, exclusions, limits and product distinctions matter; no current individual policy is verified.",
+      "proposedWording": "Present the outcomes as possible benefits under suitable cover, subject to terms, limits and exclusions. Distinguish a medical scheme from a health-insurance product; neither label guarantees every treatment bill will be paid.",
+      "implementationImpact": "Separate owner-reviewed source correction only. Preserve canonical block/prompt identities and existing response count; update linked wording, teacher source binding and compiled learner release only in an approved editorial change. No learner rewrite is applied by this teacher-support batch.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g10-t3-l46-046",
+      "blockId": "961113ab4c8e965c145b9bee-1",
+      "exactPassage": "[[\"Type\", \"What It Covers\", \"Who Needs It\"], [\"Life insurance\", \"Pays out when you die\", \"Anyone with dependents \u2014 people who rely on your income\"], [\"Funeral cover\", \"Covers funeral costs\", \"Everyone \u2014 funerals are expensive, culturally essential\"], [\"Medical aid\", \"Healthcare costs\", \"Everyone \u2014 illness is unpredictable, treatment is costly\"], [\"Car insurance\", \"Damage to your car, injury to others\", \"Car owners \u2014 and it is legally required for financed vehicles\"], [\"Home insurance\", \"Damage to your house\", \"Homeowners \u2014 your house is your biggest asset\"], [\"Contents insurance\", \"Your belongings\", \"Renters and owners \u2014 your possessions have value\"], [\"Disability insurance\", \"Income if you cannot work\", \"Anyone who earns \u2014 your ability to work is your biggest asset\"], [\"Business insurance\", \"Business assets, liability\", \"Business owners \u2014 one lawsuit or disaster can end everything\"]]",
+      "category": "Universal suitability, cultural claim and legal claim needing verification",
+      "concern": "\u201cEveryone\u201d needs funeral cover/medical aid and culturally essential phrasing overgeneralise. The blanket financed-car legal claim requires distinguishing finance-contract conditions from law. Injury/liability and disability benefit scope also vary.",
+      "proposedWording": "Present broad purposes rather than universal purchases: needs depend on dependants, resources, existing arrangements and actual terms. Funeral practices differ. Motor cover may be required by a finance agreement; check the agreement and applicable law. Do not guarantee injury/liability or a particular disability benefit from a generic label.",
+      "implementationImpact": "Separate owner-reviewed source correction only. Preserve canonical block/prompt identities and existing response count; update linked wording, teacher source binding and compiled learner release only in an approved editorial change. No learner rewrite is applied by this teacher-support batch.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED",
+      "externalVerification": {
+        "status": "Specific current insurance-law and policy claims remain unverified; no purchase recommendation or legal certification."
+      },
+      "relatedPassages": [
+        {
+          "blockId": "dff3ad9365c19288b0fdc2cd-1",
+          "exactPassage": "[[\"Term\", \"Definition\", \"isiZulu\", \"Afrikaans\"], [\"Life insurance\", \"Pays out when you die \u2014 protects the people who depend on you\", \"Umshwalense wempilo\", \"Lewensversekering\"], [\"Short-term insurance\", \"Covers cars, homes, possessions \u2014 things you own\", \"Umshwalense wesikhashana\", \"Korttermynversekering\"], [\"Medical aid\", \"Covers healthcare costs\", \"Umshwalense wezempilo\", \"Mediese hulp\"], [\"Funeral cover\", \"Covers funeral costs \u2014 essential in South African culture\", \"Umshwalense womngcwabo\", \"Begrafnisdekking\"]]"
+        }
+      ]
+    },
+    {
+      "lessonId": "g10-t3-l47-047",
+      "blockId": "2e85b2d3e856a666f500ac3f-1",
+      "exactPassage": "You do not need to be rich to need an estate plan. Everyone owns something. Everyone has people they care about. Without a plan, the government decides \u2014 not your family, not your wishes, the government.",
+      "category": "Material description of intestacy",
+      "concern": "\u201cGovernment decides\u201d can imply discretionary personal distribution. Intestate succession follows the applicable law and may produce heirs who differ from personal wishes.",
+      "proposedWording": "Without a valid will, the estate normally devolves under the applicable intestate-succession law. It follows legal rules rather than a government official\u2019s personal choice; actual family circumstances and legal exceptions may require advice.",
+      "implementationImpact": "Separate owner-reviewed source correction only. Preserve canonical block/prompt identities and existing response count; update linked wording, teacher source binding and compiled learner release only in an approved editorial change. No learner rewrite is applied by this teacher-support batch.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED",
+      "externalVerification": {
+        "url": "https://www.justice.gov.za/master/wills.html",
+        "reviewed": "Justice Master page intestacy section read; it names the IntestateSuccessionAct1987.",
+        "limits": "No individual estate distribution or full Act/court review."
+      }
+    },
+    {
+      "lessonId": "g10-t3-l47-047",
+      "blockId": "2d0d80a5e1410d3932f3d7db-1",
+      "exactPassage": "If you have young siblings or will have children one day, who would you want to care for them if you could not?",
+      "category": "Specific guardianship-power clarification",
+      "concern": "The sibling/child question can imply a learner can appoint a guardian for a sibling merely by expressing a wish. Nomination and legal appointment are different, and relevant legal standing matters.",
+      "proposedWording": "For this nonlegal reflection, you may describe a suitable hypothetical future care wish or say not applicable. A worksheet does not appoint a guardian for siblings or another person\u2019s children; actual nomination and appointment depend on the relevant legal process.",
+      "implementationImpact": "Separate owner-reviewed source correction only. Preserve canonical block/prompt identities and existing response count; update linked wording, teacher source binding and compiled learner release only in an approved editorial change. No learner rewrite is applied by this teacher-support batch.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED",
+      "externalVerification": {
+        "url": "https://www.justice.gov.za/master/wills.html",
+        "reviewed": "Justice checklist refers to a sole guardian nominating for their minor child; it does not give every sibling such power."
+      },
+      "relatedPassages": [
+        {
+          "blockId": "124a69d0d5b431fa9b99693b-1",
+          "exactPassage": "Guardian: _________________________________ Why: _________________________________"
+        }
+      ]
+    },
+    {
+      "lessonId": "g10-t3-l48-048",
+      "blockId": "55b99a1e7edc4e6982e959e8-1",
+      "exactPassage": "\"One: it must be in writing. Oral wills are not valid in South Africa, except in very specific limited circumstances \u2014 and even then, they are often challenged. Two: it must be signed by you \u2014 the testator. Three: it must be signed by two witnesses. These witnesses cannot be beneficiaries. If you leave something to your witness, that gift is void. Four: you must be of sound mind when you sign it. You must understand what you are doing and the consequences of your decisions.\"",
+      "category": "Material legal-formality and benefit-disqualification distinction",
+      "concern": "The four points omit competence age and signing/presence details. A beneficiary should not witness because benefit disqualification can result, with exceptions; this is not automatically whole-will invalidity or an unconditional void-gift rule.",
+      "proposedWording": "Use the Justice guidance as an introductory reference: competent maker16+, writing, appropriate testator signing and competent witnesses14+with the required presence/signing formalities. A beneficiary should not witness because benefit disqualification may result, subject to exceptions. Do not describe these points as a complete legal checklist or the classroom draft as a valid will.",
+      "implementationImpact": "Separate owner-reviewed source correction only. Preserve canonical block/prompt identities and existing response count; update linked wording, teacher source binding and compiled learner release only in an approved editorial change. No learner rewrite is applied by this teacher-support batch.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED",
+      "externalVerification": {
+        "url": "https://www.justice.gov.za/master/wills.html",
+        "reviewed": "Relevant ages, competence, witness/formality details, disqualification exceptions and multi-page signing sections read.",
+        "limits": "Official guide, not full consolidated Act, condonation/court or individual-document certification."
+      },
+      "relatedPassages": [
+        {
+          "blockId": "dab7e537a5863f4dea5ba146-1",
+          "exactPassage": "[[\"Requirement\", \"Why It Matters\"], [\"In writing\", \"Oral wills generally not valid\"], [\"Signed by testator\", \"Proves it is your will and your wishes\"], [\"Signed by two witnesses\", \"Confirms you signed willingly and were of sound mind\"], [\"Witnesses cannot be beneficiaries\", \"Prevents conflict of interest \u2014 protects the integrity of the will\"]]"
+        },
+        {
+          "blockId": "ea9cc20b4bdb370fd9df61ea-1",
+          "exactPassage": "Here\u2019s the tension: a will is both powerful and fragile. Powerful because it directs your entire legacy. Fragile because a single mistake \u2014 a witness who is also a beneficiary, a missing signature, unclear language \u2014 can invalidate the whole document. The law is precise. It does not care about your intentions if your execution is flawed. The lesson is not just \"make a will.\" The lesson is \"make a will correctly.\" Get advice. Follow the rules. Do not let a technicality undo your final act of love."
+        },
+        {
+          "blockId": "f475e59c313960940e6a7f78-1",
+          "exactPassage": "Question 1: What are the four requirements for a valid will in South Africa? Why can a beneficiary not be a witness?"
+        }
+      ]
+    },
+    {
+      "lessonId": "g10-t3-l48-048",
+      "blockId": "5305fb97516ba9c8282c3acf-1",
+      "exactPassage": "She pauses. \"If you break any of these rules, your will can be challenged. It can be declared invalid. And if your will is invalid, you die intestate \u2014 without a valid will. And when you die intestate, the government decides who gets your things. Not your family. Not your wishes. The government. There is a law called the Intestate Succession Act. It has a formula. It does not know your family. It does not know who you loved. It does not know who needs what. It just applies the formula.\"",
+      "category": "Material description of intestacy",
+      "concern": "The repeated contrast suggests government chooses personally. A valid will and intestacy are legal processes with rules and exceptions, rather than personal wishes versus arbitrary government discretion.",
+      "proposedWording": "If no valid will governs the estate, applicable intestate-succession law determines distribution. That result may differ from personal wishes, but follows law rather than an official\u2019s preference. The exact result needs relevant family/legal facts.",
+      "implementationImpact": "Separate owner-reviewed source correction only. Preserve canonical block/prompt identities and existing response count; update linked wording, teacher source binding and compiled learner release only in an approved editorial change. No learner rewrite is applied by this teacher-support batch.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED",
+      "externalVerification": {
+        "url": "https://www.justice.gov.za/master/wills.html",
+        "reviewed": "Justice page states devolution according to IntestateSuccessionAct1987; no individual outcome determined."
+      },
+      "relatedPassages": [
+        {
+          "blockId": "87d89fe461da2d412e25fc85-1",
+          "exactPassage": "[[\"Term\", \"Definition\", \"isiZulu\", \"Afrikaans\"], [\"Testator\", \"The person making the will\", \"Umqambi wefa\", \"Testateur\"], [\"Beneficiary\", \"Someone who receives something from a will\", \"Umamukeli wefa\", \"Begunstigde\"], [\"Witness\", \"Someone who signs the will to confirm it is valid \u2014 cannot be a beneficiary\", \"Ufakazi\", \"Getuie\"], [\"Intestate\", \"Dying without a valid will \u2014 the government decides who gets what\", \"Ukufa ngaphandle kwewili\", \"Intestaat\"]]"
+        },
+        {
+          "blockId": "c5c1fc46f4bc13a454ede14b-1",
+          "exactPassage": "If you died without a will, who would get your belongings under the law? Is that who you would choose? If not, what is one thing you will do this year to change that?"
+        }
+      ]
+    }
+  ]
+}

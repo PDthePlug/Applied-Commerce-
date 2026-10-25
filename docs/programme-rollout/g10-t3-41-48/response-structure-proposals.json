@@ -1,0 +1,17 @@
+{
+  "sourceChangesApplied": false,
+  "proposals": [
+    {
+      "lessonId": "g10-t3-l41-041",
+      "blockId": "f46c0599243cabc68b9fbc54-1",
+      "concern": "TaxPayablecolumn fixedRcells have no own controls; three calculation cells remain. Any field/structure change requires separate owner review; current guide uses existing work/cells."
+    },
+    {
+      "lessonId": "g10-t3-l43-043",
+      "blockId": "1074d4024f3bd9ea98b09b64-1",
+      "concern": "Correcting the Ruleof72method changes the faulty question instruction/labels. The proposed two-field interpretation retains both saved identities and count; no silent wording/control change is applied.",
+      "proposedMeaningChange": true,
+      "responseFieldCountChange": false
+    }
+  ]
+}

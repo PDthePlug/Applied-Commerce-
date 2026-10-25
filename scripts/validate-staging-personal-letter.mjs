@@ -13,7 +13,7 @@ const access=JSON.parse(JSON.parse(fs.readFileSync(process.env.AC_STAGING_ACCESS
 const unit=(await runtimeUnits()).find(u=>u.id===(process.env.AC_LETTER_LESSON_ID??'g9-t4-l74-064'));
 assert.ok(unit?.type==='lesson');
 const block=process.env.AC_LETTER_BLOCK_ID?unit.blocks.find(b=>b.id===process.env.AC_LETTER_BLOCK_ID):unit.blocks[24];
-assert.equal(block?.type,'paragraph');assert.match(block.text,/^(?:Write a letter|End with:)/);
+assert.equal(block?.type,'paragraph');assert.match(block.text,/^(?:Write (?:a|your) letter|End with:)/);
 const credentials=fixtures.users.learner,storage='applied-commerce-learning-state-v1:user:'+credentials.id;
 const results={at:new Date().toISOString(),projectRef:config.projectRef,lessonId:unit.id,blockId:block.id,authentication:'genuine staging password login',syntheticEvidenceOnly:true,pageErrors:[]};
 const save=()=>fs.writeFileSync(process.env.AC_STAGING_RESULTS_FILE,JSON.stringify(results,null,2)+'\n');

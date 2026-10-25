@@ -1,0 +1,103 @@
+{
+  "limits": "Hypothetical consistent arithmetic, no learner text changed. Pension projection convention matters; actual returns/fees/inflation/tax not guaranteed. Budget guide is2026/27, not labelled as2025/26.",
+  "retirement500": [
+    {
+      "years": 45,
+      "totalContributions": 270000,
+      "annualEndYearContributions8percent": 2319033.704271995,
+      "endMonthNominal8percentDiv12": 2637269.9457286103,
+      "endMonthEffectiveAnnual8percent": 2402883.4852839056
+    },
+    {
+      "years": 40,
+      "totalContributions": 240000,
+      "annualEndYearContributions8percent": 1554339.1122599926,
+      "endMonthNominal8percentDiv12": 1745503.9156843598,
+      "endMonthEffectiveAnnual8percent": 1610539.672838806
+    },
+    {
+      "years": 35,
+      "totalContributions": 210000,
+      "annualEndYearContributions8percent": 1033900.8220740426,
+      "endMonthNominal8percentDiv12": 1146941.2423315288,
+      "endMonthEffectiveAnnual8percent": 1071283.7878150076
+    },
+    {
+      "years": 30,
+      "totalContributions": 180000,
+      "annualEndYearContributions8percent": 679699.2666805087,
+      "endMonthNominal8percentDiv12": 745179.7243316679,
+      "endMonthEffectiveAnnual8percent": 704275.293566245
+    },
+    {
+      "years": 25,
+      "totalContributions": 150000,
+      "annualEndYearContributions8percent": 438635.63971644954,
+      "endMonthNominal8percentDiv12": 475513.1972804464,
+      "endMonthEffectiveAnnual8percent": 454495.47921187844
+    },
+    {
+      "years": 15,
+      "totalContributions": 90000,
+      "annualEndYearContributions8percent": 162912.6835648704,
+      "endMonthNominal8percentDiv12": 173019.1108057504,
+      "endMonthEffectiveAnnual8percent": 168803.15114014238
+    }
+  ],
+  "activity43_200monthly45years": {
+    "contributions": 108000,
+    "incorrectAllContributionsThenFiveDoubles": 3456000,
+    "annualEndYear8percent": 927613.4817087981,
+    "endMonthNominal8Div12": 1054907.9782914442
+  },
+  "source41PrintedTableExercises": [
+    {
+      "taxableIncome": 50000,
+      "sourceTableAndRebate": 0,
+      "published2026_27Under65NoOtherAdjustments": 0,
+      "official2026TaxYear2025_26Under65NoOtherAdjustments": 0
+    },
+    {
+      "taxableIncome": 80000,
+      "sourceTableAndRebate": 0,
+      "published2026_27Under65NoOtherAdjustments": 0,
+      "official2026TaxYear2025_26Under65NoOtherAdjustments": 0
+    },
+    {
+      "taxableIncome": 100000,
+      "sourceTableAndRebate": 1105.0,
+      "published2026_27Under65NoOtherAdjustments": 180.0,
+      "official2026TaxYear2025_26Under65NoOtherAdjustments": 765.0
+    },
+    {
+      "taxableIncome": 120000,
+      "sourceTableAndRebate": 6305.0,
+      "published2026_27Under65NoOtherAdjustments": 3780.0,
+      "official2026TaxYear2025_26Under65NoOtherAdjustments": 4365.0
+    },
+    {
+      "taxableIncome": 150000,
+      "sourceTableAndRebate": 14105.0,
+      "published2026_27Under65NoOtherAdjustments": 9180.0,
+      "official2026TaxYear2025_26Under65NoOtherAdjustments": 9765.0
+    },
+    {
+      "taxableIncome": 200000,
+      "sourceTableAndRebate": 27542.5,
+      "published2026_27Under65NoOtherAdjustments": 18180.0,
+      "official2026TaxYear2025_26Under65NoOtherAdjustments": 18765.0
+    },
+    {
+      "taxableIncome": 220000,
+      "sourceTableAndRebate": 33742.5,
+      "published2026_27Under65NoOtherAdjustments": 21780.0,
+      "official2026TaxYear2025_26Under65NoOtherAdjustments": 22365.0
+    }
+  ],
+  "activity44Hypothetical6000DeductionAt18percent": 1080.0,
+  "case44RA20000Deduction2026_27": {
+    "before": 18180.0,
+    "after": 14580.0,
+    "difference": 3600.0
+  }
+}

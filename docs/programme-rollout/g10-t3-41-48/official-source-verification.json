@@ -1,0 +1,40 @@
+{
+  "retrievedUTC": "2026-10-25",
+  "sources": {
+    "sars-individual-rates": {
+      "url": "https://www.sars.gov.za/tax-rates/income-tax/rates-of-tax-for-individuals/",
+      "status": 200,
+      "bytes": 292273,
+      "sha256": "5899c48cf40280927467deee0c1d843edd648c2a6877ad395945ea0c6296faaa"
+    },
+    "sars-two-pot-selfhelp": {
+      "url": "https://www.sars.gov.za/taxpayer-self-help-guide-two-pot/",
+      "status": 200,
+      "bytes": 250367,
+      "sha256": "5c7ece670876eac624c18335faea2cf8c670c9eaf77b2ebaca0e159c75f43084"
+    },
+    "justice-wills": {
+      "url": "https://www.justice.gov.za/master/wills.html",
+      "status": 200,
+      "bytes": 21864,
+      "sha256": "016e2c1710c03a435520df1f125bac6bd495e068cf1a79fd52c5ee1432388634"
+    },
+    "sars-two-pot-root": {
+      "url": "https://www.sars.gov.za/two-pot-retirement-system/",
+      "status": 200,
+      "bytes": 349280,
+      "sha256": "d957bd75ccae1962b6a09c88e499181e679005bb5be4fbbf03e0b9078eab0203"
+    }
+  },
+  "reviewed": {
+    "individualRates": "Actual2027and2026tax-year sections, unchanged2024\u20132026table, rebates and thresholds read. Current2027table matches2026/27Budgetguide. Source41rebate17235/threshold95750match2026taxyear but its brackets do not: proper firstband237100@18.",
+    "twoPot": "Root individual/fund-administrator FAQ and reform paragraphs through August2024media notice read. Historical commencement1September2024 and conditional savings withdrawal established; no full consolidated eligibility/components/rules certification. Linked selfhelp PDF dated26August2024 fullytext-read after identifying PDF response rather than HTML.",
+    "wills": "Justice Master wills page relevant competence, witnesses, formalities, beneficiary-disqualification exceptions and intestacy read. Maker16+, competentwitness14+, signature/presence details; witnessing can disqualify benefit with exceptions, rather than automatic whole-will invalidity. Page guide not full consolidatedact/court/specificfamily advice."
+  },
+  "noClassroomAction": "No tax registration, withdrawal, account opening, will signing or private financial/legal-document upload is part of classroom validation.",
+  "limits": [
+    "Official2024media March proposals only, not finalreform proof; do not treat them as enactment.",
+    "Earlier specificSARSURLs403/404 did not imply entireSARSsiteunreachable; exactdiscoveredlinks now200.",
+    "These source checks do not certify insurance law/cover or comprehensive current retirement/tax/wills advice."
+  ]
+}
