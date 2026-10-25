@@ -31,7 +31,7 @@ const targets=[
 const results={at:new Date().toISOString(),projectRef:config.projectRef,authentication:'genuine staging password login',localEvidence:'actual ContentBlocks SSR; empty response state',hostedEvidence:'unintercepted authenticated rendered learner lesson',syntheticPersistence:persist,tables:[],pageErrors:[]};
 const save=()=>fs.writeFileSync(process.env.AC_STAGING_RESULTS_FILE,JSON.stringify(results,null,2)+'\n');
 const browser=await chromium.launch({executablePath:process.env.AC_BROWSER_EXECUTABLE,proxy:process.env.HTTPS_PROXY?{server:process.env.HTTPS_PROXY}:undefined,args:['--no-sandbox','--disable-dev-shm-usage']});
-async function tableFor(page,headers,occurrence=0){const tables=page.locator('table');for(let i=0;i<await tables.count();i++){const table=tables.nth(i);if(JSON.stringify(await table.locator('thead th').allTextContents())===JSON.stringify(headers)&&occurrence--===0)return table;}throw Error('Expected exact source table absent');}
+async function tableFor(page,headers,occurrence=0){await page.locator('table').first().waitFor({timeout:60000});const tables=page.locator('table');for(let i=0;i<await tables.count();i++){const table=tables.nth(i);if(JSON.stringify(await table.locator('thead th').allTextContents())===JSON.stringify(headers)&&occurrence--===0)return table;}throw Error('Expected exact source table absent');}
 const route=unit=>`/learn/${unit.grade}/term/${unit.term}/${unit.id}`;
 const credentials=fixtures.users.learner;
 const storage='applied-commerce-learning-state-v1:user:'+credentials.id;
