@@ -4,7 +4,7 @@
   "authoredLessons": 395,
   "assessmentsPreserved": 4,
   "completeBeforeThisRollout": 24,
-  "remaining": 258,
+  "remaining": 248,
   "lessons": [
     {
       "lessonId": "g8-t1-l01-001",
@@ -3564,35 +3564,43 @@
       "grade": 9,
       "term": 4,
       "title": "LOOKING BACK — WHAT WE HAVE LEARNED THIS YEAR",
-      "status": "STAGED_PENDING_VERIFICATION",
+      "status": "COMPLETED_INDIVIDUAL_REVIEW",
       "sourceAlignment": "Every learner block read; source/schema/activity and actual-renderer insertion PASS",
-      "instructionalReview": "Individual preparation, cues, local support and later work written; genuine staging review pending",
+      "instructionalReview": "Every learner block read; individual preparation/cues/local support/later work and genuine rendered review complete",
       "contactPeriods": 1,
-      "automated": "PASS: 213 Node tests, source/activity/actual-renderer checks and original-key guarded sealing; hosted acceptance pending",
-      "genuineRole": "PENDING",
-      "printing": "PENDING",
-      "responsive": "PENDING",
-      "issues": [
-        "Sealed candidate awaits normal hosted acceptance; not counted completed"
-      ],
-      "timingStatus": "PROVISIONAL; actual enrolment, access arrangements and educator trials remain pending"
+      "automated": "213 Node tests, runtime/typecheck/lint, source/renderer and guarded original-key build PASS",
+      "genuineRole": "PASS: genuine exact fields/controls, navigation, Learner View; first-response edit/clear/reload/fresh-login persistence",
+      "printing": "PASS: integrated/fallback DOM fields, physical PDF text and A4 margins",
+      "responsive": "PASS: 6 widths × 3 text scales, genuine staging",
+      "issues": [],
+      "timingStatus": "PROVISIONAL; actual enrolment, access arrangements and educator trials remain pending",
+      "editorialReview": {
+        "status": "SEPARATE_UNAPPLIED_PROPOSALS_REQUIRE_REVIEW",
+        "proposals": [
+          {
+            "register": "docs/programme-rollout/SOURCE_EDITORIAL_REGISTER.json",
+            "entry": 113,
+            "blockId": "2eea84dc60bec7ce0f350166-1",
+            "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+          }
+        ],
+        "withdrawn": []
+      }
     },
     {
       "lessonId": "g9-t4-l56-046",
       "grade": 9,
       "term": 4,
       "title": "MY PASSIONS AND MY COMMUNITY",
-      "status": "STAGED_PENDING_VERIFICATION",
+      "status": "COMPLETED_INDIVIDUAL_REVIEW",
       "sourceAlignment": "Every learner block read; source/schema/activity and actual-renderer insertion PASS",
-      "instructionalReview": "Individual preparation, cues, local support and later work written; genuine staging review pending",
+      "instructionalReview": "Every learner block read; individual preparation/cues/local support/later work and genuine rendered review complete",
       "contactPeriods": 1,
-      "automated": "PASS: 213 Node tests, source/activity/actual-renderer checks and original-key guarded sealing; hosted acceptance pending",
-      "genuineRole": "PENDING",
-      "printing": "PENDING",
-      "responsive": "PENDING",
-      "issues": [
-        "Sealed candidate awaits normal hosted acceptance; not counted completed"
-      ],
+      "automated": "213 Node tests, runtime/typecheck/lint, source/renderer and guarded original-key build PASS",
+      "genuineRole": "PASS: genuine exact fields/controls, navigation, Learner View; first-response edit/clear/reload/fresh-login persistence",
+      "printing": "PASS: integrated/fallback DOM fields, physical PDF text and A4 margins",
+      "responsive": "PASS: 6 widths × 3 text scales, genuine staging",
+      "issues": [],
       "timingStatus": "PROVISIONAL; actual enrolment, access arrangements and educator trials remain pending"
     },
     {
@@ -3600,107 +3608,191 @@
       "grade": 9,
       "term": 4,
       "title": "INTRODUCTION TO SOCIAL ENTREPRENEURSHIP",
-      "status": "STAGED_PENDING_VERIFICATION",
+      "status": "COMPLETED_INDIVIDUAL_REVIEW",
       "sourceAlignment": "Every learner block read; source/schema/activity and actual-renderer insertion PASS",
-      "instructionalReview": "Individual preparation, cues, local support and later work written; genuine staging review pending",
+      "instructionalReview": "Every learner block read; individual preparation/cues/local support/later work and genuine rendered review complete",
       "contactPeriods": 1,
-      "automated": "PASS: 213 Node tests, source/activity/actual-renderer checks and original-key guarded sealing; hosted acceptance pending",
-      "genuineRole": "PENDING",
-      "printing": "PENDING",
-      "responsive": "PENDING",
-      "issues": [
-        "Sealed candidate awaits normal hosted acceptance; not counted completed"
-      ],
-      "timingStatus": "PROVISIONAL; actual enrolment, access arrangements and educator trials remain pending"
+      "automated": "213 Node tests, runtime/typecheck/lint, source/renderer and guarded original-key build PASS",
+      "genuineRole": "PASS: genuine exact fields/controls, navigation, Learner View; first-response edit/clear/reload/fresh-login persistence",
+      "printing": "PASS: integrated/fallback DOM fields, physical PDF text and A4 margins",
+      "responsive": "PASS: 6 widths × 3 text scales, genuine staging",
+      "issues": [],
+      "timingStatus": "PROVISIONAL; actual enrolment, access arrangements and educator trials remain pending",
+      "editorialReview": {
+        "status": "SEPARATE_UNAPPLIED_PROPOSALS_REQUIRE_REVIEW",
+        "proposals": [
+          {
+            "register": "docs/programme-rollout/SOURCE_EDITORIAL_REGISTER.json",
+            "entry": 114,
+            "blockId": "490b6d9b7e7b3abcba213723-1",
+            "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+          },
+          {
+            "register": "docs/programme-rollout/SOURCE_EDITORIAL_REGISTER.json",
+            "entry": 115,
+            "blockId": "00c22878a73621f39bc743fe-1",
+            "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+          }
+        ],
+        "withdrawn": []
+      }
     },
     {
       "lessonId": "g9-t4-l58-048",
       "grade": 9,
       "term": 4,
       "title": "PROJECT LAUNCH — MY COMMUNITY PROJECT (WITH HIGH-AGENCY CHALLENGE)",
-      "status": "STAGED_PENDING_VERIFICATION",
+      "status": "COMPLETED_INDIVIDUAL_REVIEW",
       "sourceAlignment": "Every learner block read; source/schema/activity and actual-renderer insertion PASS",
-      "instructionalReview": "Individual preparation, cues, local support and later work written; genuine staging review pending",
+      "instructionalReview": "Every learner block read; individual preparation/cues/local support/later work and genuine rendered review complete",
       "contactPeriods": 2,
-      "automated": "PASS: 213 Node tests, source/activity/actual-renderer checks and original-key guarded sealing; hosted acceptance pending",
-      "genuineRole": "PENDING",
-      "printing": "PENDING",
-      "responsive": "PENDING",
-      "issues": [
-        "Sealed candidate awaits normal hosted acceptance; not counted completed"
-      ],
-      "timingStatus": "PROVISIONAL; actual enrolment, access arrangements and educator trials remain pending"
+      "automated": "213 Node tests, runtime/typecheck/lint, source/renderer and guarded original-key build PASS",
+      "genuineRole": "PASS: genuine exact fields/controls, navigation, Learner View; first-response edit/clear/reload/fresh-login persistence",
+      "printing": "PASS: integrated/fallback DOM fields, physical PDF text and A4 margins",
+      "responsive": "PASS: 6 widths × 3 text scales, genuine staging",
+      "issues": [],
+      "timingStatus": "PROVISIONAL; actual enrolment, access arrangements and educator trials remain pending",
+      "editorialReview": {
+        "status": "SEPARATE_UNAPPLIED_PROPOSALS_REQUIRE_REVIEW",
+        "proposals": [
+          {
+            "register": "docs/programme-rollout/SOURCE_EDITORIAL_REGISTER.json",
+            "entry": 116,
+            "blockId": "7aee6c774c152b121098e1cc-1",
+            "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+          },
+          {
+            "register": "docs/programme-rollout/SOURCE_EDITORIAL_REGISTER.json",
+            "entry": 117,
+            "blockId": "7aee6c774c152b121098e1cc-1",
+            "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+          }
+        ],
+        "withdrawn": []
+      }
     },
     {
       "lessonId": "g9-t4-l59-049",
       "grade": 9,
       "term": 4,
       "title": "COMMUNITY NEEDS ASSESSMENT",
-      "status": "STAGED_PENDING_VERIFICATION",
+      "status": "COMPLETED_INDIVIDUAL_REVIEW",
       "sourceAlignment": "Every learner block read; source/schema/activity and actual-renderer insertion PASS",
-      "instructionalReview": "Individual preparation, cues, local support and later work written; genuine staging review pending",
+      "instructionalReview": "Every learner block read; individual preparation/cues/local support/later work and genuine rendered review complete",
       "contactPeriods": 1,
-      "automated": "PASS: 213 Node tests, source/activity/actual-renderer checks and original-key guarded sealing; hosted acceptance pending",
-      "genuineRole": "PENDING",
-      "printing": "PENDING",
-      "responsive": "PENDING",
-      "issues": [
-        "Sealed candidate awaits normal hosted acceptance; not counted completed"
-      ],
-      "timingStatus": "PROVISIONAL; actual enrolment, access arrangements and educator trials remain pending"
+      "automated": "213 Node tests, runtime/typecheck/lint, source/renderer and guarded original-key build PASS",
+      "genuineRole": "PASS: genuine exact fields/controls, navigation, Learner View; first-response edit/clear/reload/fresh-login persistence",
+      "printing": "PASS: integrated/fallback DOM fields, physical PDF text and A4 margins",
+      "responsive": "PASS: 6 widths × 3 text scales, genuine staging",
+      "issues": [],
+      "timingStatus": "PROVISIONAL; actual enrolment, access arrangements and educator trials remain pending",
+      "editorialReview": {
+        "status": "SEPARATE_UNAPPLIED_PROPOSALS_REQUIRE_REVIEW",
+        "proposals": [
+          {
+            "register": "docs/programme-rollout/SOURCE_EDITORIAL_REGISTER.json",
+            "entry": 118,
+            "blockId": "e4be5156f2d819c84959999a-1",
+            "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+          },
+          {
+            "register": "docs/programme-rollout/SOURCE_EDITORIAL_REGISTER.json",
+            "entry": 119,
+            "blockId": "5eca420d7999cce3c8fa086e-1",
+            "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+          }
+        ],
+        "withdrawn": []
+      }
     },
     {
       "lessonId": "g9-t4-l60-050",
       "grade": 9,
       "term": 4,
       "title": "DESIGNING YOUR PROJECT",
-      "status": "STAGED_PENDING_VERIFICATION",
+      "status": "COMPLETED_INDIVIDUAL_REVIEW",
       "sourceAlignment": "Every learner block read; source/schema/activity and actual-renderer insertion PASS",
-      "instructionalReview": "Individual preparation, cues, local support and later work written; genuine staging review pending",
+      "instructionalReview": "Every learner block read; individual preparation/cues/local support/later work and genuine rendered review complete",
       "contactPeriods": 1,
-      "automated": "PASS: 213 Node tests, source/activity/actual-renderer checks and original-key guarded sealing; hosted acceptance pending",
-      "genuineRole": "PENDING",
-      "printing": "PENDING",
-      "responsive": "PENDING",
-      "issues": [
-        "Sealed candidate awaits normal hosted acceptance; not counted completed"
-      ],
-      "timingStatus": "PROVISIONAL; actual enrolment, access arrangements and educator trials remain pending"
+      "automated": "213 Node tests, runtime/typecheck/lint, source/renderer and guarded original-key build PASS",
+      "genuineRole": "PASS: genuine exact fields/controls, navigation, Learner View; first-response edit/clear/reload/fresh-login persistence",
+      "printing": "PASS: integrated/fallback DOM fields, physical PDF text and A4 margins",
+      "responsive": "PASS: 6 widths × 3 text scales, genuine staging",
+      "issues": [],
+      "timingStatus": "PROVISIONAL; actual enrolment, access arrangements and educator trials remain pending",
+      "editorialReview": {
+        "status": "SEPARATE_UNAPPLIED_PROPOSALS_REQUIRE_REVIEW",
+        "proposals": [
+          {
+            "register": "docs/programme-rollout/SOURCE_EDITORIAL_REGISTER.json",
+            "entry": 120,
+            "blockId": "48038b2a9519b01e391a38d3-1",
+            "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+          },
+          {
+            "register": "docs/programme-rollout/SOURCE_EDITORIAL_REGISTER.json",
+            "entry": 121,
+            "blockId": "82ac70b424a961a440c62979-1",
+            "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+          }
+        ],
+        "withdrawn": []
+      }
     },
     {
       "lessonId": "g9-t4-l61-051",
       "grade": 9,
       "term": 4,
       "title": "BUDGETING FOR YOUR PROJECT",
-      "status": "STAGED_PENDING_VERIFICATION",
+      "status": "COMPLETED_INDIVIDUAL_REVIEW",
       "sourceAlignment": "Every learner block read; source/schema/activity and actual-renderer insertion PASS",
-      "instructionalReview": "Individual preparation, cues, local support and later work written; genuine staging review pending",
+      "instructionalReview": "Every learner block read; individual preparation/cues/local support/later work and genuine rendered review complete",
       "contactPeriods": 1,
-      "automated": "PASS: 213 Node tests, source/activity/actual-renderer checks and original-key guarded sealing; hosted acceptance pending",
-      "genuineRole": "PENDING",
-      "printing": "PENDING",
-      "responsive": "PENDING",
-      "issues": [
-        "Sealed candidate awaits normal hosted acceptance; not counted completed"
-      ],
-      "timingStatus": "PROVISIONAL; actual enrolment, access arrangements and educator trials remain pending"
+      "automated": "213 Node tests, runtime/typecheck/lint, source/renderer and guarded original-key build PASS",
+      "genuineRole": "PASS: genuine exact fields/controls, navigation, Learner View; first-response edit/clear/reload/fresh-login persistence",
+      "printing": "PASS: integrated/fallback DOM fields, physical PDF text and A4 margins",
+      "responsive": "PASS: 6 widths × 3 text scales, genuine staging",
+      "issues": [],
+      "timingStatus": "PROVISIONAL; actual enrolment, access arrangements and educator trials remain pending",
+      "editorialReview": {
+        "status": "SEPARATE_UNAPPLIED_PROPOSALS_REQUIRE_REVIEW",
+        "proposals": [
+          {
+            "register": "docs/programme-rollout/SOURCE_EDITORIAL_REGISTER.json",
+            "entry": 122,
+            "blockId": "dce57e6213606d013450ef18-1",
+            "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+          },
+          {
+            "register": "docs/programme-rollout/SOURCE_EDITORIAL_REGISTER.json",
+            "entry": 123,
+            "blockId": "dce57e6213606d013450ef18-1",
+            "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+          },
+          {
+            "register": "docs/programme-rollout/SOURCE_EDITORIAL_REGISTER.json",
+            "entry": 124,
+            "blockId": "ba72bf9a8d99645dbcfe7040-1",
+            "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+          }
+        ],
+        "withdrawn": []
+      }
     },
     {
       "lessonId": "g9-t4-l62-052",
       "grade": 9,
       "term": 4,
       "title": "PARTNERSHIPS AND SUPPORT",
-      "status": "STAGED_PENDING_VERIFICATION",
+      "status": "COMPLETED_INDIVIDUAL_REVIEW",
       "sourceAlignment": "Every learner block read; source/schema/activity and actual-renderer insertion PASS",
-      "instructionalReview": "Individual preparation, cues, local support and later work written; genuine staging review pending",
+      "instructionalReview": "Every learner block read; individual preparation/cues/local support/later work and genuine rendered review complete",
       "contactPeriods": 1,
-      "automated": "PASS: 213 Node tests, source/activity/actual-renderer checks and original-key guarded sealing; hosted acceptance pending",
-      "genuineRole": "PENDING",
-      "printing": "PENDING",
-      "responsive": "PENDING",
-      "issues": [
-        "Sealed candidate awaits normal hosted acceptance; not counted completed"
-      ],
+      "automated": "213 Node tests, runtime/typecheck/lint, source/renderer and guarded original-key build PASS",
+      "genuineRole": "PASS: genuine exact fields/controls, navigation, Learner View; first-response edit/clear/reload/fresh-login persistence",
+      "printing": "PASS: integrated/fallback DOM fields, physical PDF text and A4 margins",
+      "responsive": "PASS: 6 widths × 3 text scales, genuine staging",
+      "issues": [],
       "timingStatus": "PROVISIONAL; actual enrolment, access arrangements and educator trials remain pending"
     },
     {
@@ -3708,17 +3800,15 @@
       "grade": 9,
       "term": 4,
       "title": "PROJECT EXECUTION — MAKING IT HAPPEN",
-      "status": "STAGED_PENDING_VERIFICATION",
+      "status": "COMPLETED_INDIVIDUAL_REVIEW",
       "sourceAlignment": "Every learner block read; source/schema/activity and actual-renderer insertion PASS",
-      "instructionalReview": "Individual preparation, cues, local support and later work written; genuine staging review pending",
+      "instructionalReview": "Every learner block read; individual preparation/cues/local support/later work and genuine rendered review complete",
       "contactPeriods": 1,
-      "automated": "PASS: 213 Node tests, source/activity/actual-renderer checks and original-key guarded sealing; hosted acceptance pending",
-      "genuineRole": "PENDING",
-      "printing": "PENDING",
-      "responsive": "PENDING",
-      "issues": [
-        "Sealed candidate awaits normal hosted acceptance; not counted completed"
-      ],
+      "automated": "213 Node tests, runtime/typecheck/lint, source/renderer and guarded original-key build PASS",
+      "genuineRole": "PASS: genuine exact fields/controls, navigation, Learner View; first-response edit/clear/reload/fresh-login persistence",
+      "printing": "PASS: integrated/fallback DOM fields, physical PDF text and A4 margins",
+      "responsive": "PASS: 6 widths × 3 text scales, genuine staging",
+      "issues": [],
       "timingStatus": "PROVISIONAL; actual enrolment, access arrangements and educator trials remain pending"
     },
     {
@@ -3726,18 +3816,28 @@
       "grade": 9,
       "term": 4,
       "title": "MID-PROJECT CHECK-IN",
-      "status": "STAGED_PENDING_VERIFICATION",
+      "status": "COMPLETED_INDIVIDUAL_REVIEW",
       "sourceAlignment": "Every learner block read; source/schema/activity and actual-renderer insertion PASS",
-      "instructionalReview": "Individual preparation, cues, local support and later work written; genuine staging review pending",
+      "instructionalReview": "Every learner block read; individual preparation/cues/local support/later work and genuine rendered review complete",
       "contactPeriods": 1,
-      "automated": "PASS: 213 Node tests, source/activity/actual-renderer checks and original-key guarded sealing; hosted acceptance pending",
-      "genuineRole": "PENDING",
-      "printing": "PENDING",
-      "responsive": "PENDING",
-      "issues": [
-        "Sealed candidate awaits normal hosted acceptance; not counted completed"
-      ],
-      "timingStatus": "PROVISIONAL; actual enrolment, access arrangements and educator trials remain pending"
+      "automated": "213 Node tests, runtime/typecheck/lint, source/renderer and guarded original-key build PASS",
+      "genuineRole": "PASS: genuine exact fields/controls, navigation, Learner View; first-response edit/clear/reload/fresh-login persistence",
+      "printing": "PASS: integrated/fallback DOM fields, physical PDF text and A4 margins",
+      "responsive": "PASS: 6 widths × 3 text scales, genuine staging",
+      "issues": [],
+      "timingStatus": "PROVISIONAL; actual enrolment, access arrangements and educator trials remain pending",
+      "editorialReview": {
+        "status": "SEPARATE_UNAPPLIED_PROPOSALS_REQUIRE_REVIEW",
+        "proposals": [
+          {
+            "register": "docs/programme-rollout/SOURCE_EDITORIAL_REGISTER.json",
+            "entry": 125,
+            "blockId": "b7dc9329c3ce214c2510c8d1-1",
+            "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+          }
+        ],
+        "withdrawn": []
+      }
     },
     {
       "lessonId": "g9-t4-l65-055",
@@ -3746,17 +3846,16 @@
       "title": "PROBLEM-SOLVING ON THE GO",
       "status": "PRIVATE_DRAFT_PENDING_SEALING_AND_GENUINE_VERIFICATION",
       "sourceAlignment": "Every actual learner block read; source/schema/activity and actual ContentBlocks insertion PASS",
-      "instructionalReview": "Individually authored preparation, concise cues, local support and later work; genuine rendered review pending",
+      "instructionalReview": "Individual preparation, brief cues, local support, later work and provisional timing; genuine review pending",
       "contactPeriods": 1,
-      "automated": "PASS: source/schema/activity coverage and actual-renderer insertion; private assembly only",
-      "genuineRole": "PENDING: no hosted release or genuine role test for this private draft",
-      "printing": "PENDING",
-      "responsive": "PENDING",
+      "automated": "PASS: private source/schema/actual-renderer checks only",
+      "genuineRole": "NOT RUN: private draft only",
+      "printing": "NOT RUN",
+      "responsive": "NOT RUN",
       "issues": [
-        "Private individual draft only; not included in completed 137",
-        "Original-key staging release and full genuine acceptance remain pending"
+        "Private draft; original-key release and full genuine acceptance pending"
       ],
-      "timingStatus": "PROVISIONAL; actual enrolment, access arrangements and educator trials remain pending"
+      "timingStatus": "PROVISIONAL; actual enrolment, access and educator trials pending"
     },
     {
       "lessonId": "g9-t4-l66-056",
@@ -3765,17 +3864,16 @@
       "title": "PROJECT COMPLETION",
       "status": "PRIVATE_DRAFT_PENDING_SEALING_AND_GENUINE_VERIFICATION",
       "sourceAlignment": "Every actual learner block read; source/schema/activity and actual ContentBlocks insertion PASS",
-      "instructionalReview": "Individually authored preparation, concise cues, local support and later work; genuine rendered review pending",
+      "instructionalReview": "Individual preparation, brief cues, local support, later work and provisional timing; genuine review pending",
       "contactPeriods": 2,
-      "automated": "PASS: source/schema/activity coverage and actual-renderer insertion; private assembly only",
-      "genuineRole": "PENDING: no hosted release or genuine role test for this private draft",
-      "printing": "PENDING",
-      "responsive": "PENDING",
+      "automated": "PASS: private source/schema/actual-renderer checks only",
+      "genuineRole": "NOT RUN: private draft only",
+      "printing": "NOT RUN",
+      "responsive": "NOT RUN",
       "issues": [
-        "Private individual draft only; not included in completed 137",
-        "Original-key staging release and full genuine acceptance remain pending"
+        "Private draft; original-key release and full genuine acceptance pending"
       ],
-      "timingStatus": "PROVISIONAL; actual enrolment, access arrangements and educator trials remain pending"
+      "timingStatus": "PROVISIONAL; actual enrolment, access and educator trials pending"
     },
     {
       "lessonId": "g9-t4-l67-057",
@@ -3784,17 +3882,16 @@
       "title": "STORYTELLING YOUR PROJECT",
       "status": "PRIVATE_DRAFT_PENDING_SEALING_AND_GENUINE_VERIFICATION",
       "sourceAlignment": "Every actual learner block read; source/schema/activity and actual ContentBlocks insertion PASS",
-      "instructionalReview": "Individually authored preparation, concise cues, local support and later work; genuine rendered review pending",
+      "instructionalReview": "Individual preparation, brief cues, local support, later work and provisional timing; genuine review pending",
       "contactPeriods": 1,
-      "automated": "PASS: source/schema/activity coverage and actual-renderer insertion; private assembly only",
-      "genuineRole": "PENDING: no hosted release or genuine role test for this private draft",
-      "printing": "PENDING",
-      "responsive": "PENDING",
+      "automated": "PASS: private source/schema/actual-renderer checks only",
+      "genuineRole": "NOT RUN: private draft only",
+      "printing": "NOT RUN",
+      "responsive": "NOT RUN",
       "issues": [
-        "Private individual draft only; not included in completed 137",
-        "Original-key staging release and full genuine acceptance remain pending"
+        "Private draft; original-key release and full genuine acceptance pending"
       ],
-      "timingStatus": "PROVISIONAL; actual enrolment, access arrangements and educator trials remain pending"
+      "timingStatus": "PROVISIONAL; actual enrolment, access and educator trials pending"
     },
     {
       "lessonId": "g9-t4-l68-058",
@@ -3803,17 +3900,16 @@
       "title": "PRESENTATION PREPARATION",
       "status": "PRIVATE_DRAFT_PENDING_SEALING_AND_GENUINE_VERIFICATION",
       "sourceAlignment": "Every actual learner block read; source/schema/activity and actual ContentBlocks insertion PASS",
-      "instructionalReview": "Individually authored preparation, concise cues, local support and later work; genuine rendered review pending",
+      "instructionalReview": "Individual preparation, brief cues, local support, later work and provisional timing; genuine review pending",
       "contactPeriods": 2,
-      "automated": "PASS: source/schema/activity coverage and actual-renderer insertion; private assembly only",
-      "genuineRole": "PENDING: no hosted release or genuine role test for this private draft",
-      "printing": "PENDING",
-      "responsive": "PENDING",
+      "automated": "PASS: private source/schema/actual-renderer checks only",
+      "genuineRole": "NOT RUN: private draft only",
+      "printing": "NOT RUN",
+      "responsive": "NOT RUN",
       "issues": [
-        "Private individual draft only; not included in completed 137",
-        "Original-key staging release and full genuine acceptance remain pending"
+        "Private draft; original-key release and full genuine acceptance pending"
       ],
-      "timingStatus": "PROVISIONAL; actual enrolment, access arrangements and educator trials remain pending"
+      "timingStatus": "PROVISIONAL; actual enrolment, access and educator trials pending"
     },
     {
       "lessonId": "g9-t4-l69-059",
@@ -3822,119 +3918,124 @@
       "title": "PROJECT PRESENTATIONS — DAY 1",
       "status": "PRIVATE_DRAFT_PENDING_SEALING_AND_GENUINE_VERIFICATION",
       "sourceAlignment": "Every actual learner block read; source/schema/activity and actual ContentBlocks insertion PASS",
-      "instructionalReview": "Individually authored preparation, concise cues, local support and later work; genuine rendered review pending",
+      "instructionalReview": "Individual preparation, brief cues, local support, later work and provisional timing; genuine review pending",
       "contactPeriods": 4,
-      "automated": "PASS: source/schema/activity coverage and actual-renderer insertion; private assembly only",
-      "genuineRole": "PENDING: no hosted release or genuine role test for this private draft",
-      "printing": "PENDING",
-      "responsive": "PENDING",
+      "automated": "PASS: private source/schema/actual-renderer checks only",
+      "genuineRole": "NOT RUN: private draft only",
+      "printing": "NOT RUN",
+      "responsive": "NOT RUN",
       "issues": [
-        "Private individual draft only; not included in completed 137",
-        "Original-key staging release and full genuine acceptance remain pending"
+        "Private draft; original-key release and full genuine acceptance pending"
       ],
-      "timingStatus": "PROVISIONAL; actual enrolment, access arrangements and educator trials remain pending"
+      "timingStatus": "PROVISIONAL; actual enrolment, access and educator trials pending"
     },
     {
       "lessonId": "g9-t4-l70-060",
       "grade": 9,
       "term": 4,
       "title": "PROJECT PRESENTATIONS — DAY 2 AND CELEBRATION",
-      "status": "PENDING_INDIVIDUAL_REVIEW",
-      "sourceAlignment": "PENDING",
-      "instructionalReview": "PENDING",
-      "contactPeriods": null,
-      "automated": "PENDING",
-      "genuineRole": "PENDING",
-      "printing": "PENDING",
-      "responsive": "PENDING",
+      "status": "PRIVATE_DRAFT_PENDING_SEALING_AND_GENUINE_VERIFICATION",
+      "sourceAlignment": "Every actual learner block read; source/schema/activity and actual ContentBlocks insertion PASS",
+      "instructionalReview": "Individual preparation, brief cues, local support, later work and provisional timing; genuine review pending",
+      "contactPeriods": 5,
+      "automated": "PASS: private source/schema/actual-renderer checks only",
+      "genuineRole": "NOT RUN: private draft only",
+      "printing": "NOT RUN",
+      "responsive": "NOT RUN",
       "issues": [
-        "Individual source/instructional review and genuine staging verification remain pending"
-      ]
+        "Private draft; original-key release and full genuine acceptance pending"
+      ],
+      "timingStatus": "PROVISIONAL; actual enrolment, access and educator trials pending"
     },
     {
       "lessonId": "g9-t4-l71-061",
       "grade": 9,
       "term": 4,
       "title": "PROJECT REFLECTION — WHAT I LEARNED",
-      "status": "PENDING_INDIVIDUAL_REVIEW",
-      "sourceAlignment": "PENDING",
-      "instructionalReview": "PENDING",
-      "contactPeriods": null,
-      "automated": "PENDING",
-      "genuineRole": "PENDING",
-      "printing": "PENDING",
-      "responsive": "PENDING",
+      "status": "PRIVATE_DRAFT_PENDING_SEALING_AND_GENUINE_VERIFICATION",
+      "sourceAlignment": "Every actual learner block read; source/schema/activity and actual ContentBlocks insertion PASS",
+      "instructionalReview": "Individual preparation, brief cues, local support, later work and provisional timing; genuine review pending",
+      "contactPeriods": 1,
+      "automated": "PASS: private source/schema/actual-renderer checks only",
+      "genuineRole": "NOT RUN: private draft only",
+      "printing": "NOT RUN",
+      "responsive": "NOT RUN",
       "issues": [
-        "Individual source/instructional review and genuine staging verification remain pending"
-      ]
+        "Private draft; original-key release and full genuine acceptance pending"
+      ],
+      "timingStatus": "PROVISIONAL; actual enrolment, access and educator trials pending"
     },
     {
       "lessonId": "g9-t4-l72-062",
       "grade": 9,
       "term": 4,
       "title": "WHAT WE LEARNED ABOUT OUR COMMUNITY",
-      "status": "PENDING_INDIVIDUAL_REVIEW",
-      "sourceAlignment": "PENDING",
-      "instructionalReview": "PENDING",
-      "contactPeriods": null,
-      "automated": "PENDING",
-      "genuineRole": "PENDING",
-      "printing": "PENDING",
-      "responsive": "PENDING",
+      "status": "PRIVATE_DRAFT_PENDING_SEALING_AND_GENUINE_VERIFICATION",
+      "sourceAlignment": "Every actual learner block read; source/schema/activity and actual ContentBlocks insertion PASS",
+      "instructionalReview": "Individual preparation, brief cues, local support, later work and provisional timing; genuine review pending",
+      "contactPeriods": 1,
+      "automated": "PASS: private source/schema/actual-renderer checks only",
+      "genuineRole": "NOT RUN: private draft only",
+      "printing": "NOT RUN",
+      "responsive": "NOT RUN",
       "issues": [
-        "Individual source/instructional review and genuine staging verification remain pending"
-      ]
+        "Private draft; original-key release and full genuine acceptance pending"
+      ],
+      "timingStatus": "PROVISIONAL; actual enrolment, access and educator trials pending"
     },
     {
       "lessonId": "g9-t4-l73-063",
       "grade": 9,
       "term": 4,
       "title": "THE FORK IN THE ROAD — CHOOSING YOUR PATH FORWARD",
-      "status": "PENDING_INDIVIDUAL_REVIEW",
-      "sourceAlignment": "PENDING",
-      "instructionalReview": "PENDING",
-      "contactPeriods": null,
-      "automated": "PENDING",
-      "genuineRole": "PENDING",
-      "printing": "PENDING",
-      "responsive": "PENDING",
+      "status": "PRIVATE_DRAFT_PENDING_SEALING_AND_GENUINE_VERIFICATION",
+      "sourceAlignment": "Every actual learner block read; source/schema/activity and actual ContentBlocks insertion PASS",
+      "instructionalReview": "Individual preparation, brief cues, local support, later work and provisional timing; genuine review pending",
+      "contactPeriods": 2,
+      "automated": "PASS: private source/schema/actual-renderer checks only",
+      "genuineRole": "NOT RUN: private draft only",
+      "printing": "NOT RUN",
+      "responsive": "NOT RUN",
       "issues": [
-        "Individual source/instructional review and genuine staging verification remain pending"
-      ]
+        "Private draft; original-key release and full genuine acceptance pending"
+      ],
+      "timingStatus": "PROVISIONAL; actual enrolment, access and educator trials pending"
     },
     {
       "lessonId": "g9-t4-l74-064",
       "grade": 9,
       "term": 4,
       "title": "FINAL PORTFOLIO AND LETTER TO FUTURE SELF",
-      "status": "PENDING_INDIVIDUAL_REVIEW",
-      "sourceAlignment": "PENDING",
-      "instructionalReview": "PENDING",
-      "contactPeriods": null,
-      "automated": "PENDING",
-      "genuineRole": "PENDING",
-      "printing": "PENDING",
-      "responsive": "PENDING",
+      "status": "PRIVATE_DRAFT_PENDING_SEALING_AND_GENUINE_VERIFICATION",
+      "sourceAlignment": "Every actual learner block read; source/schema/activity and actual ContentBlocks insertion PASS",
+      "instructionalReview": "Individual preparation, brief cues, local support, later work and provisional timing; genuine review pending",
+      "contactPeriods": 2,
+      "automated": "PASS: private source/schema/actual-renderer checks only",
+      "genuineRole": "NOT RUN: private draft only",
+      "printing": "NOT RUN",
+      "responsive": "NOT RUN",
       "issues": [
-        "Individual source/instructional review and genuine staging verification remain pending"
-      ]
+        "Private draft; original-key release and full genuine acceptance pending"
+      ],
+      "timingStatus": "PROVISIONAL; actual enrolment, access and educator trials pending"
     },
     {
       "lessonId": "g9-t4-l75-065",
       "grade": 9,
       "term": 4,
       "title": "FAREWELL TO GRADE 9",
-      "status": "PENDING_INDIVIDUAL_REVIEW",
-      "sourceAlignment": "PENDING",
-      "instructionalReview": "PENDING",
-      "contactPeriods": null,
-      "automated": "PENDING",
-      "genuineRole": "PENDING",
-      "printing": "PENDING",
-      "responsive": "PENDING",
+      "status": "PRIVATE_DRAFT_PENDING_SEALING_AND_GENUINE_VERIFICATION",
+      "sourceAlignment": "Every actual learner block read; source/schema/activity and actual ContentBlocks insertion PASS",
+      "instructionalReview": "Individual preparation, brief cues, local support, later work and provisional timing; genuine review pending",
+      "contactPeriods": 1,
+      "automated": "PASS: private source/schema/actual-renderer checks only",
+      "genuineRole": "NOT RUN: private draft only",
+      "printing": "NOT RUN",
+      "responsive": "NOT RUN",
       "issues": [
-        "Individual source/instructional review and genuine staging verification remain pending"
-      ]
+        "Private draft; original-key release and full genuine acceptance pending"
+      ],
+      "timingStatus": "PROVISIONAL; actual enrolment, access and educator trials pending"
     },
     {
       "lessonId": "g10-t1-l01-001",
@@ -8080,7 +8181,7 @@
       ]
     }
   ],
-  "privateDraftsPrepared": 5,
-  "newCompleted": 113,
-  "stagedPendingVerification": 10
+  "privateDraftsPrepared": 11,
+  "newCompleted": 123,
+  "stagedPendingVerification": 0
 }

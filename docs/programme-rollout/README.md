@@ -1,9 +1,7 @@
 # Programme rollout from PR #48
 
-**137 of 395 lessons have individually reviewed support in verified staging; 258 remain.** Grade 8 is complete and Grade 9 Terms 1–3 are complete. New content still needs owner classroom review and educator timing trials.
+**147 of 395 lessons have individually reviewed support in verified staging; 248 remain.** Grade 8 and Grade 9 Terms 1–3 are complete; the first ten of Grade 9 Term 4’s twenty-one lessons are complete. Eleven further Term 4 guides are private drafts and remain within the uncompleted count.
 
-[PR #62](https://github.com/PDthePlug/Applied-Commerce-/pull/62) follows up the owner-merged initial PR #61 candidate with title reflow, accurate references to existing workbook tables and complete genuine verification. The agent did not merge either PR or deploy to the separate live application.
+[PR #63](https://github.com/PDthePlug/Applied-Commerce-/pull/63) adds this batch on [PR #62](https://github.com/PDthePlug/Applied-Commerce-/pull/62), which verifies and corrects the owner-merged PR #61 candidate. Neither follow-up was merged by this work. New content still needs owner classroom review and educator timing trials.
 
-See [current report](REPORT.md), [coverage](coverage.json), [grade-and-term counts](grade-term.csv), and [exact batch results](g9-t3-35-54/RESULTS.json). The original key stays in staging; private guides, credentials and captures are protected outside Git.
-
-Ten Grade 9 Term 4 lessons (55–64) form a sealed 147-plan candidate preserving all 137 verified bindings; full hosted acceptance is pending. Five further lessons (65–69) remain private drafts. All fifteen remain within the uncompleted 258 until their own acceptance passes. See [private-draft status](g9-t4-private-drafts/review-status.json).
+See [current report](REPORT.md), [coverage](coverage.json), [grade-and-term counts](grade-term.csv), [batch results](g9-t4-55-64/RESULTS.json) and [private-draft status](g9-t4-private-drafts/review-status.json). The key remains server-bound; private guides, credentials and captures persist outside Git.

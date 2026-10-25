@@ -1,0 +1,31 @@
+{
+  "commit": "4f9ffae8e095cbc81e2fda51f98eb8e07e576aba",
+  "measurement": "Genuine sequential authenticated requests through the coding proxy; five per lesson",
+  "firstObservedNewRequests": {
+    "count": 10,
+    "medianMs": 706.5
+  },
+  "repeatedNewRequests": {
+    "count": 40,
+    "medianMs": 762.5
+  },
+  "browserHeap": {
+    "evidence": "Browser CDP JSHeapUsedSize across 15 lesson navigations and private PDF generation; not hosted function memory",
+    "beforeBytes": [
+      7206412,
+      53107384
+    ],
+    "afterBytes": [
+      20546632,
+      53107384
+    ]
+  },
+  "trustedBuildProcess": {
+    "rssBytes": 317038592,
+    "evidence": "Staging sealing build only; not request-time server RSS"
+  },
+  "guaranteedColdProcess": "NOT DEMONSTRATED",
+  "hostedServerMemory": "NOT MEASURED",
+  "cacheHit": "NOT ESTABLISHED; private/no-store responses",
+  "productionArchitectureChanges": false
+}

@@ -1,6 +1,6 @@
 # Grade 9 Term 4: Lessons 55–64
 
-Ten actual learner lessons were read individually before authoring. These are candidate guides, not completed hosted acceptance. The workbook remains central; preparation, brief contextual cues, optional local support, the central navigator and complete private printing/fallback use the approved shared components.
+Ten actual learner lessons were read individually before authoring. All ten have completed their own genuine hosted acceptance; educator classroom/timing trials remain pending. The workbook remains central; preparation, brief contextual cues, optional local support, the central navigator and complete private printing/fallback use the approved shared components.
 
 | Lesson | Instructional review | Provisional contacts |
 | --- | --- | ---: |
@@ -19,4 +19,6 @@ Ten actual learner lessons were read individually before authoring. These are ca
 
 Thirteen focused source proposals are separate and unapplied. They concern unverified CAPS labels, the reversed equation, simplified categories, specific safety/financial assumptions, inferred customers, imagined evidence, two actual renderer limitations and visibility. Metaphors remain where useful. No canonical book, source sequence, learner activity, response count, stable answer identity, notes, completion or portfolio is changed.
 
-Private source/schema/activity and actual-renderer insertion checks pass. Original-key sealing, genuine role/persistence, responsive and complete printing checks remain pending for this candidate. Technical checks do not replace the individual instructional review above.
+Private source/schema/activity and actual-renderer insertion checks pass. Original-key sealing, genuine role/persistence, 270 responsive cases and complete integrated/fallback printing checks pass. Technical checks do not replace the individual instructional review above.
+
+See [full results](RESULTS.json) and [137 prior binding comparisons](prior137-preservation.json). Fifteen lessons were tested directly, including all ten additions and five unchanged benchmarks. Four editable tables passed genuine fresh-login persistence; the budget’s printed row correctly has no entry controls.
