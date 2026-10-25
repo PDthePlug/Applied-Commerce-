@@ -29,13 +29,13 @@
   "rollout": {
     "existingPlans": 24,
     "newCompleted": 138,
-    "privateUnsealedDrafts": 8,
+    "privateUnsealedDrafts": 4,
     "uncompleted": 233,
     "blocker": null,
-    "stagedPendingVerification": 0
+    "stagedPendingVerification": 8
   },
   "pending": [
-    "Remaining 233 guides to complete in verified staging; eight have private individual drafts",
+    "Remaining 233 guides to complete in verified staging; eight staged candidates and four private drafts",
     "Educator timing trials",
     "Hosted cold-process/server-memory measurements",
     "Configured maximum/inactivity session lifetime"
@@ -90,7 +90,7 @@
       "hostedServerMemory": "NOT MEASURED"
     },
     "pending": [
-      "Remaining 233 guides to complete in verified staging; eight have private individual drafts",
+      "Remaining 233 guides to complete in verified staging; eight staged candidates and four private drafts",
       "Educator timing trials",
       "Hosted cold-process/server-memory measurements",
       "Configured maximum/inactivity session lifetime"
