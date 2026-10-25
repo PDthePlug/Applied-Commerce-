@@ -1,0 +1,244 @@
+{
+  "at": "2026-10-25T20:46:24.106Z",
+  "baseURL": "https://applied-commerce-sa-staging-crccto7jk.vercel.app",
+  "projectRef": "inxshlumnhcgiahxqewe",
+  "authentication": "real browser password login",
+  "plans": [
+    {
+      "lessonId": "g8-t1-l01-001",
+      "fields": 82,
+      "originalFieldsPreserved": true,
+      "originalResponseControlsPreserved": true,
+      "noRedundantDepthPanels": true,
+      "printFieldsPreserved": true,
+      "heapBefore": 7149948,
+      "heapAfter": 17371632
+    },
+    {
+      "lessonId": "g8-t1-l08-008",
+      "fields": 125,
+      "originalFieldsPreserved": true,
+      "originalResponseControlsPreserved": true,
+      "noRedundantDepthPanels": true,
+      "printFieldsPreserved": true,
+      "heapBefore": 17376216,
+      "heapAfter": 22510940
+    },
+    {
+      "lessonId": "g8-t1-l10-010",
+      "fields": 61,
+      "originalFieldsPreserved": true,
+      "originalResponseControlsPreserved": true,
+      "noRedundantDepthPanels": true,
+      "printFieldsPreserved": true,
+      "heapBefore": 22510940,
+      "heapAfter": 22837684
+    },
+    {
+      "lessonId": "g10-t2-l19-019",
+      "fields": 154,
+      "originalFieldsPreserved": true,
+      "originalResponseControlsPreserved": true,
+      "noRedundantDepthPanels": true,
+      "printFieldsPreserved": true,
+      "heapBefore": 22837684,
+      "heapAfter": 24891780
+    },
+    {
+      "lessonId": "g12-t1-l05-005",
+      "fields": 156,
+      "originalFieldsPreserved": true,
+      "originalResponseControlsPreserved": true,
+      "noRedundantDepthPanels": true,
+      "printFieldsPreserved": true,
+      "heapBefore": 24891780,
+      "heapAfter": 14627316
+    },
+    {
+      "lessonId": "g10-t2-l29-029",
+      "fields": 33,
+      "originalFieldsPreserved": true,
+      "originalResponseControlsPreserved": true,
+      "noRedundantDepthPanels": true,
+      "printFieldsPreserved": true,
+      "heapBefore": 14627316,
+      "heapAfter": 40474736
+    },
+    {
+      "lessonId": "g10-t2-l30-030",
+      "fields": 36,
+      "originalFieldsPreserved": true,
+      "originalResponseControlsPreserved": true,
+      "noRedundantDepthPanels": true,
+      "printFieldsPreserved": true,
+      "heapBefore": 40474736,
+      "heapAfter": 26847736
+    },
+    {
+      "lessonId": "g10-t2-l31-031",
+      "fields": 33,
+      "originalFieldsPreserved": true,
+      "originalResponseControlsPreserved": true,
+      "noRedundantDepthPanels": true,
+      "printFieldsPreserved": true,
+      "heapBefore": 26847736,
+      "heapAfter": 23667060
+    },
+    {
+      "lessonId": "g10-t2-l32-032",
+      "fields": 38,
+      "originalFieldsPreserved": true,
+      "originalResponseControlsPreserved": true,
+      "noRedundantDepthPanels": true,
+      "printFieldsPreserved": true,
+      "heapBefore": 23667060,
+      "heapAfter": 42292316
+    },
+    {
+      "lessonId": "g10-t2-l33-033",
+      "fields": 39,
+      "originalFieldsPreserved": true,
+      "originalResponseControlsPreserved": true,
+      "noRedundantDepthPanels": true,
+      "printFieldsPreserved": true,
+      "heapBefore": 42292316,
+      "heapAfter": 27434624
+    },
+    {
+      "lessonId": "g10-t2-l34-034",
+      "fields": 32,
+      "originalFieldsPreserved": true,
+      "originalResponseControlsPreserved": true,
+      "noRedundantDepthPanels": true,
+      "printFieldsPreserved": true,
+      "heapBefore": 27434624,
+      "heapAfter": 51322524
+    },
+    {
+      "lessonId": "g10-t2-l35-035",
+      "fields": 46,
+      "originalFieldsPreserved": true,
+      "originalResponseControlsPreserved": true,
+      "noRedundantDepthPanels": true,
+      "printFieldsPreserved": true,
+      "heapBefore": 51326716,
+      "heapAfter": 31743092
+    },
+    {
+      "lessonId": "g10-t2-l36-036",
+      "fields": 37,
+      "originalFieldsPreserved": true,
+      "originalResponseControlsPreserved": true,
+      "noRedundantDepthPanels": true,
+      "printFieldsPreserved": true,
+      "heapBefore": 31743092,
+      "heapAfter": 28640576
+    }
+  ],
+  "roles": [
+    {
+      "role": "facilitator existing session after revocation",
+      "status": 403
+    },
+    {
+      "role": "platformAdmin",
+      "status": 200
+    },
+    {
+      "role": "schoolAdmin",
+      "status": 200
+    },
+    {
+      "role": "learner",
+      "status": 403
+    },
+    {
+      "role": "unassigned",
+      "status": 403
+    },
+    {
+      "role": "other",
+      "status": 403
+    }
+  ],
+  "persistence": [
+    "browser save and reload",
+    "portfolio contains synthetic original response",
+    "fresh browser password login restores answers, reflection, note and completion"
+  ],
+  "delivery": [
+    {
+      "catalog": "include",
+      "request": 1,
+      "ms": 878,
+      "decodedBytes": 101791,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "catalog": "include",
+      "request": 2,
+      "ms": 1263,
+      "decodedBytes": 101791,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "catalog": "include",
+      "request": 3,
+      "ms": 828,
+      "decodedBytes": 101791,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "catalog": "include",
+      "request": 4,
+      "ms": 684,
+      "decodedBytes": 101791,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "catalog": "include",
+      "request": 5,
+      "ms": 851,
+      "decodedBytes": 101791,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "catalog": "omit",
+      "request": 1,
+      "ms": 929,
+      "decodedBytes": 20092,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "catalog": "omit",
+      "request": 2,
+      "ms": 674,
+      "decodedBytes": 20092,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "catalog": "omit",
+      "request": 3,
+      "ms": 722,
+      "decodedBytes": 20092,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "catalog": "omit",
+      "request": 4,
+      "ms": 711,
+      "decodedBytes": 20092,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "catalog": "omit",
+      "request": 5,
+      "ms": 866,
+      "decodedBytes": 20092,
+      "cache": "private, no-store, max-age=0"
+    }
+  ],
+  "commit": "9060e8ce6bd14b2b76f5d4c1486d3426882277df",
+  "scope": "explicit selected lessons",
+  "releasedPlans": 193
+}

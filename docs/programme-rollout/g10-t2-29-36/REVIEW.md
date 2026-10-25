@@ -1,6 +1,6 @@
 # Grade 10 Term 2: Lessons29–36
 
-Every actual learner block was read before individual authoring. The existing source, activities and response identities remain. All185 prior bindings are preserved by private assembly, and exact source/schema/activity and actual ContentBlocks insertion checks pass. These eight are sealed under the original staging key; genuine hosted acceptance remains pending. All 185 previous bindings compare identical and the eight private draft hashes match.
+Every actual learner block was read before individual authoring. The existing source, activities and response identities remain. All185 prior bindings are preserved by private assembly, and exact source/schema/activity and actual ContentBlocks insertion checks pass. These eight pass original-key sealing and genuine hosted acceptance. All 185 previous bindings compare identical and the eight private draft hashes match.
 
 | Lesson | Individual instructional review | Provisional contacts |
 | --- | --- | ---: |
@@ -16,3 +16,5 @@ Every actual learner block was read before individual authoring. The existing so
 **Eight authored additions / fourteen provisional contacts.** Full Term 2 would retain20 authored lessons with29 provisional contacts. Research resources, enrolment and support needs may change estimates after educator trials. Teacher prose does not set the allocation. Period conclusions and reintroductions continue the same learner lesson; the central navigator supports returns to earlier work.
 
 Eleven focused source proposals and three response-structure concerns remain separate for owner review. No source wording, prompt splitting, response count or saved identity is changed. The first reflection question in36 has no separate native control; no field was silently added. Complete preparation, compact cues, local expandable support, private printing and standalone fallback are retained. Metaphors and legitimate personal-development perspectives remain.
+
+Genuine acceptance: 13 selected lessons / 872 exact fields / 137 navigator targets / 234 responsive cases. All 8 additions pass first-response edit/clear/reload/fresh-login persistence; 4 actual tables pass fresh-login persistence and restoration. Complete integrated/fallback PDF text retains 1744 fields with none missing. See RESULTS.json and the protected capture hashes. Educator trials remain pending.

@@ -1,0 +1,27 @@
+{
+  "url": "https://www.treasury.gov.za/documents/national%20budget/2026/sars/Budget%202026%20Tax%20Guide.pdf",
+  "httpStatus": 200,
+  "contentType": "application/pdf",
+  "bytes": 1054612,
+  "sha256": "c69e714d77396ba2667b1923b1621096fd5a76d5291790e8f9024c52b5367ca6",
+  "retrievedUTC": "2026-10-25",
+  "document": "SARS Budget2026 Tax Guide hosted by National Treasury",
+  "statedPeriod": "1March2026\u201328February2027 (2026/27)",
+  "reviewed": "Relevant first-page personal income tax, rebates/thresholds, tax-free investments, retirement deductions, medical credits and donations sections read; first-page table and figures visually checked against PDF.",
+  "findings": {
+    "firstBand": "R1\u2013R245,100 at18% of taxable income",
+    "primaryRebate": "R17,820",
+    "under65Threshold": "R99,000",
+    "taxFreeInvestments": "Published guide statesR46,000 per tax year; receipts/accruals exempt from income tax including capital gains",
+    "retirementDeduction": "Conditional percentage and monetary limits stated; no blanket unlimited deduction",
+    "medicalScheme": "Tax credit/rebate rather than reduction of taxable income",
+    "donations": "Certain public benefit organisations and limits, not every registered charity"
+  },
+  "limits": [
+    "This is a published2026/27 budget summary, not a full consolidated-law or subsequent-amendment review.",
+    "It does not establish every lifetime limit, eligibility/ownership condition, tax-return obligation, GAAR rule or retirement withdrawal rule.",
+    "A2026tax-year claim may mean2025/26; do not relabel this2026/27 document as evidence for an earlier year.",
+    "Earlier direct SARS URLs returned403/404; Treasury2025 guessed path returned HTML and was not treated as a tax PDF.",
+    "No canonical learner text or private guide binding changed."
+  ]
+}
