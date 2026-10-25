@@ -4451,7 +4451,19 @@
       "issues": [
         "Original-key staging release and genuine acceptance pending"
       ],
-      "timingStatus": "PROVISIONAL; educator trials pending"
+      "timingStatus": "PROVISIONAL; educator trials pending",
+      "editorialReview": {
+        "status": "SEPARATE_UNAPPLIED_PROPOSALS_REQUIRE_REVIEW",
+        "proposals": [
+          {
+            "register": "docs/programme-rollout/SOURCE_EDITORIAL_REGISTER.json",
+            "entry": 164,
+            "blockId": "be251587099fa2ade66f8339-1",
+            "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+          }
+        ],
+        "withdrawn": []
+      }
     },
     {
       "lessonId": "g10-t1-l14-014",
@@ -4469,7 +4481,19 @@
       "issues": [
         "Original-key staging release and genuine acceptance pending"
       ],
-      "timingStatus": "PROVISIONAL; educator trials pending"
+      "timingStatus": "PROVISIONAL; educator trials pending",
+      "editorialReview": {
+        "status": "SEPARATE_UNAPPLIED_PROPOSALS_REQUIRE_REVIEW",
+        "proposals": [
+          {
+            "register": "docs/programme-rollout/SOURCE_EDITORIAL_REGISTER.json",
+            "entry": 165,
+            "blockId": "6b9295600ef729a9d8687002-1",
+            "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+          }
+        ],
+        "withdrawn": []
+      }
     },
     {
       "lessonId": "g10-t1-l15-015",
@@ -4505,7 +4529,25 @@
       "issues": [
         "Original-key staging release and genuine acceptance pending"
       ],
-      "timingStatus": "PROVISIONAL; educator trials pending"
+      "timingStatus": "PROVISIONAL; educator trials pending",
+      "editorialReview": {
+        "status": "SEPARATE_UNAPPLIED_PROPOSALS_REQUIRE_REVIEW",
+        "proposals": [
+          {
+            "register": "docs/programme-rollout/SOURCE_EDITORIAL_REGISTER.json",
+            "entry": 166,
+            "blockId": "32f308d69e048d9a6708bc2a-1",
+            "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+          },
+          {
+            "register": "docs/programme-rollout/SOURCE_EDITORIAL_REGISTER.json",
+            "entry": 167,
+            "blockId": "85d1f21887653216f35fd4cb-1",
+            "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+          }
+        ],
+        "withdrawn": []
+      }
     },
     {
       "lessonId": "g10-t2-l17-017",

@@ -1698,6 +1698,46 @@
       "proposedWording": "Assess actual entry barriers and applicable requirements for the defined business and setting. Do not equate an informal appearance with unrestricted legal or practical entry.",
       "implementationImpact": "Separate owner-reviewed learner-source proposal only. No canonical wording, activity, control, field or saved identity is changed now.",
       "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g10-t1-l13-013",
+      "blockId": "be251587099fa2ade66f8339-1",
+      "exactPassage": "\"You can only choose ONE project. You cannot do two. You cannot change halfway through. You cannot keep your options open. You must commit — fully, irreversibly — to one thing. And if it fails, you will carry that failure. That is not punishment. That is how real systems work. The architect carries the consequence of the design.\"",
+      "category": "Specific commitment/safety concern",
+      "concern": "The irreversible/cannot-change language can block necessary safety or evidence-based revision, while the next workshop expressly allows redesign. One selected project can remain without an unsafe binding pledge.",
+      "proposedWording": "Choose one focused project and commit to a realistic plan. Discuss necessary changes with your educator when evidence, access or safety requires them. Responsibility includes seeking help and revising appropriately.",
+      "implementationImpact": "Separate owner-reviewed wording proposal only. No canonical source, activity, response control, field count or saved identity is changed now.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g10-t1-l14-014",
+      "blockId": "6b9295600ef729a9d8687002-1",
+      "exactPassage": "Here’s the tension: not all feedback is equal. Some people will criticize your project because they are afraid you might succeed where they failed. Some will give you safe advice because they do not want you to take risks. You must learn to filter. The question is not \"Is this feedback true?\" The question is \"Is this feedback useful — for MY goals, MY context, MY vision?\" And here is the hard part: you must receive all feedback with gratitude and then decide which to use. The person who dismisses all feedback is arrogant. The person who accepts all feedback is a weathervane. The strategist is neither.",
+      "category": "Material feedback-reasoning concern",
+      "concern": "Usefulness is important, but explicitly rejecting the question of truth can license accepting misinformation or dismissing accurate safety advice solely because it conflicts with a goal.",
+      "proposedWording": "Consider whether feedback is accurate, supported, relevant and useful in your context. Seek clarification where needed. You can decide what to use without accepting abuse or assuming the speaker’s motives.",
+      "implementationImpact": "Separate owner-reviewed wording proposal only. No canonical source, activity, response control, field count or saved identity is changed now.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g10-t1-l16-016",
+      "blockId": "32f308d69e048d9a6708bc2a-1",
+      "exactPassage": "At the start of the term, you were a \"1\" on the systems-thinking scale. Where are you now — honestly?",
+      "category": "Unsupported fixed personal baseline",
+      "concern": "The statement assigns every learner a starting1 without observed baseline evidence. The scale can remain a personal estimate rather than a measured outcome.",
+      "proposedWording": "Think about your own starting point and current experience. Give an honest estimate, examples that support it and one manageable next step.",
+      "implementationImpact": "Separate scale-prompt wording review. Retain the current number and next-step fields/keys; do not add a new baseline field or silently reinterpret existing records.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g10-t1-l16-016",
+      "blockId": "85d1f21887653216f35fd4cb-1",
+      "exactPassage": "Share your Term 1 reflection with someone who matters to you. Let them witness your growth. Or keep it private. It is yours.",
+      "category": "Visibility clarification for digital delivery",
+      "concern": "Optional personal sharing remains legitimate, but saved reflection/letter responses are reviewable by authorised staff within permissions. Personally kept paper and saved digital evidence have different visibility.",
+      "proposedWording": "Sharing with family or classmates is optional. Authorised educators and institution administrators may review saved digital learning evidence within permissions; use suitable detail or an appropriate personally kept paper alternative.",
+      "implementationImpact": "Separate owner-reviewed wording proposal only. No canonical source, activity, response control, field count or saved identity is changed now.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
     }
   ],
   "retainedPerspectives": [
