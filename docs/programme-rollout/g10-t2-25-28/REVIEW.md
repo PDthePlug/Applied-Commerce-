@@ -1,6 +1,6 @@
 # Grade 10 Term 2: Lessons 25–28
 
-Every actual learner block was read before individual authoring. Existing identities are checked before writing; private assembly preserves all 181 previous bindings. Source/schema/activity coverage and actual ContentBlocks insertion pass. These four remain private drafts until original-key sealing and genuine acceptance pass.
+Every actual learner block was read before individual authoring. Existing identities are checked before writing; private assembly preserves all 181 previous bindings. Source/schema/activity coverage and actual ContentBlocks insertion pass. These four are sealed under the original staging key; genuine hosted acceptance remains pending. All 181 previous bindings compare identical and the four private draft hashes match.
 
 | Lesson | Individual instructional review | Provisional contacts |
 | --- | --- | ---: |
