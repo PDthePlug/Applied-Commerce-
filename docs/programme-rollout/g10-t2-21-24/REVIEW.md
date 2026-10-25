@@ -1,6 +1,6 @@
 # Grade 10 Term 2: Lessons 21–24
 
-Every actual learner block was read before individual authoring. Existing-manifest identities are checked before writing a private guide, and assembly preserves all 177 previous bindings. Private source/schema/activity and actual ContentBlocks insertion checks pass. These four remain uncompleted until original-key sealing and genuine hosted acceptance pass.
+Every actual learner block was read before individual authoring. Existing-manifest identities are checked before writing a private guide, and assembly preserves all 177 previous bindings. Private source/schema/activity and actual ContentBlocks insertion checks pass. All four now pass original-key sealing and genuine hosted acceptance; educator trials remain pending.
 
 | Lesson | Individual instructional review | Provisional contacts |
 | --- | --- | ---: |
@@ -15,4 +15,6 @@ Actual table rendering confirms ten editable classification cells in Lesson 23 a
 
 Eight focused source proposals remain separate and unapplied, with exact primary and related passages plus explicit calculation assumptions. The canonical learner text still contains the payoff errors; independently studying those figures remains an editorial issue until an owner-reviewed correction is applied. Staging guide verification does not certify those source figures. No current credit-law/product decision is established by an educational model.
 
-Genuine role, persistence, period continuation, responsive and complete print acceptance remain pending. No merge, migration or separate live deployment is performed.
+Genuine role, persistence, period continuation, responsive and complete print acceptance pass. No merge, migration or separate live deployment is performed.
+
+Genuine acceptance: 9 selected lessons / 727 exact fields / 95 navigator targets / 162 responsive cases. All 4 additions pass first-response edit/clear/reload/fresh-login persistence; 1 actual tables pass fresh-login persistence and restoration. Complete integrated/fallback PDF text retains 1454 fields with none missing. See RESULTS.json and the protected capture hashes. Educator trials remain pending.
