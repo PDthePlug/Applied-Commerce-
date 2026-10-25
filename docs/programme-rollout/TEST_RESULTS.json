@@ -29,9 +29,10 @@
   "rollout": {
     "existingPlans": 24,
     "newCompleted": 134,
-    "privateUnsealedDrafts": 4,
+    "privateUnsealedDrafts": 0,
     "uncompleted": 237,
-    "blocker": null
+    "blocker": null,
+    "stagedPendingVerification": 4
   },
   "pending": [
     "Remaining 237 individually reviewed guides",
