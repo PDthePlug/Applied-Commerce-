@@ -61,7 +61,7 @@ The coding configuration exposes VERCEL_TOKEN and SUPABASE_SECRET_KEY. Guarded s
 
 Authorised educators and institution administrators can review saved learning evidence within permissions; there is no separate per-row submission flag. Learners need not read personal answers to classmates. Relevant source visibility corrections remain separate, with accurate local teacher support.
 
-The rollout register has 125 historical entries: 119 active separate proposals and six withdrawn table claims, plus the earlier staging register with the corrected Grade 12 criteria/scoring distinction. Thirteen proposals belong to this batch. Exact passages and block references are checked; none is applied. Current CAPS/entry information remains an external-verification issue, and legitimate metaphors are retained.
+The rollout register has 134 historical entries: 128 active separate proposals and six withdrawn table claims, plus the earlier staging register with the corrected Grade 12 criteria/scoring distinction. Thirteen proposals belong to the verified batch; nine further proposals concern the unreleased final Term 4 candidate. Exact passages and block references are checked; none is applied. Current CAPS/entry information remains an external-verification issue, and legitimate metaphors are retained.
 
 The final sequential run made 55 genuine authenticated requests, including 50 to additions: median 756.5ms, range 546–1144ms and 9211–13930 decoded bytes. The encrypted server release is 2,457,643 bytes; its hash/placement manifest is 2,644,782 bytes. Selected API responses omit the redundant catalogue and remain private/no-store.
 

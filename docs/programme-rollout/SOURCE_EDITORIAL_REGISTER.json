@@ -1,5 +1,5 @@
 {
-  "scope": "Separate source review for expanded Grade 8–12 rollout; current reviewed additions include Grade 9 Term 4 Lessons 55–64",
+  "scope": "Separate source review for the expanded Grade 8–12 rollout; Grade 9 Term 4 source read through Lesson 75",
   "sourceChangesApplied": false,
   "entries": [
     {
@@ -1306,6 +1306,96 @@
       "proposedWording": "This is personal reflection. You do not need to read it to classmates. Authorised educators and institution administrators may review saved learning evidence within their permissions.",
       "implementationImpact": "Separate owner-reviewed source proposal only; no canonical wording, response field, source identity or saved answer changes in this rollout.",
       "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g9-t4-l65-055",
+      "blockId": "bbb6513a09dc29ddea370e3c-1",
+      "exactPassage": "Thabo calls SASSA. Waits on hold for 45 minutes. Finally speaks to someone. Yes, the verification can be done over the phone if Mrs. September can answer security questions. He hands her the phone. She answers the questions. The verification is done. No office visit needed.",
+      "category": "Claim requiring current external verification",
+      "concern": "The specific SASSA verification-by-telephone outcome should not be treated as current general procedure or permission to handle another person’s identity/security information.",
+      "proposedWording": "Retain the story as an example of seeking appropriate help, but distinguish its outcome from current procedure. Actual beneficiaries should use independently verified official channels and appropriate responsible support; learners should not collect security answers.",
+      "implementationImpact": "Separate owner-reviewed learner-source proposal only. No canonical wording, activity, field or saved identity changes in this rollout.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g9-t4-l69-059",
+      "blockId": "9ff2839f31f646b340122f32-1",
+      "exactPassage": "Sipho presents — his High-Agency Challenge. He chose Option D. \"I fixed appliances. Kettles. Radios. I started with zero capital — just my hands and what I knew. My first customer paid me R30 to fix a radio. I used R15 for food and R15 for a screwdriver set. Now I have tools. I have regular customers. I proved to myself that I can create value from nothing — and that is a kind of freedom no one can take from me.\"",
+      "category": "Specific safety concern",
+      "concern": "The presented success includes repairing kettles/radios from zero capital, which minors could copy without competence, electrical isolation or approved supervision.",
+      "proposedWording": "Use an age-appropriate, approved low-risk service example, or make competent supervision and safe electrical scope explicit. Independent appliance repair is not a learner requirement.",
+      "implementationImpact": "Separate owner-reviewed learner-source proposal only. No canonical wording, activity, field or saved identity changes in this rollout.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g9-t4-l69-059",
+      "blockId": "59e324070269bf174cf6d65e-1",
+      "exactPassage": "[[\"Presenter\",\"One Thing I Learned\",\"One Thing They Did That I Admire\"],[\"Lethabo\",\"\",\"\"],[\"Atlehang\",\"\",\"\"],[\"Sipho\",\"\",\"\"]]",
+      "category": "Renderer/source response-structure limitation",
+      "concern": "The audience task asks about actual presentations, but the fixed body labels are Lethabo, Atlehang and Sipho and the table has only six editable response cells. Actual classmates cannot be named in the left column or given additional rows through this table.",
+      "proposedWording": "Review a suitable actual-presenter recording structure or explicit instructions for using existing response space with real names. Retain the story examples without requiring learners to pretend their classmates are its characters.",
+      "implementationImpact": "Separate consequential response-structure decision: preserve all existing answer keys and records. No labels, rows or fields are changed now; teacher guidance uses existing text space or normal written working.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g9-t4-l71-061",
+      "blockId": "47db07740d35e786223a83eb-1",
+      "exactPassage": "The Danger: Impact is also hard to see. You may never know the full effect of what you did. Mrs. Nkosi may remember your visits for years — or she may forget your name by next term. The child you taught may use the skill — or may never use it again. You cannot control the ripple effects of your actions. You can only control the actions themselves. Do the work. Offer the gift. Then let it go. The impact is not yours to measure or control. It is yours to offer. The offering is enough.",
+      "category": "Missing contextual explanation",
+      "concern": "Accepting unknown longer-term ripple effects is useful, but the absolute claim that impact is not the learner’s to measure conflicts with the activity/checkpoint requesting evidence of impact.",
+      "proposedWording": "You may not know or control all longer-term effects. Still review appropriate observable evidence and willingly given feedback about the effects you can assess, while identifying uncertainty.",
+      "implementationImpact": "Separate owner-reviewed learner-source proposal only. No canonical wording, activity, field or saved identity changes in this rollout.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g9-t4-l73-063",
+      "blockId": "fc7b73f74ab349e925c91e4c-1",
+      "exactPassage": "[[\"If you are heading toward further study (Grade 10-12)...\",\"If you might be working or starting a business sooner...\"],[\"Choose subjects that open the doors you want to walk through. Maths Core is often required for university degrees. Business Studies, Economics, and Accounting will give you a strong foundation.\",\"Choose subjects that are useful right now. Maths Literacy is vital — it teaches you budgeting, interest, and profit calculations. Business Studies teaches the basics of enterprise. Consumer Studies teaches about products and food.\"],[\"Think about your career vision. If you want to be an accountant, you need specific subjects.\",\"Think about your immediate needs. What skills will help you earn money tomorrow?\"],[\"Your choice is an investment in a long-term asset — your education.\",\"Your choice is an investment in a short-term asset — your ability to generate income quickly.\"]]",
+      "category": "Claims requiring current external verification",
+      "concern": "The two-path subject table is not sufficient programme/year-specific subject or admissions advice, and immediate income is not guaranteed by a subject choice.",
+      "proposedWording": "Use current school offerings and official programme/year-specific entry requirements with qualified school guidance. Do not infer admission, employment or income from this simplified table.",
+      "implementationImpact": "Separate owner-reviewed learner-source proposal only. No canonical wording, activity, field or saved identity changes in this rollout.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g9-t4-l73-063",
+      "blockId": "b73f28f50004a6944c775021-1",
+      "exactPassage": "Part C: The Alternative Plan (If Not Continuing Formal Schooling)",
+      "category": "Material conceptual overgeneralisation",
+      "concern": "The alternative branch is labelled not continuing formal schooling although the earlier Productivity definition includes vocational training, which can itself be formal education. Work/study routes also overlap.",
+      "proposedWording": "Distinguish specific education, training and work options using their actual entry requirements and support. Do not treat all vocational training as leaving formal education or the two headings as exhaustive mutually exclusive paths.",
+      "implementationImpact": "Separate consequential branch-meaning review, including related vocabulary/choice wording. Preserve existing responses and review any future prompt/branch mapping explicitly; no source or control change now.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g9-t4-l74-064",
+      "blockId": "cfcc03d0126c4cee0d4e2f6a-1",
+      "exactPassage": "Term 3: ☐ Habit and Identity Audit (Lesson 35) ☐ Tiny Habit Commitment with Compound Calculation (Lesson 36) ☐ SMART+ Goal with Action Plan (Lesson 37) ☐ Time Audit and Priority Matrix (Lesson 38) ☐ Procrastination Plan with 5-Minute Commitment (Lesson 39) ☐ Resilience Audit with Resource Map (Lesson 40) ☐ Grit Self-Assessment with Growth Plan (Lesson 41) ☐ Failure Lesson with Tuition Audit (Lesson 42) ☐ Mindset Self-Check with Yet Practice (Lesson 43) ☐ Environment Audit with Friction Plan (Lesson 45) ☐ Decision Practice with Option Generation (Lesson 46) ☐ Digital Spending Audit with Protection Plan (Lesson 48) ☐ Scam Detection Guide and Protection Protocol (Lesson 49) ☐ Completed 21-Day Tracker and Reflections (Lesson 53) ☐ Term 3 Reflection and Path Forward first (Lesson 54)",
+      "category": "Missing portfolio reference",
+      "concern": "The complete Term 3 checklist omits the explicitly authored Lesson 44 and Lesson 47 portfolio work. A learner should not discard existing work because it is absent from this list.",
+      "proposedWording": "Check the list against the actual twenty Term 3 lessons and their portfolio references. Include the relevant existing Lesson 44/47 work where intended, preserving all current evidence.",
+      "implementationImpact": "Separate checklist/source review. Adding or changing choices can affect checkbox response structure and derived identities; review that impact and preserve existing saved selections before any later implementation.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g9-t4-l74-064",
+      "blockId": "0e0fdc2b74bdfe952c47faee-1",
+      "exactPassage": "Term 4: ☐ Year in Review with Growth Evidence (Lesson 55) ☐ Project Brainstorm — Passions, Talents, Community Needs (Lesson 56) ☐ Social Entrepreneurship Analysis (Lesson 57) ☐ Project Choice and Commitment (Lesson 58) ☐ Needs Assessment Plan (Lesson 59) ☐ Project Design with Obstacle Forecast (Lesson 60) ☐ Project Budget with Resource Strategy (Lesson 61) ☐ Partnership Plan with First Ask Script (Lesson 62) ☐ Progress Tracker and Weekly Reflections (Lesson 63) ☐ Midpoint Review and Strategic Pivot (Lesson 64) ☐ Problem-Solving Plan with Adaptation Log (Lesson 65) ☐ Completion Checklist and Pride Moment (Lesson 66) ☐ Project Story and Presentation Outline (Lesson 67) ☐ Final Presentation Preparation (Lesson 68) ☐ Audience Responses — Days 1 and 2 (Lessons 69-70) ☐ Project Reflection with Legacy Statement (Lesson 71) ☐ Community Action Plan with Collective Element (Lesson 72) ☐ Path Forward Declaration (Lesson 73) ☐ Final Letter to Future Self (Lesson 74) ☐ All Tension/Experiment Log entries (Lessons 1-74)",
+      "category": "Missing digital-delivery context",
+      "concern": "The checklist requests all Tension/Experiment Log entries, while the current digital reader does not expose these as separate log sections. Existing work may be in ordinary records; learners should not invent retrospective experiments or recreate new controls.",
+      "proposedWording": "Use the relevant existing experiment responses and any log records actually kept. Identify missing work honestly; do not create retrospective results or extra digital fields merely to complete a list.",
+      "implementationImpact": "Separate owner-reviewed learner-source proposal only. No canonical wording, activity, field or saved identity changes in this rollout.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g9-t4-l74-064",
+      "blockId": "1c14c4615f7b372e87a1575f-1",
+      "exactPassage": "If you want, share your letter with someone you trust. Or keep it private. It is yours. Seal it. Put it somewhere safe. Let it wait for you.",
+      "category": "Visibility clarification for digital delivery",
+      "concern": "Optional personal sharing is legitimate, but the existing saved letter textarea can be reviewed by authorised staff within permissions. A paper letter kept personally and a saved digital response have different visibility.",
+      "proposedWording": "Sharing with classmates or family is optional. Authorised educators and institution administrators may review saved digital learning evidence within permissions. Choose appropriate detail and a suitable personal paper alternative where needed.",
+      "implementationImpact": "Separate wording and compiled-prompt review; preserve the existing letter response and all keys. Teacher support explains visibility locally; no new field or source change now.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
     }
   ],
   "retainedPerspectives": [
@@ -1383,8 +1473,8 @@
   "auditCorrection": {
     "at": "2026-10-24",
     "withdrawn": 6,
-    "activeProposals": 119,
-    "totalHistoricalEntries": 125,
+    "activeProposals": 128,
+    "totalHistoricalEntries": 134,
     "sourceChangesApplied": false
   }
 }
