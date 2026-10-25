@@ -5115,16 +5115,16 @@
       "grade": 10,
       "term": 3,
       "title": "INTRODUCTION TO SYSTEMS THINKING",
-      "status": "PRIVATE_DRAFT_PENDING_SEALING_AND_GENUINE_VERIFICATION",
+      "status": "STAGED_PENDING_GENUINE_VERIFICATION",
       "sourceAlignment": "Every actual learner block read; source/schema/activity and actual ContentBlocks insertion PASS",
       "instructionalReview": "Individual preparation, brief cues, local support and later work authored; genuine hosted review pending",
       "contactPeriods": 2,
       "automated": "Private source/schema/actual-renderer insertion PASS",
-      "genuineRole": "NOT RUN: private draft only",
-      "printing": "NOT RUN",
-      "responsive": "NOT RUN",
+      "genuineRole": "NOT RUN: sealed candidate",
+      "printing": "NOT RUN: hosted candidate",
+      "responsive": "NOT RUN: hosted candidate",
       "issues": [
-        "Original-key staging release and genuine acceptance pending"
+        "Genuine staging acceptance pending"
       ],
       "timingStatus": "PROVISIONAL; educator trials pending"
     },
@@ -5133,16 +5133,16 @@
       "grade": 10,
       "term": 3,
       "title": "SUPPLY CHAINS AS SYSTEMS \u2014 THE BOTTLENECK",
-      "status": "PRIVATE_DRAFT_PENDING_SEALING_AND_GENUINE_VERIFICATION",
+      "status": "STAGED_PENDING_GENUINE_VERIFICATION",
       "sourceAlignment": "Every actual learner block read; source/schema/activity and actual ContentBlocks insertion PASS",
       "instructionalReview": "Individual preparation, brief cues, local support and later work authored; genuine hosted review pending",
       "contactPeriods": 1,
       "automated": "Private source/schema/actual-renderer insertion PASS",
-      "genuineRole": "NOT RUN: private draft only",
-      "printing": "NOT RUN",
-      "responsive": "NOT RUN",
+      "genuineRole": "NOT RUN: sealed candidate",
+      "printing": "NOT RUN: hosted candidate",
+      "responsive": "NOT RUN: hosted candidate",
       "issues": [
-        "Original-key staging release and genuine acceptance pending"
+        "Genuine staging acceptance pending"
       ],
       "timingStatus": "PROVISIONAL; educator trials pending"
     },
@@ -5151,16 +5151,16 @@
       "grade": 10,
       "term": 3,
       "title": "PERSONAL FINANCIAL SYSTEMS \u2014 YOUR MONEY AS A SYSTEM",
-      "status": "PRIVATE_DRAFT_PENDING_SEALING_AND_GENUINE_VERIFICATION",
+      "status": "STAGED_PENDING_GENUINE_VERIFICATION",
       "sourceAlignment": "Every actual learner block read; source/schema/activity and actual ContentBlocks insertion PASS",
       "instructionalReview": "Individual preparation, brief cues, local support and later work authored; genuine hosted review pending",
       "contactPeriods": 2,
       "automated": "Private source/schema/actual-renderer insertion PASS",
-      "genuineRole": "NOT RUN: private draft only",
-      "printing": "NOT RUN",
-      "responsive": "NOT RUN",
+      "genuineRole": "NOT RUN: sealed candidate",
+      "printing": "NOT RUN: hosted candidate",
+      "responsive": "NOT RUN: hosted candidate",
       "issues": [
-        "Original-key staging release and genuine acceptance pending"
+        "Genuine staging acceptance pending"
       ],
       "timingStatus": "PROVISIONAL; educator trials pending"
     },
@@ -5169,16 +5169,16 @@
       "grade": 10,
       "term": 3,
       "title": "DESIGNING YOUR FINANCIAL SYSTEM \u2014 THE LEVERAGE POINTS",
-      "status": "PRIVATE_DRAFT_PENDING_SEALING_AND_GENUINE_VERIFICATION",
+      "status": "STAGED_PENDING_GENUINE_VERIFICATION",
       "sourceAlignment": "Every actual learner block read; source/schema/activity and actual ContentBlocks insertion PASS",
       "instructionalReview": "Individual preparation, brief cues, local support and later work authored; genuine hosted review pending",
       "contactPeriods": 1,
       "automated": "Private source/schema/actual-renderer insertion PASS",
-      "genuineRole": "NOT RUN: private draft only",
-      "printing": "NOT RUN",
-      "responsive": "NOT RUN",
+      "genuineRole": "NOT RUN: sealed candidate",
+      "printing": "NOT RUN: hosted candidate",
+      "responsive": "NOT RUN: hosted candidate",
       "issues": [
-        "Original-key staging release and genuine acceptance pending"
+        "Genuine staging acceptance pending"
       ],
       "timingStatus": "PROVISIONAL; educator trials pending"
     },
@@ -8639,7 +8639,7 @@
       ]
     }
   ],
-  "privateDraftsPrepared": 8,
+  "privateDraftsPrepared": 4,
   "newCompleted": 169,
-  "stagedPendingVerification": 0
+  "stagedPendingVerification": 4
 }
