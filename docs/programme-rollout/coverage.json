@@ -4020,68 +4020,180 @@
       "grade": 10,
       "term": 1,
       "title": "WHERE WE HAVE BEEN, WHERE WE ARE GOING",
-      "status": "PENDING_INDIVIDUAL_REVIEW",
-      "sourceAlignment": "PENDING",
-      "instructionalReview": "PENDING",
-      "contactPeriods": null,
-      "automated": "PENDING",
-      "genuineRole": "PENDING",
-      "printing": "PENDING",
-      "responsive": "PENDING",
+      "status": "PRIVATE_DRAFT_PENDING_SEALING_AND_GENUINE_VERIFICATION",
+      "sourceAlignment": "Every actual learner block read; source/schema/activity and actual ContentBlocks insertion PASS",
+      "instructionalReview": "Individually authored preparation, brief cues, specific optional support and later work; hosted review pending",
+      "contactPeriods": 1,
+      "automated": "PASS: private source/schema/actual-renderer checks",
+      "genuineRole": "NOT RUN: private draft only",
+      "printing": "NOT RUN",
+      "responsive": "NOT RUN",
       "issues": [
-        "Individual source/instructional review and genuine staging verification remain pending"
-      ]
+        "Original-key staging release and genuine acceptance pending"
+      ],
+      "timingStatus": "PROVISIONAL; educator trials pending",
+      "editorialReview": {
+        "status": "SEPARATE_UNAPPLIED_PROPOSALS_REQUIRE_REVIEW",
+        "proposals": [
+          {
+            "register": "docs/programme-rollout/SOURCE_EDITORIAL_REGISTER.json",
+            "entry": 135,
+            "blockId": "1a826cd62745e81fcedfc876-1",
+            "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+          }
+        ],
+        "withdrawn": []
+      }
     },
     {
       "lessonId": "g10-t1-l02-002",
       "grade": 10,
       "term": 1,
       "title": "VALUE REVISITED — THE KITCHEN THAT ALMOST BROKE",
-      "status": "PENDING_INDIVIDUAL_REVIEW",
-      "sourceAlignment": "PENDING",
-      "instructionalReview": "PENDING",
-      "contactPeriods": null,
-      "automated": "PENDING",
-      "genuineRole": "PENDING",
-      "printing": "PENDING",
-      "responsive": "PENDING",
+      "status": "PRIVATE_DRAFT_PENDING_SEALING_AND_GENUINE_VERIFICATION",
+      "sourceAlignment": "Every actual learner block read; source/schema/activity and actual ContentBlocks insertion PASS",
+      "instructionalReview": "Individually authored preparation, brief cues, specific optional support and later work; hosted review pending",
+      "contactPeriods": 1,
+      "automated": "PASS: private source/schema/actual-renderer checks",
+      "genuineRole": "NOT RUN: private draft only",
+      "printing": "NOT RUN",
+      "responsive": "NOT RUN",
       "issues": [
-        "Individual source/instructional review and genuine staging verification remain pending"
-      ]
+        "Original-key staging release and genuine acceptance pending"
+      ],
+      "timingStatus": "PROVISIONAL; educator trials pending",
+      "editorialReview": {
+        "status": "SEPARATE_UNAPPLIED_PROPOSALS_REQUIRE_REVIEW",
+        "proposals": [
+          {
+            "register": "docs/programme-rollout/SOURCE_EDITORIAL_REGISTER.json",
+            "entry": 136,
+            "blockId": "56e18e00f54102ea6b091fe3-1",
+            "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+          },
+          {
+            "register": "docs/programme-rollout/SOURCE_EDITORIAL_REGISTER.json",
+            "entry": 137,
+            "blockId": "794602285078dab8ee33e33a-1",
+            "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+          }
+        ],
+        "withdrawn": []
+      }
     },
     {
       "lessonId": "g10-t1-l03-003",
       "grade": 10,
       "term": 1,
       "title": "KARABO'S PAYSLIP — THE SYSTEM YOU DID NOT CHOOSE",
-      "status": "PENDING_INDIVIDUAL_REVIEW",
-      "sourceAlignment": "PENDING",
-      "instructionalReview": "PENDING",
-      "contactPeriods": null,
-      "automated": "PENDING",
-      "genuineRole": "PENDING",
-      "printing": "PENDING",
-      "responsive": "PENDING",
+      "status": "PRIVATE_DRAFT_PENDING_SEALING_AND_GENUINE_VERIFICATION",
+      "sourceAlignment": "Every actual learner block read; source/schema/activity and actual ContentBlocks insertion PASS",
+      "instructionalReview": "Individually authored preparation, brief cues, specific optional support and later work; hosted review pending",
+      "contactPeriods": 1,
+      "automated": "PASS: private source/schema/actual-renderer checks",
+      "genuineRole": "NOT RUN: private draft only",
+      "printing": "NOT RUN",
+      "responsive": "NOT RUN",
       "issues": [
-        "Individual source/instructional review and genuine staging verification remain pending"
-      ]
+        "Original-key staging release and genuine acceptance pending"
+      ],
+      "timingStatus": "PROVISIONAL; educator trials pending",
+      "editorialReview": {
+        "status": "SEPARATE_UNAPPLIED_PROPOSALS_REQUIRE_REVIEW",
+        "proposals": [
+          {
+            "register": "docs/programme-rollout/SOURCE_EDITORIAL_REGISTER.json",
+            "entry": 138,
+            "blockId": "3a689f8de0f327f728416687-1",
+            "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+          },
+          {
+            "register": "docs/programme-rollout/SOURCE_EDITORIAL_REGISTER.json",
+            "entry": 139,
+            "blockId": "c4cfea26885dbcf7887733de-1",
+            "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+          },
+          {
+            "register": "docs/programme-rollout/SOURCE_EDITORIAL_REGISTER.json",
+            "entry": 140,
+            "blockId": "5000b4fd2b44fcc0c4c2698a-1",
+            "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+          },
+          {
+            "register": "docs/programme-rollout/SOURCE_EDITORIAL_REGISTER.json",
+            "entry": 141,
+            "blockId": "daa2f81d62c3dd21ac8f291c-1",
+            "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+          },
+          {
+            "register": "docs/programme-rollout/SOURCE_EDITORIAL_REGISTER.json",
+            "entry": 142,
+            "blockId": "323ed6b06bdb69bbe8854fa9-1",
+            "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+          }
+        ],
+        "withdrawn": []
+      }
     },
     {
       "lessonId": "g10-t1-l04-004",
       "grade": 10,
       "term": 1,
       "title": "INCOME — THE CONTROL SPECTRUM",
-      "status": "PENDING_INDIVIDUAL_REVIEW",
-      "sourceAlignment": "PENDING",
-      "instructionalReview": "PENDING",
-      "contactPeriods": null,
-      "automated": "PENDING",
-      "genuineRole": "PENDING",
-      "printing": "PENDING",
-      "responsive": "PENDING",
+      "status": "PRIVATE_DRAFT_PENDING_SEALING_AND_GENUINE_VERIFICATION",
+      "sourceAlignment": "Every actual learner block read; source/schema/activity and actual ContentBlocks insertion PASS",
+      "instructionalReview": "Individually authored preparation, brief cues, specific optional support and later work; hosted review pending",
+      "contactPeriods": 2,
+      "automated": "PASS: private source/schema/actual-renderer checks",
+      "genuineRole": "NOT RUN: private draft only",
+      "printing": "NOT RUN",
+      "responsive": "NOT RUN",
       "issues": [
-        "Individual source/instructional review and genuine staging verification remain pending"
-      ]
+        "Original-key staging release and genuine acceptance pending"
+      ],
+      "timingStatus": "PROVISIONAL; educator trials pending",
+      "editorialReview": {
+        "status": "SEPARATE_UNAPPLIED_PROPOSALS_REQUIRE_REVIEW",
+        "proposals": [
+          {
+            "register": "docs/programme-rollout/SOURCE_EDITORIAL_REGISTER.json",
+            "entry": 143,
+            "blockId": "0f057fa770863da7ee84fb5d-1",
+            "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+          },
+          {
+            "register": "docs/programme-rollout/SOURCE_EDITORIAL_REGISTER.json",
+            "entry": 144,
+            "blockId": "ab43a502d52e57c2d43a7517-1",
+            "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+          },
+          {
+            "register": "docs/programme-rollout/SOURCE_EDITORIAL_REGISTER.json",
+            "entry": 145,
+            "blockId": "e2128b0bf6b4c11fc0ed9fee-1",
+            "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+          },
+          {
+            "register": "docs/programme-rollout/SOURCE_EDITORIAL_REGISTER.json",
+            "entry": 146,
+            "blockId": "c120ee9eefd2f4b5c490998e-1",
+            "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+          },
+          {
+            "register": "docs/programme-rollout/SOURCE_EDITORIAL_REGISTER.json",
+            "entry": 147,
+            "blockId": "3c6d2c6e8ab2207b286fb70c-1",
+            "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+          },
+          {
+            "register": "docs/programme-rollout/SOURCE_EDITORIAL_REGISTER.json",
+            "entry": 148,
+            "blockId": "512b15b6a3904849bfbca83d-1",
+            "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+          }
+        ],
+        "withdrawn": []
+      }
     },
     {
       "lessonId": "g10-t1-l05-005",
@@ -8159,7 +8271,7 @@
       ]
     }
   ],
-  "privateDraftsPrepared": 0,
+  "privateDraftsPrepared": 4,
   "newCompleted": 134,
   "stagedPendingVerification": 0
 }

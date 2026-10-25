@@ -1408,6 +1408,146 @@
       "proposedWording": "Sharing with classmates or family is optional. Authorised educators and institution administrators may review saved digital learning evidence within permissions. Choose appropriate detail and a suitable personal paper alternative where needed.",
       "implementationImpact": "Separate wording and compiled-prompt review; preserve the existing letter response and all keys. Teacher support explains visibility locally; no new field or source change now.",
       "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g10-t1-l01-001",
+      "blockId": "1a826cd62745e81fcedfc876-1",
+      "exactPassage": "Share your Strategic Audit with one person who knows you well. Read them your Scar Inventory. Ask them: \"Have you seen this scar shape how I behave? What does it cost me? What does it give me?\" Listen without defending. Write down their exact words. The words that sting are the words that teach.",
+      "category": "Specific sensitive-feedback safeguard",
+      "concern": "The final sentence treats hurtful feedback as inherently instructive. A learner should not be required to accept cruelty or disclose a sensitive setback to demonstrate learning. The existing self-reading alternative is useful and retained.",
+      "proposedWording": "Share only suitable detail with a willing trusted person, or use the self-reading alternative. Consider feedback thoughtfully; painful words are not automatically accurate. You may pause an uncomfortable conversation and seek appropriate support.",
+      "implementationImpact": "Separate owner-reviewed source proposal only; no canonical wording, learner activity, control, field or saved-work identity changes now.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g10-t1-l02-002",
+      "blockId": "56e18e00f54102ea6b091fe3-1",
+      "exactPassage": "Here’s the tension: systemic value requires letting go. It requires trusting others. It requires accepting that they will fail — publicly, embarrassingly, the way Thandiwe failed on Tuesday. And you must let them fail. If you step in every time, you prevent the failure but you also prevent the learning. The system never strengthens because you never let it be tested. The person who cannot let go builds something that dies with them. The person who lets go builds something that outlasts them. But letting go feels like loss. It feels like the thing you built is no longer yours. And in a way, it is not. It belongs to the system now. That is the trade. That is the cost of legacy.",
+      "category": "Specific safety concern in modelling practice",
+      "concern": "The instruction that a learner must allow public embarrassing failure could be applied to essential care, unsafe work or humiliation. Supported low-risk practice can preserve the lesson without that implication.",
+      "proposedWording": "Sharing a responsibility may involve practice and mistakes. Agree safe boundaries and suitable support; contain avoidable harm and do not deliberately humiliate someone or withhold essential help.",
+      "implementationImpact": "Separate owner-reviewed source proposal only; no canonical wording, learner activity, control, field or saved-work identity changes now.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g10-t1-l02-002",
+      "blockId": "794602285078dab8ee33e33a-1",
+      "exactPassage": "[[\"What I Am Responsible For\",\"If I Stepped Away for a Month, What Would Happen?\",\"Who Else Could Do This?\"],[\"1.\",\"\",\"\"],[\"2.\",\"\",\"\"],[\"3.\",\"\",\"\"]]",
+      "category": "Renderer/source response-structure limitation",
+      "concern": "The responsibility-name column has fixed 1./2./3. labels and no input. Only the other two columns have six text controls. Names need an explicit existing-space convention or a separately reviewed structure.",
+      "proposedWording": "Record the responsibility name alongside your explanation in the existing response text or ordinary written working. Review whether an eventual explicit name field is needed.",
+      "implementationImpact": "Separate consequential response-structure review if a field is proposed. No extra field or changed identity now; teacher guidance uses existing response space.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g10-t1-l03-003",
+      "blockId": "3a689f8de0f327f728416687-1",
+      "exactPassage": "[[\"Item\",\"Amount\"],[\"Gross pay (16 hours × R55)\",\"R880\"],[\"PAYE (income tax)\",\"-R132\"],[\"UIF (1%)\",\"-R8.80\"],[\"SDL (employer contribution)\",\"Not deducted from employee\"],[\"Union fee\",\"-R30\"],[\"Admin fee\",\"-R85\"],[\"Net pay\",\"R624.20\"]]",
+      "category": "Payroll applicability requiring current official verification",
+      "concern": "The March 2026 payslip assigns R132 PAYE to R880 monthly earnings without explaining applicable tax circumstances and deducts UIF for only 16 monthly hours. These legal premises are not established by correct arithmetic. Official SARS pages returned HTTP403; a retrieved 2013 Labour guide excludes under-24-hours workers, but has other obsolete sections and does not certify all current rules.",
+      "proposedWording": "Explicitly label these as assumed arithmetic figures or replace them after current qualified payroll verification. State relevant earning-period/tax assumptions and UIF applicability; do not present a flat 15% PAYE or universal UIF deduction as law.",
+      "implementationImpact": "Separate material source and answer-premise review. Any changed numbers, expected answers or prompt structure need explicit preservation/mapping of existing responses; no figures or keys changed now.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g10-t1-l03-003",
+      "blockId": "c4cfea26885dbcf7887733de-1",
+      "exactPassage": "\"Nothing. Not about that line. But I can do other things. I opened a TFSA. Contributions are not taxed. I am learning which deductions are mandatory and which are optional — and I am opting out of everything I can, legally. I am not fighting the system. I am navigating it. There is a difference. Fighting a system you cannot change is exhausting. Navigating it is strategic.\"",
+      "category": "Tax-treatment claim requiring current verification",
+      "concern": "“Contributions are not taxed” can imply TFSA contributions are deducted from taxable salary. The special treatment normally concerns qualifying returns subject to rules; current official SARS page retrieval was blocked and no current limits are certified.",
+      "proposedWording": "A qualifying tax-free investment can receive specified tax treatment on returns, subject to current eligibility and contribution rules. Contributions are not automatically deductible from taxable salary. Check current official information or qualified advice before a real decision.",
+      "implementationImpact": "Separate owner-reviewed source proposal only; no canonical wording, learner activity, control, field or saved-work identity changes now.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g10-t1-l03-003",
+      "blockId": "5000b4fd2b44fcc0c4c2698a-1",
+      "exactPassage": "[[\"Deduction\",\"What It Is\",\"Where It Goes\",\"Can You Opt Out?\"],[\"PAYE\",\"Pay As You Earn — income tax\",\"Government: schools, roads, clinics, grants\",\"No — mandatory\"],[\"UIF\",\"Unemployment Insurance Fund\",\"Safety net if you lose your job\",\"No — mandatory (1%)\"],[\"SDL\",\"Skills Development Levy\",\"Training programmes\",\"No — employer pays\"],[\"Union fee\",\"Membership in a trade union\",\"Collective bargaining, legal support\",\"Yes — if you leave the union\"],[\"Admin fee\",\"Cost of processing payroll\",\"Employer or payroll company\",\"Depends on employer\"]]",
+      "category": "Missing legal conditions for deductions",
+      "concern": "The table’s mandatory/optional labels omit applicability conditions, and “Depends on employer” is not a complete lawful basis for an admin deduction. The union row also needs the applicable arrangement rather than an unconditional cancellation promise.",
+      "proposedWording": "Distinguish applicable statutory deductions, employer-funded SDL, subscriptions under the relevant arrangement and any fee requiring a lawful basis. A manager’s description does not settle legality; seek current qualified information where needed.",
+      "implementationImpact": "Separate owner-reviewed source proposal only; no canonical wording, learner activity, control, field or saved-work identity changes now.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g10-t1-l03-003",
+      "blockId": "daa2f81d62c3dd21ac8f291c-1",
+      "exactPassage": "She pointed to a line Myah had not noticed. \"This one. R85. 'Admin fee.' I asked my manager what it was for. She said it covers the cost of processing payroll. I asked if I could opt out. She said no. So I am paying R85 a month for someone to calculate how much of my money to take. That is R1,020 a year. For math.\"",
+      "category": "Missing lawful-deduction context",
+      "concern": "The subsequent claim that nothing can be done about the R85 admin fee risks teaching that a manager’s refusal removes employee rights. Retrieved BCEA section34 limits lawful deductions; the published original Act is not an exhaustive current consolidated legal opinion.",
+      "proposedWording": "Karabo can ask for the deduction’s lawful basis and seek appropriate advice. A payroll label or manager’s refusal does not itself prove a deduction is lawful or unchallengeable.",
+      "implementationImpact": "Separate owner-reviewed source proposal only; no canonical wording, learner activity, control, field or saved-work identity changes now.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g10-t1-l03-003",
+      "blockId": "323ed6b06bdb69bbe8854fa9-1",
+      "exactPassage": "If you cannot ask anyone: Research one deduction — UIF, SDL, or PAYE. Find out: what percentage goes to administration (not actual benefits)? Write down what you find. Does this change how you feel about the deduction?",
+      "category": "Research comparability and evidence gap",
+      "concern": "A general administration percentage may not be published on a comparable basis for UIF, SDL and PAYE. A contribution/tax rate is not an administration-cost share; unavailable data should not require invention.",
+      "proposedWording": "Use a dated official report and identify administration costs, the denominator and reporting period. If no comparable figure is available, record that limitation rather than inventing a percentage.",
+      "implementationImpact": "Separate owner-reviewed source proposal only; no canonical wording, learner activity, control, field or saved-work identity changes now.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g10-t1-l04-004",
+      "blockId": "0f057fa770863da7ee84fb5d-1",
+      "exactPassage": "\"Shifting. Slowly. The retail job pays well, but I am replacing it. Building the tutoring. Growing the study guides. In one year, I want my control-weighted income — the amount I actually control — to be 70% of my total, not 50%. That means earning less now to own more later. That is the trade. Most people will not make it. They are optimising for amount. I am optimising for control.\"",
+      "category": "Material arithmetic/measure inconsistency",
+      "concern": "The printed weighted formula gives R3490 / R5450 ≈64.04%, not50%. The unweighted share of streams scored4–5 is R2750/R5450 ≈50.46%, which is a different measure.",
+      "proposedWording": "Using the later weighted formula, my control-weighted total is R3490, about64.04% of the stated total. If retaining a50% claim, define its different measure explicitly and do not treat it as the weighted result.",
+      "implementationImpact": "Separate arithmetic/source and answer-rationale review. Do not silently alter the map, formula, current questions, field counts or saved identities.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g10-t1-l04-004",
+      "blockId": "ab43a502d52e57c2d43a7517-1",
+      "exactPassage": "[[\"Stream\",\"Type\",\"Monthly\",\"Control (1-5)\",\"Who Can Stop This?\"],[\"Tutoring\",\"Active\",\"R2,000\",\"4\",\"I set hours. Clients can leave, but I can find more.\"],[\"Weekend retail\",\"Active\",\"R1,200\",\"1\",\"Manager. Tomorrow, if she wants. No warning.\"],[\"Bursary stipend\",\"Semi-passive\",\"R1,500\",\"3\",\"Bursary committee. If my grades drop, it stops.\"],[\"TFSA growth\",\"Passive\",\"R150\",\"5\",\"No one. It is mine.\"],[\"Digital study guides\",\"Passive\",\"R600\",\"5\",\"No one. I created them once. They sell while I sleep.\"]]",
+      "category": "Missing investment/cash-flow and employment context",
+      "concern": "TFSA growth need not be realised spendable monthly cash; ownership does not guarantee a return or ongoing digital sales. The statement that a manager can end income tomorrow without warning omits applicable employment arrangements/protections.",
+      "proposedWording": "Label illustrative investment growth separately from available cash and acknowledge market/customer/platform risk. Describe employment income with its applicable terms and protections rather than treating arbitrary termination as a universal rule.",
+      "implementationImpact": "Separate owner-reviewed source proposal only; no canonical wording, learner activity, control, field or saved-work identity changes now.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g10-t1-l04-004",
+      "blockId": "e2128b0bf6b4c11fc0ed9fee-1",
+      "exactPassage": "[[\"Type\",\"Description\",\"Examples\",\"Control Level\"],[\"Active\",\"You trade time for money\",\"Salary, wages, freelance work, selling goods you made\",\"Varies (1-4)\"],[\"Passive\",\"Money works for you\",\"Interest, dividends, rent, royalties\",\"High (4-5)\"],[\"Portfolio\",\"Selling assets that grew in value\",\"Selling shares, property, business\",\"High (4-5)\"],[\"Business\",\"Profits from a business you own\",\"Spaza shop, online store\",\"Varies (3-5)\"],[\"Gig\",\"Short-term, flexible work\",\"Delivery, task services\",\"Varies (2-4)\"],[\"Royalty\",\"Earn from something you created once\",\"Book, music, patent, digital product\",\"High (5)\"]]",
+      "category": "Missing conceptual explanation",
+      "concern": "The control ranges can be a reflective heuristic but are not objective guarantees attached to passive, portfolio or royalty categories. Income types also overlap.",
+      "proposedWording": "Use the categories as overlapping descriptions and the scores as explained judgements about dependence. Ownership does not remove market, platform or customer risk, and a higher score does not by itself guarantee income or wellbeing.",
+      "implementationImpact": "Separate owner-reviewed source proposal only; no canonical wording, learner activity, control, field or saved-work identity changes now.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g10-t1-l04-004",
+      "blockId": "c120ee9eefd2f4b5c490998e-1",
+      "exactPassage": "[[\"Stream\",\"Type\",\"Monthly (Approx)\",\"Control (1-5)\",\"Who Can Stop This?\"],[\"\",\"\",\"R\",\"\",\"\"],[\"\",\"\",\"R\",\"\",\"\"],[\"\",\"\",\"R\",\"\",\"\"],[\"\",\"\",\"R\",\"\",\"\"]]",
+      "category": "Renderer/source response-structure limitation",
+      "concern": "All four monthly-amount cells contain fixed R text and no amount response control. The actual renderer provides12 textareas in other columns plus score controls. Amounts must be recorded in existing space for the analysis.",
+      "proposedWording": "Record approximate amounts alongside the stream in existing response text or ordinary written working. Separately review whether explicit amount controls are appropriate.",
+      "implementationImpact": "Any future amount-field addition is a separate consequential response-structure decision. Preserve current controls, identities and records now.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g10-t1-l04-004",
+      "blockId": "3c6d2c6e8ab2207b286fb70c-1",
+      "exactPassage": "Here’s the tension: shifting toward control means earning less now. The retail job pays R1,200. The study guides pay R600. If she quits the retail job to focus on study guides, she takes a 50% pay cut temporarily. That is the trap. The streams with the lowest control often pay the most right now. The streams with the highest control pay the least right now. Choosing control means choosing less money now for more freedom later. Not everyone can afford that choice. If you cannot shift yet, do not blame yourself. But know the direction. And move when you can.",
+      "category": "Material whole-budget arithmetic ambiguity",
+      "concern": "A R1200 stream compared with R600 is50% lower, but the R600 is already in the R5450 total. Removing retail alone leaves R4250, a22.02% total decline, not a50% cut in total pay; no replacement growth or temporary duration is established.",
+      "proposedWording": "The study-guide stream is half the retail stream’s stated amount. Holding other streams constant, removing retail lowers the stated total fromR5450 toR4250, about22.02%. Future sales and the duration of any reduction remain uncertain.",
+      "implementationImpact": "Separate owner-reviewed source proposal only; no canonical wording, learner activity, control, field or saved-work identity changes now.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g10-t1-l04-004",
+      "blockId": "512b15b6a3904849bfbca83d-1",
+      "exactPassage": "Total monthly income: R _______ Total control-weighted income (multiply each stream by its control score ÷ 5, then sum): R _______ Control percentage (control-weighted ÷ total): _______%",
+      "category": "Missing zero-denominator context",
+      "concern": "A learner receiving no income has zero total, so the weighted/total ratio is undefined. They should not invent income or be excluded from learning the supplied model.",
+      "proposedWording": "If your total is zero, record that the percentage is undefined. You can use the supplied case to understand the arithmetic, labelling it as that case rather than your own income.",
+      "implementationImpact": "Separate owner-reviewed source proposal only; no canonical wording, learner activity, control, field or saved-work identity changes now.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
     }
   ],
   "retainedPerspectives": [
