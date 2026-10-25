@@ -1,5 +1,5 @@
 {
-  "status": "PRIVATE_DRAFTS_PENDING_SEALING_AND_GENUINE_VERIFICATION",
+  "status": "COMPLETED_INDIVIDUAL_REVIEW_AND_GENUINE_STAGING",
   "sourceChangesApplied": false,
   "plans": [
     {
@@ -14,10 +14,12 @@
       "fields": 37,
       "periods": 1,
       "timingRationale": "One provisional 45-minute contact: launch story 8, three options 5, choice/value/audience 8, one system 8, trade-off 5, commitment 4, checkpoint 5 and close 2. Confirm the actual school project date. The willing-listener or original signed-paper alternative occurs later. The lesson designs a plan rather than requiring trading or public implementation now.",
-      "stageReview": "PENDING_ORIGINAL_KEY_SEALING_AND_HOSTED_RENDERING",
-      "complete": false,
+      "stageReview": "PASS: genuine exact fields/controls, placement, navigator, Learner View, 18 responsive combinations and first-response persistence",
+      "complete": true,
       "fieldCoverage": 37,
-      "actualRendererInsertions": "PASS"
+      "actualRendererInsertions": "PASS",
+      "printing": "PASS: integrated/fallback fields, PDF text and A4 bounds",
+      "timingStatus": "PROVISIONAL; educator trials pending"
     },
     {
       "lessonId": "g10-t1-l14-014",
@@ -31,10 +33,12 @@
       "fields": 41,
       "periods": 2,
       "timingRationale": "Two provisional 45-minute contacts for supported project planning and real peer feedback. First: workshop story 7, preparation of the existing plan 8, two-minute presentation by each partner plus clarification 8, risk audit/reasons/suggestion 20 and pause 2. Second: return 3, receive/filter feedback 10, revise the existing plan 17, checkpoint 13 and close 2. No new plan form, outcome or response field is added.",
-      "stageReview": "PENDING_ORIGINAL_KEY_SEALING_AND_HOSTED_RENDERING",
-      "complete": false,
+      "stageReview": "PASS: genuine exact fields/controls, placement, navigator, Learner View, 18 responsive combinations and first-response persistence",
+      "complete": true,
       "fieldCoverage": 41,
-      "actualRendererInsertions": "PASS"
+      "actualRendererInsertions": "PASS",
+      "printing": "PASS: integrated/fallback fields, PDF text and A4 bounds",
+      "timingStatus": "PROVISIONAL; educator trials pending"
     },
     {
       "lessonId": "g10-t1-l15-015",
@@ -48,10 +52,12 @@
       "fields": 46,
       "periods": 4,
       "timingRationale": "Four provisional 45-minute contacts for30 learners, with an estimated four minutes speaking plus one minute questions/transition each:7,8,8,7 presenters. First contact: story5, presentations/listening35, notes/close5. Second and third: return3, presentations/listening40, close2. Fourth: return3, presentations/listening35, checkpoint5, close2. The source specifies no fixed duration; confirm actual class size, accessibility, timetable and presentation length rather than treating four contacts as a universal rule.",
-      "stageReview": "PENDING_ORIGINAL_KEY_SEALING_AND_HOSTED_RENDERING",
-      "complete": false,
+      "stageReview": "PASS: genuine exact fields/controls, placement, navigator, Learner View, 18 responsive combinations and first-response persistence",
+      "complete": true,
       "fieldCoverage": 46,
-      "actualRendererInsertions": "PASS"
+      "actualRendererInsertions": "PASS",
+      "printing": "PASS: integrated/fallback fields, PDF text and A4 bounds",
+      "timingStatus": "PROVISIONAL; educator trials pending"
     },
     {
       "lessonId": "g10-t1-l16-016",
@@ -65,10 +71,13 @@
       "fields": 38,
       "periods": 2,
       "timingRationale": "Two provisional 45-minute contacts for eight reflections, an estimated scale, organising existing evidence and substantial personal letter writing. First: story7, return to Lesson1/eight reflections22, scale6, portfolio organisation/pause10. Second: return3, letter25, checkpoint12 and farewell5. No new checklist, response control or retrospective experiment is created; read the letter at the authored end-of-Term2 point.",
-      "stageReview": "PENDING_ORIGINAL_KEY_SEALING_AND_HOSTED_RENDERING",
-      "complete": false,
+      "stageReview": "PASS: genuine exact fields/controls, placement, navigator, Learner View, 18 responsive combinations and first-response persistence",
+      "complete": true,
       "fieldCoverage": 38,
-      "actualRendererInsertions": "PASS"
+      "actualRendererInsertions": "PASS",
+      "printing": "PASS: integrated/fallback fields, PDF text and A4 bounds",
+      "timingStatus": "PROVISIONAL; educator trials pending"
     }
-  ]
+  ],
+  "testedCommit": "843bbc2a54eb1758c61eb664a6b1aead1b5adcf3"
 }

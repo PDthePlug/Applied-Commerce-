@@ -1,0 +1,1401 @@
+{
+  "at": "2026-10-25T15:27:37.939Z",
+  "projectRef": "inxshlumnhcgiahxqewe",
+  "baseURL": "https://applied-commerce-sa-staging-6pb1pwtp2.vercel.app",
+  "authentication": "genuine staging password login",
+  "plans": [
+    {
+      "lessonId": "g8-t1-l01-001",
+      "targets": 9,
+      "noRepeatedNavigation": true,
+      "sourcePlacement": true,
+      "learnerView": true
+    },
+    {
+      "lessonId": "g8-t1-l08-008",
+      "targets": 10,
+      "noRepeatedNavigation": true,
+      "sourcePlacement": true,
+      "learnerView": true
+    },
+    {
+      "lessonId": "g8-t1-l10-010",
+      "targets": 8,
+      "noRepeatedNavigation": true,
+      "sourcePlacement": true,
+      "learnerView": true
+    },
+    {
+      "lessonId": "g9-t1-l02-002",
+      "targets": 8,
+      "noRepeatedNavigation": true,
+      "sourcePlacement": true,
+      "learnerView": true
+    },
+    {
+      "lessonId": "g12-t1-l05-005",
+      "targets": 13,
+      "noRepeatedNavigation": true,
+      "sourcePlacement": true,
+      "learnerView": true
+    },
+    {
+      "lessonId": "g10-t1-l13-013",
+      "targets": 10,
+      "noRepeatedNavigation": true,
+      "sourcePlacement": true,
+      "learnerView": true
+    },
+    {
+      "lessonId": "g10-t1-l14-014",
+      "targets": 12,
+      "noRepeatedNavigation": true,
+      "sourcePlacement": true,
+      "learnerView": true
+    },
+    {
+      "lessonId": "g10-t1-l15-015",
+      "targets": 15,
+      "noRepeatedNavigation": true,
+      "sourcePlacement": true,
+      "learnerView": true
+    },
+    {
+      "lessonId": "g10-t1-l16-016",
+      "targets": 10,
+      "noRepeatedNavigation": true,
+      "sourcePlacement": true,
+      "learnerView": true
+    }
+  ],
+  "responsive": [
+    {
+      "lessonId": "g8-t1-l01-001",
+      "width": 320,
+      "scale": 1,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g8-t1-l01-001",
+      "width": 320,
+      "scale": 1.28,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g8-t1-l01-001",
+      "width": 320,
+      "scale": 2,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g8-t1-l01-001",
+      "width": 360,
+      "scale": 1,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g8-t1-l01-001",
+      "width": 360,
+      "scale": 1.28,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g8-t1-l01-001",
+      "width": 360,
+      "scale": 2,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g8-t1-l01-001",
+      "width": 430,
+      "scale": 1,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g8-t1-l01-001",
+      "width": 430,
+      "scale": 1.28,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g8-t1-l01-001",
+      "width": 430,
+      "scale": 2,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g8-t1-l01-001",
+      "width": 768,
+      "scale": 1,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g8-t1-l01-001",
+      "width": 768,
+      "scale": 1.28,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g8-t1-l01-001",
+      "width": 768,
+      "scale": 2,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g8-t1-l01-001",
+      "width": 1280,
+      "scale": 1,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g8-t1-l01-001",
+      "width": 1280,
+      "scale": 1.28,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g8-t1-l01-001",
+      "width": 1280,
+      "scale": 2,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g8-t1-l01-001",
+      "width": 1920,
+      "scale": 1,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g8-t1-l01-001",
+      "width": 1920,
+      "scale": 1.28,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g8-t1-l01-001",
+      "width": 1920,
+      "scale": 2,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g8-t1-l08-008",
+      "width": 320,
+      "scale": 1,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g8-t1-l08-008",
+      "width": 320,
+      "scale": 1.28,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g8-t1-l08-008",
+      "width": 320,
+      "scale": 2,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g8-t1-l08-008",
+      "width": 360,
+      "scale": 1,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g8-t1-l08-008",
+      "width": 360,
+      "scale": 1.28,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g8-t1-l08-008",
+      "width": 360,
+      "scale": 2,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g8-t1-l08-008",
+      "width": 430,
+      "scale": 1,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g8-t1-l08-008",
+      "width": 430,
+      "scale": 1.28,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g8-t1-l08-008",
+      "width": 430,
+      "scale": 2,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g8-t1-l08-008",
+      "width": 768,
+      "scale": 1,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g8-t1-l08-008",
+      "width": 768,
+      "scale": 1.28,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g8-t1-l08-008",
+      "width": 768,
+      "scale": 2,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g8-t1-l08-008",
+      "width": 1280,
+      "scale": 1,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g8-t1-l08-008",
+      "width": 1280,
+      "scale": 1.28,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g8-t1-l08-008",
+      "width": 1280,
+      "scale": 2,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g8-t1-l08-008",
+      "width": 1920,
+      "scale": 1,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g8-t1-l08-008",
+      "width": 1920,
+      "scale": 1.28,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g8-t1-l08-008",
+      "width": 1920,
+      "scale": 2,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g8-t1-l10-010",
+      "width": 320,
+      "scale": 1,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g8-t1-l10-010",
+      "width": 320,
+      "scale": 1.28,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g8-t1-l10-010",
+      "width": 320,
+      "scale": 2,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g8-t1-l10-010",
+      "width": 360,
+      "scale": 1,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g8-t1-l10-010",
+      "width": 360,
+      "scale": 1.28,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g8-t1-l10-010",
+      "width": 360,
+      "scale": 2,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g8-t1-l10-010",
+      "width": 430,
+      "scale": 1,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g8-t1-l10-010",
+      "width": 430,
+      "scale": 1.28,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g8-t1-l10-010",
+      "width": 430,
+      "scale": 2,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g8-t1-l10-010",
+      "width": 768,
+      "scale": 1,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g8-t1-l10-010",
+      "width": 768,
+      "scale": 1.28,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g8-t1-l10-010",
+      "width": 768,
+      "scale": 2,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g8-t1-l10-010",
+      "width": 1280,
+      "scale": 1,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g8-t1-l10-010",
+      "width": 1280,
+      "scale": 1.28,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g8-t1-l10-010",
+      "width": 1280,
+      "scale": 2,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g8-t1-l10-010",
+      "width": 1920,
+      "scale": 1,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g8-t1-l10-010",
+      "width": 1920,
+      "scale": 1.28,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g8-t1-l10-010",
+      "width": 1920,
+      "scale": 2,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g9-t1-l02-002",
+      "width": 320,
+      "scale": 1,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g9-t1-l02-002",
+      "width": 320,
+      "scale": 1.28,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g9-t1-l02-002",
+      "width": 320,
+      "scale": 2,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g9-t1-l02-002",
+      "width": 360,
+      "scale": 1,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g9-t1-l02-002",
+      "width": 360,
+      "scale": 1.28,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g9-t1-l02-002",
+      "width": 360,
+      "scale": 2,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g9-t1-l02-002",
+      "width": 430,
+      "scale": 1,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g9-t1-l02-002",
+      "width": 430,
+      "scale": 1.28,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g9-t1-l02-002",
+      "width": 430,
+      "scale": 2,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g9-t1-l02-002",
+      "width": 768,
+      "scale": 1,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g9-t1-l02-002",
+      "width": 768,
+      "scale": 1.28,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g9-t1-l02-002",
+      "width": 768,
+      "scale": 2,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g9-t1-l02-002",
+      "width": 1280,
+      "scale": 1,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g9-t1-l02-002",
+      "width": 1280,
+      "scale": 1.28,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g9-t1-l02-002",
+      "width": 1280,
+      "scale": 2,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g9-t1-l02-002",
+      "width": 1920,
+      "scale": 1,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g9-t1-l02-002",
+      "width": 1920,
+      "scale": 1.28,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g9-t1-l02-002",
+      "width": 1920,
+      "scale": 2,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g12-t1-l05-005",
+      "width": 320,
+      "scale": 1,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g12-t1-l05-005",
+      "width": 320,
+      "scale": 1.28,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g12-t1-l05-005",
+      "width": 320,
+      "scale": 2,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g12-t1-l05-005",
+      "width": 360,
+      "scale": 1,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g12-t1-l05-005",
+      "width": 360,
+      "scale": 1.28,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g12-t1-l05-005",
+      "width": 360,
+      "scale": 2,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g12-t1-l05-005",
+      "width": 430,
+      "scale": 1,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g12-t1-l05-005",
+      "width": 430,
+      "scale": 1.28,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g12-t1-l05-005",
+      "width": 430,
+      "scale": 2,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g12-t1-l05-005",
+      "width": 768,
+      "scale": 1,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g12-t1-l05-005",
+      "width": 768,
+      "scale": 1.28,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g12-t1-l05-005",
+      "width": 768,
+      "scale": 2,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g12-t1-l05-005",
+      "width": 1280,
+      "scale": 1,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g12-t1-l05-005",
+      "width": 1280,
+      "scale": 1.28,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g12-t1-l05-005",
+      "width": 1280,
+      "scale": 2,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g12-t1-l05-005",
+      "width": 1920,
+      "scale": 1,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g12-t1-l05-005",
+      "width": 1920,
+      "scale": 1.28,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g12-t1-l05-005",
+      "width": 1920,
+      "scale": 2,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g10-t1-l13-013",
+      "width": 320,
+      "scale": 1,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g10-t1-l13-013",
+      "width": 320,
+      "scale": 1.28,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g10-t1-l13-013",
+      "width": 320,
+      "scale": 2,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g10-t1-l13-013",
+      "width": 360,
+      "scale": 1,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g10-t1-l13-013",
+      "width": 360,
+      "scale": 1.28,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g10-t1-l13-013",
+      "width": 360,
+      "scale": 2,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g10-t1-l13-013",
+      "width": 430,
+      "scale": 1,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g10-t1-l13-013",
+      "width": 430,
+      "scale": 1.28,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g10-t1-l13-013",
+      "width": 430,
+      "scale": 2,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g10-t1-l13-013",
+      "width": 768,
+      "scale": 1,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g10-t1-l13-013",
+      "width": 768,
+      "scale": 1.28,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g10-t1-l13-013",
+      "width": 768,
+      "scale": 2,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g10-t1-l13-013",
+      "width": 1280,
+      "scale": 1,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g10-t1-l13-013",
+      "width": 1280,
+      "scale": 1.28,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g10-t1-l13-013",
+      "width": 1280,
+      "scale": 2,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g10-t1-l13-013",
+      "width": 1920,
+      "scale": 1,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g10-t1-l13-013",
+      "width": 1920,
+      "scale": 1.28,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g10-t1-l13-013",
+      "width": 1920,
+      "scale": 2,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g10-t1-l14-014",
+      "width": 320,
+      "scale": 1,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g10-t1-l14-014",
+      "width": 320,
+      "scale": 1.28,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g10-t1-l14-014",
+      "width": 320,
+      "scale": 2,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g10-t1-l14-014",
+      "width": 360,
+      "scale": 1,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g10-t1-l14-014",
+      "width": 360,
+      "scale": 1.28,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g10-t1-l14-014",
+      "width": 360,
+      "scale": 2,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g10-t1-l14-014",
+      "width": 430,
+      "scale": 1,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g10-t1-l14-014",
+      "width": 430,
+      "scale": 1.28,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g10-t1-l14-014",
+      "width": 430,
+      "scale": 2,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g10-t1-l14-014",
+      "width": 768,
+      "scale": 1,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g10-t1-l14-014",
+      "width": 768,
+      "scale": 1.28,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g10-t1-l14-014",
+      "width": 768,
+      "scale": 2,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g10-t1-l14-014",
+      "width": 1280,
+      "scale": 1,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g10-t1-l14-014",
+      "width": 1280,
+      "scale": 1.28,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g10-t1-l14-014",
+      "width": 1280,
+      "scale": 2,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g10-t1-l14-014",
+      "width": 1920,
+      "scale": 1,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g10-t1-l14-014",
+      "width": 1920,
+      "scale": 1.28,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g10-t1-l14-014",
+      "width": 1920,
+      "scale": 2,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g10-t1-l15-015",
+      "width": 320,
+      "scale": 1,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g10-t1-l15-015",
+      "width": 320,
+      "scale": 1.28,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g10-t1-l15-015",
+      "width": 320,
+      "scale": 2,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g10-t1-l15-015",
+      "width": 360,
+      "scale": 1,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g10-t1-l15-015",
+      "width": 360,
+      "scale": 1.28,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g10-t1-l15-015",
+      "width": 360,
+      "scale": 2,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g10-t1-l15-015",
+      "width": 430,
+      "scale": 1,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g10-t1-l15-015",
+      "width": 430,
+      "scale": 1.28,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g10-t1-l15-015",
+      "width": 430,
+      "scale": 2,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g10-t1-l15-015",
+      "width": 768,
+      "scale": 1,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g10-t1-l15-015",
+      "width": 768,
+      "scale": 1.28,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g10-t1-l15-015",
+      "width": 768,
+      "scale": 2,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g10-t1-l15-015",
+      "width": 1280,
+      "scale": 1,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g10-t1-l15-015",
+      "width": 1280,
+      "scale": 1.28,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g10-t1-l15-015",
+      "width": 1280,
+      "scale": 2,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g10-t1-l15-015",
+      "width": 1920,
+      "scale": 1,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g10-t1-l15-015",
+      "width": 1920,
+      "scale": 1.28,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g10-t1-l15-015",
+      "width": 1920,
+      "scale": 2,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g10-t1-l16-016",
+      "width": 320,
+      "scale": 1,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g10-t1-l16-016",
+      "width": 320,
+      "scale": 1.28,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g10-t1-l16-016",
+      "width": 320,
+      "scale": 2,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g10-t1-l16-016",
+      "width": 360,
+      "scale": 1,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g10-t1-l16-016",
+      "width": 360,
+      "scale": 1.28,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g10-t1-l16-016",
+      "width": 360,
+      "scale": 2,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g10-t1-l16-016",
+      "width": 430,
+      "scale": 1,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g10-t1-l16-016",
+      "width": 430,
+      "scale": 1.28,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g10-t1-l16-016",
+      "width": 430,
+      "scale": 2,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g10-t1-l16-016",
+      "width": 768,
+      "scale": 1,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g10-t1-l16-016",
+      "width": 768,
+      "scale": 1.28,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g10-t1-l16-016",
+      "width": 768,
+      "scale": 2,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g10-t1-l16-016",
+      "width": 1280,
+      "scale": 1,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g10-t1-l16-016",
+      "width": 1280,
+      "scale": 1.28,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g10-t1-l16-016",
+      "width": 1280,
+      "scale": 2,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g10-t1-l16-016",
+      "width": 1920,
+      "scale": 1,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g10-t1-l16-016",
+      "width": 1920,
+      "scale": 1.28,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    },
+    {
+      "lessonId": "g10-t1-l16-016",
+      "width": 1920,
+      "scale": 2,
+      "overflow": false,
+      "numbersContinuous": true,
+      "localDepth": "expanded and collapsed"
+    }
+  ],
+  "persistence": [
+    "supported learner RPC saves actual stable combined and split keys",
+    "genuine browser edit, clear and reload",
+    "logout and fresh password login retains cleared short answer, combined answer and longer response",
+    "learner denied teacher view"
+  ],
+  "errors": [],
+  "commit": "843bbc2a54eb1758c61eb664a6b1aead1b5adcf3",
+  "navigationScope": "explicit selected lessons",
+  "releasedPlans": 174,
+  "newLessonPersistence": [
+    {
+      "lessonId": "g10-t1-l13-013",
+      "responseKey": "g10-t1-l13-013::prompt-989c3bcd9a11ebdd1473aef2-1::blank-0",
+      "editClearReloadAndFreshLogin": true
+    },
+    {
+      "lessonId": "g10-t1-l14-014",
+      "responseKey": "g10-t1-l14-014::prompt-ce6271e35b5a2210964c00e1-1::blank-0",
+      "editClearReloadAndFreshLogin": true
+    },
+    {
+      "lessonId": "g10-t1-l15-015",
+      "responseKey": "g10-t1-l15-015::prompt-aa23148fc80be6845146bea5-1::table-1-0",
+      "editClearReloadAndFreshLogin": true
+    },
+    {
+      "lessonId": "g10-t1-l16-016",
+      "responseKey": "g10-t1-l16-016::prompt-b438ef1487f52a68d5f4c7b9-1::response",
+      "editClearReloadAndFreshLogin": true
+    }
+  ]
+}

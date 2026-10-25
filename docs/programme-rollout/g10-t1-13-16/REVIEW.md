@@ -1,6 +1,6 @@
 # Grade 10 Term 1: Lessons 13–16
 
-Every actual learner block was read before individual authoring. Private source/schema/activity coverage and actual ContentBlocks insertion pass. These four guides remain uncompleted until original-key release and genuine hosted acceptance pass; educator timing trials remain pending.
+Every actual learner block was read before individual authoring. Private source/schema/activity coverage and actual ContentBlocks insertion pass. All four now pass original-key release and genuine hosted acceptance; educator timing trials remain pending.
 
 | Lesson | Individual instructional review | Provisional contacts |
 | --- | --- | ---: |
@@ -15,4 +15,6 @@ All multi-period guides have brief pause/reintroduction and return to the same l
 
 Four focused source proposals remain separate: irreversible commitment, truth/usefulness in feedback, the unsupported starting-scale baseline and digital visibility. Scar/architect/becoming language, idea-borrowing metaphor and the programme’s personal reflection remain. Missing/partial work is identified honestly rather than converted into past experiments or successful operating systems.
 
-Genuine checks will include both existing letter response controls separately, including edit/clear/reload/fresh login, assigned-educator review, unrelated/revoked denial and restoration. No mocked role or intercepted request will be counted as staging authentication.
+Both existing letter response controls pass separate genuine edit/clear/reload/fresh-login, assigned-educator review, unrelated/revoked denial and restoration checks. No mocked role or intercepted request is counted as staging authentication.
+
+Genuine acceptance: 9 selected lessons / 687 exact fields / 95 navigator targets / 162 responsive cases. All 4 additions pass first-response edit/clear/reload/fresh-login persistence; 1 actual tables pass fresh-login persistence and restoration. Complete integrated/fallback PDF text retains 1374 fields with none missing. See RESULTS.json and the protected capture hashes. Educator trials remain pending.
