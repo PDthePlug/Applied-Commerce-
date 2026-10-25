@@ -1889,7 +1889,13 @@
         }
       ],
       "implementationImpact": "Separate owner-reviewed source/answer-rationale correction. Retain current learner wording, fields, choices, stable keys and saved records until explicitly reviewed; no canonical edit now.",
-      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED",
+      "externalVerification": {
+        "checked": "2026-10-25",
+        "sourceDate": "January2022",
+        "url": "https://www.ncr.org.za/index.php/latest-news/8-latest-news/125-consumers-are-encouraged-to-borrow-wisely-and-start-saving",
+        "finding": "Dated official guidance supports affordability/full-cost consideration; not a complete current statutory or product review."
+      }
     },
     {
       "lessonId": "g10-t2-l23-023",
@@ -2003,6 +2009,163 @@
         }
       ],
       "implementationImpact": "Separate owner-reviewed source/answer-rationale correction. Retain current learner wording, fields, choices, stable keys and saved records until explicitly reviewed; no canonical edit now.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g10-t2-l25-025",
+      "blockId": "308982d59a76f9b225fd362d-1",
+      "exactPassage": "\"I am saying you should build a record. A small phone contract. A store account you pay off every month. Not because you need the debt. Because you need the proof. The proof that you can handle credit. That proof is worth more than the interest you will pay. It is an investment in your future ability to borrow — for a car, a house, a business.\"",
+      "category": "Specific unnecessary-borrowing safety concern",
+      "concern": "The character recommends contracts/store credit even when unnecessary and treats interest as worthwhile proof of trust. This is not a safe universal instruction or guarantee of future access; the activity itself correctly plans for when18. Dated NCR guidance emphasises affordability, full costs and not taking extra credit simply because offered.",
+      "proposedWording": "Learn about credit information and future choices without borrowing unnecessarily. At an appropriate future age, consider genuine purpose, terms, affordability and reliable current information; a credit record does not measure character or guarantee approval.",
+      "relatedSourcePassages": [
+        {
+          "blockId": "26d1d159792055e062403e4b-1",
+          "exactPassage": "He pauses. \"I thought avoiding debt was the smartest thing I could do. I was right — about bad debt. But I was wrong about ALL debt. Some debt — small, manageable, repaid on time — builds a record. A record that says: this person can be trusted. I have no record. So I am invisible. And invisible people do not get loans.\""
+        },
+        {
+          "blockId": "17e0aa78863b992ab8ec1f76-1",
+          "exactPassage": "No Credit Record = Invisible"
+        },
+        {
+          "blockId": "e645d48807b4006350c62d10-1",
+          "exactPassage": "Invisible = Untrustworthy (in the Eyes of Lenders)"
+        },
+        {
+          "blockId": "ed639eae25eefd7a494cf29a-1",
+          "exactPassage": "Small, Repaid Debt = Proof of Trustworthiness"
+        },
+        {
+          "blockId": "275d1c37c4cb7d2d13e9b95f-1",
+          "exactPassage": "Elder Mkhize said young people should build a credit record early. What is ONE small, safe way you could start building a credit record when you turn 18?"
+        },
+        {
+          "blockId": "58a0930cc464ca74f843819a-1",
+          "exactPassage": "Key idea: Elder Mkhize did everything right — by the old rules. He avoided debt. He saved. He paid cash. And the system punished him for it. The new rules are different. In the modern economy, you must prove you can handle credit in order to access credit. That means using it — carefully, strategically, in small amounts, always repaid on time. The credit score is not a judgment of your character. It is a judgment of your history. And you can shape your history starting now."
+        },
+        {
+          "blockId": "82439d264dbf4cd1a7100772-1",
+          "exactPassage": "Here’s the tension: the credit system rewards those who play the game, and the game requires debt. For someone who has been taught that all debt is dangerous, entering the credit system feels like a betrayal of values. Elder Mkhize's values protected him from bad debt. But they also locked him out of good credit. The question is not whether to use credit. The question is how to use it without becoming enslaved by it. The strategist enters the credit system with a plan: small amounts, repaid fast, never carrying a balance, never paying interest if possible, always maintaining control. The goal is not to borrow. The goal is to build a record so that when you NEED to borrow, the system says yes."
+        }
+      ],
+      "implementationImpact": "Separate owner-reviewed source/answer-rationale proposal only. No canonical wording, product recommendation, question, control, field count or saved-work identity is changed now.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g10-t2-l25-025",
+      "blockId": "0abdda8ac63d47cda9929986-1",
+      "exactPassage": "[[\"Score Range\",\"Rating\",\"What It Means\"],[\"700+\",\"Excellent\",\"Lenders trust you\"],[\"600–699\",\"Good\",\"Most lenders approve\"],[\"500–599\",\"Fair\",\"Some lenders may say no\"],[\"Below 500\",\"Poor\",\"Hard to get loans\"]]",
+      "category": "Unverified universal scoring/approval bands",
+      "concern": "No bureau/model or date is supplied for the700/600/500 bands. Credit scores and approval criteria vary; a bureau does not itself make the lending decision. The story’s denial is not evidence of an inevitable rule for people with no record.",
+      "proposedWording": "Identify the relevant bureau/model and date, label bands illustrative where appropriate, and distinguish the lender’s full assessment from a score. No record is not a judgement of personal worth or an automatic universal denial.",
+      "relatedSourcePassages": [],
+      "implementationImpact": "Separate owner-reviewed source/answer-rationale proposal only. No canonical wording, product recommendation, question, control, field count or saved-work identity is changed now.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g10-t2-l26-026",
+      "blockId": "d02d4e892e7294f87c26ce7c-1",
+      "exactPassage": "[[\"Vehicle\",\"What It Is\",\"Risk\",\"Minimum\",\"Best For\"],[\"Savings account\",\"Money in the bank\",\"Very low\",\"R0–R100\",\"Emergency fund, short-term\"],[\"Fixed deposit\",\"Locked for set time, higher interest\",\"Very low\",\"R1,000+\",\"1–5 year goals\"],[\"Retail bonds\",\"Loan to government\",\"Very low\",\"R1,000\",\"5+ year safe goals\"],[\"Unit trusts\",\"Managed pool of investments\",\"Medium\",\"R500+\",\"Long-term growth\"],[\"ETFs\",\"Basket of stocks, low fees\",\"Medium\",\"R500+\",\"Long-term growth\"],[\"Stocks\",\"Own part of a company\",\"Medium-High\",\"R500+\",\"Company-specific growth\"],[\"Property\",\"Buy land or buildings\",\"Medium-High\",\"High\",\"Long-term wealth\"],[\"Stokvels\",\"Community saving\",\"Trust-based\",\"Varies\",\"Community, discipline\"]]",
+      "category": "Missing product/underlying-asset context; partial official verification",
+      "concern": "The table assigns one risk/minimum to broad structures, and describes ETFs only as stock baskets. Holdings, terms and provider facts vary. The published2025 fixed-rate RSA terms supportR1000 for that series, not every retail-bond series or every other listed product.",
+      "proposedWording": "Use provider/series-specific dated terms and underlying holdings when describing risk, cost, liquidity and minimums. Retain the verified fixed-rate example with its scope; distinguish a tax wrapper or fund structure from the assets it holds.",
+      "relatedSourcePassages": [],
+      "implementationImpact": "Separate owner-reviewed source/answer-rationale proposal only. No canonical wording, product recommendation, question, control, field count or saved-work identity is changed now.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g10-t2-l27-027",
+      "blockId": "b657ed7cce3ee4eda015fa0e-1",
+      "exactPassage": "[[\"Feature\",\"ETF\",\"Unit Trust\",\"Retail Bond\"],[\"What you buy\",\"Basket of stocks\",\"Managed basket\",\"Loan to government\"],[\"Who manages\",\"You (or follow an index)\",\"Professional manager\",\"Government\"],[\"Fees (TER)\",\"0.1% – 0.5%\",\"1.5% – 3%\",\"0%\"],[\"Risk\",\"Medium\",\"Medium\",\"Very low\"],[\"Return potential\",\"Medium-high\",\"Medium-high\",\"Low\"],[\"Best for\",\"Long-term growth, cost-conscious\",\"Hands-off investors\",\"Safety, 2–5 year goals\"]]",
+      "category": "Material management/structure dichotomy",
+      "concern": "The table frames ETF management as the investor versus professional management for unit trusts. ETF providers still operate/manage funds; active/passive strategy, listing/structure and underlying investments are different distinctions.",
+      "proposedWording": "Compare trading/listing, holdings, strategy and relevant total costs. Both structures involve fund operation and can use differing strategies; do not equate every ETF with do-it-yourself management or every unit trust with active high-fee management.",
+      "relatedSourcePassages": [],
+      "implementationImpact": "Separate owner-reviewed source/answer-rationale proposal only. No canonical wording, product recommendation, question, control, field count or saved-work identity is changed now.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g10-t2-l27-027",
+      "blockId": "aa98545499d1510fa37534b1-1",
+      "exactPassage": "[[\"Term\",\"Definition\",\"isiZulu\",\"Afrikaans\"],[\"ETF\",\"Exchange-Traded Fund — a basket of investments traded like a stock\",\"I-ETF\",\"ETF\"],[\"Unit trust\",\"A pooled investment fund managed by professionals\",\"Iyunithi yetrasti\",\"Effektetrust\"],[\"Retail bond\",\"A loan to the government, sold to individuals\",\"Ibhondi yokudayisa\",\"Kleinbeleggingseffek\"],[\"TER\",\"Total Expense Ratio — the annual fee charged by a fund\",\"Izindleko zonyaka\",\"Totale koste-verhouding\"]]",
+      "category": "Missing TER scope and time basis",
+      "concern": "An annual-fee shorthand can be mistaken for the complete permanent price of every investment. TER describes specified fund expenses and need not include all platform, advice, dealing or other relevant charges.",
+      "proposedWording": "Explain what the quoted TER covers and its reporting basis, and consider any other applicable costs. Distinguish an illustrative expense ratio from a universal current or permanent charge.",
+      "relatedSourcePassages": [
+        {
+          "blockId": "7bcdecc131aad7bc4859ef86-1",
+          "exactPassage": "Fees Are Guaranteed. Returns Are Not."
+        }
+      ],
+      "implementationImpact": "Separate owner-reviewed source/answer-rationale proposal only. No canonical wording, product recommendation, question, control, field count or saved-work identity is changed now.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g10-t2-l27-027",
+      "blockId": "f336061b633b7eaae9e7a3c4-1",
+      "exactPassage": "Imagine you invest R500 per month for 30 years. Average return: 8% per year.",
+      "category": "Missing contribution/compounding conventions",
+      "concern": "The approximate future value fromR500monthly/30years/8% minus stated fees requires an explicit rate convention, payment timing and omitted costs. Different consistent models give different totals.",
+      "proposedWording": "Specify an educational model, such as approximate net nominal annual rates divided monthly, month-end contributions and omitted tax/inflation/other costs, or another consistent convention. State that results are hypothetical rather than product forecasts.",
+      "relatedSourcePassages": [
+        {
+          "blockId": "8c6a314f8510cebbda016f7b-1",
+          "exactPassage": "Scenario A: ETF with 0.3% annual fee Net annual return: _______% Approximate value after 30 years: R _______"
+        },
+        {
+          "blockId": "3993a7ef7cd0238ea26c81fd-1",
+          "exactPassage": "Scenario B: Unit trust with 2.5% annual fee Net annual return: _______% Approximate value after 30 years: R _______"
+        },
+        {
+          "blockId": "36908823d7c6cd5dc7e72a44-1",
+          "exactPassage": "Difference due to fees: R _______"
+        }
+      ],
+      "implementationImpact": "Separate owner-reviewed source/answer-rationale proposal only. No canonical wording, product recommendation, question, control, field count or saved-work identity is changed now.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g10-t2-l28-028",
+      "blockId": "803a5f692d131fc313d3b78b-1",
+      "exactPassage": "He pauses. \"My wife wanted me to take it. My children needed things. My neighbours thought I was crazy — working so hard and driving an old car. But I reinvested. Every rand. For three years. I lived on almost nothing. My family sacrificed. And at the end of year eight, the factory was making R100,000 a year. The R90,000 I had reinvested over three years was now generating an extra R70,000 a year — every year. The reinvestment paid for itself in less than two years. Everything after that was profit.\"",
+      "category": "Material narrative/table cash-flow mismatch",
+      "concern": "The story says every rand was reinvested for three years; the first three table rows showR145000 profit,R90000 reinvested andR55000 taken home. Four rows investR120000 altogether, so the period and timing of the quotedR90000 must be explicit.",
+      "proposedWording": "Reconcile the stated years and cash flows. Distinguish the first three investments from the fourth and align the narrative’s take-home claim with the chosen period without implying essential family needs should be sacrificed.",
+      "relatedSourcePassages": [
+        {
+          "blockId": "226c6c79b45f0bba702359fe-1",
+          "exactPassage": "[[\"Year\",\"Profit\",\"Reinvested\",\"Took Home\",\"Result\"],[\"1\",\"R30,000\",\"R30,000\",\"R0\",\"Bought more tools\"],[\"2\",\"R45,000\",\"R30,000\",\"R15,000\",\"Hired first employee\"],[\"3\",\"R70,000\",\"R30,000\",\"R40,000\",\"Added second production line\"],[\"4\",\"R100,000\",\"R30,000\",\"R70,000\",\"Business growing steadily\"]]"
+        },
+        {
+          "blockId": "5c6c6195057b35b92185a926-1",
+          "exactPassage": "Total reinvested over 3 years: R90,000. Annual profit increase: R70,000. Return on reinvestment: 78%."
+        }
+      ],
+      "implementationImpact": "Separate owner-reviewed source/answer-rationale proposal only. No canonical wording, product recommendation, question, control, field count or saved-work identity is changed now.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g10-t2-l28-028",
+      "blockId": "655b2780280c47bdc204b0a6-1",
+      "exactPassage": "Myah does the math in her notebook: R90,000 reinvested over 3 years → R70,000 annual increase in profit. Payback period: 1.3 years. After that, R70,000/year forever. That is a 78% annual return on the reinvested money. No bank. No stock market. No investment vehicle offers 78% returns. The highest-return investment Mr. Patel could make was in himself. In his own business. In his own capacity to produce.",
+      "category": "Material return-duration overstatement",
+      "concern": "R70000/R90000≈77.78%, rounded78, is a simple case ratio. It does not establishR70000 forever, an annualised IRR for staggered cash flows or a universal claim that no external investment can have that return.",
+      "proposedWording": "Label the simplified case ratio and assumptions; future profit and duration remain uncertain. A simple payback estimate is about1.29years only under a continuing incremental-profit assumption. Retain the encouragement to develop capacity without a guaranteed superior return.",
+      "relatedSourcePassages": [
+        {
+          "blockId": "2dad76e0dd7091c27671f282-1",
+          "exactPassage": "Nobody Offers 78% Returns. Except You. To Yourself."
+        },
+        {
+          "blockId": "ba4dcca267ac5390362d4ce7-1",
+          "exactPassage": "Return = (Annual profit increase ÷ Total reinvested) × 100 = _______%"
+        },
+        {
+          "blockId": "a9e276958025ad4c7d97d2bc-1",
+          "exactPassage": "Key idea: Mr. Patel's best investment was not in the stock market. It was not in property. It was in his own factory. His own capacity to produce. He earned a 78% return on reinvested profits. No external investment offers that. The highest-return investment available to most people is an investment in themselves — their skills, their business, their capacity to create value. The strategist looks inward before looking outward."
+        }
+      ],
+      "implementationImpact": "Separate owner-reviewed source/answer-rationale proposal only. No canonical wording, product recommendation, question, control, field count or saved-work identity is changed now.",
       "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
     }
   ],

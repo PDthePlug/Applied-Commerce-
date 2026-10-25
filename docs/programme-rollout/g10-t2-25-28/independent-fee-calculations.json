@@ -1,0 +1,24 @@
+{
+  "0.003": {
+    "assumedNetAnnual": 0.077,
+    "monthlyRate": 0.006416666666666667,
+    "endMonth500for30years": 701326.1372816575,
+    "totalContributed": 180000
+  },
+  "0.025": {
+    "assumedNetAnnual": 0.055,
+    "monthlyRate": 0.004583333333333333,
+    "endMonth500for30years": 456805.9462553987,
+    "totalContributed": 180000
+  },
+  "difference": 244520.19102625886,
+  "reinvestmentCase": {
+    "simpleIncrementalProfitRatioPercent": 77.77777777777779,
+    "simplePaybackYears": 1.2857142857142858,
+    "firstThreeTableProfit": 145000,
+    "firstThreeReinvested": 90000,
+    "firstThreeTakenHome": 55000,
+    "allFourRowsReinvested": 120000
+  },
+  "assumptions": "Educational approximation: gross8%-statedfee, nominal annual net dividedby12, fixedend-month500,360months,noothercharges/tax/inflation/withdrawals/changes. Notactualproductforecasts or exact dailyTERaccounting."
+}
