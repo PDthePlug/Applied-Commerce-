@@ -1315,7 +1315,11 @@
       "concern": "The specific SASSA verification-by-telephone outcome should not be treated as current general procedure or permission to handle another person’s identity/security information.",
       "proposedWording": "Retain the story as an example of seeking appropriate help, but distinguish its outcome from current procedure. Actual beneficiaries should use independently verified official channels and appropriate responsible support; learners should not collect security answers.",
       "implementationImpact": "Separate owner-reviewed learner-source proposal only. No canonical wording, activity, field or saved identity changes in this rollout.",
-      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED",
+      "externalVerification": {
+        "status": "RELEVANT_CONTEXT_READ; SPECIFIC_PHONE_RULE_NOT_ESTABLISHED",
+        "evidence": "g9-t4-65-75/FACT_CHECKS.md"
+      }
     },
     {
       "lessonId": "g9-t4-l69-059",
@@ -1355,7 +1359,11 @@
       "concern": "The two-path subject table is not sufficient programme/year-specific subject or admissions advice, and immediate income is not guaranteed by a subject choice.",
       "proposedWording": "Use current school offerings and official programme/year-specific entry requirements with qualified school guidance. Do not infer admission, employment or income from this simplified table.",
       "implementationImpact": "Separate owner-reviewed learner-source proposal only. No canonical wording, activity, field or saved identity changes in this rollout.",
-      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED",
+      "externalVerification": {
+        "status": "CURRENT_PROGRAMME_SPECIFIC_REQUIREMENTS_NOT_VERIFIED",
+        "evidence": "g9-t4-65-75/FACT_CHECKS.md"
+      }
     },
     {
       "lessonId": "g9-t4-l73-063",
@@ -1365,7 +1373,11 @@
       "concern": "The alternative branch is labelled not continuing formal schooling although the earlier Productivity definition includes vocational training, which can itself be formal education. Work/study routes also overlap.",
       "proposedWording": "Distinguish specific education, training and work options using their actual entry requirements and support. Do not treat all vocational training as leaving formal education or the two headings as exhaustive mutually exclusive paths.",
       "implementationImpact": "Separate consequential branch-meaning review, including related vocabulary/choice wording. Preserve existing responses and review any future prompt/branch mapping explicitly; no source or control change now.",
-      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED",
+      "externalVerification": {
+        "status": "FORMAL_VOCATIONAL_CONTEXT_SUPPORTED; BRANCH_WORDING_REVIEW_PENDING",
+        "evidence": "g9-t4-65-75/FACT_CHECKS.md"
+      }
     },
     {
       "lessonId": "g9-t4-l74-064",

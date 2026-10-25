@@ -1,6 +1,6 @@
 # Grade 9 Term 4: Lessons 65–75
 
-Every actual learner block in these eleven lessons was read before individual authoring. Private source/schema/activity and actual-renderer insertion checks pass. The guides are candidates until their own original-key release and genuine hosted acceptance pass. Technical checks do not establish classroom quality by themselves.
+Every actual learner block in these eleven lessons was read before individual authoring. Private source/schema/activity and actual-renderer insertion checks pass. All eleven now pass original-key release and genuine hosted acceptance. Educator classroom review and timing trials remain pending. Technical checks do not establish classroom quality by themselves.
 
 | Lesson | Instructional review | Provisional contacts |
 | --- | --- | ---: |
@@ -20,4 +20,4 @@ Every actual learner block in these eleven lessons was read before individual au
 
 Brief first-contact conclusions and reintroductions continue each same authored lesson. The central navigator revisits earlier sections where needed. Existing stage anchors, source references, controls, prompts, response counts and saved identities remain. No remaining learning work is hidden only in a fallback document.
 
-Nine focused source proposals are separate and unapplied: current SASSA procedure, a specific repair example, actual presenter recording, impact evaluation, subject/route information, the portfolio checklist and digital-letter visibility. Facts/feelings, seeds, ripples, becoming, dignity and farewell language retain their reflective purpose; each metaphor is not turned into a corrective lecture. Genuine authentication, saved-letter permissions/persistence, responsive use and complete private printing remain acceptance checks for this candidate.
+Nine focused source proposals are separate and unapplied: current SASSA procedure, a specific repair example, actual presenter recording, impact evaluation, subject/route information, the portfolio checklist and digital-letter visibility. Facts/feelings, seeds, ripples, becoming, dignity and farewell language retain their reflective purpose; each metaphor is not turned into a corrective lecture. Genuine authentication, saved-letter permissions/persistence, responsive use and complete private printing pass; see RESULTS.json and the protected capture inventory.
