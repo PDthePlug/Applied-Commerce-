@@ -16,7 +16,7 @@ for(const row of register.lessons){
  const group=groups.get(key);group.total++;
  if(row.status==='OWNER_ACCEPTED_PR48_EXISTING'){group.existing++;group.completedRows.push(row);}
  else if(row.status==='COMPLETED_INDIVIDUAL_REVIEW'){group.new++;group.completedRows.push(row);}
- else{group.pending++;if(row.status==='DRAFTED_PRIVATE_UNSEALED'){group.drafts++;group.draftRows.push(row);}else if(row.status==='STAGED_PENDING_VERIFICATION'){group.staged++;group.stagedRows.push(row);}}
+ else{group.pending++;if(['DRAFTED_PRIVATE_UNSEALED','PRIVATE_DRAFT_PENDING_SEALING_AND_GENUINE_VERIFICATION'].includes(row.status)){group.drafts++;group.draftRows.push(row);}else if(['STAGED_PENDING_VERIFICATION','STAGED_PENDING_GENUINE_VERIFICATION'].includes(row.status)){group.staged++;group.stagedRows.push(row);}}
 }
 for(const group of groups.values()){
  group.periods=provisionalContactPeriods(group.completedRows);group.draftPeriods=provisionalContactPeriods(group.draftRows);group.stagedPeriods=provisionalContactPeriods(group.stagedRows);
