@@ -1,6 +1,6 @@
 # Grade 10 Term 3: Lessons 37–40
 
-Every actual learner block was read before individual authoring. Source/schema/activity coverage and actual ContentBlocks insertion pass; private assembly preserves all 193 earlier bindings. These four are sealed under the original staging key; genuine hosted acceptance remains pending. All 193 previous bindings compare identical and the four private draft hashes match.
+Every actual learner block was read before individual authoring. Source/schema/activity coverage and actual ContentBlocks insertion pass; private assembly preserves all 193 earlier bindings. These four pass original-key sealing and genuine hosted acceptance. All 193 previous bindings compare identical and the four private draft hashes match.
 
 | Lesson | Individual instructional review | Provisional contacts |
 | --- | --- | ---: |
@@ -12,3 +12,5 @@ Every actual learner block was read before individual authoring. Source/schema/a
 **Four authored additions / six provisional contacts.** Later observation, feedback and suitable experimentation remain later work. Timings await educator trials. Actual period-break placement was corrected locally before packaging; both returns use the same learner task and central navigator. No additional activity, response field or compulsory discussion is added.
 
 Complete preparation, brief contextual cues, optional local depth, private printing and standalone fallback remain. Existing digital response spaces and normal paper drawings support the authored diagrams; no new drawing tool is introduced. Actual tables retain nine, fifteen and six editable cells respectively. Four focused source proposals remain separate; web, ripple, insurance and discipline metaphors are retained as perspectives rather than converted into corrective lectures.
+
+Genuine acceptance: 9 selected lessons / 730 exact fields / 97 navigator targets / 162 responsive cases. All 4 additions pass first-response edit/clear/reload/fresh-login persistence; 3 actual tables pass fresh-login persistence and restoration. Complete integrated/fallback PDF text retains 1460 fields with none missing. See RESULTS.json and the protected capture hashes. Educator trials remain pending.
