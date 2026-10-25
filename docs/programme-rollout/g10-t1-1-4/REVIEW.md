@@ -1,6 +1,6 @@
 # Grade 10 Term 1: first four lessons
 
-Every actual learner block was read before individual authoring. Preparation, brief section cues, local optional explanations and later work follow the accepted interface. Private source/schema/activity and actual ContentBlocks insertion checks pass; original-key sealing and genuine hosted acceptance remain pending. These four are not counted in the completed 158.
+Every actual learner block was read before individual authoring. Preparation, brief section cues, local optional explanations and later work follow the accepted interface. Private source/schema/activity and actual ContentBlocks insertion checks pass; original-key sealing and genuine hosted acceptance now pass. These four bring verified coverage to 162; educator trials remain pending.
 
 | Lesson | Individual instructional review | Provisional contacts |
 | --- | --- | ---: |
@@ -11,6 +11,8 @@ Every actual learner block was read before individual authoring. Preparation, br
 
 **Four authored lessons / five provisional contacts.** Timing follows learner reading, thinking, arithmetic and writing, not teacher prose length. Lesson 4 has brief first-contact closure and reintroduction to the same audit; no new lesson or activity is created. Educator timing trials remain pending.
 
-The actual table renderer was inspected locally: Lesson 2 has three rows and six textareas; Lesson 4 has four rows and twelve textareas in the other columns, with separate score controls. No source rows, controls or saved identities are changed. Genuine table persistence and hosted placement remain acceptance checks.
+The actual table renderer was inspected locally: Lesson 2 has three rows and six textareas; Lesson 4 has four rows and twelve textareas in the other columns, with separate score controls. No source rows, controls or saved identities are changed. Both tables pass genuine edit/clear/reload/fresh-login persistence and restoration; hosted placement passes.
 
 Fourteen separate source proposals retain exact passages and implementation impact. PAYE/UIF applicability and tax-free contribution claims require current verification; four official SARS requests returned HTTP 403, a source-access failure separate from staging authentication. The original BCEA section 34 and a dated Labour UIF guide were read, with current-consolidation limits recorded. Metaphors and legitimate personal-development perspectives remain; optional depth addresses a specific misunderstanding rather than repeating corrective lectures after every paragraph.
+
+Nine selected lessons, including all four additions and five benchmarks, pass 674 exact field checks, 90 navigator targets and 162 responsive cases. Complete integrated/fallback prints retain 1,348 PDF field occurrences with none missing. See RESULTS.json and authenticated-evidence-manifest.json.

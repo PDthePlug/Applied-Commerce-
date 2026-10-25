@@ -4,7 +4,7 @@
   "authoredLessons": 395,
   "assessmentsPreserved": 4,
   "completeBeforeThisRollout": 24,
-  "remaining": 237,
+  "remaining": 233,
   "lessons": [
     {
       "lessonId": "g8-t1-l01-001",
@@ -4020,17 +4020,15 @@
       "grade": 10,
       "term": 1,
       "title": "WHERE WE HAVE BEEN, WHERE WE ARE GOING",
-      "status": "STAGED_CANDIDATE_PENDING_GENUINE_VERIFICATION",
+      "status": "COMPLETED_INDIVIDUAL_REVIEW",
       "sourceAlignment": "Every actual learner block read; source/schema/activity and actual ContentBlocks insertion PASS",
-      "instructionalReview": "Individually authored preparation, brief cues, specific optional support and later work; hosted review pending",
+      "instructionalReview": "Every learner block read; individual preparation/cues/local support/later work and genuine rendered review complete",
       "contactPeriods": 1,
-      "automated": "Source/schema/actual-renderer placement and original-key sealing PASS",
-      "genuineRole": "PENDING: candidate162 acceptance",
-      "printing": "NOT RUN",
-      "responsive": "NOT RUN",
-      "issues": [
-        "Genuine hosted acceptance pending"
-      ],
+      "automated": "213 Node tests, runtime/typecheck/lint, source/renderer and guarded original-key build PASS",
+      "genuineRole": "PASS: genuine exact fields/controls, navigation, Learner View; first-response edit/clear/reload/fresh-login persistence",
+      "printing": "PASS: integrated/fallback DOM fields, physical PDF text and A4 margins",
+      "responsive": "PASS: 6 widths \u00d7 3 text scales, genuine staging",
+      "issues": [],
       "timingStatus": "PROVISIONAL; educator trials pending",
       "editorialReview": {
         "status": "SEPARATE_UNAPPLIED_PROPOSALS_REQUIRE_REVIEW",
@@ -4050,17 +4048,15 @@
       "grade": 10,
       "term": 1,
       "title": "VALUE REVISITED \u2014 THE KITCHEN THAT ALMOST BROKE",
-      "status": "STAGED_CANDIDATE_PENDING_GENUINE_VERIFICATION",
+      "status": "COMPLETED_INDIVIDUAL_REVIEW",
       "sourceAlignment": "Every actual learner block read; source/schema/activity and actual ContentBlocks insertion PASS",
-      "instructionalReview": "Individually authored preparation, brief cues, specific optional support and later work; hosted review pending",
+      "instructionalReview": "Every learner block read; individual preparation/cues/local support/later work and genuine rendered review complete",
       "contactPeriods": 1,
-      "automated": "Source/schema/actual-renderer placement and original-key sealing PASS",
-      "genuineRole": "PENDING: candidate162 acceptance",
-      "printing": "NOT RUN",
-      "responsive": "NOT RUN",
-      "issues": [
-        "Genuine hosted acceptance pending"
-      ],
+      "automated": "213 Node tests, runtime/typecheck/lint, source/renderer and guarded original-key build PASS",
+      "genuineRole": "PASS: genuine exact fields/controls, navigation, Learner View; first-response edit/clear/reload/fresh-login persistence",
+      "printing": "PASS: integrated/fallback DOM fields, physical PDF text and A4 margins",
+      "responsive": "PASS: 6 widths \u00d7 3 text scales, genuine staging",
+      "issues": [],
       "timingStatus": "PROVISIONAL; educator trials pending",
       "editorialReview": {
         "status": "SEPARATE_UNAPPLIED_PROPOSALS_REQUIRE_REVIEW",
@@ -4086,17 +4082,15 @@
       "grade": 10,
       "term": 1,
       "title": "KARABO'S PAYSLIP \u2014 THE SYSTEM YOU DID NOT CHOOSE",
-      "status": "STAGED_CANDIDATE_PENDING_GENUINE_VERIFICATION",
+      "status": "COMPLETED_INDIVIDUAL_REVIEW",
       "sourceAlignment": "Every actual learner block read; source/schema/activity and actual ContentBlocks insertion PASS",
-      "instructionalReview": "Individually authored preparation, brief cues, specific optional support and later work; hosted review pending",
+      "instructionalReview": "Every learner block read; individual preparation/cues/local support/later work and genuine rendered review complete",
       "contactPeriods": 1,
-      "automated": "Source/schema/actual-renderer placement and original-key sealing PASS",
-      "genuineRole": "PENDING: candidate162 acceptance",
-      "printing": "NOT RUN",
-      "responsive": "NOT RUN",
-      "issues": [
-        "Genuine hosted acceptance pending"
-      ],
+      "automated": "213 Node tests, runtime/typecheck/lint, source/renderer and guarded original-key build PASS",
+      "genuineRole": "PASS: genuine exact fields/controls, navigation, Learner View; first-response edit/clear/reload/fresh-login persistence",
+      "printing": "PASS: integrated/fallback DOM fields, physical PDF text and A4 margins",
+      "responsive": "PASS: 6 widths \u00d7 3 text scales, genuine staging",
+      "issues": [],
       "timingStatus": "PROVISIONAL; educator trials pending",
       "editorialReview": {
         "status": "SEPARATE_UNAPPLIED_PROPOSALS_REQUIRE_REVIEW",
@@ -4140,17 +4134,15 @@
       "grade": 10,
       "term": 1,
       "title": "INCOME \u2014 THE CONTROL SPECTRUM",
-      "status": "STAGED_CANDIDATE_PENDING_GENUINE_VERIFICATION",
+      "status": "COMPLETED_INDIVIDUAL_REVIEW",
       "sourceAlignment": "Every actual learner block read; source/schema/activity and actual ContentBlocks insertion PASS",
-      "instructionalReview": "Individually authored preparation, brief cues, specific optional support and later work; hosted review pending",
+      "instructionalReview": "Every learner block read; individual preparation/cues/local support/later work and genuine rendered review complete",
       "contactPeriods": 2,
-      "automated": "Source/schema/actual-renderer placement and original-key sealing PASS",
-      "genuineRole": "PENDING: candidate162 acceptance",
-      "printing": "NOT RUN",
-      "responsive": "NOT RUN",
-      "issues": [
-        "Genuine hosted acceptance pending"
-      ],
+      "automated": "213 Node tests, runtime/typecheck/lint, source/renderer and guarded original-key build PASS",
+      "genuineRole": "PASS: genuine exact fields/controls, navigation, Learner View; first-response edit/clear/reload/fresh-login persistence",
+      "printing": "PASS: integrated/fallback DOM fields, physical PDF text and A4 margins",
+      "responsive": "PASS: 6 widths \u00d7 3 text scales, genuine staging",
+      "issues": [],
       "timingStatus": "PROVISIONAL; educator trials pending",
       "editorialReview": {
         "status": "SEPARATE_UNAPPLIED_PROPOSALS_REQUIRE_REVIEW",
@@ -4200,136 +4192,144 @@
       "grade": 10,
       "term": 1,
       "title": "THABO'S MICRO-ENTERPRISE \u2014 THE SYSTEM THAT ALMOST BROKE",
-      "status": "PENDING_INDIVIDUAL_REVIEW",
-      "sourceAlignment": "PENDING",
-      "instructionalReview": "PENDING",
-      "contactPeriods": null,
-      "automated": "PENDING",
-      "genuineRole": "PENDING",
-      "printing": "PENDING",
-      "responsive": "PENDING",
+      "status": "PRIVATE_DRAFT_PENDING_SEALING_AND_GENUINE_VERIFICATION",
+      "sourceAlignment": "Every actual learner block read; source/schema/activity and actual ContentBlocks insertion PASS",
+      "instructionalReview": "Individual preparation, brief cues, local support and later work authored; hosted review pending",
+      "contactPeriods": 1,
+      "automated": "Private source/schema/actual-renderer insertion PASS",
+      "genuineRole": "NOT RUN: private draft only",
+      "printing": "NOT RUN",
+      "responsive": "NOT RUN",
       "issues": [
-        "Individual source/instructional review and genuine staging verification remain pending"
-      ]
+        "Original-key staging release and genuine acceptance pending"
+      ],
+      "timingStatus": "PROVISIONAL; educator trials pending"
     },
     {
       "lessonId": "g10-t1-l06-006",
       "grade": 10,
       "term": 1,
       "title": "SOLE PROPRIETORSHIP AND PARTNERSHIP \u2014 THE STRUCTURE THAT PROTECTS OR DESTROYS",
-      "status": "PENDING_INDIVIDUAL_REVIEW",
-      "sourceAlignment": "PENDING",
-      "instructionalReview": "PENDING",
-      "contactPeriods": null,
-      "automated": "PENDING",
-      "genuineRole": "PENDING",
-      "printing": "PENDING",
-      "responsive": "PENDING",
+      "status": "PRIVATE_DRAFT_PENDING_SEALING_AND_GENUINE_VERIFICATION",
+      "sourceAlignment": "Every actual learner block read; source/schema/activity and actual ContentBlocks insertion PASS",
+      "instructionalReview": "Individual preparation, brief cues, local support and later work authored; hosted review pending",
+      "contactPeriods": 1,
+      "automated": "Private source/schema/actual-renderer insertion PASS",
+      "genuineRole": "NOT RUN: private draft only",
+      "printing": "NOT RUN",
+      "responsive": "NOT RUN",
       "issues": [
-        "Individual source/instructional review and genuine staging verification remain pending"
-      ]
+        "Original-key staging release and genuine acceptance pending"
+      ],
+      "timingStatus": "PROVISIONAL; educator trials pending"
     },
     {
       "lessonId": "g10-t1-l07-007",
       "grade": 10,
       "term": 1,
       "title": "COOPERATIVES \u2014 THE POWER AND THE PERIL",
-      "status": "PENDING_INDIVIDUAL_REVIEW",
-      "sourceAlignment": "PENDING",
-      "instructionalReview": "PENDING",
-      "contactPeriods": null,
-      "automated": "PENDING",
-      "genuineRole": "PENDING",
-      "printing": "PENDING",
-      "responsive": "PENDING",
+      "status": "PRIVATE_DRAFT_PENDING_SEALING_AND_GENUINE_VERIFICATION",
+      "sourceAlignment": "Every actual learner block read; source/schema/activity and actual ContentBlocks insertion PASS",
+      "instructionalReview": "Individual preparation, brief cues, local support and later work authored; hosted review pending",
+      "contactPeriods": 1,
+      "automated": "Private source/schema/actual-renderer insertion PASS",
+      "genuineRole": "NOT RUN: private draft only",
+      "printing": "NOT RUN",
+      "responsive": "NOT RUN",
       "issues": [
-        "Individual source/instructional review and genuine staging verification remain pending"
-      ]
+        "Original-key staging release and genuine acceptance pending"
+      ],
+      "timingStatus": "PROVISIONAL; educator trials pending"
     },
     {
       "lessonId": "g10-t1-l08-008",
       "grade": 10,
       "term": 1,
       "title": "SCALING AND EFFICIENCY \u2014 THE SYSTEM THAT OUTGREW ITS FOUNDER",
-      "status": "PENDING_INDIVIDUAL_REVIEW",
-      "sourceAlignment": "PENDING",
-      "instructionalReview": "PENDING",
-      "contactPeriods": null,
-      "automated": "PENDING",
-      "genuineRole": "PENDING",
-      "printing": "PENDING",
-      "responsive": "PENDING",
+      "status": "PRIVATE_DRAFT_PENDING_SEALING_AND_GENUINE_VERIFICATION",
+      "sourceAlignment": "Every actual learner block read; source/schema/activity and actual ContentBlocks insertion PASS",
+      "instructionalReview": "Individual preparation, brief cues, local support and later work authored; hosted review pending",
+      "contactPeriods": 1,
+      "automated": "Private source/schema/actual-renderer insertion PASS",
+      "genuineRole": "NOT RUN: private draft only",
+      "printing": "NOT RUN",
+      "responsive": "NOT RUN",
       "issues": [
-        "Individual source/instructional review and genuine staging verification remain pending"
-      ]
+        "Original-key staging release and genuine acceptance pending"
+      ],
+      "timingStatus": "PROVISIONAL; educator trials pending"
     },
     {
       "lessonId": "g10-t1-l09-009",
       "grade": 10,
       "term": 1,
       "title": "INTELLECTUAL PROPERTY \u2014 PROTECTING WHAT YOU BUILD",
-      "status": "PENDING_INDIVIDUAL_REVIEW",
-      "sourceAlignment": "PENDING",
-      "instructionalReview": "PENDING",
-      "contactPeriods": null,
-      "automated": "PENDING",
-      "genuineRole": "PENDING",
-      "printing": "PENDING",
-      "responsive": "PENDING",
+      "status": "PRIVATE_DRAFT_PENDING_SEALING_AND_GENUINE_VERIFICATION",
+      "sourceAlignment": "Every actual learner block read; source/schema/activity and actual ContentBlocks insertion PASS",
+      "instructionalReview": "Individual preparation, brief cues, local support and later work authored; hosted review pending",
+      "contactPeriods": 1,
+      "automated": "Private source/schema/actual-renderer insertion PASS",
+      "genuineRole": "NOT RUN: private draft only",
+      "printing": "NOT RUN",
+      "responsive": "NOT RUN",
       "issues": [
-        "Individual source/instructional review and genuine staging verification remain pending"
-      ]
+        "Original-key staging release and genuine acceptance pending"
+      ],
+      "timingStatus": "PROVISIONAL; educator trials pending"
     },
     {
       "lessonId": "g10-t1-l10-010",
       "grade": 10,
       "term": 1,
       "title": "SERVICE BUSINESS AND PRICING \u2014 NAMING THE VALUE",
-      "status": "PENDING_INDIVIDUAL_REVIEW",
-      "sourceAlignment": "PENDING",
-      "instructionalReview": "PENDING",
-      "contactPeriods": null,
-      "automated": "PENDING",
-      "genuineRole": "PENDING",
-      "printing": "PENDING",
-      "responsive": "PENDING",
+      "status": "PRIVATE_DRAFT_PENDING_SEALING_AND_GENUINE_VERIFICATION",
+      "sourceAlignment": "Every actual learner block read; source/schema/activity and actual ContentBlocks insertion PASS",
+      "instructionalReview": "Individual preparation, brief cues, local support and later work authored; hosted review pending",
+      "contactPeriods": 1,
+      "automated": "Private source/schema/actual-renderer insertion PASS",
+      "genuineRole": "NOT RUN: private draft only",
+      "printing": "NOT RUN",
+      "responsive": "NOT RUN",
       "issues": [
-        "Individual source/instructional review and genuine staging verification remain pending"
-      ]
+        "Original-key staging release and genuine acceptance pending"
+      ],
+      "timingStatus": "PROVISIONAL; educator trials pending"
     },
     {
       "lessonId": "g10-t1-l11-011",
       "grade": 10,
       "term": 1,
       "title": "COMPETITION, PESTLE, AND PORTER'S FIVE FORCES \u2014 THE MALL THAT CHANGED EVERYTHING",
-      "status": "PENDING_INDIVIDUAL_REVIEW",
-      "sourceAlignment": "PENDING",
-      "instructionalReview": "PENDING",
-      "contactPeriods": null,
-      "automated": "PENDING",
-      "genuineRole": "PENDING",
-      "printing": "PENDING",
-      "responsive": "PENDING",
+      "status": "PRIVATE_DRAFT_PENDING_SEALING_AND_GENUINE_VERIFICATION",
+      "sourceAlignment": "Every actual learner block read; source/schema/activity and actual ContentBlocks insertion PASS",
+      "instructionalReview": "Individual preparation, brief cues, local support and later work authored; hosted review pending",
+      "contactPeriods": 2,
+      "automated": "Private source/schema/actual-renderer insertion PASS",
+      "genuineRole": "NOT RUN: private draft only",
+      "printing": "NOT RUN",
+      "responsive": "NOT RUN",
       "issues": [
-        "Individual source/instructional review and genuine staging verification remain pending"
-      ]
+        "Original-key staging release and genuine acceptance pending"
+      ],
+      "timingStatus": "PROVISIONAL; educator trials pending"
     },
     {
       "lessonId": "g10-t1-l12-012",
       "grade": 10,
       "term": 1,
       "title": "MARKETING AND BRANDING \u2014 THE TRUTH THAT SELLS",
-      "status": "PENDING_INDIVIDUAL_REVIEW",
-      "sourceAlignment": "PENDING",
-      "instructionalReview": "PENDING",
-      "contactPeriods": null,
-      "automated": "PENDING",
-      "genuineRole": "PENDING",
-      "printing": "PENDING",
-      "responsive": "PENDING",
+      "status": "PRIVATE_DRAFT_PENDING_SEALING_AND_GENUINE_VERIFICATION",
+      "sourceAlignment": "Every actual learner block read; source/schema/activity and actual ContentBlocks insertion PASS",
+      "instructionalReview": "Individual preparation, brief cues, local support and later work authored; hosted review pending",
+      "contactPeriods": 1,
+      "automated": "Private source/schema/actual-renderer insertion PASS",
+      "genuineRole": "NOT RUN: private draft only",
+      "printing": "NOT RUN",
+      "responsive": "NOT RUN",
       "issues": [
-        "Individual source/instructional review and genuine staging verification remain pending"
-      ]
+        "Original-key staging release and genuine acceptance pending"
+      ],
+      "timingStatus": "PROVISIONAL; educator trials pending"
     },
     {
       "lessonId": "g10-t1-l13-013",
@@ -8271,7 +8271,7 @@
       ]
     }
   ],
-  "privateDraftsPrepared": 0,
-  "newCompleted": 134,
-  "stagedPendingVerification": 4
+  "privateDraftsPrepared": 8,
+  "newCompleted": 138,
+  "stagedPendingVerification": 0
 }

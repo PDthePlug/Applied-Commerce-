@@ -1,56 +1,53 @@
 # Applied Commerce classroom rollout
 
-**158 of 395 lessons have individually reviewed teaching support in verified staging; 237 remain.** All Grade 8 and Grade 9 lessons, plus three accepted higher-grade benchmarks, are covered. Completion records source/instructional review and demonstrated staging checks; educator classroom trials remain pending.
+**162 of 395 lessons have individually reviewed support in verified staging; 233 remain.** Coverage includes all Grade 8 and Grade 9 lessons, Grade 10 Term 1 Lessons 1–4 and three unchanged higher-grade benchmarks. Eight further Grade 10 drafts remain uncompleted. Source/instructional review and staging verification are demonstrated; educator classroom/timing trials remain pending.
 
-Current staging: https://applied-commerce-sa-staging-2wnipb612.vercel.app . Deployment protection and genuine application login apply. Tested application/content commit: `47c3d4b76b53a3ff740c522d0dba6eb5de6401ff`. Later evidence-only commits do not represent a different application deployment.
-
-[PR #64](https://github.com/PDthePlug/Applied-Commerce-/pull/64) follows PR #63 and PR #62, which remain unmerged at this observation. The owner previously merged PR #60 and the initial PR #61 head. This work performs no merge, migration, production-record write, Zimbabwe change or separate live deployment.
+Current staging: https://applied-commerce-sa-staging-pmk3cwiv3.vercel.app . Deployment protection and genuine application login apply. Tested app/content commit: `ba7d4e66d258529560018e05a085fb29dd6b8630`. Subsequent evidence-only commits do not imply a new application deployment. [PR #65](https://github.com/PDthePlug/Applied-Commerce-/pull/65) follows the unmerged #64 / #63 / #62 stack; no agent merge or separate live deployment occurred.
 
 ## Workbook and support preservation
 
-All 395 lessons, four assessments, 20,766 stable blocks, canonical books, learner activities and saved identities remain. All 147 prior bindings compare identical in full; the approved PR #48 bindings remain unchanged. Restored icons, continuous question numbering, original prompt splitting, controls, placeholders and saved feedback are preserved.
+All 395 lessons, four assessments, 20,766 stable blocks, canonical books, learner activities and saved identities remain. All 158 prior bindings compare identical in full, including the approved PR #48 guides. Restored icons, continuous question numbering, existing prompt splitting/response controls, placeholders and saved feedback remain.
 
-Preparation remains complete and collapsible at the beginning. Brief cues and useful optional depth remain local to the actual source sections. A central navigator, stage anchors, period continuations, complete private printing and standalone fallback remain. No repeated panel toolbar or new compulsory activity, outcome or response field is introduced.
+Complete preparation opens at the beginning; brief section cues and useful optional depth stay local. The single central navigator, period continuation, private printing and complete standalone fallback remain. No repeated panel toolbar, new compulsory learner activity or response field is introduced. Each actual source was read before individual authoring; schema and field counts are technical evidence rather than a substitute for educational review.
 
-The final eleven Grade 9 guides cover actual problem-solving, reporting, storytelling, rehearsal, presentations, impact reflection, community synthesis, supported pathways, portfolio/letter and farewell. Each source was read and classroom use considered before authoring. [Individual review](g9-t4-65-75/REVIEW.md) records the distinctions; schema checks alone are not treated as educational review.
+The four new guides support an actual strategic audit, a dependency/value design, supplied payslip calculations and an income-control audit. Personal reflection remains, with specific suitable alternatives for sensitive detail. Source errors and consequential response-structure proposals are recorded separately. Actual tables were rendered: responsibility names and monthly amounts lack their own input cells, so guidance uses existing text/ordinary working without silently adding controls.
 
-## Demonstrated checks for this batch
+## Demonstrated current-batch checks
 
 | Check | Result |
 | --- | --- |
-| Local gates | 213 Node tests, runtime/typecheck/lint pass |
-| Original-key normal build | 158 plans / 6,154 private fields / 217 raw period allocations; 77 public assets scanned against 8,137 private sentinels plus key |
-| Prior preservation | All 147 earlier bindings identical, including fields, source, timing, placement and hashes |
-| Integrated classroom | 16 selected lessons, all eleven additions and five benchmarks; 882 exact fields |
-| Central navigation | 157 targets reached and focused; Learner View and absence of repeated panel controls pass |
-| Responsive | 288 cases: six widths (320–1920), three text scales (1, 1.28, 2) |
-| First-response persistence | All eleven additions edit, clear, reload and persist through fresh genuine password login |
-| Actual audience table | Six existing editable cells checked; genuine fresh-login persistence and restoration pass |
-| Existing future-self letter | Edit/clear/reload/fresh-login and assigned-educator review pass; other account, revoked educator and learner teacher-guidance access denied; original synthetic value restored |
-| Integrated private print | 16 guides / 86 nonempty A4 pages |
-| Complete fallback print | 16 guides / 87 nonempty A4 pages |
-| Physical PDF text | 1,764 field occurrences, zero missing; DOM completeness and A4 bounds checked separately |
-| Period navigation | All six multi-period additions pass actual opening/closing and continuation targets |
-| Genuine Auth/RLS | 37 operations pass, including revocation, logout, learner denial and institutional boundaries |
+| Local gates | 213 Node tests; runtime/typecheck/lint pass |
+| Guarded normal build | 162 plans / 6,303 private fields / 222 raw guide-period allocations; 77 assets scanned against 8,341 private sentinels plus key |
+| Preservation | All 158 prior source/field/timing/placement/hash bindings identical |
+| Integrated classroom | Nine selected lessons, all four additions plus five unchanged benchmarks; 674 exact fields |
+| Navigation and Learner View | 90 stage targets reached/focused; no repeated panel controls; learner controls preserved |
+| Responsive | 162 cases, six widths 320–1920 and three text scales 1 / 1.28 / 2 |
+| First-response persistence | All four additions edit, clear, reload and persist through fresh genuine password login |
+| Actual table persistence | Both new target tables pass edit/clear/reload/fresh-login and original-value restoration |
+| Complete integrated print | Nine guides / 65 nonempty A4 pages |
+| Complete fallback print | Nine guides / 66 nonempty A4 pages |
+| Physical PDF text | 1,348 field occurrences, zero missing; exact DOM and A4 bounds checked separately |
+| Period continuation | Lesson 4’s two-period opening, closing and central-navigator return pass |
+| Genuine Auth/RLS | 37 operations, educator/revoked/learner access and institutional boundaries pass |
 
-[Exact results](g9-t4-65-75/RESULTS.json), [prior bindings](g9-t4-65-75/prior147-preservation.json) and [capture hashes](g9-t4-65-75/authenticated-evidence-manifest.json) identify scope and limitations. All synthetic account/evidence fixtures are protected. Supported Auth administration and real password sessions are used; no intercepted authentication or fabricated sessions are counted as genuine.
+[Exact results](g10-t1-1-4/RESULTS.json), [binding comparison](g10-t1-1-4/prior158-preservation.json) and [protected-capture hashes](g10-t1-1-4/authenticated-evidence-manifest.json) identify the evidence scope. Actual browser/password sessions and supported Auth administration are used; no mocked authentication is counted. Assigned staff can review saved synthetic evidence, unrelated staff receive no learner rows/guidance, and revoked assignments are denied. Earlier [letter checks](g9-t4-65-75/evidence/letter-results.json) separately demonstrate the existing future-self textarea’s persistence and staff/other-account permissions.
 
-## Authored lessons and provisional contact periods
+## Provisional timing
 
-Grade 9 Term 4 retains 21 authored lessons and estimates 33 contacts. Lessons 55–64 account for 11 contacts; the final eleven account for 22. Lessons 66, 68, 73 and 74 receive two contacts for substantial reporting, genuine rehearsal, supported pathway work and portfolio/letter work. Presentation lessons 69 and 70 receive four and five contacts respectively, assuming thirty learners split fifteen/fifteen, preserving up to seven minutes speaking plus questions/transitions; the fifth contact in Lesson 70 supports the existing celebration reflection. Recalculate for actual enrolment/timetable. Teacher-guide length does not set the allocation.
+Four authored Grade 10 lessons use five provisional contacts. Lesson 4’s second contact supports substantial original audit interpretation, weighted calculations, shift strategy and checkpoint; it has brief closure and return to the same audit. Lesson 1’s audit returns in Lesson 16. Home conversations, seven-day observations and later practice remain later work; missing elapsed work is not invented.
 
-[Grade-and-term counts](grade-term.csv) distinguish authored lessons, recommended contacts and raw guide allocations. Grade 8 Term 4 alternative project guides share one selected project’s contacts. All estimates remain provisional until educator timing trials; later real trials/enquiry are not replaced by invented outcomes.
+Grade 9 Term 4 retains 21 authored lessons / 33 provisional contacts, including presentation allocations of four and five contacts for Lessons 69/70 assuming thirty learners split fifteen/fifteen. These preserve the source’s speaking time and require adjustment for actual enrolment/timetable. [Grade-and-term counts](grade-term.csv) distinguish authored lessons, recommended contacts and raw allocations; Grade 8 Term 4 alternative project guides share the selected project’s contacts. All timing remains provisional until educator trials.
 
-## Connectivity, source accuracy and scale
+## Connectivity, source accuracy and delivery
 
-Only staging Supabase `inxshlumnhcgiahxqewe` and isolated Vercel `applied-commerce-sa-staging` are targeted. Current environment revision 60 reports ready VERCEL_TOKEN and SUPABASE_SECRET_KEY, enforced unrestricted HTTP policy and no direct TCP grants. Genuine hosted Auth/RLS operations establish application capability separately from configuration. Historical read-only managed SQL examined 22 RLS-enabled public tables, 45 policies and seven institution/session helpers; direct PostgreSQL is not configured.
+Only staging Supabase `inxshlumnhcgiahxqewe` and isolated Vercel `applied-commerce-sa-staging` are targeted. Environment revision 60 reports ready VERCEL_TOKEN/SUPABASE_SECRET_KEY and enforced HTTP policy, with no direct TCP grants. Genuine Auth/RLS operations demonstrate app capabilities separately from configuration; historical read-only managed SQL inspected 22 RLS-enabled public tables, 45 policies and seven institution/session helpers. Direct PostgreSQL is not configured.
 
-The original classroom key remains server-bound and is authenticated by guarded sealing/build checks without export. Eight temporary input chunks and the exact temporary sealer were removed; original key binding and project build default are unchanged. The encrypted release is 2,624,607 bytes; its manifest is 2,828,350 bytes. No plaintext guide/key is placed in public assets or evidence.
+Guarded sealing authenticates the original server-bound classroom key without export. All four private draft hashes match. Five temporary input chunks and the exact temporary sealer were removed; original key binding and project build default remain unchanged. The encrypted release is 2,700,579 bytes; its manifest is 2,901,439 bytes. No private guide/key is in public assets or evidence.
 
-Authorised educators/institution administrators can review saved evidence within permissions. The application has no separate per-row submission flag. Learners need not read personal answers to classmates. The actual future-self letter is an existing saved textarea; local visibility guidance is accurate and paper alternatives remain appropriate.
+Authorised educators/institution administrators can review saved digital evidence within permissions; the app has no separate per-row submission flag. Learners need not read private answers to classmates. Appropriate personal paper work and accurate local visibility support remain.
 
-The separate rollout editorial register contains 134 historical entries: 128 active proposals and six withdrawn table claims. Nine proposals belong to this batch; none is applied. [Current official-source checks](g9-t4-65-75/FACT_CHECKS.md) distinguish supported contextual claims, unestablished telephone procedure and still-pending programme-specific entry rules. Legitimate reflective metaphors are retained. Firecrawl searches were blocked by exhausted credits; direct official HTTP/PDF reads supplied the recorded evidence.
+The separate source register contains 148 historical entries: 142 active proposals and six withdrawn table claims, plus the earlier staging register. Fourteen proposals belong to this batch. [Fact checks](g10-t1-1-4/FACT_CHECKS.md) verify source arithmetic separately from legal assumptions. Official SARS pages returned HTTP403; Firecrawl has exhausted credits. Current tax thresholds/limits and complete payroll applicability remain unverified. Read Labour sources are identified with original-document/2013 limitations. No learner-source correction is silently applied; legitimate metaphors and personal-development perspectives remain.
 
-Sixty sequential genuine authenticated requests include 55 to additions: median 669ms, range 549–995ms, 7,894–18,894 decoded bytes. These are observations through the coding proxy, not guaranteed cold starts or server-memory measurements. The request path still opens/validates the whole encrypted release after current authorisation. Build RSS (291,880,960 bytes) is build-process memory only. [Architecture recommendations](CONTENT_DELIVERY_SCALE.md) retain the current implementation while proposing measured evaluation of smaller authenticated releases, versioned manifests and bounded server caching with fresh authorisation. No production architecture change is implemented.
+Twenty-five genuine sequential authenticated requests include twenty to additions: median 800ms, range 593–1195ms, 13,500–16,547 decoded bytes. These proxy-observed samples do not prove cold starts, hosted cache hits, concurrency, server memory or a causal effect of release size. Build RSS 307,154,944 bytes is build-only. Requests still open/validate the whole encrypted release after current authorisation. [Architecture recommendations](CONTENT_DELIVERY_SCALE.md) retain the current implementation while proposing measured evaluation of smaller authenticated releases, versioned manifests and bounded caching with fresh authorisation. No migration or production architecture change is made.
 
-Natural JWT expiry was genuinely demonstrated in earlier evidence. Configured maximum/inactivity lifetime, hosted cold/concurrency/server-memory measurements and educator timing trials remain pending. Grade 10 individual source review has begun; the remaining 237 guides are not claimed complete. Owner approval remains required for merging this stack or deploying the separate live application.
+Natural JWT expiry was genuinely demonstrated in earlier evidence. Configured maximum/inactivity lifetime, hosted cold/concurrency/server-memory measurements and educator timing trials remain pending. Owner approval remains necessary for merging the PR stack or deploying to the separate live application; no production learner records or Zimbabwe application are changed.

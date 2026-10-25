@@ -1,5 +1,5 @@
 {
-  "status": "PRIVATE_DRAFTS_PENDING_SEALING_AND_GENUINE_VERIFICATION",
+  "status": "COMPLETED_INDIVIDUAL_REVIEW_AND_GENUINE_STAGING",
   "sourceChangesApplied": false,
   "plans": [
     {
@@ -14,10 +14,12 @@
       "fields": 36,
       "periods": 1,
       "timingRationale": "One provisional 45-minute contact: story/vocabulary 8, reflection 3, three assets 8, two liabilities 8, scar inventory 6, intention/trade-off 5, checkpoint 5 and close 2. Most time is individual thinking/writing. The willing-listener experiment or original self-reading alternative occurs later; the audit returns in Lesson 16.",
-      "stageReview": "PENDING_ORIGINAL_KEY_SEALING_AND_HOSTED_RENDERING",
-      "complete": false,
+      "stageReview": "PASS: genuine exact fields/controls, placement, navigator, Learner View, 18 responsive combinations and first-response persistence",
+      "complete": true,
       "fieldCoverage": 36,
-      "actualRendererInsertions": "PASS"
+      "actualRendererInsertions": "PASS",
+      "printing": "PASS: integrated/fallback fields, PDF text and A4 bounds",
+      "timingStatus": "PROVISIONAL; educator trials pending"
     },
     {
       "lessonId": "g10-t1-l02-002",
@@ -31,10 +33,12 @@
       "fields": 36,
       "periods": 1,
       "timingRationale": "One provisional 45-minute contact: story 8, value comparison 5, reflection 3, three-responsibility audit 9, diagnosis 5, design 8, checkpoint 5 and close 2. The household observation is later and concerns naturally occurring events; no absence or unsafe test is engineered.",
-      "stageReview": "PENDING_ORIGINAL_KEY_SEALING_AND_HOSTED_RENDERING",
-      "complete": false,
+      "stageReview": "PASS: genuine exact fields/controls, placement, navigator, Learner View, 18 responsive combinations and first-response persistence",
+      "complete": true,
       "fieldCoverage": 36,
-      "actualRendererInsertions": "PASS"
+      "actualRendererInsertions": "PASS",
+      "printing": "PASS: integrated/fallback fields, PDF text and A4 bounds",
+      "timingStatus": "PROVISIONAL; educator trials pending"
     },
     {
       "lessonId": "g10-t1-l03-003",
@@ -48,10 +52,12 @@
       "fields": 36,
       "periods": 1,
       "timingRationale": "One provisional 45-minute contact: story 7, deductions 6, reflection 3, supplied calculations 12, strategy 6, another system 5, checkpoint 4 and close 2. Calculations use the stated exercise assumptions; actual payroll applicability is separately qualified. Willing family discussion or the original research alternative occurs later.",
-      "stageReview": "PENDING_ORIGINAL_KEY_SEALING_AND_HOSTED_RENDERING",
-      "complete": false,
+      "stageReview": "PASS: genuine exact fields/controls, placement, navigator, Learner View, 18 responsive combinations and first-response persistence",
+      "complete": true,
       "fieldCoverage": 36,
-      "actualRendererInsertions": "PASS"
+      "actualRendererInsertions": "PASS",
+      "printing": "PASS: integrated/fallback fields, PDF text and A4 bounds",
+      "timingStatus": "PROVISIONAL; educator trials pending"
     },
     {
       "lessonId": "g10-t1-l04-004",
@@ -65,10 +71,13 @@
       "fields": 41,
       "periods": 2,
       "timingRationale": "Two provisional 45-minute contacts because the original lesson requires understanding a multi-stream map, a personal audit, weighted percentage work and a considered strategy. First: story/types 10, reflection 4, audit 18, formula model 11 and pause 2. Second: return 3, analysis 16, strategy 12, checkpoint/deepening 12 and close 2. Learners without income are not required to create or disclose one; later household observation is voluntary and separately arranged.",
-      "stageReview": "PENDING_ORIGINAL_KEY_SEALING_AND_HOSTED_RENDERING",
-      "complete": false,
+      "stageReview": "PASS: genuine exact fields/controls, placement, navigator, Learner View, 18 responsive combinations and first-response persistence",
+      "complete": true,
       "fieldCoverage": 41,
-      "actualRendererInsertions": "PASS"
+      "actualRendererInsertions": "PASS",
+      "printing": "PASS: integrated/fallback fields, PDF text and A4 bounds",
+      "timingStatus": "PROVISIONAL; educator trials pending"
     }
-  ]
+  ],
+  "testedCommit": "ba7d4e66d258529560018e05a085fb29dd6b8630"
 }

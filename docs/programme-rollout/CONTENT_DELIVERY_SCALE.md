@@ -1,6 +1,6 @@
 # Private content delivery: measured growth
 
-The original classroom key remains server-bound. Packaging and Supabase access are separate capabilities: genuine staging login demonstrates permissions, while guarded build-time sealing demonstrates that the original key opens and extends the existing encrypted release without export. Neither proves 395-plan performance. The 158-plan release passes its recorded hosted acceptance; that does not demonstrate the missing cold/server-memory measurements.
+The original classroom key remains server-bound. Packaging and Supabase access are separate capabilities: genuine staging login demonstrates permissions, while guarded build-time sealing demonstrates that the original key opens and extends the existing encrypted release without export. Neither proves 395-plan performance. The 162-plan release passes its recorded hosted acceptance; that does not demonstrate the missing cold/server-memory measurements.
 
 | Released/candidate plans | Ciphertext bytes | Hash/placement manifest bytes |
 | --- | ---: | ---: |
@@ -15,6 +15,7 @@ The original classroom key remains server-bound. Packaging and Supabase access a
 | 137, corrected | 2,323,527 | 2,491,774 |
 | 147 | 2,457,643 | 2,644,782 |
 | 158 | 2,624,607 | 2,828,350 |
+| 162 | 2,700,579 | 2,901,439 |
 
 Exact per-operation hashes and correction sizes remain in their batch summaries. The early reduction from the original pretty-printed 24-plan file reflected compact serialization, not content removal; preserved plan hashes establish that distinction. Do not extrapolate one fixed size per lesson across unreviewed higher-grade content.
 
@@ -41,3 +42,5 @@ At 147 plans, 55 sequential authenticated requests include 50 to additions: medi
 For the 147-plan run, the ten first-observed new-lesson requests had median 706.5ms; forty repeat requests had median 762.5ms. This compares request order, not proven cold/warm server states. Browser CDP heap ranged 7206412–53107384 bytes before and 20546632–53107384 after sequential lesson/PDF work. The trusted sealing process used 317,038,592 bytes RSS. Neither is hosted request-time memory. [Measurement details](g9-t4-55-64/content-delivery-observations.json).
 
 At 158 plans, 60 genuine sequential authenticated requests include 55 to additions: median 669ms, range 549–995ms and 7,894–18,894 decoded bytes. The guarded normal build scans 77 assets against 8,137 private sentinels plus key. Build RSS 291,880,960 bytes is not hosted runtime memory. Cross-batch differences do not establish a release-size causal effect. Cold-process, concurrency and hosted memory evidence remain pending; current server-side authorisation is preserved.
+
+At 162 plans, 25 genuine sequential requests include 20 to additions: median 800ms, range 593–1195ms, 13,500–16,547 decoded bytes. The build scans 77 assets against 8,341 private sentinels plus key; build RSS 307,154,944 bytes is not hosted runtime memory. Different batch contents/conditions do not establish a size/latency relationship. Fresh authorisation remains mandatory; cold-process, concurrency and hosted server-memory evidence remain pending.
