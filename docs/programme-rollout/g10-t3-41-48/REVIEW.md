@@ -1,6 +1,6 @@
 # Grade 10 Term 3: Lessons 41–48
 
-Every actual learner block was read before individual authoring. Source/schema/activity checks and actual ContentBlocks insertion pass. Private assembly preserves all 197 prior bindings. These eight are sealed under the original staging key; genuine hosted acceptance remains pending. All 197 previous bindings compare identical and the eight private draft hashes match.
+Every actual learner block was read before individual authoring. Source/schema/activity checks and actual ContentBlocks insertion pass. Private assembly preserves all 197 prior bindings. These eight pass original-key sealing and genuine hosted acceptance. All 197 previous bindings compare identical and the eight private draft hashes match.
 
 | Lesson | Individual instructional review | Provisional contacts |
 | --- | --- | ---: |
@@ -18,3 +18,5 @@ Every actual learner block was read before individual authoring. Source/schema/a
 **Material source issues remain unresolved.** Canonical tax bands and the regular-contribution instruction need separate owner-reviewed correction. Teaching-interface/source-alignment tests do not certify those learner figures. Sixteen exact-passage proposals and two structure/method flags remain separate and unapplied. The Rule of 72 correction is explicitly a proposed method/meaning change, not a silent presentation refinement. All response identities and counts remain.
 
 Actual rendering confirms four editable table targets and one eight-item native ranking. The planned genuine ranking check distinguishes browser reordering/reload/fresh login from a supported learner-RPC clear, because the existing native ranking has no clear-all browser control. No mock authentication is counted.
+
+Genuine acceptance: 13 selected lessons / 885 exact fields / 141 navigator targets / 234 responsive cases. All 8 additions pass first-response edit/clear/reload/fresh-login persistence; 4 actual tables pass fresh-login persistence and restoration. Complete integrated/fallback PDF text retains 1770 fields with none missing. See RESULTS.json and the protected capture hashes. Educator trials remain pending.

@@ -28,48 +28,56 @@
   },
   "rollout": {
     "existingPlans": 24,
-    "newCompleted": 173,
-    "privateUnsealedDrafts": 0,
-    "uncompleted": 198,
+    "newCompleted": 181,
+    "privateUnsealedDrafts": 10,
+    "uncompleted": 190,
     "blocker": null,
-    "stagedPendingVerification": 8
+    "stagedPendingVerification": 0
   },
   "pending": [
-    "Remaining 198 guides to complete in verified staging; 8 have private individual drafts",
+    "Remaining 190 guides to complete in verified staging; 10 have private individual drafts",
     "Educator timing trials",
     "Hosted cold-process/server-memory measurements",
     "Configured maximum/inactivity session lifetime"
   ],
   "latestBatch": {
     "projectRef": "inxshlumnhcgiahxqewe",
-    "totalPlans": 197,
-    "newCompletedAcrossRollout": 173,
-    "remaining": 198,
-    "testedCommit": "ef3f2851e2a5526fcbb8be4b12fe8967e600c296",
-    "stagingURL": "https://applied-commerce-sa-staging-crkjbtkjd.vercel.app",
-    "priorBindingsPreserved": 193,
-    "newPlans": 4,
-    "directClassroomPlans": 9,
-    "directFields": 730,
-    "navigatorTargets": 97,
-    "responsiveCombinations": 162,
-    "newFirstResponsePersistence": 4,
-    "renderedTablesVerified": 3,
-    "tableFreshLoginPersistence": 3,
+    "totalPlans": 205,
+    "newCompletedAcrossRollout": 181,
+    "remaining": 190,
+    "testedCommit": "e2d8e54edbf2f16f884efd9937a7156c50e6f3aa",
+    "stagingURL": "https://applied-commerce-sa-staging-opqej5li5.vercel.app",
+    "priorBindingsPreserved": 197,
+    "newPlans": 8,
+    "directClassroomPlans": 13,
+    "directFields": 885,
+    "navigatorTargets": 141,
+    "responsiveCombinations": 234,
+    "newFirstResponsePersistence": 8,
+    "renderedTablesVerified": 4,
+    "tableFreshLoginPersistence": 4,
+    "nativeRanking": {
+      "options": 8,
+      "browserReorderEditReloadFreshLogin": true,
+      "previousWrittenInstructionRecoverable": true,
+      "scopedReview": true,
+      "clearMethod": "ordinary learner revision-checked RPC; no browser clear-all control claimed",
+      "originalsRestored": true
+    },
     "approved24Unchanged": true,
-    "integratedPDFs": 9,
-    "integratedPDFPages": 67,
-    "fallbacks": 9,
-    "fallbackPDFPages": 71,
-    "pdfTextFields": 1460,
+    "integratedPDFs": 13,
+    "integratedPDFPages": 86,
+    "fallbacks": 13,
+    "fallbackPDFPages": 87,
+    "pdfTextFields": 1770,
     "pdfMissing": 0,
     "multiPeriodLessons": [
       {
-        "lessonId": "g10-t3-l37-037",
+        "lessonId": "g10-t3-l41-041",
         "periodCount": 2
       },
       {
-        "lessonId": "g10-t3-l39-039",
+        "lessonId": "g10-t3-l43-043",
         "periodCount": 2
       }
     ],
@@ -79,22 +87,22 @@
     "lint": "PASS",
     "sourceChangesApplied": false,
     "delivery": {
-      "requests": 25,
-      "newRequests": 20,
-      "newMedianMs": 695.5,
+      "requests": 45,
+      "newRequests": 40,
+      "newMedianMs": 731.5,
       "rangeMs": [
-        617,
-        967
+        622,
+        1274
       ],
       "decodedBytes": [
-        11989,
-        15542
+        11928,
+        17767
       ],
       "coldProcess": "NOT DEMONSTRATED",
       "hostedServerMemory": "NOT MEASURED"
     },
     "pending": [
-      "Remaining 198 guides to complete in verified staging; 8 have private individual drafts",
+      "Remaining 190 guides to complete in verified staging; 10 have private individual drafts",
       "Educator timing trials",
       "Hosted cold-process/server-memory measurements",
       "Configured maximum/inactivity session lifetime"
