@@ -28,56 +28,63 @@
   },
   "rollout": {
     "existingPlans": 24,
-    "newCompleted": 181,
+    "newCompleted": 191,
     "privateUnsealedDrafts": 0,
-    "uncompleted": 190,
+    "uncompleted": 180,
     "blocker": null,
-    "stagedPendingVerification": 10
+    "stagedPendingVerification": 0
   },
   "pending": [
-    "Remaining 190 guides to complete in verified staging; 10 have private individual drafts",
+    "Remaining 180 guides to complete in verified staging",
     "Educator timing trials",
     "Hosted cold-process/server-memory measurements",
     "Configured maximum/inactivity session lifetime"
   ],
   "latestBatch": {
     "projectRef": "inxshlumnhcgiahxqewe",
-    "totalPlans": 205,
-    "newCompletedAcrossRollout": 181,
-    "remaining": 190,
-    "testedCommit": "e2d8e54edbf2f16f884efd9937a7156c50e6f3aa",
-    "stagingURL": "https://applied-commerce-sa-staging-opqej5li5.vercel.app",
-    "priorBindingsPreserved": 197,
-    "newPlans": 8,
-    "directClassroomPlans": 13,
-    "directFields": 885,
-    "navigatorTargets": 141,
-    "responsiveCombinations": 234,
-    "newFirstResponsePersistence": 8,
-    "renderedTablesVerified": 4,
-    "tableFreshLoginPersistence": 4,
-    "nativeRanking": {
-      "options": 8,
-      "browserReorderEditReloadFreshLogin": true,
-      "previousWrittenInstructionRecoverable": true,
-      "scopedReview": true,
-      "clearMethod": "ordinary learner revision-checked RPC; no browser clear-all control claimed",
-      "originalsRestored": true
+    "totalPlans": 215,
+    "newCompletedAcrossRollout": 191,
+    "remaining": 180,
+    "testedCommit": "8c0f4e7916802a095ec0cd4db880dd73288a4283",
+    "stagingURL": "https://applied-commerce-sa-staging-mxbx5n52f.vercel.app",
+    "priorBindingsPreserved": 205,
+    "newPlans": 10,
+    "directClassroomPlans": 15,
+    "directFields": 846,
+    "navigatorTargets": 125,
+    "responsiveCombinations": 270,
+    "newFirstResponsePersistence": 10,
+    "renderedTablesVerified": 2,
+    "tableFreshLoginPersistence": 2,
+    "nativeLetterResponses": 2,
+    "letterScopedReviewAndPersistence": true,
+    "sharedContact": {
+      "authoredLessons": 2,
+      "rawAllocations": 2,
+      "recommendedProvisionalContacts": 1,
+      "letterMinutes": 33,
+      "closingMinutes": 12,
+      "actualNextPreviousAndCentralNavigation": true,
+      "educatorTimingTrial": "NOT DEMONSTRATED"
     },
     "approved24Unchanged": true,
-    "integratedPDFs": 13,
-    "integratedPDFPages": 86,
-    "fallbacks": 13,
-    "fallbackPDFPages": 87,
-    "pdfTextFields": 1770,
+    "integratedPDFs": 15,
+    "integratedPDFPages": 79,
+    "fallbacks": 15,
+    "fallbackPDFPages": 85,
+    "pdfTextFields": 1692,
     "pdfMissing": 0,
     "multiPeriodLessons": [
       {
-        "lessonId": "g10-t3-l41-041",
+        "lessonId": "g10-t3-l51-051",
         "periodCount": 2
       },
       {
-        "lessonId": "g10-t3-l43-043",
+        "lessonId": "g10-t3-l53-053",
+        "periodCount": 2
+      },
+      {
+        "lessonId": "g10-t3-l54-054",
         "periodCount": 2
       }
     ],
@@ -87,22 +94,22 @@
     "lint": "PASS",
     "sourceChangesApplied": false,
     "delivery": {
-      "requests": 45,
-      "newRequests": 40,
-      "newMedianMs": 731.5,
+      "requests": 55,
+      "newRequests": 50,
+      "newMedianMs": 873,
       "rangeMs": [
-        622,
-        1274
+        574,
+        1433
       ],
       "decodedBytes": [
-        11928,
-        17767
+        6426,
+        12209
       ],
       "coldProcess": "NOT DEMONSTRATED",
       "hostedServerMemory": "NOT MEASURED"
     },
     "pending": [
-      "Remaining 190 guides to complete in verified staging; 10 have private individual drafts",
+      "Remaining 180 guides to complete in verified staging",
       "Educator timing trials",
       "Hosted cold-process/server-memory measurements",
       "Configured maximum/inactivity session lifetime"

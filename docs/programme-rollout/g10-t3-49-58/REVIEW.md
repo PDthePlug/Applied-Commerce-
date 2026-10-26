@@ -1,6 +1,6 @@
 # Grade 10 Term 3: Lessons 49–58
 
-Every actual learner block was read before individual authoring. Source/schema/activity checks and actual ContentBlocks insertion pass. Private assembly preserves all 205 previous bindings. These ten are sealed under the original staging key; genuine hosted acceptance remains pending. All 205 previous bindings compare identical and the ten private draft hashes match.
+Every actual learner block was read before individual authoring. Source/schema/activity checks and actual ContentBlocks insertion pass. Private assembly preserves all 205 previous bindings. These ten are sealed under the original staging key; genuine hosted acceptance passes. All 205 previous bindings compare identical and the ten private draft hashes match.
 
 | Lesson | Individual instructional review | Provisional contacts |
 | --- | --- | ---: |
@@ -15,6 +15,8 @@ Every actual learner block was read before individual authoring. Source/schema/a
 | 57 — Future-self letter | Read the model, write the main letter and ending/date, save and keep it for the authored end-of-Term-4 return. Use 33 minutes of the shared contact, then continue through existing next-lesson navigation. | 1 shared with 58 |
 | 58 — Closing | Use the last 12 minutes of that same contact: scene 3, four original responses 6, farewell 3. The guide labels the preceding 33-minute letter phase as already elapsed context; no writing is repeated and no extra full contact is assigned. | same shared contact |
 
-**Ten authored additions / thirteen raw guide allocations / twelve recommended provisional contacts.** With the previous twelve, Term 3 would retain 22 authored lessons, 29 raw guide allocations and 28 recommended contacts. The two shared-contact guides have explicit period titles, preparation and continuation cues; the application’s existing 45-minute period model is retained. Live cross-lesson timing/navigation and visual checks remain pending, and estimates require educator trials. Presentation estimates depend on actual enrolment and access needs.
+**Ten authored additions / thirteen raw guide allocations / twelve recommended provisional contacts.** With the previous twelve, Term 3 retains 22 authored lessons, 29 raw guide allocations and 28 recommended contacts. The two shared-contact guides have explicit period titles, preparation and continuation cues; the application’s existing 45-minute period model is retained. Genuine cross-lesson navigation and visual checks pass; contact estimates require educator timing trials. Presentation estimates depend on actual enrolment and access needs.
 
 Complete preparation, brief local cues, optional depth, central navigation, private printing and fallback remain. No new learner activity, field or compulsory discussion is added. Two focused source proposals and one response-structure concern remain separate. Metaphors about pause, maps, tracks, gifts and farewell are retained rather than rewritten as corrective lectures.
+
+Genuine acceptance: 15 selected lessons / 846 exact fields / 125 navigator targets / 270 responsive cases. All 10 additions pass first-response edit/clear/reload/fresh-login persistence; 2 actual tables pass fresh-login persistence and restoration. Complete integrated/fallback PDF text retains 1692 fields with none missing. See RESULTS.json and the protected capture hashes. Educator trials remain pending.
