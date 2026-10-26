@@ -1,6 +1,6 @@
 # Grade 10 Term 4: Lessons 67–74
 
-All 272 actual learner blocks were read before individual authoring. Source/schema/activity and actual ContentBlocks insertion checks pass; private assembly preserves all 223 previous bindings. These eight remain uncompleted pending original-key sealing and genuine hosted acceptance.
+All 272 actual learner blocks were read before individual authoring. Source/schema/activity and actual ContentBlocks insertion checks pass; private assembly preserves all 223 previous bindings. These eight are sealed under the original server-bound key and remain uncompleted pending genuine hosted acceptance.
 
 | Lesson | Individual instructional review | Provisional contacts |
 | --- | --- | ---: |
