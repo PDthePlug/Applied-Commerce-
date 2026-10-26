@@ -5509,8 +5509,15 @@
       "printing": "PENDING",
       "responsive": "PENDING",
       "issues": [
-        "Individual source/instructional review and genuine staging verification remain pending"
-      ]
+        "Individual source/instructional review and genuine staging verification remain pending",
+        "Four horizons share one flat choice group; genuine diagnosis confirms ambiguous persistence. Separate response-format decision required."
+      ],
+      "responseStructureReview": {
+        "status": "CONFIRMED_EXISTING_DEFECT_PENDING_OWNER_DECISION",
+        "register": "docs/programme-rollout/g10-t4-opening/RESPONSE60_REVIEW.md",
+        "genuineDiagnosis": true,
+        "fixApplied": false
+      }
     },
     {
       "lessonId": "g10-t4-l61-061",
