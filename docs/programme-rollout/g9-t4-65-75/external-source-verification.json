@@ -1,0 +1,39 @@
+{
+  "retrievedAt": "2026-10-25T13:49:56.114Z",
+  "providerSearch": "Firecrawl out of credits; searches not run",
+  "retrieval": "Direct official public HTTP and local PDF text extraction; PDF texts and relevant TVET page sections read; full files retained",
+  "sources": [
+    {
+      "file": "sassa-jul28.pdf",
+      "url": "https://sassa.gov.za/documents/uploads/IMPORTANT_MESSAGE_FOR_SASSA_BENEFICIARIES_WHOSE_GRANTS_ARE_UNDER_REVIEW.pdf",
+      "issued": "2026-07-28",
+      "bytes": 232015,
+      "sha256": "b62505d421833ca4cb52d36fe5cdbaa35740bcc6a90269ffb4ea7020375eb062"
+    },
+    {
+      "file": "sassa-sep29.pdf",
+      "url": "https://sassa.gov.za/documents/uploads/Media_Statement2.pdf",
+      "issued": "2026-09-29",
+      "bytes": 235790,
+      "sha256": "252b225659e80d241624eb0b93732d4e2f7c5038460a5f673409f0649e051509"
+    },
+    {
+      "file": "dhet-2027-applications.pdf",
+      "url": "https://www.dhet.gov.za/SiteAssets/Media%20Advisory%20and%20Statement%202026/MEDIA%20STATEMENT-%20Minister%20Manamela%20calls%20on%20young%20people%20to%20apply%20early%20to%20TVET%20Colleges.pdf",
+      "issued": "2026-09-08",
+      "bytes": 122605,
+      "sha256": "5eb965703a4fa143c67336a07ced8ce283a5681032048d3e27f069dae907b199"
+    },
+    {
+      "file": "dhet-tvet.txt",
+      "url": "https://www.dhet.gov.za/SitePages/TVETColleges.aspx",
+      "issued": null,
+      "bytes": 25762,
+      "sha256": "cb4b2cb442a0ad0c974684cb463e70be22358e0a585a86d301d68b9107aa89db"
+    }
+  ],
+  "sassaSpecificPhoneScenario": "NOT ESTABLISHED as general procedure",
+  "vocationalFormalQualificationContext": "SUPPORTED",
+  "individualProgrammeEntryRequirements": "NOT VERIFIED",
+  "learnerSourceChanged": false
+}

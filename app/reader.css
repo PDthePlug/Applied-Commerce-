@@ -45,3 +45,6 @@
   .wide-source-table table{width:max-content;min-width:100%;}
   .wide-source-table:focus-visible{outline:2px solid var(--teal);outline-offset:3px;}
 }
+
+/* Long authored titles reflow without changing their copy or type size. */
+.lesson-heading h1{overflow-wrap:anywhere}

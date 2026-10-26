@@ -1,0 +1,60 @@
+{
+  "at": "2026-10-25T21:03:41.069Z",
+  "projectRef": "inxshlumnhcgiahxqewe",
+  "authentication": "genuine staging password login",
+  "localEvidence": "actual ContentBlocks SSR; empty response state",
+  "hostedEvidence": "unintercepted authenticated rendered learner lesson",
+  "syntheticPersistence": true,
+  "tables": [
+    {
+      "lessonId": "g10-t3-l37-037",
+      "blockId": "78d389d74f0853214f3a5c4e-1",
+      "sourceUnitSHA256": "22881958373a69f5e7a489d8da952bb2a29b86d73a95fcc57484f831d1ce80fe",
+      "sourceTableRows": 1,
+      "headerOnly": true,
+      "localRows": 3,
+      "localControls": 9,
+      "hostedRows": 3,
+      "hostedControls": 9,
+      "addRowAvailable": true,
+      "editClearReload": true,
+      "responseKey": "g10-t3-l37-037::prompt-78d389d74f0853214f3a5c4e-1::table-1-0",
+      "freshPasswordLogin": true,
+      "originalSyntheticValueRestored": true
+    },
+    {
+      "lessonId": "g10-t3-l38-038",
+      "blockId": "24c8649d1a21ce555fbb08ff-1",
+      "sourceUnitSHA256": "17b8788232cb3367718f14bb85816a9075f660d17253b59c99e68121b10f95d8",
+      "sourceTableRows": 6,
+      "headerOnly": false,
+      "localRows": 5,
+      "localControls": 15,
+      "hostedRows": 5,
+      "hostedControls": 15,
+      "addRowAvailable": false,
+      "editClearReload": true,
+      "responseKey": "g10-t3-l38-038::prompt-24c8649d1a21ce555fbb08ff-1::table-1-1",
+      "freshPasswordLogin": true,
+      "originalSyntheticValueRestored": true
+    },
+    {
+      "lessonId": "g10-t3-l40-040",
+      "blockId": "0c3879636ac6cca75bf3c1be-1",
+      "sourceUnitSHA256": "2324600ca801e79dc180a168135c4c84ffcb6457f570b7ccebfdaec04b0ec840",
+      "sourceTableRows": 4,
+      "headerOnly": false,
+      "localRows": 3,
+      "localControls": 6,
+      "hostedRows": 3,
+      "hostedControls": 6,
+      "addRowAvailable": false,
+      "editClearReload": true,
+      "responseKey": "g10-t3-l40-040::prompt-0c3879636ac6cca75bf3c1be-1::table-1-1",
+      "freshPasswordLogin": true,
+      "originalSyntheticValueRestored": true
+    }
+  ],
+  "pageErrors": [],
+  "commit": "ef3f2851e2a5526fcbb8be4b12fe8967e600c296"
+}

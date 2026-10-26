@@ -1,0 +1,94 @@
+{
+  "authentication": "genuine browser password login",
+  "projectRef": "inxshlumnhcgiahxqewe",
+  "scope": "explicit selected lessons",
+  "releasedPlans": 215,
+  "plans": [
+    {
+      "lessonId": "g10-t3-l51-051",
+      "periodCount": 2,
+      "scheduledMinutes": 90,
+      "preparationAndNavigator": true,
+      "sameLearnerLesson": true,
+      "capturedWidths": [
+        320,
+        1280
+      ],
+      "noHorizontalOverflow": true,
+      "periods": [
+        {
+          "period": 1,
+          "minutes": 45,
+          "stages": 4,
+          "firstAndLastTargetsFocused": true,
+          "cuesMatchAuthorisedPlan": true
+        },
+        {
+          "period": 2,
+          "minutes": 45,
+          "stages": 4,
+          "firstAndLastTargetsFocused": true,
+          "cuesMatchAuthorisedPlan": true
+        }
+      ]
+    },
+    {
+      "lessonId": "g10-t3-l53-053",
+      "periodCount": 2,
+      "scheduledMinutes": 90,
+      "preparationAndNavigator": true,
+      "sameLearnerLesson": true,
+      "capturedWidths": [
+        320,
+        1280
+      ],
+      "noHorizontalOverflow": true,
+      "periods": [
+        {
+          "period": 1,
+          "minutes": 45,
+          "stages": 3,
+          "firstAndLastTargetsFocused": true,
+          "cuesMatchAuthorisedPlan": true
+        },
+        {
+          "period": 2,
+          "minutes": 45,
+          "stages": 3,
+          "firstAndLastTargetsFocused": true,
+          "cuesMatchAuthorisedPlan": true
+        }
+      ]
+    },
+    {
+      "lessonId": "g10-t3-l54-054",
+      "periodCount": 2,
+      "scheduledMinutes": 90,
+      "preparationAndNavigator": true,
+      "sameLearnerLesson": true,
+      "capturedWidths": [
+        320,
+        1280
+      ],
+      "noHorizontalOverflow": true,
+      "periods": [
+        {
+          "period": 1,
+          "minutes": 45,
+          "stages": 3,
+          "firstAndLastTargetsFocused": true,
+          "cuesMatchAuthorisedPlan": true
+        },
+        {
+          "period": 2,
+          "minutes": 45,
+          "stages": 4,
+          "firstAndLastTargetsFocused": true,
+          "cuesMatchAuthorisedPlan": true
+        }
+      ]
+    }
+  ],
+  "pageErrors": [],
+  "commit": "8c0f4e7916802a095ec0cd4db880dd73288a4283"
+}

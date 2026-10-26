@@ -1,0 +1,155 @@
+{
+  "sourceChangesApplied": false,
+  "entries": [
+    {
+      "lessonId": "g10-t2-l29-029",
+      "blockId": "5a6643288ba92bbefc3824e2-1",
+      "exactPassage": "[[\"Section\", \"Detail\"], [\"Goals\", \"Emergency fund: R10,000 (12 months). TFSA: max out R36,000/year. RA: start at 25.\"], [\"Current net worth\", \"R7,200 (savings + investments \u2212 debt)\"], [\"Monthly budget\", \"Income: R5,450. Essentials: R2,200. Investing: R1,500. Fun: R750. Buffer: R1,000.\"], [\"Debt strategy\", \"None currently. Rule: never borrow for consumption.\"], [\"Protection\", \"Emergency fund first. Income protection insurance when earning full-time.\"], [\"Tax\", \"TFSA for tax-free growth. RA contributions reduce taxable income. File returns annually.\"], [\"Review\", \"Every 3 months. Adjust as life changes.\"]]",
+      "category": "Claims requiring current tax verification",
+      "concern": "The R36,000 annual TFSA figure is presented without a tax year. RA deductions and return-filing obligations depend on current conditions; starting at25 is a case choice. SARS pages returned403, so no replacement threshold or comprehensive current advice is certified.",
+      "proposedWording": "Label this as Zinhle\u2019s illustrative plan. Verify the current tax-year TFSA limits and applicable retirement-contribution and filing conditions with SARS. State an as-of date for any numerical limit; the age and chosen rule remain Zinhle\u2019s choices.",
+      "implementationImpact": "Separate owner-reviewed learner editorial correction only; preserve canonical blocks, prompt splitting, control count and stable saved identities. Local teacher support supplies relevant clarification without applying a learner rewrite.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g10-t2-l30-030",
+      "blockId": "3ff92cec53039679a666ae3d-1",
+      "exactPassage": "Average cost per share: R47.67 \u2014 lower than the average price of R48.75. The strategy works because it removes emotion from the equation.",
+      "category": "Minor arithmetic accuracy and missing context",
+      "concern": "Total exact units are25.1666667, givingR47.682119 per unit, notR47.67. R48.75 is the arithmetic mean of prices, while total money/units is a different weighted calculation. The one-cent issue should not dominate facilitation.",
+      "proposedWording": "Average cost per share is approximatelyR47.68, calculated as total contributions divided by total units. The arithmetic mean of the four share prices isR48.75. Regular contributions reduce repeated timing decisions, but do not remove risk.",
+      "implementationImpact": "Separate owner-reviewed learner editorial correction only; preserve canonical blocks, prompt splitting, control count and stable saved identities. Local teacher support supplies relevant clarification without applying a learner rewrite.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g10-t2-l30-030",
+      "blockId": "0b5791641686e530396c93e2-1",
+      "exactPassage": "Dollar-Cost Averaging = Consistency + Time \u2192 Mathematically Superior",
+      "category": "Material overgeneralisation of a strategy",
+      "concern": "The unqualified mathematical-superiority claim has no comparator or conditions. Regular contributions do not universally beat investing a lump sum already available, and do not guarantee growth.",
+      "proposedWording": "Dollar-cost averaging = regular contributions + time. It can reduce timing decisions and buy more units when prices are lower; outcomes depend on prices, costs, resources and the comparison being made.",
+      "implementationImpact": "Separate owner-reviewed learner editorial correction only; preserve canonical blocks, prompt splitting, control count and stable saved identities. Local teacher support supplies relevant clarification without applying a learner rewrite.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED",
+      "relatedPassages": [
+        {
+          "blockId": "5fbedf3818af10ff9a9a0156-1",
+          "exactPassage": "Remove Your Emotions. Automate Your Investing. Let Math Do the Work."
+        }
+      ]
+    },
+    {
+      "lessonId": "g10-t2-l30-030",
+      "blockId": "5488fe5f28f4292b4821b14b-1",
+      "exactPassage": "Here\u2019s the tension: dollar-cost averaging works because it removes emotion. But removing emotion feels wrong. When the market drops 20% and everyone is panicking, your brain screams at you to stop investing \u2014 to wait, to protect, to hide. Continuing to invest in that moment feels reckless. It is the opposite of reckless. It is the moment when your money buys the most. The people who keep investing through crashes are the ones who build wealth. The people who stop are the ones who lock in their losses. The strategy requires doing what feels wrong. And that \u2014 doing what feels wrong because the math says it is right \u2014 is the hardest discipline in investing.",
+      "category": "Material distinction and specific affordability concern",
+      "concern": "Pausing new contributions is not equivalent to selling holdings and realising a loss. The passage encourages continuing through any crash without changed needs/affordability, and implies wealth follows for everyone who continues.",
+      "proposedWording": "Market falls can make sticking to a considered plan difficult. Review your goals, holdings, access needs and affordability before changing it. Pausing contributions and selling investments are different decisions; neither consistency nor a falling price guarantees future growth.",
+      "implementationImpact": "Separate owner-reviewed learner editorial correction only; preserve canonical blocks, prompt splitting, control count and stable saved identities. Local teacher support supplies relevant clarification without applying a learner rewrite.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g10-t2-l32-032",
+      "blockId": "e86936bf9551790dd870b229-1",
+      "exactPassage": "She calculates: to reach R10,000 in 4 years, she needs to save R190 per month at 6.5% (fixed deposit) or R175 per month at 8% (retail bond). The retail bond is the better fit \u2014 locked, safe, predictable. She will use a TFSA for her longer-term goal.",
+      "category": "Product-fit assumptions and underspecified calculation",
+      "concern": "The illustrative3-year fixed product is recommended for a4-year goal with monthly contributions without specifying opening balance, funding mechanics or rollover. Standard fixed-rate RSA series is a lump-sum product with specific conditions. Under zero opening/end-month48-payment nominal-rate/12 assumptions, required contributions are aboutR182.98 at6.5% andR177.46 at8%; a different opening balance or convention changes results.",
+      "proposedWording": "Before choosing, Myah checks the dated product terms: minimum opening amount, whether additions are allowed, maturity and access conditions. She states her starting balance, contribution pattern and calculation assumptions, then checks how the product term fits her4-year goal. These illustrative rates are not current offers.",
+      "implementationImpact": "Separate owner-reviewed learner editorial correction only; preserve canonical blocks, prompt splitting, control count and stable saved identities. Local teacher support supplies relevant clarification without applying a learner rewrite.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED",
+      "relatedPassages": [
+        {
+          "blockId": "3d3ea9d97e1cfff2a747e658-1",
+          "exactPassage": "[[\"Option\", \"Rate\", \"Fee\", \"Minimum\", \"Risk\", \"Access\"], [\"Savings account\", \"2.5%\", \"None\", \"R0\", \"Very Low\", \"Immediate\"], [\"Fixed deposit (3yr)\", \"6.5%\", \"None\", \"R1,000\", \"Very Low\", \"Locked\"], [\"Retail bond (3yr)\", \"8.0%\", \"None\", \"R1,000\", \"Very Low\", \"Locked\"], [\"TFSA (ETF)\", \"~9% historical\", \"0.3%\", \"R500\", \"Medium\", \"Anytime\"], [\"Unit trust\", \"~8% historical\", \"2.0%\", \"R500\", \"Medium\", \"Anytime\"]]"
+        }
+      ]
+    },
+    {
+      "lessonId": "g10-t2-l33-033",
+      "blockId": "9d171aa9fee41978397f4772-1",
+      "exactPassage": "Goal 1 (Medium-term): R10,000 for financial literacy certification (4 years)",
+      "category": "Missing funding and product-fit explanation",
+      "concern": "The example repeats the3-year bond/four-year target/monthly175 arrangement without funding/rollover assumptions. The emergency target also omits an opening balance:100\u00d718=1800 before interest from zero. Neither goal is certified merely by copying the format.",
+      "proposedWording": "Keep the three-goal format, and state opening balances, contribution assumptions and the relevant product terms before declaring the goals funded. Identify how a3-year maturity and any restriction on additions will be handled for the4-year target. Check the emergency target against its actual opening balance, time and rate.",
+      "implementationImpact": "Separate owner-reviewed learner editorial correction only; preserve canonical blocks, prompt splitting, control count and stable saved identities. Local teacher support supplies relevant clarification without applying a learner rewrite.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED",
+      "relatedPassages": [
+        {
+          "blockId": "12693cf855029cc7ecde2301-1",
+          "exactPassage": "Vehicle: Retail bond (3-year, 8%)"
+        },
+        {
+          "blockId": "9e703b672d2a8bed356c3892-1",
+          "exactPassage": "Monthly savings needed: R175"
+        },
+        {
+          "blockId": "62f86f0c8b1773c346496de3-1",
+          "exactPassage": "Goal 3 (Short-term): Emergency fund (R3,000)"
+        },
+        {
+          "blockId": "e55bb55c457ee91e5e485e72-1",
+          "exactPassage": "Monthly contribution: R100"
+        },
+        {
+          "blockId": "215129144bebe73742c84f7a-1",
+          "exactPassage": "Failure signal: If I have not reached R3,000 in 18 months, I must redirect funds from Goal 1 temporarily."
+        }
+      ]
+    },
+    {
+      "lessonId": "g10-t2-l33-033",
+      "blockId": "a3918c64f7408cbe6d47c3be-1",
+      "exactPassage": "Failure signal: If I skip more than 3 months of contributions in any year, I must set up an automatic debit order.",
+      "category": "Specific affordability concern and missing risk context",
+      "concern": "The mandatory automatic debit response can commit an unaffordable payment when income or essential needs change. A long horizon can change risk capacity but does not guarantee smooth returns.",
+      "proposedWording": "If contributions are missed, review income, essential needs and the plan. An affordable automatic payment may help if appropriate; adjusting the amount or timeline may be necessary. A long horizon does not remove market risk.",
+      "implementationImpact": "Separate owner-reviewed learner editorial correction only; preserve canonical blocks, prompt splitting, control count and stable saved identities. Local teacher support supplies relevant clarification without applying a learner rewrite.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED",
+      "relatedPassages": [
+        {
+          "blockId": "0a6a6778bcfd3a063f835199-1",
+          "exactPassage": "Risk: Medium (long horizon smooths volatility)"
+        }
+      ]
+    },
+    {
+      "lessonId": "g10-t2-l34-034",
+      "blockId": "ccc6946a952e7868bd72af4f-1",
+      "exactPassage": "Thabo pauses. He had not built a buffer. He adds one: in months where income drops below R1,500, the investment drops to R100. The R200 difference goes to emergency savings. The plan survives because it flexes.",
+      "category": "Material cash-flow explanation gap",
+      "concern": "The reallocation is100+200=300, the same original outflow. A more liquid destination can improve resilience but does not itself create surplus in a low-income month or prove the plan survives.",
+      "proposedWording": "Thabo first checks income, essential costs and existing reserves for a bad month. He distinguishes reducing total contributions to what is affordable from moving money between investing and accessible emergency savings; the revised total and destination must both fit his circumstances.",
+      "implementationImpact": "Separate owner-reviewed learner editorial correction only; preserve canonical blocks, prompt splitting, control count and stable saved identities. Local teacher support supplies relevant clarification without applying a learner rewrite.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g10-t2-l35-035",
+      "blockId": "d4b2fee52bff1a811c2b5753-1",
+      "exactPassage": "Atlehang presents her family's investment plan \u2014 a collective TFSA for the community kitchen's future building. She shows the fee comparison. She shows the failure signals. She shows the review schedule.",
+      "category": "Ownership/tax-wrapper claim requiring current verification",
+      "concern": "A collective TFSA is described as a vehicle for a community kitchen building without ownership, eligibility or withdrawal/tax arrangements. It may mean coordinated individual saving, but that is unstated; do not assert every group arrangement is illegal without verification. Current SARS information could not be verified.",
+      "proposedWording": "Atlehang presents the family/community goal, fee comparison, signals and review. Before naming a tax-free arrangement, clarify who legally owns each account, whether it is eligible and how contributions and access work under current rules. Do not describe an unverified pooled account as an approved TFSA.",
+      "implementationImpact": "Separate owner-reviewed learner editorial correction only; preserve canonical blocks, prompt splitting, control count and stable saved identities. Local teacher support supplies relevant clarification without applying a learner rewrite.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g10-t2-l36-036",
+      "blockId": "51b96fa72eb16e154394807a-1",
+      "exactPassage": "9. The Scale: At the start of the term, you were a \"1\" on the investing literacy scale. Where are you now \u2014 honestly? What is the exact number? What is the ONE thing you need to do in Term 3 to move up by a single point?",
+      "category": "Unmeasured baseline presented as an exact starting score",
+      "concern": "The printed starting1 is not an observed baseline. It can be retained as a self-reflection frame but should not imply all learners were assessed at1 or that growth must produce a higher score.",
+      "proposedWording": "Looking back, how would you describe your starting understanding and where you are now? Use the existing response to explain your present self-rating and one useful next step. This is your reflection, not a measured ranking. No additional response field is proposed.",
+      "implementationImpact": "Separate owner-reviewed learner editorial correction only; preserve canonical blocks, prompt splitting, control count and stable saved identities. Local teacher support supplies relevant clarification without applying a learner rewrite.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g10-t2-l36-036",
+      "blockId": "514b530ec86a14fb853fd913-1",
+      "exactPassage": "Share your Term 2 reflection with someone who matters to you. Let them witness your growth. Or keep it private. It is yours.",
+      "category": "Digital visibility clarification",
+      "concern": "Keeping a personal paper reflection private is a valid option, but digitally saved evidence is reviewable by authorised staff within institutional permissions. The phrase alone can be misread as a technical privacy promise.",
+      "proposedWording": "You may share suitable reflection with someone important or keep a personal paper version private. Saved digital learning evidence may be reviewed by authorised educators and institution administrators within their permissions. You do not need to read personal answers to classmates.",
+      "implementationImpact": "Separate owner-reviewed learner editorial correction only; preserve canonical blocks, prompt splitting, control count and stable saved identities. Local teacher support supplies relevant clarification without applying a learner rewrite.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+# Provisional shared contact and presentation timing
+
+Lessons 57 and 58 remain two authored lessons with their own stable fields and guides. Together they recommend one 45-minute contact: the letter phase uses 5 + 22 + 6 = 33 minutes, and the closing uses 3 + 6 + 3 = 12. The first phase in the closing guide is explicitly earlier elapsed letter context. It does not assign another 33 minutes of work. Both period titles and preparation explain the continuation, and ordinary next-lesson navigation connects the source lessons. Raw guide allocations remain visible separately; `sharedContactGroup` prevents counting two physical contacts. Genuine cross-lesson navigation, central-stage focus and six responsive captures pass; educator timing trials remain pending.
+
+Lessons 53 and 54 split a 30-person provisional roster into 15 each. At 4 minutes speaking plus 1 question/transition, Day 1 uses 7/8 presenters across two contacts; Day 2 uses 8/7. All learners receive one opportunity. These are estimates, not source-mandated times. Revise for actual enrolment and accessibility while retaining meaningful learner time.

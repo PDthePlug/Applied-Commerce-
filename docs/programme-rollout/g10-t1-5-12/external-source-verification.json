@@ -1,0 +1,21 @@
+{
+  "at": "2026-10-25",
+  "sourceChangesApplied": false,
+  "sources": [
+    {
+      "url": "https://www.wipo.int/en/web/copyright/faq-copyright",
+      "bytes": 165749,
+      "sha256": "921764aa0789fcf0e16a8ef009cb3ce1c7363fed34956aaa465f7871288ddeba"
+    },
+    {
+      "url": "https://www.wipo.int/en/web/patents/faq_patents",
+      "bytes": 140104,
+      "sha256": "8527a58975c45dae12c1eb40c7e893b13b2ad1f7d372000aa0e9410b3d8ceec0"
+    }
+  ],
+  "limits": [
+    "WIPO general scope/key requirements, not individual South African legal advice",
+    "CIPC two URLs served ERROR404 despiteHTTP200; no current membership threshold verified",
+    "Firecrawl searches unavailable due to exhausted credits"
+  ]
+}

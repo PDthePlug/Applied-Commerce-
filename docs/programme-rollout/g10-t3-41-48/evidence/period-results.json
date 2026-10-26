@@ -1,0 +1,66 @@
+{
+  "authentication": "genuine browser password login",
+  "projectRef": "inxshlumnhcgiahxqewe",
+  "scope": "explicit selected lessons",
+  "releasedPlans": 205,
+  "plans": [
+    {
+      "lessonId": "g10-t3-l41-041",
+      "periodCount": 2,
+      "scheduledMinutes": 90,
+      "preparationAndNavigator": true,
+      "sameLearnerLesson": true,
+      "capturedWidths": [
+        320,
+        1280
+      ],
+      "noHorizontalOverflow": true,
+      "periods": [
+        {
+          "period": 1,
+          "minutes": 45,
+          "stages": 5,
+          "firstAndLastTargetsFocused": true,
+          "cuesMatchAuthorisedPlan": true
+        },
+        {
+          "period": 2,
+          "minutes": 45,
+          "stages": 6,
+          "firstAndLastTargetsFocused": true,
+          "cuesMatchAuthorisedPlan": true
+        }
+      ]
+    },
+    {
+      "lessonId": "g10-t3-l43-043",
+      "periodCount": 2,
+      "scheduledMinutes": 90,
+      "preparationAndNavigator": true,
+      "sameLearnerLesson": true,
+      "capturedWidths": [
+        320,
+        1280
+      ],
+      "noHorizontalOverflow": true,
+      "periods": [
+        {
+          "period": 1,
+          "minutes": 45,
+          "stages": 6,
+          "firstAndLastTargetsFocused": true,
+          "cuesMatchAuthorisedPlan": true
+        },
+        {
+          "period": 2,
+          "minutes": 45,
+          "stages": 6,
+          "firstAndLastTargetsFocused": true,
+          "cuesMatchAuthorisedPlan": true
+        }
+      ]
+    }
+  ],
+  "pageErrors": [],
+  "commit": "e2d8e54edbf2f16f884efd9937a7156c50e6f3aa"
+}

@@ -1,0 +1,51 @@
+{
+  "sourceChangesApplied": false,
+  "entries": [
+    {
+      "lessonId": "g10-t3-l38-038",
+      "blockId": "ba2674a3af21c3ab1431ccce-1",
+      "exactPassage": "Where is the single point of failure? If that one part broke, would the whole chain stop?",
+      "category": "Material conceptual distinction",
+      "concern": "The activity identifies a single point of failure as a bottleneck. A capacity/flow restriction and a component whose loss stops the system can coincide, but are not identical. A backup should address the actual dependency, including shared upstream failures.",
+      "proposedWording": "Identify where flow is restricted and any single point of failure. Explain whether a failure would slow the chain or stop it, and what alternative or buffer addresses that risk.",
+      "implementationImpact": "Separate owner-reviewed source proposal only; preserve canonical blocks, prompt splitting, response-field count and saved identities. Local contextual support gives the relevant clarification without a learner rewrite.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED",
+      "relatedPassages": [
+        {
+          "blockId": "da90952221e28c5232ebad31-1",
+          "exactPassage": "The bottleneck: _________________________________"
+        }
+      ]
+    },
+    {
+      "lessonId": "g10-t3-l39-039",
+      "blockId": "aa45f23a7a77a6ace37070be-1",
+      "exactPassage": "Here\u2019s the tension: building a system requires upfront effort. You must set up the automation. You must open the account. You must make the decision once, firmly, so you never have to make it again. Most people never do this because the upfront effort feels harder than the daily struggle. But the daily struggle never ends. The upfront effort does. The choice is between a hard once and a hard forever. The strategist chooses the hard once.",
+      "category": "Missing contextual explanation and specific access concern",
+      "concern": "The claim that one must open an account and decide once can imply compulsory account setup and no continuing review. Automation needs affordability, monitoring and adjustment, as later material partly recognises. The authored non-money later alternative is useful and should remain.",
+      "proposedWording": "Building an appropriate system takes initial effort and continuing review. Where financial automation is suitable and affordable, check its conditions and monitor it. A reminder, scheduled chore or default can also illustrate the principle without opening an account.",
+      "implementationImpact": "Separate owner-reviewed source proposal only; preserve canonical blocks, prompt splitting, response-field count and saved identities. Local contextual support gives the relevant clarification without a learner rewrite.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g10-t3-l40-040",
+      "blockId": "586aaa6732705304fc95f695-1",
+      "exactPassage": "[[\"Term\", \"Definition\", \"isiZulu\", \"Afrikaans\"], [\"Leverage point\", \"A place where small changes create disproportionately large results\", \"Indawo yoshintsho\", \"Hefboomplek\"], [\"Feedback loop\", \"When the output of a system affects its input \u2014 a cycle that reinforces itself\", \"Umjikelezo wempendulo\", \"Terugvoerlus\"], [\"Implementation\", \"Putting a plan into action \u2014 the hard part after the design\", \"Ukuqaliswa\", \"Implementering\"]]",
+      "category": "Material conceptual incompleteness",
+      "concern": "The feedback-loop definition describes only a self-reinforcing cycle. Feedback can also balance or counteract change, such as a spending review prompting restraint.",
+      "proposedWording": "Feedback loop: an effect feeds back into the system and influences what happens next. It can reinforce change or counteract it. Keep the existing leverage/implementation vocabulary and controls.",
+      "implementationImpact": "Separate owner-reviewed source proposal only; preserve canonical blocks, prompt splitting, response-field count and saved identities. Local contextual support gives the relevant clarification without a learner rewrite.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g10-t3-l40-040",
+      "blockId": "f2304bd8ddb0e666c5e9dabc-1",
+      "exactPassage": "[[\"Leverage Point\", \"Example\"], [\"Where money enters\", \"Automate savings right at the income source \u2014 before spending\"], [\"Where decisions are made\", \"Use cash instead of card \u2014 feels different, harder to overspend\"], [\"Information\", \"Track spending \u2014 awareness changes behaviour without effort\"], [\"Rules\", \"Set a rule: \\\"Save 20% of everything I earn\\\" \u2014 no exceptions, no negotiations\"], [\"Goals\", \"Clear goal \u2014 motivates the whole system, gives purpose to sacrifice\"]]",
+      "category": "Specific affordability context",
+      "concern": "The savings rule says20% with no exceptions. As a universal prescription it can conflict with essential needs, irregular income or unavoidable commitments; cash-only and tracking also depend on context.",
+      "proposedWording": "Present these as examples to evaluate. Choose an affordable saving rule that protects essentials and can be reviewed when circumstances change. A tracking or cash approach should fit access, safety and the actual problem.",
+      "implementationImpact": "Separate owner-reviewed source proposal only; preserve canonical blocks, prompt splitting, response-field count and saved identities. Local contextual support gives the relevant clarification without a learner rewrite.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    }
+  ]
+}

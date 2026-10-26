@@ -1,0 +1,7 @@
+{
+  "classification": "Local preservation-proof command output-buffer limit",
+  "observation": "The first standalone comparison tried to read the 2.49MB public manifest through a child-process default output buffer and stopped before comparison.",
+  "correction": "Read the manifest through a protected file, then compare all 137 prior bindings in full. All are identical.",
+  "hostedAcceptance": "Already passed independently; this command did not change a release or learner record.",
+  "proof": "prior137-preservation.json"
+}

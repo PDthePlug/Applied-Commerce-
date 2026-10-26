@@ -1,0 +1,18 @@
+# Grade 10 Term 2: opening lessons
+
+The actual Lessons 17–20 were read. Three new guides cover 17,18 and 20; the accepted Lesson 19 compound-interest guide is preserved in full. An incorrect private benchmark mapping was caught by the append guard before any existing release changed, and the redundant unsealed draft was excluded. The private candidate retains all 174 prior bindings.
+
+| Lesson | Individual instructional review | Provisional contacts |
+| --- | --- | ---: |
+| 17 — Saving/Investing | Read the story and both comparisons; complete the original purpose audit and classification, then allow a second contact for the nontrivial five-year real/nominal calculation and checkpoint. Current rates are not certified:2%/6% remain hypothetical. Essential access to savings is valid; investments do not guarantee value protection. The actual amount cells are fixed R, so existing text/ordinary working carries figures. No personal savings is an honest circumstance, with the supplied case available for arithmetic. | 2 |
+| 18 — Risk/Return | Preserve the actual hypothetical loss choices, nonfinancial cost and capacity question. Distinguish expected/potential from realised return and fund structure from underlying risk; do-not-know/not-sure remain valid. No real trading, borrowing, family loss disclosure or diagnostic risk-profile test is required. The willing home account or authored research alternative is later. | 1 |
+| 19 — Compound Interest | Existing owner-approved guide and every source/field/timing/placement/hash binding retained unchanged. Its earlier source proposals already distinguish the mnemonic from a formula, projection assumptions and knowledge-sharing analogy; they are not duplicated as new guide changes. | 2, retained |
+| 20 — Full-Cost Assets | Use Mr.Patel’s actual trade-off, financial audit, nonfinancial table and decision. Retain the cash-flow/personal-development lens while distinguishing formal accounting definitions in local optional support. Either sale or retention can be reasoned; no real decision or private household records are needed. Existing amount cells remain fixed R; the existing second table provides editable rows and Add another row. | 1 |
+
+**Three new guides / four new provisional contacts.** Including the retained benchmark, these four authored opening lessons use six provisional contacts. Lesson 17’s pause and return continue the same audit and protect calculation time; guidance length does not set the allocation. All timing remains provisional until educator trials.
+
+Actual local table rendering confirms nine purpose-audit textareas, nine classification textareas, eight asset-audit textareas and six nonfinancial-cost textareas. No control, prompt split, row or stable answer identity changes. Private source/schema/activity coverage and actual ContentBlocks insertion pass; original-key sealing and genuine hosted acceptance now pass, so the three bring verified coverage to 177. Educator timing trials remain pending.
+
+Ten focused source proposals remain separate and unapplied. Reflective metaphors and personal-finance perspectives are preserved with relevant limits rather than converted into repeated corrective lectures. No current interest rate, inflation release, product suitability or comprehensive legal position is certified by this review.
+
+Genuine acceptance: 8 selected lessons / 693 exact fields / 86 navigator targets / 144 responsive cases. All 3 additions pass first-response edit/clear/reload/fresh-login persistence; 4 actual tables pass fresh-login persistence and restoration. Complete integrated/fallback PDF text retains 1386 fields with none missing. See RESULTS.json and the protected capture hashes. Educator trials remain pending.

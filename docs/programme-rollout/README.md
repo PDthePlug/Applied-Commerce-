@@ -1,7 +1,7 @@
 # Programme rollout from PR #48
 
-**117 of 395 plans are available in verified staging; 278 remain.** All 80 Grade 8 lessons and all 34 Grade 9 Terms 1–2 lessons are complete. New content requires owner classroom review and educator timing trials.
+**215 of 395 lessons have individually reviewed support in verified staging; 180 remain.** All Grade 8 and Grade 9 lessons, all Grade 10 Terms 1–3 lessons, and the unchanged Grade 11 and Grade 12 benchmarks are covered. No additional private drafts are counted at this observation.
 
-Latest [PR #59](https://github.com/PDthePlug/Applied-Commerce-/pull/59) remains open and unmerged. [REPORT.md](REPORT.md), [coverage.json](coverage.json), [grade-term.csv](grade-term.csv) and [batch evidence](g9-t2-26-34/RESULTS.json) record exact scope, provisional contact periods and limitations.
+[PR #74](https://github.com/PDthePlug/Applied-Commerce-/pull/74) contains the current batch on its follow-up stack. No merge or separate live deployment was performed by this work. Educator classroom review and timing trials remain pending.
 
-The original key stays in staging; private drafts, sessions and captures remain protected outside Git. Source proposals are separate and unapplied. No merge, separate live deployment, migration or Zimbabwe change is included.
+See [current report](REPORT.md), [coverage](coverage.json), [grade-and-term counts](grade-term.csv), [batch results](g10-t3-49-58/RESULTS.json), [individual review](g10-t3-49-58/REVIEW.md) and [focused fact checks](g10-t3-49-58/FACT_CHECKS.md). Plaintext guides, credentials and authenticated captures remain protected outside Git.

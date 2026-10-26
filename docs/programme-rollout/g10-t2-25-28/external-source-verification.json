@@ -1,0 +1,49 @@
+{
+  "at": "2026-10-25",
+  "scope": "Dated official general guidance and selected2025fixed-productclauses; not comprehensive current law or individual advice",
+  "sources": [
+    {
+      "name": "ncr-borrow-wisely",
+      "url": "https://www.ncr.org.za/index.php/latest-news/8-latest-news/125-consumers-are-encouraged-to-borrow-wisely-and-start-saving",
+      "status": 200,
+      "bytes": 60053,
+      "sha256": "90f552bd534bea3c90c5d8c51700ba39f424d60f0c68a8cf50b34495f7ca6b69",
+      "extension": ".html"
+    },
+    {
+      "name": "ncr-record",
+      "url": "https://www.ncr.org.za/index.php/latest-news/8-latest-news/128-keep-your-credit-bureau-record-clean-regardless-of-the-rising-cost-of-living",
+      "status": 200,
+      "bytes": 73528,
+      "sha256": "518824ee4c416ad9555845f7e8613aea37007ae5d13c7dcb83a09238cb5dc4ce",
+      "extension": ".html"
+    },
+    {
+      "name": "rsa-fixed-terms",
+      "url": "https://www.rsaretailbonds.gov.za/assets/docs/2025_Terms_and_Conditions_Fixed_Rate_Retail_Savings_Bond.pdf",
+      "status": 200,
+      "bytes": 712652,
+      "sha256": "dbb84acc70753cebf9b40ef83209b6b22f92590a1791336b906de8fb84ac08c9",
+      "extension": ".pdf"
+    },
+    {
+      "name": "rsa-faq",
+      "url": "https://www.rsaretailbonds.gov.za/faq.aspx",
+      "status": 200,
+      "bytes": 64888,
+      "sha256": "f086fa1ba0b92e9d9193cef2dd4d0468ddd167ec8cb00fedd26dc85c23ef69e6",
+      "extension": ".html"
+    }
+  ],
+  "selectedPDFPagesVisuallyRead": [
+    9,
+    12
+  ],
+  "pdfTextMethod": "Scanned18-pagePDF; OCR used then selectedclauses visuallyverified againstpageimages",
+  "limitations": [
+    "NCRarticlesdate2022; no currentproceduraldeadline/quotacertification",
+    "FAQhasgenericandproduct-specificsections; use actualseries terms",
+    "No currentcredit-scoremodel/fundfee/provider minimum/tax limit certified",
+    "Firecrawl remains unavailable due to credits"
+  ]
+}

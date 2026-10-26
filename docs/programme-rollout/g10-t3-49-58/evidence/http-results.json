@@ -1,0 +1,154 @@
+{
+  "run": "audit-stage-1792738485202",
+  "at": "2026-10-26T09:19:27.803Z",
+  "checks": [
+    {
+      "name": "learner real password session",
+      "status": "PASS"
+    },
+    {
+      "name": "other real password session",
+      "status": "PASS"
+    },
+    {
+      "name": "facilitator real password session",
+      "status": "PASS"
+    },
+    {
+      "name": "unassigned real password session",
+      "status": "PASS"
+    },
+    {
+      "name": "schoolAdmin real password session",
+      "status": "PASS"
+    },
+    {
+      "name": "platformAdmin real password session",
+      "status": "PASS"
+    },
+    {
+      "name": "administrator provisioning through real sessions",
+      "status": "PASS"
+    },
+    {
+      "name": "learner persists answer through revision-checked RPC",
+      "status": "PASS"
+    },
+    {
+      "name": "two device requests have exactly one winner",
+      "status": "PASS"
+    },
+    {
+      "name": "lost response retry does not duplicate or advance revision",
+      "status": "PASS"
+    },
+    {
+      "name": "other learner visibility boundary",
+      "status": "PASS"
+    },
+    {
+      "name": "unassigned learner visibility boundary",
+      "status": "PASS"
+    },
+    {
+      "name": "facilitator learner visibility boundary",
+      "status": "PASS"
+    },
+    {
+      "name": "schoolAdmin learner visibility boundary",
+      "status": "PASS"
+    },
+    {
+      "name": "platformAdmin learner visibility boundary",
+      "status": "PASS"
+    },
+    {
+      "name": "learner cannot escalate institution privileges",
+      "status": "PASS"
+    },
+    {
+      "name": "unassigned facilitator cannot review",
+      "status": "PASS"
+    },
+    {
+      "name": "revision feedback is visible to the learner",
+      "status": "PASS"
+    },
+    {
+      "name": "learner revision persists",
+      "status": "PASS"
+    },
+    {
+      "name": "stale review returns a non-retryable rejection without approving the revised answer",
+      "status": "PASS"
+    },
+    {
+      "name": "approval follows the revised answer and reaches learner",
+      "status": "PASS"
+    },
+    {
+      "name": "authorized administrator observes approved evidence",
+      "status": "PASS"
+    },
+    {
+      "name": "role revocation blocks existing facilitator session",
+      "status": "PASS"
+    },
+    {
+      "name": "settings patches retain independent changes",
+      "status": "PASS"
+    },
+    {
+      "name": "invalid identities are rejected through HTTP",
+      "status": "PASS"
+    },
+    {
+      "name": "anonymous mutation is denied",
+      "status": "PASS"
+    },
+    {
+      "name": "learner cannot self-grade through the Data API",
+      "status": "PASS"
+    },
+    {
+      "name": "learner cannot self-approve through the Data API",
+      "status": "PASS"
+    },
+    {
+      "name": "account switch during dispatch cannot save into the new account",
+      "status": "PASS"
+    },
+    {
+      "name": "supplied learner identifier cannot change RPC ownership",
+      "status": "PASS"
+    },
+    {
+      "name": "ownership probe did not write the targeted learner account",
+      "status": "PASS"
+    },
+    {
+      "name": "learner cannot create another learner portfolio artifact",
+      "status": "PASS"
+    },
+    {
+      "name": "logged-out JWT fails active-session check",
+      "status": "PASS"
+    },
+    {
+      "name": "logged-out JWT cannot read its own private data",
+      "status": "PASS"
+    },
+    {
+      "name": "logged-out JWT cannot persist new data",
+      "status": "PASS"
+    },
+    {
+      "name": "revoked refresh token cannot restore the session",
+      "status": "PASS"
+    },
+    {
+      "name": "tampered role token fails signature verification",
+      "status": "PASS"
+    }
+  ]
+}

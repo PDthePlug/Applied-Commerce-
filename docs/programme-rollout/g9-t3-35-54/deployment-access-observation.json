@@ -1,0 +1,19 @@
+{
+  "classification": "Deployment-protection access interruption before application authentication",
+  "observedAt": "2026-10-25",
+  "interruptedRun": {
+    "tablesWithEditClearReload": 8,
+    "readOnlyTotalsTable": 1,
+    "freshLoginAccepted": false,
+    "healthFinalHost": "vercel.com",
+    "healthFinalPath": "/login",
+    "healthHTTP": 200,
+    "healthContentType": "text/html"
+  },
+  "response": "Refreshed the supported authorised staging share link; two clean browser contexts reached the exact deployment health endpoint with JSON. Hold the link stable throughout the full rerun.",
+  "causalLimit": "A separate baseline-deployment access link was obtained during the interrupted run. This timing does not independently establish the platform's link-invalidation mechanism.",
+  "applicationPermissionFailure": false,
+  "protectionSettingsChanged": false,
+  "credentialsPublished": false,
+  "acceptance": "The interrupted run is not a pass; full genuine rerun required."
+}

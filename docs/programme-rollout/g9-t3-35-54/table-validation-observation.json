@@ -1,0 +1,14 @@
+{
+  "classification": "Validation harness timing correction; no application change",
+  "observation": "The new table persistence check queried tables immediately after reload. A retained sync baseline could resolve before the lesson DOM loaded.",
+  "correction": "Wait for an actual rendered table before comparing exact source headers and duplicate-header occurrence.",
+  "acceptance": "Full corrected table persistence and classroom run required; the interrupted run is not a pass.",
+  "sourceOrLearnerFieldsChanged": false,
+  "authentication": "Genuine staging learner password login; synthetic fixture response only",
+  "verifierSessionCorrection": {
+    "observation": "Global browser logout also revokes the table runner's separate API verification session. Its old JWT then sees no learner rows under RLS.",
+    "correction": "After the fresh browser login, obtain a fresh genuine password session for cloud verification. An absent or denied row is no longer treated as an empty saved answer.",
+    "applicationOrRlsChanged": false,
+    "interruptedRunAccepted": false
+  }
+}

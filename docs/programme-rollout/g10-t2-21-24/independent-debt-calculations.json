@@ -1,0 +1,294 @@
+{
+  "assumptions": "End-of-month fixed payments; monthly interest added before payment; no fees/newspending/ratechanges; final payment adjusted; no monthly cent-rounding. Educational model, not current credit/legal advice.",
+  "sipho3000At22": [
+    {
+      "principal": 3000,
+      "annualNominal": 0.22,
+      "monthlyRate": 0.018333333333333333,
+      "payment": 85,
+      "months": 58,
+      "total": 4872.8564003002875,
+      "totalInterest": 1872.8564003002884,
+      "after8": {
+        "month": 8,
+        "interest": 50.93165992909207,
+        "payment": 85,
+        "balance": 2744.022201515932
+      },
+      "first3": [
+        {
+          "month": 1,
+          "interest": 55,
+          "payment": 85,
+          "balance": 2970
+        },
+        {
+          "month": 2,
+          "interest": 54.45,
+          "payment": 85,
+          "balance": 2939.45
+        },
+        {
+          "month": 3,
+          "interest": 53.889916666666664,
+          "payment": 85,
+          "balance": 2908.3399166666663
+        }
+      ]
+    },
+    {
+      "principal": 3000,
+      "annualNominal": 0.22,
+      "monthlyRate": 0.018333333333333333,
+      "payment": 135,
+      "months": 29,
+      "total": 3888.4160063846844,
+      "totalInterest": 888.4160063846841,
+      "after8": {
+        "month": 8,
+        "interest": 44.151093144245536,
+        "payment": 135,
+        "balance": 2317.39253737582
+      },
+      "first3": [
+        {
+          "month": 1,
+          "interest": 55,
+          "payment": 135,
+          "balance": 2920
+        },
+        {
+          "month": 2,
+          "interest": 53.53333333333333,
+          "payment": 135,
+          "balance": 2838.5333333333333
+        },
+        {
+          "month": 3,
+          "interest": 52.03977777777778,
+          "payment": 135,
+          "balance": 2755.5731111111113
+        }
+      ]
+    },
+    {
+      "principal": 3000,
+      "annualNominal": 0.22,
+      "monthlyRate": 0.018333333333333333,
+      "payment": 150,
+      "months": 26,
+      "total": 3771.433511238021,
+      "totalInterest": 771.4335112380215,
+      "after8": {
+        "month": 8,
+        "interest": 42.11692310879157,
+        "payment": 150,
+        "balance": 2189.403638133786
+      },
+      "first3": [
+        {
+          "month": 1,
+          "interest": 55,
+          "payment": 150,
+          "balance": 2905
+        },
+        {
+          "month": 2,
+          "interest": 53.25833333333333,
+          "payment": 150,
+          "balance": 2808.258333333333
+        },
+        {
+          "month": 3,
+          "interest": 51.48473611111111,
+          "payment": 150,
+          "balance": 2709.7430694444442
+        }
+      ]
+    },
+    {
+      "principal": 3000,
+      "annualNominal": 0.22,
+      "monthlyRate": 0.018333333333333333,
+      "payment": 200,
+      "months": 18,
+      "total": 3540.626132499897,
+      "totalInterest": 540.6261324998974,
+      "after8": {
+        "month": 8,
+        "interest": 35.33635632394502,
+        "payment": 200,
+        "balance": 1762.7739739936733
+      },
+      "first3": [
+        {
+          "month": 1,
+          "interest": 55,
+          "payment": 200,
+          "balance": 2855
+        },
+        {
+          "month": 2,
+          "interest": 52.34166666666667,
+          "payment": 200,
+          "balance": 2707.3416666666667
+        },
+        {
+          "month": 3,
+          "interest": 49.634597222222226,
+          "payment": 200,
+          "balance": 2556.9762638888888
+        }
+      ]
+    }
+  ],
+  "example1000At2percentMonthly": {
+    "principal": 1000,
+    "annualNominal": 0.24,
+    "monthlyRate": 0.02,
+    "payment": 50,
+    "months": 26,
+    "total": 1289.8728284689632,
+    "totalInterest": 289.87282846896323,
+    "after8": {
+      "month": 8,
+      "interest": 15.5394299705216,
+      "payment": 50,
+      "balance": 742.5109284966015
+    },
+    "first3": [
+      {
+        "month": 1,
+        "interest": 20,
+        "payment": 50,
+        "balance": 970
+      },
+      {
+        "month": 2,
+        "interest": 19.400000000000002,
+        "payment": 50,
+        "balance": 939.4
+      },
+      {
+        "month": 3,
+        "interest": 18.788,
+        "payment": 50,
+        "balance": 908.188
+      }
+    ]
+  },
+  "activity2000At18": [
+    {
+      "principal": 2000,
+      "annualNominal": 0.18,
+      "monthlyRate": 0.015,
+      "payment": 60,
+      "months": 47,
+      "total": 2793.4417944571624,
+      "totalInterest": 793.4417944571625,
+      "after8": {
+        "month": 8,
+        "interest": 26.70465261294659,
+        "payment": 60,
+        "balance": 1747.0148268093858
+      },
+      "first3": [
+        {
+          "month": 1,
+          "interest": 30,
+          "payment": 60,
+          "balance": 1970
+        },
+        {
+          "month": 2,
+          "interest": 29.549999999999997,
+          "payment": 60,
+          "balance": 1939.55
+        },
+        {
+          "month": 3,
+          "interest": 29.093249999999998,
+          "payment": 60,
+          "balance": 1908.6432499999999
+        }
+      ]
+    },
+    {
+      "principal": 2000,
+      "annualNominal": 0.18,
+      "monthlyRate": 0.015,
+      "payment": 100,
+      "months": 24,
+      "total": 2395.6535443312164,
+      "totalInterest": 395.6535443312162,
+      "after8": {
+        "month": 8,
+        "interest": 22.310856096875384,
+        "payment": 100,
+        "balance": 1409.7012625552343
+      },
+      "first3": [
+        {
+          "month": 1,
+          "interest": 30,
+          "payment": 100,
+          "balance": 1930
+        },
+        {
+          "month": 2,
+          "interest": 28.95,
+          "payment": 100,
+          "balance": 1858.95
+        },
+        {
+          "month": 3,
+          "interest": 27.884249999999998,
+          "payment": 100,
+          "balance": 1786.83425
+        }
+      ]
+    },
+    {
+      "principal": 2000,
+      "annualNominal": 0.18,
+      "monthlyRate": 0.015,
+      "payment": 150,
+      "months": 15,
+      "total": 2248.1434667650437,
+      "totalInterest": 248.14346676504363,
+      "after8": {
+        "month": 8,
+        "interest": 16.818610451786373,
+        "payment": 150,
+        "balance": 988.0593072375445
+      },
+      "first3": [
+        {
+          "month": 1,
+          "interest": 30,
+          "payment": 150,
+          "balance": 1880
+        },
+        {
+          "month": 2,
+          "interest": 28.2,
+          "payment": 150,
+          "balance": 1758.2
+        },
+        {
+          "month": 3,
+          "interest": 26.373,
+          "payment": 150,
+          "balance": 1634.573
+        }
+      ]
+    }
+  ],
+  "ovenLoanGrossIncomeCaution": {
+    "statedPrincipal": 20000,
+    "monthlyPayment": 2100,
+    "months": 60,
+    "totalRepayment": 126000,
+    "statedAdditionalIncomeNotNecessarilyProfit": 6000
+  }
+}

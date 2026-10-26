@@ -1,0 +1,85 @@
+{
+  "verification": "local text comparison of genuine hosted PDF exports; private strings not published",
+  "scope": "explicit selected lessons",
+  "releasedPlans": 197,
+  "normalisation": "Unicode compatibility, equivalent quote/dash forms and layout whitespace. Wrapped scaffold cells can use their full text within the existing fixed-layout column; no loose subsequence matching. Exact DOM fields and PDF margins checked separately.",
+  "summary": {
+    "pdfs": 9,
+    "fields": 730,
+    "missingFields": 0
+  },
+  "results": [
+    {
+      "scope": "fallback-print",
+      "lessonId": "g8-t1-l01-001",
+      "fields": 82,
+      "tableColumnExtractionFields": 0,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "fallback-print",
+      "lessonId": "g8-t1-l08-008",
+      "fields": 125,
+      "tableColumnExtractionFields": 0,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "fallback-print",
+      "lessonId": "g8-t1-l10-010",
+      "fields": 61,
+      "tableColumnExtractionFields": 0,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "fallback-print",
+      "lessonId": "g10-t2-l19-019",
+      "fields": 154,
+      "tableColumnExtractionFields": 0,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "fallback-print",
+      "lessonId": "g12-t1-l05-005",
+      "fields": 156,
+      "tableColumnExtractionFields": 4,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "fallback-print",
+      "lessonId": "g10-t3-l37-037",
+      "fields": 43,
+      "tableColumnExtractionFields": 0,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "fallback-print",
+      "lessonId": "g10-t3-l38-038",
+      "fields": 33,
+      "tableColumnExtractionFields": 0,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "fallback-print",
+      "lessonId": "g10-t3-l39-039",
+      "fields": 43,
+      "tableColumnExtractionFields": 0,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "fallback-print",
+      "lessonId": "g10-t3-l40-040",
+      "fields": 33,
+      "tableColumnExtractionFields": 0,
+      "missing": [],
+      "preserved": true
+    }
+  ]
+}
