@@ -1,6 +1,6 @@
 # Grade 10 Term 4: Lessons 59–66
 
-Every actual learner block was read before individual authoring: 383 blocks across eight lessons. Private source/schema/activity and actual ContentBlocks insertion checks pass. These are sealed under the original server-bound key and remain uncompleted until genuine hosted acceptance. All 215 preceding bindings compare identical in the sealed release and all eight new hashes match their private drafts.
+Every actual learner block was read before individual authoring: 383 blocks across eight lessons. Private source/schema/activity and actual ContentBlocks insertion checks pass. These are sealed under the original server-bound key and pass genuine hosted acceptance. All 215 preceding bindings compare identical in the sealed release and all eight new hashes match their private drafts.
 
 | Lesson | Individual instructional review | Provisional contacts |
 | --- | --- | ---: |
@@ -16,3 +16,5 @@ Every actual learner block was read before individual authoring: 383 blocks acro
 Eight authored additions recommend eight provisional contacts. Reading, individual thinking, written work and checkpoints set these estimates, rather than the length of teacher guidance. Later interviews, research and real experiments remain later work. No educator timing trial is claimed.
 
 Ten exact-source editorial proposals remain separate and unapplied. Metaphors about maps, fuel, direction, purpose and voting remain. No learner wording, response count, saved identity, canonical book or source sequence is changed by this teacher batch. The preceding owner-approved Lesson 60 response-format repair is explicitly recorded separately.
+
+Genuine acceptance: 14 selected lessons / 943 exact fields / 137 navigator targets / 252 responsive cases. All 8 additions pass first-response edit/clear/reload/fresh-login persistence; 2 actual tables pass fresh-login persistence and restoration. Complete integrated/fallback PDF text retains 1886 fields with none missing. See RESULTS.json and the protected capture hashes. Educator trials remain pending.

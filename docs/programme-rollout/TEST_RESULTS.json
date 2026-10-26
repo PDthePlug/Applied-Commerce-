@@ -28,88 +28,76 @@
   },
   "rollout": {
     "existingPlans": 24,
-    "newCompleted": 191,
-    "privateUnsealedDrafts": 0,
-    "uncompleted": 180,
+    "newCompleted": 199,
+    "privateUnsealedDrafts": 8,
+    "uncompleted": 172,
     "blocker": null,
-    "stagedPendingVerification": 8
+    "stagedPendingVerification": 0
   },
   "pending": [
-    "Remaining 180 guides to complete in verified staging; eight have private individually reviewed drafts",
+    "Remaining 172 guides to complete in verified staging; 8 have private individual drafts",
     "Educator timing trials",
     "Hosted cold-process/server-memory measurements",
     "Configured maximum/inactivity session lifetime"
   ],
   "latestBatch": {
     "projectRef": "inxshlumnhcgiahxqewe",
-    "totalPlans": 215,
-    "newCompletedAcrossRollout": 191,
-    "remaining": 180,
-    "testedCommit": "8c0f4e7916802a095ec0cd4db880dd73288a4283",
-    "stagingURL": "https://applied-commerce-sa-staging-mxbx5n52f.vercel.app",
-    "priorBindingsPreserved": 205,
-    "newPlans": 10,
-    "directClassroomPlans": 15,
-    "directFields": 846,
-    "navigatorTargets": 125,
-    "responsiveCombinations": 270,
-    "newFirstResponsePersistence": 10,
+    "totalPlans": 223,
+    "newCompletedAcrossRollout": 199,
+    "remaining": 172,
+    "testedCommit": "6771e483bd62f5ec9266449d5f67b2c6e656743b",
+    "stagingURL": "https://applied-commerce-sa-staging-56tll6sts.vercel.app",
+    "priorBindingsPreserved": 215,
+    "newPlans": 8,
+    "directClassroomPlans": 14,
+    "directFields": 943,
+    "navigatorTargets": 137,
+    "responsiveCombinations": 252,
+    "newFirstResponsePersistence": 8,
     "renderedTablesVerified": 2,
     "tableFreshLoginPersistence": 2,
-    "nativeLetterResponses": 2,
-    "letterScopedReviewAndPersistence": true,
-    "sharedContact": {
-      "authoredLessons": 2,
-      "rawAllocations": 2,
-      "recommendedProvisionalContacts": 1,
-      "letterMinutes": 33,
-      "closingMinutes": 12,
-      "actualNextPreviousAndCentralNavigation": true,
-      "educatorTimingTrial": "NOT DEMONSTRATED"
+    "nativeIncomeRatings": 3,
+    "incomeRatingPersistenceAndScopedReview": true,
+    "nativeInlineRankings": 2,
+    "earlierSeparateInstructionRankingRegression": true,
+    "rankingClear": "Supported learner RPC only; no browser clear-all control claimed",
+    "horizonResponseRepair": {
+      "genuineFreshLogin": true,
+      "priorCombinedRetainedVerbatim": true,
+      "actualPortfolioAndEducatorReview": true,
+      "physicalLearnerPrint": true,
+      "originalRestored": true
     },
     "approved24Unchanged": true,
-    "integratedPDFs": 15,
-    "integratedPDFPages": 79,
-    "fallbacks": 15,
-    "fallbackPDFPages": 85,
-    "pdfTextFields": 1692,
+    "integratedPDFs": 14,
+    "integratedPDFPages": 88,
+    "fallbacks": 14,
+    "fallbackPDFPages": 93,
+    "pdfTextFields": 1886,
     "pdfMissing": 0,
-    "multiPeriodLessons": [
-      {
-        "lessonId": "g10-t3-l51-051",
-        "periodCount": 2
-      },
-      {
-        "lessonId": "g10-t3-l53-053",
-        "periodCount": 2
-      },
-      {
-        "lessonId": "g10-t3-l54-054",
-        "periodCount": 2
-      }
-    ],
+    "multiPeriodLessons": [],
     "authRlsChecks": 37,
-    "nodeTests": 213,
+    "nodeTests": 218,
     "typecheck": "PASS",
     "lint": "PASS",
     "sourceChangesApplied": false,
     "delivery": {
-      "requests": 55,
-      "newRequests": 50,
-      "newMedianMs": 873,
+      "requests": 45,
+      "newRequests": 40,
+      "newMedianMs": 828,
       "rangeMs": [
-        574,
-        1433
+        571,
+        1180
       ],
       "decodedBytes": [
-        6426,
-        12209
+        11046,
+        12580
       ],
       "coldProcess": "NOT DEMONSTRATED",
       "hostedServerMemory": "NOT MEASURED"
     },
     "pending": [
-      "Remaining 180 guides to complete in verified staging",
+      "Remaining 172 guides to complete in verified staging; 8 have private individual drafts",
       "Educator timing trials",
       "Hosted cold-process/server-memory measurements",
       "Configured maximum/inactivity session lifetime"
