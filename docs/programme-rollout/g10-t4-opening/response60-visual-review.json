@@ -1,0 +1,21 @@
+{
+  "evidence": "Manual inspection of genuine staging captures; not classroom trial or pixel baseline",
+  "inspected": [
+    "before-viewport-320-1.png",
+    "after-viewport-1280-1.png",
+    "after-first-horizon-320-2.png",
+    "portfolio-readable-retained-answer.png",
+    "educator-readable-response.png"
+  ],
+  "observations": [
+    "Before: horizon labels were absorbed into repeated checkbox options; one flat group.",
+    "After: separate labelled horizons and compact native choices; complete first group remains readable at 320px and text scale2.",
+    "Portfolio and actual educator review show labelled selections and retained prior text without JSON metadata."
+  ],
+  "limitations": [
+    "Stored fixture appearance differs across captures; these are usability evidence, not controlled colour/pixel comparisons.",
+    "Whole tall-element screenshot at scale2 has fixed-chrome overlap; the separately captured first horizon and viewport captures provide the readable comparison.",
+    "All captures remain protected outside Git."
+  ],
+  "beforeAfterReadOnlyResponseWrites": 0
+}

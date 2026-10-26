@@ -114,5 +114,167 @@
       "Hosted cold-process/server-memory measurements",
       "Configured maximum/inactivity session lifetime"
     ]
+  },
+  "latestSharedResponseFix": {
+    "projectRef": "inxshlumnhcgiahxqewe",
+    "pr": 76,
+    "status": "PASS_GENUINE_STAGING",
+    "ownerApproval": "Explicit separate response-format approval on 2026-10-26",
+    "testedCommit": "eb68e7e4b0e571e748eb84bd2f9c6a5d3da54b9a",
+    "stagingURL": "https://applied-commerce-sa-staging-ojx6i0k3g.vercel.app",
+    "verifiedGuides": 215,
+    "remainingGuides": 180,
+    "newGuidesCompleted": 0,
+    "originalKeyAnd215GuideFiles": "Byte-identical to owner-merged PR75",
+    "nodeTests": 218,
+    "typecheck": "PASS",
+    "lint": "PASS",
+    "localBuild": "PASS",
+    "localBrowser": {
+      "broaderUnchangedChecks": 90,
+      "newHorizonChecksAfterPrintCorrection": 3,
+      "initialPrintFailures": 3
+    },
+    "genuineHorizonChecks": {
+      "at": "2026-10-26T09:55:28.080Z",
+      "projectRef": "inxshlumnhcgiahxqewe",
+      "commit": "eb68e7e4b0e571e748eb84bd2f9c6a5d3da54b9a",
+      "lessonId": "g10-t4-l60-060",
+      "responseKey": "g10-t4-l60-060::prompt-dfe0b8dcfd78fcd81bea25f0-1::choice",
+      "authentication": "genuine staging password login",
+      "syntheticOnly": true,
+      "sourceChanges": false,
+      "responseIdentityChanges": false,
+      "responsive": [
+        {
+          "width": 320,
+          "scale": 1,
+          "overflow": false
+        },
+        {
+          "width": 320,
+          "scale": 1.28,
+          "overflow": false
+        },
+        {
+          "width": 320,
+          "scale": 2,
+          "overflow": false
+        },
+        {
+          "width": 360,
+          "scale": 1,
+          "overflow": false
+        },
+        {
+          "width": 360,
+          "scale": 1.28,
+          "overflow": false
+        },
+        {
+          "width": 360,
+          "scale": 2,
+          "overflow": false
+        },
+        {
+          "width": 430,
+          "scale": 1,
+          "overflow": false
+        },
+        {
+          "width": 430,
+          "scale": 1.28,
+          "overflow": false
+        },
+        {
+          "width": 430,
+          "scale": 2,
+          "overflow": false
+        },
+        {
+          "width": 768,
+          "scale": 1,
+          "overflow": false
+        },
+        {
+          "width": 768,
+          "scale": 1.28,
+          "overflow": false
+        },
+        {
+          "width": 768,
+          "scale": 2,
+          "overflow": false
+        },
+        {
+          "width": 1280,
+          "scale": 1,
+          "overflow": false
+        },
+        {
+          "width": 1280,
+          "scale": 1.28,
+          "overflow": false
+        },
+        {
+          "width": 1280,
+          "scale": 2,
+          "overflow": false
+        },
+        {
+          "width": 1920,
+          "scale": 1,
+          "overflow": false
+        },
+        {
+          "width": 1920,
+          "scale": 1.28,
+          "overflow": false
+        },
+        {
+          "width": 1920,
+          "scale": 2,
+          "overflow": false
+        }
+      ],
+      "pageErrors": [],
+      "independentChoices": true,
+      "keyboardEditAndIndividualClearReload": true,
+      "freshPasswordLogin": true,
+      "assignedEducatorActualUIAndRawEvidence": true,
+      "otherLearnerDenied": true,
+      "revokedEducatorDenied": true,
+      "unrelatedInstitutionStaffDenied": true,
+      "clearAllWithoutLegacyReloadAndFreshLogin": true,
+      "previousCombinedVerbatimAndFreshLogin": true,
+      "physicalPrintSelectionsAndPreviousAnswer": true,
+      "actualPortfolioReadable": true,
+      "clearAllNewChoicesRetainsExactOlderString": true,
+      "clearedStateAndLegacyFreshLogin": true,
+      "status": "PASS",
+      "originalSyntheticResponseRestored": true
+    },
+    "referenceLessons": {
+      "count": 6,
+      "exactFields": 683,
+      "navigatorTargets": 61,
+      "responsive": 108,
+      "pdfs": 6,
+      "pdfPages": 62,
+      "pdfFields": 683,
+      "missingFields": 0
+    },
+    "authRlsChecks": 37,
+    "institutionBoundary": "PASS",
+    "limitations": [
+      "No educator classroom or timing trial",
+      "No hosted cold-process/concurrency/server-memory measurement",
+      "Configured maximum/inactivity lifetime remains pending; natural JWT expiry was demonstrated historically"
+    ],
+    "initialHostedTestFailure": {
+      "reason": "The test polled with a verification session ended by its own genuine logout. Renewing the verification session on new learner login resolves the failure.",
+      "originalResponseRestored": true,
+      "appChangedForRerun": false
+    }
   }
 }

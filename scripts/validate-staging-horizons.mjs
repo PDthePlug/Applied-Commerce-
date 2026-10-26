@@ -58,6 +58,9 @@ async function login(credentials=learner){
   await page.getByLabel('Password',{exact:true}).fill(credentials.password);
   await page.locator('.auth-form').getByRole('button',{name:'Sign in',exact:true}).click();
   await page.locator('.auth-panel').getByRole('button',{name:'Sign out',exact:true}).waitFor({timeout:60000});
+  // The preceding genuine sign-out ends this account's older sessions too.
+  // Renew the read-only verification session instead of polling with a revoked JWT.
+  if(credentials.id===learner.id)verificationSession=await session(learner);
   return {context,page};
 }
 async function open(page){
