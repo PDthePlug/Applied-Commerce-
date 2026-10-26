@@ -5483,33 +5483,36 @@
       "grade": 10,
       "term": 4,
       "title": "REVIEW \u2014 WHERE WE HAVE BEEN",
-      "status": "PENDING_INDIVIDUAL_REVIEW",
-      "sourceAlignment": "PENDING",
-      "instructionalReview": "PENDING",
-      "contactPeriods": null,
-      "automated": "PENDING",
-      "genuineRole": "PENDING",
-      "printing": "PENDING",
-      "responsive": "PENDING",
+      "status": "PRIVATE_DRAFT_PENDING_SEALING_AND_GENUINE_VERIFICATION",
+      "sourceAlignment": "Every actual learner block read; source/schema/activity and actual ContentBlocks insertion PASS",
+      "instructionalReview": "Individual preparation, brief cues, local support and later work authored; genuine hosted review pending",
+      "contactPeriods": 1,
+      "automated": "Private source/schema/actual-renderer insertion PASS",
+      "genuineRole": "NOT RUN: private draft only",
+      "printing": "NOT RUN",
+      "responsive": "NOT RUN",
       "issues": [
-        "Individual source/instructional review and genuine staging verification remain pending"
-      ]
+        "Individual source/instructional review and genuine staging verification remain pending",
+        "Original-key staging release and genuine acceptance pending"
+      ],
+      "timingStatus": "PROVISIONAL; educator trials pending"
     },
     {
       "lessonId": "g10-t4-l60-060",
       "grade": 10,
       "term": 4,
       "title": "WHAT IS FINANCIAL INDEPENDENCE? \u2014 MYAH'S EQUATION",
-      "status": "PENDING_INDIVIDUAL_REVIEW",
-      "sourceAlignment": "PENDING",
-      "instructionalReview": "PENDING",
-      "contactPeriods": null,
-      "automated": "PENDING",
-      "genuineRole": "PENDING",
-      "printing": "PENDING",
-      "responsive": "PENDING",
+      "status": "PRIVATE_DRAFT_PENDING_SEALING_AND_GENUINE_VERIFICATION",
+      "sourceAlignment": "Every actual learner block read; source/schema/activity and actual ContentBlocks insertion PASS",
+      "instructionalReview": "Individual preparation, brief cues, local support and later work authored; genuine hosted review pending",
+      "contactPeriods": 1,
+      "automated": "Private source/schema/actual-renderer insertion PASS",
+      "genuineRole": "NOT RUN: private draft only",
+      "printing": "NOT RUN",
+      "responsive": "NOT RUN",
       "issues": [
-        "Individual source/instructional review and genuine staging verification remain pending"
+        "Individual source/instructional review and genuine staging verification remain pending",
+        "Original-key staging release and genuine acceptance pending"
       ],
       "responseStructureReview": {
         "status": "OWNER_APPROVED_FIX_PASSES_GENUINE_STAGING",
@@ -5517,109 +5520,224 @@
         "genuineDiagnosis": true,
         "fixApplied": "Genuine staging; original answer identity and older combined answers retained",
         "results": "docs/programme-rollout/g10-t4-opening/RESPONSE60_RESULTS.json"
-      }
+      },
+      "editorialReview": {
+        "status": "SEPARATE_UNAPPLIED_PROPOSALS_REQUIRE_REVIEW",
+        "proposals": [
+          {
+            "register": "docs/programme-rollout/SOURCE_EDITORIAL_REGISTER.json",
+            "entry": 227,
+            "blockId": "2218469cfb35bf963df8619f-1",
+            "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+          }
+        ],
+        "withdrawn": []
+      },
+      "timingStatus": "PROVISIONAL; educator trials pending"
     },
     {
       "lessonId": "g10-t4-l61-061",
       "grade": 10,
       "term": 4,
       "title": "MULTIPLE INCOME STREAMS \u2014 THEMBA'S FOUR STREAMS AND THE ONE THAT FAILED",
-      "status": "PENDING_INDIVIDUAL_REVIEW",
-      "sourceAlignment": "PENDING",
-      "instructionalReview": "PENDING",
-      "contactPeriods": null,
-      "automated": "PENDING",
-      "genuineRole": "PENDING",
-      "printing": "PENDING",
-      "responsive": "PENDING",
+      "status": "PRIVATE_DRAFT_PENDING_SEALING_AND_GENUINE_VERIFICATION",
+      "sourceAlignment": "Every actual learner block read; source/schema/activity and actual ContentBlocks insertion PASS",
+      "instructionalReview": "Individual preparation, brief cues, local support and later work authored; genuine hosted review pending",
+      "contactPeriods": 1,
+      "automated": "Private source/schema/actual-renderer insertion PASS",
+      "genuineRole": "NOT RUN: private draft only",
+      "printing": "NOT RUN",
+      "responsive": "NOT RUN",
       "issues": [
-        "Individual source/instructional review and genuine staging verification remain pending"
-      ]
+        "Individual source/instructional review and genuine staging verification remain pending",
+        "Original-key staging release and genuine acceptance pending"
+      ],
+      "editorialReview": {
+        "status": "SEPARATE_UNAPPLIED_PROPOSALS_REQUIRE_REVIEW",
+        "proposals": [
+          {
+            "register": "docs/programme-rollout/SOURCE_EDITORIAL_REGISTER.json",
+            "entry": 228,
+            "blockId": "badc44bf53786cf6a0ebf1cf-1",
+            "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+          },
+          {
+            "register": "docs/programme-rollout/SOURCE_EDITORIAL_REGISTER.json",
+            "entry": 229,
+            "blockId": "5eff82dd6e85edf75c91e92b-1",
+            "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+          },
+          {
+            "register": "docs/programme-rollout/SOURCE_EDITORIAL_REGISTER.json",
+            "entry": 230,
+            "blockId": "fafd91922a4fe0f922cbffd6-1",
+            "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+          }
+        ],
+        "withdrawn": []
+      },
+      "sourceAccuracy": {
+        "status": "MATERIAL_SOURCE_CORRECTION_PENDING_OWNER_REVIEW",
+        "concern": "The surviving job contradicts the source statement that only owned streams survived; the store status also conflicts across table and prose.",
+        "register": "docs/programme-rollout/g10-t4-59-66/editorial-proposals.json",
+        "teacherGuideVerificationDoesNotCertifyCanonicalCase": true
+      },
+      "timingStatus": "PROVISIONAL; educator trials pending"
     },
     {
       "lessonId": "g10-t4-l62-062",
       "grade": 10,
       "term": 4,
       "title": "PASSIVE INCOME \u2014 ZOLA'S STORY",
-      "status": "PENDING_INDIVIDUAL_REVIEW",
-      "sourceAlignment": "PENDING",
-      "instructionalReview": "PENDING",
-      "contactPeriods": null,
-      "automated": "PENDING",
-      "genuineRole": "PENDING",
-      "printing": "PENDING",
-      "responsive": "PENDING",
+      "status": "PRIVATE_DRAFT_PENDING_SEALING_AND_GENUINE_VERIFICATION",
+      "sourceAlignment": "Every actual learner block read; source/schema/activity and actual ContentBlocks insertion PASS",
+      "instructionalReview": "Individual preparation, brief cues, local support and later work authored; genuine hosted review pending",
+      "contactPeriods": 1,
+      "automated": "Private source/schema/actual-renderer insertion PASS",
+      "genuineRole": "NOT RUN: private draft only",
+      "printing": "NOT RUN",
+      "responsive": "NOT RUN",
       "issues": [
-        "Individual source/instructional review and genuine staging verification remain pending"
-      ]
+        "Individual source/instructional review and genuine staging verification remain pending",
+        "Original-key staging release and genuine acceptance pending"
+      ],
+      "editorialReview": {
+        "status": "SEPARATE_UNAPPLIED_PROPOSALS_REQUIRE_REVIEW",
+        "proposals": [
+          {
+            "register": "docs/programme-rollout/SOURCE_EDITORIAL_REGISTER.json",
+            "entry": 231,
+            "blockId": "566553d1f1d7097d911e5b11-1",
+            "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+          },
+          {
+            "register": "docs/programme-rollout/SOURCE_EDITORIAL_REGISTER.json",
+            "entry": 232,
+            "blockId": "72b04635cfa79b0e615e3fa1-1",
+            "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+          },
+          {
+            "register": "docs/programme-rollout/SOURCE_EDITORIAL_REGISTER.json",
+            "entry": 233,
+            "blockId": "20ad23bc6ec48ff5f96a3a4c-1",
+            "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+          }
+        ],
+        "withdrawn": []
+      },
+      "timingStatus": "PROVISIONAL; educator trials pending"
     },
     {
       "lessonId": "g10-t4-l63-063",
       "grade": 10,
       "term": 4,
       "title": "SCALING \u2014 THEMBA AND MR. PATEL ON THE FACTORY FLOOR",
-      "status": "PENDING_INDIVIDUAL_REVIEW",
-      "sourceAlignment": "PENDING",
-      "instructionalReview": "PENDING",
-      "contactPeriods": null,
-      "automated": "PENDING",
-      "genuineRole": "PENDING",
-      "printing": "PENDING",
-      "responsive": "PENDING",
+      "status": "PRIVATE_DRAFT_PENDING_SEALING_AND_GENUINE_VERIFICATION",
+      "sourceAlignment": "Every actual learner block read; source/schema/activity and actual ContentBlocks insertion PASS",
+      "instructionalReview": "Individual preparation, brief cues, local support and later work authored; genuine hosted review pending",
+      "contactPeriods": 1,
+      "automated": "Private source/schema/actual-renderer insertion PASS",
+      "genuineRole": "NOT RUN: private draft only",
+      "printing": "NOT RUN",
+      "responsive": "NOT RUN",
       "issues": [
-        "Individual source/instructional review and genuine staging verification remain pending"
-      ]
+        "Individual source/instructional review and genuine staging verification remain pending",
+        "Original-key staging release and genuine acceptance pending"
+      ],
+      "editorialReview": {
+        "status": "SEPARATE_UNAPPLIED_PROPOSALS_REQUIRE_REVIEW",
+        "proposals": [
+          {
+            "register": "docs/programme-rollout/SOURCE_EDITORIAL_REGISTER.json",
+            "entry": 234,
+            "blockId": "bc5b7cc9e8583c0c0d98e845-1",
+            "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+          }
+        ],
+        "withdrawn": []
+      },
+      "timingStatus": "PROVISIONAL; educator trials pending"
     },
     {
       "lessonId": "g10-t4-l64-064",
       "grade": 10,
       "term": 4,
       "title": "ENTREPRENEURSHIP VS EMPLOYMENT \u2014 THE FORK REVISITED",
-      "status": "PENDING_INDIVIDUAL_REVIEW",
-      "sourceAlignment": "PENDING",
-      "instructionalReview": "PENDING",
-      "contactPeriods": null,
-      "automated": "PENDING",
-      "genuineRole": "PENDING",
-      "printing": "PENDING",
-      "responsive": "PENDING",
+      "status": "PRIVATE_DRAFT_PENDING_SEALING_AND_GENUINE_VERIFICATION",
+      "sourceAlignment": "Every actual learner block read; source/schema/activity and actual ContentBlocks insertion PASS",
+      "instructionalReview": "Individual preparation, brief cues, local support and later work authored; genuine hosted review pending",
+      "contactPeriods": 1,
+      "automated": "Private source/schema/actual-renderer insertion PASS",
+      "genuineRole": "NOT RUN: private draft only",
+      "printing": "NOT RUN",
+      "responsive": "NOT RUN",
       "issues": [
-        "Individual source/instructional review and genuine staging verification remain pending"
-      ]
+        "Individual source/instructional review and genuine staging verification remain pending",
+        "Original-key staging release and genuine acceptance pending"
+      ],
+      "editorialReview": {
+        "status": "SEPARATE_UNAPPLIED_PROPOSALS_REQUIRE_REVIEW",
+        "proposals": [
+          {
+            "register": "docs/programme-rollout/SOURCE_EDITORIAL_REGISTER.json",
+            "entry": 235,
+            "blockId": "26fbba5a743ecc8155acb44c-1",
+            "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+          }
+        ],
+        "withdrawn": []
+      },
+      "timingStatus": "PROVISIONAL; educator trials pending"
     },
     {
       "lessonId": "g10-t4-l65-065",
       "grade": 10,
       "term": 4,
       "title": "ETHICS AND MONEY \u2014 MR. MOLOI AT MAMA ROSE'S KITCHEN",
-      "status": "PENDING_INDIVIDUAL_REVIEW",
-      "sourceAlignment": "PENDING",
-      "instructionalReview": "PENDING",
-      "contactPeriods": null,
-      "automated": "PENDING",
-      "genuineRole": "PENDING",
-      "printing": "PENDING",
-      "responsive": "PENDING",
+      "status": "PRIVATE_DRAFT_PENDING_SEALING_AND_GENUINE_VERIFICATION",
+      "sourceAlignment": "Every actual learner block read; source/schema/activity and actual ContentBlocks insertion PASS",
+      "instructionalReview": "Individual preparation, brief cues, local support and later work authored; genuine hosted review pending",
+      "contactPeriods": 1,
+      "automated": "Private source/schema/actual-renderer insertion PASS",
+      "genuineRole": "NOT RUN: private draft only",
+      "printing": "NOT RUN",
+      "responsive": "NOT RUN",
       "issues": [
-        "Individual source/instructional review and genuine staging verification remain pending"
-      ]
+        "Individual source/instructional review and genuine staging verification remain pending",
+        "Original-key staging release and genuine acceptance pending"
+      ],
+      "timingStatus": "PROVISIONAL; educator trials pending"
     },
     {
       "lessonId": "g10-t4-l66-066",
       "grade": 10,
       "term": 4,
       "title": "SOCIALLY RESPONSIBLE INVESTING \u2014 ATLEHANG'S QUESTION",
-      "status": "PENDING_INDIVIDUAL_REVIEW",
-      "sourceAlignment": "PENDING",
-      "instructionalReview": "PENDING",
-      "contactPeriods": null,
-      "automated": "PENDING",
-      "genuineRole": "PENDING",
-      "printing": "PENDING",
-      "responsive": "PENDING",
+      "status": "PRIVATE_DRAFT_PENDING_SEALING_AND_GENUINE_VERIFICATION",
+      "sourceAlignment": "Every actual learner block read; source/schema/activity and actual ContentBlocks insertion PASS",
+      "instructionalReview": "Individual preparation, brief cues, local support and later work authored; genuine hosted review pending",
+      "contactPeriods": 1,
+      "automated": "Private source/schema/actual-renderer insertion PASS",
+      "genuineRole": "NOT RUN: private draft only",
+      "printing": "NOT RUN",
+      "responsive": "NOT RUN",
       "issues": [
-        "Individual source/instructional review and genuine staging verification remain pending"
-      ]
+        "Individual source/instructional review and genuine staging verification remain pending",
+        "Original-key staging release and genuine acceptance pending"
+      ],
+      "editorialReview": {
+        "status": "SEPARATE_UNAPPLIED_PROPOSALS_REQUIRE_REVIEW",
+        "proposals": [
+          {
+            "register": "docs/programme-rollout/SOURCE_EDITORIAL_REGISTER.json",
+            "entry": 236,
+            "blockId": "c5ddd65b33f3b28c6779c885-1",
+            "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+          }
+        ],
+        "withdrawn": []
+      },
+      "timingStatus": "PROVISIONAL; educator trials pending"
     },
     {
       "lessonId": "g10-t4-l67-067",
@@ -8620,7 +8738,7 @@
       ]
     }
   ],
-  "privateDraftsPrepared": 0,
+  "privateDraftsPrepared": 8,
   "newCompleted": 191,
   "stagedPendingVerification": 0
 }

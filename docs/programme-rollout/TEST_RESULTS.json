@@ -29,13 +29,13 @@
   "rollout": {
     "existingPlans": 24,
     "newCompleted": 191,
-    "privateUnsealedDrafts": 0,
+    "privateUnsealedDrafts": 8,
     "uncompleted": 180,
     "blocker": null,
     "stagedPendingVerification": 0
   },
   "pending": [
-    "Remaining 180 guides to complete in verified staging",
+    "Remaining 180 guides to complete in verified staging; eight have private individually reviewed drafts",
     "Educator timing trials",
     "Hosted cold-process/server-memory measurements",
     "Configured maximum/inactivity session lifetime"

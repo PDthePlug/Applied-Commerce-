@@ -1,6 +1,6 @@
 # Applied Commerce classroom rollout
 
-**215 of 395 lessons have individually reviewed support in verified staging; 180 remain.** All Grade 8 and Grade 9 lessons, all Grade 10 Terms 1–3 lessons, and the unchanged Grade 11 and Grade 12 benchmarks are covered. No additional private drafts are counted at this observation. Completion records source/instructional review and demonstrated staging checks, not educator classroom/timing trials.
+**215 of 395 lessons have individually reviewed support in verified staging; 180 remain.** All Grade 8 and Grade 9 lessons, all Grade 10 Terms 1–3 lessons, and the unchanged Grade 11 and Grade 12 benchmarks are covered. Eight further Grade 10 Term 4 guides have individual private drafts and remain uncompleted pending sealed genuine staging acceptance. Completion records source/instructional review and demonstrated staging checks, not educator classroom/timing trials.
 
 215-guide batch acceptance staging: https://applied-commerce-sa-staging-mxbx5n52f.vercel.app . Deployment protection and genuine application login apply. Tested application/content commit: `8c0f4e7916802a095ec0cd4db880dd73288a4283`. Later evidence-only commits do not imply a different deployed application. [PR #74](https://github.com/PDthePlug/Applied-Commerce-/pull/74) follows the recorded PR stack; no agent merge or separate live deployment occurred.
 

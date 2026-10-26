@@ -1,6 +1,6 @@
 # Programme rollout from PR #48
 
-**215 of 395 lessons have individually reviewed support in verified staging; 180 remain.** All Grade 8 and Grade 9 lessons, all Grade 10 Terms 1–3 lessons, and the unchanged Grade 11 and Grade 12 benchmarks are covered. No additional private drafts are counted at this observation.
+**215 of 395 lessons have individually reviewed support in verified staging; 180 remain.** All Grade 8 and Grade 9 lessons, all Grade 10 Terms 1–3 lessons, and the unchanged Grade 11 and Grade 12 benchmarks are covered. Eight further Grade 10 Term 4 guides have individual private drafts and remain uncompleted pending sealed genuine staging acceptance.
 
 [PR #74](https://github.com/PDthePlug/Applied-Commerce-/pull/74) contains the current batch on its follow-up stack. No merge or separate live deployment was performed by this work. Educator classroom review and timing trials remain pending.
 
