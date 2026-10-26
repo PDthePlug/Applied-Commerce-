@@ -1,6 +1,6 @@
 # Grade 10 Term 4: Lessons 59–66
 
-Every actual learner block was read before individual authoring: 383 blocks across eight lessons. Private source/schema/activity and actual ContentBlocks insertion checks pass. These remain uncompleted until original-key sealing and genuine hosted acceptance. All 215 preceding bindings compare identical in private assembly.
+Every actual learner block was read before individual authoring: 383 blocks across eight lessons. Private source/schema/activity and actual ContentBlocks insertion checks pass. These are sealed under the original server-bound key and remain uncompleted until genuine hosted acceptance. All 215 preceding bindings compare identical in the sealed release and all eight new hashes match their private drafts.
 
 | Lesson | Individual instructional review | Provisional contacts |
 | --- | --- | ---: |
