@@ -1,4 +1,5 @@
 import { responseView } from "./response-identity";
+import { displayHorizonResponse } from "./horizon-response";
 import type { ContentBlock, UnitContent } from "./types";
 
 export type PortfolioDefinition = {
@@ -169,7 +170,7 @@ export function responsesForPortfolio(
       return {
         key,
         label:responseLabelForBlock(block,slot),
-        value,
+        value:displayHorizonResponse(`${unit.id}::prompt-${block.id}::${slot}`,value),
       };
     })
     .filter((item):item is PortfolioResponse=>Boolean(item));

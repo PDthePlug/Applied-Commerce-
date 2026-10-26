@@ -9,7 +9,7 @@ const moduleUrl=(file,replacements={})=>{
 };
 const identityUrl=moduleUrl('lib/response-identity.ts');
 const {responseView,persistResponseKey,parseLearningState}=await import(identityUrl);
-const {buildPortfolioDefinitions,responsesForPortfolio}=await import(moduleUrl('lib/portfolio-model.ts',{'./response-identity':identityUrl}));
+const {buildPortfolioDefinitions,responsesForPortfolio}=await import(moduleUrl('lib/portfolio-model.ts',{'./response-identity':identityUrl,'./horizon-response':moduleUrl('lib/horizon-response.ts')}));
 const unit='g8-t1-l01-001';
 test('runtime curriculum bypasses stale HTTP files and supplies identities to answer fields',async()=>{
  const originalFetch=globalThis.fetch;

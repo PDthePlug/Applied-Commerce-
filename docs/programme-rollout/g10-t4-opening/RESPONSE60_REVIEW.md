@@ -1,4 +1,4 @@
-# Lesson 60 response structure: separate owner decision
+# Lesson 60 response structure: owner-approved separate staging fix
 
 Genuine staging password login confirms that the four existing horizons render as one flat group containing 24 options. Clicking one `Dependent` checks all four identical controls. A fresh password login reproduces the same ambiguity. The original synthetic value was restored. This is an existing response defect, not a learner-source inaccuracy or a passing acceptance result.
 
@@ -12,4 +12,4 @@ Proposed separate staging fix:
 - Show readable horizon labels and values in educator review, portfolio and print. Do not expose JSON metadata in learner-facing evidence.
 - Preserve revision checks, permissions, focus and keyboard access. Verify each horizon independently through editing, clearing, reload and fresh genuine login; verify older combined answers, assigned educator review and unrelated/revoked denial.
 
-This changes the response representation and goes beyond the authorised checkpoint presentation refinement. No fix, migration, new response key or source rewrite has been applied. Owner decision is needed before implementing this separate response-format change. Lesson 60 remains blocked for full digital acceptance; the other Term 4 lessons can proceed. If deferred, ordinary personal written working can support the original activity, but that does not demonstrate independent digital horizon persistence.
+This changes the response representation and goes beyond the authorised checkpoint presentation refinement. The owner-approved response fix is implemented for staging verification. No migration, new response key or source rewrite is applied. The owner explicitly approved implementing this separate staging fix on 2026-10-26, preserving older answers. A local implementation passes independent-choice, retained-answer and print checks; genuine hosted acceptance is pending. Lesson 60 remains uncompleted until its guide and full acceptance pass; the other Term 4 lessons can proceed. If deferred, ordinary personal written working can support the original activity, but that does not demonstrate independent digital horizon persistence.

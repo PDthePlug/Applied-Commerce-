@@ -44,6 +44,26 @@
 .rating-options button{flex:0 0 44px;min-height:44px;border:1px solid #bbc5bf;border-radius:9px;background:#fff;color:var(--ink);font-size:14px;font-weight:700}
 .rating-options button[aria-pressed="true"],.values-options button[aria-pressed="true"]{border-color:var(--teal);background:#edf5f2;box-shadow:inset 0 0 0 1px var(--teal);color:var(--teal)}
 .rating-control{display:grid;gap:8px;min-width:0}
+/* Four authored time horizons share their original single saved answer key. */
+.horizon-choices{display:grid;gap:20px;margin:20px 0 28px;min-width:0}
+.horizon-choice{min-width:0;margin:0;padding:0 0 16px;border:0;border-bottom:1px solid var(--line)}
+.horizon-choice legend{padding:0;margin-bottom:8px;font-weight:650;font-size:calc(16px * var(--ac-text-scale));color:var(--ink)}
+.horizon-options{display:flex;flex-wrap:wrap;column-gap:20px;row-gap:2px}
+.horizon-options label{display:flex;align-items:center;gap:9px;min-height:44px;max-width:100%;color:var(--ink);font-size:calc(16px * var(--ac-text-scale));cursor:pointer}
+.horizon-options input{flex:none;width:18px;height:18px;margin:0;accent-color:var(--teal)}
+.horizon-options span{overflow-wrap:anywhere}
+.horizon-options input:focus-visible{outline:3px solid var(--teal);outline-offset:4px}
+.horizon-clear{min-height:44px;margin-top:4px;padding:8px 0;border:0;background:transparent;color:var(--teal);font-size:calc(14px * var(--ac-text-scale));text-decoration:underline;text-underline-offset:3px;text-align:left}
+.horizon-choices .previous-combined-response p{white-space:pre-wrap;overflow-wrap:anywhere}
+.horizon-previous-print{display:none;white-space:pre-wrap;overflow-wrap:anywhere}
+@media print{
+ .horizon-choice{break-inside:avoid}
+ .horizon-clear,.horizon-choices .response-status{display:none}
+ .horizon-options input:checked+span{font-weight:750}
+ .horizon-options input:checked+span::after{content:" (selected)"}
+ .horizon-choices .previous-combined-response{display:none}
+ .horizon-previous-print{display:block}
+}
 .rating-cell{min-width:260px}
 .ranking-control ol{display:grid;gap:8px;list-style:none;padding:0;margin:16px 0}
 .ranking-control li{display:grid;grid-template-columns:26px minmax(0,1fr) 96px;align-items:center;gap:10px;min-height:64px;margin:0;padding:10px;border:1px solid var(--line);border-radius:10px}

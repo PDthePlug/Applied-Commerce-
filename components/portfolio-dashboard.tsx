@@ -6,6 +6,7 @@ import { curriculum } from "@/lib/curriculum";
 import type { GradeIndex, UnitContent, UnitSummary } from "@/lib/types";
 import { buildPortfolioDefinitions, responsesForPortfolio } from "@/lib/portfolio-model";
 import { buildEvidenceRecords } from "@/lib/evidence/engine";
+import { displayHorizonResponse } from "@/lib/horizon-response";
 import { useEvidenceReviewStore } from "@/lib/evidence/review-store";
 import { PortfolioSynthesis } from "@/components/portfolio-synthesis";
 import { createClient } from "@/lib/supabase/client";
@@ -106,7 +107,7 @@ export function PortfolioDashboard(){
     unitId:unit.id,
     createdAt:state.promptResponseUpdatedAt?.[record.responseKey],
     domain:record.definition.domains,
-    response:record.responseValue,
+    response:displayHorizonResponse(record.responseKey,record.responseValue),
     feedback:reviews[record.responseKey]?.feedback,
     reviewedStatus:reviews[record.responseKey]?.status,
     portfolioInterpretation:reviews[record.responseKey]?.portfolioInterpretation,
