@@ -1,0 +1,13 @@
+# Focused source and preservation checks
+
+- 67: the case intentionally pairs return and positive impact. SRI screening and impact intent can overlap. A thesis percentage is a labelled assumption, not a verified available return; the story’s figures remain case data. No current investment-performance or product claim is certified. The fuel metaphor remains.
+- 68: the four-circle model is a revisable personal-development perspective. Do not require a final career answer or a claim that all valuable work earns income. The specific plan reference precedes the formal launch; a separate contextual wording proposal uses existing vision/system work now.
+- 69: the table has exactly 13 sections, rather than the earlier ten-component system. The source launches the project; later workshops carry actual design. A commitment should not become an unaffordable or legally binding action.
+- 70: the actual current source explicitly labels its equation a planning prompt, not a numerical formula. Preserve five tasks, three goals and the eight-component evidence list. Research questions and smaller feasible actions are already authored.
+- 71–74: use their actual checkpoint-suffix IDs, not IDs derived from numbers. Actual SSR gives 16, 15, 15 and 12 written controls respectively; none is added or split. The existing log-removal protection remains.
+- 71: the model subtracts earning costs and keeps future returns uncertain. The fictional-budget option and no purchase/account/borrowing/privacy instruction are already in the learner text. Current unavailable provider information remains unverified instead of being invented.
+- 72: the original fictional-person option, private-document restriction and consultation-question alternative remain. Earlier examples do not certify current insurance, tax, retirement or estate rules; unresolved earlier accuracy flags stay separate.
+- 73: feedback must actually occur before using this workshop’s reflection as evidence of that feedback. The navigator supports the backward revisit. Three justified retentions are permitted; no defects or rejected suggestions need be manufactured. The checkpoint’s assumed declined suggestion has a separate conditional-wording proposal.
+- 74: the actual source requires connected sections and traceable evidence, not the most pages. Accidental project duplicates may be removed without deleting saved answers or the earlier draft. A presentation demonstrates present reasoning, not future returns.
+
+No new editable table target occurs in this batch. All original written controls, activities, source identities and sequence remain. Local technical evidence does not substitute for genuine hosted acceptance or educator timing trials. No canonical editorial proposal is applied.
