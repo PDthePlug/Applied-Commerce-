@@ -1,5 +1,5 @@
 {
-  "scope": "Separate source review in the full-programme rollout; all Grade10 Term3 sources read, guides through48 individually drafted",
+  "scope": "Separate source review during the full-programme rollout; all Grade10 Term3 lessons individually read and drafted",
   "sourceChangesApplied": false,
   "entries": [
     {
@@ -2726,6 +2726,26 @@
           "exactPassage": "If you died without a will, who would get your belongings under the law? Is that who you would choose? If not, what is one thing you will do this year to change that?"
         }
       ]
+    },
+    {
+      "lessonId": "g10-t3-l52-052",
+      "blockId": "7f4e116e2c8375591e9754a9-1",
+      "exactPassage": "Myah points at it. \"This is your weakest link. You have R500 a month going to savings. What if R100 of that went to an RA? You would still save R400. And you would start retirement. The tax benefit alone would give you back about R18 per month. That is free money. From the government. For doing something you should be doing anyway.\"",
+      "category": "Missing tax-benefit conditions",
+      "concern": "The R18 monthly equivalent assumes an eligible R100 monthly contribution and sufficient liability at an 18% marginal rate. Total taxable income is unspecified. The source calls it free money from government without conditions.",
+      "proposedWording": "If the contribution qualifies and offsets sufficient income taxed at 18%, R1,200 a year can reduce tax by R216 a year, equivalent to R18 a month. This reduces tax owed rather than guaranteeing a government payment. Check actual resources, tax liability and current conditions before relying on the benefit.",
+      "implementationImpact": "Separate owner-reviewed source proposal only; retain canonical block/prompt identities and response count. Local support supplies the relevant qualification. No learner rewrite is applied by the teacher-support batch.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g10-t3-l55-055",
+      "blockId": "f3d250a5d36fe099d2dcd875-1",
+      "exactPassage": "9. The Scale: At the start of the term, you were a \"1\" on the systems literacy scale. Where are you now \u2014 honestly? What is the exact number? What is the ONE thing you need to do in Term 4 to move up by a single point?",
+      "category": "Self-rating context, not material mathematical error",
+      "concern": "The starting 1 is a reflection frame rather than an observed baseline. Do not force a score increase or treat the exact number as an externally measured diagnostic. The personal-development purpose is retained.",
+      "proposedWording": "Use the scale as a reflection frame. Give your honest present self-rating and explain one useful next step for Term 4. The starting 1 is not a measured assessment, and no additional baseline field is required.",
+      "implementationImpact": "Separate owner-reviewed source proposal only; retain canonical block/prompt identities and response count. Local support supplies the relevant qualification. No learner rewrite is applied by the teacher-support batch.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
     }
   ],
   "retainedPerspectives": [
