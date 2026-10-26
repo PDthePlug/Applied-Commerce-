@@ -2,7 +2,7 @@
 
 **215 of 395 lessons have individually reviewed support in verified staging; 180 remain.** All Grade 8 and Grade 9 lessons, all Grade 10 Terms 1–3 lessons, and the unchanged Grade 11 and Grade 12 benchmarks are covered. No additional private drafts are counted at this observation. Completion records source/instructional review and demonstrated staging checks, not educator classroom/timing trials.
 
-Current staging: https://applied-commerce-sa-staging-mxbx5n52f.vercel.app . Deployment protection and genuine application login apply. Tested application/content commit: `8c0f4e7916802a095ec0cd4db880dd73288a4283`. Later evidence-only commits do not imply a different deployed application. [PR #74](https://github.com/PDthePlug/Applied-Commerce-/pull/74) follows the recorded PR stack; no agent merge or separate live deployment occurred.
+215-guide batch acceptance staging: https://applied-commerce-sa-staging-mxbx5n52f.vercel.app . Deployment protection and genuine application login apply. Tested application/content commit: `8c0f4e7916802a095ec0cd4db880dd73288a4283`. Later evidence-only commits do not imply a different deployed application. [PR #74](https://github.com/PDthePlug/Applied-Commerce-/pull/74) follows the recorded PR stack; no agent merge or separate live deployment occurred.
 
 ## Programme preservation and instructional review
 
@@ -52,3 +52,7 @@ The separate rollout editorial register contains 226 historical entries: 220 act
 55 genuine sequential authenticated requests include 50 to additions: median 873ms, range 574–1433ms, 6426–12209 decoded bytes. These proxy-observed samples do not prove cold starts, cache hits, concurrency, hosted memory or a causal effect of release size. Build RSS 312,246,272 bytes is build-only. Requests still open/validate the whole release after current authorisation. [Architecture recommendations](CONTENT_DELIVERY_SCALE.md) propose measured evaluation of smaller authenticated releases, versioned manifests and bounded caching with fresh authorisation; no production architecture change is implemented.
 
 Natural JWT expiry was genuinely demonstrated in earlier evidence. Configured maximum/inactivity lifetime, hosted cold/concurrency/server-memory measurements and educator trials remain pending. Owner approval is required for merging the stack or deploying the separate live application. No production learner records, database migrations or Zimbabwe application changes are made.
+
+## Subsequent owner-approved response repair
+
+[PR #76](https://github.com/PDthePlug/Applied-Commerce-/pull/76) passes genuine staging for independent Lesson 60 horizons while retaining previous combined answers and the original single saved identity. Current repair staging is https://applied-commerce-sa-staging-ojx6i0k3g.vercel.app at `eb68e7e4b0e571e748eb84bd2f9c6a5d3da54b9a`. [Repair report](g10-t4-opening/RESPONSE60_REPORT.md) distinguishes the dedicated genuine journeys and six-reference regression from the prior 15-lesson batch acceptance above. The original 215-guide release files are byte-identical. Owner PR #75 merged the prior stack; no agent merge occurred. Coverage remains 215 of 395.

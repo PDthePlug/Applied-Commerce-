@@ -10,7 +10,8 @@ import { cleanMarkup, isRemovedLogBlock, sanitizeRemovedLogReferences } from "@/
 import { DeepeningInsightPanel, LearningNotice, LearningOutcomesIntro, LessonSectionHeading, PortfolioCaptureNotice, ResponseSurface, StoryHeading, ThinkingEquationNotice } from "./presentation-system";
 import outcomeIcons from "@/lib/lesson-outcome-icons.json";
 import { authoredScale, choiceMeaning, learningSections, sourceCopy, valueSelection } from "@/lib/semantic-learning";
-import { RankingControl, RatingControl, ValuesControl } from "./semantic-controls";
+import { HorizonChoicesControl, RankingControl, RatingControl, ValuesControl } from "./semantic-controls";
+import { isFinancialHorizonPrompt } from "@/lib/horizon-response";
 
 type PromptContext = "activity" | "reflection" | "checkpoint" | "home" | null;
 type PromptMode = "checkpoint" | "home";
@@ -553,6 +554,8 @@ function ChoiceBlock({
   const prefix=(parts.shift()??"").trim();
   const options=parts.map(value=>value.trim()).filter(Boolean).filter(value=>!TENSION_RE.test(value));
   const choiceId=promptId(unitId,blockIndex,"choice");
+  if(unitId==="g10-t4-l60-060"&&isFinancialHorizonPrompt(cleaned)) return <HorizonChoicesControl
+    id={choiceId} value={promptResponses[choiceId]??""} onChange={value=>onSavePromptResponse(choiceId,value)}/>;
   const selected=(promptResponses[choiceId]??"").split("\n").map(value=>value.trim()).filter(Boolean);
   const meaning=choiceMeaning(cleaned,instruction);
   const singleChoice=meaning?.kind==="single";

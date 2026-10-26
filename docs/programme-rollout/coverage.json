@@ -5510,7 +5510,14 @@
       "responsive": "PENDING",
       "issues": [
         "Individual source/instructional review and genuine staging verification remain pending"
-      ]
+      ],
+      "responseStructureReview": {
+        "status": "OWNER_APPROVED_FIX_PASSES_GENUINE_STAGING",
+        "register": "docs/programme-rollout/g10-t4-opening/RESPONSE60_REVIEW.md",
+        "genuineDiagnosis": true,
+        "fixApplied": "Genuine staging; original answer identity and older combined answers retained",
+        "results": "docs/programme-rollout/g10-t4-opening/RESPONSE60_RESULTS.json"
+      }
     },
     {
       "lessonId": "g10-t4-l61-061",
