@@ -15,7 +15,8 @@
   "limitations": [
     "Stored fixture appearance differs across captures; these are usability evidence, not controlled colour/pixel comparisons.",
     "Whole tall-element screenshot at scale2 has fixed-chrome overlap; the separately captured first horizon and viewport captures provide the readable comparison.",
-    "All captures remain protected outside Git."
+    "All captures remain protected outside Git.",
+    "An old deployment-protection link initially redirected to Vercel; it was refreshed before the successful read-only before capture. This was separate from application authentication and network connectivity."
   ],
   "beforeAfterReadOnlyResponseWrites": 0
 }
