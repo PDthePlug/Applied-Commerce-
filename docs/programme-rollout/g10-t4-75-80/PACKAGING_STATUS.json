@@ -1,11 +1,11 @@
 {
-  "at": "2026-11-01T04:00:44.282332+00:00",
+  "at": "2026-11-01T04:28:19.156390+00:00",
   "projectRef": "inxshlumnhcgiahxqewe",
   "stagingVercelProject": "applied-commerce-sa-staging",
   "verifiedGuides": 231,
-  "privatePreparedGuides": 6,
+  "privatePreparedGuides": 0,
   "candidateGuideTotal": 237,
-  "candidateStatus": "UNSEALED; NOT COMPLETED",
+  "candidateStatus": "SEALED; PENDING GENUINE ACCEPTANCE",
   "ownerReaffirmedFullDirective": "2026-11-01",
   "local": {
     "runtime": "395 lessons / 4 assessments / 20766 stable blocks PASS",
@@ -24,17 +24,8 @@
     "editableAudienceTables": 1,
     "tableFreshLoginAndRestoration": "PASS"
   },
-  "blocker": {
-    "boundary": "Coding environment VERCEL_TOKEN authorization",
-    "httpStatus": 403,
-    "reason": "Not authorized: Trying to access resource under scope denvermpofu09-2813s-projects. Re-authenticate to this scope or use a token with access to this scope.",
-    "networkFailure": false,
-    "ownerRestorationReported": true,
-    "freshRequestAfterReport": "403; team-scope access still denied",
-    "connectedVercelAccess": "Project/deployment/environment metadata tools work; deletion endpoints not available",
-    "requiredCapability": "Coding token authorized for isolated staging team/project, including removal of temporary inputs and sealing deployment"
-  },
-  "privateSealingInputsCreated": false,
+  "blocker": null,
+  "privateSealingInputsCreated": true,
   "originalServerKeyBindingUnchanged": true,
   "temporaryInputs": 0,
   "keyDecryptionRequested": false,
@@ -47,10 +38,10 @@
     "acceptedBenchmarkPreserved": "g11-t1-l14-014"
   },
   "pending": [
-    "Original-key sealing and guarded normal build",
-    "Six-guide genuine placement, navigation, printing and responsive acceptance",
-    "Three-lesson closing sequence and original-letter return navigation",
-    "Educator timing and physical printer trials",
-    "Hosted cold-start/server-memory measurements"
-  ]
+    "Normal guarded staging build",
+    "Genuine six-guide placement, sequence, responsive, printing and learner-state validation",
+    "Educator timing, physical printer and hosted cold/server-memory trials"
+  ],
+  "stagedPendingVerification": 6,
+  "sealingAccess": "Coding Vercel token now reaches exact isolated project and supports creation/deletion; original server key used without export"
 }

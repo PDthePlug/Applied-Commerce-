@@ -1,6 +1,6 @@
 # Grade 10 Term 4: Lessons 75–80
 
-Every actual learner block was read before individual authoring: 54 blocks across six lessons. Private source/schema and actual ContentBlocks insertion checks pass, with all 231 prior bindings preserved. These six remain uncompleted until original-key packaging and genuine hosted acceptance pass. Technical validation does not confer educational approval or establish classroom timing.
+Every actual learner block was read before individual authoring: 54 blocks across six lessons. Private source/schema and actual ContentBlocks insertion checks pass, with all 231 prior bindings preserved. Original-key sealing now passes; these six remain uncompleted until genuine hosted acceptance passes. The earlier private plaintext drafts were absent in this environment. The six were renewed individually from the actual 54 learner blocks and this recorded instructional review; their new hashes do not purport to match the earlier unpublished drafts. All 231 prior sealed guides are preserved. Technical validation does not confer educational approval or establish classroom timing.
 
 | Lesson | Individual instructional review | Provisional contacts |
 | --- | --- | ---: |
