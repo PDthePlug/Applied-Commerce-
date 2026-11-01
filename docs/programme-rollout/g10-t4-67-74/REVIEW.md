@@ -1,6 +1,6 @@
 # Grade 10 Term 4: Lessons 67–74
 
-All 272 actual learner blocks were read before individual authoring. Source/schema/activity and actual ContentBlocks insertion checks pass; private assembly preserves all 223 previous bindings. These eight are sealed under the original server-bound key and remain uncompleted pending genuine hosted acceptance.
+All 272 actual learner blocks were read before individual authoring. Source/schema/activity and actual ContentBlocks insertion checks pass; private assembly preserves all 223 previous bindings. These eight are sealed under the original server-bound key and pass genuine hosted acceptance. All 223 prior bindings compare identical in full; all eight new hashes match the private drafts.
 
 | Lesson | Individual instructional review | Provisional contacts |
 | --- | --- | ---: |
@@ -18,3 +18,7 @@ Eight authored additions / twelve provisional contacts. The four second contacts
 The modern workshops retain their actual numbered task paragraphs and existing controls. Several cues share the same activity anchor because the five tasks belong to one original activity; period titles and task-number references distinguish the work without inventing new section boundaries or response identities. The single central navigator retains all anchors, including Lesson 73’s backward reflection revisit. Two focused source proposals remain separate and unapplied. No new compulsory activity, outcome, field or canonical wording is added.
 
 Actual-renderer correction before sealing: workshops 70–74 retain six visible log blanks under the newer heading. The earlier claim that the old log suppression covered them was inaccurate. Existing controls remain untouched and now receive a brief contextual later-work cue. No new experiment is added; any proposed removal is a separate response-structure decision.
+
+Genuine acceptance: 14 selected lessons / 948 exact fields / 143 navigator targets / 252 responsive cases. All 8 additions pass first-response edit/clear/reload/fresh-login persistence; this batch has no new editable-table target. Four additional original written-evidence journeys pass edit/clear/reload/fresh login, scoped educator review and synthetic-value restoration; three pass actual portfolio review. All thirty existing workshop-log controls remain visible. Complete integrated/fallback PDF text retains 1896 fields with none missing. See RESULTS.json and the protected capture hashes. Educator trials remain pending.
+
+The genuine suite completed on 26 October 2026. Representative protected mobile/desktop captures were inspected during the 1 November evidence review. Four two-period lessons pass opening/closing focus and continuation at 320 and 1280 pixels. All timings remain provisional.

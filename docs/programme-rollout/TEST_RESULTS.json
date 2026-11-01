@@ -28,54 +28,65 @@
   },
   "rollout": {
     "existingPlans": 24,
-    "newCompleted": 199,
+    "newCompleted": 207,
     "privateUnsealedDrafts": 0,
-    "uncompleted": 172,
+    "uncompleted": 164,
     "blocker": null,
-    "stagedPendingVerification": 8
+    "stagedPendingVerification": 0
   },
   "pending": [
-    "Remaining 172 guides to complete in verified staging; 8 have private individual drafts",
+    "Remaining 164 guides to complete in verified staging",
     "Educator timing trials",
     "Hosted cold-process/server-memory measurements",
     "Configured maximum/inactivity session lifetime"
   ],
   "latestBatch": {
     "projectRef": "inxshlumnhcgiahxqewe",
-    "totalPlans": 223,
-    "newCompletedAcrossRollout": 199,
-    "remaining": 172,
-    "testedCommit": "6771e483bd62f5ec9266449d5f67b2c6e656743b",
-    "stagingURL": "https://applied-commerce-sa-staging-56tll6sts.vercel.app",
-    "priorBindingsPreserved": 215,
+    "totalPlans": 231,
+    "newCompletedAcrossRollout": 207,
+    "remaining": 164,
+    "testedCommit": "c7942644eb01a126b06ac741b414e4556f002539",
+    "stagingURL": "https://applied-commerce-sa-staging-4dtu6xm7x.vercel.app",
+    "priorBindingsPreserved": 223,
     "newPlans": 8,
     "directClassroomPlans": 14,
-    "directFields": 943,
-    "navigatorTargets": 137,
+    "directFields": 948,
+    "navigatorTargets": 143,
     "responsiveCombinations": 252,
     "newFirstResponsePersistence": 8,
-    "renderedTablesVerified": 2,
-    "tableFreshLoginPersistence": 2,
-    "nativeIncomeRatings": 3,
-    "incomeRatingPersistenceAndScopedReview": true,
-    "nativeInlineRankings": 2,
-    "earlierSeparateInstructionRankingRegression": true,
-    "rankingClear": "Supported learner RPC only; no browser clear-all control claimed",
-    "horizonResponseRepair": {
-      "genuineFreshLogin": true,
-      "priorCombinedRetainedVerbatim": true,
-      "actualPortfolioAndEducatorReview": true,
-      "physicalLearnerPrint": true,
-      "originalRestored": true
-    },
+    "renderedTablesVerified": 0,
+    "tableFreshLoginPersistence": 0,
+    "existingWorkshopLogLessons": 5,
+    "existingWorkshopLogControls": 30,
+    "additionalWrittenEvidenceJourneys": 4,
+    "actualPortfolioJourneys": 3,
+    "workshopEvidenceFreshLoginAndScopedReview": true,
+    "syntheticValuesRestored": true,
     "approved24Unchanged": true,
     "integratedPDFs": 14,
-    "integratedPDFPages": 88,
+    "integratedPDFPages": 90,
     "fallbacks": 14,
-    "fallbackPDFPages": 93,
-    "pdfTextFields": 1886,
+    "fallbackPDFPages": 91,
+    "pdfTextFields": 1896,
     "pdfMissing": 0,
-    "multiPeriodLessons": [],
+    "multiPeriodLessons": [
+      {
+        "lessonId": "g10-t4-l70-070",
+        "periodCount": 2
+      },
+      {
+        "lessonId": "g10-t4-l71-checkpoint-20261004",
+        "periodCount": 2
+      },
+      {
+        "lessonId": "g10-t4-l73-checkpoint-20261004",
+        "periodCount": 2
+      },
+      {
+        "lessonId": "g10-t4-l74-checkpoint-20261004",
+        "periodCount": 2
+      }
+    ],
     "authRlsChecks": 37,
     "nodeTests": 218,
     "typecheck": "PASS",
@@ -84,24 +95,27 @@
     "delivery": {
       "requests": 45,
       "newRequests": 40,
-      "newMedianMs": 828,
+      "newMedianMs": 938.5,
       "rangeMs": [
-        571,
-        1180
+        607,
+        1199
       ],
       "decodedBytes": [
-        11046,
-        12580
+        10292,
+        14424
       ],
       "coldProcess": "NOT DEMONSTRATED",
       "hostedServerMemory": "NOT MEASURED"
     },
     "pending": [
-      "Remaining 172 guides to complete in verified staging; 8 have private individual drafts",
+      "Remaining 164 guides to complete in verified staging",
       "Educator timing trials",
       "Hosted cold-process/server-memory measurements",
       "Configured maximum/inactivity session lifetime"
-    ]
+    ],
+    "genuineSuiteCompletedOn": "2026-10-26",
+    "evidenceReviewedOn": "2026-11-01",
+    "printingLimit": "Headless A4 PDFs and text bounds verified; physical printer trial not performed"
   },
   "latestSharedResponseFix": {
     "projectRef": "inxshlumnhcgiahxqewe",
@@ -264,5 +278,6 @@
       "originalResponseRestored": true,
       "appChangedForRerun": false
     }
-  }
+  },
+  "evidenceScope": "Top-level testedApplicationCommit/local/genuineStaging describe the initial 24-plan acceptance. latestBatch describes the dated current 231-plan release and its selected 14-lesson genuine scope."
 }

@@ -1,0 +1,125 @@
+{
+  "verification": "local text comparison of genuine hosted PDF exports; private strings not published",
+  "scope": "explicit selected lessons",
+  "releasedPlans": 231,
+  "normalisation": "Unicode compatibility, equivalent quote/dash forms and layout whitespace. Wrapped scaffold cells can use their full text within the existing fixed-layout column; no loose subsequence matching. Exact DOM fields and PDF margins checked separately.",
+  "summary": {
+    "pdfs": 14,
+    "fields": 948,
+    "missingFields": 0
+  },
+  "results": [
+    {
+      "scope": "fallback-print",
+      "lessonId": "g8-t1-l01-001",
+      "fields": 82,
+      "tableColumnExtractionFields": 0,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "fallback-print",
+      "lessonId": "g8-t1-l08-008",
+      "fields": 125,
+      "tableColumnExtractionFields": 0,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "fallback-print",
+      "lessonId": "g8-t1-l10-010",
+      "fields": 61,
+      "tableColumnExtractionFields": 0,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "fallback-print",
+      "lessonId": "g10-t2-l19-019",
+      "fields": 154,
+      "tableColumnExtractionFields": 0,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "fallback-print",
+      "lessonId": "g11-t1-l14-014",
+      "fields": 105,
+      "tableColumnExtractionFields": 0,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "fallback-print",
+      "lessonId": "g12-t1-l05-005",
+      "fields": 156,
+      "tableColumnExtractionFields": 4,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "fallback-print",
+      "lessonId": "g10-t4-l67-067",
+      "fields": 30,
+      "tableColumnExtractionFields": 0,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "fallback-print",
+      "lessonId": "g10-t4-l68-068",
+      "fields": 31,
+      "tableColumnExtractionFields": 0,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "fallback-print",
+      "lessonId": "g10-t4-l69-069",
+      "fields": 28,
+      "tableColumnExtractionFields": 0,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "fallback-print",
+      "lessonId": "g10-t4-l70-070",
+      "fields": 37,
+      "tableColumnExtractionFields": 0,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "fallback-print",
+      "lessonId": "g10-t4-l71-checkpoint-20261004",
+      "fields": 37,
+      "tableColumnExtractionFields": 0,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "fallback-print",
+      "lessonId": "g10-t4-l72-checkpoint-20261004",
+      "fields": 28,
+      "tableColumnExtractionFields": 0,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "fallback-print",
+      "lessonId": "g10-t4-l73-checkpoint-20261004",
+      "fields": 39,
+      "tableColumnExtractionFields": 0,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "fallback-print",
+      "lessonId": "g10-t4-l74-checkpoint-20261004",
+      "fields": 35,
+      "tableColumnExtractionFields": 0,
+      "missing": [],
+      "preserved": true
+    }
+  ]
+}

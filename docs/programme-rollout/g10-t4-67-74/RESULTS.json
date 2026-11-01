@@ -1,0 +1,77 @@
+{
+  "projectRef": "inxshlumnhcgiahxqewe",
+  "totalPlans": 231,
+  "newCompletedAcrossRollout": 207,
+  "remaining": 164,
+  "testedCommit": "c7942644eb01a126b06ac741b414e4556f002539",
+  "stagingURL": "https://applied-commerce-sa-staging-4dtu6xm7x.vercel.app",
+  "priorBindingsPreserved": 223,
+  "newPlans": 8,
+  "directClassroomPlans": 14,
+  "directFields": 948,
+  "navigatorTargets": 143,
+  "responsiveCombinations": 252,
+  "newFirstResponsePersistence": 8,
+  "renderedTablesVerified": 0,
+  "tableFreshLoginPersistence": 0,
+  "existingWorkshopLogLessons": 5,
+  "existingWorkshopLogControls": 30,
+  "additionalWrittenEvidenceJourneys": 4,
+  "actualPortfolioJourneys": 3,
+  "workshopEvidenceFreshLoginAndScopedReview": true,
+  "syntheticValuesRestored": true,
+  "approved24Unchanged": true,
+  "integratedPDFs": 14,
+  "integratedPDFPages": 90,
+  "fallbacks": 14,
+  "fallbackPDFPages": 91,
+  "pdfTextFields": 1896,
+  "pdfMissing": 0,
+  "multiPeriodLessons": [
+    {
+      "lessonId": "g10-t4-l70-070",
+      "periodCount": 2
+    },
+    {
+      "lessonId": "g10-t4-l71-checkpoint-20261004",
+      "periodCount": 2
+    },
+    {
+      "lessonId": "g10-t4-l73-checkpoint-20261004",
+      "periodCount": 2
+    },
+    {
+      "lessonId": "g10-t4-l74-checkpoint-20261004",
+      "periodCount": 2
+    }
+  ],
+  "authRlsChecks": 37,
+  "nodeTests": 218,
+  "typecheck": "PASS",
+  "lint": "PASS",
+  "sourceChangesApplied": false,
+  "delivery": {
+    "requests": 45,
+    "newRequests": 40,
+    "newMedianMs": 938.5,
+    "rangeMs": [
+      607,
+      1199
+    ],
+    "decodedBytes": [
+      10292,
+      14424
+    ],
+    "coldProcess": "NOT DEMONSTRATED",
+    "hostedServerMemory": "NOT MEASURED"
+  },
+  "pending": [
+    "Remaining 164 guides to complete in verified staging",
+    "Educator timing trials",
+    "Hosted cold-process/server-memory measurements",
+    "Configured maximum/inactivity session lifetime"
+  ],
+  "genuineSuiteCompletedOn": "2026-10-26",
+  "evidenceReviewedOn": "2026-11-01",
+  "printingLimit": "Headless A4 PDFs and text bounds verified; physical printer trial not performed"
+}
