@@ -1,11 +1,7 @@
-# Programme rollout from PR #48
+# Applied Commerce guide production
 
-**231 of 395 lessons have individually reviewed support in verified staging; 164 remain.** All Grade 8 and Grade 9 lessons, Grade 10 Terms 1–3 and sixteen Term 4 lessons, plus unchanged Grade 11 and Grade 12 benchmarks, are covered. Six further guides have individually authored private drafts and remain uncompleted.
+**256 of 395 lessons have individually reviewed support verified in staging; 139 remain.** Grade 8 (80), Grade 9 (75), Grade 10 (80) and Grade 11 Term 1 (20), plus the preserved Grade 12 benchmark, are covered. Classroom moderation and timing trials remain pending.
 
-[PR #78](https://github.com/PDthePlug/Applied-Commerce-/pull/78) contains the current batch on its follow-up stack. No merge or separate live deployment was performed by this work. Educator classroom review and timing trials remain pending.
+[Draft PR #81](https://github.com/PDthePlug/Applied-Commerce-/pull/81) adds nineteen Grade 11 Term 1 guides after PR #80. The accepted Grade 11 and Grade 12 benchmarks and all earlier plan bindings are unchanged. Work continues through the remaining Grade 11 terms, then Grade 12, as authorised on 1 November. There is no merge or separate live deployment authority.
 
-See [current report](REPORT.md), [coverage](coverage.json), [grade-and-term counts](grade-term.csv), [batch results](g10-t4-67-74/RESULTS.json), [individual review](g10-t4-67-74/REVIEW.md) and [focused fact checks](g10-t4-67-74/FACT_CHECKS.md). Plaintext guides, credentials and authenticated captures remain protected outside Git.
-
-The owner merged the earlier 215-guide stack in PR #75. This follow-up preserves the separately approved [Lesson 60 response repair](g10-t4-opening/RESPONSE60_REPORT.md) from PR #76. No new response-structure change or learner-source rewrite is introduced here. Genuine batch testing is dated 26 October; connectivity and deployment metadata were rechecked on 1 November. See the [original 24-plan audit](../staging-classroom-validation/PLAN_AUDIT.md) and [five-lesson timing review](../staging-classroom-validation/TIMING.md) for the earlier scope.
-
-The full 395-lesson directive was explicitly reaffirmed on 1 November. The [Grade 10 closing batch](g10-t4-75-80/REVIEW.md) is prepared; verified coverage remains 231 until its original-key sealing and genuine acceptance pass. Its staging packaging currently awaits coding-token access to the correct Vercel team scope.
+See the [current report](REPORT.md), [coverage](coverage.json), [authored lessons and provisional contacts](grade-term.csv), [latest acceptance](g11-t1/ACCEPTANCE_REPORT.md), [instructional review](g11-t1/REVIEW.md) and [separate editorial proposals](SOURCE_EDITORIAL_REGISTER.json). Plaintext teacher guides, credentials and authenticated evidence remain protected outside Git.

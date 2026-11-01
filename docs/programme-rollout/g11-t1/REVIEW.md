@@ -1,6 +1,6 @@
 # Grade 11 Term 1 — contextual teacher guides
 
-The nineteen missing guides are individually drafted from their **1,082 actual learner blocks** and sealed with the original server-bound key. All **237 prior plan bindings** are unchanged, including Grade 11 Lesson 14 and Grade 12 Lesson 5. The 256-guide candidate is **pending genuine hosted acceptance**; it is not counted as newly completed until that evidence passes.
+The nineteen missing guides are individually drafted from their **1,082 actual learner blocks** and sealed with the original server-bound key. All **237 prior plan bindings** are unchanged, including Grade 11 Lesson 14 and Grade 12 Lesson 5. The 256-guide release passes genuine hosted acceptance; see [acceptance report](ACCEPTANCE_REPORT.md). Nineteen additions are recorded as completed individual review, with educator moderation and timing trials still pending.
 
 No learner text, block/prompt/response identity, activity, outcome, completion record or private-content boundary is changed. Complete preparation, short local cues, useful optional depth, period navigation, complete private printing and standalone fallback use the approved interface.
 

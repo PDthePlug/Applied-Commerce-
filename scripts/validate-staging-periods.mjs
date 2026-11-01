@@ -34,7 +34,7 @@ try{
    const ids=await page.locator(`#classroom-stage optgroup[label="Period ${index+1}"] option`).evaluateAll(nodes=>nodes.map(node=>node.value));assert.deepEqual(ids,period.moments);
    assert.equal(period.moments.reduce((minutes,id)=>minutes+plan.moments.find(moment=>moment.id===id).minutes,0),45);
    for(const id of [period.moments[0],period.moments.at(-1)]){
-    await page.locator('#classroom-stage').selectOption(id);await page.getByRole('button',{name:'Go to stage',exact:true}).click();assert.equal(await page.evaluate(()=>document.activeElement?.id),'teacher-moment-'+id);
+    await page.locator('#classroom-stage').selectOption(id);await page.getByRole('button',{name:'Go to stage',exact:true}).click();await page.waitForFunction(expected=>document.activeElement?.id===expected,'teacher-moment-'+id,{timeout:5000});assert.equal(await page.evaluate(()=>document.activeElement?.id),'teacher-moment-'+id);
     const moment=plan.moments.find(row=>row.id===id),target=page.locator(`[data-instructional-location="${id}"]`);assert.equal(await target.getAttribute('open'),'');assert.ok((await target.locator(':scope > summary').innerText()).includes(`Period ${index+1}`));
     const cue=moment.core.find(group=>group.heading==='Facilitation cue');if(cue)assert.equal(await target.locator('[data-facilitation-cue]').innerText(),plan.fields[cue.fields[0]]);
     if(process.env.AC_PERIOD_CAPTURE_DIR){
