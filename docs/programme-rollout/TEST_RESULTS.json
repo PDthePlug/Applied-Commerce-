@@ -29,13 +29,13 @@
   "rollout": {
     "existingPlans": 24,
     "newCompleted": 207,
-    "privateUnsealedDrafts": 0,
+    "privateUnsealedDrafts": 6,
     "uncompleted": 164,
-    "blocker": null,
+    "blocker": "New original-key sealing/cleanup: coding VERCEL_TOKEN HTTP403; connected Vercel tools lack removal endpoints. Supabase connectivity remains available.",
     "stagedPendingVerification": 0
   },
   "pending": [
-    "Remaining 164 guides to complete in verified staging",
+    "Remaining 164 guides to complete in verified staging; six individual private drafts prepared",
     "Educator timing trials",
     "Hosted cold-process/server-memory measurements",
     "Configured maximum/inactivity session lifetime"

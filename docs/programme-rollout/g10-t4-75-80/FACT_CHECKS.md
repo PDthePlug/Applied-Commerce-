@@ -1,0 +1,11 @@
+# Focused source and preservation checks
+
+- **75:** The R3 million statement is a character’s projection without contribution, return, fee, inflation or tax assumptions. It is not a verified current forecast. A short clarification sits beside that example; one separate source proposal requests assumptions. No figure is silently changed.
+- **75:** The audience-response source table contains only its three headers. Actual ContentBlocks renders three editable rows (nine text controls) and Add another row. Do not infer zero responses from the raw source or require a new entry for every presenter.
+- **76:** The story continues the presentation sequence. Its activity has exactly three existing blanks. Earlier audience notes can stay in Lesson 75; no table is added here.
+- **77:** Four original questions remain four controls, including the combined term/year question. The 1–10 independence scale has no common anchors; it is a reflective prompt, not a validated diagnostic or a financial-worth ranking. Its “assets” and “fuel” retain legitimate personal-development meanings.
+- **78:** One source paragraph, zero authored response controls. The established renderer omits the literal all-Log-entries phrase here. This is a source/display distinction, not permission to remove the thirty newer workshop controls or silently rewrite the canonical book.
+- **79:** One model paragraph, zero authored response controls. The title alone does not create a new learner-writing activity. The earlier Lesson 57 explicitly says “Read it at the end of Term 4.” Returning to that original saved/paper letter respects an existing task; no replacement letter or response field is created.
+- **80:** Fifteen reading blocks and no authored response controls. Observer/challenger/strategist/architect are narrative metaphors. The closing celebration need not falsely certify every learner’s completion or prescribe an emotional response.
+
+All original 395 lessons, four assessments, canonical sources and stable saved-work identities remain. Source/schema/renderer checks are local technical evidence; genuine hosted verification and educator classroom timing trials are separate. No current investment-product or retirement-performance claim is externally certified in this batch.

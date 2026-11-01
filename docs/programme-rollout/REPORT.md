@@ -1,6 +1,6 @@
 # Applied Commerce classroom rollout
 
-**231 of 395 lessons have individually reviewed support in verified staging; 164 remain.** All Grade 8 and Grade 9 lessons, Grade 10 Terms 1–3 and sixteen Term 4 lessons, plus unchanged Grade 11 and Grade 12 benchmarks, are covered. No additional private drafts are counted at this observation. Completion records source/instructional review and demonstrated staging checks, not educator classroom/timing trials.
+**231 of 395 lessons have individually reviewed support in verified staging; 164 remain.** All Grade 8 and Grade 9 lessons, Grade 10 Terms 1–3 and sixteen Term 4 lessons, plus unchanged Grade 11 and Grade 12 benchmarks, are covered. Six additional guides have private individual drafts and remain uncompleted. Completion records source/instructional review and demonstrated staging checks, not educator classroom/timing trials.
 
 Current staging: https://applied-commerce-sa-staging-4dtu6xm7x.vercel.app . Deployment protection and genuine application login apply. Tested application/content commit: `c7942644eb01a126b06ac741b414e4556f002539`. Later evidence-only commits do not imply a different deployed application. [PR #78](https://github.com/PDthePlug/Applied-Commerce-/pull/78) follows the recorded PR stack; no agent merge or separate live deployment occurred.
 
@@ -37,7 +37,7 @@ Eight individual guides support impact investing, life design, the project launc
 
 Eight authored additions recommend twelve provisional contacts. Lessons 70, 71, 73 and 74 use two each for three-goal drafting, income/investment comparisons, reciprocal feedback/revision and 13-section compilation. Lessons 67, 68, 69 and 72 use one each. Each second contact has a brief conclusion and reintroduction within the same learner lesson. Later interviews, product research, consultation questions and presentation practice remain later work. Educator timing trials remain pending.
 
-The current Grade 10 Term 4 coverage has 16 completed authored lessons / 20 provisional contacts. No further private guides are counted at this observation. [Grade-and-term counts](grade-term.csv) distinguish authored lessons, contacts and raw allocations. Grade 8 Term 4 alternative project guides share the selected project’s contacts; Grade 9 presentation estimates preserve original speaking time and depend on enrolment. Teacher prose length does not set contact time. All estimates remain provisional until educator trials.
+The current Grade 10 Term 4 coverage has 16 completed authored lessons / 20 provisional contacts. Six closing guides are prepared privately; they recommend six further provisional contacts with shared scheduling recorded separately. [Grade-and-term counts](grade-term.csv) distinguish authored lessons, contacts and raw allocations. Grade 8 Term 4 alternative project guides share the selected project’s contacts; Grade 9 presentation estimates preserve original speaking time and depend on enrolment. Teacher prose length does not set contact time. All estimates remain provisional until educator trials.
 
 ## Connectivity, source accuracy and delivery
 
@@ -62,3 +62,7 @@ The owner merged the earlier 215-guide stack in PR #75. [PR #76](https://github.
 The original [24-plan audit](../staging-classroom-validation/PLAN_AUDIT.md), [five-lesson timing review](../staging-classroom-validation/TIMING.md), [protected-fixture specification](../staging-classroom-validation/FIXTURES.md) and [source editorial register](../staging-classroom-validation/SOURCE_EDITORIAL_REGISTER.json) remain available. They describe the earlier acceptance stage; the dated current report and batch evidence identify subsequent checks without changing historical records.
 
 Printing evidence uses headless A4 PDFs and text-bound checks. Physical printer trials and human assistive-technology review remain pending. Authenticated captures stay in the protected fixture directory; only relative filenames, sizes and SHA-256 hashes are published.
+
+## Next batch and reaffirmed full-programme scope
+
+The owner explicitly reaffirmed the full 395-lesson directive on 1 November. Six Grade 10 closing guides are [individually drafted and reviewed](g10-t4-75-80/REVIEW.md) against all 54 source blocks, with 231 prior bindings preserved. They remain uncompleted pending original-key packaging and genuine acceptance. New reading-only persistence and shared-closing-sequence runners test the actual existing controls and navigation without adding learner work. A fresh coding-token request returns HTTP 403 identifying the missing `denvermpofu09-2813s-projects` team scope. This is separate from successful Supabase access and connected Vercel account access; temporary private inputs will not be created without a working cleanup path.

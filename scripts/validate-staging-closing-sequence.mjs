@@ -1,0 +1,39 @@
+// One real contact across three unchanged authored lessons; no new learner task.
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+import {chromium} from '@playwright/test';
+import {loadRoleFixtures} from './lib/validation-target.mjs';
+import {provisionalContactPeriods} from './lib/programme-contact-periods.mjs';
+import {runtimeUnits} from './semantic-census.mjs';
+process.umask(0o077);
+const {config,fixtures}=loadRoleFixtures(process.env.AC_ROLE_FIXTURES);assert.equal(config.projectRef,'inxshlumnhcgiahxqewe');
+const baseURL=process.env.AC_ROLE_BASE_URL;assert.ok(new URL(baseURL).hostname.startsWith('applied-commerce-sa-staging'));
+const ids=['g10-t4-l78-074','g10-t4-l79-075','g10-t4-l80-076'],letter='g10-t3-l57-057';
+const coverage=JSON.parse(fs.readFileSync('docs/programme-rollout/coverage.json')),rows=ids.map(id=>coverage.lessons.find(p=>p.lessonId===id));assert.equal(provisionalContactPeriods(rows),1);assert.ok(rows.every(r=>r.sharedContactGroup===rows[0].sharedContactGroup));
+const units=await runtimeUnits(),titles=new Map(units.map(u=>[u.id,u.title]));
+const access=JSON.parse(JSON.parse(fs.readFileSync(process.env.AC_STAGING_ACCESS_FILE)).content[0].text);
+const results={at:new Date().toISOString(),projectRef:config.projectRef,authentication:'genuine staging educator password login',authoredLessons:3,rawGuidePeriods:3,provisionalContacts:1,educatorTimingTrial:'NOT DEMONSTRATED',captures:[],pageErrors:[]};
+const save=()=>fs.writeFileSync(process.env.AC_STAGING_RESULTS_FILE,JSON.stringify(results,null,2)+'\n');
+const route=(id,term=4)=>`/learn/10/term/${term}/${id}`;
+const browser=await chromium.launch({executablePath:process.env.AC_BROWSER_EXECUTABLE,proxy:process.env.HTTPS_PROXY?{server:process.env.HTTPS_PROXY}:undefined,args:['--no-sandbox','--disable-dev-shm-usage']});
+try{
+ const context=await browser.newContext({baseURL,viewport:{width:1280,height:900}}),page=await context.newPage();page.on('pageerror',e=>results.pageErrors.push(e.name));await page.goto(access.shareableUrl);const response=await page.request.get('/api/health');assert.equal(new URL(response.url()).origin,baseURL);assert.match(response.headers()['content-type']??'',/application\/json/);const health=await response.json();assert.equal(health.projectRef,config.projectRef);assert.equal(health.commit,process.env.AC_EXPECTED_COMMIT);results.commit=health.commit;
+ await page.goto('/auth');await page.getByLabel('Email address',{exact:true}).fill(fixtures.users.facilitator.email);await page.getByLabel('Password',{exact:true}).fill(fixtures.users.facilitator.password);await page.locator('.auth-form').getByRole('button',{name:'Sign in',exact:true}).click();await page.locator('.auth-panel').getByRole('button',{name:'Sign out',exact:true}).waitFor({timeout:60000});
+ const plans=[];for(const id of ids){const r=await page.request.get('/api/classroom?catalog=omit&lesson='+id);assert.equal(r.status(),200);const {plan}=await r.json();assert.equal(plan.periods.length,1);assert.equal(plan.periods[0].minutes,45);assert.match(plan.fields[plan.periods[0].title],/Shared/i);plans.push(plan);}
+ const moments=plans.map(plan=>plan.moments.filter(m=>m.schedule==='classroom'));
+ const work=[moments[0].slice(0,-1),moments[1].slice(1,-1),moments[2].slice(1)].map(list=>list.reduce((n,m)=>n+m.minutes,0));assert.deepEqual(work,[23,15,7]);assert.equal(work.reduce((a,b)=>a+b),45);assert.equal(moments[0].at(-1).minutes,22);assert.equal(moments[1][0].minutes,23);assert.equal(moments[1].at(-1).minutes,7);assert.equal(moments[2][0].minutes,38);Object.assign(results,{actualSequentialMinutes:work,scheduleConservesOneContact:true,elapsedContextNotRepeated:true});
+ async function ready(plan){await page.getByRole('heading',{level:1,name:titles.get(plan.lessonId),exact:true}).waitFor({timeout:60000});await page.getByRole('button',{name:/^(Teacher View|Learner View)$/}).first().waitFor();const button=page.getByRole('button',{name:'Teacher View',exact:true});if(await button.count())await button.click();await page.locator('[data-instructional-location="preparation"]').waitFor();assert.equal(await page.getByRole('navigation',{name:'Classroom teaching stages',exact:true}).count(),1);assert.equal(await page.locator('.contextual-guidance nav').count(),0);assert.equal(await page.locator('.lesson-document .learning-section input,.lesson-document .learning-section textarea').count(),0);}
+ async function stage(plan,m){await page.locator('#classroom-stage').selectOption(m.id);await page.getByRole('button',{name:'Go to stage',exact:true}).click();assert.equal(await page.evaluate(()=>document.activeElement?.id),'teacher-moment-'+m.id);const target=page.locator(`[data-instructional-location="${m.id}"]`);assert.equal(await target.getAttribute('open'),'');assert.equal(await target.locator('[data-facilitation-cue]').innerText(),plan.fields[m.core.find(g=>g.heading==='Facilitation cue').fields[0]]);return target;}
+ await page.goto(route(ids[0]));
+ for(let i=0;i<plans.length;i++){
+  const plan=plans[i];await ready(plan);
+  for(const width of [320,1280]){await page.setViewportSize({width,height:900});if(width===320)await page.waitForFunction(()=>{const rail=document.querySelector('.reader-rail');return rail?.getAttribute('aria-hidden')==='true'&&rail.getBoundingClientRect().right<=1;});for(const scale of[1,2]){await page.evaluate(s=>document.documentElement.style.setProperty('--ac-text-scale',String(s)),scale);for(const m of[...new Set([moments[i][0],moments[i][1],moments[i].at(-1)])]){const target=await stage(plan,m);await target.scrollIntoViewIfNeeded();assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1),false);if(process.env.AC_SHARED_CONTACT_CAPTURE_DIR){fs.mkdirSync(process.env.AC_SHARED_CONTACT_CAPTURE_DIR,{recursive:true,mode:0o700});await page.screenshot({path:process.env.AC_SHARED_CONTACT_CAPTURE_DIR+'/'+m.id+'-'+width+'-'+scale+'.png',animations:'disabled'});}results.captures.push({lessonId:plan.lessonId,width,scale,stageId:m.id,focused:true,overflow:false});}}}
+  await page.evaluate(()=>document.documentElement.style.removeProperty('--ac-text-scale'));
+  if(i<plans.length-1){const next=page.locator('.reader-footer a.next');assert.equal(new URL(await next.getAttribute('href'),baseURL).pathname,route(ids[i+1]));await next.click();await page.waitForURL('**'+route(ids[i+1]));}
+ }
+ results.existingNextLessonSequence=true;
+ const previous=page.locator('.reader-footer a').first();assert.equal(new URL(await previous.getAttribute('href'),baseURL).pathname,route(ids[1]));await previous.click();await page.waitForURL('**'+route(ids[1]));await ready(plans[1]);results.existingPreviousLessonReturn=true;
+ await page.setViewportSize({width:1280,height:900});await stage(plans[1],moments[1][2]);await page.locator('.reader-brand').click();await page.getByRole('link',{name:'Open Term 3',exact:true}).click();await page.locator(`.reader-rail a[href="${route(letter,3)}"]`).click();await page.getByRole('heading',{level:1,name:titles.get(letter),exact:true}).waitFor();results.existingGradeTermNavigationReachesEarlierLetter=true;
+ await page.locator('.reader-brand').click();await page.getByRole('link',{name:'Open Term 4',exact:true}).click();await page.locator(`.reader-rail a[href="${route(ids[1])}"]`).click();await ready(plans[1]);await stage(plans[1],moments[1][3]);results.existingGradeTermNavigationReturnsToCurrentLesson=true;
+ assert.equal(results.pageErrors.length,0);results.status='PASS';save();await context.close();console.log(JSON.stringify({closingSequence:'PASS',authoredLessons:3,provisionalContacts:1,sequentialMinutes:work,focusedResponsiveCaptures:results.captures.length,existingFooterAndGradeTermNavigation:true,commit:results.commit}));
+}catch(error){results.status='FAIL';results.failure=error.message;save();throw error;}finally{await browser.close();}
