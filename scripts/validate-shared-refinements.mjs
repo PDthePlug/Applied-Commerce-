@@ -13,12 +13,14 @@ const baseURL=process.env.AC_ROLE_BASE_URL;assert.ok(baseURL&&new URL(baseURL).h
 const access=JSON.parse(JSON.parse(fs.readFileSync(process.env.AC_STAGING_ACCESS_FILE)).content[0].text);
 const out=process.env.AC_STAGING_EVIDENCE_DIR??dir+'/rollout';fs.mkdirSync(out,{recursive:true,mode:0o700});
 const browser=await chromium.launch({executablePath:process.env.AC_BROWSER_EXECUTABLE,proxy:process.env.HTTPS_PROXY?{server:process.env.HTTPS_PROXY,bypass:'localhost,127.0.0.1'}:undefined,args:['--no-sandbox','--disable-dev-shm-usage']});
-const results={at:new Date().toISOString(),projectRef:config.projectRef,baseURL,authentication:'genuine staging password login',plans:[],responsive:[],persistence:[],errors:[]};
+const results={at:new Date().toISOString(),projectRef:config.projectRef,baseURL,authentication:'genuine staging password login',plans:[],responsive:[],persistence:[],errors:[],privateDeliveryDenials:[],failedRequests:[]};
 const save=()=>fs.writeFileSync(out+'/shared-results.json',JSON.stringify(results,null,2));
 async function login(role){
  const context=await browser.newContext({baseURL,viewport:{width:1280,height:900}}),page=await context.newPage();
  page.on('pageerror',error=>results.errors.push(error.message));
- await page.goto(access.shareableUrl);const health=await(await page.request.get('/api/health')).json();assert.equal(health.projectRef,config.projectRef);assert.equal(health.commit,process.env.AC_EXPECTED_COMMIT);results.commit=health.commit;
+ page.on('response',response=>{const url=new URL(response.url());if(url.origin===baseURL&&url.pathname==='/api/classroom'&&response.status()>=300)results.privateDeliveryDenials.push({role,lessonId:url.searchParams.get('lesson'),status:response.status()});});
+ page.on('requestfailed',request=>{const url=new URL(request.url());if(url.origin===baseURL)results.failedRequests.push({role,path:url.pathname,failure:request.failure()?.errorText});});
+ await page.goto(access.shareableUrl);const healthResponse=await page.request.get('/api/health');assert.equal(healthResponse.status(),200,'Deployment access failed before application login');assert.equal(new URL(healthResponse.url()).origin,baseURL,'Deployment protection redirected health before application login');assert.match(healthResponse.headers()['content-type'],/application\/json/);const health=await healthResponse.json();assert.equal(health.projectRef,config.projectRef);assert.equal(health.commit,process.env.AC_EXPECTED_COMMIT);results.commit=health.commit;
  await page.goto('/auth');await page.getByLabel('Email address',{exact:true}).fill(fixtures.users[role].email);await page.getByLabel('Password',{exact:true}).fill(fixtures.users[role].password);await page.locator('.auth-form').getByRole('button',{name:'Sign in',exact:true}).click();await page.locator('.auth-panel').getByRole('button',{name:'Sign out',exact:true}).waitFor({timeout:60000});return {context,page};
 }
 const manifest=JSON.parse(fs.readFileSync('content/instructional/teaching-manifest.v2.json'));

@@ -39,3 +39,22 @@ test('damaged V2 plan returns no partial guide, enrichment or private failure de
  reset();state.staff=true;const load=globalThis.__classroomAPI.library.loadTeachingPlan;globalThis.__classroomAPI.library.loadTeachingPlan=async()=>{throw new Error('PRIVATE_V2_CONFIGURATION');};
  try{const response=await GET(request());assert.equal(response.status,503);const payload=await response.json();assert.equal(payload.guide,undefined);assert.equal(payload.contextual,undefined);assert.equal(payload.plan,undefined);assert.ok(!JSON.stringify(payload).includes('PRIVATE_V2_CONFIGURATION'));}finally{globalThis.__classroomAPI.library.loadTeachingPlan=load;}
 });
+
+test('staging measurements require the exact staging target, an explicit flag and current platform authority',async()=>{
+ const keys=['AC_CLASSROOM_DIAGNOSTICS','VERCEL_PROJECT_ID','NEXT_PUBLIC_SUPABASE_URL'];
+ const previous=Object.fromEntries(keys.map(key=>[key,process.env[key]]));
+ const enable=()=>{process.env.AC_CLASSROOM_DIAGNOSTICS='1';process.env.VERCEL_PROJECT_ID='prj_9MXnYeh3mxtFzcS1xzEDrTjOW2nP';process.env.NEXT_PUBLIC_SUPABASE_URL='https://inxshlumnhcgiahxqewe.supabase.co';};
+ const measured=()=>new Request('https://fixture.invalid/api/classroom?lesson=g8-t1-l08-008&measure=1&catalog=omit');
+ try{
+  for(const change of [()=>delete process.env.AC_CLASSROOM_DIAGNOSTICS,()=>process.env.VERCEL_PROJECT_ID='another-project',()=>process.env.NEXT_PUBLIC_SUPABASE_URL='https://another-project.supabase.co',()=>state.platform=false,()=>state.active=false]){
+   reset();state.platform=true;state.staff=true;enable();change();
+   const r=await GET(measured());assert.ok([401,403].includes(r.status));
+   assert.equal(state.loads,0);assert.equal(state.planLoads,0);assert.equal((await r.json()).measurement,undefined);
+  }
+  reset();state.platform=true;enable();const response=await GET(measured()),payload=await response.json();
+  assert.equal(response.status,200);assert.ok(payload.measurement.privateReadSequence>0);
+  assert.ok(payload.measurement.memoryAfter.rss>0);assert.ok(payload.measurement.teachingPlanMs>=0);
+  assert.match(response.headers.get('cache-control'),/private.*no-store/);
+  reset();state.staff=true;const normal=await(await GET(request())).json();assert.equal(normal.measurement,undefined);
+ }finally{for(const key of keys){if(previous[key]===undefined)delete process.env[key];else process.env[key]=previous[key];}}
+});
