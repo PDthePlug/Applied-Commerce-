@@ -1,0 +1,56 @@
+{
+  "at": "2026-11-01T04:00:44.282332+00:00",
+  "projectRef": "inxshlumnhcgiahxqewe",
+  "stagingVercelProject": "applied-commerce-sa-staging",
+  "verifiedGuides": 231,
+  "privatePreparedGuides": 6,
+  "candidateGuideTotal": 237,
+  "candidateStatus": "UNSEALED; NOT COMPLETED",
+  "ownerReaffirmedFullDirective": "2026-11-01",
+  "local": {
+    "runtime": "395 lessons / 4 assessments / 20766 stable blocks PASS",
+    "nodeTests": 218,
+    "typecheck": "PASS",
+    "lint": "PASS",
+    "build": "PASS",
+    "privateSourceSchemaRenderer": "PASS; all231 prior bindings preserved"
+  },
+  "genuineLearnerBaseline": {
+    "commit": "c7942644eb01a126b06ac741b414e4556f002539",
+    "newGuideDelivery": "NOT TESTED; guides not sealed",
+    "readingOnlyLessons": 3,
+    "authoredResponseControls": 0,
+    "optionalNotesCompletionFreshLoginScopedReview": "PASS",
+    "editableAudienceTables": 1,
+    "tableFreshLoginAndRestoration": "PASS"
+  },
+  "blocker": {
+    "boundary": "Coding environment VERCEL_TOKEN authorization",
+    "httpStatus": 403,
+    "reason": "Not authorized: Trying to access resource under scope denvermpofu09-2813s-projects. Re-authenticate to this scope or use a token with access to this scope.",
+    "networkFailure": false,
+    "ownerRestorationReported": true,
+    "freshRequestAfterReport": "403; team-scope access still denied",
+    "connectedVercelAccess": "Project/deployment/environment metadata tools work; deletion endpoints not available",
+    "requiredCapability": "Coding token authorized for isolated staging team/project, including removal of temporary inputs and sealing deployment"
+  },
+  "privateSealingInputsCreated": false,
+  "originalServerKeyBindingUnchanged": true,
+  "temporaryInputs": 0,
+  "keyDecryptionRequested": false,
+  "nextSourceAudit": {
+    "grade": 11,
+    "term": 1,
+    "lessonsRead": 20,
+    "blocksRead": 1143,
+    "newGuidesAuthored": 0,
+    "acceptedBenchmarkPreserved": "g11-t1-l14-014"
+  },
+  "pending": [
+    "Original-key sealing and guarded normal build",
+    "Six-guide genuine placement, navigation, printing and responsive acceptance",
+    "Three-lesson closing sequence and original-letter return navigation",
+    "Educator timing and physical printer trials",
+    "Hosted cold-start/server-memory measurements"
+  ]
+}
