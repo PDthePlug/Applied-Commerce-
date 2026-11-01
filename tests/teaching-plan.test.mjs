@@ -3,9 +3,21 @@ import {runtimeUnits} from '../scripts/semantic-census.mjs';import {digest} from
 const {teachingSource,validateTeachingPlan,teachingCoverage}=await import(renderModule('lib/classroom/teaching-plan.ts'));
 const {ContentBlocks}=await import(renderModule('components/content-blocks.tsx'));
 const units=await runtimeUnits();const manifest=JSON.parse(fs.readFileSync('content/instructional/teaching-manifest.v2.json'));
-test('the 24 accepted plans retain exact hashes while appended batches use original lesson identities',()=>{
+test('the original 24 preserve their baseline with one explicit two-field source-reference amendment',()=>{
  const baseline=JSON.parse(fs.readFileSync('tests/fixtures/teaching-pr48-baseline.json'));assert.equal(baseline.plans.length,24);assert.equal(baseline.plans.reduce((sum,row)=>sum+row.periods,0),31);
- for(const row of baseline.plans){const current=manifest.plans.find(plan=>plan.lessonId===row.lessonId);assert.ok(current);for(const key of ['periods','planSHA256','fieldCount'])assert.equal(current[key],row[key],row.lessonId+' '+key);}
+ const amendment=JSON.parse(fs.readFileSync('tests/fixtures/teaching-g8-l12-source-reference-amendment.json'));
+ assert.equal(amendment.beforeBinding.lessonId,'g8-t1-l12-012');
+ assert.deepEqual(amendment.fieldChanges.map(change=>change.path).sort(),['materials.0','stages.0.explain.0']);
+ for(const row of baseline.plans){const current=manifest.plans.find(plan=>plan.lessonId===row.lessonId);assert.ok(current);
+  for(const key of ['periods','fieldCount'])assert.equal(current[key],row[key],row.lessonId+' '+key);
+  if(row.lessonId!==amendment.beforeBinding.lessonId)assert.equal(current.planSHA256,row.planSHA256,row.lessonId);
+  else{
+   assert.equal(amendment.beforeBinding.planSHA256,row.planSHA256,'Historical baseline must remain unchanged');
+   const expected=structuredClone(amendment.beforeBinding);expected.planSHA256=amendment.afterPlanSHA256;
+   for(const change of amendment.fieldChanges){const field=expected.coverage.find(field=>field.path===change.path);assert.equal(field.valueSHA256,change.beforeValueSHA256);assert.notEqual(change.beforeValueSHA256,change.afterValueSHA256);field.valueSHA256=change.afterValueSHA256;}
+   assert.deepEqual(current,expected,'Only the two reviewed field hashes may change; all placement, source, identity and timing metadata is pinned');
+  }
+ }
  const term=units.filter(u=>u.grade===8&&u.term===1&&u.type==='lesson');assert.equal(term.length,20);assert.deepEqual(manifest.plans.filter(p=>p.grade===8&&p.term===1).map(p=>p.lessonId).sort(),term.map(u=>u.id).sort());
  assert.equal(new Set(manifest.plans.map(p=>p.lessonId)).size,manifest.plans.length);assert.ok(manifest.plans.every(plan=>units.some(unit=>unit.type==='lesson'&&unit.id===plan.lessonId)));assert.ok(new Set(manifest.plans.map(p=>p.moments.filter(m=>m.schedule==='classroom').length)).size>=4);
  const availability=JSON.parse(fs.readFileSync('content/instructional/teaching-availability.v2.json'));assert.deepEqual([...availability.lessonIds].sort(),manifest.plans.map(plan=>plan.lessonId).sort());
