@@ -1,0 +1,25 @@
+{
+  "verified": true,
+  "previousPlansUnchanged": 237,
+  "addedPlans": 19,
+  "totalPlans": 256,
+  "entireExpectedManifestMatches": true,
+  "originalKeyIdUnchanged": true,
+  "files": [
+    {
+      "name": "teaching-plans.v2.enc.json",
+      "bytes": 4198395,
+      "sha256": "98df2ed3e7e87cc13db0ade0851339fc7bb169bb296343712720a4a4f7fc1f25"
+    },
+    {
+      "name": "teaching-manifest.v2.json",
+      "bytes": 4422935,
+      "sha256": "ca9bfd8a20a81b4999acf77d90ecc0d0acc9c3ae444584ed9262d58de7805e54"
+    },
+    {
+      "name": "teaching-availability.v2.json",
+      "bytes": 5581,
+      "sha256": "25a658f77d470c7b68d40a685f9d3a1d3a0d63dc93fe628b8f5bb6a91783c56c"
+    }
+  ]
+}

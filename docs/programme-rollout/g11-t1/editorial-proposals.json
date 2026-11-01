@@ -1,0 +1,251 @@
+{
+  "sourceChangesApplied": false,
+  "entries": [
+    {
+      "lessonId": "g11-t1-l02-002",
+      "blockId": "2f8212c072c2f4c1fdbb1984-1",
+      "exactPassage": "[[\"Type\", \"Without Leverage\", \"With Leverage\", \"Real Example\"], [\"Financial\", \"Save R10,000, earn R500 interest\", \"Borrow R90,000, buy property, earn R5,000\", \"Mr. Dlamini's properties\"], [\"Time\", \"Work 40 hours, earn R800\", \"Automate billing, work 20 hours, earn R800\", \"Myah's automated savings\"], [\"People\", \"Do all deliveries alone\", \"Train helpers, do more deliveries\", \"Thabo's delivery team\"], [\"Systems\", \"Each clock made differently\", \"Standardised process, consistent quality\", \"Lethabo's clock factory\"], [\"Technology\", \"Manual record-keeping\", \"App tracks everything automatically\", \"Themba's online store\"], [\"Knowledge\", \"Learn once, forget\", \"Document, teach, create products\", \"Myah's notebooks\"]]",
+      "category": "Missing comparison assumptions",
+      "concern": "The financial row compares R500 interest with R5,000 property earnings without a common period, interest cost, other costs or risk.",
+      "proposedWording": "Label both amounts as illustrative, specify the same period and distinguish gross income from net return after financing and other costs.",
+      "implementationImpact": "Separate reviewed learner-source wording proposal. Retain lesson, block, prompt and response identities through explicit compiler mapping before any source release; no source change in this batch.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g11-t1-l05-005",
+      "blockId": "bd2272f959e1fc11cbc044fb-1",
+      "exactPassage": "\"But here is the magic: the property goes up in value. If it increases by 10%, that is R50,000. On my R100,000 investment, that is a 50% return.\"",
+      "category": "Gross return versus net financial result",
+      "concern": "The 50% illustration is capital appreciation on initial equity, not a complete net investment return.",
+      "proposedWording": "If the property value rises by 10%, the R50,000 gross capital gain equals 50% of the R100,000 initial equity before financing, operating, tax and sale costs.",
+      "implementationImpact": "Separate reviewed learner-source wording proposal. Retain lesson, block, prompt and response identities through explicit compiler mapping before any source release; no source change in this batch.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g11-t1-l05-005",
+      "blockId": "adb612b1a2f91d5df6844a9f-1",
+      "exactPassage": "Here’s the tension: The people who get destroyed by leverage are not unlucky. They are unprepared. They borrowed without asking: \"What happens if this goes wrong? Can I survive it?\" They saw only the upside — the 50% return — and were blind to the shadow. The architect does not deploy financial leverage without first calculating the worst-case scenario. Not to avoid risk — but to survive it if it comes.",
+      "category": "Personal-development perspective needing a limit",
+      "concern": "The universal contrast between unlucky and unprepared excludes shocks and constraints beyond a borrower’s control.",
+      "proposedWording": "Preparation and a downside plan can reduce avoidable harm, but cannot remove every shock. Consider whether the debt remains manageable when the forecast is wrong.",
+      "implementationImpact": "Separate reviewed learner-source wording proposal. Retain lesson, block, prompt and response identities through explicit compiler mapping before any source release; no source change in this batch.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g11-t1-l05-005",
+      "blockId": "f3bbf3843af2791045aae566-1",
+      "exactPassage": "The Architect's Question: You calculated the loss scenario in Part C. If that loss happened to you — if your R50,000 became significantly less — could you survive it? What is your survival plan? If you do not have one, you are not ready for leverage.",
+      "category": "Incorrect activity reference",
+      "concern": "The falling-value calculations are Part B, while Part C is the decision.",
+      "proposedWording": "You calculated the loss scenario in Part B. Consider whether that outcome would be manageable and what safeguards or decision not to borrow would follow.",
+      "implementationImpact": "Separate reviewed learner-source wording proposal. Retain lesson, block, prompt and response identities through explicit compiler mapping before any source release; no source change in this batch.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g11-t1-l06-006",
+      "blockId": "902b9b7c00a8f6b4aa331876-1",
+      "exactPassage": "[[\"Item\", \"Amount\"], [\"Property price\", \"R500,000\"], [\"My deposit\", \"R100,000\"], [\"Bond (loan)\", \"R400,000\"], [\"Monthly rent\", \"R5,000\"], [\"Monthly bond payment\", \"R4,000\"], [\"Monthly cash flow\", \"R1,000\"]]",
+      "category": "Incomplete cash-flow label",
+      "concern": "Rent minus the bond payment excludes rates, maintenance, insurance, vacancy and other property costs.",
+      "proposedWording": "Label R1,000 as the monthly margin before other property costs; show further costs before describing net cash flow.",
+      "implementationImpact": "Separate reviewed learner-source wording proposal. Retain lesson, block, prompt and response identities through explicit compiler mapping before any source release; no source change in this batch.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g11-t1-l06-006",
+      "blockId": "b5004f6b06adc9591627a4a5-1",
+      "exactPassage": "[[\"Term\", \"What It Means\", \"Example\"], [\"Property price\", \"What you pay for the property\", \"R500,000\"], [\"Deposit\", \"Your money upfront (usually 10–20%)\", \"R100,000\"], [\"Bond\", \"Loan from bank for the rest\", \"R400,000\"], [\"Interest rate\", \"What the bank charges\", \"8–10%\"], [\"Bond repayment\", \"Monthly payment to bank\", \"R4,000\"], [\"Rent\", \"Income from tenant\", \"R5,000/month\"], [\"Cash flow\", \"Rent minus expenses\", \"Positive or negative\"], [\"Capital growth\", \"Property value increase over time\", \"5–10% per year\"]]",
+      "category": "Claims requiring current external verification",
+      "concern": "Interest, deposit and capital-growth ranges are examples without dates or assumptions; tax benefits and finance terms depend on the case.",
+      "proposedWording": "Label rates and growth as illustrative assumptions, not current offers or expected annual outcomes. Check dated official/product terms before a real decision.",
+      "implementationImpact": "Separate reviewed learner-source wording proposal. Retain lesson, block, prompt and response identities through explicit compiler mapping before any source release; no source change in this batch.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g11-t1-l06-006",
+      "blockId": "d9847d5910614b5853412006-1",
+      "exactPassage": "Your equity after one year (estimate): R_______",
+      "category": "Underdetermined equity estimate",
+      "concern": "An exact after-year equity figure requires the outstanding loan balance or a specified repayment/amortisation assumption.",
+      "proposedWording": "Estimate equity using R636,000 assumed property value minus a supplied remaining loan balance. If assuming unchanged debt, label that simplifying assumption.",
+      "implementationImpact": "A separately reviewed numerical assumption or supplied balance is needed; retain the existing response slot and saved work. No new amortisation task is imposed by the guide.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g11-t1-l06-006",
+      "blockId": "a042a15d5408dd1b10440523-1",
+      "exactPassage": "Here’s the tension: the deposit is not just a number. It is a test. It tests your patience, your discipline, your ability to delay gratification for years. Most people fail the test. Not because they cannot save. Because they will not wait. They want the property now, so they never save for it. The people who own property are not the ones who earn the most. They are the ones who passed the test of patience.",
+      "category": "Unqualified causal/social claim",
+      "concern": "The passage attributes ownership and inability to save primarily to patience, overlooking income, finance access and other constraints.",
+      "proposedWording": "Patience and consistency can support a deposit plan, while income, essential costs, access to finance and housing conditions also affect whether ownership is feasible.",
+      "implementationImpact": "Separate reviewed learner-source wording proposal. Retain lesson, block, prompt and response identities through explicit compiler mapping before any source release; no source change in this batch.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g11-t1-l07-007",
+      "blockId": "c0fad0e9abbacb2c15edeb04-1",
+      "exactPassage": "[[\"Scenario\", \"Your Money\", \"Total Investment\", \"Leverage Ratio\"], [\"Buy car cash\", \"R100,000\", \"R100,000\", \"1:1\"], [\"Buy house with deposit\", \"R100,000\", \"R500,000\", \"5:1\"], [\"Buy business with partner\", \"R50,000\", \"R100,000\", \"2:1\"]]",
+      "category": "Ratio definition and ownership context",
+      "concern": "The partner row correctly gives total capital/own capital 2:1 but does not distinguish shared equity from borrowed-debt leverage or shared returns.",
+      "proposedWording": "Name the ratio as total investment divided by own contribution. Explain that partner capital brings shared ownership/returns and is different from a loan.",
+      "implementationImpact": "Separate reviewed learner-source wording proposal. Retain lesson, block, prompt and response identities through explicit compiler mapping before any source release; no source change in this batch.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g11-t1-l07-007",
+      "blockId": "fea87c899ead2390bdeecb2b-1",
+      "exactPassage": "[[\"Situation\", \"Leverage?\", \"Why\"], [\"Buying a house to live in\", \"Usually\", \"Long-term, stable\"], [\"Starting a business\", \"Sometimes\", \"Riskier, but potential\"], [\"Investing in shares\", \"Risky\", \"Can lose everything\"], [\"Buying a car\", \"Usually not\", \"Depreciates, no income\"], [\"Education\", \"Yes\", \"Highest return investment\"]]",
+      "category": "Unqualified financial recommendation",
+      "concern": "The table broadly endorses borrowing for education or housing without cost, repayment, alternatives or capacity information.",
+      "proposedWording": "Use conditional questions about cost, terms, alternatives, expected benefit and ability to repay. Education and housing categories do not guarantee a suitable loan or return.",
+      "implementationImpact": "Separate reviewed learner-source wording proposal. Retain lesson, block, prompt and response identities through explicit compiler mapping before any source release; no source change in this batch.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g11-t1-l08-008",
+      "blockId": "34f072130017d732d4b63c64-1",
+      "exactPassage": "He pauses. \"Then the shares went down. 30% drop. I lost R3,000 on my R5,000 — a 60% loss. I owed my family member money I did not have. I had to work extra shifts for three months to pay it back.\"",
+      "category": "Ambiguous percentage base",
+      "concern": "The story says “then” after a 20% rise but calculates the 30% fall independently from the original R10,000 base. Sequential moves leave R8,400 assets/R3,400 equity, a 32% loss from initial equity.",
+      "proposedWording": "State that the rise and fall are separate scenarios from the original price, or explicitly calculate the sequential change and its correct equity result.",
+      "implementationImpact": "Separate reviewed learner-source wording proposal. Retain lesson, block, prompt and response identities through explicit compiler mapping before any source release; no source change in this batch.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g11-t1-l08-008",
+      "blockId": "0bc9ddf84be13a0d28f349b0-1",
+      "exactPassage": "\"You are Themba,\" he says. \"The one who lost R2,000 on shares.\"",
+      "category": "Internal numerical inconsistency",
+      "concern": "Themba is described as losing R2,000 although the preceding independent-fall example gives R3,000.",
+      "proposedWording": "Use the loss amount consistent with the final chosen independent or sequential interpretation of the example.",
+      "implementationImpact": "Separate reviewed learner-source wording proposal. Retain lesson, block, prompt and response identities through explicit compiler mapping before any source release; no source change in this batch.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g11-t1-l08-008",
+      "blockId": "1641107a45c54b4d8da366ee-1",
+      "exactPassage": "Question 1: Themba used 2:1 leverage on shares. When shares rose 20%, his return was 40%. When shares fell 30%, his loss was 60%. Why does leverage amplify losses more than gains in percentage terms?",
+      "category": "Materially false mathematical premise",
+      "concern": "Equal-sized asset moves have the same gross leverage multiplier. A 20% gain versus a 30% fall cannot prove inherently greater loss amplification.",
+      "proposedWording": "Why do these different-sized market moves produce +40% and −60% gross equity returns at 2:1? What would equal-sized upward and downward moves produce, before financing costs?",
+      "implementationImpact": "Separate reviewed learner-source wording proposal. Retain lesson, block, prompt and response identities through explicit compiler mapping before any source release; no source change in this batch.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g11-t1-l08-008",
+      "blockId": "c9aefbb003b923f456a5ec0a-1",
+      "exactPassage": "[[\"Risk Tolerance\", \"What It Means\", \"Appropriate Leverage\"], [\"Low\", \"I do not want to lose any money\", \"None — save only\"], [\"Medium\", \"I can handle some ups and downs\", \"Low leverage (2:1 max)\"], [\"High\", \"I am willing to risk loss for higher growth\", \"Moderate leverage (3:1–5:1)\"]]",
+      "category": "Unsupported borrowing ratios from risk tolerance",
+      "concern": "Comfort with volatility does not establish repayment capacity or an appropriate 2:1/3:1–5:1 borrowing ratio.",
+      "proposedWording": "Keep the reflection on tolerance, then ask separately about capacity, repayment obligations, terms and consequences. Do not recommend a numerical borrowing ratio from feelings alone.",
+      "implementationImpact": "Separate reviewed learner-source wording proposal. Retain lesson, block, prompt and response identities through explicit compiler mapping before any source release; no source change in this batch.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g11-t1-l08-008",
+      "blockId": "776f576e687d68a3fb6873c8-1",
+      "exactPassage": "Calculate risk-adjusted returns.",
+      "category": "Outcome not supported by supplied calculation",
+      "concern": "A formal risk-adjusted-return measure or worked calculation is not provided in the learner lesson.",
+      "proposedWording": "Interpret the simplified leveraged-return examples and distinguish risk tolerance from risk capacity.",
+      "implementationImpact": "Changing the outcome wording or adding a genuinely required method needs separate curricular review. The guide adds no formula, activity or response field to claim fulfilment.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g11-t1-l09-009",
+      "blockId": "b3e5637a0564958d22c67c3a-1",
+      "exactPassage": "This week, delegate ONE task to someone else. It does not have to be big. Let them do it. Do not check. Do not correct. Just observe. Write down: What happened? How did it feel? Was the outcome acceptable — even if different from how you would have done it?",
+      "category": "Specific activity safety qualification",
+      "concern": "“Do not check. Do not correct” can discourage essential safety/quality oversight or impose work on an unwilling person.",
+      "proposedWording": "Delegate a harmless task to a willing person with an agreed expectation/check-in. Observe the result and intervene when safety or an essential responsibility requires it; use the existing planning alternative if unsuitable.",
+      "implementationImpact": "Separate reviewed learner-source wording proposal. Retain lesson, block, prompt and response identities through explicit compiler mapping before any source release; no source change in this batch.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g11-t1-l10-010",
+      "blockId": "0362f270ea9ca688516fb105-1",
+      "exactPassage": "[[\"Item\", \"Current (Casual)\", \"Proposed (Employee)\"], [\"Revenue\", \"R1,200/week\", \"R1,200/week\"], [\"Pay helpers\", \"R600/week\", \"R800/week (fixed wage)\"], [\"Thabo's time\", \"15 hours\", \"15 hours\"], [\"Thabo's free time\", \"Limited\", \"More — can find new customers\"]]",
+      "category": "Internal time/free-time ambiguity",
+      "concern": "Both columns state fifteen hours of Thabo’s time, while the proposed case claims more free time. The table does not quantify that change.",
+      "proposedWording": "Clarify whether hours change, what the fifteen hours cover and which responsibilities are freed; otherwise describe a possible change in responsibility rather than a demonstrated time saving.",
+      "implementationImpact": "Separate reviewed learner-source wording proposal. Retain lesson, block, prompt and response identities through explicit compiler mapping before any source release; no source change in this batch.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g11-t1-l10-010",
+      "blockId": "7e5eb4fd5b61a985ea12a7a6-1",
+      "exactPassage": "[[\"Responsibility\", \"What It Means\"], [\"Pay fairly\", \"Agreed wage, on time, every time\"], [\"Train well\", \"Show them how to do the job properly\"], [\"Supervise\", \"Check quality, give feedback\"], [\"Respect\", \"Treat with dignity\"], [\"Protect\", \"Safe working conditions\"], [\"Follow the law\", \"UIF, contracts (if formal)\"]]",
+      "category": "Legal qualification requiring current official checking",
+      "concern": "The “if formal” condition does not reliably determine employer responsibilities such as UIF or written particulars.",
+      "proposedWording": "Employment obligations depend on the facts and applicable law, including casual/informal arrangements. Check current Department of Employment and Labour/UIF guidance before a real arrangement.",
+      "implementationImpact": "Separate reviewed learner-source wording proposal. Retain lesson, block, prompt and response identities through explicit compiler mapping before any source release; no source change in this batch.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g11-t1-l12-012",
+      "blockId": "b1f45e152cc2e9bdf011ed1e-1",
+      "exactPassage": "[[\"Tool Type\", \"Examples\", \"What It Does\"], [\"Budgeting\", \"22seven, Pocketbook\", \"Tracks spending automatically\"], [\"Saving\", \"Bank apps, TFSA apps\", \"Automate transfers\"], [\"Investing\", \"EasyEquities, Satrix\", \"Buy shares easily\"], [\"Learning\", \"YouTube, podcasts, blogs\", \"Free knowledge\"], [\"Communication\", \"WhatsApp, email templates\", \"Reach people quickly\"], [\"Organisation\", \"Calendars, reminders\", \"Never forget\"], [\"Business\", \"Social media, Canva\", \"Market and design\"]]",
+      "category": "Named products requiring current external verification",
+      "concern": "Named apps/platforms and claims about automatic tracking, free knowledge or easy investing are not dated availability, fee, age or permission checks.",
+      "proposedWording": "Treat these as examples of tool functions; verify current availability, terms, age requirements, privacy and cost before recommending or using a specific product.",
+      "implementationImpact": "Separate reviewed learner-source wording proposal. Retain lesson, block, prompt and response identities through explicit compiler mapping before any source release; no source change in this batch.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g11-t1-l12-012",
+      "blockId": "aeb168f9c14a70c0aa4e7b7a-1",
+      "exactPassage": "Question 3 — The Tool Audit: Look at your phone. Identify one app that serves your goals and one app that distracts you from them. Delete the distraction for one week. Write down what changes. If you cannot delete it, explain why — and what that reason tells you about your relationship with technology.",
+      "category": "Specific device/participation safeguard",
+      "concern": "A deletion task can affect a shared, essential school, accessibility or safety tool; the final question may frame legitimate constraints as a personal defect.",
+      "proposedWording": "With permission, pause or remove a non-essential distraction for a week if suitable. Otherwise explain the practical constraint and choose an appropriate boundary using the existing alternative.",
+      "implementationImpact": "Separate reviewed learner-source wording proposal. Retain lesson, block, prompt and response identities through explicit compiler mapping before any source release; no source change in this batch.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g11-t1-l16-016",
+      "blockId": "f1a03c48f5f47ccb98770e73-1",
+      "exactPassage": "[[\"Area\", \"Common Gap\"], [\"Financial\", \"Only using own money, not considering borrowing\"], [\"Time\", \"No automation, no delegation\"], [\"People\", \"Going alone, not building teams\"], [\"Systems\", \"No processes, everything ad hoc\"], [\"Technology\", \"Not using available tools, or using too many\"], [\"Knowledge\", \"No capture system, not teaching others\"], [\"Managing the Downside\", \"Ignoring the risks and unintended consequences\"]]",
+      "category": "Borrowing framed as a default improvement",
+      "concern": "Only using one’s own money is listed as a gap regardless of purpose, affordability and risk.",
+      "proposedWording": "For financial resources, ask whether the plan is adequately funded and what costs/risks each option brings. Choosing not to borrow can be a sound decision.",
+      "implementationImpact": "Separate reviewed learner-source wording proposal. Retain lesson, block, prompt and response identities through explicit compiler mapping before any source release; no source change in this batch.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g11-t1-l17-017",
+      "blockId": "e3c779f5baea639d5a857de7-1",
+      "exactPassage": "If you cannot take the first step this week, write down the exact reason why. Is it a real barrier — or is it fear dressed up as a reason?",
+      "category": "Missing context for real barriers",
+      "concern": "The motivational question can dismiss resource, permission or safety constraints in carrying out an actual first step.",
+      "proposedWording": "If the step cannot happen this week, identify the real barrier, including resources, permission or safety, and revise the smallest feasible next step. Reflection on fear can remain where relevant.",
+      "implementationImpact": "Separate reviewed learner-source wording proposal. Retain lesson, block, prompt and response identities through explicit compiler mapping before any source release; no source change in this batch.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g11-t1-l20-020",
+      "blockId": "df1ab59df8c699d2cbdf152a-1",
+      "exactPassage": "10. The 1-10 Scale: At the start of the term, you were a \"1\" on the leverage literacy scale. Where are you now, honestly? What is the exact number? What is the ONE specific thing you need to do in Term 2 to move up by a single point?",
+      "category": "Unsupported baseline/self-rating framing",
+      "concern": "Every learner is assumed to begin at one on an uncalibrated scale. A precise self-rating is not a validated learning score or guaranteed growth.",
+      "proposedWording": "Compare your actual starting understanding with now using examples. If the scale helps reflection, explain what the number means to you and identify a useful next step without requiring a rise.",
+      "implementationImpact": "Separate reviewed learner-source wording proposal. Retain lesson, block, prompt and response identities through explicit compiler mapping before any source release; no source change in this batch.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g11-t1-l20-020",
+      "blockId": "a9a90a0c5959276420fa3750-1",
+      "exactPassage": "Share your Term 1 reflection with someone who matters to you. Show them your 1-10 score. Tell them what you need to do to move up by one point. Share one shadow you discovered about yourself. Ask them: \"What shadow do you see in me that I might be blind to?\"",
+      "category": "Consent and visibility qualification",
+      "concern": "Sharing a self-rating and a personal shadow should allow privacy choices even when a trusted person is available. Personal reflection remains part of the lesson.",
+      "proposedWording": "Choose what you are comfortable sharing with a willing trusted person, or use the private reflection alternative. Do not require public display of a number or sensitive self-description.",
+      "implementationImpact": "Separate reviewed learner-source wording proposal. Retain lesson, block, prompt and response identities through explicit compiler mapping before any source release; no source change in this batch.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    }
+  ],
+  "retainedPerspectives": [
+    "Leverage/lever, architect and shadow metaphors remain legitimate teaching perspectives.",
+    "Personal reflection, future-self writing and motivational stories remain; no blanket fictionalisation or compulsory public disclosure.",
+    "No corrective lecture is added after every metaphor or paragraph."
+  ],
+  "verificationLimits": "Arithmetic and actual-source alignment checked; current product, labour, tax and financial terms are not certified by this desk review."
+}
