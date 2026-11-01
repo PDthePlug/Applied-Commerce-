@@ -1,6 +1,6 @@
 # Grade 11 Term 3 — contextual guide review
 
-20 guides were individually drafted after reading all **974 actual learner blocks**. Complete collapsible preparation, brief point-of-use cues and useful optional local explanations retain the approved interface. All **276 prior bindings** and the accepted Grade 11/12 benchmarks are unchanged. The **296-guide candidate awaits genuine acceptance** and is not yet counted as newly completed.
+20 guides were individually drafted after reading all **974 actual learner blocks**. Complete collapsible preparation, brief point-of-use cues and useful optional local explanations retain the approved interface. All **276 prior bindings** and the accepted Grade 11/12 benchmarks are unchanged. The **296-guide release passes genuine staging acceptance**. Additions are completed individual review, with educator moderation/timing trials pending; see [acceptance report](ACCEPTANCE_REPORT.md).
 
 The original explanations, stories, activities, learning sequence, personal reflection and project requirements remain central. No new activities, compulsory discussion, outcomes, response fields or saved-work identities are introduced. Learners choose suitable personal details; specific sensitive tasks have appropriate alternatives without making the programme wholly fictional. Authorised educators/institution administrators may review submitted evidence within their permissions; classmates need not hear private answers.
 
