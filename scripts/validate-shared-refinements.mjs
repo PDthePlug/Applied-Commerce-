@@ -13,7 +13,8 @@ const baseURL=process.env.AC_ROLE_BASE_URL;assert.ok(baseURL&&new URL(baseURL).h
 const access=JSON.parse(JSON.parse(fs.readFileSync(process.env.AC_STAGING_ACCESS_FILE)).content[0].text);
 const out=process.env.AC_STAGING_EVIDENCE_DIR??dir+'/rollout';fs.mkdirSync(out,{recursive:true,mode:0o700});
 const browser=await chromium.launch({executablePath:process.env.AC_BROWSER_EXECUTABLE,proxy:process.env.HTTPS_PROXY?{server:process.env.HTTPS_PROXY,bypass:'localhost,127.0.0.1'}:undefined,args:['--no-sandbox','--disable-dev-shm-usage']});
-const results={at:new Date().toISOString(),projectRef:config.projectRef,baseURL,authentication:'genuine staging password login',plans:[],responsive:[],persistence:[],errors:[],privateDeliveryDenials:[],failedRequests:[]};
+const results=process.env.AC_STAGING_RESUME==='1'?JSON.parse(fs.readFileSync(out+'/shared-results.json')):{at:new Date().toISOString(),projectRef:config.projectRef,baseURL,authentication:'genuine staging password login',plans:[],responsive:[],persistence:[],errors:[],privateDeliveryDenials:[],failedRequests:[]};
+if(process.env.AC_STAGING_RESUME==='1'){assert.equal(results.commit,process.env.AC_EXPECTED_COMMIT);assert.equal(results.projectRef,config.projectRef);assert.equal(results.failure,undefined);results.resumed=true;}
 const save=()=>fs.writeFileSync(out+'/shared-results.json',JSON.stringify(results,null,2));
 async function login(role){
  const context=await browser.newContext({baseURL,viewport:{width:1280,height:900}}),page=await context.newPage();
@@ -31,13 +32,14 @@ try{
  const a=await login('facilitator');
  const selection=stagingLessonScope(manifest.plans,process.env.AC_STAGING_NAV_LESSONS);Object.assign(results,{navigationScope:selection.scope,releasedPlans:selection.releasedPlans});
  for(const binding of selection.plans){
+  if(results.plans.some(row=>row.lessonId===binding.lessonId))continue;
   const {page}=a;await teacher(page,binding);assert.equal(await page.locator('.contextual-guidance nav').count(),0);assert.equal(await page.getByRole('button',{name:'Teaching navigator',exact:true}).count(),0);assert.equal(await page.getByRole('navigation',{name:'Classroom teaching stages',exact:true}).count(),1);
   const options=await page.locator('#classroom-stage option').evaluateAll(nodes=>nodes.map(n=>n.value));assert.deepEqual([...options].sort(),binding.moments.map(m=>m.id).sort());
   // Navigate every target, including backward revisits and support/later work.
   for(const moment of binding.moments){
    await page.evaluate(()=>document.querySelectorAll('.contextual-guidance,.deepening-insight').forEach(n=>n.open=false));
    await page.locator('#classroom-stage').selectOption(moment.id);await page.getByRole('button',{name:'Go to stage',exact:true}).click();
-   assert.equal(await page.evaluate(()=>document.activeElement?.id),'teacher-moment-'+moment.id);
+   await page.waitForFunction(expected=>document.activeElement?.id===expected,'teacher-moment-'+moment.id,{timeout:5000});assert.equal(await page.evaluate(()=>document.activeElement?.id),'teacher-moment-'+moment.id);
    const target=page.locator('[data-instructional-location="'+moment.id+'"]');assert.equal(await target.getAttribute('open'),'');
    assert.equal(await target.getAttribute('data-source-placement'),moment.placement.blockId);
    assert.equal(await target.evaluate(node=>{for(let p=node.parentElement;p;p=p.parentElement)if(p instanceof HTMLDetailsElement&&!p.open)return false;return true;}),true);
@@ -47,11 +49,13 @@ try{
   results.plans.push({lessonId:binding.lessonId,targets:options.length,noRepeatedNavigation:true,sourcePlacement:true,learnerView:true});save();
  }
  for(const lessonId of (process.env.AC_STAGING_LESSONS?.split(',')??['g8-t1-l01-001','g8-t1-l08-008','g8-t1-l10-010','g12-t1-l05-005']))for(const width of [320,360,430,768,1280,1920]){
+  if([1,1.28,2].every(scale=>results.responsive.some(row=>row.lessonId===lessonId&&row.width===width&&row.scale===scale)))continue;
   const binding=manifest.plans.find(b=>b.lessonId===lessonId);assert.ok(binding,lessonId);const {page}=a;await page.setViewportSize({width,height:900});await teacher(page,binding);
   const prep=page.locator('[data-instructional-location="preparation"]');assert.equal(await prep.getAttribute('open'),null);
   const first=binding.moments.find(m=>m.schedule==='classroom');await page.locator('#classroom-stage').selectOption(first.id);await page.getByRole('button',{name:'Go to stage',exact:true}).click();
   const stage=page.locator('[data-instructional-location="'+first.id+'"]');const depth=stage.locator('.contextual-depth');if(await depth.count()){assert.equal(await depth.getAttribute('open'),null);await depth.locator(':scope > summary').click();await depth.locator('p').first().waitFor();await depth.locator(':scope > summary').click();}
   for(const scale of [1,1.28,2]){
+   if(results.responsive.some(row=>row.lessonId===lessonId&&row.width===width&&row.scale===scale))continue;
    await page.evaluate(s=>document.documentElement.style.setProperty('--ac-text-scale',String(s)),scale);assert.equal(await overflow(page),false);await stage.scrollIntoViewIfNeeded();
    if([320,430,1280].includes(width))await page.screenshot({path:out+`/teacher-after-${lessonId}-${width}-${scale}.png`});
    const checkpoints=page.locator('.learning-section.learning-mode-prove').filter({has:page.locator('.checkpoint-question')});

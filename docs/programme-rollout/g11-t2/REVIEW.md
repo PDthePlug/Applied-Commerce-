@@ -1,6 +1,6 @@
 # Grade 11 Term 2 — contextual guide review
 
-Twenty guides were individually drafted after reading all **1,066 actual learner blocks**. Complete collapsible preparation, brief contextual facilitation cues and useful local optional support retain the approved interface. All 256 prior plan bindings and both accepted upper-grade benchmarks are unchanged. The 276-guide candidate awaits genuine hosted acceptance and is not yet counted as newly completed.
+Twenty guides were individually drafted after reading all **1,066 actual learner blocks**. Complete collapsible preparation, brief contextual facilitation cues and useful local optional support retain the approved interface. All 256 prior plan bindings and both accepted upper-grade benchmarks are unchanged. The 276-guide release passes genuine hosted acceptance. Twenty additions are completed individual review, with educator moderation and timing trials pending. See [acceptance report](ACCEPTANCE_REPORT.md).
 
 The original personal reflections, mentor maps, ethical/legal questions and philosophy project remain central. No additional activities, outcomes, compulsory discussions or response fields are added. Suitable personal experience remains appropriate; private or painful details need not be disclosed to classmates. Authorised educators and institutional administrators may review submitted learning evidence within their permissions.
 
