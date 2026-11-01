@@ -15,12 +15,13 @@
       "sourceAlignment": "PR48_VERIFIED",
       "instructionalReview": "OWNER_ACCEPTED_APPROACH; SOURCE REVIEW COMPLETE",
       "contactPeriods": 2,
-      "automated": "PASS: shared 399-unit preservation, 196 Node and 249 existing browser checks; targeted layout suite reported separately",
-      "genuineRole": "PASS: genuine educator navigation and exact private-field comparison; shared role/persistence checks",
+      "automated": "PASS: 224 Node tests; runtime, identity, typecheck, lint, normal original-key staging build and CI local browser acceptance; see PR79 follow-up provenance",
+      "genuineRole": "PASS: genuine educator exact-field/navigation read; shared real role, RLS, revocation and persistence checks; no mocked authentication",
       "printing": "PASS: all instructional fields and complete A4 export",
-      "responsive": "PASS: 6 widths \u00d7 3 text scales, genuine staging",
+      "responsive": "PASS: 18 genuine staging width/text-scale cases at PR79 head; initial protection-link failure retained and higher-grade completion rerun recorded",
       "issues": [],
-      "timingStatus": "PROVISIONAL; educator timing trials pending"
+      "timingStatus": "PROVISIONAL; educator timing trials pending",
+      "followupEvidence": "docs/staging-classroom-validation/pr79-followup/REPORT.md"
     },
     {
       "lessonId": "g8-t1-l02-002",
@@ -31,12 +32,13 @@
       "sourceAlignment": "PR48_VERIFIED",
       "instructionalReview": "OWNER_ACCEPTED_APPROACH; SOURCE REVIEW COMPLETE",
       "contactPeriods": 2,
-      "automated": "PASS: shared 399-unit preservation, 196 Node and 249 existing browser checks; targeted layout suite reported separately",
-      "genuineRole": "PASS: genuine educator navigation and exact private-field comparison; shared role/persistence checks",
+      "automated": "PASS: 224 Node tests; runtime, identity, typecheck, lint, normal original-key staging build and CI local browser acceptance; see PR79 follow-up provenance",
+      "genuineRole": "PASS: genuine educator exact-field/navigation read; shared real role, RLS, revocation and persistence checks; no mocked authentication",
       "printing": "PASS: all instructional fields and complete A4 export",
-      "responsive": "Shared components pass representative checks; direct per-lesson responsive rerun not performed",
+      "responsive": "PASS: 18 genuine staging width/text-scale cases at PR79 head; initial protection-link failure retained and higher-grade completion rerun recorded",
       "issues": [],
-      "timingStatus": "PROVISIONAL; educator timing trials pending"
+      "timingStatus": "PROVISIONAL; educator timing trials pending",
+      "followupEvidence": "docs/staging-classroom-validation/pr79-followup/REPORT.md"
     },
     {
       "lessonId": "g8-t1-l03-003",
@@ -47,12 +49,13 @@
       "sourceAlignment": "PR48_VERIFIED",
       "instructionalReview": "OWNER_ACCEPTED_APPROACH; SOURCE REVIEW COMPLETE",
       "contactPeriods": 2,
-      "automated": "PASS: shared 399-unit preservation, 196 Node and 249 existing browser checks; targeted layout suite reported separately",
-      "genuineRole": "PASS: genuine educator navigation and exact private-field comparison; shared role/persistence checks",
+      "automated": "PASS: 224 Node tests; runtime, identity, typecheck, lint, normal original-key staging build and CI local browser acceptance; see PR79 follow-up provenance",
+      "genuineRole": "PASS: genuine educator exact-field/navigation read; shared real role, RLS, revocation and persistence checks; no mocked authentication",
       "printing": "PASS: all instructional fields and complete A4 export",
-      "responsive": "Shared components pass representative checks; direct per-lesson responsive rerun not performed",
+      "responsive": "PASS: 18 genuine staging width/text-scale cases at PR79 head; initial protection-link failure retained and higher-grade completion rerun recorded",
       "issues": [],
-      "timingStatus": "PROVISIONAL; educator timing trials pending"
+      "timingStatus": "PROVISIONAL; educator timing trials pending",
+      "followupEvidence": "docs/staging-classroom-validation/pr79-followup/REPORT.md"
     },
     {
       "lessonId": "g8-t1-l04-004",
@@ -63,10 +66,10 @@
       "sourceAlignment": "PR48_VERIFIED",
       "instructionalReview": "OWNER_ACCEPTED_APPROACH; SOURCE REVIEW COMPLETE",
       "contactPeriods": 2,
-      "automated": "PASS: shared 399-unit preservation, 196 Node and 249 existing browser checks; targeted layout suite reported separately",
-      "genuineRole": "PASS: genuine educator navigation and exact private-field comparison; shared role/persistence checks",
+      "automated": "PASS: 224 Node tests; runtime, identity, typecheck, lint, normal original-key staging build and CI local browser acceptance; see PR79 follow-up provenance",
+      "genuineRole": "PASS: genuine educator exact-field/navigation read; shared real role, RLS, revocation and persistence checks; no mocked authentication",
       "printing": "PASS: all instructional fields and complete A4 export",
-      "responsive": "Shared components pass representative checks; direct per-lesson responsive rerun not performed",
+      "responsive": "PASS: 18 genuine staging width/text-scale cases at PR79 head; initial protection-link failure retained and higher-grade completion rerun recorded",
       "issues": [],
       "timingStatus": "PROVISIONAL; educator timing trials pending",
       "editorialReview": {
@@ -80,7 +83,8 @@
           }
         ],
         "withdrawn": []
-      }
+      },
+      "followupEvidence": "docs/staging-classroom-validation/pr79-followup/REPORT.md"
     },
     {
       "lessonId": "g8-t1-l05-005",
@@ -91,12 +95,13 @@
       "sourceAlignment": "PR48_VERIFIED",
       "instructionalReview": "OWNER_ACCEPTED_APPROACH; SOURCE REVIEW COMPLETE",
       "contactPeriods": 1,
-      "automated": "PASS: shared 399-unit preservation, 196 Node and 249 existing browser checks; targeted layout suite reported separately",
-      "genuineRole": "PASS: genuine educator navigation and exact private-field comparison; shared role/persistence checks",
+      "automated": "PASS: 224 Node tests; runtime, identity, typecheck, lint, normal original-key staging build and CI local browser acceptance; see PR79 follow-up provenance",
+      "genuineRole": "PASS: genuine educator exact-field/navigation read; shared real role, RLS, revocation and persistence checks; no mocked authentication",
       "printing": "PASS: all instructional fields and complete A4 export",
-      "responsive": "Shared components pass representative checks; direct per-lesson responsive rerun not performed",
+      "responsive": "PASS: 18 genuine staging width/text-scale cases at PR79 head; initial protection-link failure retained and higher-grade completion rerun recorded",
       "issues": [],
-      "timingStatus": "PROVISIONAL; educator timing trials pending"
+      "timingStatus": "PROVISIONAL; educator timing trials pending",
+      "followupEvidence": "docs/staging-classroom-validation/pr79-followup/REPORT.md"
     },
     {
       "lessonId": "g8-t1-l06-006",
@@ -107,10 +112,10 @@
       "sourceAlignment": "PR48_VERIFIED",
       "instructionalReview": "OWNER_ACCEPTED_APPROACH; SOURCE REVIEW COMPLETE",
       "contactPeriods": 1,
-      "automated": "PASS: shared 399-unit preservation, 196 Node and 249 existing browser checks; targeted layout suite reported separately",
-      "genuineRole": "PASS: genuine educator navigation and exact private-field comparison; shared role/persistence checks",
+      "automated": "PASS: 224 Node tests; runtime, identity, typecheck, lint, normal original-key staging build and CI local browser acceptance; see PR79 follow-up provenance",
+      "genuineRole": "PASS: genuine educator exact-field/navigation read; shared real role, RLS, revocation and persistence checks; no mocked authentication",
       "printing": "PASS: all instructional fields and complete A4 export",
-      "responsive": "Shared components pass representative checks; direct per-lesson responsive rerun not performed",
+      "responsive": "PASS: 18 genuine staging width/text-scale cases at PR79 head; initial protection-link failure retained and higher-grade completion rerun recorded",
       "issues": [],
       "timingStatus": "PROVISIONAL; educator timing trials pending",
       "editorialReview": {
@@ -130,7 +135,8 @@
           }
         ],
         "withdrawn": []
-      }
+      },
+      "followupEvidence": "docs/staging-classroom-validation/pr79-followup/REPORT.md"
     },
     {
       "lessonId": "g8-t1-l07-007",
@@ -141,12 +147,13 @@
       "sourceAlignment": "PR48_VERIFIED",
       "instructionalReview": "OWNER_ACCEPTED_APPROACH; SOURCE REVIEW COMPLETE",
       "contactPeriods": 1,
-      "automated": "PASS: shared 399-unit preservation, 196 Node and 249 existing browser checks; targeted layout suite reported separately",
-      "genuineRole": "PASS: genuine educator navigation and exact private-field comparison; shared role/persistence checks",
+      "automated": "PASS: 224 Node tests; runtime, identity, typecheck, lint, normal original-key staging build and CI local browser acceptance; see PR79 follow-up provenance",
+      "genuineRole": "PASS: genuine educator exact-field/navigation read; shared real role, RLS, revocation and persistence checks; no mocked authentication",
       "printing": "PASS: all instructional fields and complete A4 export",
-      "responsive": "Shared components pass representative checks; direct per-lesson responsive rerun not performed",
+      "responsive": "PASS: 18 genuine staging width/text-scale cases at PR79 head; initial protection-link failure retained and higher-grade completion rerun recorded",
       "issues": [],
-      "timingStatus": "PROVISIONAL; educator timing trials pending"
+      "timingStatus": "PROVISIONAL; educator timing trials pending",
+      "followupEvidence": "docs/staging-classroom-validation/pr79-followup/REPORT.md"
     },
     {
       "lessonId": "g8-t1-l08-008",
@@ -157,10 +164,10 @@
       "sourceAlignment": "PR48_VERIFIED",
       "instructionalReview": "OWNER_ACCEPTED_APPROACH; SOURCE REVIEW COMPLETE",
       "contactPeriods": 1,
-      "automated": "PASS: shared 399-unit preservation, 196 Node and 249 existing browser checks; targeted layout suite reported separately",
-      "genuineRole": "PASS: genuine educator navigation and exact private-field comparison; shared role/persistence checks",
+      "automated": "PASS: 224 Node tests; runtime, identity, typecheck, lint, normal original-key staging build and CI local browser acceptance; see PR79 follow-up provenance",
+      "genuineRole": "PASS: genuine educator exact-field/navigation read; shared real role, RLS, revocation and persistence checks; no mocked authentication",
       "printing": "PASS: all instructional fields and complete A4 export",
-      "responsive": "PASS: 6 widths \u00d7 3 text scales, genuine staging",
+      "responsive": "PASS: 18 genuine staging width/text-scale cases at PR79 head; initial protection-link failure retained and higher-grade completion rerun recorded",
       "issues": [],
       "timingStatus": "PROVISIONAL; educator timing trials pending",
       "editorialReview": {
@@ -174,7 +181,8 @@
           }
         ],
         "withdrawn": []
-      }
+      },
+      "followupEvidence": "docs/staging-classroom-validation/pr79-followup/REPORT.md"
     },
     {
       "lessonId": "g8-t1-l09-009",
@@ -185,12 +193,13 @@
       "sourceAlignment": "PR48_VERIFIED",
       "instructionalReview": "OWNER_ACCEPTED_APPROACH; SOURCE REVIEW COMPLETE",
       "contactPeriods": 1,
-      "automated": "PASS: shared 399-unit preservation, 196 Node and 249 existing browser checks; targeted layout suite reported separately",
-      "genuineRole": "PASS: genuine educator navigation and exact private-field comparison; shared role/persistence checks",
+      "automated": "PASS: 224 Node tests; runtime, identity, typecheck, lint, normal original-key staging build and CI local browser acceptance; see PR79 follow-up provenance",
+      "genuineRole": "PASS: genuine educator exact-field/navigation read; shared real role, RLS, revocation and persistence checks; no mocked authentication",
       "printing": "PASS: all instructional fields and complete A4 export",
-      "responsive": "Shared components pass representative checks; direct per-lesson responsive rerun not performed",
+      "responsive": "PASS: 18 genuine staging width/text-scale cases at PR79 head; initial protection-link failure retained and higher-grade completion rerun recorded",
       "issues": [],
-      "timingStatus": "PROVISIONAL; educator timing trials pending"
+      "timingStatus": "PROVISIONAL; educator timing trials pending",
+      "followupEvidence": "docs/staging-classroom-validation/pr79-followup/REPORT.md"
     },
     {
       "lessonId": "g8-t1-l10-010",
@@ -201,12 +210,13 @@
       "sourceAlignment": "PR48_VERIFIED",
       "instructionalReview": "OWNER_ACCEPTED_APPROACH; SOURCE REVIEW COMPLETE",
       "contactPeriods": 1,
-      "automated": "PASS: shared 399-unit preservation, 196 Node and 249 existing browser checks; targeted layout suite reported separately",
-      "genuineRole": "PASS: genuine educator navigation and exact private-field comparison; shared role/persistence checks",
+      "automated": "PASS: 224 Node tests; runtime, identity, typecheck, lint, normal original-key staging build and CI local browser acceptance; see PR79 follow-up provenance",
+      "genuineRole": "PASS: genuine educator exact-field/navigation read; shared real role, RLS, revocation and persistence checks; no mocked authentication",
       "printing": "PASS: all instructional fields and complete A4 export",
-      "responsive": "PASS: 6 widths \u00d7 3 text scales, genuine staging",
+      "responsive": "PASS: 18 genuine staging width/text-scale cases at PR79 head; initial protection-link failure retained and higher-grade completion rerun recorded",
       "issues": [],
-      "timingStatus": "PROVISIONAL; educator timing trials pending"
+      "timingStatus": "PROVISIONAL; educator timing trials pending",
+      "followupEvidence": "docs/staging-classroom-validation/pr79-followup/REPORT.md"
     },
     {
       "lessonId": "g8-t1-l11-011",
@@ -217,12 +227,13 @@
       "sourceAlignment": "PR48_VERIFIED",
       "instructionalReview": "OWNER_ACCEPTED_APPROACH; SOURCE REVIEW COMPLETE",
       "contactPeriods": 1,
-      "automated": "PASS: shared 399-unit preservation, 196 Node and 249 existing browser checks; targeted layout suite reported separately",
-      "genuineRole": "PASS: genuine educator navigation and exact private-field comparison; shared role/persistence checks",
+      "automated": "PASS: 224 Node tests; runtime, identity, typecheck, lint, normal original-key staging build and CI local browser acceptance; see PR79 follow-up provenance",
+      "genuineRole": "PASS: genuine educator exact-field/navigation read; shared real role, RLS, revocation and persistence checks; no mocked authentication",
       "printing": "PASS: all instructional fields and complete A4 export",
-      "responsive": "Shared components pass representative checks; direct per-lesson responsive rerun not performed",
+      "responsive": "PASS: 18 genuine staging width/text-scale cases at PR79 head; initial protection-link failure retained and higher-grade completion rerun recorded",
       "issues": [],
-      "timingStatus": "PROVISIONAL; educator timing trials pending"
+      "timingStatus": "PROVISIONAL; educator timing trials pending",
+      "followupEvidence": "docs/staging-classroom-validation/pr79-followup/REPORT.md"
     },
     {
       "lessonId": "g8-t1-l12-012",
@@ -231,12 +242,12 @@
       "title": "HOW TO SAVE SYSTEMATICALLY",
       "status": "OWNER_ACCEPTED_PR48_EXISTING",
       "sourceAlignment": "PR48_VERIFIED",
-      "instructionalReview": "OWNER_ACCEPTED_APPROACH; SOURCE REVIEW COMPLETE",
+      "instructionalReview": "Owner-accepted approach retained; two source-format references corrected after reading all 45 actual blocks; independent educator moderation remains pending",
       "contactPeriods": 1,
-      "automated": "PASS: shared 399-unit preservation, 196 Node and 249 existing browser checks; targeted layout suite reported separately",
-      "genuineRole": "PASS: genuine educator navigation and exact private-field comparison; shared role/persistence checks",
+      "automated": "PASS: 224 Node tests; runtime, identity, typecheck, lint, normal original-key staging build and CI local browser acceptance; see PR79 follow-up provenance",
+      "genuineRole": "PASS: corrected guidance, real learner edit/clear/reload/fresh login, actual educator review, shared role/RLS/session-revocation and institutional-boundary checks",
       "printing": "PASS: all instructional fields and complete A4 export",
-      "responsive": "Shared components pass representative checks; direct per-lesson responsive rerun not performed",
+      "responsive": "PASS: 18 genuine staging width/text-scale cases on corrected normal release 3c34b06",
       "issues": [],
       "timingStatus": "PROVISIONAL; educator timing trials pending",
       "editorialReview": {
@@ -268,7 +279,8 @@
           }
         ],
         "withdrawn": []
-      }
+      },
+      "followupEvidence": "docs/staging-classroom-validation/pr79-followup/REPORT.md"
     },
     {
       "lessonId": "g8-t1-l13-013",
@@ -279,10 +291,10 @@
       "sourceAlignment": "PR48_VERIFIED",
       "instructionalReview": "OWNER_ACCEPTED_APPROACH; SOURCE REVIEW COMPLETE",
       "contactPeriods": 1,
-      "automated": "PASS: shared 399-unit preservation, 196 Node and 249 existing browser checks; targeted layout suite reported separately",
-      "genuineRole": "PASS: genuine educator navigation and exact private-field comparison; shared role/persistence checks",
+      "automated": "PASS: 224 Node tests; runtime, identity, typecheck, lint, normal original-key staging build and CI local browser acceptance; see PR79 follow-up provenance",
+      "genuineRole": "PASS: genuine educator exact-field/navigation read; shared real role, RLS, revocation and persistence checks; no mocked authentication",
       "printing": "PASS: all instructional fields and complete A4 export",
-      "responsive": "Shared components pass representative checks; direct per-lesson responsive rerun not performed",
+      "responsive": "PASS: 18 genuine staging width/text-scale cases at PR79 head; initial protection-link failure retained and higher-grade completion rerun recorded",
       "issues": [],
       "timingStatus": "PROVISIONAL; educator timing trials pending",
       "editorialReview": {
@@ -302,7 +314,8 @@
           }
         ],
         "withdrawn": []
-      }
+      },
+      "followupEvidence": "docs/staging-classroom-validation/pr79-followup/REPORT.md"
     },
     {
       "lessonId": "g8-t1-l14-014",
@@ -313,10 +326,10 @@
       "sourceAlignment": "PR48_VERIFIED",
       "instructionalReview": "OWNER_ACCEPTED_APPROACH; SOURCE REVIEW COMPLETE",
       "contactPeriods": 1,
-      "automated": "PASS: shared 399-unit preservation, 196 Node and 249 existing browser checks; targeted layout suite reported separately",
-      "genuineRole": "PASS: genuine educator navigation and exact private-field comparison; shared role/persistence checks",
+      "automated": "PASS: 224 Node tests; runtime, identity, typecheck, lint, normal original-key staging build and CI local browser acceptance; see PR79 follow-up provenance",
+      "genuineRole": "PASS: genuine educator exact-field/navigation read; shared real role, RLS, revocation and persistence checks; no mocked authentication",
       "printing": "PASS: all instructional fields and complete A4 export",
-      "responsive": "Shared components pass representative checks; direct per-lesson responsive rerun not performed",
+      "responsive": "PASS: 18 genuine staging width/text-scale cases at PR79 head; initial protection-link failure retained and higher-grade completion rerun recorded",
       "issues": [],
       "timingStatus": "PROVISIONAL; educator timing trials pending",
       "editorialReview": {
@@ -336,7 +349,8 @@
           }
         ],
         "withdrawn": []
-      }
+      },
+      "followupEvidence": "docs/staging-classroom-validation/pr79-followup/REPORT.md"
     },
     {
       "lessonId": "g8-t1-l15-015",
@@ -347,10 +361,10 @@
       "sourceAlignment": "PR48_VERIFIED",
       "instructionalReview": "OWNER_ACCEPTED_APPROACH; SOURCE REVIEW COMPLETE",
       "contactPeriods": 1,
-      "automated": "PASS: shared 399-unit preservation, 196 Node and 249 existing browser checks; targeted layout suite reported separately",
-      "genuineRole": "PASS: genuine educator navigation and exact private-field comparison; shared role/persistence checks",
+      "automated": "PASS: 224 Node tests; runtime, identity, typecheck, lint, normal original-key staging build and CI local browser acceptance; see PR79 follow-up provenance",
+      "genuineRole": "PASS: genuine educator exact-field/navigation read; shared real role, RLS, revocation and persistence checks; no mocked authentication",
       "printing": "PASS: all instructional fields and complete A4 export",
-      "responsive": "Shared components pass representative checks; direct per-lesson responsive rerun not performed",
+      "responsive": "PASS: 18 genuine staging width/text-scale cases at PR79 head; initial protection-link failure retained and higher-grade completion rerun recorded",
       "issues": [],
       "timingStatus": "PROVISIONAL; educator timing trials pending",
       "editorialReview": {
@@ -370,7 +384,8 @@
           }
         ],
         "withdrawn": []
-      }
+      },
+      "followupEvidence": "docs/staging-classroom-validation/pr79-followup/REPORT.md"
     },
     {
       "lessonId": "g8-t1-l16-016",
@@ -381,10 +396,10 @@
       "sourceAlignment": "PR48_VERIFIED",
       "instructionalReview": "OWNER_ACCEPTED_APPROACH; SOURCE REVIEW COMPLETE",
       "contactPeriods": 1,
-      "automated": "PASS: shared 399-unit preservation, 196 Node and 249 existing browser checks; targeted layout suite reported separately",
-      "genuineRole": "PASS: genuine educator navigation and exact private-field comparison; shared role/persistence checks",
+      "automated": "PASS: 224 Node tests; runtime, identity, typecheck, lint, normal original-key staging build and CI local browser acceptance; see PR79 follow-up provenance",
+      "genuineRole": "PASS: genuine educator exact-field/navigation read; shared real role, RLS, revocation and persistence checks; no mocked authentication",
       "printing": "PASS: all instructional fields and complete A4 export",
-      "responsive": "Shared components pass representative checks; direct per-lesson responsive rerun not performed",
+      "responsive": "PASS: 18 genuine staging width/text-scale cases at PR79 head; initial protection-link failure retained and higher-grade completion rerun recorded",
       "issues": [],
       "timingStatus": "PROVISIONAL; educator timing trials pending",
       "editorialReview": {
@@ -404,7 +419,8 @@
           }
         ],
         "withdrawn": []
-      }
+      },
+      "followupEvidence": "docs/staging-classroom-validation/pr79-followup/REPORT.md"
     },
     {
       "lessonId": "g8-t1-l17-017",
@@ -415,12 +431,13 @@
       "sourceAlignment": "PR48_VERIFIED",
       "instructionalReview": "OWNER_ACCEPTED_APPROACH; SOURCE REVIEW COMPLETE",
       "contactPeriods": 1,
-      "automated": "PASS: shared 399-unit preservation, 196 Node and 249 existing browser checks; targeted layout suite reported separately",
-      "genuineRole": "PASS: genuine educator navigation and exact private-field comparison; shared role/persistence checks",
+      "automated": "PASS: 224 Node tests; runtime, identity, typecheck, lint, normal original-key staging build and CI local browser acceptance; see PR79 follow-up provenance",
+      "genuineRole": "PASS: genuine educator exact-field/navigation read; shared real role, RLS, revocation and persistence checks; no mocked authentication",
       "printing": "PASS: all instructional fields and complete A4 export",
-      "responsive": "Shared components pass representative checks; direct per-lesson responsive rerun not performed",
+      "responsive": "PASS: 18 genuine staging width/text-scale cases at PR79 head; initial protection-link failure retained and higher-grade completion rerun recorded",
       "issues": [],
-      "timingStatus": "PROVISIONAL; educator timing trials pending"
+      "timingStatus": "PROVISIONAL; educator timing trials pending",
+      "followupEvidence": "docs/staging-classroom-validation/pr79-followup/REPORT.md"
     },
     {
       "lessonId": "g8-t1-l18-018",
@@ -431,10 +448,10 @@
       "sourceAlignment": "PR48_VERIFIED",
       "instructionalReview": "OWNER_ACCEPTED_APPROACH; SOURCE REVIEW COMPLETE",
       "contactPeriods": 1,
-      "automated": "PASS: shared 399-unit preservation, 196 Node and 249 existing browser checks; targeted layout suite reported separately",
-      "genuineRole": "PASS: genuine educator navigation and exact private-field comparison; shared role/persistence checks",
+      "automated": "PASS: 224 Node tests; runtime, identity, typecheck, lint, normal original-key staging build and CI local browser acceptance; see PR79 follow-up provenance",
+      "genuineRole": "PASS: genuine educator exact-field/navigation read; shared real role, RLS, revocation and persistence checks; no mocked authentication",
       "printing": "PASS: all instructional fields and complete A4 export",
-      "responsive": "Shared components pass representative checks; direct per-lesson responsive rerun not performed",
+      "responsive": "PASS: 18 genuine staging width/text-scale cases at PR79 head; initial protection-link failure retained and higher-grade completion rerun recorded",
       "issues": [],
       "timingStatus": "PROVISIONAL; educator timing trials pending",
       "editorialReview": {
@@ -454,7 +471,8 @@
           }
         ],
         "withdrawn": []
-      }
+      },
+      "followupEvidence": "docs/staging-classroom-validation/pr79-followup/REPORT.md"
     },
     {
       "lessonId": "g8-t1-l19-019",
@@ -465,10 +483,10 @@
       "sourceAlignment": "PR48_VERIFIED",
       "instructionalReview": "OWNER_ACCEPTED_APPROACH; SOURCE REVIEW COMPLETE",
       "contactPeriods": 1,
-      "automated": "PASS: shared 399-unit preservation, 196 Node and 249 existing browser checks; targeted layout suite reported separately",
-      "genuineRole": "PASS: genuine educator navigation and exact private-field comparison; shared role/persistence checks",
+      "automated": "PASS: 224 Node tests; runtime, identity, typecheck, lint, normal original-key staging build and CI local browser acceptance; see PR79 follow-up provenance",
+      "genuineRole": "PASS: genuine educator exact-field/navigation read; shared real role, RLS, revocation and persistence checks; no mocked authentication",
       "printing": "PASS: all instructional fields and complete A4 export",
-      "responsive": "Shared components pass representative checks; direct per-lesson responsive rerun not performed",
+      "responsive": "PASS: 18 genuine staging width/text-scale cases at PR79 head; initial protection-link failure retained and higher-grade completion rerun recorded",
       "issues": [],
       "timingStatus": "PROVISIONAL; educator timing trials pending",
       "editorialReview": {
@@ -488,7 +506,8 @@
           }
         ],
         "withdrawn": []
-      }
+      },
+      "followupEvidence": "docs/staging-classroom-validation/pr79-followup/REPORT.md"
     },
     {
       "lessonId": "g8-t1-l20-020",
@@ -499,12 +518,13 @@
       "sourceAlignment": "PR48_VERIFIED",
       "instructionalReview": "OWNER_ACCEPTED_APPROACH; SOURCE REVIEW COMPLETE",
       "contactPeriods": 2,
-      "automated": "PASS: shared 399-unit preservation, 196 Node and 249 existing browser checks; targeted layout suite reported separately",
-      "genuineRole": "PASS: genuine educator navigation and exact private-field comparison; shared role/persistence checks",
+      "automated": "PASS: 224 Node tests; runtime, identity, typecheck, lint, normal original-key staging build and CI local browser acceptance; see PR79 follow-up provenance",
+      "genuineRole": "PASS: genuine educator exact-field/navigation read; shared real role, RLS, revocation and persistence checks; no mocked authentication",
       "printing": "PASS: all instructional fields and complete A4 export",
-      "responsive": "Shared components pass representative checks; direct per-lesson responsive rerun not performed",
+      "responsive": "PASS: 18 genuine staging width/text-scale cases at PR79 head; initial protection-link failure retained and higher-grade completion rerun recorded",
       "issues": [],
-      "timingStatus": "PROVISIONAL; educator timing trials pending"
+      "timingStatus": "PROVISIONAL; educator timing trials pending",
+      "followupEvidence": "docs/staging-classroom-validation/pr79-followup/REPORT.md"
     },
     {
       "lessonId": "g8-t2-l21-021",
@@ -2023,10 +2043,10 @@
       "sourceAlignment": "PR48_VERIFIED",
       "instructionalReview": "OWNER_ACCEPTED_APPROACH; SOURCE REVIEW COMPLETE",
       "contactPeriods": 1,
-      "automated": "PASS: shared 399-unit preservation, 196 Node and 249 existing browser checks; targeted layout suite reported separately",
-      "genuineRole": "PASS: genuine educator navigation and exact private-field comparison; shared role/persistence checks",
+      "automated": "PASS: 224 Node tests; runtime, identity, typecheck, lint, normal original-key staging build and CI local browser acceptance; see PR79 follow-up provenance",
+      "genuineRole": "PASS: genuine educator exact-field/navigation read; shared real role, RLS, revocation and persistence checks; no mocked authentication",
       "printing": "PASS: all instructional fields and complete A4 export",
-      "responsive": "Shared components pass representative checks; direct per-lesson responsive rerun not performed",
+      "responsive": "PASS: 18 genuine staging width/text-scale cases at PR79 head; initial protection-link failure retained and higher-grade completion rerun recorded",
       "issues": [],
       "timingStatus": "PROVISIONAL; educator timing trials pending",
       "editorialReview": {
@@ -2040,7 +2060,8 @@
           }
         ],
         "withdrawn": []
-      }
+      },
+      "followupEvidence": "docs/staging-classroom-validation/pr79-followup/REPORT.md"
     },
     {
       "lessonId": "g9-t1-l03-003",
@@ -4642,10 +4663,10 @@
       "sourceAlignment": "PR48_VERIFIED",
       "instructionalReview": "OWNER_ACCEPTED_APPROACH; SOURCE REVIEW COMPLETE",
       "contactPeriods": 2,
-      "automated": "PASS: shared 399-unit preservation, 196 Node and 249 existing browser checks; targeted layout suite reported separately",
-      "genuineRole": "PASS: genuine educator navigation and exact private-field comparison; shared role/persistence checks",
+      "automated": "PASS: 224 Node tests; runtime, identity, typecheck, lint, normal original-key staging build and CI local browser acceptance; see PR79 follow-up provenance",
+      "genuineRole": "PASS: genuine educator exact-field/navigation read; shared real role, RLS, revocation and persistence checks; no mocked authentication",
       "printing": "PASS: all instructional fields and complete A4 export",
-      "responsive": "Shared components pass representative checks; direct per-lesson responsive rerun not performed",
+      "responsive": "PASS: 18 genuine staging width/text-scale cases at PR79 head; initial protection-link failure retained and higher-grade completion rerun recorded",
       "issues": [],
       "timingStatus": "PROVISIONAL; educator timing trials pending",
       "editorialReview": {
@@ -4671,7 +4692,8 @@
           }
         ],
         "withdrawn": []
-      }
+      },
+      "followupEvidence": "docs/staging-classroom-validation/pr79-followup/REPORT.md"
     },
     {
       "lessonId": "g10-t2-l20-020",
@@ -6210,10 +6232,10 @@
       "sourceAlignment": "PR48_VERIFIED",
       "instructionalReview": "OWNER_ACCEPTED_APPROACH; SOURCE REVIEW COMPLETE",
       "contactPeriods": 1,
-      "automated": "PASS: shared 399-unit preservation, 196 Node and 249 existing browser checks; targeted layout suite reported separately",
-      "genuineRole": "PASS: genuine educator navigation and exact private-field comparison; shared role/persistence checks",
+      "automated": "PASS: 224 Node tests; runtime, identity, typecheck, lint, normal original-key staging build and CI local browser acceptance; see PR79 follow-up provenance",
+      "genuineRole": "PASS: genuine educator exact-field/navigation read; shared real role, RLS, revocation and persistence checks; no mocked authentication",
       "printing": "PASS: all instructional fields and complete A4 export",
-      "responsive": "Shared components pass representative checks; direct per-lesson responsive rerun not performed",
+      "responsive": "PASS: 18 genuine staging width/text-scale cases on corrected normal release 3c34b06",
       "issues": [],
       "timingStatus": "PROVISIONAL; educator timing trials pending",
       "editorialReview": {
@@ -6233,7 +6255,8 @@
           }
         ],
         "withdrawn": []
-      }
+      },
+      "followupEvidence": "docs/staging-classroom-validation/pr79-followup/REPORT.md"
     },
     {
       "lessonId": "g11-t1-l15-015",
@@ -7434,10 +7457,10 @@
       "sourceAlignment": "PR48_VERIFIED",
       "instructionalReview": "OWNER_ACCEPTED_APPROACH; SOURCE REVIEW COMPLETE",
       "contactPeriods": 2,
-      "automated": "PASS: shared 399-unit preservation, 196 Node and 249 existing browser checks; targeted layout suite reported separately",
-      "genuineRole": "PASS: genuine educator navigation and exact private-field comparison; shared role/persistence checks",
+      "automated": "PASS: 224 Node tests; runtime, identity, typecheck, lint, normal original-key staging build and CI local browser acceptance; see PR79 follow-up provenance",
+      "genuineRole": "PASS: genuine educator exact-field/navigation read; shared real role, RLS, revocation and persistence checks; no mocked authentication",
       "printing": "PASS: all instructional fields and complete A4 export",
-      "responsive": "PASS: 6 widths \u00d7 3 text scales, genuine staging",
+      "responsive": "PASS: 18 genuine staging width/text-scale cases on corrected normal release 3c34b06",
       "issues": [],
       "timingStatus": "PROVISIONAL; educator timing trials pending",
       "editorialReview": {
@@ -7463,7 +7486,8 @@
           }
         ],
         "withdrawn": []
-      }
+      },
+      "followupEvidence": "docs/staging-classroom-validation/pr79-followup/REPORT.md"
     },
     {
       "lessonId": "g12-t1-l06-006",

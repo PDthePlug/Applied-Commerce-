@@ -1,0 +1,961 @@
+{
+  "at": "2026-11-01T14:26:48.415Z",
+  "status": "PASS",
+  "projectRef": "inxshlumnhcgiahxqewe",
+  "baseURL": "https://applied-commerce-sa-staging-3wvfr4xo4.vercel.app",
+  "authentication": "genuine browser password login",
+  "measurement": "end-to-end through coding proxy; decoded response bytes; sequential phase then optional bounded concurrency",
+  "coldProcess": "NOT DEMONSTRATED",
+  "serverMemory": "hosted Node process observations; concurrent work and garbage collection included",
+  "samples": [
+    {
+      "lessonId": "g8-t1-l12-012",
+      "request": 1,
+      "ms": 2116,
+      "decodedBytes": 15415,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "8e90ee4e64de3e11670e7c2963c9254a36e8b5c76f2ad93c69cab49d00002dce",
+      "measurement": {
+        "routeInstanceId": "bfcea437-8021-4a3d-853f-7b2246945942",
+        "privateReadSequence": 1,
+        "firstPrivateReadInRouteInstance": true,
+        "processUptimeSeconds": 75.483919614,
+        "importMs": 294.6384779999935,
+        "benchmarkAndEnrichmentMs": 0.14960299999802373,
+        "teachingPlanMs": 196.9459130000032,
+        "privateReadMs": 491.7339939999947,
+        "memoryBefore": {
+          "rss": 115351552,
+          "heapTotal": 26607616,
+          "heapUsed": 22402928,
+          "external": 6058860,
+          "arrayBuffers": 1564841
+        },
+        "memoryAfter": {
+          "rss": 203751424,
+          "heapTotal": 83566592,
+          "heapUsed": 74087208,
+          "external": 6046174,
+          "arrayBuffers": 1559015
+        },
+        "scope": "Hosted Node process observations; excludes authorisation and response serialization. Route-instance first private read is not proof of a platform cold process. Memory includes other work in the process and normal garbage collection."
+      }
+    },
+    {
+      "lessonId": "g8-t1-l12-012",
+      "request": 2,
+      "ms": 1360,
+      "decodedBytes": 15421,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "8e90ee4e64de3e11670e7c2963c9254a36e8b5c76f2ad93c69cab49d00002dce",
+      "measurement": {
+        "routeInstanceId": "bfcea437-8021-4a3d-853f-7b2246945942",
+        "privateReadSequence": 2,
+        "firstPrivateReadInRouteInstance": false,
+        "processUptimeSeconds": 76.906516514,
+        "importMs": 0.027239000002737157,
+        "benchmarkAndEnrichmentMs": 0.044580000001587905,
+        "teachingPlanMs": 83.99325699999463,
+        "privateReadMs": 84.06507599999895,
+        "memoryBefore": {
+          "rss": 204562432,
+          "heapTotal": 84090880,
+          "heapUsed": 64116344,
+          "external": 6135126,
+          "arrayBuffers": 1642819
+        },
+        "memoryAfter": {
+          "rss": 213753856,
+          "heapTotal": 93003776,
+          "heapUsed": 74909160,
+          "external": 17870880,
+          "arrayBuffers": 1641166
+        },
+        "scope": "Hosted Node process observations; excludes authorisation and response serialization. Route-instance first private read is not proof of a platform cold process. Memory includes other work in the process and normal garbage collection."
+      }
+    },
+    {
+      "lessonId": "g8-t1-l12-012",
+      "request": 3,
+      "ms": 2765,
+      "decodedBytes": 15409,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "8e90ee4e64de3e11670e7c2963c9254a36e8b5c76f2ad93c69cab49d00002dce",
+      "measurement": {
+        "routeInstanceId": "44ea575b-c9fd-4614-9a27-28ab158d353f",
+        "privateReadSequence": 1,
+        "firstPrivateReadInRouteInstance": true,
+        "processUptimeSeconds": 2.105553009,
+        "importMs": 323.13376000000017,
+        "benchmarkAndEnrichmentMs": 0.12103000000001884,
+        "teachingPlanMs": 173.3410339999998,
+        "privateReadMs": 496.595824,
+        "memoryBefore": {
+          "rss": 103575552,
+          "heapTotal": 26189824,
+          "heapUsed": 19744288,
+          "external": 6007397,
+          "arrayBuffers": 1513510
+        },
+        "memoryAfter": {
+          "rss": 185520128,
+          "heapTotal": 81838080,
+          "heapUsed": 70876056,
+          "external": 14799993,
+          "arrayBuffers": 1507840
+        },
+        "scope": "Hosted Node process observations; excludes authorisation and response serialization. Route-instance first private read is not proof of a platform cold process. Memory includes other work in the process and normal garbage collection."
+      }
+    },
+    {
+      "lessonId": "g8-t1-l12-012",
+      "request": 4,
+      "ms": 1580,
+      "decodedBytes": 15421,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "8e90ee4e64de3e11670e7c2963c9254a36e8b5c76f2ad93c69cab49d00002dce",
+      "measurement": {
+        "routeInstanceId": "44ea575b-c9fd-4614-9a27-28ab158d353f",
+        "privateReadSequence": 2,
+        "firstPrivateReadInRouteInstance": false,
+        "processUptimeSeconds": 3.687373857,
+        "importMs": 0.02408400000012989,
+        "benchmarkAndEnrichmentMs": 0.10050000000001091,
+        "teachingPlanMs": 101.49771699999974,
+        "privateReadMs": 101.62230099999988,
+        "memoryBefore": {
+          "rss": 189804544,
+          "heapTotal": 86294528,
+          "heapUsed": 75522504,
+          "external": 6049185,
+          "arrayBuffers": 1556856
+        },
+        "memoryAfter": {
+          "rss": 211972096,
+          "heapTotal": 106479616,
+          "heapUsed": 69152144,
+          "external": 17784939,
+          "arrayBuffers": 1524385
+        },
+        "scope": "Hosted Node process observations; excludes authorisation and response serialization. Route-instance first private read is not proof of a platform cold process. Memory includes other work in the process and normal garbage collection."
+      }
+    },
+    {
+      "lessonId": "g8-t1-l12-012",
+      "request": 5,
+      "ms": 1639,
+      "decodedBytes": 15420,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "8e90ee4e64de3e11670e7c2963c9254a36e8b5c76f2ad93c69cab49d00002dce",
+      "measurement": {
+        "routeInstanceId": "44ea575b-c9fd-4614-9a27-28ab158d353f",
+        "privateReadSequence": 3,
+        "firstPrivateReadInRouteInstance": false,
+        "processUptimeSeconds": 5.327421145,
+        "importMs": 0.0446750000000975,
+        "benchmarkAndEnrichmentMs": 0.08403199999975186,
+        "teachingPlanMs": 90.95437399999992,
+        "privateReadMs": 91.08308099999977,
+        "memoryBefore": {
+          "rss": 213344256,
+          "heapTotal": 107528192,
+          "heapUsed": 71719480,
+          "external": 9067278,
+          "arrayBuffers": 1639037
+        },
+        "memoryAfter": {
+          "rss": 236052480,
+          "heapTotal": 130072576,
+          "heapUsed": 94318784,
+          "external": 20803032,
+          "arrayBuffers": 10444031
+        },
+        "scope": "Hosted Node process observations; excludes authorisation and response serialization. Route-instance first private read is not proof of a platform cold process. Memory includes other work in the process and normal garbage collection."
+      }
+    },
+    {
+      "lessonId": "g11-t1-l14-014",
+      "request": 1,
+      "ms": 1660,
+      "decodedBytes": 52248,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "3a4a9485b5e076ba87be06e57d2191fe71baa8a365798eb549a5e309ad1b3f65",
+      "measurement": {
+        "routeInstanceId": "44ea575b-c9fd-4614-9a27-28ab158d353f",
+        "privateReadSequence": 4,
+        "firstPrivateReadInRouteInstance": false,
+        "processUptimeSeconds": 6.921830558,
+        "importMs": 0.03246000000035565,
+        "benchmarkAndEnrichmentMs": 5.942532000000028,
+        "teachingPlanMs": 62.248947000000044,
+        "privateReadMs": 68.22393900000043,
+        "memoryBefore": {
+          "rss": 236322816,
+          "heapTotal": 130334720,
+          "heapUsed": 65653944,
+          "external": 11956938,
+          "arrayBuffers": 1592788
+        },
+        "memoryAfter": {
+          "rss": 240107520,
+          "heapTotal": 130949120,
+          "heapUsed": 88439304,
+          "external": 24216720,
+          "arrayBuffers": 10921810
+        },
+        "scope": "Hosted Node process observations; excludes authorisation and response serialization. Route-instance first private read is not proof of a platform cold process. Memory includes other work in the process and normal garbage collection."
+      }
+    },
+    {
+      "lessonId": "g11-t1-l14-014",
+      "request": 2,
+      "ms": 1435,
+      "decodedBytes": 52248,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "3a4a9485b5e076ba87be06e57d2191fe71baa8a365798eb549a5e309ad1b3f65",
+      "measurement": {
+        "routeInstanceId": "44ea575b-c9fd-4614-9a27-28ab158d353f",
+        "privateReadSequence": 5,
+        "firstPrivateReadInRouteInstance": false,
+        "processUptimeSeconds": 8.359363253,
+        "importMs": 0.026303000000552856,
+        "benchmarkAndEnrichmentMs": 3.033492999998998,
+        "teachingPlanMs": 86.90062300000136,
+        "privateReadMs": 89.96041900000091,
+        "memoryBefore": {
+          "rss": 240377856,
+          "heapTotal": 130949120,
+          "heapUsed": 91024488,
+          "external": 24447003,
+          "arrayBuffers": 11146943
+        },
+        "memoryAfter": {
+          "rss": 255516672,
+          "heapTotal": 130859008,
+          "heapUsed": 85006856,
+          "external": 36706785,
+          "arrayBuffers": 1656749
+        },
+        "scope": "Hosted Node process observations; excludes authorisation and response serialization. Route-instance first private read is not proof of a platform cold process. Memory includes other work in the process and normal garbage collection."
+      }
+    },
+    {
+      "lessonId": "g11-t1-l14-014",
+      "request": 3,
+      "ms": 1121,
+      "decodedBytes": 52245,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "3a4a9485b5e076ba87be06e57d2191fe71baa8a365798eb549a5e309ad1b3f65",
+      "measurement": {
+        "routeInstanceId": "44ea575b-c9fd-4614-9a27-28ab158d353f",
+        "privateReadSequence": 6,
+        "firstPrivateReadInRouteInstance": false,
+        "processUptimeSeconds": 9.474133092,
+        "importMs": 0.02468599999883736,
+        "benchmarkAndEnrichmentMs": 2.064726000000519,
+        "teachingPlanMs": 72.8191740000002,
+        "privateReadMs": 74.90858599999956,
+        "memoryBefore": {
+          "rss": 255787008,
+          "heapTotal": 130859008,
+          "heapUsed": 87449280,
+          "external": 18052252,
+          "arrayBuffers": 1816282
+        },
+        "memoryAfter": {
+          "rss": 257949696,
+          "heapTotal": 132956160,
+          "heapUsed": 81533928,
+          "external": 30312034,
+          "arrayBuffers": 1655641
+        },
+        "scope": "Hosted Node process observations; excludes authorisation and response serialization. Route-instance first private read is not proof of a platform cold process. Memory includes other work in the process and normal garbage collection."
+      }
+    },
+    {
+      "lessonId": "g11-t1-l14-014",
+      "request": 4,
+      "ms": 1188,
+      "decodedBytes": 52248,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "3a4a9485b5e076ba87be06e57d2191fe71baa8a365798eb549a5e309ad1b3f65",
+      "measurement": {
+        "routeInstanceId": "44ea575b-c9fd-4614-9a27-28ab158d353f",
+        "privateReadSequence": 7,
+        "firstPrivateReadInRouteInstance": false,
+        "processUptimeSeconds": 10.671600611,
+        "importMs": 0.02405200000066543,
+        "benchmarkAndEnrichmentMs": 2.1885810000003403,
+        "teachingPlanMs": 81.52584000000024,
+        "privateReadMs": 83.73847300000125,
+        "memoryBefore": {
+          "rss": 258220032,
+          "heapTotal": 132956160,
+          "heapUsed": 84028760,
+          "external": 21052646,
+          "arrayBuffers": 1880765
+        },
+        "memoryAfter": {
+          "rss": 264167424,
+          "heapTotal": 132956160,
+          "heapUsed": 77528504,
+          "external": 33312428,
+          "arrayBuffers": 1721255
+        },
+        "scope": "Hosted Node process observations; excludes authorisation and response serialization. Route-instance first private read is not proof of a platform cold process. Memory includes other work in the process and normal garbage collection."
+      }
+    },
+    {
+      "lessonId": "g11-t1-l14-014",
+      "request": 5,
+      "ms": 1162,
+      "decodedBytes": 52248,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "3a4a9485b5e076ba87be06e57d2191fe71baa8a365798eb549a5e309ad1b3f65",
+      "measurement": {
+        "routeInstanceId": "44ea575b-c9fd-4614-9a27-28ab158d353f",
+        "privateReadSequence": 8,
+        "firstPrivateReadInRouteInstance": false,
+        "processUptimeSeconds": 11.829634453,
+        "importMs": 0.023692999999184394,
+        "benchmarkAndEnrichmentMs": 1.956476000001203,
+        "teachingPlanMs": 71.32941500000015,
+        "privateReadMs": 73.30958400000054,
+        "memoryBefore": {
+          "rss": 264167424,
+          "heapTotal": 132956160,
+          "heapUsed": 79992712,
+          "external": 23988579,
+          "arrayBuffers": 1880788
+        },
+        "memoryAfter": {
+          "rss": 270385152,
+          "heapTotal": 133480448,
+          "heapUsed": 73689864,
+          "external": 36248361,
+          "arrayBuffers": 1721269
+        },
+        "scope": "Hosted Node process observations; excludes authorisation and response serialization. Route-instance first private read is not proof of a platform cold process. Memory includes other work in the process and normal garbage collection."
+      }
+    },
+    {
+      "lessonId": "g10-t4-l80-076",
+      "request": 1,
+      "ms": 1012,
+      "decodedBytes": 5691,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "d2c27110cdae99f67c6972b1109ba373efe6670a7ac4611d9e7e048f99dbd1ae",
+      "measurement": {
+        "routeInstanceId": "44ea575b-c9fd-4614-9a27-28ab158d353f",
+        "privateReadSequence": 9,
+        "firstPrivateReadInRouteInstance": false,
+        "processUptimeSeconds": 12.907026519,
+        "importMs": 0.03694800000084797,
+        "benchmarkAndEnrichmentMs": 0.0652059999993071,
+        "teachingPlanMs": 63.983510000000024,
+        "privateReadMs": 64.08566400000018,
+        "memoryBefore": {
+          "rss": 270942208,
+          "heapTotal": 133742592,
+          "heapUsed": 76471896,
+          "external": 26990103,
+          "arrayBuffers": 1946402
+        },
+        "memoryAfter": {
+          "rss": 276889600,
+          "heapTotal": 133742592,
+          "heapUsed": 98469456,
+          "external": 38725857,
+          "arrayBuffers": 10751396
+        },
+        "scope": "Hosted Node process observations; excludes authorisation and response serialization. Route-instance first private read is not proof of a platform cold process. Memory includes other work in the process and normal garbage collection."
+      }
+    },
+    {
+      "lessonId": "g10-t4-l80-076",
+      "request": 2,
+      "ms": 1359,
+      "decodedBytes": 5691,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "d2c27110cdae99f67c6972b1109ba373efe6670a7ac4611d9e7e048f99dbd1ae",
+      "measurement": {
+        "routeInstanceId": "44ea575b-c9fd-4614-9a27-28ab158d353f",
+        "privateReadSequence": 10,
+        "firstPrivateReadInRouteInstance": false,
+        "processUptimeSeconds": 14.265971096,
+        "importMs": 0.03465200000027835,
+        "benchmarkAndEnrichmentMs": 0.06898100000034901,
+        "teachingPlanMs": 77.55058199999985,
+        "privateReadMs": 77.65421500000048,
+        "memoryBefore": {
+          "rss": 277368832,
+          "heapTotal": 132694016,
+          "heapUsed": 56572512,
+          "external": 6067755,
+          "arrayBuffers": 1576227
+        },
+        "memoryAfter": {
+          "rss": 277368832,
+          "heapTotal": 132694016,
+          "heapUsed": 81104816,
+          "external": 17803509,
+          "arrayBuffers": 10381221
+        },
+        "scope": "Hosted Node process observations; excludes authorisation and response serialization. Route-instance first private read is not proof of a platform cold process. Memory includes other work in the process and normal garbage collection."
+      }
+    },
+    {
+      "lessonId": "g10-t4-l80-076",
+      "request": 3,
+      "ms": 1196,
+      "decodedBytes": 5691,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "d2c27110cdae99f67c6972b1109ba373efe6670a7ac4611d9e7e048f99dbd1ae",
+      "measurement": {
+        "routeInstanceId": "44ea575b-c9fd-4614-9a27-28ab158d353f",
+        "privateReadSequence": 11,
+        "firstPrivateReadInRouteInstance": false,
+        "processUptimeSeconds": 15.463761115,
+        "importMs": 0.020183999999062507,
+        "benchmarkAndEnrichmentMs": 0.06118299999980081,
+        "teachingPlanMs": 76.1424590000006,
+        "privateReadMs": 76.22382599999946,
+        "memoryBefore": {
+          "rss": 277368832,
+          "heapTotal": 123256832,
+          "heapUsed": 55796296,
+          "external": 6133355,
+          "arrayBuffers": 1641827
+        },
+        "memoryAfter": {
+          "rss": 277368832,
+          "heapTotal": 123256832,
+          "heapUsed": 80336232,
+          "external": 17869109,
+          "arrayBuffers": 10446821
+        },
+        "scope": "Hosted Node process observations; excludes authorisation and response serialization. Route-instance first private read is not proof of a platform cold process. Memory includes other work in the process and normal garbage collection."
+      }
+    },
+    {
+      "lessonId": "g10-t4-l80-076",
+      "request": 4,
+      "ms": 988,
+      "decodedBytes": 5692,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "d2c27110cdae99f67c6972b1109ba373efe6670a7ac4611d9e7e048f99dbd1ae",
+      "measurement": {
+        "routeInstanceId": "44ea575b-c9fd-4614-9a27-28ab158d353f",
+        "privateReadSequence": 12,
+        "firstPrivateReadInRouteInstance": false,
+        "processUptimeSeconds": 16.452606937,
+        "importMs": 0.019228999999540974,
+        "benchmarkAndEnrichmentMs": 0.12092200000006414,
+        "teachingPlanMs": 71.55242800000087,
+        "privateReadMs": 71.69257900000048,
+        "memoryBefore": {
+          "rss": 266502144,
+          "heapTotal": 123518976,
+          "heapUsed": 54016240,
+          "external": 6067756,
+          "arrayBuffers": 1576227
+        },
+        "memoryAfter": {
+          "rss": 266502144,
+          "heapTotal": 123518976,
+          "heapUsed": 78425544,
+          "external": 17803510,
+          "arrayBuffers": 10381221
+        },
+        "scope": "Hosted Node process observations; excludes authorisation and response serialization. Route-instance first private read is not proof of a platform cold process. Memory includes other work in the process and normal garbage collection."
+      }
+    },
+    {
+      "lessonId": "g10-t4-l80-076",
+      "request": 5,
+      "ms": 994,
+      "decodedBytes": 5690,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "d2c27110cdae99f67c6972b1109ba373efe6670a7ac4611d9e7e048f99dbd1ae",
+      "measurement": {
+        "routeInstanceId": "44ea575b-c9fd-4614-9a27-28ab158d353f",
+        "privateReadSequence": 13,
+        "firstPrivateReadInRouteInstance": false,
+        "processUptimeSeconds": 17.445919003,
+        "importMs": 0.019758999998884974,
+        "benchmarkAndEnrichmentMs": 0.0641009999999369,
+        "teachingPlanMs": 80.31121600000188,
+        "privateReadMs": 80.3950760000007,
+        "memoryBefore": {
+          "rss": 266502144,
+          "heapTotal": 123518976,
+          "heapUsed": 53603008,
+          "external": 6121423,
+          "arrayBuffers": 1641827
+        },
+        "memoryAfter": {
+          "rss": 266502144,
+          "heapTotal": 123518976,
+          "heapUsed": 78029272,
+          "external": 17857177,
+          "arrayBuffers": 10446821
+        },
+        "scope": "Hosted Node process observations; excludes authorisation and response serialization. Route-instance first private read is not proof of a platform cold process. Memory includes other work in the process and normal garbage collection."
+      }
+    }
+  ],
+  "commit": "0f3cb610f9b531db364bda54dc0f527ec79f52c7",
+  "role": "platformAdmin",
+  "concurrent": {
+    "concurrency": 4,
+    "waves": [
+      {
+        "wave": 1,
+        "wallMs": 3108,
+        "samples": [
+          {
+            "lessonId": "g8-t1-l12-012",
+            "status": 200,
+            "ms": 3108,
+            "decodedBytes": 15418,
+            "planSHA256": "8e90ee4e64de3e11670e7c2963c9254a36e8b5c76f2ad93c69cab49d00002dce",
+            "cache": "private, no-store, max-age=0",
+            "measurement": {
+              "routeInstanceId": "acf5aee1-e706-4f6e-bf51-962504fb42f3",
+              "privateReadSequence": 1,
+              "firstPrivateReadInRouteInstance": true,
+              "processUptimeSeconds": 2.212127595,
+              "importMs": 314.76922899999977,
+              "benchmarkAndEnrichmentMs": 0.12766000000010536,
+              "teachingPlanMs": 127.50100599999996,
+              "privateReadMs": 442.39789499999983,
+              "memoryBefore": {
+                "rss": 103669760,
+                "heapTotal": 25927680,
+                "heapUsed": 19783288,
+                "external": 6007398,
+                "arrayBuffers": 1513509
+              },
+              "memoryAfter": {
+                "rss": 184954880,
+                "heapTotal": 81580032,
+                "heapUsed": 63165904,
+                "external": 17730754,
+                "arrayBuffers": 1507840
+              },
+              "scope": "Hosted Node process observations; excludes authorisation and response serialization. Route-instance first private read is not proof of a platform cold process. Memory includes other work in the process and normal garbage collection."
+            }
+          },
+          {
+            "lessonId": "g11-t1-l14-014",
+            "status": 200,
+            "ms": 864,
+            "decodedBytes": 52249,
+            "planSHA256": "3a4a9485b5e076ba87be06e57d2191fe71baa8a365798eb549a5e309ad1b3f65",
+            "cache": "private, no-store, max-age=0",
+            "measurement": {
+              "routeInstanceId": "44ea575b-c9fd-4614-9a27-28ab158d353f",
+              "privateReadSequence": 14,
+              "firstPrivateReadInRouteInstance": false,
+              "processUptimeSeconds": 18.244210194,
+              "importMs": 0.020143000001553446,
+              "benchmarkAndEnrichmentMs": 2.365538000001834,
+              "teachingPlanMs": 77.38907599999948,
+              "privateReadMs": 79.77475700000286,
+              "memoryBefore": {
+                "rss": 256978944,
+                "heapTotal": 113782784,
+                "heapUsed": 46447008,
+                "external": 6125794,
+                "arrayBuffers": 1644562
+              },
+              "memoryAfter": {
+                "rss": 257245184,
+                "heapTotal": 114135040,
+                "heapUsed": 71407944,
+                "external": 18385576,
+                "arrayBuffers": 10973584
+              },
+              "scope": "Hosted Node process observations; excludes authorisation and response serialization. Route-instance first private read is not proof of a platform cold process. Memory includes other work in the process and normal garbage collection."
+            }
+          },
+          {
+            "lessonId": "g10-t4-l80-076",
+            "status": 200,
+            "ms": 1007,
+            "decodedBytes": 5691,
+            "planSHA256": "d2c27110cdae99f67c6972b1109ba373efe6670a7ac4611d9e7e048f99dbd1ae",
+            "cache": "private, no-store, max-age=0",
+            "measurement": {
+              "routeInstanceId": "44ea575b-c9fd-4614-9a27-28ab158d353f",
+              "privateReadSequence": 15,
+              "firstPrivateReadInRouteInstance": false,
+              "processUptimeSeconds": 18.448323709,
+              "importMs": 0.01715200000035111,
+              "benchmarkAndEnrichmentMs": 0.06986699999833945,
+              "teachingPlanMs": 78.14776800000254,
+              "privateReadMs": 78.23478700000123,
+              "memoryBefore": {
+                "rss": 256966656,
+                "heapTotal": 113520640,
+                "heapUsed": 43038296,
+                "external": 6053274,
+                "arrayBuffers": 1575743
+              },
+              "memoryAfter": {
+                "rss": 258048000,
+                "heapTotal": 113782784,
+                "heapUsed": 67518992,
+                "external": 17789028,
+                "arrayBuffers": 10380737
+              },
+              "scope": "Hosted Node process observations; excludes authorisation and response serialization. Route-instance first private read is not proof of a platform cold process. Memory includes other work in the process and normal garbage collection."
+            }
+          },
+          {
+            "lessonId": "g8-t1-l12-012",
+            "status": 200,
+            "ms": 1267,
+            "decodedBytes": 15424,
+            "planSHA256": "8e90ee4e64de3e11670e7c2963c9254a36e8b5c76f2ad93c69cab49d00002dce",
+            "cache": "private, no-store, max-age=0",
+            "measurement": {
+              "routeInstanceId": "44ea575b-c9fd-4614-9a27-28ab158d353f",
+              "privateReadSequence": 16,
+              "firstPrivateReadInRouteInstance": false,
+              "processUptimeSeconds": 18.714230641,
+              "importMs": 0.017981000000872882,
+              "benchmarkAndEnrichmentMs": 0.03143099999942933,
+              "teachingPlanMs": 75.41114499999821,
+              "privateReadMs": 75.46055699999852,
+              "memoryBefore": {
+                "rss": 258048000,
+                "heapTotal": 113782784,
+                "heapUsed": 42243056,
+                "external": 6051401,
+                "arrayBuffers": 1573508
+              },
+              "memoryAfter": {
+                "rss": 258048000,
+                "heapTotal": 113782784,
+                "heapUsed": 66535528,
+                "external": 17787155,
+                "arrayBuffers": 10378502
+              },
+              "scope": "Hosted Node process observations; excludes authorisation and response serialization. Route-instance first private read is not proof of a platform cold process. Memory includes other work in the process and normal garbage collection."
+            }
+          }
+        ]
+      },
+      {
+        "wave": 2,
+        "wallMs": 1779,
+        "samples": [
+          {
+            "lessonId": "g11-t1-l14-014",
+            "status": 200,
+            "ms": 1779,
+            "decodedBytes": 52246,
+            "planSHA256": "3a4a9485b5e076ba87be06e57d2191fe71baa8a365798eb549a5e309ad1b3f65",
+            "cache": "private, no-store, max-age=0",
+            "measurement": {
+              "routeInstanceId": "acf5aee1-e706-4f6e-bf51-962504fb42f3",
+              "privateReadSequence": 5,
+              "firstPrivateReadInRouteInstance": false,
+              "processUptimeSeconds": 3.930765825,
+              "importMs": 0.020735999999942578,
+              "benchmarkAndEnrichmentMs": 2.100875999999971,
+              "teachingPlanMs": 72.18323599999985,
+              "privateReadMs": 74.30484799999977,
+              "memoryBefore": {
+                "rss": 223457280,
+                "heapTotal": 106741760,
+                "heapUsed": 74981384,
+                "external": 6078519,
+                "arrayBuffers": 1590535
+              },
+              "memoryAfter": {
+                "rss": 223457280,
+                "heapTotal": 106741760,
+                "heapUsed": 68741656,
+                "external": 18338301,
+                "arrayBuffers": 1579134
+              },
+              "scope": "Hosted Node process observations; excludes authorisation and response serialization. Route-instance first private read is not proof of a platform cold process. Memory includes other work in the process and normal garbage collection."
+            }
+          },
+          {
+            "lessonId": "g10-t4-l80-076",
+            "status": 200,
+            "ms": 1650,
+            "decodedBytes": 5692,
+            "planSHA256": "d2c27110cdae99f67c6972b1109ba373efe6670a7ac4611d9e7e048f99dbd1ae",
+            "cache": "private, no-store, max-age=0",
+            "measurement": {
+              "routeInstanceId": "acf5aee1-e706-4f6e-bf51-962504fb42f3",
+              "privateReadSequence": 4,
+              "firstPrivateReadInRouteInstance": false,
+              "processUptimeSeconds": 3.853289554,
+              "importMs": 0.029446999999890977,
+              "benchmarkAndEnrichmentMs": 0.09193999999979496,
+              "teachingPlanMs": 145.68680800000038,
+              "privateReadMs": 145.80819500000007,
+              "memoryBefore": {
+                "rss": 208588800,
+                "heapTotal": 104644608,
+                "heapUsed": 86673944,
+                "external": 21019248,
+                "arrayBuffers": 10651575
+              },
+              "memoryAfter": {
+                "rss": 223457280,
+                "heapTotal": 106741760,
+                "heapUsed": 74761480,
+                "external": 6198397,
+                "arrayBuffers": 1573442
+              },
+              "scope": "Hosted Node process observations; excludes authorisation and response serialization. Route-instance first private read is not proof of a platform cold process. Memory includes other work in the process and normal garbage collection."
+            }
+          },
+          {
+            "lessonId": "g8-t1-l12-012",
+            "status": 200,
+            "ms": 1487,
+            "decodedBytes": 15412,
+            "planSHA256": "8e90ee4e64de3e11670e7c2963c9254a36e8b5c76f2ad93c69cab49d00002dce",
+            "cache": "private, no-store, max-age=0",
+            "measurement": {
+              "routeInstanceId": "acf5aee1-e706-4f6e-bf51-962504fb42f3",
+              "privateReadSequence": 3,
+              "firstPrivateReadInRouteInstance": false,
+              "processUptimeSeconds": 3.703922097,
+              "importMs": 0.02687900000000809,
+              "benchmarkAndEnrichmentMs": 0.04027700000006007,
+              "teachingPlanMs": 78.89920699999993,
+              "privateReadMs": 78.966363,
+              "memoryBefore": {
+                "rss": 196964352,
+                "heapTotal": 93372416,
+                "heapUsed": 63876912,
+                "external": 9236417,
+                "arrayBuffers": 1800328
+              },
+              "memoryAfter": {
+                "rss": 208588800,
+                "heapTotal": 104644608,
+                "heapUsed": 86487720,
+                "external": 20972171,
+                "arrayBuffers": 10605322
+              },
+              "scope": "Hosted Node process observations; excludes authorisation and response serialization. Route-instance first private read is not proof of a platform cold process. Memory includes other work in the process and normal garbage collection."
+            }
+          },
+          {
+            "lessonId": "g11-t1-l14-014",
+            "status": 200,
+            "ms": 1468,
+            "decodedBytes": 52243,
+            "planSHA256": "3a4a9485b5e076ba87be06e57d2191fe71baa8a365798eb549a5e309ad1b3f65",
+            "cache": "private, no-store, max-age=0",
+            "measurement": {
+              "routeInstanceId": "acf5aee1-e706-4f6e-bf51-962504fb42f3",
+              "privateReadSequence": 2,
+              "firstPrivateReadInRouteInstance": false,
+              "processUptimeSeconds": 3.620057475,
+              "importMs": 0.02546699999993507,
+              "benchmarkAndEnrichmentMs": 4.25233900000012,
+              "teachingPlanMs": 101.70458299999973,
+              "privateReadMs": 105.98238899999978,
+              "memoryBefore": {
+                "rss": 189353984,
+                "heapTotal": 85508096,
+                "heapUsed": 60478280,
+                "external": 6154620,
+                "arrayBuffers": 1650115
+              },
+              "memoryAfter": {
+                "rss": 196694016,
+                "heapTotal": 93372416,
+                "heapUsed": 63565424,
+                "external": 9078847,
+                "arrayBuffers": 1643582
+              },
+              "scope": "Hosted Node process observations; excludes authorisation and response serialization. Route-instance first private read is not proof of a platform cold process. Memory includes other work in the process and normal garbage collection."
+            }
+          }
+        ]
+      },
+      {
+        "wave": 3,
+        "wallMs": 1380,
+        "samples": [
+          {
+            "lessonId": "g10-t4-l80-076",
+            "status": 200,
+            "ms": 1172,
+            "decodedBytes": 5690,
+            "planSHA256": "d2c27110cdae99f67c6972b1109ba373efe6670a7ac4611d9e7e048f99dbd1ae",
+            "cache": "private, no-store, max-age=0",
+            "measurement": {
+              "routeInstanceId": "acf5aee1-e706-4f6e-bf51-962504fb42f3",
+              "privateReadSequence": 7,
+              "firstPrivateReadInRouteInstance": false,
+              "processUptimeSeconds": 5.169007701,
+              "importMs": 0.025808999999753723,
+              "benchmarkAndEnrichmentMs": 0.05315299999983836,
+              "teachingPlanMs": 69.06983300000047,
+              "privateReadMs": 69.14879500000006,
+              "memoryBefore": {
+                "rss": 243458048,
+                "heapTotal": 129548288,
+                "heapUsed": 73406112,
+                "external": 12151841,
+                "arrayBuffers": 1784340
+              },
+              "memoryAfter": {
+                "rss": 243728384,
+                "heapTotal": 130072576,
+                "heapUsed": 67859360,
+                "external": 23887595,
+                "arrayBuffers": 1762644
+              },
+              "scope": "Hosted Node process observations; excludes authorisation and response serialization. Route-instance first private read is not proof of a platform cold process. Memory includes other work in the process and normal garbage collection."
+            }
+          },
+          {
+            "lessonId": "g8-t1-l12-012",
+            "status": 200,
+            "ms": 1380,
+            "decodedBytes": 15419,
+            "planSHA256": "8e90ee4e64de3e11670e7c2963c9254a36e8b5c76f2ad93c69cab49d00002dce",
+            "cache": "private, no-store, max-age=0",
+            "measurement": {
+              "routeInstanceId": "acf5aee1-e706-4f6e-bf51-962504fb42f3",
+              "privateReadSequence": 9,
+              "firstPrivateReadInRouteInstance": false,
+              "processUptimeSeconds": 5.3760048,
+              "importMs": 0.03229300000020885,
+              "benchmarkAndEnrichmentMs": 0.04170799999974406,
+              "teachingPlanMs": 65.62187000000085,
+              "privateReadMs": 65.6958710000008,
+              "memoryBefore": {
+                "rss": 244809728,
+                "heapTotal": 130072576,
+                "heapUsed": 61345776,
+                "external": 18052207,
+                "arrayBuffers": 1820588
+              },
+              "memoryAfter": {
+                "rss": 250757120,
+                "heapTotal": 130072576,
+                "heapUsed": 83361648,
+                "external": 29787961,
+                "arrayBuffers": 10625582
+              },
+              "scope": "Hosted Node process observations; excludes authorisation and response serialization. Route-instance first private read is not proof of a platform cold process. Memory includes other work in the process and normal garbage collection."
+            }
+          },
+          {
+            "lessonId": "g11-t1-l14-014",
+            "status": 200,
+            "ms": 1364,
+            "decodedBytes": 52243,
+            "planSHA256": "3a4a9485b5e076ba87be06e57d2191fe71baa8a365798eb549a5e309ad1b3f65",
+            "cache": "private, no-store, max-age=0",
+            "measurement": {
+              "routeInstanceId": "acf5aee1-e706-4f6e-bf51-962504fb42f3",
+              "privateReadSequence": 8,
+              "firstPrivateReadInRouteInstance": false,
+              "processUptimeSeconds": 5.290022909,
+              "importMs": 0.02532599999995,
+              "benchmarkAndEnrichmentMs": 2.00596300000052,
+              "teachingPlanMs": 63.17684099999951,
+              "privateReadMs": 65.20812999999998,
+              "memoryBefore": {
+                "rss": 243728384,
+                "heapTotal": 130072576,
+                "heapUsed": 68363296,
+                "external": 15079787,
+                "arrayBuffers": 1779750
+              },
+              "memoryAfter": {
+                "rss": 244809728,
+                "heapTotal": 130424832,
+                "heapUsed": 91579704,
+                "external": 27339569,
+                "arrayBuffers": 11108772
+              },
+              "scope": "Hosted Node process observations; excludes authorisation and response serialization. Route-instance first private read is not proof of a platform cold process. Memory includes other work in the process and normal garbage collection."
+            }
+          },
+          {
+            "lessonId": "g10-t4-l80-076",
+            "status": 200,
+            "ms": 829,
+            "decodedBytes": 5688,
+            "planSHA256": "d2c27110cdae99f67c6972b1109ba373efe6670a7ac4611d9e7e048f99dbd1ae",
+            "cache": "private, no-store, max-age=0",
+            "measurement": {
+              "routeInstanceId": "acf5aee1-e706-4f6e-bf51-962504fb42f3",
+              "privateReadSequence": 6,
+              "firstPrivateReadInRouteInstance": false,
+              "processUptimeSeconds": 4.82513334,
+              "importMs": 0.024597999999969034,
+              "benchmarkAndEnrichmentMs": 0.05264900000020134,
+              "teachingPlanMs": 95.12033999999949,
+              "privateReadMs": 95.19758699999966,
+              "memoryBefore": {
+                "rss": 226967552,
+                "heapTotal": 113295360,
+                "heapUsed": 77091784,
+                "external": 9305971,
+                "arrayBuffers": 1878003
+              },
+              "memoryAfter": {
+                "rss": 243458048,
+                "heapTotal": 129548288,
+                "heapUsed": 71532328,
+                "external": 21041725,
+                "arrayBuffers": 1767104
+              },
+              "scope": "Hosted Node process observations; excludes authorisation and response serialization. Route-instance first private read is not proof of a platform cold process. Memory includes other work in the process and normal garbage collection."
+            }
+          }
+        ]
+      }
+    ],
+    "scope": "one authenticated educator; bounded overlapping requests; no capacity claim"
+  },
+  "lessons": [
+    {
+      "lessonId": "g8-t1-l12-012",
+      "decodedBytes": 15415,
+      "firstSampleMs": 2116,
+      "repeatedMedianMs": 1609.5,
+      "rangeMs": [
+        1360,
+        2765
+      ]
+    },
+    {
+      "lessonId": "g11-t1-l14-014",
+      "decodedBytes": 52248,
+      "firstSampleMs": 1660,
+      "repeatedMedianMs": 1175,
+      "rangeMs": [
+        1121,
+        1660
+      ]
+    },
+    {
+      "lessonId": "g10-t4-l80-076",
+      "decodedBytes": 5691,
+      "firstSampleMs": 1012,
+      "repeatedMedianMs": 1095,
+      "rangeMs": [
+        988,
+        1359
+      ]
+    }
+  ]
+}

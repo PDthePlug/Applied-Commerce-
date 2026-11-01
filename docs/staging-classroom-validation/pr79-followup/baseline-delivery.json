@@ -1,0 +1,1335 @@
+{
+  "at": "2026-11-01T14:20:58.418Z",
+  "status": "PASS",
+  "projectRef": "inxshlumnhcgiahxqewe",
+  "baseURL": "https://applied-commerce-sa-staging-d6ehgnkdu.vercel.app",
+  "authentication": "genuine browser password login",
+  "measurement": "end-to-end through coding proxy; decoded response bytes; sequential phase then optional bounded concurrency",
+  "coldProcess": "NOT DEMONSTRATED",
+  "serverMemory": "NOT MEASURED",
+  "samples": [
+    {
+      "lessonId": "g8-t1-l01-001",
+      "request": 1,
+      "ms": 1398,
+      "decodedBytes": 20092,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "5e5d1510fec34c2647181f3bf574538ee9dfac6c974d77fe8b560082391da8eb"
+    },
+    {
+      "lessonId": "g8-t1-l01-001",
+      "request": 2,
+      "ms": 1468,
+      "decodedBytes": 20092,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "5e5d1510fec34c2647181f3bf574538ee9dfac6c974d77fe8b560082391da8eb"
+    },
+    {
+      "lessonId": "g8-t1-l01-001",
+      "request": 3,
+      "ms": 1100,
+      "decodedBytes": 20092,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "5e5d1510fec34c2647181f3bf574538ee9dfac6c974d77fe8b560082391da8eb"
+    },
+    {
+      "lessonId": "g8-t1-l01-001",
+      "request": 4,
+      "ms": 1514,
+      "decodedBytes": 20092,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "5e5d1510fec34c2647181f3bf574538ee9dfac6c974d77fe8b560082391da8eb"
+    },
+    {
+      "lessonId": "g8-t1-l01-001",
+      "request": 5,
+      "ms": 1257,
+      "decodedBytes": 20092,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "5e5d1510fec34c2647181f3bf574538ee9dfac6c974d77fe8b560082391da8eb"
+    },
+    {
+      "lessonId": "g8-t1-l02-002",
+      "request": 1,
+      "ms": 1304,
+      "decodedBytes": 19052,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "9714004695751860ebda0a600abd4b9c1576f3b853a4a2ac9a273ea9a7be6f35"
+    },
+    {
+      "lessonId": "g8-t1-l02-002",
+      "request": 2,
+      "ms": 988,
+      "decodedBytes": 19052,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "9714004695751860ebda0a600abd4b9c1576f3b853a4a2ac9a273ea9a7be6f35"
+    },
+    {
+      "lessonId": "g8-t1-l02-002",
+      "request": 3,
+      "ms": 906,
+      "decodedBytes": 19052,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "9714004695751860ebda0a600abd4b9c1576f3b853a4a2ac9a273ea9a7be6f35"
+    },
+    {
+      "lessonId": "g8-t1-l02-002",
+      "request": 4,
+      "ms": 1125,
+      "decodedBytes": 19052,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "9714004695751860ebda0a600abd4b9c1576f3b853a4a2ac9a273ea9a7be6f35"
+    },
+    {
+      "lessonId": "g8-t1-l02-002",
+      "request": 5,
+      "ms": 1239,
+      "decodedBytes": 19052,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "9714004695751860ebda0a600abd4b9c1576f3b853a4a2ac9a273ea9a7be6f35"
+    },
+    {
+      "lessonId": "g8-t1-l03-003",
+      "request": 1,
+      "ms": 1046,
+      "decodedBytes": 19878,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "eac915f74ece4d544f73e28773406783b30e28f91d40fe3c64b3152da71da3bc"
+    },
+    {
+      "lessonId": "g8-t1-l03-003",
+      "request": 2,
+      "ms": 921,
+      "decodedBytes": 19878,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "eac915f74ece4d544f73e28773406783b30e28f91d40fe3c64b3152da71da3bc"
+    },
+    {
+      "lessonId": "g8-t1-l03-003",
+      "request": 3,
+      "ms": 1182,
+      "decodedBytes": 19878,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "eac915f74ece4d544f73e28773406783b30e28f91d40fe3c64b3152da71da3bc"
+    },
+    {
+      "lessonId": "g8-t1-l03-003",
+      "request": 4,
+      "ms": 1072,
+      "decodedBytes": 19878,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "eac915f74ece4d544f73e28773406783b30e28f91d40fe3c64b3152da71da3bc"
+    },
+    {
+      "lessonId": "g8-t1-l03-003",
+      "request": 5,
+      "ms": 1125,
+      "decodedBytes": 19878,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "eac915f74ece4d544f73e28773406783b30e28f91d40fe3c64b3152da71da3bc"
+    },
+    {
+      "lessonId": "g8-t1-l04-004",
+      "request": 1,
+      "ms": 988,
+      "decodedBytes": 21373,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "c8869814781467fff247fca46e1e0c239be49341ec3d6ff68c040fe503830027"
+    },
+    {
+      "lessonId": "g8-t1-l04-004",
+      "request": 2,
+      "ms": 1047,
+      "decodedBytes": 21373,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "c8869814781467fff247fca46e1e0c239be49341ec3d6ff68c040fe503830027"
+    },
+    {
+      "lessonId": "g8-t1-l04-004",
+      "request": 3,
+      "ms": 823,
+      "decodedBytes": 21373,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "c8869814781467fff247fca46e1e0c239be49341ec3d6ff68c040fe503830027"
+    },
+    {
+      "lessonId": "g8-t1-l04-004",
+      "request": 4,
+      "ms": 1106,
+      "decodedBytes": 21373,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "c8869814781467fff247fca46e1e0c239be49341ec3d6ff68c040fe503830027"
+    },
+    {
+      "lessonId": "g8-t1-l04-004",
+      "request": 5,
+      "ms": 1243,
+      "decodedBytes": 21373,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "c8869814781467fff247fca46e1e0c239be49341ec3d6ff68c040fe503830027"
+    },
+    {
+      "lessonId": "g8-t1-l05-005",
+      "request": 1,
+      "ms": 1072,
+      "decodedBytes": 14428,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "d72da8e2c1736049b974f9e71677cd9c9cdfa508361407011ec7ce43756009a1"
+    },
+    {
+      "lessonId": "g8-t1-l05-005",
+      "request": 2,
+      "ms": 890,
+      "decodedBytes": 14428,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "d72da8e2c1736049b974f9e71677cd9c9cdfa508361407011ec7ce43756009a1"
+    },
+    {
+      "lessonId": "g8-t1-l05-005",
+      "request": 3,
+      "ms": 901,
+      "decodedBytes": 14428,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "d72da8e2c1736049b974f9e71677cd9c9cdfa508361407011ec7ce43756009a1"
+    },
+    {
+      "lessonId": "g8-t1-l05-005",
+      "request": 4,
+      "ms": 908,
+      "decodedBytes": 14428,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "d72da8e2c1736049b974f9e71677cd9c9cdfa508361407011ec7ce43756009a1"
+    },
+    {
+      "lessonId": "g8-t1-l05-005",
+      "request": 5,
+      "ms": 675,
+      "decodedBytes": 14428,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "d72da8e2c1736049b974f9e71677cd9c9cdfa508361407011ec7ce43756009a1"
+    },
+    {
+      "lessonId": "g8-t1-l06-006",
+      "request": 1,
+      "ms": 928,
+      "decodedBytes": 12205,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "3dc3d31afa7c0865e20be18146ab2b22b2da9b7217ca7b302be1caa3c77cae14"
+    },
+    {
+      "lessonId": "g8-t1-l06-006",
+      "request": 2,
+      "ms": 683,
+      "decodedBytes": 12205,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "3dc3d31afa7c0865e20be18146ab2b22b2da9b7217ca7b302be1caa3c77cae14"
+    },
+    {
+      "lessonId": "g8-t1-l06-006",
+      "request": 3,
+      "ms": 906,
+      "decodedBytes": 12205,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "3dc3d31afa7c0865e20be18146ab2b22b2da9b7217ca7b302be1caa3c77cae14"
+    },
+    {
+      "lessonId": "g8-t1-l06-006",
+      "request": 4,
+      "ms": 742,
+      "decodedBytes": 12205,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "3dc3d31afa7c0865e20be18146ab2b22b2da9b7217ca7b302be1caa3c77cae14"
+    },
+    {
+      "lessonId": "g8-t1-l06-006",
+      "request": 5,
+      "ms": 894,
+      "decodedBytes": 12205,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "3dc3d31afa7c0865e20be18146ab2b22b2da9b7217ca7b302be1caa3c77cae14"
+    },
+    {
+      "lessonId": "g8-t1-l07-007",
+      "request": 1,
+      "ms": 1163,
+      "decodedBytes": 14556,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "7020c739bf7bc9ed8b1aecfc55505d61358929cf23ec6416ac69337636c28982"
+    },
+    {
+      "lessonId": "g8-t1-l07-007",
+      "request": 2,
+      "ms": 875,
+      "decodedBytes": 14556,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "7020c739bf7bc9ed8b1aecfc55505d61358929cf23ec6416ac69337636c28982"
+    },
+    {
+      "lessonId": "g8-t1-l07-007",
+      "request": 3,
+      "ms": 885,
+      "decodedBytes": 14556,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "7020c739bf7bc9ed8b1aecfc55505d61358929cf23ec6416ac69337636c28982"
+    },
+    {
+      "lessonId": "g8-t1-l07-007",
+      "request": 4,
+      "ms": 1068,
+      "decodedBytes": 14556,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "7020c739bf7bc9ed8b1aecfc55505d61358929cf23ec6416ac69337636c28982"
+    },
+    {
+      "lessonId": "g8-t1-l07-007",
+      "request": 5,
+      "ms": 865,
+      "decodedBytes": 14556,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "7020c739bf7bc9ed8b1aecfc55505d61358929cf23ec6416ac69337636c28982"
+    },
+    {
+      "lessonId": "g8-t1-l08-008",
+      "request": 1,
+      "ms": 916,
+      "decodedBytes": 58802,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "6cad27f1f4e5b6af14cf33d896f0b5a5d02acb22ebf611fc5b28cb81d002098c"
+    },
+    {
+      "lessonId": "g8-t1-l08-008",
+      "request": 2,
+      "ms": 925,
+      "decodedBytes": 58802,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "6cad27f1f4e5b6af14cf33d896f0b5a5d02acb22ebf611fc5b28cb81d002098c"
+    },
+    {
+      "lessonId": "g8-t1-l08-008",
+      "request": 3,
+      "ms": 824,
+      "decodedBytes": 58802,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "6cad27f1f4e5b6af14cf33d896f0b5a5d02acb22ebf611fc5b28cb81d002098c"
+    },
+    {
+      "lessonId": "g8-t1-l08-008",
+      "request": 4,
+      "ms": 989,
+      "decodedBytes": 58802,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "6cad27f1f4e5b6af14cf33d896f0b5a5d02acb22ebf611fc5b28cb81d002098c"
+    },
+    {
+      "lessonId": "g8-t1-l08-008",
+      "request": 5,
+      "ms": 993,
+      "decodedBytes": 58802,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "6cad27f1f4e5b6af14cf33d896f0b5a5d02acb22ebf611fc5b28cb81d002098c"
+    },
+    {
+      "lessonId": "g8-t1-l09-009",
+      "request": 1,
+      "ms": 1140,
+      "decodedBytes": 12424,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "28f00bd556208ff1f3e6f74ec40fba07581094302384a12d6b63f1b8989bf365"
+    },
+    {
+      "lessonId": "g8-t1-l09-009",
+      "request": 2,
+      "ms": 830,
+      "decodedBytes": 12424,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "28f00bd556208ff1f3e6f74ec40fba07581094302384a12d6b63f1b8989bf365"
+    },
+    {
+      "lessonId": "g8-t1-l09-009",
+      "request": 3,
+      "ms": 903,
+      "decodedBytes": 12424,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "28f00bd556208ff1f3e6f74ec40fba07581094302384a12d6b63f1b8989bf365"
+    },
+    {
+      "lessonId": "g8-t1-l09-009",
+      "request": 4,
+      "ms": 816,
+      "decodedBytes": 12424,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "28f00bd556208ff1f3e6f74ec40fba07581094302384a12d6b63f1b8989bf365"
+    },
+    {
+      "lessonId": "g8-t1-l09-009",
+      "request": 5,
+      "ms": 658,
+      "decodedBytes": 12424,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "28f00bd556208ff1f3e6f74ec40fba07581094302384a12d6b63f1b8989bf365"
+    },
+    {
+      "lessonId": "g8-t1-l10-010",
+      "request": 1,
+      "ms": 888,
+      "decodedBytes": 15416,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "d96079249ab2e1437c7e20a907afe9e4c35a2574820a4f097c793224197aee8f"
+    },
+    {
+      "lessonId": "g8-t1-l10-010",
+      "request": 2,
+      "ms": 924,
+      "decodedBytes": 15416,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "d96079249ab2e1437c7e20a907afe9e4c35a2574820a4f097c793224197aee8f"
+    },
+    {
+      "lessonId": "g8-t1-l10-010",
+      "request": 3,
+      "ms": 833,
+      "decodedBytes": 15416,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "d96079249ab2e1437c7e20a907afe9e4c35a2574820a4f097c793224197aee8f"
+    },
+    {
+      "lessonId": "g8-t1-l10-010",
+      "request": 4,
+      "ms": 854,
+      "decodedBytes": 15416,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "d96079249ab2e1437c7e20a907afe9e4c35a2574820a4f097c793224197aee8f"
+    },
+    {
+      "lessonId": "g8-t1-l10-010",
+      "request": 5,
+      "ms": 839,
+      "decodedBytes": 15416,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "d96079249ab2e1437c7e20a907afe9e4c35a2574820a4f097c793224197aee8f"
+    },
+    {
+      "lessonId": "g8-t1-l11-011",
+      "request": 1,
+      "ms": 808,
+      "decodedBytes": 13475,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "a1d973821a0782e13cae1fb24d32dd9de3fca6ad9ddece554359dbe43e2b737c"
+    },
+    {
+      "lessonId": "g8-t1-l11-011",
+      "request": 2,
+      "ms": 676,
+      "decodedBytes": 13475,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "a1d973821a0782e13cae1fb24d32dd9de3fca6ad9ddece554359dbe43e2b737c"
+    },
+    {
+      "lessonId": "g8-t1-l11-011",
+      "request": 3,
+      "ms": 672,
+      "decodedBytes": 13475,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "a1d973821a0782e13cae1fb24d32dd9de3fca6ad9ddece554359dbe43e2b737c"
+    },
+    {
+      "lessonId": "g8-t1-l11-011",
+      "request": 4,
+      "ms": 818,
+      "decodedBytes": 13475,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "a1d973821a0782e13cae1fb24d32dd9de3fca6ad9ddece554359dbe43e2b737c"
+    },
+    {
+      "lessonId": "g8-t1-l11-011",
+      "request": 5,
+      "ms": 699,
+      "decodedBytes": 13475,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "a1d973821a0782e13cae1fb24d32dd9de3fca6ad9ddece554359dbe43e2b737c"
+    },
+    {
+      "lessonId": "g8-t1-l12-012",
+      "request": 1,
+      "ms": 760,
+      "decodedBytes": 14593,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "780eafa11026dc6ddc0f26f458ac13e64eb2361f90361d12424d0b623920ecd0"
+    },
+    {
+      "lessonId": "g8-t1-l12-012",
+      "request": 2,
+      "ms": 687,
+      "decodedBytes": 14593,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "780eafa11026dc6ddc0f26f458ac13e64eb2361f90361d12424d0b623920ecd0"
+    },
+    {
+      "lessonId": "g8-t1-l12-012",
+      "request": 3,
+      "ms": 964,
+      "decodedBytes": 14593,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "780eafa11026dc6ddc0f26f458ac13e64eb2361f90361d12424d0b623920ecd0"
+    },
+    {
+      "lessonId": "g8-t1-l12-012",
+      "request": 4,
+      "ms": 1026,
+      "decodedBytes": 14593,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "780eafa11026dc6ddc0f26f458ac13e64eb2361f90361d12424d0b623920ecd0"
+    },
+    {
+      "lessonId": "g8-t1-l12-012",
+      "request": 5,
+      "ms": 831,
+      "decodedBytes": 14593,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "780eafa11026dc6ddc0f26f458ac13e64eb2361f90361d12424d0b623920ecd0"
+    },
+    {
+      "lessonId": "g8-t1-l13-013",
+      "request": 1,
+      "ms": 634,
+      "decodedBytes": 14205,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "77fd35b78c48454485190a76d51e9520b4653dd8810ab76111f1add1faa1d2ac"
+    },
+    {
+      "lessonId": "g8-t1-l13-013",
+      "request": 2,
+      "ms": 864,
+      "decodedBytes": 14205,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "77fd35b78c48454485190a76d51e9520b4653dd8810ab76111f1add1faa1d2ac"
+    },
+    {
+      "lessonId": "g8-t1-l13-013",
+      "request": 3,
+      "ms": 1137,
+      "decodedBytes": 14205,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "77fd35b78c48454485190a76d51e9520b4653dd8810ab76111f1add1faa1d2ac"
+    },
+    {
+      "lessonId": "g8-t1-l13-013",
+      "request": 4,
+      "ms": 732,
+      "decodedBytes": 14205,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "77fd35b78c48454485190a76d51e9520b4653dd8810ab76111f1add1faa1d2ac"
+    },
+    {
+      "lessonId": "g8-t1-l13-013",
+      "request": 5,
+      "ms": 924,
+      "decodedBytes": 14205,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "77fd35b78c48454485190a76d51e9520b4653dd8810ab76111f1add1faa1d2ac"
+    },
+    {
+      "lessonId": "g8-t1-l14-014",
+      "request": 1,
+      "ms": 943,
+      "decodedBytes": 14577,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "4da501efaed441116b1fdd70754eed3b23ab0037f89a4a341423543f5c89841c"
+    },
+    {
+      "lessonId": "g8-t1-l14-014",
+      "request": 2,
+      "ms": 852,
+      "decodedBytes": 14577,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "4da501efaed441116b1fdd70754eed3b23ab0037f89a4a341423543f5c89841c"
+    },
+    {
+      "lessonId": "g8-t1-l14-014",
+      "request": 3,
+      "ms": 638,
+      "decodedBytes": 14577,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "4da501efaed441116b1fdd70754eed3b23ab0037f89a4a341423543f5c89841c"
+    },
+    {
+      "lessonId": "g8-t1-l14-014",
+      "request": 4,
+      "ms": 772,
+      "decodedBytes": 14577,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "4da501efaed441116b1fdd70754eed3b23ab0037f89a4a341423543f5c89841c"
+    },
+    {
+      "lessonId": "g8-t1-l14-014",
+      "request": 5,
+      "ms": 756,
+      "decodedBytes": 14577,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "4da501efaed441116b1fdd70754eed3b23ab0037f89a4a341423543f5c89841c"
+    },
+    {
+      "lessonId": "g8-t1-l15-015",
+      "request": 1,
+      "ms": 874,
+      "decodedBytes": 14868,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "aaeedf550ba695da3019289f190642404b21d849f5d1b95ac8e73ea3c68fe1ef"
+    },
+    {
+      "lessonId": "g8-t1-l15-015",
+      "request": 2,
+      "ms": 868,
+      "decodedBytes": 14868,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "aaeedf550ba695da3019289f190642404b21d849f5d1b95ac8e73ea3c68fe1ef"
+    },
+    {
+      "lessonId": "g8-t1-l15-015",
+      "request": 3,
+      "ms": 852,
+      "decodedBytes": 14868,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "aaeedf550ba695da3019289f190642404b21d849f5d1b95ac8e73ea3c68fe1ef"
+    },
+    {
+      "lessonId": "g8-t1-l15-015",
+      "request": 4,
+      "ms": 835,
+      "decodedBytes": 14868,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "aaeedf550ba695da3019289f190642404b21d849f5d1b95ac8e73ea3c68fe1ef"
+    },
+    {
+      "lessonId": "g8-t1-l15-015",
+      "request": 5,
+      "ms": 658,
+      "decodedBytes": 14868,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "aaeedf550ba695da3019289f190642404b21d849f5d1b95ac8e73ea3c68fe1ef"
+    },
+    {
+      "lessonId": "g8-t1-l16-016",
+      "request": 1,
+      "ms": 867,
+      "decodedBytes": 14531,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "1b62213e1ccabd50028458a1709a1ad7af9bccc5b2b4c5aca5f0b63eff40741d"
+    },
+    {
+      "lessonId": "g8-t1-l16-016",
+      "request": 2,
+      "ms": 895,
+      "decodedBytes": 14531,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "1b62213e1ccabd50028458a1709a1ad7af9bccc5b2b4c5aca5f0b63eff40741d"
+    },
+    {
+      "lessonId": "g8-t1-l16-016",
+      "request": 3,
+      "ms": 645,
+      "decodedBytes": 14531,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "1b62213e1ccabd50028458a1709a1ad7af9bccc5b2b4c5aca5f0b63eff40741d"
+    },
+    {
+      "lessonId": "g8-t1-l16-016",
+      "request": 4,
+      "ms": 881,
+      "decodedBytes": 14531,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "1b62213e1ccabd50028458a1709a1ad7af9bccc5b2b4c5aca5f0b63eff40741d"
+    },
+    {
+      "lessonId": "g8-t1-l16-016",
+      "request": 5,
+      "ms": 826,
+      "decodedBytes": 14531,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "1b62213e1ccabd50028458a1709a1ad7af9bccc5b2b4c5aca5f0b63eff40741d"
+    },
+    {
+      "lessonId": "g8-t1-l17-017",
+      "request": 1,
+      "ms": 860,
+      "decodedBytes": 14600,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "a51a451f8084facf6a3297692a5561bd4795c399fb9ca4dce611b62c3f65e389"
+    },
+    {
+      "lessonId": "g8-t1-l17-017",
+      "request": 2,
+      "ms": 945,
+      "decodedBytes": 14600,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "a51a451f8084facf6a3297692a5561bd4795c399fb9ca4dce611b62c3f65e389"
+    },
+    {
+      "lessonId": "g8-t1-l17-017",
+      "request": 3,
+      "ms": 676,
+      "decodedBytes": 14600,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "a51a451f8084facf6a3297692a5561bd4795c399fb9ca4dce611b62c3f65e389"
+    },
+    {
+      "lessonId": "g8-t1-l17-017",
+      "request": 4,
+      "ms": 913,
+      "decodedBytes": 14600,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "a51a451f8084facf6a3297692a5561bd4795c399fb9ca4dce611b62c3f65e389"
+    },
+    {
+      "lessonId": "g8-t1-l17-017",
+      "request": 5,
+      "ms": 851,
+      "decodedBytes": 14600,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "a51a451f8084facf6a3297692a5561bd4795c399fb9ca4dce611b62c3f65e389"
+    },
+    {
+      "lessonId": "g8-t1-l18-018",
+      "request": 1,
+      "ms": 868,
+      "decodedBytes": 14814,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "e5ba93e53b2be7cd8e750f2983577926dbe92da94d8bbe48854cbdbaa30776d4"
+    },
+    {
+      "lessonId": "g8-t1-l18-018",
+      "request": 2,
+      "ms": 804,
+      "decodedBytes": 14814,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "e5ba93e53b2be7cd8e750f2983577926dbe92da94d8bbe48854cbdbaa30776d4"
+    },
+    {
+      "lessonId": "g8-t1-l18-018",
+      "request": 3,
+      "ms": 847,
+      "decodedBytes": 14814,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "e5ba93e53b2be7cd8e750f2983577926dbe92da94d8bbe48854cbdbaa30776d4"
+    },
+    {
+      "lessonId": "g8-t1-l18-018",
+      "request": 4,
+      "ms": 820,
+      "decodedBytes": 14814,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "e5ba93e53b2be7cd8e750f2983577926dbe92da94d8bbe48854cbdbaa30776d4"
+    },
+    {
+      "lessonId": "g8-t1-l18-018",
+      "request": 5,
+      "ms": 873,
+      "decodedBytes": 14814,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "e5ba93e53b2be7cd8e750f2983577926dbe92da94d8bbe48854cbdbaa30776d4"
+    },
+    {
+      "lessonId": "g8-t1-l19-019",
+      "request": 1,
+      "ms": 689,
+      "decodedBytes": 15058,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "9e6d56366086da837f5c43d88578798853ee878ed96a4e64bf77781034d3077e"
+    },
+    {
+      "lessonId": "g8-t1-l19-019",
+      "request": 2,
+      "ms": 676,
+      "decodedBytes": 15058,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "9e6d56366086da837f5c43d88578798853ee878ed96a4e64bf77781034d3077e"
+    },
+    {
+      "lessonId": "g8-t1-l19-019",
+      "request": 3,
+      "ms": 672,
+      "decodedBytes": 15058,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "9e6d56366086da837f5c43d88578798853ee878ed96a4e64bf77781034d3077e"
+    },
+    {
+      "lessonId": "g8-t1-l19-019",
+      "request": 4,
+      "ms": 891,
+      "decodedBytes": 15058,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "9e6d56366086da837f5c43d88578798853ee878ed96a4e64bf77781034d3077e"
+    },
+    {
+      "lessonId": "g8-t1-l19-019",
+      "request": 5,
+      "ms": 860,
+      "decodedBytes": 15058,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "9e6d56366086da837f5c43d88578798853ee878ed96a4e64bf77781034d3077e"
+    },
+    {
+      "lessonId": "g8-t1-l20-020",
+      "request": 1,
+      "ms": 949,
+      "decodedBytes": 21057,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "a50f7043113f615e028ccf961668912ac6253a269559db1cdb7993531ce229e6"
+    },
+    {
+      "lessonId": "g8-t1-l20-020",
+      "request": 2,
+      "ms": 889,
+      "decodedBytes": 21057,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "a50f7043113f615e028ccf961668912ac6253a269559db1cdb7993531ce229e6"
+    },
+    {
+      "lessonId": "g8-t1-l20-020",
+      "request": 3,
+      "ms": 865,
+      "decodedBytes": 21057,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "a50f7043113f615e028ccf961668912ac6253a269559db1cdb7993531ce229e6"
+    },
+    {
+      "lessonId": "g8-t1-l20-020",
+      "request": 4,
+      "ms": 1002,
+      "decodedBytes": 21057,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "a50f7043113f615e028ccf961668912ac6253a269559db1cdb7993531ce229e6"
+    },
+    {
+      "lessonId": "g8-t1-l20-020",
+      "request": 5,
+      "ms": 912,
+      "decodedBytes": 21057,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "a50f7043113f615e028ccf961668912ac6253a269559db1cdb7993531ce229e6"
+    },
+    {
+      "lessonId": "g9-t1-l02-002",
+      "request": 1,
+      "ms": 780,
+      "decodedBytes": 47192,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "7921db414e2c9f49114f62fbb95253fda6b8092c291062d393d8f64087bd05be"
+    },
+    {
+      "lessonId": "g9-t1-l02-002",
+      "request": 2,
+      "ms": 701,
+      "decodedBytes": 47192,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "7921db414e2c9f49114f62fbb95253fda6b8092c291062d393d8f64087bd05be"
+    },
+    {
+      "lessonId": "g9-t1-l02-002",
+      "request": 3,
+      "ms": 874,
+      "decodedBytes": 47192,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "7921db414e2c9f49114f62fbb95253fda6b8092c291062d393d8f64087bd05be"
+    },
+    {
+      "lessonId": "g9-t1-l02-002",
+      "request": 4,
+      "ms": 780,
+      "decodedBytes": 47192,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "7921db414e2c9f49114f62fbb95253fda6b8092c291062d393d8f64087bd05be"
+    },
+    {
+      "lessonId": "g9-t1-l02-002",
+      "request": 5,
+      "ms": 911,
+      "decodedBytes": 47192,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "7921db414e2c9f49114f62fbb95253fda6b8092c291062d393d8f64087bd05be"
+    },
+    {
+      "lessonId": "g10-t2-l19-019",
+      "request": 1,
+      "ms": 835,
+      "decodedBytes": 68617,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "ae92ffe2c6a07a42c1063c512ce9019dc1015d044c50841f59d1e3086d45d6e7"
+    },
+    {
+      "lessonId": "g10-t2-l19-019",
+      "request": 2,
+      "ms": 947,
+      "decodedBytes": 68617,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "ae92ffe2c6a07a42c1063c512ce9019dc1015d044c50841f59d1e3086d45d6e7"
+    },
+    {
+      "lessonId": "g10-t2-l19-019",
+      "request": 3,
+      "ms": 633,
+      "decodedBytes": 68617,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "ae92ffe2c6a07a42c1063c512ce9019dc1015d044c50841f59d1e3086d45d6e7"
+    },
+    {
+      "lessonId": "g10-t2-l19-019",
+      "request": 4,
+      "ms": 859,
+      "decodedBytes": 68617,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "ae92ffe2c6a07a42c1063c512ce9019dc1015d044c50841f59d1e3086d45d6e7"
+    },
+    {
+      "lessonId": "g10-t2-l19-019",
+      "request": 5,
+      "ms": 832,
+      "decodedBytes": 68617,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "ae92ffe2c6a07a42c1063c512ce9019dc1015d044c50841f59d1e3086d45d6e7"
+    },
+    {
+      "lessonId": "g11-t1-l14-014",
+      "request": 1,
+      "ms": 884,
+      "decodedBytes": 51451,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "3a4a9485b5e076ba87be06e57d2191fe71baa8a365798eb549a5e309ad1b3f65"
+    },
+    {
+      "lessonId": "g11-t1-l14-014",
+      "request": 2,
+      "ms": 956,
+      "decodedBytes": 51451,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "3a4a9485b5e076ba87be06e57d2191fe71baa8a365798eb549a5e309ad1b3f65"
+    },
+    {
+      "lessonId": "g11-t1-l14-014",
+      "request": 3,
+      "ms": 926,
+      "decodedBytes": 51451,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "3a4a9485b5e076ba87be06e57d2191fe71baa8a365798eb549a5e309ad1b3f65"
+    },
+    {
+      "lessonId": "g11-t1-l14-014",
+      "request": 4,
+      "ms": 886,
+      "decodedBytes": 51451,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "3a4a9485b5e076ba87be06e57d2191fe71baa8a365798eb549a5e309ad1b3f65"
+    },
+    {
+      "lessonId": "g11-t1-l14-014",
+      "request": 5,
+      "ms": 721,
+      "decodedBytes": 51451,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "3a4a9485b5e076ba87be06e57d2191fe71baa8a365798eb549a5e309ad1b3f65"
+    },
+    {
+      "lessonId": "g12-t1-l05-005",
+      "request": 1,
+      "ms": 852,
+      "decodedBytes": 70344,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "1e261d1bd86db580eae58f40401251a24b88bad47f83ed39631fcf3cb82426b1"
+    },
+    {
+      "lessonId": "g12-t1-l05-005",
+      "request": 2,
+      "ms": 899,
+      "decodedBytes": 70344,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "1e261d1bd86db580eae58f40401251a24b88bad47f83ed39631fcf3cb82426b1"
+    },
+    {
+      "lessonId": "g12-t1-l05-005",
+      "request": 3,
+      "ms": 794,
+      "decodedBytes": 70344,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "1e261d1bd86db580eae58f40401251a24b88bad47f83ed39631fcf3cb82426b1"
+    },
+    {
+      "lessonId": "g12-t1-l05-005",
+      "request": 4,
+      "ms": 981,
+      "decodedBytes": 70344,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "1e261d1bd86db580eae58f40401251a24b88bad47f83ed39631fcf3cb82426b1"
+    },
+    {
+      "lessonId": "g12-t1-l05-005",
+      "request": 5,
+      "ms": 862,
+      "decodedBytes": 70344,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "1e261d1bd86db580eae58f40401251a24b88bad47f83ed39631fcf3cb82426b1"
+    }
+  ],
+  "commit": "ac69dc7f910a6c1184eb75023e56dcfca2999179",
+  "concurrent": {
+    "concurrency": 4,
+    "waves": [
+      {
+        "wave": 1,
+        "wallMs": 1048,
+        "samples": [
+          {
+            "lessonId": "g8-t1-l01-001",
+            "status": 200,
+            "ms": 1048,
+            "decodedBytes": 20092,
+            "planSHA256": "5e5d1510fec34c2647181f3bf574538ee9dfac6c974d77fe8b560082391da8eb",
+            "cache": "private, no-store, max-age=0"
+          },
+          {
+            "lessonId": "g8-t1-l02-002",
+            "status": 200,
+            "ms": 928,
+            "decodedBytes": 19052,
+            "planSHA256": "9714004695751860ebda0a600abd4b9c1576f3b853a4a2ac9a273ea9a7be6f35",
+            "cache": "private, no-store, max-age=0"
+          },
+          {
+            "lessonId": "g8-t1-l03-003",
+            "status": 200,
+            "ms": 733,
+            "decodedBytes": 19878,
+            "planSHA256": "eac915f74ece4d544f73e28773406783b30e28f91d40fe3c64b3152da71da3bc",
+            "cache": "private, no-store, max-age=0"
+          },
+          {
+            "lessonId": "g8-t1-l04-004",
+            "status": 200,
+            "ms": 871,
+            "decodedBytes": 21373,
+            "planSHA256": "c8869814781467fff247fca46e1e0c239be49341ec3d6ff68c040fe503830027",
+            "cache": "private, no-store, max-age=0"
+          }
+        ]
+      },
+      {
+        "wave": 2,
+        "wallMs": 1082,
+        "samples": [
+          {
+            "lessonId": "g8-t1-l05-005",
+            "status": 200,
+            "ms": 897,
+            "decodedBytes": 14428,
+            "planSHA256": "d72da8e2c1736049b974f9e71677cd9c9cdfa508361407011ec7ce43756009a1",
+            "cache": "private, no-store, max-age=0"
+          },
+          {
+            "lessonId": "g8-t1-l06-006",
+            "status": 200,
+            "ms": 1082,
+            "decodedBytes": 12205,
+            "planSHA256": "3dc3d31afa7c0865e20be18146ab2b22b2da9b7217ca7b302be1caa3c77cae14",
+            "cache": "private, no-store, max-age=0"
+          },
+          {
+            "lessonId": "g8-t1-l07-007",
+            "status": 200,
+            "ms": 987,
+            "decodedBytes": 14556,
+            "planSHA256": "7020c739bf7bc9ed8b1aecfc55505d61358929cf23ec6416ac69337636c28982",
+            "cache": "private, no-store, max-age=0"
+          },
+          {
+            "lessonId": "g8-t1-l08-008",
+            "status": 200,
+            "ms": 741,
+            "decodedBytes": 58802,
+            "planSHA256": "6cad27f1f4e5b6af14cf33d896f0b5a5d02acb22ebf611fc5b28cb81d002098c",
+            "cache": "private, no-store, max-age=0"
+          }
+        ]
+      },
+      {
+        "wave": 3,
+        "wallMs": 1160,
+        "samples": [
+          {
+            "lessonId": "g8-t1-l09-009",
+            "status": 200,
+            "ms": 701,
+            "decodedBytes": 12424,
+            "planSHA256": "28f00bd556208ff1f3e6f74ec40fba07581094302384a12d6b63f1b8989bf365",
+            "cache": "private, no-store, max-age=0"
+          },
+          {
+            "lessonId": "g8-t1-l10-010",
+            "status": 200,
+            "ms": 953,
+            "decodedBytes": 15416,
+            "planSHA256": "d96079249ab2e1437c7e20a907afe9e4c35a2574820a4f097c793224197aee8f",
+            "cache": "private, no-store, max-age=0"
+          },
+          {
+            "lessonId": "g8-t1-l11-011",
+            "status": 200,
+            "ms": 1160,
+            "decodedBytes": 13475,
+            "planSHA256": "a1d973821a0782e13cae1fb24d32dd9de3fca6ad9ddece554359dbe43e2b737c",
+            "cache": "private, no-store, max-age=0"
+          },
+          {
+            "lessonId": "g8-t1-l12-012",
+            "status": 200,
+            "ms": 759,
+            "decodedBytes": 14593,
+            "planSHA256": "780eafa11026dc6ddc0f26f458ac13e64eb2361f90361d12424d0b623920ecd0",
+            "cache": "private, no-store, max-age=0"
+          }
+        ]
+      }
+    ],
+    "scope": "one authenticated educator; bounded overlapping requests; no capacity claim"
+  },
+  "lessons": [
+    {
+      "lessonId": "g8-t1-l01-001",
+      "decodedBytes": 20092,
+      "firstSampleMs": 1398,
+      "repeatedMedianMs": 1362.5,
+      "rangeMs": [
+        1100,
+        1514
+      ]
+    },
+    {
+      "lessonId": "g8-t1-l02-002",
+      "decodedBytes": 19052,
+      "firstSampleMs": 1304,
+      "repeatedMedianMs": 1056.5,
+      "rangeMs": [
+        906,
+        1304
+      ]
+    },
+    {
+      "lessonId": "g8-t1-l03-003",
+      "decodedBytes": 19878,
+      "firstSampleMs": 1046,
+      "repeatedMedianMs": 1098.5,
+      "rangeMs": [
+        921,
+        1182
+      ]
+    },
+    {
+      "lessonId": "g8-t1-l04-004",
+      "decodedBytes": 21373,
+      "firstSampleMs": 988,
+      "repeatedMedianMs": 1076.5,
+      "rangeMs": [
+        823,
+        1243
+      ]
+    },
+    {
+      "lessonId": "g8-t1-l05-005",
+      "decodedBytes": 14428,
+      "firstSampleMs": 1072,
+      "repeatedMedianMs": 895.5,
+      "rangeMs": [
+        675,
+        1072
+      ]
+    },
+    {
+      "lessonId": "g8-t1-l06-006",
+      "decodedBytes": 12205,
+      "firstSampleMs": 928,
+      "repeatedMedianMs": 818,
+      "rangeMs": [
+        683,
+        928
+      ]
+    },
+    {
+      "lessonId": "g8-t1-l07-007",
+      "decodedBytes": 14556,
+      "firstSampleMs": 1163,
+      "repeatedMedianMs": 880,
+      "rangeMs": [
+        865,
+        1163
+      ]
+    },
+    {
+      "lessonId": "g8-t1-l08-008",
+      "decodedBytes": 58802,
+      "firstSampleMs": 916,
+      "repeatedMedianMs": 957,
+      "rangeMs": [
+        824,
+        993
+      ]
+    },
+    {
+      "lessonId": "g8-t1-l09-009",
+      "decodedBytes": 12424,
+      "firstSampleMs": 1140,
+      "repeatedMedianMs": 823,
+      "rangeMs": [
+        658,
+        1140
+      ]
+    },
+    {
+      "lessonId": "g8-t1-l10-010",
+      "decodedBytes": 15416,
+      "firstSampleMs": 888,
+      "repeatedMedianMs": 846.5,
+      "rangeMs": [
+        833,
+        924
+      ]
+    },
+    {
+      "lessonId": "g8-t1-l11-011",
+      "decodedBytes": 13475,
+      "firstSampleMs": 808,
+      "repeatedMedianMs": 687.5,
+      "rangeMs": [
+        672,
+        818
+      ]
+    },
+    {
+      "lessonId": "g8-t1-l12-012",
+      "decodedBytes": 14593,
+      "firstSampleMs": 760,
+      "repeatedMedianMs": 897.5,
+      "rangeMs": [
+        687,
+        1026
+      ]
+    },
+    {
+      "lessonId": "g8-t1-l13-013",
+      "decodedBytes": 14205,
+      "firstSampleMs": 634,
+      "repeatedMedianMs": 894,
+      "rangeMs": [
+        634,
+        1137
+      ]
+    },
+    {
+      "lessonId": "g8-t1-l14-014",
+      "decodedBytes": 14577,
+      "firstSampleMs": 943,
+      "repeatedMedianMs": 764,
+      "rangeMs": [
+        638,
+        943
+      ]
+    },
+    {
+      "lessonId": "g8-t1-l15-015",
+      "decodedBytes": 14868,
+      "firstSampleMs": 874,
+      "repeatedMedianMs": 843.5,
+      "rangeMs": [
+        658,
+        874
+      ]
+    },
+    {
+      "lessonId": "g8-t1-l16-016",
+      "decodedBytes": 14531,
+      "firstSampleMs": 867,
+      "repeatedMedianMs": 853.5,
+      "rangeMs": [
+        645,
+        895
+      ]
+    },
+    {
+      "lessonId": "g8-t1-l17-017",
+      "decodedBytes": 14600,
+      "firstSampleMs": 860,
+      "repeatedMedianMs": 882,
+      "rangeMs": [
+        676,
+        945
+      ]
+    },
+    {
+      "lessonId": "g8-t1-l18-018",
+      "decodedBytes": 14814,
+      "firstSampleMs": 868,
+      "repeatedMedianMs": 833.5,
+      "rangeMs": [
+        804,
+        873
+      ]
+    },
+    {
+      "lessonId": "g8-t1-l19-019",
+      "decodedBytes": 15058,
+      "firstSampleMs": 689,
+      "repeatedMedianMs": 768,
+      "rangeMs": [
+        672,
+        891
+      ]
+    },
+    {
+      "lessonId": "g8-t1-l20-020",
+      "decodedBytes": 21057,
+      "firstSampleMs": 949,
+      "repeatedMedianMs": 900.5,
+      "rangeMs": [
+        865,
+        1002
+      ]
+    },
+    {
+      "lessonId": "g9-t1-l02-002",
+      "decodedBytes": 47192,
+      "firstSampleMs": 780,
+      "repeatedMedianMs": 827,
+      "rangeMs": [
+        701,
+        911
+      ]
+    },
+    {
+      "lessonId": "g10-t2-l19-019",
+      "decodedBytes": 68617,
+      "firstSampleMs": 835,
+      "repeatedMedianMs": 845.5,
+      "rangeMs": [
+        633,
+        947
+      ]
+    },
+    {
+      "lessonId": "g11-t1-l14-014",
+      "decodedBytes": 51451,
+      "firstSampleMs": 884,
+      "repeatedMedianMs": 906,
+      "rangeMs": [
+        721,
+        956
+      ]
+    },
+    {
+      "lessonId": "g12-t1-l05-005",
+      "decodedBytes": 70344,
+      "firstSampleMs": 852,
+      "repeatedMedianMs": 880.5,
+      "rangeMs": [
+        794,
+        981
+      ]
+    }
+  ]
+}

@@ -1,5 +1,7 @@
 # Private content delivery: measured growth
 
+Update, 1 November 2026: the [237-plan follow-up measurements](../staging-classroom-validation/pr79-followup/PERFORMANCE.md) now include actual hosted Node process memory, route-instance first private-content reads, repeats and bounded four-request overlap. The temporary diagnostic flag/deployment were removed. Isolated platform cold bootstrap and 395-guide/multi-user capacity remain unverified. Pending-measurement statements below describe their historical runs. No cache, packaging or production architecture change is implemented.
+
 The original classroom key remains server-bound. Packaging and Supabase access are separate capabilities: genuine staging login demonstrates permissions, while guarded build-time sealing demonstrates that the original key opens and extends the existing encrypted release without export. Neither proves 395-plan performance. The 231-plan release passes its recorded hosted acceptance; that does not demonstrate the missing cold/server-memory measurements.
 
 | Released/candidate plans | Ciphertext bytes | Hash/placement manifest bytes |

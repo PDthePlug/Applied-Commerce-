@@ -1,8 +1,10 @@
 # Applied Commerce classroom rollout
 
+Current [PR #79 follow-up / draft PR #80](../staging-classroom-validation/pr79-followup/REPORT.md): **237 guides remain released; no guides added.** Two Grade 8 Lesson 12 source-reference fields are corrected. Normal staging is **https://applied-commerce-sa-staging-dhfupflfk.vercel.app**, application/content **3c34b0644ad20b06ca333343e3b56d1332723859**. The follow-up records fresh original-24-plan checks, corrected-guide acceptance, genuine JWT/session revocation, and actual hosted delivery/memory measurements. The enabled diagnostic deployment and flag are removed. The following PR #79 figures remain its historical baseline.
+
 **237 of 395 lessons have individually reviewed support verified in staging; 158 remain.** Grade 8 (80), Grade 9 (75) and Grade 10 (80) are covered, along with the unchanged Grade 11 and Grade 12 benchmarks. Verification covers engineering and instructional desk review; educator classroom moderation and timing trials remain pending.
 
-Current tested staging: **https://applied-commerce-sa-staging-gyukafoek.vercel.app**, application/content commit **459fa223462187a3bcda3f73984c2d2e73ffeabe**. Deployment protection and genuine application permissions apply. [PR #79](https://github.com/PDthePlug/Applied-Commerce-/pull/79) remains a draft. No merge or separate live production deployment was performed.
+PR #79 tested staging: **https://applied-commerce-sa-staging-gyukafoek.vercel.app**, application/content commit **459fa223462187a3bcda3f73984c2d2e73ffeabe**. Deployment protection and genuine application permissions apply. [PR #79](https://github.com/PDthePlug/Applied-Commerce-/pull/79) remains a draft. No merge or separate live production deployment was performed.
 
 The six Grade 10 closing guides complete the existing presentations, reflection, portfolio assembly, letter model and farewell. Their 54 source blocks were read individually. Complete preparation, brief contextual cues, optional local depth, private printing and standalone fallback remain in the approved interface. All 231 prior plan bindings, 395 learner lessons, four assessments, 20,766 stable blocks, source books, response identities, portfolios, icons and simple checkpoint numbering are preserved.
 
