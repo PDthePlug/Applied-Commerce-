@@ -1,11 +1,11 @@
 {
-  "at": "2026-11-01T04:28:19.156390+00:00",
+  "at": "2026-11-01T04:45:01.378085+00:00",
   "projectRef": "inxshlumnhcgiahxqewe",
   "stagingVercelProject": "applied-commerce-sa-staging",
-  "verifiedGuides": 231,
+  "verifiedGuides": 237,
   "privatePreparedGuides": 0,
   "candidateGuideTotal": 237,
-  "candidateStatus": "SEALED; PENDING GENUINE ACCEPTANCE",
+  "candidateStatus": "SEALED AND VERIFIED IN GENUINE STAGING",
   "ownerReaffirmedFullDirective": "2026-11-01",
   "local": {
     "runtime": "395 lessons / 4 assessments / 20766 stable blocks PASS",
@@ -38,10 +38,13 @@
     "acceptedBenchmarkPreserved": "g11-t1-l14-014"
   },
   "pending": [
-    "Normal guarded staging build",
-    "Genuine six-guide placement, sequence, responsive, printing and learner-state validation",
-    "Educator timing, physical printer and hosted cold/server-memory trials"
+    "Independent educator moderation and timing trials pending",
+    "Physical printer and human assistive-technology trials pending",
+    "Hosted cold-process, concurrency and runtime server-memory measurements pending",
+    "Natural JWT expiry demonstrated historically; no fresh natural-expiry or configured maximum/inactivity lifetime claim in this batch"
   ],
-  "stagedPendingVerification": 6,
-  "sealingAccess": "Coding Vercel token now reaches exact isolated project and supports creation/deletion; original server key used without export"
+  "stagedPendingVerification": 0,
+  "sealingAccess": "Coding Vercel token now reaches exact isolated project and supports creation/deletion; original server key used without export",
+  "testedApplicationCommit": "459fa223462187a3bcda3f73984c2d2e73ffeabe",
+  "stagingURL": "https://applied-commerce-sa-staging-gyukafoek.vercel.app"
 }
