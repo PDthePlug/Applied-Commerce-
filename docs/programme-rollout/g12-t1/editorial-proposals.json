@@ -1,0 +1,375 @@
+{
+  "sourceChangesApplied": false,
+  "entries": [
+    {
+      "lessonId": "g12-t1-l01-001",
+      "blockId": "e803af72f95144b85f22d518-1",
+      "exactPassage": "Write one Reality Check for your launch: \"If I have not [specific adult action] by [specific date], I am not launching. I am delaying. The reason will be [fear/comfort/avoidance]—not circumstance.\"",
+      "category": "Circumstances excluded from a review signal",
+      "concern": "The commitment forces fear/comfort/avoidance and explicitly rules out circumstance, despite possible resource, access, care or safety barriers.",
+      "proposedWording": "Set a feasible action/date and review what helped or prevented it. Distinguish a personal pattern from external constraints and identify support or a responsible revision.",
+      "implementationImpact": "Separate reviewed learner-source proposal; no canonical change in this teacher-guide batch. Preserve stable lesson/block/prompt/response identities with explicit compiler mapping before any source release. Real legal/medical/financial decisions need appropriate qualified review.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g12-t1-l02-002",
+      "blockId": "78f661feb4d080b7d191f452-1",
+      "exactPassage": "[[\"Area\",\"Before 18\",\"After 18\"],[\"Contracts\",\"Parents usually sign for you\",\"You can sign your own\"],[\"Bank accounts\",\"Need parent/guardian\",\"Can open alone\"],[\"Credit\",\"Cannot get credit\",\"Can apply, but be careful\"],[\"Medical decisions\",\"Parents decide\",\"You decide\"],[\"Voting\",\"Cannot vote\",\"Can vote\"],[\"Legal responsibility\",\"Parents responsible\",\"You are responsible\"],[\"Wills\",\"Cannot make a will\",\"Can and should\"]]",
+      "category": "Material legal-age inaccuracies",
+      "concern": "The before-eighteen table wrongly says no will can be made and parents decide all medical care; legal responsibility and bank access are also overgeneralised.",
+      "proposedWording": "Distinguish majority at eighteen from specific rights/duties: competent testators aged sixteen or older may make a will; certain medical consent can arise before eighteen under applicable age/maturity/capacity rules, with surgery qualifications. Banking/access and legal responsibility depend on the particular rule and facts.",
+      "implementationImpact": "Separate reviewed learner-source proposal; no canonical change in this teacher-guide batch. Preserve stable lesson/block/prompt/response identities with explicit compiler mapping before any source release. Real legal/medical/financial decisions need appropriate qualified review.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g12-t1-l02-002",
+      "blockId": "a3d246780d89fc7d86ee2b1c-1",
+      "exactPassage": "\"With rights come responsibilities. Being an adult is not just about what you CAN do. It is about what you ARE ACCOUNTABLE for. The law treats you differently at 18. You can enter contracts. You can be sued. Your parents are no longer legally responsible for you. That is freedom. And that is weight.\"",
+      "category": "Maintenance and responsibility overstatement",
+      "concern": "The blanket parents-no-longer-responsible wording can imply support automatically ends at eighteen. Official Justice guidance says maintenance continues until self-supporting.",
+      "proposedWording": "Legal adulthood changes capacity, but some parental duties, including maintenance in applicable circumstances, can continue. Do not advise an individual family from an age-only table.",
+      "implementationImpact": "Separate reviewed learner-source proposal; no canonical change in this teacher-guide batch. Preserve stable lesson/block/prompt/response identities with explicit compiler mapping before any source release. Real legal/medical/financial decisions need appropriate qualified review.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g12-t1-l02-002",
+      "blockId": "5c352b23a1ce2480f3189b04-1",
+      "exactPassage": "[[\"Right\",\"Responsibility\"],[\"Vote in elections\",\"Learn about issues, vote wisely\"],[\"Sign contracts\",\"Understand what you are signing\"],[\"Open bank accounts alone\",\"Manage money responsibly\"],[\"Get a credit card\",\"Use it wisely, pay on time\"],[\"Apply for loans\",\"Borrow only what you can repay\"],[\"Make medical decisions\",\"Know your health, ask questions\"],[\"Marry without permission\",\"Big decision—think carefully\"],[\"Write a will\",\"Plan for the unexpected\"],[\"Be sued\",\"Follow the law, get advice\"]]",
+      "category": "Rights presented as uniformly new at eighteen",
+      "concern": "The right/responsibility list includes wills and medical choices that can arise earlier, and credit access depends on eligibility/affordability rather than a guaranteed birthday entitlement.",
+      "proposedWording": "Label genuine majority changes separately from rights already possible earlier and from products requiring eligibility, assessment or specific legal conditions.",
+      "implementationImpact": "Separate reviewed learner-source proposal; no canonical change in this teacher-guide batch. Preserve stable lesson/block/prompt/response identities with explicit compiler mapping before any source release. Real legal/medical/financial decisions need appropriate qualified review.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g12-t1-l03-003",
+      "blockId": "dcdfa09c82ac2dade7cd883a-1",
+      "exactPassage": "\"The law assumes you read what you signed. It does not care that you did not understand. It cares that you signed. So read. Ask. Understand. Then sign. Or do not sign. That is your right. And it is your only protection.\"",
+      "category": "Signed-contract legal absolute",
+      "concern": "A signature does not erase every protection or make understanding legally irrelevant in every circumstance; reading is not the only protection.",
+      "proposedWording": "Read, ask and obtain appropriate advice before signing, while recognising applicable consumer/employment protections and fact-dependent enforceability. Do not assume every signed clause must be enforceable.",
+      "implementationImpact": "Separate reviewed learner-source proposal; no canonical change in this teacher-guide batch. Preserve stable lesson/block/prompt/response identities with explicit compiler mapping before any source release. Real legal/medical/financial decisions need appropriate qualified review.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g12-t1-l03-003",
+      "blockId": "36b2e7d10fbdfc5f35c0f941-1",
+      "exactPassage": "[[\"Resource\",\"What It Offers\",\"Cost\"],[\"Legal Aid South Africa\",\"Free legal representation for those who qualify\",\"Free\"],[\"University law clinics\",\"Free advice from law students supervised by attorneys\",\"Free\"],[\"Small claims court\",\"Resolve disputes up to R20,000 without a lawyer\",\"Low cost\"],[\"Private attorney\",\"Full legal representation\",\"Paid\"]]",
+      "category": "Outdated current monetary jurisdiction",
+      "concern": "Official Justice’s 22 July 2026 announcement raises small-claims monetary jurisdiction from R20,000 to R30,000 effective 1 August 2026. Service eligibility/procedure still matter.",
+      "proposedWording": "Date the table and use the current R30,000 jurisdiction with appropriate scope, procedural and eligibility qualifications, subject to qualified editorial review. Do not promise every claim can be heard.",
+      "implementationImpact": "Separate reviewed learner-source proposal; no canonical change in this teacher-guide batch. Preserve stable lesson/block/prompt/response identities with explicit compiler mapping before any source release. Real legal/medical/financial decisions need appropriate qualified review.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g12-t1-l03-003",
+      "blockId": "f50c9fc60d7132ac667457b4-1",
+      "exactPassage": "Question 3 — The Pre-Mortem: You sign a contract without reading it. It contains a restraint of trade clause that prevents you from working in your field for two years after leaving. You discover this only when you try to take a new job. What happens next? How much does it cost you? Now write: What will you do THIS YEAR to ensure you never sign a contract you do not understand?",
+      "category": "Restraint enforceability and cost underspecified",
+      "concern": "The hypothetical treats a two-year restraint as automatically preventing work and invites a cost without facts or legal assessment.",
+      "proposedWording": "Keep the hypothetical consequences but identify that enforceability and remedies depend on applicable law/facts and qualified advice. Do not invent an exact legal outcome or cost.",
+      "implementationImpact": "Separate reviewed learner-source proposal; no canonical change in this teacher-guide batch. Preserve stable lesson/block/prompt/response identities with explicit compiler mapping before any source release. Real legal/medical/financial decisions need appropriate qualified review.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g12-t1-l04-004",
+      "blockId": "c564942b4f92755bc31a6670-1",
+      "exactPassage": "Debit card — uses her own money. No debt. No interest. No surprises.",
+      "category": "Payment risk and terms overstatement",
+      "concern": "A debit card generally uses funds but does not guarantee no fees, overdraft exposure, fraud or surprises.",
+      "proposedWording": "Distinguish ordinary debit use from actual account/card terms, fees, optional overdraft and security risks. No product is automatically risk-free.",
+      "implementationImpact": "Separate reviewed learner-source proposal; no canonical change in this teacher-guide batch. Preserve stable lesson/block/prompt/response identities with explicit compiler mapping before any source release. Real legal/medical/financial decisions need appropriate qualified review.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g12-t1-l04-004",
+      "blockId": "6ebd3491f925805542cbc669-1",
+      "exactPassage": "[[\"Method\",\"How It Works\",\"Control Level\",\"Risk\"],[\"Cash\",\"Physical money\",\"High—you see it leave\",\"Low—no debt\"],[\"Debit card\",\"Money from your account immediately\",\"Medium—easy to swipe without thinking\",\"Low—your own money\"],[\"Credit card\",\"Borrow money, pay later (interest if not paid in full)\",\"Low—easy to overspend\",\"High—debt trap\"],[\"EFT\",\"Electronic transfer between accounts\",\"High—deliberate action\",\"Low\"]]",
+      "category": "Debt risk conflated with overall risk",
+      "concern": "Cash and EFT are labelled low-risk primarily because there is no debt, omitting theft/loss, scams and mistaken transfers.",
+      "proposedWording": "Compare debt exposure separately from loss, fraud, reversal, access and fee risks; confirm actual provider terms rather than assign a universal low-risk label.",
+      "implementationImpact": "Separate reviewed learner-source proposal; no canonical change in this teacher-guide batch. Preserve stable lesson/block/prompt/response identities with explicit compiler mapping before any source release. Real legal/medical/financial decisions need appropriate qualified review.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g12-t1-l04-004",
+      "blockId": "65f3e001a2448a8a13bc71c3-1",
+      "exactPassage": "Key idea: Myah set up a simple system: savings account for goals, cheque account for spending, debit card only, weekly transfer, weekly review. She felt in control. The paradox: a bank account is just a tool. The system around it is what matters. You can have a million rand in the bank. If you have no system, it will disappear. You can have R500. If you have a system, it will grow.",
+      "category": "Guaranteed balance outcome",
+      "concern": "A system does not guarantee that R500 grows or that a million disappears without the prescribed system; income, needs, returns and circumstances matter.",
+      "proposedWording": "A suitable system can help people understand and manage money, but outcomes also depend on resources, costs and uncertainty. Retain the practical tracking purpose without a guaranteed result.",
+      "implementationImpact": "Separate reviewed learner-source proposal; no canonical change in this teacher-guide batch. Preserve stable lesson/block/prompt/response identities with explicit compiler mapping before any source release. Real legal/medical/financial decisions need appropriate qualified review.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g12-t1-l04-004",
+      "blockId": "fb36883a77404f755196fcea-1",
+      "exactPassage": "Here’s the tension: the system only works if you follow it. The best budget in the world is worthless if you ignore it. The most brilliant tracking method is useless if you stop after two weeks. The architect designed her financial architecture in Grade 11. The operator must now live it—every day, every week, every month. The design is complete. The living is the work. And here is the deeper truth: the first month of managing your own money is the hardest. Everything is new. Every decision is conscious. The cognitive load is exhausting. Most people abandon their systems in the first month—not because the system was bad, but because the effort of maintaining it was greater than they expected. The key is to survive the first month. After that, the system becomes habit. After that, it runs in the background. But you have to survive the first month first.",
+      "category": "Unsupported universal habit timeline",
+      "concern": "The passage asserts most people abandon in the first month and that surviving one month makes the system a habit without evidence or individual variation.",
+      "proposedWording": "The first weeks can be demanding. Review, simplify or resume a method suited to actual needs; habit formation and interruptions vary.",
+      "implementationImpact": "Separate reviewed learner-source proposal; no canonical change in this teacher-guide batch. Preserve stable lesson/block/prompt/response identities with explicit compiler mapping before any source release. Real legal/medical/financial decisions need appropriate qualified review.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g12-t1-l06-006",
+      "blockId": "a358681efb96d0d2539e9a8a-1",
+      "exactPassage": "Here’s the tension: every path also has a hidden cost that nobody on the panel will tell you—because they may not even know it themselves. University gives you options, but it also gives you debt and delays your entry into the workforce by years. TVET gives you skills, but it may limit your upward mobility in certain fields. Entrepreneurship gives you freedom, but it also gives you isolation—the loneliness of being the one who makes every decision, carries every risk, lies awake at night wondering if you will make payroll. The panelists told you the costs they are aware of. The costs they are NOT aware of are the ones that will surprise you. The question is whether you have the resilience to absorb surprises.",
+      "category": "Pathway cost overgeneralisation",
+      "concern": "The passage states university gives debt although funding and personal circumstances vary; panel stories do not establish universal costs/outcomes.",
+      "proposedWording": "Describe possible debt, opportunity cost or workload with actual funding and programme conditions. Retain trade-off reflection without prescribing an outcome for every route.",
+      "implementationImpact": "Separate reviewed learner-source proposal; no canonical change in this teacher-guide batch. Preserve stable lesson/block/prompt/response identities with explicit compiler mapping before any source release. Real legal/medical/financial decisions need appropriate qualified review.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g12-t1-l07-007",
+      "blockId": "955d518ec2d40d98c7f9855b-1",
+      "exactPassage": "[[\"University\",\"Programme\",\"APS Required\",\"Subject Requirements\",\"Closing Date\",\"Application Fee\"],[\"UJ\",\"BEd Senior Phase\",\"26\",\"English 4, Maths Lit 3\",\"30 September\",\"R200\"],[\"Wits\",\"BEd\",\"34\",\"English 5, Maths 4\",\"30 June\",\"R250\"],[\"UNISA\",\"BEd Foundation Phase\",\"23\",\"English 4\",\"31 October\",\"R150\"]]",
+      "category": "Admissions claims need current issuer verification",
+      "concern": "Named programme requirements, modes, deadlines and application fees are time-sensitive and have no effective intake/year source.",
+      "proposedWording": "Label as dated story examples until verified against exact current official programme/admissions information. Record programme code, intake, study mode, criteria, selection rules, fee and date; do not silently substitute numbers in canonical blocks.",
+      "implementationImpact": "Separate reviewed learner-source proposal; no canonical change in this teacher-guide batch. Preserve stable lesson/block/prompt/response identities with explicit compiler mapping before any source release. Real legal/medical/financial decisions need appropriate qualified review.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g12-t1-l07-007",
+      "blockId": "aa40019d33c2f1715e5a1270-1",
+      "exactPassage": "\"UNISA,\" Mrs. Botha says, \"is distance learning. You study from home. No lectures. No campus. It is harder than it sounds—you need discipline, because no one checks if you are keeping up. But it is flexible. You can work while you study. For your hybrid plan, it might be the best fit.\"",
+      "category": "Distance-learning description overgeneralised",
+      "concern": "Distance study does not universally mean no lectures, campus contact or checks; practical placements, online sessions and programme conditions can apply.",
+      "proposedWording": "Check the exact programme’s delivery, contact, assessment and practical-placement requirements before assuming suitability for a part-time hybrid plan.",
+      "implementationImpact": "Separate reviewed learner-source proposal; no canonical change in this teacher-guide batch. Preserve stable lesson/block/prompt/response identities with explicit compiler mapping before any source release. Real legal/medical/financial decisions need appropriate qualified review.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g12-t1-l07-007",
+      "blockId": "a9ca885268ea6afc42ac304c-1",
+      "exactPassage": "Here’s the tension: the system rewards the early. The people who apply in March get considered before the people who apply in September. The people who wait until the last minute are competing for fewer spots. The early bird does not just get the worm—it gets the worm because the late bird never had a chance. This is not fair. But it is true. The university application system, like the grant office in Grade 9, rewards those who show up early, who follow up, who make themselves impossible to ignore. Myah learned that lesson in Grade 9. She is applying it now. The grant office taught her that waiting is a trap. She is not waiting.",
+      "category": "Universal first-come selection claim unverified",
+      "concern": "Not every university/programme admits in application order or guarantees March applicants consideration ahead of September applicants.",
+      "proposedWording": "Explain the benefit of preparation while verifying each programme’s actual deadline and selection method. Do not present all applications as first-come-first-served or guarantee a late applicant had no chance.",
+      "implementationImpact": "Separate reviewed learner-source proposal; no canonical change in this teacher-guide batch. Preserve stable lesson/block/prompt/response identities with explicit compiler mapping before any source release. Real legal/medical/financial decisions need appropriate qualified review.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g12-t1-l07-007",
+      "blockId": "0cc77f66a48b4b44b86b1fac-1",
+      "exactPassage": "The Launch Commitment: If I miss a closing date, it is not because I did not know. It is because I did not act. My deadline for completing my first application is: _________________________________",
+      "category": "Circumstances excluded from a deadline",
+      "concern": "The prompt attributes every missed date to not acting rather than information/access, documents, fees, safety or other constraints.",
+      "proposedWording": "Set a realistic personal preparation date, identify support/dependencies and review a missed date without assuming a single cause.",
+      "implementationImpact": "Separate reviewed learner-source proposal; no canonical change in this teacher-guide batch. Preserve stable lesson/block/prompt/response identities with explicit compiler mapping before any source release. Real legal/medical/financial decisions need appropriate qualified review.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g12-t1-l08-008",
+      "blockId": "5fbf4c538dc5abfee6b5bbad-1",
+      "exactPassage": "[[\"Term\",\"Definition\",\"isiZulu\",\"Afrikaans\"],[\"Bursary\",\"Money given to study that does not need to be repaid\",\"Isikhwama semfundo\",\"Beurs\"],[\"Scholarship\",\"Similar to bursary, often based on merit\",\"Umklomelo wemfundo\",\"Studiebeurs\"],[\"Student loan\",\"Money borrowed for study, must be repaid\",\"Imali mboleko yemfundo\",\"Studielenig\"],[\"NSFAS\",\"National Student Financial Aid Scheme\",\"I-NSFAS\",\"NSFAS\"],[\"Repayment\",\"Paying back a loan over time\",\"Ukukhokha isikweletu\",\"Terugbetaling\"]]",
+      "category": "Bursary definition requires conditions",
+      "concern": "Some bursaries have service, progression or recovery conditions; no repayment is not invariably unconditional.",
+      "proposedWording": "A bursary generally does not require repayment if its applicable conditions are met. Read the actual award terms, including any work or recovery obligation.",
+      "implementationImpact": "Separate reviewed learner-source proposal; no canonical change in this teacher-guide batch. Preserve stable lesson/block/prompt/response identities with explicit compiler mapping before any source release. Real legal/medical/financial decisions need appropriate qualified review.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g12-t1-l08-008",
+      "blockId": "8a7949f15d919a1db39ccca4-1",
+      "exactPassage": "[[\"Option\",\"What It Is\",\"Repay?\",\"Best For\"],[\"NSFAS\",\"Government funding for students from low-income families\",\"Partially, if you work after\",\"Household income below R350,000/year\"],[\"University bursaries\",\"Money from the university itself\",\"No\",\"Academic achievers, specific programmes\"],[\"Company bursaries\",\"Companies fund your studies, you may work for them after\",\"No, but work commitment\",\"Fields with skills shortages (teaching, engineering, accounting)\"],[\"Private bursaries\",\"From foundations, trusts, NGOs\",\"No\",\"Various criteria\"],[\"Student loans (banks)\",\"Borrow from a bank, repay with interest\",\"Yes, with interest\",\"Those who do not qualify for NSFAS\"],[\"Part-time work\",\"Earn while you study\",\"N/A\",\"Everyone\"]]",
+      "category": "Current NSFAS schemes conflated with legacy loans",
+      "concern": "The table presents NSFAS as partially repayable after work and treats one income threshold as a complete eligibility rule. Official current guidance distinguishes bursary and loan schemes.",
+      "proposedWording": "Separate the current bursary, current loan and historical loan arrangements. Use the applicable category-dependent income, programme, academic and verification requirements; income alone does not guarantee approval.",
+      "implementationImpact": "Separate reviewed learner-source proposal; no canonical change in this teacher-guide batch. Preserve stable lesson/block/prompt/response identities with explicit compiler mapping before any source release. Real legal/medical/financial decisions need appropriate qualified review.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g12-t1-l08-008",
+      "blockId": "239324156e11bdf1be0853f3-1",
+      "exactPassage": "\"NSFAS covered my tuition, accommodation, books, and a living allowance. I would not be an accountant without it. But here is what nobody tells you: NSFAS is not a gift. If you graduate and get a job, you repay a percentage of your salary. It is a loan with grace. And the application process is brutal—documents, deadlines, follow-ups. You have to fight for it. But it is worth fighting for.\"",
+      "category": "Material current funding inaccuracy",
+      "concern": "A blanket statement that NSFAS is a repayable loan after employment is inaccurate for current conditional bursaries. Zinhle’s personal account could be historical but is not labelled so.",
+      "proposedWording": "Clarify whether Zinhle describes a historical loan, then explain that current bursaries and loans have distinct conditions and repayment terms. Verify the learner’s actual scheme rather than apply the story universally.",
+      "implementationImpact": "Separate reviewed learner-source proposal; no canonical change in this teacher-guide batch. Preserve stable lesson/block/prompt/response identities with explicit compiler mapping before any source release. Real legal/medical/financial decisions need appropriate qualified review.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g12-t1-l08-008",
+      "blockId": "1464036efa4756dee180235f-1",
+      "exactPassage": "Myah checks her household income. Her mother earns below R350,000 a year. She qualifies. She starts the NSFAS application that afternoon.",
+      "category": "Approval inferred from one fact",
+      "concern": "The story concludes qualification solely from the mother’s income; official guidance states financial eligibility is only one part of assessment.",
+      "proposedWording": "Say she checks the relevant financial threshold and applies for assessment; approval also depends on applicable criteria, documents, verification and the actual award decision.",
+      "implementationImpact": "Separate reviewed learner-source proposal; no canonical change in this teacher-guide batch. Preserve stable lesson/block/prompt/response identities with explicit compiler mapping before any source release. Real legal/medical/financial decisions need appropriate qualified review.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g12-t1-l08-008",
+      "blockId": "0060b7a9f44c6c1f65967c7e-1",
+      "exactPassage": "Zinhle said NSFAS is \"a loan with grace.\" What does that mean? Why is it important to understand the repayment terms—even if they seem far away? _________________________________",
+      "category": "Repeated current NSFAS repayment premise",
+      "concern": "The activity/checkpoint repeats the “loan with grace” premise without distinguishing current conditional bursaries from loans and historical arrangements.",
+      "proposedWording": "Ask learners to distinguish the story’s scheme from the actual current bursary/loan researched, state applicable conditions and label an unconfirmed outcome. Preserve the existing prompt identity through a separately reviewed correction.",
+      "implementationImpact": "Separate reviewed learner-source proposal; no canonical change in this teacher-guide batch. Preserve stable lesson/block/prompt/response identities with explicit compiler mapping before any source release. Real legal/medical/financial decisions need appropriate qualified review.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g12-t1-l08-008",
+      "blockId": "fca91e647ce228d30889690c-1",
+      "exactPassage": "Question 1: What is the difference between a bursary and a loan? Which would you prefer? Why? What does NSFAS cover? Who qualifies? What are the repayment conditions?",
+      "category": "Repeated current NSFAS repayment premise",
+      "concern": "The activity/checkpoint repeats the “loan with grace” premise without distinguishing current conditional bursaries from loans and historical arrangements.",
+      "proposedWording": "Ask learners to distinguish the story’s scheme from the actual current bursary/loan researched, state applicable conditions and label an unconfirmed outcome. Preserve the existing prompt identity through a separately reviewed correction.",
+      "implementationImpact": "Separate reviewed learner-source proposal; no canonical change in this teacher-guide batch. Preserve stable lesson/block/prompt/response identities with explicit compiler mapping before any source release. Real legal/medical/financial decisions need appropriate qualified review.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g12-t1-l08-008",
+      "blockId": "73d6a4ad5f766a9b1e054c97-1",
+      "exactPassage": "Question 2: Zinhle said NSFAS is \"a loan with grace.\" What does that mean? What is one funding option you could explore? What is your first step to apply?",
+      "category": "Repeated current NSFAS repayment premise",
+      "concern": "The activity/checkpoint repeats the “loan with grace” premise without distinguishing current conditional bursaries from loans and historical arrangements.",
+      "proposedWording": "Ask learners to distinguish the story’s scheme from the actual current bursary/loan researched, state applicable conditions and label an unconfirmed outcome. Preserve the existing prompt identity through a separately reviewed correction.",
+      "implementationImpact": "Separate reviewed learner-source proposal; no canonical change in this teacher-guide batch. Preserve stable lesson/block/prompt/response identities with explicit compiler mapping before any source release. Real legal/medical/financial decisions need appropriate qualified review.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g12-t1-l09-009",
+      "blockId": "9197bd3b9bf5dfe522fa49d2-1",
+      "exactPassage": "The Launch Commitment: If I reach the end of the gap year and cannot name three specific things I gained, the year was drift. Not a gap year. A lost year. My evidence will be: _________________________________",
+      "category": "Outcome threshold overstates a lost year",
+      "concern": "Fewer than three named gains does not establish that a year was wasted; illness, care, survival work, rest and disruptions can matter.",
+      "proposedWording": "Use a reflective review of intentions, actual experience and constraints rather than a compulsory three-gain verdict. Identify support or a next step without shaming the learner.",
+      "implementationImpact": "Separate reviewed learner-source proposal; no canonical change in this teacher-guide batch. Preserve stable lesson/block/prompt/response identities with explicit compiler mapping before any source release. Real legal/medical/financial decisions need appropriate qualified review.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g12-t1-l09-009",
+      "blockId": "04c18ef3ecd26c7b587c17d7-1",
+      "exactPassage": "The Launcher's Question: If you are not taking a gap year, what could you do in a \"gap summer\"—the three months between matric results and your next step—to gain skills, money, or clarity?",
+      "category": "Unverified uniform transition interval",
+      "concern": "The assumed three months between matric results and the next step is not a uniform calendar; actual results, work and registration dates differ.",
+      "proposedWording": "Use the actual interval and dates before a learner’s next step, with rest and essential responsibilities considered; do not assume a three-month gap is available.",
+      "implementationImpact": "Separate reviewed learner-source proposal; no canonical change in this teacher-guide batch. Preserve stable lesson/block/prompt/response identities with explicit compiler mapping before any source release. Real legal/medical/financial decisions need appropriate qualified review.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g12-t1-l10-010",
+      "blockId": "2271f4d15d22b3be6ab1f2d2-1",
+      "exactPassage": "Here’s the tension: you can succeed without formal education. Many have. But it is harder. And it is slower. The degree is not about the paper. It is about the frameworks—the language of business, the mental models, the network of peers and mentors. You can learn these things on your own. But it takes longer. And the mistakes cost more. The question is not whether you need a degree to succeed. The question is whether you want to learn from your own expensive mistakes—or from the collected mistakes of everyone who came before you. The textbooks are not wisdom. But they are the documented failures of others, organized and distilled. You can ignore them. But you will pay for that ignorance—in time, in money, in stress. The degree accelerates the learning curve. It is not the only way. But it is the faster way. Choose whether speed matters to you.",
+      "category": "Education-route comparison presented as universal",
+      "concern": "Formal degree study is asserted to be always faster and avoiding it to cause more expensive mistakes; route quality, relevance, resources and work constraints vary.",
+      "proposedWording": "Retain Patel’s advice as his perspective and compare appropriate course, mentor, practice and other learning options for actual needs. No route universally guarantees a faster or cheaper business outcome.",
+      "implementationImpact": "Separate reviewed learner-source proposal; no canonical change in this teacher-guide batch. Preserve stable lesson/block/prompt/response identities with explicit compiler mapping before any source release. Real legal/medical/financial decisions need appropriate qualified review.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g12-t1-l11-011",
+      "blockId": "0d5575107a3d6d3b2d212ef5-1",
+      "exactPassage": "Neglect Any One → Crisis",
+      "category": "Deterministic wellbeing outcome",
+      "concern": "Neglecting one category does not invariably cause crisis; preparing all five does not guarantee thriving.",
+      "proposedWording": "Use the categories to identify needs and possible support without diagnosing crisis or guaranteeing an outcome.",
+      "implementationImpact": "Separate reviewed learner-source proposal; no canonical change in this teacher-guide batch. Preserve stable lesson/block/prompt/response identities with explicit compiler mapping before any source release. Real legal/medical/financial decisions need appropriate qualified review.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g12-t1-l11-011",
+      "blockId": "76cde5bf0f0acf9ac1f441e7-1",
+      "exactPassage": "Here’s the tension: the transition to university is not just academic. It is a life transition. You are learning to manage your own time, your own money, your own emotions, your own body—all at once, in a new place, surrounded by strangers. No one prepares you for the cumulative weight of that. The lectures are the easy part. The life management is the hard part. The people who succeed in first year are not necessarily the smartest. They are the most organized, the most disciplined, the most willing to ask for help when they are struggling. The ones who fail are not the least intelligent. They are the ones who tried to do it alone. And here is the deeper truth: the loneliness Themba described is common but rarely discussed. Everyone pretends they are having the time of their lives. Most people are struggling silently. The gap between the Instagram version of university and the reality is vast. Knowing this in advance does not prevent the loneliness. But it prevents the shame. You will not be the only one struggling. You will just be one of the few willing to admit it.",
+      "category": "Unsupported success/failure and mental-health generalisations",
+      "concern": "The passage attributes failure to trying alone and makes broad claims about everyone pretending/most struggling, ignoring health, access, resources and institutional conditions.",
+      "proposedWording": "Support preparation and appropriate help while recognising varied experience and external constraints. A setback does not establish unwillingness to seek support, and support cannot guarantee a particular outcome.",
+      "implementationImpact": "Separate reviewed learner-source proposal; no canonical change in this teacher-guide batch. Preserve stable lesson/block/prompt/response identities with explicit compiler mapping before any source release. Real legal/medical/financial decisions need appropriate qualified review.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g12-t1-l12-012",
+      "blockId": "8988d66223851b62aaef9b0f-1",
+      "exactPassage": "[[\"Item\",\"Amount\"],[\"Gross salary\",\"R\"],[\"Estimated tax (10-15%)\",\"-R\"],[\"Estimated other deductions\",\"-R\"],[\"Net salary (what I actually receive)\",\"R\"],[\"Rent\",\"R\"],[\"Food\",\"R\"],[\"Transport\",\"R\"],[\"Savings\",\"R\"],[\"Other\",\"R\"],[\"Surplus/Deficit\",\"R\"]]",
+      "category": "Tax-rate placeholder can be mistaken for current PAYE",
+      "concern": "Ten-to-fifteen percent is not a universal deduction for a starting salary. Actual tax depends on current year, taxable income, age, deductions and credits.",
+      "proposedWording": "Label any percentage as an illustrative assumption to be verified. Use current applicable rules for a real estimate and distinguish gross, taxable and net amounts without silently changing the original table.",
+      "implementationImpact": "Separate reviewed learner-source proposal; no canonical change in this teacher-guide batch. Preserve stable lesson/block/prompt/response identities with explicit compiler mapping before any source release. Real legal/medical/financial decisions need appropriate qualified review.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g12-t1-l12-012",
+      "blockId": "9333c439a0dd365ee2fb2bd3-1",
+      "exactPassage": "Here’s the tension: the deductions are not theft. They are allocations. PAYE pays for the society you live in. UIF is a safety net. The pension is your future self. Medical aid is your health. You can resent them. Or you can understand them. The resentment does not change the numbers. The understanding lets you plan. The adult learns what each deduction is for—and budgets accordingly. The child complains and is perpetually surprised. The choice is yours. And here is the deeper truth: the payslip shock is not just about money. It is about the loss of an illusion—the illusion that the number you agreed to is the number you will receive. That loss is a small grief. Allow yourself to feel it. Then do the math. Then adjust. The grief passes. The math remains.",
+      "category": "Lawful deductions and questioning rights obscured",
+      "concern": "Calling all deductions allocations and complaints childish can discourage challenging unlawful or mistaken pay reductions.",
+      "proposedWording": "Explain the purpose of lawful deductions and the right to written pay information and appropriate correction/advice. Questioning an error is responsible, not a sign of immaturity.",
+      "implementationImpact": "Separate reviewed learner-source proposal; no canonical change in this teacher-guide batch. Preserve stable lesson/block/prompt/response identities with explicit compiler mapping before any source release. Real legal/medical/financial decisions need appropriate qualified review.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g12-t1-l13-013",
+      "blockId": "67c95e9bbaf4784ed558f878-1",
+      "exactPassage": "The Launch Commitment: If I move out with a deficit, I am not being independent. I am being reckless. My rule for moving out is: I will not move out until my income exceeds my estimated expenses by at least R_______.",
+      "category": "Specific safety/context concern",
+      "concern": "The blanket reckless verdict for moving with a deficit conflicts with the source’s later recognition that safety/work/study may make leaving necessary.",
+      "proposedWording": "Use the deficit to seek safe options, support and realistic contingencies. Do not label someone reckless from the budget alone or pressure remaining in unsafe housing.",
+      "implementationImpact": "Separate reviewed learner-source proposal; no canonical change in this teacher-guide batch. Preserve stable lesson/block/prompt/response identities with explicit compiler mapping before any source release. Real legal/medical/financial decisions need appropriate qualified review.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g12-t1-l15-015",
+      "blockId": "6c025fc59814dc020edbcb97-1",
+      "exactPassage": "Here’s the tension: the section you are avoiding is the section that will teach you the most. If you are avoiding the budget, it is because you are afraid the numbers will not work. If you are avoiding the contingency plan, it is because you do not want to think about failure. If you are avoiding the Managing the Downside, it is because you do not want to look at what could go wrong with your beautiful plan. Face the section you are avoiding. That is where your growth is. That is where the operator earns her title. The architect could afford to dream. The operator must confront reality. And reality includes shadows.",
+      "category": "Unsupported psychological inference",
+      "concern": "Difficulty with budgets, contingencies or downside is diagnosed as fear rather than privacy, missing information, resources, access or time.",
+      "proposedWording": "Identify the information or support needed for a difficult section without assigning a hidden motive or requiring sensitive disclosure.",
+      "implementationImpact": "Separate reviewed learner-source proposal; no canonical change in this teacher-guide batch. Preserve stable lesson/block/prompt/response identities with explicit compiler mapping before any source release. Real legal/medical/financial decisions need appropriate qualified review.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g12-t1-l16-016",
+      "blockId": "993138638502ae4723e2bdc6-1",
+      "exactPassage": "Here’s the tension: feedback is only as valuable as your willingness to receive it. The people who resist feedback are not confident. They are fragile. The people who seek it are not weak. They are building something that can survive reality. And here is the deeper truth: the person who gives you the hardest feedback is often the person who cares most about your success. Atlehang asked about burnout because she has watched Myah burn out before. She is not criticizing. She is protecting. Learn to recognize the difference between feedback that tears down and feedback that builds up. Both can sting. Only one is love.",
+      "category": "Feedback motive and character inference",
+      "concern": "Resistance is labelled fragility and hardest feedback associated with love; inappropriate or unsafe feedback may rightly be declined.",
+      "proposedWording": "Invite useful relevant feedback with consent, and use evidence, feasibility and respect to decide what to accept. A boundary or disagreement does not prove fragility or lack of confidence.",
+      "implementationImpact": "Separate reviewed learner-source proposal; no canonical change in this teacher-guide batch. Preserve stable lesson/block/prompt/response identities with explicit compiler mapping before any source release. Real legal/medical/financial decisions need appropriate qualified review.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g12-t1-l17-017",
+      "blockId": "8b519296aac73f46d930dbf4-1",
+      "exactPassage": "Key idea: Every presentation is a gift. Someone is telling you their plan, their hope, their future. But here is the deeper practice: as you listen, notice what moves you. The things that resonate are mirrors—they show you what you value. The things that make you uncomfortable are also mirrors—they show you what you fear. Myah's speech moved the room because it was not about her. It was about everyone who shaped her—Mama Rose, Mrs. Nkosi, Gogo Maria, Mr. Patel, Ms. Daniels. The most powerful plans are not declarations of individual brilliance. They are acknowledgments of collective debt. The operator does not launch alone. She launches with borrowed wisdom, borrowed strength, borrowed belief. And she honors every debt.",
+      "category": "Unsupported psychological inference",
+      "concern": "The mirror metaphor can invite reflection, but discomfort does not establish hidden fear or a debt that must be publicly honoured.",
+      "proposedWording": "Consider different possible reasons, including disagreement, context or a boundary. Retain the influence metaphor without diagnosing inner states or requiring personal tribute.",
+      "implementationImpact": "Separate reviewed learner-source proposal; no canonical change in this teacher-guide batch. Preserve stable lesson/block/prompt/response identities with explicit compiler mapping before any source release. Real legal/medical/financial decisions need appropriate qualified review.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g12-t1-l18-018",
+      "blockId": "38ce28db0409034b7e73bf52-1",
+      "exactPassage": "Sipho stands up. This is the Sipho—melted sweets, credit card, bicycle repair. He is 18 now. His plan: grow the repair business into a workshop. Hire and train one mechanic by the end of next year. Online course in small business management. His Reality Check: \"If I have not hired my first employee by December, I am still trying to do everything myself. That is not a business. That is a job. I will either hire or admit I am not ready.\" His shadow: \"The shadow of hiring is responsibility. When I hire someone, their livelihood depends on me. I will not hire until I have three months of their salary saved as a buffer.\"",
+      "category": "Narrative continuity needing author clarification",
+      "concern": "Sipho is planning a first employee although Lesson 9 describes his current workshop with two employees. A flashback or changed chronology may be intended but is not clear.",
+      "proposedWording": "Confirm the intended timeline/cohort and clarify past, present or future status if needed. Do not silently rename Sipho or alter his source/response identities.",
+      "implementationImpact": "Separate reviewed learner-source proposal; no canonical change in this teacher-guide batch. Preserve stable lesson/block/prompt/response identities with explicit compiler mapping before any source release. Real legal/medical/financial decisions need appropriate qualified review.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g12-t1-l19-019",
+      "blockId": "3d389bb47c9418ba04c9a055-1",
+      "exactPassage": "Lesson 8: Funding. Zinhle: \"NSFAS is a loan with grace.\"",
+      "category": "Repeated NSFAS premise in recap",
+      "concern": "The recap repeats the blanket loan-with-grace description after the funding lesson; current schemes need distinction.",
+      "proposedWording": "Retain the story recap with an explicit historical/current qualification or a brief reminder that current bursaries and loans have distinct terms.",
+      "implementationImpact": "Separate reviewed learner-source proposal; no canonical change in this teacher-guide batch. Preserve stable lesson/block/prompt/response identities with explicit compiler mapping before any source release. Real legal/medical/financial decisions need appropriate qualified review.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g12-t1-l19-019",
+      "blockId": "c7b6b23c1d35b7cf456c328e-1",
+      "exactPassage": "9. The 1-10 Scale: At the start of the term, you were a \"1\" on the launch readiness scale. Where are you now, honestly? What is the exact number? What is the ONE specific thing you need to do in Term 2 to move up by a single point?",
+      "category": "Unsubstantiated self-rating baseline",
+      "concern": "The informal launch-readiness scale assumes every learner began at one and requests an exact score without a validated measure.",
+      "proposedWording": "Use personal earlier reflection if available; any score is a reflective estimate, not a grade or required increase. Identify evidence and a feasible next step.",
+      "implementationImpact": "Separate reviewed learner-source proposal; no canonical change in this teacher-guide batch. Preserve stable lesson/block/prompt/response identities with explicit compiler mapping before any source release. Real legal/medical/financial decisions need appropriate qualified review.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    }
+  ]
+}
