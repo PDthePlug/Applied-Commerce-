@@ -1,0 +1,103 @@
+{
+  "authentication": "genuine browser password login",
+  "projectRef": "inxshlumnhcgiahxqewe",
+  "scope": "explicit selected lessons",
+  "releasedPlans": 335,
+  "plans": [
+    {
+      "lessonId": "g12-t1-l05-005",
+      "periodCount": 2,
+      "scheduledMinutes": 90,
+      "preparationAndNavigator": true,
+      "sameLearnerLesson": true,
+      "periods": [
+        {
+          "period": 1,
+          "minutes": 45,
+          "stages": 5,
+          "firstAndLastTargetsFocused": true,
+          "cuesMatchAuthorisedPlan": true
+        },
+        {
+          "period": 2,
+          "minutes": 45,
+          "stages": 5,
+          "firstAndLastTargetsFocused": true,
+          "cuesMatchAuthorisedPlan": true
+        }
+      ]
+    },
+    {
+      "lessonId": "g12-t1-l01-001",
+      "periodCount": 2,
+      "scheduledMinutes": 90,
+      "preparationAndNavigator": true,
+      "sameLearnerLesson": true,
+      "periods": [
+        {
+          "period": 1,
+          "minutes": 45,
+          "stages": 4,
+          "firstAndLastTargetsFocused": true,
+          "cuesMatchAuthorisedPlan": true
+        },
+        {
+          "period": 2,
+          "minutes": 45,
+          "stages": 3,
+          "firstAndLastTargetsFocused": true,
+          "cuesMatchAuthorisedPlan": true
+        }
+      ]
+    },
+    {
+      "lessonId": "g12-t1-l06-006",
+      "periodCount": 2,
+      "scheduledMinutes": 90,
+      "preparationAndNavigator": true,
+      "sameLearnerLesson": true,
+      "periods": [
+        {
+          "period": 1,
+          "minutes": 45,
+          "stages": 4,
+          "firstAndLastTargetsFocused": true,
+          "cuesMatchAuthorisedPlan": true
+        },
+        {
+          "period": 2,
+          "minutes": 45,
+          "stages": 3,
+          "firstAndLastTargetsFocused": true,
+          "cuesMatchAuthorisedPlan": true
+        }
+      ]
+    },
+    {
+      "lessonId": "g12-t1-l07-007",
+      "periodCount": 2,
+      "scheduledMinutes": 90,
+      "preparationAndNavigator": true,
+      "sameLearnerLesson": true,
+      "periods": [
+        {
+          "period": 1,
+          "minutes": 45,
+          "stages": 4,
+          "firstAndLastTargetsFocused": true,
+          "cuesMatchAuthorisedPlan": true
+        },
+        {
+          "period": 2,
+          "minutes": 45,
+          "stages": 3,
+          "firstAndLastTargetsFocused": true,
+          "cuesMatchAuthorisedPlan": true
+        }
+      ]
+    }
+  ],
+  "pageErrors": [],
+  "commit": "e0903adb556318e8c5fefac5abcbb681865f0544",
+  "failure": "page.waitForFunction: Timeout 5000ms exceeded."
+}

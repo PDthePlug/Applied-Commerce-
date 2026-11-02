@@ -34,7 +34,7 @@ try{
    const ids=await page.locator(`#classroom-stage optgroup[label="Period ${index+1}"] option`).evaluateAll(nodes=>nodes.map(node=>node.value));assert.deepEqual(ids,period.moments);
    assert.equal(period.moments.reduce((minutes,id)=>minutes+plan.moments.find(moment=>moment.id===id).minutes,0),45);
    for(const id of [period.moments[0],period.moments.at(-1)]){
-    await page.locator('#classroom-stage').selectOption(id);await page.getByRole('button',{name:'Go to stage',exact:true}).click();await page.waitForFunction(expected=>document.activeElement?.id===expected,'teacher-moment-'+id,{timeout:5000});assert.equal(await page.evaluate(()=>document.activeElement?.id),'teacher-moment-'+id);
+    results.pending={lessonId:binding.lessonId,period:index+1,stageId:id};save();await page.locator('#classroom-stage').selectOption(id);await page.getByRole('button',{name:'Go to stage',exact:true}).click();await page.waitForFunction(expected=>document.activeElement?.id===expected,'teacher-moment-'+id,{timeout:5000});assert.equal(await page.evaluate(()=>document.activeElement?.id),'teacher-moment-'+id);
     const moment=plan.moments.find(row=>row.id===id),target=page.locator(`[data-instructional-location="${id}"]`);assert.equal(await target.getAttribute('open'),'');assert.ok((await target.locator(':scope > summary').innerText()).includes(`Period ${index+1}`));
     const cue=moment.core.find(group=>group.heading==='Facilitation cue');if(cue)assert.equal(await target.locator('[data-facilitation-cue]').innerText(),plan.fields[cue.fields[0]]);
     if(process.env.AC_PERIOD_CAPTURE_DIR){
@@ -50,7 +50,7 @@ try{
    }
    periods.push({period:index+1,minutes:45,stages:period.moments.length,firstAndLastTargetsFocused:true,cuesMatchAuthorisedPlan:true});
   }
-  results.plans.push({lessonId:binding.lessonId,periodCount:plan.periods.length,scheduledMinutes:45*plan.periods.length,preparationAndNavigator:true,sameLearnerLesson:true,...(process.env.AC_PERIOD_CAPTURE_DIR?{capturedWidths:[320,1280],noHorizontalOverflow:true}:{}),periods});save();
+  delete results.pending;results.plans.push({lessonId:binding.lessonId,periodCount:plan.periods.length,scheduledMinutes:45*plan.periods.length,preparationAndNavigator:true,sameLearnerLesson:true,...(process.env.AC_PERIOD_CAPTURE_DIR?{capturedWidths:[320,1280],noHorizontalOverflow:true}:{}),periods});save();
  }
  assert.equal(results.pageErrors.length,0);console.log(JSON.stringify({plans:results.plans.length,periods:results.plans.map(plan=>plan.periodCount),pageErrors:results.pageErrors}));
-}catch(error){results.failure=error.message;save();throw error;}finally{await browser.close();}
+}catch(error){results.failure=error.message;try{const pages=browser.contexts().flatMap(context=>context.pages());const current=pages.at(-1);results.focusDiagnostic=await current?.evaluate(stageId=>({activeId:document.activeElement?.id??null,selectedStageId:document.querySelector('#classroom-stage')?.value??null,targetPresent:Boolean(document.getElementById('teacher-moment-'+stageId))}),results.pending?.stageId);}catch{}save();throw error;}finally{await browser.close();}
