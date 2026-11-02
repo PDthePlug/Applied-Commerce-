@@ -12,6 +12,7 @@ import outcomeIcons from "@/lib/lesson-outcome-icons.json";
 import { authoredScale, choiceMeaning, learningSections, sourceCopy, valueSelection } from "@/lib/semantic-learning";
 import { HorizonChoicesControl, RankingControl, RatingControl, ValuesControl } from "./semantic-controls";
 import { isFinancialHorizonPrompt } from "@/lib/horizon-response";
+import { hasAuthoredCurrencyInputs } from "@/lib/authored-currency-tables";
 
 type PromptContext = "activity" | "reflection" | "checkpoint" | "home" | null;
 type PromptMode = "checkpoint" | "home";
@@ -713,6 +714,7 @@ function TableBlockView({
   onSavePromptResponse,
   minimumRows=3,
   regionLabel,
+  activityContext=false,
 }:{
   block:Extract<ContentBlock,{kind:"table"}>;
   unitId:string;
@@ -721,12 +723,13 @@ function TableBlockView({
   onSavePromptResponse:(promptId:string,value:string)=>void;
   minimumRows?:number;
   regionLabel?:string;
+  activityContext?:boolean;
 }){
   const headers=(block.rows[0]??[]).map(value=>sourceCopy(displayText(value)));
   const headerOnly=block.rows.length===1;
   const hasWorkbookCells=headerOnly||block.rows.slice(1).some(row=>row.some(cell=>{
     const value=sourceCopy(cell);
-    return !value||/^_+$/.test(value);
+    return !value||/^_+$/.test(value)||(activityContext&&/^(?:-?R|%)$/.test(value));
   }));
   const countId=promptId(unitId,blockIndex,"row-count");
   const storedCount=Number(promptResponses[countId]??"");
@@ -760,7 +763,9 @@ function TableBlockView({
           return <tr key={rowIndex}>
             {row.map((cell,colIndex)=>{
               const cleaned=sourceCopy(displayText(cell));
-              const editable=hasWorkbookCells&&(!cleaned||/^_+$/.test(cleaned));
+              const unitPlaceholder=activityContext&&/^(?:-?R|%)$/.test(cleaned);
+              const unitName=cleaned==="%"?"percent":cleaned==="-R"?"rand, deduction":"rand";
+              const editable=hasWorkbookCells&&(!cleaned||/^_+$/.test(cleaned)||unitPlaceholder);
               const containsBlank=BLANK_RE.test(cleaned);
               const dataLabel=headers[colIndex]||undefined;
 
@@ -774,8 +779,9 @@ function TableBlockView({
                   <RatingControl scale={scale} label={label} value={value} onChange={next=>onSavePromptResponse(id,next)}/>
                 </td>;
                 return <td className="editable-cell" data-label={dataLabel} key={colIndex}>
+                  {unitPlaceholder&&<span aria-hidden="true">{cleaned}</span>}
                   <textarea
-                    aria-label={label}
+                    aria-label={unitPlaceholder?`${label} (${unitName})`:label}
                     rows={2}
                     value={value}
                     onChange={event=>onSavePromptResponse(id,event.target.value)}
@@ -879,6 +885,7 @@ export function ContentBlocks({blocks,unitId,unitType="lesson",promptResponses:s
           promptResponses={promptResponses}
           onSavePromptResponse={onSavePromptResponse}
           minimumRows={inferMinimumRows(items,position)}
+          activityContext={context==="activity"&&hasAuthoredCurrencyInputs(unitId,block.id)}
           key={`table-${index}`}
         />);
         continue;
