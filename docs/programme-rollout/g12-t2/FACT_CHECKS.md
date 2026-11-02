@@ -1,0 +1,13 @@
+# Focused source accuracy — Grade 12 Term 2
+
+Thirty-four exact-passage proposals remain separate and unapplied. They concern narrative arithmetic and study-status continuity, unsourced job-market percentages, legal status/rights, price and employment-outcome inferences, compulsory visibility and blame, a five-versus-four framework mismatch and an assumed rating baseline.
+
+Nkosi’s story loses nine workers but enumerates six. Themba’s five income amounts total R4,330 and the unweighted subjective control mean is 3.8; that mean is not an income share. R200 over eight hours is R25 gross per hour before materials, not net freelance income or an automatically applicable legal minimum-rate comparison. No new compulsory weighted metric is added.
+
+Sector growth/shrink claims and the seventy-to-eighty-percent hidden-job estimate lack a dated local evidence base. They remain unverified, not current national statistics. The guides retain the source’s explicit structural/access qualifications, suggest appropriate dated official evidence for original research and do not promise that adaptability, contacts or persistence guarantees employment. Interview questions are examples, not certainties. Current public platform terms and actual legal status/rights need qualified review; the word contractor alone does not determine all entitlements. Own-client ideas must respect consent, privacy and terms.
+
+The side-hustle table has five steps including systematising, while its checkpoint asks four; the guide accepts accurate use of the actual table pending author review. Stated willingness to pay is early interest, not a completed transaction or proven market. Quick acceptance is not proof of underpricing. CV and pitch examples must distinguish current school/study, acceptance and aspiration; numbers are used only when supported.
+
+Specific safeguards sit beside machinery initiative, private contact maps, personal account/search activity and later client/network contacts. Initiative stays within training, authorisation and safe procedures. Public profiles, photos, posts, private stranger meetings, real applications and outgoing test messages are not required. Original personal reflection remains; privacy and genuine access alternatives do not make the whole programme fictional. Public absence or quietness is not lack of ability, and online harms are not always under the individual’s control.
+
+Metaphors, ordinary encouragement, networking perspectives and the source’s useful existing qualifications remain. Technical quote matching does not establish educational quality, legal approval or classroom timing.
