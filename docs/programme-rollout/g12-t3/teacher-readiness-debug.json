@@ -1,0 +1,102 @@
+{
+  "commit": "929f16fac42c380b2adc129554c382e7eeb842d3",
+  "authentication": "genuine educator browser password login",
+  "projectRef": "inxshlumnhcgiahxqewe",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ready": true,
+      "ms": 2291,
+      "actualPath": "/learn/12/term/3/g12-t3-l44-044",
+      "alerts": [
+        ""
+      ],
+      "retryAvailable": 0,
+      "preparationVisible": true
+    },
+    {
+      "attempt": 2,
+      "ready": true,
+      "ms": 1582,
+      "actualPath": "/learn/12/term/3/g12-t3-l44-044",
+      "alerts": [
+        ""
+      ],
+      "retryAvailable": 0,
+      "preparationVisible": true
+    },
+    {
+      "attempt": 3,
+      "ready": true,
+      "ms": 1613,
+      "actualPath": "/learn/12/term/3/g12-t3-l44-044",
+      "alerts": [
+        ""
+      ],
+      "retryAvailable": 0,
+      "preparationVisible": true
+    },
+    {
+      "attempt": 4,
+      "ready": true,
+      "ms": 1124,
+      "actualPath": "/learn/12/term/3/g12-t3-l44-044",
+      "alerts": [
+        ""
+      ],
+      "retryAvailable": 0,
+      "preparationVisible": true
+    }
+  ],
+  "requests": [
+    {
+      "path": "/api/classroom",
+      "lesson": "g12-t3-l44-044",
+      "status": 200,
+      "ms": 1552
+    },
+    {
+      "path": "/api/classroom",
+      "lesson": "g12-t3-l44-044",
+      "status": 200,
+      "ms": 1319
+    },
+    {
+      "path": "/api/classroom",
+      "lesson": "g12-t3-l44-044",
+      "status": 200,
+      "ms": 1216
+    },
+    {
+      "path": "/api/classroom",
+      "lesson": "g12-t3-l44-044",
+      "status": 200,
+      "ms": 1043
+    },
+    {
+      "path": "/api/classroom",
+      "lesson": "g12-t3-l44-044",
+      "status": 200,
+      "ms": 1058
+    },
+    {
+      "path": "/api/classroom",
+      "lesson": "g12-t3-l44-044",
+      "status": 200,
+      "ms": 705
+    },
+    {
+      "path": "/api/classroom",
+      "lesson": "g12-t3-l44-044",
+      "status": 200,
+      "ms": 779
+    },
+    {
+      "path": "/api/classroom",
+      "lesson": "g12-t3-l44-044",
+      "status": 200,
+      "ms": 964
+    }
+  ],
+  "status": "PASS_NOT_REPRODUCED"
+}

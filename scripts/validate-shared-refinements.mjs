@@ -26,7 +26,16 @@ async function login(role){
 }
 const manifest=JSON.parse(fs.readFileSync('content/instructional/teaching-manifest.v2.json'));
 const route=b=>`/learn/${b.grade}/term/${b.term}/${b.lessonId}`;
-async function teacher(page,b){await page.goto(route(b));await page.getByRole('button',{name:'Teacher View',exact:true}).click();await page.locator('[data-instructional-location="preparation"]').waitFor();}
+async function teacher(page,b){
+ results.pendingTeacher={lessonId:b.lessonId,width:page.viewportSize()?.width};
+ await page.goto(route(b));
+ try{await page.getByRole('button',{name:'Teacher View',exact:true}).click();await page.locator('[data-instructional-location="preparation"]').waitFor();}
+ catch(error){
+  results.teacherReadinessFailure={...results.pendingTeacher,actualPath:new URL(page.url()).pathname,alerts:await page.getByRole('alert').allTextContents(),privateDeliveryDenials:results.privateDeliveryDenials.length};
+  await page.screenshot({path:out+'/teacher-readiness-failure.png'}).catch(()=>{});save();throw error;
+ }
+ delete results.pendingTeacher;
+}
 const overflow=page=>page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1);
 try{
  const a=await login('facilitator');
