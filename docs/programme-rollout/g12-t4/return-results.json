@@ -1,0 +1,63 @@
+{
+  "authentication": "genuine educator and learner password logins; no interception",
+  "projectRef": "inxshlumnhcgiahxqewe",
+  "commit": "7e0110bfe50b69900036738b259f4c8f0454320e",
+  "readOnly": true,
+  "returns": [
+    {
+      "currentLesson": "g12-t4-l80-072",
+      "stageId": "g12-l80-stage-6",
+      "previous": [
+        {
+          "lessonId": "g11-t4-l79-079",
+          "responseKey": "g11-t4-l79-079::prompt-0d4920b6986e4da4b138a0d6-1::response",
+          "existingSavedValue": true,
+          "savedValueSHA256": "99f4c86953034a3f48309d6b5db9e2c82d83ab500e9dfab54626f929f21bbb8e",
+          "nativeLetterSingular": true,
+          "savedContentNonempty": true,
+          "reloadMatchesCloud": true,
+          "unchanged": true
+        },
+        {
+          "lessonId": "g12-t3-l52-052",
+          "responseKey": "g12-t3-l52-052::prompt-090580c2799e62d85f2cdfea-1::response",
+          "existingSavedValue": true,
+          "savedValueSHA256": "397a4a221ecc07ddfc389878a3a8417a9611bccdcce94f9d505e9d32fa08510b",
+          "nativeLetterSingular": true,
+          "savedContentNonempty": true,
+          "reloadMatchesCloud": true,
+          "unchanged": true
+        }
+      ],
+      "captures": [
+        {
+          "width": 320,
+          "scale": 1,
+          "focused": true,
+          "overflow": false
+        },
+        {
+          "width": 320,
+          "scale": 2,
+          "focused": true,
+          "overflow": false
+        },
+        {
+          "width": 1280,
+          "scale": 1,
+          "focused": true,
+          "overflow": false
+        },
+        {
+          "width": 1280,
+          "scale": 2,
+          "focused": true,
+          "overflow": false
+        }
+      ],
+      "normalAuthenticatedRoutesReturnToCurrent": true
+    }
+  ],
+  "pageErrors": [],
+  "status": "PASS"
+}
