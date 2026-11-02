@@ -834,7 +834,8 @@ export function ContentBlocks({blocks,unitId,unitType="lesson",promptResponses:s
   const indexed=pruneTensionContent(blocks);
   const annotations=abilityAnnotations(unitId,blocks);
   const wrap=unitType==="lesson"?lessonWrapFor(unitId):null;
-  const authoredWrapIndex=wrap?.authoredHeadingId?blocks.findIndex(block=>block.id===wrap.authoredHeadingId):-1;
+  const closingStartId=wrap?.closingStartId??wrap?.authoredHeadingId;
+  const authoredWrapIndex=closingStartId?blocks.findIndex(block=>block.id===closingStartId):-1;
 
   const renderIndexedBlocks=(items:IndexedBlock[],allowInsightGrouping=true,initialContext:PromptContext=null)=>{
     const views:React.ReactNode[]=[];
@@ -870,7 +871,7 @@ export function ContentBlocks({blocks,unitId,unitType="lesson",promptResponses:s
       if(annotations?.instructionId===block.id) continue;
       if(annotations?.ids[0]===block.id)views.push(<ConfidenceLegend key="ability-legend"/>);
       if(decision?.kind==="instruction"&&block.kind==="text"){
-        views.push(<Fragment key={`instruction-${index}`}><TextBlockView block={block} unitId={unitId}/><PreviousCombinedResponse value={promptResponses[promptId(unitId,index,"response")]??""}/></Fragment>);
+        views.push(<Fragment key={`instruction-${index}`}><TextBlockView block={block} unitId={unitId}/><PreviousCombinedResponse value={promptResponses[promptId(unitId,index,"response")]??""}/><PreviousCombinedResponse value={promptResponses[promptId(unitId,index,"blank-0")]??""}/></Fragment>);
         continue;
       }
       if(decision?.kind==="circle-map"&&block.kind==="text"){
@@ -1047,6 +1048,16 @@ export function ContentBlocks({blocks,unitId,unitType="lesson",promptResponses:s
       }
 
       if(BLANK_RE.test(block.text)){
+        // A labelled checkpoint answer uses its original blank slot, with the
+        // numbered question above it. Multi-blank calculations keep their units
+        // and authored field geometry in the specialised paths below.
+        if(context==="checkpoint"&&!QUESTION_RE.test(displayText(block.text))&&(block.text.match(/_{3,}/g)??[]).length===1&&/_{3,}[.\s]*$/.test(block.text)){
+          const id=promptId(unitId,index,"blank-0");
+          views.push(<ResponseSurface key={`checkpoint-blank-${index}`} tone="checkpoint" prompt={<QuestionHeading text={displayText(block.text).replace(/_{3,}/g,"").trim()} number={checkpointQuestionNumber++} checkpoint/>}>
+            <ResponseArea id={id} label={`Answer for: ${displayText(block.text).replace(/_{3,}/g,"blank")}`} value={promptResponses[id]??""} onChange={value=>onSavePromptResponse(id,value)}/>
+          </ResponseSurface>);
+          continue;
+        }
         const selection=valueSelection(blocks,index);
         if(selection){
           const id=promptId(unitId,index,"blank-0");

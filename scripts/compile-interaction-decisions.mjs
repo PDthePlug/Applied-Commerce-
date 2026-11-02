@@ -26,6 +26,7 @@ for(const [id,index,kind,reason]of[
  ['g8-t1-l04-004',66,'instruction','Labels for the structured circle map, not a second written response'],
  ['g8-t1-l04-004',67,'instruction','Labels for the structured circle map, not a second written response'],
  ['g11-t1-l10-010',32,'reflection','Written evaluation in the authored hiring calculation activity'],
+ ['g8-t1-l16-016',48,'instruction','Checkpoint group instructions are answered by the two following dedicated fields; retain the earlier combined blank'],
  ['g8-t1-l03-003',31,'instruction','Same self-taught skill already answered at block 24; retain both historical responses'],
  ['g8-t1-l03-003',48,'instruction','Interview question answered by the existing seen-skill field'],
  ['g8-t1-l03-003',49,'instruction','Interview question answered by the existing missing-skill field'],

@@ -9,13 +9,15 @@ for(const grade of [8,9,10,11,12]){
  for(const [position,unit]of lessons.entries()){
   const draft=drafts.find(d=>d.number===unit.startLesson);assert.ok(draft,unit.id);
   const headings=unit.blocks.filter(b=>b.kind==='text'&&/^(?:✨\s*)?Lesson Wrap$/i.test(b.text));assert.ok(headings.length<=1,unit.id);
-  const authoredStart=headings.length?unit.blocks.findIndex(b=>b===headings[0]):-1;
+  const finalClosing=unit.blocks.findLast(b=>b.kind==='text'&&b.type==='section'&&/^(?:Well Done\.|A Word Before You Go|Ms\. Daniels' (?:Final )?Closing Words)$/.test(b.text));
+  const closingStart=headings[0]??(finalClosing&&!unit.blocks.slice(unit.blocks.indexOf(finalClosing)+1).some(b=>['activity','checkpoint','reflection'].includes(b.type))?finalClosing:null);
+  const authoredStart=closingStart?unit.blocks.indexOf(closingStart):-1;
   if(authoredStart>=0)assert.ok(!unit.blocks.slice(authoredStart+1).some(b=>['activity','checkpoint'].includes(b.type)),unit.id+' has later instructional work requiring placement review');
   const vocabulary=unit.blocks.findIndex(b=>b.kind==='text'&&b.text==='Key Vocabulary');const objectiveBlocks=unit.blocks.slice(0,vocabulary<0?8:vocabulary).filter(b=>b.type==='list');
   const sourceRefs=objectiveBlocks.length?objectiveBlocks.map(b=>b.id):unit.blocks.filter(b=>b.kind==='text').slice(0,4).map(b=>b.id);
   const next=lessons[position+1];
-  registry[unit.id]={takeaways:draft.takeaways,why:draft.why,sourceRefs,sourceSHA256:crypto.createHash('sha256').update(JSON.stringify(unit)).digest('hex'),authoredHeadingId:headings[0]?.id??null,...(next?{next:{id:next.id,title:next.title,grade:next.grade,term:next.term}}:{})};
-  coverage.push({grade,term:unit.term,lesson:unit.startLesson,unitId:unit.id,title:unit.title,sourceRefs,authoredClosing:headings.length?'partial-authored-wrap':'no-explicit-wrap',authoredHeadingId:headings[0]?.id??null,correction:headings.length?'incorporate existing closing and retain controls; add lesson-specific synthesis':'append lesson-specific synthesis after all source content',contentReview:'agent source review; owner curriculum acceptance pending',...registry[unit.id]});
+  registry[unit.id]={takeaways:draft.takeaways,why:draft.why,sourceRefs,sourceSHA256:crypto.createHash('sha256').update(JSON.stringify(unit)).digest('hex'),authoredHeadingId:headings[0]?.id??null,closingStartId:closingStart?.id??null,...(next?{next:{id:next.id,title:next.title,grade:next.grade,term:next.term}}:{})};
+  coverage.push({grade,term:unit.term,lesson:unit.startLesson,unitId:unit.id,title:unit.title,sourceRefs,authoredClosing:headings.length?'partial-authored-wrap':closingStart?'authored-final-closing':'no-explicit-wrap',authoredHeadingId:headings[0]?.id??null,closingStartId:closingStart?.id??null,correction:closingStart?'incorporate existing closing and retain controls; add lesson-specific synthesis':'append lesson-specific synthesis after all source content',contentReview:'agent source review; owner curriculum acceptance pending',...registry[unit.id]});
  }
 }
 assert.equal(Object.keys(registry).length,395);assert.equal(new Set(Object.values(registry).map(w=>JSON.stringify(w.takeaways))).size,395,'Wrap takeaways must be lesson-specific');

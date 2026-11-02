@@ -59,3 +59,10 @@ test('instruction-only trailing parts retire visibly without changing any earlie
  assert.ok(!html.includes('id="'+u.id+'::block-57::response-3"'));for(let i=0;i<3;i++)assert.ok(html.includes('id="'+u.id+'::block-57::response-'+i+'"')||html.includes('value="SYNTHETIC_PART_'+i+'"'));
  assert.ok(html.includes('Write honestly.'));
 });
+
+test('checkpoint blanks use their existing keys under continuous questions and combined group evidence remains recoverable',()=>{
+ const u=unit(8,16),html=render(u,{[key(u,48,'blank-0')]:'SYNTHETIC_OLD_CHECKPOINT_COMBINED',[key(u,49,'blank-0')]:'SYNTHETIC_REASON',[key(u,50,'blank-0')]:'SYNTHETIC_RESPONSE'});
+ assert.ok(html.includes('SYNTHETIC_OLD_CHECKPOINT_COMBINED'));assert.ok(!html.includes('id="'+u.id+'::block-48::blank-0"'));
+ for(const [i,value]of[[49,'SYNTHETIC_REASON'],[50,'SYNTHETIC_RESPONSE']]){assert.ok(html.includes('id="'+u.id+'::block-'+i+'::blank-0"'));assert.ok(html.includes(value));}
+ const prove=html.match(/class="learning-section learning-mode-prove"[^]*?(?=<section class="learning-section|<section class="lesson-wrap")/)[0];const numbers=[...prove.matchAll(/class="structured-part-label">(\d+)\./g)].map(m=>Number(m[1]));assert.deepEqual(numbers,Array.from({length:numbers.length},(_,i)=>i+1));
+});

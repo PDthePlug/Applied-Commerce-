@@ -140,7 +140,7 @@
 .annotated-statement .fill-response-copy{white-space:normal}
 .confidence-markers{flex:none;max-width:100%}
 .confidence-marker-buttons{display:flex;gap:4px}
-.confidence-marker-buttons button{display:grid;place-items:center;width:44px;min-width:44px;min-height:44px;padding:0;border:1px solid var(--line);border-radius:8px;background:var(--paper);color:var(--ink);cursor:pointer}
+.confidence-marker-buttons button{display:grid;place-items:center;width:44px;min-width:44px;min-height:44px;padding:0;border:1px solid var(--muted);border-radius:8px;background:var(--paper);color:var(--ink);cursor:pointer}
 .confidence-marker-buttons button span{font-size:18px;line-height:1}
 .confidence-marker-buttons button[aria-pressed="true"]{border:2px solid var(--teal);box-shadow:inset 0 -4px 0 var(--teal);background:var(--cream)}
 .confidence-marker-buttons button:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
