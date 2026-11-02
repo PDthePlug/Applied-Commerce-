@@ -64,9 +64,13 @@ check('approval follows the revised answer and reaches learner',()=>{assert.equa
 const visible=await request('schoolAdmin','/rest/v1/evidence_records?select=status&learner_id=eq.'+learner+'&response_key=eq.'+key);
 check('authorized administrator observes approved evidence',()=>assert.equal(visible.data[0].status,'accepted'));
 const revoked=await request('schoolAdmin','/rest/v1/cohort_staff?cohort_id=eq.'+fixtures.cohortId+'&user_id=eq.'+fixtures.users.facilitator.id,'PATCH',{status:'disabled'});assert.equal(revoked.status,200);
+try {
 const revokedReview=await request('facilitator','/rest/v1/rpc/save_facilitator_review','POST',{p_learner_id:learner,p_response_key:key,p_response_value:revised,p_auto_result:{},p_review:{status:'accepted',criteria:{},feedback:'after revocation'}});
 check('role revocation blocks existing facilitator session',()=>assert.ok(revokedReview.status>=400));
+} finally {
+// Keep the active fixture usable even if the revocation check fails.
 await rpc('schoolAdmin','add_cohort_staff_by_email',{p_cohort_id:fixtures.cohortId,p_email:fixtures.users.facilitator.email,p_role:'educator'});
+}
 await rpc('learner','save_account_preferences',{p_patch:{appearance:'dark'}});await rpc('learner','save_account_preferences',{p_patch:{accent:'sage'}});
 const preferences=await request('learner','/rest/v1/account_preferences?select=appearance,accent&user_id=eq.'+learner);
 check('settings patches retain independent changes',()=>assert.deepEqual(preferences.data[0],{appearance:'dark',accent:'sage'}));

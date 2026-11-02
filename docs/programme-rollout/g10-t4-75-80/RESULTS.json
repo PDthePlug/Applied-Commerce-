@@ -1,0 +1,186 @@
+{
+  "at": "2026-11-01T04:45:01.378085+00:00",
+  "projectRef": "inxshlumnhcgiahxqewe",
+  "testedApplicationCommit": "459fa223462187a3bcda3f73984c2d2e73ffeabe",
+  "stagingURL": "https://applied-commerce-sa-staging-gyukafoek.vercel.app",
+  "authentication": "genuine staging password sessions; no mocked or intercepted authentication",
+  "preservation": {
+    "priorPlanBindingsIdentical": 231,
+    "newGuides": 6,
+    "totalGuides": 237,
+    "newInstructionalFields": 132,
+    "totalInstructionalFields": 8840,
+    "learnerLessons": 395,
+    "assessments": 4,
+    "stableBlocks": 20766,
+    "canonicalSourceChanges": false,
+    "originalKeyAuthenticatedWithoutExport": true
+  },
+  "local": {
+    "nodeTests": 220,
+    "browserCases": 252,
+    "pythonIdentityTests": 2,
+    "runtime": "PASS",
+    "typecheck": "PASS",
+    "lint": "PASS",
+    "build": "PASS; guarded normal 237-guide staging build also passes"
+  },
+  "genuine": {
+    "selectedGuides": 14,
+    "newGuideIds": [
+      "g10-t4-l75-071",
+      "g10-t4-l76-072",
+      "g10-t4-l77-073",
+      "g10-t4-l78-074",
+      "g10-t4-l79-075",
+      "g10-t4-l80-076"
+    ],
+    "exactGuidanceFields": 929,
+    "navigationTargets": 116,
+    "responsiveCases": 252,
+    "widths": [
+      320,
+      360,
+      430,
+      768,
+      1280,
+      1920
+    ],
+    "textScales": [
+      1,
+      1.28,
+      2
+    ],
+    "roles": [
+      {
+        "role": "facilitator existing session after revocation",
+        "status": 403
+      },
+      {
+        "role": "platformAdmin",
+        "status": 200
+      },
+      {
+        "role": "schoolAdmin",
+        "status": 200
+      },
+      {
+        "role": "learner",
+        "status": 403
+      },
+      {
+        "role": "unassigned",
+        "status": 403
+      },
+      {
+        "role": "other",
+        "status": 403
+      }
+    ],
+    "authRlsOperations": 37,
+    "independentInstitutionBoundary": {
+      "commit": "459fa223462187a3bcda3f73984c2d2e73ffeabe",
+      "authentication": "real browser and API password login",
+      "role": "active educator membership in a separate institution, no assigned AC cohort",
+      "learnerEvidenceRows": 0,
+      "teacherGuidanceStatus": 403,
+      "boundary": "PASS"
+    },
+    "originalResponseJourneys": [
+      {
+        "lessonId": "g10-t4-l75-071",
+        "responseKey": "g10-t4-l75-071::prompt-5bf345a14cb98855bf8adcb7-1::table-1-0",
+        "editClearReloadAndFreshLogin": true
+      },
+      {
+        "lessonId": "g10-t4-l76-072",
+        "responseKey": "g10-t4-l76-072::prompt-8eab2fe892eba73c7083f7a6-1::blank-0",
+        "editClearReloadAndFreshLogin": true
+      },
+      {
+        "lessonId": "g10-t4-l77-073",
+        "responseKey": "g10-t4-l77-073::prompt-b3c9422d32966d0ae153b8a0-1::response",
+        "editClearReloadAndFreshLogin": true
+      }
+    ],
+    "readingOnlyLessons": 3,
+    "readingOnlyAuthoredResponseControls": 0,
+    "readingOnlyNotesCompletionFreshLoginScopedReviewAndRestoration": "PASS",
+    "audienceTable": {
+      "lessonId": "g10-t4-l75-071",
+      "blockId": "5bf345a14cb98855bf8adcb7-1",
+      "sourceUnitSHA256": "92fe4e0a32a6e849a17f7b48708b999f2be06bea3854f8ab605049b20a58a8b2",
+      "sourceTableRows": 1,
+      "headerOnly": true,
+      "localRows": 3,
+      "localControls": 9,
+      "hostedRows": 3,
+      "hostedControls": 9,
+      "addRowAvailable": true,
+      "editClearReload": true,
+      "responseKey": "g10-t4-l75-071::prompt-5bf345a14cb98855bf8adcb7-1::table-1-0",
+      "freshPasswordLogin": true,
+      "originalSyntheticValueRestored": true
+    },
+    "closingStaffReadChecks": 12,
+    "closingResponsesSelectedInActualEducatorReview": 3,
+    "closingSequence": {
+      "authoredLessons": 3,
+      "contactPeriods": 1,
+      "minutes": [
+        23,
+        15,
+        7
+      ],
+      "focusedResponsiveCaptures": 36,
+      "nativeFooterAndGradeMapReturnToLesson57": true
+    },
+    "presentationPeriodGuides": 2,
+    "pageErrors": []
+  },
+  "printing": {
+    "integratedGuides": 14,
+    "fallbackGuides": 14,
+    "integratedPages": 86,
+    "fallbackPages": 88,
+    "exactFieldOccurrences": 1858,
+    "missingFields": 0,
+    "allA4TextBoundsPass": true,
+    "physicalPrinterTrial": "PENDING"
+  },
+  "delivery": {
+    "sequentialAuthenticatedRequests": 30,
+    "medianMs": 840.5,
+    "rangeMs": [
+      633,
+      1099
+    ],
+    "decodedPayloadRangeBytes": [
+      4892,
+      8697
+    ],
+    "coldProcess": "NOT DEMONSTRATED",
+    "hostedServerMemory": "NOT MEASURED"
+  },
+  "editorial": {
+    "registeredPassages": 239,
+    "exactTextOrTableCellMatches": 239,
+    "sourceChangesApplied": false,
+    "tableJsonWhitespaceCheckerRepaired": true
+  },
+  "contactTiming": {
+    "newAuthoredLessons": 6,
+    "newRawGuidePeriods": 8,
+    "recommendedNewContactPeriods": 6,
+    "referencePresenters": 30,
+    "status": "PROVISIONAL; educator trials pending"
+  },
+  "limits": [
+    "Independent educator moderation and timing trials pending",
+    "Physical printer and human assistive-technology trials pending",
+    "Hosted cold-process, concurrency and runtime server-memory measurements pending",
+    "Natural JWT expiry demonstrated historically; no fresh natural-expiry or configured maximum/inactivity lifetime claim in this batch"
+  ],
+  "productionChanged": false,
+  "mergePerformed": false
+}

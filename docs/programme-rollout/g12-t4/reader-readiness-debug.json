@@ -1,0 +1,100 @@
+{
+  "commit": "7e0110bfe50b69900036738b259f4c8f0454320e",
+  "projectRef": "inxshlumnhcgiahxqewe",
+  "authentication": "genuine educator browser password login",
+  "attempts": [
+    {
+      "attempt": 1,
+      "lessonId": "g12-t4-l61-053",
+      "ready": true,
+      "ms": 2084,
+      "actualPath": "/learn/12/term/4/g12-t4-l61-053",
+      "navigationStatus": 200,
+      "headings": [],
+      "alerts": [
+        ""
+      ],
+      "preparationVisible": true
+    },
+    {
+      "attempt": 2,
+      "lessonId": "g12-t4-l62-054",
+      "ready": true,
+      "ms": 1902,
+      "actualPath": "/learn/12/term/4/g12-t4-l62-054",
+      "navigationStatus": 200,
+      "headings": [],
+      "alerts": [
+        ""
+      ],
+      "preparationVisible": true
+    },
+    {
+      "attempt": 3,
+      "lessonId": "g12-t4-l61-053",
+      "ready": true,
+      "ms": 2037,
+      "actualPath": "/learn/12/term/4/g12-t4-l61-053",
+      "navigationStatus": 200,
+      "headings": [],
+      "alerts": [
+        ""
+      ],
+      "preparationVisible": true
+    },
+    {
+      "attempt": 4,
+      "lessonId": "g12-t4-l62-054",
+      "ready": true,
+      "ms": 1927,
+      "actualPath": "/learn/12/term/4/g12-t4-l62-054",
+      "navigationStatus": 200,
+      "headings": [],
+      "alerts": [
+        ""
+      ],
+      "preparationVisible": true
+    }
+  ],
+  "httpFailures": [],
+  "requestFailures": [
+    {
+      "path": "/learn/12/term/4/g12-t4-l63-055",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "path": "/learn/12/term/4/g12-t4-l66-058",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "path": "/learn/12",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "path": "/learn/12/term/4/g12-t4-l67-059",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "path": "/learn/12/term/4/g12-t4-l61-053",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "path": "/learn/12/term/4/g12-t4-l65-057",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "path": "/facilitator/classroom",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "path": "/learn/12",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "path": "/learn/12/term/4/g12-t4-l65-057",
+      "error": "net::ERR_ABORTED"
+    }
+  ],
+  "pageErrors": [],
+  "status": "PASS_NOT_REPRODUCED"
+}

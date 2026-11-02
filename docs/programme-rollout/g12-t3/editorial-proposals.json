@@ -1,0 +1,385 @@
+{
+  "sourceChangesApplied": false,
+  "entries": [
+    {
+      "lessonId": "g12-t3-l41-041",
+      "blockId": "e6691b74a3a14afb38364fcf-1",
+      "exactPassage": "Risk = Probability of Loss × Magnitude of Loss",
+      "category": "Model definition needs scope",
+      "concern": "Probability times loss magnitude can express expected loss in a simple model; ordinal one-to-five products are not measured probability or all of risk.",
+      "proposedWording": "Distinguish the simple expected-loss model from the activity’s rough priority score and acknowledge uncertainty, safety and severe consequences.",
+      "implementationImpact": "Separate reviewed learner-source proposal; not applied in this guide release. Preserve stable lesson/block/prompt/response identities through explicit compiler mapping. Legal, financial, health and product claims need qualified current South African review before correction or individual use.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g12-t3-l41-041",
+      "blockId": "5ffbff2a5250c6f4636f50ff-1",
+      "exactPassage": "[[\"Type\",\"What It Means\",\"Example\",\"How to Manage\"],[\"Insurable risk\",\"Can be transferred to an insurance company\",\"Fire, theft, car accident\",\"Buy insurance\"],[\"Manageable risk\",\"Can be reduced through your own actions\",\"Health, career obsolescence\",\"Exercise, upskill\"],[\"Acceptable risk\",\"Must be accepted because the cost of managing it exceeds the benefit\",\"Minor losses, market fluctuations\",\"Emergency fund, diversification\"],[\"Catastrophic risk\",\"Would destroy you if it happened—must be insured or avoided\",\"Losing your home, being sued\",\"Insurance, legal structures, avoidance\"]]",
+      "category": "Categories overlap",
+      "concern": "A risk may simultaneously be catastrophic, insurable and reducible; the table suggests exclusive types and automatic purchasing.",
+      "proposedWording": "Present management lenses that can overlap and check actual cover, affordability, support and safety before a real decision.",
+      "implementationImpact": "Separate reviewed learner-source proposal; not applied in this guide release. Preserve stable lesson/block/prompt/response identities through explicit compiler mapping. Legal, financial, health and product claims need qualified current South African review before correction or individual use.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g12-t3-l41-041",
+      "blockId": "b62b72027d70e0481c15e8af-1",
+      "exactPassage": "Which risk has the highest score? That is the one you should address first.",
+      "category": "Unsafe automatic priority rule",
+      "concern": "The highest ordinal product is not necessarily the most urgent risk; severe low-likelihood consequences can require priority.",
+      "proposedWording": "Use the score as one prompt, alongside urgent safety, intolerable consequences, uncertainty and available response/support.",
+      "implementationImpact": "Separate reviewed learner-source proposal; not applied in this guide release. Preserve stable lesson/block/prompt/response identities through explicit compiler mapping. Legal, financial, health and product claims need qualified current South African review before correction or individual use.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g12-t3-l41-041",
+      "blockId": "55d1e94ff7afd1f8d4ab2dfe-1",
+      "exactPassage": "What is one risk you face that would destroy you if it happened? What are you doing about it? If the answer is \"nothing,\" why?",
+      "category": "Activity-specific sensitive disclosure",
+      "concern": "A personally destructive risk question can expose health, violence, family distress or fear.",
+      "proposedWording": "Retain personal reflection but permit suitable bounded labelled examples where a specific scenario is distressing; do not require public disclosure.",
+      "implementationImpact": "Separate reviewed learner-source proposal; not applied in this guide release. Preserve stable lesson/block/prompt/response identities through explicit compiler mapping. Legal, financial, health and product claims need qualified current South African review before correction or individual use.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g12-t3-l42-042",
+      "blockId": "96a99565cd4eac70d552679b-1",
+      "exactPassage": "\"When I started this company, I had one truck. I insured it against accidents and theft. That was all I thought I needed. Then a driver got injured on the job. I had no workers' compensation insurance. His family sued me. I had no liability insurance. I had to pay R80,000 out of my own pocket—money I had saved for a second truck. One injury. One gap in my insurance. And it cost me a year of growth.\"",
+      "category": "Statutory workplace-injury process",
+      "concern": "The lawsuit account treats workers compensation as a missing optional policy and skips applicable statutory routes and limits.",
+      "proposedWording": "Distinguish employer registration/assessment obligations and worker compensation processes from private liability cover; do not determine the story’s legal outcome without facts and qualified review.",
+      "implementationImpact": "Separate reviewed learner-source proposal; not applied in this guide release. Preserve stable lesson/block/prompt/response identities through explicit compiler mapping. Legal, financial, health and product claims need qualified current South African review before correction or individual use.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g12-t3-l42-042",
+      "blockId": "7dc40b4cf101a75105869dea-1",
+      "exactPassage": "\"Yes. It costs me R12,000 a month. But that R12,000 protects a business that generates R300,000 a month. Insurance is not a cost. It is a transfer of risk. I pay someone else to carry the risks that would destroy me. The premium is the price of peace. And the price of peace is worth paying.\"",
+      "category": "Premium cost and transfer conflated",
+      "concern": "A premium remains a cost; cover transfers specified financial consequences rather than all risk.",
+      "proposedWording": "Describe the premium as a cost paid for defined cover, subject to limits, excesses, exclusions and claims terms.",
+      "implementationImpact": "Separate reviewed learner-source proposal; not applied in this guide release. Preserve stable lesson/block/prompt/response identities through explicit compiler mapping. Legal, financial, health and product claims need qualified current South African review before correction or individual use.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g12-t3-l42-042",
+      "blockId": "581d4f6839228a68a148260d-1",
+      "exactPassage": "[[\"Insurance Type\",\"What It Covers\",\"When You Need It\"],[\"Health/Medical aid\",\"Medical expenses, hospitalization\",\"Always—from when you leave your parents' plan\"],[\"Vehicle (complete)\",\"Accidents, theft, third-party damage\",\"When you own a vehicle\"],[\"Vehicle (third party)\",\"Damage to other people's property\",\"Legal minimum if you drive\"],[\"Contents\",\"Your belongings—furniture, electronics, clothes\",\"When you have your own place\"],[\"Life\",\"Payout to your dependents when you die\",\"When someone depends on your income\"],[\"Disability\",\"Income if you cannot work due to illness or injury\",\"When you rely on your income to live\"],[\"Liability (personal)\",\"If someone sues you for injury or damage\",\"When you have assets to protect\"],[\"Business\",\"Business assets, liability, interruption\",\"When you run a business\"],[\"Funeral cover\",\"Funeral expenses\",\"Always—funerals are expensive\"]]",
+      "category": "Material insurance/legal/health table qualifications",
+      "concern": "The table calls private third-party property cover a legal minimum and prescribes health/funeral cover always; it also conflates medical schemes and health insurance.",
+      "proposedWording": "Remove the unsupported legal-minimum claim after qualified review, distinguish statutory RAF arrangements from private property cover, and explain product differences and suitability without universal purchasing advice.",
+      "implementationImpact": "Separate reviewed learner-source proposal; not applied in this guide release. Preserve stable lesson/block/prompt/response identities through explicit compiler mapping. Legal, financial, health and product claims need qualified current South African review before correction or individual use.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g12-t3-l42-042",
+      "blockId": "5e946595311725d53d70df6e-1",
+      "exactPassage": "The Launch Commitment: If I reach age 21 without health insurance and without a plan to get it, I am one illness away from financial disaster. My deadline for addressing my insurance gap is: _________________________________",
+      "category": "Unsupported health catastrophe pledge",
+      "concern": "Age twenty-one without private insurance is treated as inevitably one illness from disaster, ignoring public care, actual circumstances and support.",
+      "proposedWording": "Use a feasible review of healthcare options and costs, including applicable public services; do not imply private cover is the only route to treatment or guarantees no loss.",
+      "implementationImpact": "Separate reviewed learner-source proposal; not applied in this guide release. Preserve stable lesson/block/prompt/response identities through explicit compiler mapping. Legal, financial, health and product claims need qualified current South African review before correction or individual use.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g12-t3-l43-043",
+      "blockId": "55f7c74ee7d1cea4ee6df885-1",
+      "exactPassage": "\"The driver has no money. The family will sue you. You are the employer. You are liable. And because you are a sole proprietor, there is no separation between your business assets and your personal assets. They can take your car. Your savings. Your future income. Everything.\"",
+      "category": "Automatic legal liability and seizure",
+      "concern": "Liability and seizure of everything/future income are asserted without establishing facts, defences, applicable process or protection.",
+      "proposedWording": "Use the scenario to identify liability questions for qualified advice, distinguishing possible personal exposure from automatic seizure.",
+      "implementationImpact": "Separate reviewed learner-source proposal; not applied in this guide release. Preserve stable lesson/block/prompt/response identities through explicit compiler mapping. Legal, financial, health and product claims need qualified current South African review before correction or individual use.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g12-t3-l43-043",
+      "blockId": "7af1f89f41594c7fdc306a75-1",
+      "exactPassage": "\"You need three things. First, liability insurance—to protect against claims like this. Second, you need to consider registering as a private company—a legal structure that separates your personal assets from your business assets. Third, you need professional indemnity insurance—in case a client sues you for a mistake in your work. You are no longer a kid with a bike. You are an employer. A business owner. The law treats you differently now. Protect yourself accordingly.\"",
+      "category": "Company and product protection overstatement",
+      "concern": "Incorporation and professional indemnity are prescribed as automatic solutions without personal-liability exceptions or suitability.",
+      "proposedWording": "Explain separate legal personality with relevant exceptions, guarantees and duties; select any cover based on actual business facts and current terms.",
+      "implementationImpact": "Separate reviewed learner-source proposal; not applied in this guide release. Preserve stable lesson/block/prompt/response identities through explicit compiler mapping. Legal, financial, health and product claims need qualified current South African review before correction or individual use.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g12-t3-l43-043",
+      "blockId": "caf0ea307cc481298e967a82-1",
+      "exactPassage": "[[\"Insurance Type\",\"What It Covers\",\"Who Needs It\"],[\"Public liability\",\"Injury or damage to third parties\",\"Anyone who interacts with the public\"],[\"Professional indemnity\",\"Mistakes or negligence in your professional work\",\"Anyone who provides advice or services\"],[\"Business interruption\",\"Lost income if your business cannot operate\",\"Anyone whose income depends on being operational\"],[\"Asset insurance\",\"Damage or theft of business assets—tools, equipment, stock\",\"Anyone with business assets\"],[\"Workers' compensation\",\"Injury or illness to employees\",\"Anyone with employees\"]]",
+      "category": "Universal product prescription",
+      "concern": "Every public interaction or service is assigned the same cover need regardless of actual exposure and terms.",
+      "proposedWording": "Describe possible policy functions and statutory obligations without a universal package; qualified advice and actual exclusions matter.",
+      "implementationImpact": "Separate reviewed learner-source proposal; not applied in this guide release. Preserve stable lesson/block/prompt/response identities through explicit compiler mapping. Legal, financial, health and product claims need qualified current South African review before correction or individual use.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g12-t3-l44-044",
+      "blockId": "e90ff282ea1a5dec630fe084-1",
+      "exactPassage": "It must be signed by two witnesses—who cannot be beneficiaries.",
+      "category": "Incomplete will formalities and beneficiary consequence",
+      "concern": "Two non-beneficiary signatures alone are not the full rule; beneficiary-witness disqualification has exceptions and differs from whole-will invalidity.",
+      "proposedWording": "Use qualified official guidance covering competence, presence/signing/page/special requirements and statutory exceptions; do not certify validity from the list.",
+      "implementationImpact": "Separate reviewed learner-source proposal; not applied in this guide release. Preserve stable lesson/block/prompt/response identities through explicit compiler mapping. Legal, financial, health and product claims need qualified current South African review before correction or individual use.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g12-t3-l44-044",
+      "blockId": "926cc5bb6648b6a5d0dc5cf2-1",
+      "exactPassage": "\"If you die without a will, the government decides who gets your assets. Not you. Not your family. The Intestate Succession Act. A formula. It does not know your wishes. It does not know your relationships. It just applies the formula. Is that what you want?\"",
+      "category": "Intestate process oversimplification",
+      "concern": "Government choice is framed as arbitrary disregard of relationships rather than applicable succession law and administration.",
+      "proposedWording": "Explain that intestate law determines distribution under applicable facts; a will has legal limits and cannot guarantee conflict-free administration.",
+      "implementationImpact": "Separate reviewed learner-source proposal; not applied in this guide release. Preserve stable lesson/block/prompt/response identities through explicit compiler mapping. Legal, financial, health and product claims need qualified current South African review before correction or individual use.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g12-t3-l44-044",
+      "blockId": "b57314866cc57c13d6b028f8-1",
+      "exactPassage": "[[\"Document\",\"What It Does\",\"Who Needs It\"],[\"Will\",\"States how assets should be distributed\",\"Everyone over 18 with any assets\"],[\"Living will\",\"States your medical wishes if you cannot communicate\",\"Anyone concerned about medical decisions\"],[\"Beneficiary nominations\",\"On life insurance, retirement funds, bank accounts—says who gets the payout\",\"Everyone with these accounts\"],[\"Trust\",\"Holds assets for beneficiaries, controls when and how they receive them\",\"Those with important assets or minor children\"]]",
+      "category": "Age, nominations and trust suitability",
+      "concern": "The table omits competent age-sixteen testators, treats nomination features across products uniformly and prescribes trusts too broadly.",
+      "proposedWording": "Distinguish age/capacity rules, product-specific nomination/distribution rules and fact-specific trust purposes/costs; obtain qualified review.",
+      "implementationImpact": "Separate reviewed learner-source proposal; not applied in this guide release. Preserve stable lesson/block/prompt/response identities through explicit compiler mapping. Legal, financial, health and product claims need qualified current South African review before correction or individual use.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g12-t3-l44-044",
+      "blockId": "f5b96f7cec6fb0d6b19ff497-1",
+      "exactPassage": "If I have minor siblings or future children, who would I want as their guardian? _________________________________",
+      "category": "Guardianship authority and privacy",
+      "concern": "A wish about siblings can imply legal appointment power and require sensitive family circumstances.",
+      "proposedWording": "Frame classroom preferences as nonbinding awareness; actual guardianship depends on legal authority and facts. Suitable private examples are allowed.",
+      "implementationImpact": "Separate reviewed learner-source proposal; not applied in this guide release. Preserve stable lesson/block/prompt/response identities through explicit compiler mapping. Legal, financial, health and product claims need qualified current South African review before correction or individual use.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g12-t3-l44-044",
+      "blockId": "58ab7153f7a43e26d3e410fb-1",
+      "exactPassage": "The Launch Commitment: If I reach age 21 without a will, I am leaving my loved ones with confusion, conflict, and a government formula. My deadline for making my first will is: _________________________________",
+      "category": "Guaranteed family harm and motive pressure",
+      "concern": "Not having a will by twenty-one is treated as inevitably causing confusion and conflict.",
+      "proposedWording": "Set a suitable information/review point without judging love or guaranteeing either conflict or peace; recognise access, competence and circumstances.",
+      "implementationImpact": "Separate reviewed learner-source proposal; not applied in this guide release. Preserve stable lesson/block/prompt/response identities through explicit compiler mapping. Legal, financial, health and product claims need qualified current South African review before correction or individual use.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g12-t3-l44-044",
+      "blockId": "a899fcb00862f619cb523590-1",
+      "exactPassage": "Ask a family member: \"Do you have a will? Why or why not? What made you decide to make one—or what is stopping you?\" Listen. Do not judge. Write down what they say. This conversation is hard. Have it anyway. It might be the most important conversation you have this year.",
+      "category": "Compulsory sensitive family conversation",
+      "concern": "Have it anyway pressures an estate conversation where unsafe, distressing or unwanted.",
+      "proposedWording": "Ask only a willing suitable person, keep questions general and respect refusal; retain the original expressly nonbinding thinking-draft alternative.",
+      "implementationImpact": "Separate reviewed learner-source proposal; not applied in this guide release. Preserve stable lesson/block/prompt/response identities through explicit compiler mapping. Legal, financial, health and product claims need qualified current South African review before correction or individual use.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g12-t3-l45-045",
+      "blockId": "712b83810c84a7587b06c67c-1",
+      "exactPassage": "Beneficiary nominations: \"Your life insurance policy. Your retirement annuity. Your bank account. Each of these has a beneficiary nomination—a form that says who gets the money when you die. This is separate from your will. If your will says one thing and your beneficiary nomination says another, the nomination usually wins. Check your nominations. Update them when your life changes. An ex-girlfriend should not be your retirement fund beneficiary because you forgot to change the form.\"",
+      "category": "Material nomination/distribution generalisation",
+      "concern": "Every bank account is said to have a nomination and nominations usually override wills across products, including retirement annuities.",
+      "proposedWording": "Differentiate actual product features and statutory retirement-fund dependant/nominee allocation from insurance designations and ordinary accounts; no automatic blanket override.",
+      "implementationImpact": "Separate reviewed learner-source proposal; not applied in this guide release. Preserve stable lesson/block/prompt/response identities through explicit compiler mapping. Legal, financial, health and product claims need qualified current South African review before correction or individual use.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g12-t3-l45-045",
+      "blockId": "a813750e102903f36157bef0-1",
+      "exactPassage": "Trusts: \"A trust is a container. You put assets into it. You set rules for how and when those assets are distributed. A trustee manages the trust according to your instructions. Trusts are useful when: you have minor children, you want to control how money is used, you want to protect assets from creditors, or you want to avoid family disputes.\"",
+      "category": "Trust protection guarantee",
+      "concern": "Trusts are described as creditor and dispute protection without legal, administration, cost or tax limits.",
+      "proposedWording": "Describe possible purposes subject to proper legal structure, duties, administration, facts and qualified advice; do not promise a shield.",
+      "implementationImpact": "Separate reviewed learner-source proposal; not applied in this guide release. Preserve stable lesson/block/prompt/response identities through explicit compiler mapping. Legal, financial, health and product claims need qualified current South African review before correction or individual use.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g12-t3-l45-045",
+      "blockId": "3fc916be422cfd7150dc2747-1",
+      "exactPassage": "\"Not yet. You have no dependents. But Thabo—you have employees who depend on you. You have business assets. You might consider it. Lethabo—you have intellectual property. Your clocks. Your designs. Who manages those after you are gone? A trust can protect them. The question is not 'Do I need a trust now?' The question is 'When will I need one—and what is my plan for creating it?'\"",
+      "category": "Presumed future need for a trust",
+      "concern": "The question presupposes everyone will eventually need one and treats employees/IP as sufficient reasons.",
+      "proposedWording": "Allow no, not sure or qualified review of a particular purpose; a trust is not universally necessary or suitable.",
+      "implementationImpact": "Separate reviewed learner-source proposal; not applied in this guide release. Preserve stable lesson/block/prompt/response identities through explicit compiler mapping. Legal, financial, health and product claims need qualified current South African review before correction or individual use.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g12-t3-l45-045",
+      "blockId": "af8b8643d6bdb3cc8c56707a-1",
+      "exactPassage": "[[\"Tool\",\"What It Does\",\"When It Takes Effect\",\"Best For\"],[\"Will\",\"Distributes assets, names executor and guardian\",\"After death\",\"Everyone with assets\"],[\"Trust\",\"Holds and manages assets for beneficiaries\",\"During life or after death\",\"Minor children, complex estates, asset protection\"],[\"Beneficiary nomination\",\"Direct transfer of specific assets (insurance, RA)\",\"After death\",\"Life insurance, retirement funds, bank accounts\"]]",
+      "category": "Tool comparison repeats automatic transfer",
+      "concern": "The table treats bank, RA and insurance nominations as the same automatic outside-estate transfer.",
+      "proposedWording": "Distinguish applicable product and statutory distribution rules, with qualified advice for a real estate.",
+      "implementationImpact": "Separate reviewed learner-source proposal; not applied in this guide release. Preserve stable lesson/block/prompt/response identities through explicit compiler mapping. Legal, financial, health and product claims need qualified current South African review before correction or individual use.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g12-t3-l45-045",
+      "blockId": "ade6f875a954ba9e026bd827-1",
+      "exactPassage": "Question 3 — The Alignment Pre-Mortem: Your will says one thing. Your beneficiary nomination says another. Your family fights. The lawyers take a third of the estate in fees. Write the scene. Now write: What will you do to ensure all your estate planning documents align?",
+      "category": "Invented fee/outcome certainty",
+      "concern": "The hypothetical predicts a third of the estate in lawyers fees without a basis.",
+      "proposedWording": "Keep conflict hypothetical and avoid a fixed fee or inevitable dispute outcome; actual costs and distribution depend on facts and law.",
+      "implementationImpact": "Separate reviewed learner-source proposal; not applied in this guide release. Preserve stable lesson/block/prompt/response identities through explicit compiler mapping. Legal, financial, health and product claims need qualified current South African review before correction or individual use.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g12-t3-l46-046",
+      "blockId": "a1cfbcae73f3a01e0e409305-1",
+      "exactPassage": "\"I consolidated. I moved everything into two platforms—one for my TFSA and RA, one for my direct shares. I calculated my overall asset allocation for the first time. I discovered I was 85% in equities—way too high for my age and goals. I was taking more risk than I realized because I had never looked at the whole picture. Consolidation is not just about convenience. It is about clarity. You cannot manage what you cannot see.\"",
+      "category": "Allocation suitability and chronology",
+      "concern": "Eighty-five percent equity is labelled too high by age alone; displayed allocation later is seventy percent with no reconciliation, and employer pension transfers are implied simple.",
+      "proposedWording": "Use goals, horizon, capacity and tolerance; clarify before/after holdings and any trades. Explain product-specific transfer limits and benefits rather than moving everything automatically.",
+      "implementationImpact": "Separate reviewed learner-source proposal; not applied in this guide release. Preserve stable lesson/block/prompt/response identities through explicit compiler mapping. Legal, financial, health and product claims need qualified current South African review before correction or individual use.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g12-t3-l46-046",
+      "blockId": "e1b2c99a696a831e0903194d-1",
+      "exactPassage": "Investment Consolidation = Clarity + Control + Lower Fees",
+      "category": "Guaranteed lower fees",
+      "concern": "Consolidation does not necessarily reduce total fees or improve suitability.",
+      "proposedWording": "Distinguish a consolidated portfolio view from provider transfers and compare all costs, benefits, access and product rules.",
+      "implementationImpact": "Separate reviewed learner-source proposal; not applied in this guide release. Preserve stable lesson/block/prompt/response identities through explicit compiler mapping. Legal, financial, health and product claims need qualified current South African review before correction or individual use.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g12-t3-l46-046",
+      "blockId": "eed7c2a8680d7b73b615a17a-1",
+      "exactPassage": "[[\"Step\",\"What to Do\"],[\"1. Audit\",\"List every investment account, platform, and holding. Balances. Fees. Asset allocation.\"],[\"2. Compare\",\"Which platforms have the lowest fees? The best service? The right investment options?\"],[\"3. Choose\",\"Select 1-2 platforms to consolidate into. Fewer platforms = more clarity, lower fees.\"],[\"4. Transfer\",\"Move your investments. Check for exit fees or tax implications.\"],[\"5. Allocate\",\"Set your target asset allocation based on your age, goals, and risk tolerance.\"],[\"6. Rebalance\",\"Annually, check your allocation and adjust back to target.\"]]",
+      "category": "Transfer prescription and tax/product limits",
+      "concern": "Choosing one or two providers and moving holdings is presented as universally better despite TFSA, retirement and employer-fund rules.",
+      "proposedWording": "Audit first, retain a coherent view where no transfer is appropriate, and verify current rules, tax, exit costs and benefits before any real transfer.",
+      "implementationImpact": "Separate reviewed learner-source proposal; not applied in this guide release. Preserve stable lesson/block/prompt/response identities through explicit compiler mapping. Legal, financial, health and product claims need qualified current South African review before correction or individual use.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g12-t3-l46-046",
+      "blockId": "5a0eac9a5dd84d592c8cd595-1",
+      "exactPassage": "The Launch Commitment: If I have not consolidated my investments by [date], I am paying unnecessary fees and managing unnecessary complexity. My consolidation deadline is: _________________________________",
+      "category": "Presumed unnecessary fees",
+      "concern": "A missed consolidation deadline is treated as proof of waste even where retaining providers is appropriate.",
+      "proposedWording": "Set a review deadline and document a reasoned retain/transfer decision; no purchase or transaction is required in class.",
+      "implementationImpact": "Separate reviewed learner-source proposal; not applied in this guide release. Preserve stable lesson/block/prompt/response identities through explicit compiler mapping. Legal, financial, health and product claims need qualified current South African review before correction or individual use.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g12-t3-l47-047",
+      "blockId": "041ab085f83be56f73fbf191-1",
+      "exactPassage": "\"Pause. Always pause. No legitimate institution will demand immediate action via SMS. No bank will ask for your password. No SARS official will call threatening arrest unless you pay immediately. No investment opportunity will guarantee 20% monthly returns. The pause is your protection. Five seconds of thinking can save you years of recovery.\"",
+      "category": "Overbroad authenticity rules",
+      "concern": "Legitimate institutions can send urgent alerts or deadlines; a timing signal alone does not prove a scam, and a pause guarantees nothing.",
+      "proposedWording": "Never disclose secrets to a message/caller; verify the specific request through an independently established official route and seek prompt suitable help after acting.",
+      "implementationImpact": "Separate reviewed learner-source proposal; not applied in this guide release. Preserve stable lesson/block/prompt/response identities through explicit compiler mapping. Legal, financial, health and product claims need qualified current South African review before correction or individual use.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g12-t3-l47-047",
+      "blockId": "ca7efad612f139c0963c1373-1",
+      "exactPassage": "[[\"Scheme\",\"How It Works\",\"Red Flags\"],[\"Phishing\",\"Fake emails/SMS from \\\"banks\\\" asking you to click a link and enter details\",\"Urgency, threats (\\\"account will be frozen\\\"), links to unfamiliar websites\"],[\"Advance fee fraud\",\"You must pay a fee to access a larger benefit—a loan, a prize, a job\",\"\\\"Pay R500 to get R50,000,\\\" any request for payment before receiving something\"],[\"Investment scams\",\"Promises of guaranteed high returns with no risk\",\"\\\"Guaranteed 20% monthly returns,\\\" pressure to invest quickly\"],[\"Identity theft\",\"Someone uses your ID, bank details, or personal information to commit fraud\",\"Unexplained accounts, bills for things you did not buy\"],[\"Fake jobs\",\"Offers of high-paying work requiring upfront payment for \\\"training\\\" or \\\"materials\\\"\",\"Requests for money before you start, vague job descriptions\"],[\"Romance scams\",\"Building an online relationship then asking for money\",\"Quick declarations of love, requests for money for \\\"emergencies\\\"\"]]",
+      "category": "Red flag treated as proof",
+      "concern": "Any payment before a benefit is labelled a fraud red flag without distinguishing legitimate fees/terms and verification.",
+      "proposedWording": "Treat signals as reasons to check independently, not a universal proof of fraud; avoid sharing credentials or paying an unverified requester.",
+      "implementationImpact": "Separate reviewed learner-source proposal; not applied in this guide release. Preserve stable lesson/block/prompt/response identities through explicit compiler mapping. Legal, financial, health and product claims need qualified current South African review before correction or individual use.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g12-t3-l47-047",
+      "blockId": "563d5b72fed92ac32363d384-1",
+      "exactPassage": "The Launch Commitment: If I fall for a fraud scheme because I did not pause and verify, I have only myself to blame. My commitment: I will pause for at least 60 seconds before responding to any urgent financial request.",
+      "category": "Victim-blaming commitment",
+      "concern": "The sole-blame pledge contradicts the story’s acknowledgement of persuasive deception and ordinary circumstances.",
+      "proposedWording": "Commit to verification and prompt help without assigning all responsibility to a deceived person or guaranteeing prevention.",
+      "implementationImpact": "Separate reviewed learner-source proposal; not applied in this guide release. Preserve stable lesson/block/prompt/response identities through explicit compiler mapping. Legal, financial, health and product claims need qualified current South African review before correction or individual use.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g12-t3-l48-048",
+      "blockId": "b3afbd3c06d82c994b64738f-1",
+      "exactPassage": "\"You do not. You use a password manager. It generates strong, unique passwords for every account. It remembers them for you. You only need to remember one password—the one that unlocks the manager. That is two-factor authentication. Even if someone gets your password, they cannot access your account without a second factor—a code sent to your phone, a fingerprint, a face scan. It is not paranoia. It is protection.\"",
+      "category": "Material authentication error",
+      "concern": "The text identifies using a master password/password manager as two-factor authentication.",
+      "proposedWording": "Distinguish a protected password manager from MFA using distinct factors; explain supported methods and recovery without exposing secrets.",
+      "implementationImpact": "Separate reviewed learner-source proposal; not applied in this guide release. Preserve stable lesson/block/prompt/response identities through explicit compiler mapping. Legal, financial, health and product claims need qualified current South African review before correction or individual use.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g12-t3-l48-048",
+      "blockId": "44c7187103fa86d5d3c2324b-1",
+      "exactPassage": "Key idea: Myah used one password for everything. It was convenient. It was also dangerous. The paradox: the things that make your digital life convenient are often the things that make it vulnerable. The same password is convenient. The password manager is secure. You cannot have both. Choose security. The inconvenience is temporary. The breach is permanent.",
+      "category": "False security/usability dichotomy",
+      "concern": "The source says convenience and security cannot coexist and every breach is permanent.",
+      "proposedWording": "Managers can improve both usability and security; protections reduce risk, and recovery/containment can matter without promising complete reversal.",
+      "implementationImpact": "Separate reviewed learner-source proposal; not applied in this guide release. Preserve stable lesson/block/prompt/response identities through explicit compiler mapping. Legal, financial, health and product claims need qualified current South African review before correction or individual use.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g12-t3-l48-048",
+      "blockId": "be6fe5923a6391fbf507b8f6-1",
+      "exactPassage": "Here’s the tension: digital security requires resources—a smartphone for 2FA, money for a password manager, reliable internet to update software. Not everyone has these. If you cannot afford a paid password manager, use a free one. If you cannot use 2FA because you do not have a consistent phone number, use the strongest possible passwords and change them regularly. If you cannot update your software because of data costs, do it when you have Wi-Fi access. Do what you can with what you have. Partial security is better than no security. And here is the deeper truth: the biggest digital security risk is not technology. It is behavior. Clicking on links without thinking. Using public Wi-Fi for banking. Sharing passwords with friends. Ignoring software updates. The most sophisticated security system in the world cannot protect you from your own carelessness. Security is not a product. It is a practice.",
+      "category": "Authentication access and outdated rotation advice",
+      "concern": "MFA is treated as universally requiring a smartphone/stable number and routine password rotation as the alternative; behaviour receives sole blame.",
+      "proposedWording": "Use service-specific supported factors and protected recovery, unique strong passwords and changes after compromise/reuse as appropriate; routine arbitrary rotation is not an MFA substitute. Recognise system/provider failures and access constraints.",
+      "implementationImpact": "Separate reviewed learner-source proposal; not applied in this guide release. Preserve stable lesson/block/prompt/response identities through explicit compiler mapping. Legal, financial, health and product claims need qualified current South African review before correction or individual use.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g12-t3-l49-049",
+      "blockId": "58a19347530c1da02b92e45d-1",
+      "exactPassage": "Here’s the tension: the five forms of wealth are not independent. Financial wealth can protect health wealth—by paying for medical care. Time wealth can protect relational wealth—by creating space for the people you love. Health wealth enables everything—without it, the other forms are inaccessible. The forms are connected. Neglect one, and the others eventually suffer. Build all five, and they reinforce each other. The person who protects only their money may find they have nothing worth spending it on. The person who protects only their relationships may find they cannot support the people they love. The architect designs for integration. The operator protects the whole system—not just one part of it.",
+      "category": "Health/disability exclusion",
+      "concern": "Without health the other forms are said to be inaccessible, which excludes meaningful disabled/chronically ill lives.",
+      "proposedWording": "Retain the reflective interconnection framework while recognising accessible relationships, experiences, purpose and dignity with illness or disability and appropriate support.",
+      "implementationImpact": "Separate reviewed learner-source proposal; not applied in this guide release. Preserve stable lesson/block/prompt/response identities through explicit compiler mapping. Legal, financial, health and product claims need qualified current South African review before correction or individual use.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g12-t3-l50-050",
+      "blockId": "0e8532c4b53e8c40278211ed-1",
+      "exactPassage": "Here’s the tension: the section you are avoiding is the section that will teach you the most. If you are avoiding the estate plan, it is because you do not want to confront your own mortality. If you are avoiding the five forms of wealth, it is because you know one of them is being neglected. If you are avoiding the Reality Checks, it is because you do not want to define failure. Face the section you are avoiding. That is where your growth is. That is where the launcher earns her title.",
+      "category": "Unsupported psychological diagnosis",
+      "concern": "A difficult or avoided section is assigned a particular motive rather than possible access, information, safety or privacy needs.",
+      "proposedWording": "Invite a specific question and suitable support without assuming a psychological cause or requiring sensitive disclosure.",
+      "implementationImpact": "Separate reviewed learner-source proposal; not applied in this guide release. Preserve stable lesson/block/prompt/response identities through explicit compiler mapping. Legal, financial, health and product claims need qualified current South African review before correction or individual use.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g12-t3-l51-051",
+      "blockId": "d7935695651d39bc22d1b074-1",
+      "exactPassage": "Good question. Myah adds: \"Professional indemnity insurance by age 20, when I start charging for workshops. Until then, clear disclaimers on all materials. All advice documented in writing.\"",
+      "category": "Disclaimer protection overclaim",
+      "concern": "Disclaimers before paid workshops can be read as sufficient legal protection.",
+      "proposedWording": "Disclaimers do not automatically remove duties or liability; actual activities, competence, law and appropriate qualified advice matter.",
+      "implementationImpact": "Separate reviewed learner-source proposal; not applied in this guide release. Preserve stable lesson/block/prompt/response identities through explicit compiler mapping. Legal, financial, health and product claims need qualified current South African review before correction or individual use.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g12-t3-l51-051",
+      "blockId": "9c35363d6a754ca4deff18c7-1",
+      "exactPassage": "Here’s the tension: feedback is only as valuable as your willingness to receive it. The people who resist feedback are not confident. They are fragile. The people who seek it are building something that can survive reality. Atlehang's questions are not criticism. They are care—expressed as precision. The people who love you most will ask the hardest questions—not to tear you down, but to make sure what you build actually stands. Treasure them. Listen to them. Even when—especially when—their questions make you uncomfortable.",
+      "category": "Feedback character judgement",
+      "concern": "Resistance to feedback is labelled fragility and hard questions are presumed loving.",
+      "proposedWording": "Encourage specific respectful feedback while allowing consent, privacy, boundaries and reasoned disagreement; do not diagnose character or require unsafe disclosure.",
+      "implementationImpact": "Separate reviewed learner-source proposal; not applied in this guide release. Preserve stable lesson/block/prompt/response identities through explicit compiler mapping. Legal, financial, health and product claims need qualified current South African review before correction or individual use.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g12-t3-l52-052",
+      "blockId": "265926f6a8311276f91abed7-1",
+      "exactPassage": "Lethabo presents. His plan: intellectual property protection, business asset insurance, will by 21, password manager set up, five forms of wealth—relational wealth most neglected, plan to address it. His Reality Check: \"If I have not filed at least one intellectual property registration by December, I am not protecting my designs. I am hoping no one copies them.\"",
+      "category": "Universal IP registration deadline",
+      "concern": "Any one registration by December is treated as the marker of protection without identifying the right, eligibility or legal route.",
+      "proposedWording": "Use a qualified information/review step appropriate to the actual IP; some rights arise or are protected differently, and a registration count is not universal proof.",
+      "implementationImpact": "Separate reviewed learner-source proposal; not applied in this guide release. Preserve stable lesson/block/prompt/response identities through explicit compiler mapping. Legal, financial, health and product claims need qualified current South African review before correction or individual use.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g12-t3-l52-052",
+      "blockId": "7fdc8f45878e4ed133a36226-1",
+      "exactPassage": "9. The 1-10 Scale: At the start of the term, you were a \"1\" on the protection literacy scale. Where are you now, honestly? What is the exact number? What is the ONE specific thing you need to do in Term 4 to move up by a single point?",
+      "category": "Unsubstantiated scale baseline",
+      "concern": "An informal protection-literacy score assumes all learners started at one.",
+      "proposedWording": "Use actual earlier reflection where available and an estimated rating with evidence; no imposed baseline or required improvement.",
+      "implementationImpact": "Separate reviewed learner-source proposal; not applied in this guide release. Preserve stable lesson/block/prompt/response identities through explicit compiler mapping. Legal, financial, health and product claims need qualified current South African review before correction or individual use.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    }
+  ]
+}

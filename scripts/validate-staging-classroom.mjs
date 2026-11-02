@@ -17,6 +17,16 @@ const resultFile=process.env.AC_STAGING_RESULTS_FILE??dir+'/final-browser-result
 const result=process.env.AC_STAGING_RESUME==='1'?JSON.parse(fs.readFileSync(resultFile)):{at:new Date().toISOString(),baseURL,projectRef:config.projectRef,authentication:'real browser password login',plans:[],roles:[],persistence:[],delivery:[]};
 assert.equal(result.baseURL,baseURL);assert.equal(result.projectRef,config.projectRef);delete result.failure;
 const save=()=>fs.writeFileSync(resultFile,JSON.stringify(result,null,2));
+async function openReader(page,binding){
+ result.pendingReader={lessonId:binding.lessonId,phase:'learner reader'};
+ const response=await page.goto(`/learn/${binding.grade}/term/${binding.term}/${binding.lessonId}`);
+ try{await page.locator('.lesson-document').waitFor();}
+ catch(error){
+  result.readerReadinessFailure={...result.pendingReader,navigationStatus:response?.status(),actualPath:new URL(page.url()).pathname,alerts:await page.getByRole('alert').allTextContents()};
+  await page.screenshot({path:evidence+'/reader-readiness-failure.png'}).catch(()=>{});save();throw error;
+ }
+ delete result.pendingReader;
+}
 async function login(role,viewport={width:1280,height:900}){
  const context=await browser.newContext({baseURL,viewport});const page=await context.newPage();
  await page.goto(access.shareableUrl);const health=await(await page.request.get('/api/health')).json();assert.equal(health.projectRef,config.projectRef);result.commit=health.commit;
@@ -37,10 +47,9 @@ try{
  const selection=stagingLessonScope(manifest.plans,process.env.AC_STAGING_LESSONS);Object.assign(result,{scope:selection.scope,releasedPlans:selection.releasedPlans});
  for(const binding of selection.plans){
   if(result.plans.some(p=>p.lessonId===binding.lessonId))continue;
-  const route=`/learn/${binding.grade}/term/${binding.term}/${binding.lessonId}`;
   const before=(await cdp.send('Performance.getMetrics')).metrics.find(m=>m.name==='JSHeapUsedSize')?.value;
   const response=await page.request.get('/api/classroom?lesson='+binding.lessonId+'&catalog=omit');assert.equal(response.status(),200);const payload=await response.json();
-  await page.goto(route);await page.locator('.lesson-document').waitFor();const responseControls=()=>page.locator('.lesson-document input,.lesson-document textarea,.lesson-document select').evaluateAll(nodes=>nodes.filter(node=>!node.closest('.contextual-private')).map(node=>({tag:node.tagName,type:node.getAttribute('type'),label:node.getAttribute('aria-label'),id:node.getAttribute('id')})));const learnerControls=await responseControls();await page.getByRole('button',{name:'Teacher View',exact:true}).click();await page.locator('[data-instructional-location="preparation"]').waitFor();
+  await openReader(page,binding);const responseControls=()=>page.locator('.lesson-document input,.lesson-document textarea,.lesson-document select').evaluateAll(nodes=>nodes.filter(node=>!node.closest('.contextual-private')).map(node=>({tag:node.tagName,type:node.getAttribute('type'),label:node.getAttribute('aria-label'),id:node.getAttribute('id')})));const learnerControls=await responseControls();await page.getByRole('button',{name:'Teacher View',exact:true}).click();await page.locator('[data-instructional-location="preparation"]').waitFor();
   assert.deepEqual(await responseControls(),learnerControls,'Teacher mode changed original response controls: '+binding.lessonId);
   const originals=await page.locator('[data-instructional-field]').evaluateAll(nodes=>Object.fromEntries(nodes.map(n=>[n.getAttribute('data-instructional-field'),n.textContent])));
   for(const [field,value]of Object.entries(payload.plan.fields))assert.equal(originals[field],value,binding.lessonId+' '+field);

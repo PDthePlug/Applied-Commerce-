@@ -1,7 +1,9 @@
-# Programme rollout from PR #48
+# Programme guide rollout
 
-**215 of 395 lessons have individually reviewed support in verified staging; 180 remain.** All Grade 8 and Grade 9 lessons, all Grade 10 Terms 1–3 lessons, and the unchanged Grade 11 and Grade 12 benchmarks are covered. No additional private drafts are counted at this observation.
+**All 395 authored lessons now have individually reviewed teaching support verified in staging.** The authorised continuation adds 158 Grade 11/12 guides; all 237 earlier bindings and the accepted benchmarks remain identical. Independent educator moderation and classroom timing trials remain pending.
 
-[PR #74](https://github.com/PDthePlug/Applied-Commerce-/pull/74) contains the current batch on its follow-up stack. No merge or separate live deployment was performed by this work. Educator classroom review and timing trials remain pending.
+**Current normal staging:** https://applied-commerce-sa-staging-14nyfqa60.vercel.app — application/content `fc6bf6ed984385e65313ce73d14d09453fc09ec6`. Deployment protection and genuine application login/educator assignment still apply.
 
-See [current report](REPORT.md), [coverage](coverage.json), [grade-and-term counts](grade-term.csv), [batch results](g10-t3-49-58/RESULTS.json), [individual review](g10-t3-49-58/REVIEW.md) and [focused fact checks](g10-t3-49-58/FACT_CHECKS.md). Plaintext guides, credentials and authenticated captures remain protected outside Git.
+[Complete owner review](full-release/OWNER_REVIEW.md) brings together the eight guide PRs, genuine role/persistence/print evidence, source review, timing recommendations, current connectivity and measured delivery. Draft [PR #89](https://github.com/PDthePlug/Applied-Commerce-/pull/89) adds the separate source-bound Grade 12 amount-input repair and final release evidence. All continuation PRs remain unmerged drafts; the separate live application is unchanged.
+
+See [current status](REPORT.md), [coverage](coverage.json), [authored lessons and provisional contacts](grade-term.csv), [delivery measurements](full-release/DELIVERY.md), [Grade 12 authored-input checks](grade12-authored-inputs/ACCEPTANCE_REPORT.md) and [493 separate, unapplied editorial proposals](SOURCE_EDITORIAL_REGISTER.json). Plaintext guides, credentials, answers and authenticated captures remain protected outside Git.

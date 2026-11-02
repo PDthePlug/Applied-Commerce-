@@ -1,0 +1,57 @@
+{
+  "baselineUninstrumented": {
+    "requests": 120,
+    "concurrentRequests": 12,
+    "medianMs": 874.5,
+    "decodedBytesRange": [
+      12205,
+      70344
+    ]
+  },
+  "instrumented": {
+    "sequentialRequests": 15,
+    "concurrentRequests": 12,
+    "routeInstances": 3,
+    "firstPrivateReads": [
+      {
+        "lessonId": "g8-t1-l12-012",
+        "routeInstanceId": "bfcea437-8021-4a3d-853f-7b2246945942",
+        "endToEndMs": 2116,
+        "importMs": 294.6384779999935,
+        "planMs": 196.9459130000032,
+        "privateReadMs": 491.7339939999947,
+        "processUptimeSeconds": 75.483919614
+      },
+      {
+        "lessonId": "g8-t1-l12-012",
+        "routeInstanceId": "44ea575b-c9fd-4614-9a27-28ab158d353f",
+        "endToEndMs": 2765,
+        "importMs": 323.13376000000017,
+        "planMs": 173.3410339999998,
+        "privateReadMs": 496.595824,
+        "processUptimeSeconds": 2.105553009
+      },
+      {
+        "lessonId": "g8-t1-l12-012",
+        "routeInstanceId": "acf5aee1-e706-4f6e-bf51-962504fb42f3",
+        "endToEndMs": 3108,
+        "importMs": 314.76922899999977,
+        "planMs": 127.50100599999996,
+        "privateReadMs": 442.39789499999983,
+        "processUptimeSeconds": 2.212127595
+      }
+    ],
+    "sequentialRepeatedPrivateReadMedianMs": 77.65421500000048,
+    "sequentialRepeatedPlanMedianMs": 77.55058199999985,
+    "rssObservedBytesRange": [
+      103575552,
+      277368832
+    ]
+  },
+  "limits": [
+    "First private content load in a route instance is observed; platform cold bootstrap is not isolated.",
+    "RSS/heap are hosted Node process snapshots including other work and normal garbage collection; not per-request retained allocation or platform peak memory.",
+    "Four overlapping requests from one administrator do not establish multi-user or 395-guide capacity.",
+    "Instrumented and uninstrumented runs use different roles/request conditions and cannot establish a causal latency change."
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "at": "2026-10-26T10:20:23.145Z",
+  "projectRef": "inxshlumnhcgiahxqewe",
+  "authentication": "genuine staging password login",
+  "localEvidence": "actual ContentBlocks SSR; empty response state",
+  "hostedEvidence": "unintercepted authenticated rendered learner lesson",
+  "syntheticPersistence": true,
+  "tables": [
+    {
+      "lessonId": "g10-t4-l61-061",
+      "blockId": "7e84da316bdbf471dab734eb-1",
+      "sourceUnitSHA256": "44f4ab671261b9156cb0dd65a67e4b2a90dadf9f0df9808dcfa9e6085751e901",
+      "sourceTableRows": 4,
+      "headerOnly": false,
+      "localRows": 3,
+      "localControls": 6,
+      "hostedRows": 3,
+      "hostedControls": 6,
+      "addRowAvailable": false,
+      "editClearReload": true,
+      "responseKey": "g10-t4-l61-061::prompt-7e84da316bdbf471dab734eb-1::table-1-0",
+      "freshPasswordLogin": true,
+      "originalSyntheticValueRestored": true
+    },
+    {
+      "lessonId": "g10-t4-l65-065",
+      "blockId": "3dc8d07570021766981679df-1",
+      "sourceUnitSHA256": "b4cfd4bfcf8e78a47ee260eef540a64bd5cde6862e3251710b07b9ecbcb4c862",
+      "sourceTableRows": 7,
+      "headerOnly": false,
+      "localRows": 6,
+      "localControls": 4,
+      "hostedRows": 6,
+      "hostedControls": 4,
+      "addRowAvailable": false,
+      "editClearReload": true,
+      "responseKey": "g10-t4-l65-065::prompt-3dc8d07570021766981679df-1::table-3-2",
+      "freshPasswordLogin": true,
+      "originalSyntheticValueRestored": true
+    }
+  ],
+  "pageErrors": [],
+  "commit": "6771e483bd62f5ec9266449d5f67b2c6e656743b"
+}

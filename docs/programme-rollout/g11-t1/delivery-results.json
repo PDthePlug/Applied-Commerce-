@@ -1,0 +1,336 @@
+{
+  "at": "2026-11-01T16:26:09.453Z",
+  "status": "PASS",
+  "projectRef": "inxshlumnhcgiahxqewe",
+  "baseURL": "https://applied-commerce-sa-staging-99y5a9nnp.vercel.app",
+  "authentication": "genuine browser password login",
+  "measurement": "end-to-end through coding proxy; decoded response bytes; sequential phase then optional bounded concurrency",
+  "coldProcess": "NOT DEMONSTRATED",
+  "serverMemory": "NOT MEASURED",
+  "samples": [
+    {
+      "lessonId": "g11-t1-l14-014",
+      "request": 1,
+      "ms": 853,
+      "decodedBytes": 51451,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "3a4a9485b5e076ba87be06e57d2191fe71baa8a365798eb549a5e309ad1b3f65"
+    },
+    {
+      "lessonId": "g11-t1-l14-014",
+      "request": 2,
+      "ms": 801,
+      "decodedBytes": 51451,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "3a4a9485b5e076ba87be06e57d2191fe71baa8a365798eb549a5e309ad1b3f65"
+    },
+    {
+      "lessonId": "g11-t1-l14-014",
+      "request": 3,
+      "ms": 792,
+      "decodedBytes": 51451,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "3a4a9485b5e076ba87be06e57d2191fe71baa8a365798eb549a5e309ad1b3f65"
+    },
+    {
+      "lessonId": "g11-t1-l14-014",
+      "request": 4,
+      "ms": 785,
+      "decodedBytes": 51451,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "3a4a9485b5e076ba87be06e57d2191fe71baa8a365798eb549a5e309ad1b3f65"
+    },
+    {
+      "lessonId": "g11-t1-l14-014",
+      "request": 5,
+      "ms": 789,
+      "decodedBytes": 51451,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "3a4a9485b5e076ba87be06e57d2191fe71baa8a365798eb549a5e309ad1b3f65"
+    },
+    {
+      "lessonId": "g11-t1-l01-001",
+      "request": 1,
+      "ms": 922,
+      "decodedBytes": 13707,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "894f701f14a2406a292ef813e0a0537a9ccfd8b49eaaa3a9b1c16567de04bbb1"
+    },
+    {
+      "lessonId": "g11-t1-l01-001",
+      "request": 2,
+      "ms": 874,
+      "decodedBytes": 13707,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "894f701f14a2406a292ef813e0a0537a9ccfd8b49eaaa3a9b1c16567de04bbb1"
+    },
+    {
+      "lessonId": "g11-t1-l01-001",
+      "request": 3,
+      "ms": 669,
+      "decodedBytes": 13707,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "894f701f14a2406a292ef813e0a0537a9ccfd8b49eaaa3a9b1c16567de04bbb1"
+    },
+    {
+      "lessonId": "g11-t1-l01-001",
+      "request": 4,
+      "ms": 659,
+      "decodedBytes": 13707,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "894f701f14a2406a292ef813e0a0537a9ccfd8b49eaaa3a9b1c16567de04bbb1"
+    },
+    {
+      "lessonId": "g11-t1-l01-001",
+      "request": 5,
+      "ms": 954,
+      "decodedBytes": 13707,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "894f701f14a2406a292ef813e0a0537a9ccfd8b49eaaa3a9b1c16567de04bbb1"
+    },
+    {
+      "lessonId": "g11-t1-l18-018",
+      "request": 1,
+      "ms": 721,
+      "decodedBytes": 11027,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "68cb725cce4faf7e2c9a10e393c07853ac26b60e72522fab34b9c1c82fc4c2ff"
+    },
+    {
+      "lessonId": "g11-t1-l18-018",
+      "request": 2,
+      "ms": 882,
+      "decodedBytes": 11027,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "68cb725cce4faf7e2c9a10e393c07853ac26b60e72522fab34b9c1c82fc4c2ff"
+    },
+    {
+      "lessonId": "g11-t1-l18-018",
+      "request": 3,
+      "ms": 764,
+      "decodedBytes": 11027,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "68cb725cce4faf7e2c9a10e393c07853ac26b60e72522fab34b9c1c82fc4c2ff"
+    },
+    {
+      "lessonId": "g11-t1-l18-018",
+      "request": 4,
+      "ms": 755,
+      "decodedBytes": 11027,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "68cb725cce4faf7e2c9a10e393c07853ac26b60e72522fab34b9c1c82fc4c2ff"
+    },
+    {
+      "lessonId": "g11-t1-l18-018",
+      "request": 5,
+      "ms": 710,
+      "decodedBytes": 11027,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "68cb725cce4faf7e2c9a10e393c07853ac26b60e72522fab34b9c1c82fc4c2ff"
+    },
+    {
+      "lessonId": "g11-t1-l20-020",
+      "request": 1,
+      "ms": 732,
+      "decodedBytes": 13524,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "4bba1082b49c5dbc586bf5e22e9bdb59e6cb0f9393d80b556269c839d1e1561a"
+    },
+    {
+      "lessonId": "g11-t1-l20-020",
+      "request": 2,
+      "ms": 827,
+      "decodedBytes": 13524,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "4bba1082b49c5dbc586bf5e22e9bdb59e6cb0f9393d80b556269c839d1e1561a"
+    },
+    {
+      "lessonId": "g11-t1-l20-020",
+      "request": 3,
+      "ms": 700,
+      "decodedBytes": 13524,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "4bba1082b49c5dbc586bf5e22e9bdb59e6cb0f9393d80b556269c839d1e1561a"
+    },
+    {
+      "lessonId": "g11-t1-l20-020",
+      "request": 4,
+      "ms": 696,
+      "decodedBytes": 13524,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "4bba1082b49c5dbc586bf5e22e9bdb59e6cb0f9393d80b556269c839d1e1561a"
+    },
+    {
+      "lessonId": "g11-t1-l20-020",
+      "request": 5,
+      "ms": 781,
+      "decodedBytes": 13524,
+      "cache": "private, no-store, max-age=0",
+      "planSHA256": "4bba1082b49c5dbc586bf5e22e9bdb59e6cb0f9393d80b556269c839d1e1561a"
+    }
+  ],
+  "commit": "ccbd3ff3c6d9b20e7fb650556c3a172f39bcbdb9",
+  "role": "facilitator",
+  "concurrent": {
+    "concurrency": 4,
+    "waves": [
+      {
+        "wave": 1,
+        "wallMs": 1234,
+        "samples": [
+          {
+            "lessonId": "g11-t1-l14-014",
+            "status": 200,
+            "ms": 1234,
+            "decodedBytes": 51451,
+            "planSHA256": "3a4a9485b5e076ba87be06e57d2191fe71baa8a365798eb549a5e309ad1b3f65",
+            "cache": "private, no-store, max-age=0"
+          },
+          {
+            "lessonId": "g11-t1-l01-001",
+            "status": 200,
+            "ms": 694,
+            "decodedBytes": 13707,
+            "planSHA256": "894f701f14a2406a292ef813e0a0537a9ccfd8b49eaaa3a9b1c16567de04bbb1",
+            "cache": "private, no-store, max-age=0"
+          },
+          {
+            "lessonId": "g11-t1-l18-018",
+            "status": 200,
+            "ms": 988,
+            "decodedBytes": 11027,
+            "planSHA256": "68cb725cce4faf7e2c9a10e393c07853ac26b60e72522fab34b9c1c82fc4c2ff",
+            "cache": "private, no-store, max-age=0"
+          },
+          {
+            "lessonId": "g11-t1-l20-020",
+            "status": 200,
+            "ms": 890,
+            "decodedBytes": 13524,
+            "planSHA256": "4bba1082b49c5dbc586bf5e22e9bdb59e6cb0f9393d80b556269c839d1e1561a",
+            "cache": "private, no-store, max-age=0"
+          }
+        ]
+      },
+      {
+        "wave": 2,
+        "wallMs": 1100,
+        "samples": [
+          {
+            "lessonId": "g11-t1-l14-014",
+            "status": 200,
+            "ms": 1100,
+            "decodedBytes": 51451,
+            "planSHA256": "3a4a9485b5e076ba87be06e57d2191fe71baa8a365798eb549a5e309ad1b3f65",
+            "cache": "private, no-store, max-age=0"
+          },
+          {
+            "lessonId": "g11-t1-l01-001",
+            "status": 200,
+            "ms": 841,
+            "decodedBytes": 13707,
+            "planSHA256": "894f701f14a2406a292ef813e0a0537a9ccfd8b49eaaa3a9b1c16567de04bbb1",
+            "cache": "private, no-store, max-age=0"
+          },
+          {
+            "lessonId": "g11-t1-l18-018",
+            "status": 200,
+            "ms": 940,
+            "decodedBytes": 11027,
+            "planSHA256": "68cb725cce4faf7e2c9a10e393c07853ac26b60e72522fab34b9c1c82fc4c2ff",
+            "cache": "private, no-store, max-age=0"
+          },
+          {
+            "lessonId": "g11-t1-l20-020",
+            "status": 200,
+            "ms": 735,
+            "decodedBytes": 13524,
+            "planSHA256": "4bba1082b49c5dbc586bf5e22e9bdb59e6cb0f9393d80b556269c839d1e1561a",
+            "cache": "private, no-store, max-age=0"
+          }
+        ]
+      },
+      {
+        "wave": 3,
+        "wallMs": 1584,
+        "samples": [
+          {
+            "lessonId": "g11-t1-l14-014",
+            "status": 200,
+            "ms": 1057,
+            "decodedBytes": 51451,
+            "planSHA256": "3a4a9485b5e076ba87be06e57d2191fe71baa8a365798eb549a5e309ad1b3f65",
+            "cache": "private, no-store, max-age=0"
+          },
+          {
+            "lessonId": "g11-t1-l01-001",
+            "status": 200,
+            "ms": 779,
+            "decodedBytes": 13707,
+            "planSHA256": "894f701f14a2406a292ef813e0a0537a9ccfd8b49eaaa3a9b1c16567de04bbb1",
+            "cache": "private, no-store, max-age=0"
+          },
+          {
+            "lessonId": "g11-t1-l18-018",
+            "status": 200,
+            "ms": 1475,
+            "decodedBytes": 11027,
+            "planSHA256": "68cb725cce4faf7e2c9a10e393c07853ac26b60e72522fab34b9c1c82fc4c2ff",
+            "cache": "private, no-store, max-age=0"
+          },
+          {
+            "lessonId": "g11-t1-l20-020",
+            "status": 200,
+            "ms": 1583,
+            "decodedBytes": 13524,
+            "planSHA256": "4bba1082b49c5dbc586bf5e22e9bdb59e6cb0f9393d80b556269c839d1e1561a",
+            "cache": "private, no-store, max-age=0"
+          }
+        ]
+      }
+    ],
+    "scope": "one authenticated educator; bounded overlapping requests; no capacity claim"
+  },
+  "lessons": [
+    {
+      "lessonId": "g11-t1-l14-014",
+      "decodedBytes": 51451,
+      "firstSampleMs": 853,
+      "repeatedMedianMs": 790.5,
+      "rangeMs": [
+        785,
+        853
+      ]
+    },
+    {
+      "lessonId": "g11-t1-l01-001",
+      "decodedBytes": 13707,
+      "firstSampleMs": 922,
+      "repeatedMedianMs": 771.5,
+      "rangeMs": [
+        659,
+        954
+      ]
+    },
+    {
+      "lessonId": "g11-t1-l18-018",
+      "decodedBytes": 11027,
+      "firstSampleMs": 721,
+      "repeatedMedianMs": 759.5,
+      "rangeMs": [
+        710,
+        882
+      ]
+    },
+    {
+      "lessonId": "g11-t1-l20-020",
+      "decodedBytes": 13524,
+      "firstSampleMs": 732,
+      "repeatedMedianMs": 740.5,
+      "rangeMs": [
+        696,
+        827
+      ]
+    }
+  ]
+}

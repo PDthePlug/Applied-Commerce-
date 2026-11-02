@@ -1,0 +1,34 @@
+{
+  "preservedPlans": 256,
+  "addedPlans": 20,
+  "totalPlans": 276,
+  "addedPeriods": 31,
+  "newPlacements": 149,
+  "version": "classroom-v2.g11-t2.2026-11-01",
+  "originalKeyAuthenticated": true,
+  "keyExported": false,
+  "plaintextWritten": false,
+  "sourceValidationMs": 557,
+  "buildProcessOnly": {
+    "heapBefore": 42944480,
+    "heapAfter": 78053568,
+    "rssAfter": 388087808
+  },
+  "files": [
+    {
+      "name": "teaching-plans.v2.enc.json",
+      "bytes": 4485055,
+      "sha256": "e4d62a7bf3134483cf32c5b4eb9be0046f61a965938224df467e0ea9e78d4e6a"
+    },
+    {
+      "name": "teaching-manifest.v2.json",
+      "bytes": 4744304,
+      "sha256": "8477ff98f53e775273d18d86e90f7e3310a0c5b29f7a2e7f92cb85ee783c872a"
+    },
+    {
+      "name": "teaching-availability.v2.json",
+      "bytes": 6021,
+      "sha256": "b9de70a312e5a1f86f5e2d3d89c8c1e8668c0eca5a0ab832aad0baa2b47dad01"
+    }
+  ]
+}

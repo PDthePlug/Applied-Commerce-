@@ -1,0 +1,105 @@
+{
+  "sourceChangesApplied": false,
+  "entries": [
+    {
+      "lessonId": "g10-t4-l60-060",
+      "blockId": "2218469cfb35bf963df8619f-1",
+      "exactPassage": "[[\"Path\", \"How It Works\", \"Example\"], [\"Save and invest\", \"Build a large enough investment portfolio\", \"Live off interest and dividends\"], [\"Own a business\", \"Business generates income without your daily work\", \"Hire others to run it\"], [\"Own property\", \"Rent from property covers expenses\", \"Multiple properties\"], [\"Create intellectual property\", \"Royalties from books, music, patents\", \"Earn while you sleep\"], [\"Combine multiple streams\", \"Several smaller income sources add up\", \"Part-time work + investments + small business\"]]",
+      "category": "Missing contextual distinction",
+      "concern": "The combined-stream example includes part-time work, which can support resilience but does not by itself meet the lesson\u2019s stricter passive-income condition.",
+      "proposedWording": "Combining smaller income sources can support financial resilience. To meet the passive-income definition used here, dependable income available without active daily work must cover basic expenses over a consistent period. A part-time job alone does not establish that condition.",
+      "implementationImpact": "Separate owner-reviewed learner-source proposal only. No wording, response key, activity or canonical block is changed now.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g10-t4-l61-061",
+      "blockId": "badc44bf53786cf6a0ebf1cf-1",
+      "exactPassage": "[[\"Stream\", \"Type\", \"Monthly\", \"Control (1-5)\", \"Status\"], [\"Part-time job\", \"Active\", \"R1,500\", \"2\", \"Surviving \u2014 manager changed, hours cut\"], [\"Online store\", \"Active\", \"R800-2,000\", \"3\", \"Surviving \u2014 platform dependent\"], [\"Tutoring\", \"Active\", \"R600\", \"4\", \"Growing \u2014 I control clients, rates, schedule\"], [\"Savings interest\", \"Passive\", \"R30\", \"5\", \"Surviving \u2014 small but fully mine\"]]",
+      "category": "Internal case inconsistency",
+      "concern": "The online-store row says Surviving while the immediately following prose says the store was shut down.",
+      "proposedWording": "Change only the online-store status to Closed after platform rule change, consistent with the described case event.",
+      "implementationImpact": "Separate status-label correction; preserve all table identities, figures and saved controls. No source change now.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g10-t4-l61-061",
+      "blockId": "5eff82dd6e85edf75c91e92b-1",
+      "exactPassage": "Key idea: Themba's four streams became three. The online store disappeared overnight \u2014 not because he did anything wrong, but because the platform changed its rules. He had no control. The only streams that survived were the ones he owned \u2014 his client relationships, his savings. Control matters more than count. Five dependent streams are not better than two you own.",
+      "category": "Material case overstatement",
+      "concern": "The statement that only owned streams survived contradicts the surviving part-time job shown in the table.",
+      "proposedWording": "The online store closed after the platform changed its rules. His part-time job, tutoring and savings interest survived, with different vulnerabilities and degrees of agency. Control matters alongside diversification, income needs and the risks that remain.",
+      "implementationImpact": "Separate owner-reviewed learner-source proposal only. No wording, response key, activity or canonical block is changed now.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g10-t4-l61-061",
+      "blockId": "fafd91922a4fe0f922cbffd6-1",
+      "exactPassage": "\"That control matters more than count. The online store scored a 3 \u2014 I depended on the platform. The tutoring scores a 4 \u2014 I own the client relationships. The savings interest scores a 5 \u2014 no one can take it. I am shifting toward higher control. Building the tutoring. Letting go of platform-dependent income. It means earning less now. But what I earn, I keep. What I keep, no one can take.\"",
+      "category": "Missing risk context",
+      "concern": "Ownership and a high agency score do not make clients, rates, savings institutions or payments impossible to interrupt. The absolute no-one-can-take-it wording can be mistaken for a financial guarantee.",
+      "proposedWording": "I have more influence over my tutoring relationships than over the platform\u2019s rules. My savings are mine, but rates, access and other risks still need checking. I am building agency while considering the income I need now.",
+      "implementationImpact": "Separate owner-reviewed learner-source proposal only. No wording, response key, activity or canonical block is changed now.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g10-t4-l62-062",
+      "blockId": "566553d1f1d7097d911e5b11-1",
+      "exactPassage": "[[\"Passive Income Stream\", \"Monthly (Average)\"], [\"Study guide sales\", \"R400\"], [\"TFSA growth\", \"R500\"], [\"Dividend stocks\", \"R300\"], [\"Savings interest\", \"R50\"], [\"Total\", \"R1,250\"]]",
+      "category": "Missing cash-availability assumption",
+      "concern": "The addition is correct at R1,250. If the R500 TFSA growth is unrealised, other listed cash receipts total R750 before costs versus R1,200 expenses. Whether growth is realised and available is unstated.",
+      "proposedWording": "Separate money actually available for expenses from unrealised investment growth. If the R500 is available net cash, explain that assumption; otherwise the other listed cash receipts total R750 before costs and do not alone cover R1,200 expenses.",
+      "implementationImpact": "Separate table/explanation review; do not silently change figures or infer a withdrawal. Preserve identities and question structure.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g10-t4-l62-062",
+      "blockId": "72b04635cfa79b0e615e3fa1-1",
+      "exactPassage": "[[\"Passive Income Idea\", \"Upfront Work\", \"Ongoing Effort\"], [\"Savings interest\", \"Save money consistently\", \"None\"], [\"Dividend stocks\", \"Research and invest\", \"None (but monitoring helps)\"], [\"Digital product\", \"Create once (ebook, course, guide)\", \"Marketing, updates\"], [\"Rental property\", \"Save for deposit, find property\", \"Management, maintenance\"], [\"Royalties\", \"Create art, music, invention\", \"None\"]]",
+      "category": "Missing ongoing-effort context",
+      "concern": "None is an oversimplification for continuing account oversight, investment monitoring, rights management or other costs. Passive income does not eliminate risk or all ongoing work.",
+      "proposedWording": "Use Low ongoing administration or monitoring varies where appropriate; retain the distinction between substantial upfront work and less ongoing effort. State that payments, costs and risks still vary.",
+      "implementationImpact": "Separate owner-reviewed learner-source proposal only. No wording, response key, activity or canonical block is changed now.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g10-t4-l62-062",
+      "blockId": "20ad23bc6ec48ff5f96a3a4c-1",
+      "exactPassage": "Zola said accountability saved her. Name TWO people you will tell about this plan. Telling them creates the productive embarrassment that keeps you going.",
+      "category": "Specific participation safeguard",
+      "concern": "Accountability is useful, but productive embarrassment should not become coerced disclosure or pressure to continue an unsuitable plan. The later text intensifies this into making quitting embarrassing.",
+      "proposedWording": "Choose two suitable people you could ask for willing, respectful follow-up on a feasible milestone. Agree what to share and review the plan honestly if it needs to change or stop.",
+      "implementationImpact": "Separate participation-wording review including the related Deepening Insight; no new compulsory activity or response field. A local task-specific safeguard is already in the draft.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g10-t4-l63-063",
+      "blockId": "bc5b7cc9e8583c0c0d98e845-1",
+      "exactPassage": "This week, delegate ONE task you usually do yourself. Let someone else do it. Do not check. Do not correct. Just observe. Write down: What happened? How did it feel? What did you learn about yourself?",
+      "category": "Specific safety concern",
+      "concern": "The blanket Do not check or correct instruction can be copied for care, medicine, hazardous tools or essential responsibilities that require competent checking.",
+      "proposedWording": "Choose an agreed low-risk, reversible task with a willing suitable person. Keep necessary safety and quality checks. If no suitable task or person is available, record that and review the plan with the educator instead of carrying out an unsafe experiment.",
+      "implementationImpact": "Separate source safeguard; preserve existing task evidence identities. Local later-work guidance supplies this specific safeguard now.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g10-t4-l64-064",
+      "blockId": "26fbba5a743ecc8155acb44c-1",
+      "exactPassage": "[[\"\", \"Entrepreneurship\", \"Employment\"], [\"Income\", \"Variable, unlimited potential\", \"Fixed, predictable\"], [\"Risk\", \"You bear all risk\", \"Employer bears most risk\"], [\"Control\", \"You decide\", \"You follow instructions\"], [\"Hours\", \"You set them (often long)\", \"Fixed schedule\"], [\"Growth\", \"Unlimited potential\", \"Limited by role\"], [\"Benefits\", \"You provide your own\", \"Often provided\"]]",
+      "category": "Missing contextual qualification",
+      "concern": "Fixed predictable income, all risk, unlimited potential and limited control are simplified tendencies rather than universal conditions of employment or entrepreneurship.",
+      "proposedWording": "Label the comparison as possible tendencies. Actual security, control, hours, benefits, growth and income vary by role, enterprise, market, legal conditions and resources. Use current circumstances to reason about a fit.",
+      "implementationImpact": "Separate owner-reviewed learner-source proposal only. No wording, response key, activity or canonical block is changed now.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g10-t4-l66-066",
+      "blockId": "c5ddd65b33f3b28c6779c885-1",
+      "exactPassage": "\"The evidence is mixed. Some SRI funds perform as well as conventional funds. Some show slight underperformance. But the question is not just about returns. It is about what kind of investor you want to be. What kind of world you want your money to build.\"",
+      "category": "Claim requiring current external verification",
+      "concern": "The performance statement is not tied to a dated fund set, fees, risk, benchmark or measurement period. No current research comparison has been demonstrated for this batch.",
+      "proposedWording": "Performance varies with the selected funds, period, fees, risk and screening criteria. A dated comparison is needed before claiming relative results; an ethical label does not guarantee a return or a financial penalty.",
+      "implementationImpact": "Separate owner-reviewed learner-source proposal only. No wording, response key, activity or canonical block is changed now.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    }
+  ]
+}

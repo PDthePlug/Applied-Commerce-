@@ -1,0 +1,83 @@
+{
+  "at": "2026-11-02T05:39:21.744Z",
+  "projectRef": "inxshlumnhcgiahxqewe",
+  "authentication": "genuine staging password login",
+  "localEvidence": "actual ContentBlocks SSR; empty response state",
+  "hostedEvidence": "unintercepted authenticated rendered learner lesson",
+  "syntheticPersistence": true,
+  "tables": [
+    {
+      "lessonId": "g12-t2-l21-021",
+      "blockId": "3238ed248abce4e58a4813aa-1",
+      "sourceUnitSHA256": "4666db33b0c85fdae0ae62150d1d4461fdab58da5ccf265b8b58d9f03d7cffdc",
+      "sourceTableRows": 6,
+      "headerOnly": false,
+      "localRows": 5,
+      "localControls": 5,
+      "hostedRows": 5,
+      "hostedControls": 5,
+      "addRowAvailable": false,
+      "editClearReload": true,
+      "responseKey": "g12-t2-l21-021::prompt-3238ed248abce4e58a4813aa-1::table-1-2"
+    },
+    {
+      "lessonId": "g12-t2-l22-022",
+      "blockId": "8e224397e707af552357926c-1",
+      "sourceUnitSHA256": "30f598458ee7cb1c23f0a132bdfa60a70b425ae69371523a6c941ad97dcc3dec",
+      "sourceTableRows": 1,
+      "headerOnly": true,
+      "localRows": 5,
+      "localControls": 15,
+      "hostedRows": 5,
+      "hostedControls": 15,
+      "addRowAvailable": true,
+      "editClearReload": true,
+      "responseKey": "g12-t2-l22-022::prompt-8e224397e707af552357926c-1::table-1-0"
+    },
+    {
+      "lessonId": "g12-t2-l23-023",
+      "blockId": "431da79ad0e2d7b70e2a180b-1",
+      "sourceUnitSHA256": "505548b6bc4b34238a9daa7fa216c3e169c6cbe72e3ff4c16829e931a32fca76",
+      "sourceTableRows": 1,
+      "headerOnly": true,
+      "localRows": 3,
+      "localControls": 9,
+      "hostedRows": 3,
+      "hostedControls": 9,
+      "addRowAvailable": true,
+      "editClearReload": true,
+      "responseKey": "g12-t2-l23-023::prompt-431da79ad0e2d7b70e2a180b-1::table-1-0"
+    },
+    {
+      "lessonId": "g12-t2-l27-027",
+      "blockId": "c07415776f6b3d209a920c55-1",
+      "sourceUnitSHA256": "48bbfb3313b37776449458699c5759f5a38a92b37e44b1765478cacca96fbf38",
+      "sourceTableRows": 1,
+      "headerOnly": true,
+      "localRows": 5,
+      "localControls": 15,
+      "hostedRows": 5,
+      "hostedControls": 15,
+      "addRowAvailable": true,
+      "editClearReload": true,
+      "responseKey": "g12-t2-l27-027::prompt-c07415776f6b3d209a920c55-1::table-1-0"
+    },
+    {
+      "lessonId": "g12-t2-l28-028",
+      "blockId": "c88e619714dc17dcdef4a522-1",
+      "sourceUnitSHA256": "e9b4962a38ab2d6a226ad8945e33d593396e99616f4d7e376b4d7a55e56e7653",
+      "sourceTableRows": 4,
+      "headerOnly": false,
+      "localRows": 3,
+      "localControls": 9,
+      "hostedRows": 3,
+      "hostedControls": 9,
+      "addRowAvailable": false,
+      "editClearReload": true,
+      "responseKey": "g12-t2-l28-028::prompt-c88e619714dc17dcdef4a522-1::table-1-0"
+    }
+  ],
+  "pageErrors": [],
+  "commit": "54f189f826af76244874f4c5e9d71ce2a83ae738",
+  "failure": "Expected values to be strictly equal:\n\n12 !== 15\n"
+}

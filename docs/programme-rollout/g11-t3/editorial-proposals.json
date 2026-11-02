@@ -1,0 +1,375 @@
+{
+  "sourceChangesApplied": false,
+  "entries": [
+    {
+      "lessonId": "g11-t3-l41-041",
+      "blockId": "ed46aeff64a48b19b7fca6e4-1",
+      "exactPassage": "[[\"Connection\",\"Example\"],[\"Financial wealth can buy time\",\"Savings let you work less\"],[\"Relational wealth creates opportunities\",\"Friends open doors\"],[\"Health wealth enables everything\",\"Without health, nothing matters\"],[\"Experiential wealth builds wisdom\",\"Lessons from life guide decisions\"],[\"Time wealth lets you enjoy the rest\",\"Freedom to be with people, have experiences\"]]",
+      "category": "Specific inclusion concern",
+      "concern": "The health row says nothing matters without health, excluding meaningful lives with illness or disability. Other connections are illustrative rather than guaranteed.",
+      "proposedWording": "Health and support can help people pursue what matters; relationships, experiences, purpose and choices remain meaningful with illness or disability. Describe connections as possibilities, not inevitable outcomes.",
+      "implementationImpact": "Separate reviewed learner-source proposal. Preserve stable lesson/block/prompt/response identities with explicit compiler mapping before any source release. No canonical correction is applied in this guide batch.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g11-t3-l42-042",
+      "blockId": "5570fdee42cb08e7347c7064-1",
+      "exactPassage": "\"And I will tell you something I have never told a class before,\" she adds. \"Last year, I did not rebalance. The market was down. I was scared. I told myself I would wait until things stabilized. I waited six months. In those six months, I missed the recovery. Fear cost me money. Real money. My money.\"",
+      "category": "Unsupported causal inference",
+      "concern": "Missing rebalancing does not alone establish missing a market recovery if the existing assets remained invested; the actual change of holdings and timing are not supplied.",
+      "proposedWording": "Specify what Zinhle did with her holdings and what evidence supports the claimed loss, or say that fear delayed her portfolio review without asserting rebalancing would have captured the recovery.",
+      "implementationImpact": "Separate reviewed learner-source proposal. Preserve stable lesson/block/prompt/response identities with explicit compiler mapping before any source release. No canonical correction is applied in this guide batch.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g11-t3-l42-042",
+      "blockId": "e02ee66adb9fa19d39407271-1",
+      "exactPassage": "\"Good memory. Once a year, I check. If equities have grown to 70%, I sell some and buy more fixed income to restore 60/15/15/5/5. Rebalancing forces you to sell high and buy low — the opposite of what your emotions want you to do. It is a system that protects you from yourself. But systems only work if you follow them. Last year, I did not. And I paid for it.\"",
+      "category": "Rebalancing mechanism and outcome qualification",
+      "concern": "Selling equities and buying only fixed income does not necessarily restore all five target weights; rebalancing does not guarantee buying at a low market price or a better return.",
+      "proposedWording": "Review every asset weight against the target and consider contributions, costs and tax when adjusting. Rebalancing restores chosen exposure; it is not guaranteed market timing.",
+      "implementationImpact": "Separate reviewed learner-source proposal. Preserve stable lesson/block/prompt/response identities with explicit compiler mapping before any source release. No canonical correction is applied in this guide batch.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g11-t3-l42-042",
+      "blockId": "696eae5397c949a1d245bdf5-1",
+      "exactPassage": "[[\"Age\",\"Equities\",\"Property/REITs\",\"Fixed Income\",\"Cash\",\"Alternatives\"],[\"20\",\"70%\",\"10%\",\"10%\",\"5%\",\"5%\"],[\"30\",\"65%\",\"15%\",\"10%\",\"5%\",\"5%\"],[\"40\",\"55%\",\"20%\",\"15%\",\"5%\",\"5%\"],[\"50\",\"45%\",\"20%\",\"25%\",\"5%\",\"5%\"],[\"60\",\"35%\",\"20%\",\"35%\",\"5%\",\"5%\"]]",
+      "category": "Illustrative allocation presented as an age rule",
+      "concern": "The age table can imply a prescribed portfolio, including a fixed alternatives allocation, regardless of access needs, risk capacity or goals.",
+      "proposedWording": "Label all age allocations as illustrations, not recommendations. Goals, time horizon, liquidity, risk capacity and costs matter; zero in an optional category can be appropriate.",
+      "implementationImpact": "Separate reviewed learner-source proposal. Preserve stable lesson/block/prompt/response identities with explicit compiler mapping before any source release. No canonical correction is applied in this guide batch.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g11-t3-l42-042",
+      "blockId": "bef433c73cf68b88bc69bc12-1",
+      "exactPassage": "Question 3 — The Rebalancing Pre-Mortem: Imagine it is five years from now. You have not rebalanced your portfolio. Equities have grown to 85% of your portfolio. The market crashes by 30%. What happens to your wealth? What would have happened if you had rebalanced annually? Write both scenarios. Then write: what SYSTEM will you put in place to ensure you rebalance — regardless of how you feel?",
+      "category": "Underspecified comparison",
+      "concern": "The 85%-equity crash can be isolated with assumptions, but annual return paths, target allocation, other asset returns, costs and starting comparable value are not given.",
+      "proposedWording": "Assuming a common pre-crash value and unchanged other assets, a 30% equity fall at an 85% weight reduces total value by 25.5%. Compare the same shock at a clearly stated target; do not claim a guaranteed five-year counterfactual without return paths and costs.",
+      "implementationImpact": "Separate reviewed learner-source proposal. Preserve stable lesson/block/prompt/response identities with explicit compiler mapping before any source release. No canonical correction is applied in this guide batch.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g11-t3-l43-043",
+      "blockId": "a01eff64d184e84a04c09ef0-1",
+      "exactPassage": "He points. The entry reads: \"Bond: R3,800. Rent: R3,200 (tenant late). Rates: R600. Maintenance: R850 (geyser). Mom's stokvel payout: R500. My contribution: R2,550. Total shortfall I had to cover: R2,550. Ate pap for two weeks. Borrowed R500 from my uncle. Told no one.\"",
+      "category": "Material arithmetic/data reconciliation",
+      "concern": "R3,800 + R600 + R850 − R3,200 is R2,050 before the stated R500 family contribution; neither that nor R1,550 after it reconciles to the claimed R2,550 shortfall.",
+      "proposedWording": "Provide a complete consistent cash reconciliation, identifying any missing cost or contribution. Retain the hardship narrative without teaching an unexplained incorrect subtotal.",
+      "implementationImpact": "Separate reviewed learner-source proposal. Preserve stable lesson/block/prompt/response identities with explicit compiler mapping before any source release. No canonical correction is applied in this guide batch.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g11-t3-l43-043",
+      "blockId": "ad7b71fe51d5df3a5b88b85b-1",
+      "exactPassage": "[[\"Item\",\"Amount\"],[\"Purchase price\",\"R450,000\"],[\"Deposit\",\"R45,000 (borrowed from stokvel)\"],[\"Bond\",\"R405,000 at 10%\"],[\"Monthly rent\",\"R4,500\"],[\"Monthly bond\",\"R3,800\"],[\"Rates, taxes, levy\",\"R600\"],[\"Maintenance (average)\",\"R300\"],[\"Monthly cash flow\",\"-R200 (negative for first 3 years)\"],[\"Today's value\",\"R750,000\"],[\"Remaining bond\",\"R310,000\"],[\"Equity today\",\"R440,000\"],[\"Current rent\",\"R6,000\"],[\"Current monthly cash flow\",\"+R900\"]]",
+      "category": "Missing current cost assumptions",
+      "concern": "The initial monthly cash flow reconciles to −R200, but current R6,000 rent less the listed R3,800/R600/R300 costs yields R1,300 rather than R900. Updated current costs are not supplied.",
+      "proposedWording": "Distinguish initial from current costs and show which current amounts produce R900. Do not infer that the original costs stayed constant.",
+      "implementationImpact": "Separate reviewed learner-source proposal. Preserve stable lesson/block/prompt/response identities with explicit compiler mapping before any source release. No canonical correction is applied in this guide batch.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g11-t3-l43-043",
+      "blockId": "4396bf36be3c183bb0499fe5-1",
+      "exactPassage": "[[\"Metric\",\"Calculation\",\"What It Tells You\"],[\"Rental yield\",\"Annual rent ÷ Property price × 100\",\"How much income it generates\"],[\"Cash flow\",\"Rent — (bond + rates + maintenance + other)\",\"Actual money in your pocket (or out)\"],[\"Capital growth\",\"(Sale price — Purchase price) ÷ Years\",\"How much it increased per year\"],[\"Return on equity\",\"Annual profit ÷ Your money invested\",\"Your return on your cash\"],[\"Vacancy rate\",\"Months vacant ÷ 12\",\"Risk of no income\"]]",
+      "category": "Metric labels and denominator precision",
+      "concern": "Capital growth is shown as a rand-per-year arithmetic average, not annual percentage/compound growth. The return-on-equity denominator is called money invested without distinguishing initial cash from current equity.",
+      "proposedWording": "Label the first measure average annual rand gain. Define percentage/compound growth separately only if needed; specify profit, period and whether the return denominator is initial cash or current equity.",
+      "implementationImpact": "Separate reviewed learner-source proposal. Preserve stable lesson/block/prompt/response identities with explicit compiler mapping before any source release. No canonical correction is applied in this guide batch.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g11-t3-l43-043",
+      "blockId": "6761f282124e88eae15618a5-1",
+      "exactPassage": "[[\"Option\",\"How It Works\",\"Pros\",\"Cons\"],[\"Physical residential\",\"Buy a house/flat, rent it out\",\"Tangible asset, leverage\",\"Tenants, maintenance, negative cash flow early\"],[\"Physical commercial\",\"Buy a shop/office, rent to business\",\"Longer leases, higher rents\",\"Bigger deposit, harder to sell\"],[\"REITs\",\"Buy shares in property companies\",\"No tenants, dividends, liquid\",\"No leverage, market fluctuations\"],[\"Property ETF\",\"Basket of REITs\",\"Diversified, low cost\",\"Lower returns than direct\"]]",
+      "category": "Material financial comparison",
+      "concern": "REITs may use borrowing at company level, and property ETFs do not have an inherent lower-return ranking than direct property.",
+      "proposedWording": "Distinguish the investor’s direct borrowing from borrowing inside a REIT. Compare costs, liquidity, concentration and risk without promising a return hierarchy.",
+      "implementationImpact": "Separate reviewed learner-source proposal. Preserve stable lesson/block/prompt/response identities with explicit compiler mapping before any source release. No canonical correction is applied in this guide batch.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g11-t3-l43-043",
+      "blockId": "e2144972a56114194421dd30-1",
+      "exactPassage": "[[\"Item\",\"Amount\"],[\"Purchase price\",\"R550,000\"],[\"Deposit (10%)\",\"R55,000\"],[\"Bond\",\"R495,000 at 10%\"],[\"Monthly bond\",\"~R4,300\"],[\"Monthly rent\",\"R5,000\"],[\"Monthly rates/levy\",\"R500\"],[\"Monthly maintenance (avg)\",\"R300\"]]",
+      "category": "Repayment assumption requires clarification",
+      "concern": "The listed approximately R4,300 bond payment lacks a term; the later task specifies 10% over twenty years, which gives about R4,777 for R495,000 with monthly repayments before fees.",
+      "proposedWording": "State the assumed term, rate convention and charges for the classroom payment. Retain the given arithmetic exercise until a separately reviewed source correction aligns all affected prompts.",
+      "implementationImpact": "Separate reviewed learner-source proposal. Preserve stable lesson/block/prompt/response identities with explicit compiler mapping before any source release. No canonical correction is applied in this guide batch.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g11-t3-l43-043",
+      "blockId": "8641d1088718c6b6156c49e2-1",
+      "exactPassage": "Key idea: Mr. Dlamini's first property cost him money every month for three years. His friends thought he was crazy. The paradox: the best property investments often look like mistakes at the beginning. Negative cash flow feels like failure. But if the property is well-located and rents rise over time, negative cash flow is temporary.",
+      "category": "Unsupported guarantee",
+      "concern": "A location and rising rents do not guarantee that negative cash flow is temporary or that holding is the best choice.",
+      "proposedWording": "A property may become cash-flow positive if income and costs evolve favourably, but this is uncertain. Review affordability and alternatives; waiting, selling or declining can be responsible.",
+      "implementationImpact": "Separate reviewed learner-source proposal. Preserve stable lesson/block/prompt/response identities with explicit compiler mapping before any source release. No canonical correction is applied in this guide batch.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g11-t3-l44-044",
+      "blockId": "287853405227658c11a7a4ef-1",
+      "exactPassage": "Growth = Market Penetration → Market Development → Product Development → Diversification",
+      "category": "Conceptual framework presented as a compulsory sequence",
+      "concern": "The Ansoff options are shown as a chronological ladder, although a business may use or combine options in different orders.",
+      "proposedWording": "Present the four options as a product/market comparison. Choose and review an option for the actual situation rather than require movement through each box.",
+      "implementationImpact": "Separate reviewed learner-source proposal. Preserve stable lesson/block/prompt/response identities with explicit compiler mapping before any source release. No canonical correction is applied in this guide batch.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g11-t3-l44-044",
+      "blockId": "e504f80f1d8de5bec7e30d94-1",
+      "exactPassage": "Each Step Increases Risk",
+      "category": "Risk heuristic presented as fixed law",
+      "concern": "Actual risk is not necessarily strictly increasing in the displayed order; evidence, capabilities and execution matter.",
+      "proposedWording": "Unfamiliar products and markets can add uncertainty; compare the specific risks and resources rather than assume a universal ranking.",
+      "implementationImpact": "Separate reviewed learner-source proposal. Preserve stable lesson/block/prompt/response identities with explicit compiler mapping before any source release. No canonical correction is applied in this guide batch.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g11-t3-l44-044",
+      "blockId": "a2d844409333f2e8b91863ad-1",
+      "exactPassage": "[[\"Term\",\"Definition\",\"isiZulu\",\"Afrikaans\"],[\"Market penetration\",\"Selling more of existing products to existing customers\",\"Ukungena emakethe\",\"Markpenetrasie\"],[\"Market development\",\"Selling existing products to new customers\",\"Ukuthuthukisa imakethe\",\"Markontwikkeling\"],[\"Product development\",\"Creating new products for existing customers\",\"Ukuthuthukisa umkhiqizo\",\"Produkontwikkeling\"],[\"Diversification\",\"New products, new customers — highest risk\",\"Ukwehlukanisa\",\"Diversifikasie\"]]",
+      "category": "Market/customer distinction",
+      "concern": "The definition restricts penetration to existing customers, although attracting new buyers in an existing market can also be penetration.",
+      "proposedWording": "Define penetration as increasing sales of existing products in existing markets; distinguish a new market from a new individual buyer.",
+      "implementationImpact": "Separate reviewed learner-source proposal. Preserve stable lesson/block/prompt/response identities with explicit compiler mapping before any source release. No canonical correction is applied in this guide batch.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g11-t3-l45-045",
+      "blockId": "74da6c28862cdde94ee40f6c-1",
+      "exactPassage": "Stage 5: The Simplification (Age 19–20) \"I cut my products from ten to three — the three that actually sold. I stopped the ads and focused on organic reach. Revenue stayed the same. Hours dropped by 60%. THAT is scaling. Not more work. Less work for the same or better result.\"",
+      "category": "Scaling versus efficiency distinction",
+      "concern": "Reduced hours at unchanged revenue demonstrates time efficiency but does not establish all resource costs or the source definition of revenue growing faster than costs.",
+      "proposedWording": "Describe the result as improved time efficiency that may support scaling. State revenue, cost and output changes before concluding the whole business has scaled.",
+      "implementationImpact": "Separate reviewed learner-source proposal. Preserve stable lesson/block/prompt/response identities with explicit compiler mapping before any source release. No canonical correction is applied in this guide batch.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g11-t3-l45-045",
+      "blockId": "13e311b8f342bcccc3e1b066-1",
+      "exactPassage": "Stage 3: The Ads Mistake (Age 18–19) \"I tried Facebook ads. Spent R2,000. Made R800 back. I did not understand targeting, copywriting, or analytics. I just boosted posts and hoped. Hope is not a strategy. I lost R1,200 and learned that marketing is a skill.\"",
+      "category": "Revenue versus net-loss ambiguity",
+      "concern": "If R800 is sales revenue, subtracting only the R2,000 ad spend excludes product and other costs from the total loss.",
+      "proposedWording": "Call R1,200 the advertising shortfall before other costs, or specify that R800 is the contribution after all non-ad costs.",
+      "implementationImpact": "Separate reviewed learner-source proposal. Preserve stable lesson/block/prompt/response identities with explicit compiler mapping before any source release. No canonical correction is applied in this guide batch.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g11-t3-l46-046",
+      "blockId": "7c4be0def05f9801a81223ba-1",
+      "exactPassage": "[[\"Type\",\"Scalability\",\"Upfront Work\",\"Ongoing Work\",\"Example\"],[\"Job\",\"Low — limited by hours\",\"Low\",\"High\",\"Salary, wage\"],[\"Freelance/Service\",\"Low-Med — limited by time\",\"Low-Med\",\"High\",\"Tutoring, design\"],[\"Business with systems\",\"Medium — can hire, automate\",\"High\",\"Medium\",\"Online store\"],[\"Digital products\",\"High — create once, sell many\",\"High\",\"Low\",\"Ebook, course, study guide\"],[\"Investments\",\"High — money grows automatically\",\"Varies\",\"Very Low\",\"Dividends, interest\"],[\"Rental property\",\"Medium — each property needs work\",\"High\",\"Medium\",\"Physical property\"]]",
+      "category": "Unqualified automatic investment growth",
+      "concern": "The matrix says money grows automatically and can imply guaranteed investment returns or no continuing responsibility.",
+      "proposedWording": "Investment values/returns can rise or fall. Describe potential scalability separately from capital needs, risk, cost and continuing review; passive does not mean risk-free or cost-free.",
+      "implementationImpact": "Separate reviewed learner-source proposal. Preserve stable lesson/block/prompt/response identities with explicit compiler mapping before any source release. No canonical correction is applied in this guide batch.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g11-t3-l46-046",
+      "blockId": "5f9eb09c6552942725441808-1",
+      "exactPassage": "Here’s the tension: creating a scalable asset requires faith. You must invest hours — maybe dozens of hours — into something that might not sell. You must create without knowing if anyone will buy. Most people never start because they cannot tolerate that uncertainty. They stick with active income because it is certain. But the people who build wealth are the ones who can tolerate the uncertainty of creation.",
+      "category": "Unsupported certainty contrast",
+      "concern": "The passage contrasts uncertain creation with supposedly certain active income and attributes wealth to tolerating creation uncertainty, omitting external constraints.",
+      "proposedWording": "Both active and scalable income involve uncertainty. A suitable choice depends on needs, resources and evidence; maintaining active work can be responsible rather than a failure of courage.",
+      "implementationImpact": "Separate reviewed learner-source proposal. Preserve stable lesson/block/prompt/response identities with explicit compiler mapping before any source release. No canonical correction is applied in this guide batch.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g11-t3-l47-047",
+      "blockId": "d05e6198ed0d45675da40877-1",
+      "exactPassage": "[[\"Vehicle\",\"Tax Benefit\",\"Annual Limit\",\"Lifetime Limit\"],[\"TFSA\",\"Growth tax-free\",\"R36,000\",\"R500,000\"],[\"RA\",\"Contributions tax-deductible\",\"27.5% of income\",\"N/A\"],[\"Pension fund\",\"Contributions tax-deductible\",\"Based on income\",\"N/A\"],[\"Primary residence\",\"First R2 million capital gains tax-free\",\"When you sell\",\"Once\"],[\"Interest exemption\",\"First R23,800 interest tax-free (under 65)\",\"Per year\",\"N/A\"]]",
+      "category": "Current official tax figures and combined limits",
+      "concern": "The annual TFSA and primary-residence figures are outdated as current 2026/27 rules, the RA entry omits the shared rand cap/base and the primary-residence once wording is misleading. SARS current guidance was read on 1 November 2026.",
+      "proposedWording": "Date the tax-year table. SARS states TFSA annual contributions R46,000 from 1 March 2026 and lifetime R500,000. Its 2026/27 guidance gives a combined retirement-fund deduction of 27.5% of the greater of remuneration/taxable income, capped at R430,000, with detailed conditions; primary-residence gain exclusion R3 million subject to rules, not one lifetime sale. Obtain qualified tax editorial review.",
+      "implementationImpact": "Separate reviewed learner-source proposal. Preserve stable lesson/block/prompt/response identities with explicit compiler mapping before any source release. No canonical correction is applied in this guide batch.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g11-t3-l47-047",
+      "blockId": "49078aa0ba33931f904ba2eb-1",
+      "exactPassage": "\"Here is how it adds up. Imagine you invest R3,000 a month — R36,000 a year — for 20 years at 8% growth. In a normal taxable account, you would pay tax on the interest, dividends, and capital gains. In a TFSA, you pay nothing. Nothing. Over 20 years, the difference could be hundreds of thousands of rand. That is not evasion. That is using the system exactly as it was designed — to encourage saving and investing.\"",
+      "category": "Projection conflicts with lifetime contribution cap",
+      "concern": "R3,000 monthly for twenty years is R720,000 contributions, exceeding the stated R500,000 lifetime TFSA cap. Taxable-account differences also need asset, timing and tax assumptions.",
+      "proposedWording": "Use a contribution schedule that stops at the applicable lifetime cap, state contribution timing/returns/cost/tax assumptions and label the result illustrative rather than a guaranteed tax-free outcome.",
+      "implementationImpact": "Separate reviewed learner-source proposal. Preserve stable lesson/block/prompt/response identities with explicit compiler mapping before any source release. No canonical correction is applied in this guide batch.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g11-t3-l47-047",
+      "blockId": "2ea48939820192d8b3ce781c-1",
+      "exactPassage": "[[\"Strategy\",\"Without\",\"With\",\"Difference\"],[\"Invest R36,000/year for 20 years\",\"~R1.4 million after tax\",\"~R1.6 million in TFSA\",\"+R200,000\"],[\"Contribute R20,000 to RA, 30% tax bracket\",\"Pay R20,000, get nothing back\",\"Pay R20,000, get R6,000 tax refund\",\"+R6,000/year\"]]",
+      "category": "Unsubstantiated tax comparison and refund wording",
+      "concern": "The twenty-year comparison inherits the lifetime-cap conflict and lacks tax assumptions. A 30% assumed marginal saving is not a guaranteed refund or a current South African tax bracket.",
+      "proposedWording": "Replace with a compliant dated illustration and explicit assumptions after tax review. A fully deductible R20,000 at an assumed 30% marginal rate reduces liability by R6,000; actual assessment/refund depends on the person’s circumstances.",
+      "implementationImpact": "Separate reviewed learner-source proposal. Preserve stable lesson/block/prompt/response identities with explicit compiler mapping before any source release. No canonical correction is applied in this guide batch.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g11-t3-l47-047",
+      "blockId": "24904e914c5d6d28f4744892-1",
+      "exactPassage": "[[\"Rule\",\"What It Means\"],[\"TFSA lifetime limit\",\"R500,000 total contributions\"],[\"RA withdrawal age\",\"55 (cannot access before)\"],[\"Capital gains exclusion\",\"First R40,000 gain per year tax-free\"],[\"Primary residence exclusion\",\"First R2 million gain tax-free when you sell\"],[\"Interest exemption\",\"First R23,800 interest tax-free (under 65)\"]]",
+      "category": "Current rules and withdrawal absolute",
+      "concern": "SARS current guidance gives a R50,000 annual CGT exclusion and R3 million primary-residence gain exclusion with conditions. The absolute RA cannot-access-before-55 omits qualifying two-pot savings-component access and other relevant rules.",
+      "proposedWording": "Date and verify every tax entry with SARS and qualified review. Explain retirement-oriented restrictions while noting that specific components may have permitted taxable access under current rules; do not imply all capital is freely accessible.",
+      "implementationImpact": "Separate reviewed learner-source proposal. Preserve stable lesson/block/prompt/response identities with explicit compiler mapping before any source release. No canonical correction is applied in this guide batch.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g11-t3-l47-047",
+      "blockId": "07c6c3d0f66e3c5dccd4a856-1",
+      "exactPassage": "Tax Evasion = Crime. Tax Avoidance = Smart.",
+      "category": "Legal tax-planning qualification",
+      "concern": "Calling all tax avoidance smart fails to distinguish legitimate planning from impermissible avoidance arrangements.",
+      "proposedWording": "Use lawful tax planning within the applicable rules, including anti-avoidance provisions. Evasion is unlawful; real arrangements need appropriate qualified advice.",
+      "implementationImpact": "Separate reviewed learner-source proposal. Preserve stable lesson/block/prompt/response identities with explicit compiler mapping before any source release. No canonical correction is applied in this guide batch.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g11-t3-l48-048",
+      "blockId": "23cf31f4eaaeaeb4a878e414-1",
+      "exactPassage": "Risk 2 — Liability: \"If someone gets hurt in my factory and sues me, my personal assets are protected because the business is a separate legal entity. If I were a sole proprietor, they could take my house. Legal structure is not just paperwork. It is a shield.\"",
+      "category": "Legal protection overstatement",
+      "concern": "A separate entity does not invariably shield every personal asset: guarantees, personal duties, misconduct and other exceptions may matter.",
+      "proposedWording": "A suitable entity can limit some exposure, subject to law, guarantees, conduct and facts. Seek qualified advice rather than assume personal assets are always protected.",
+      "implementationImpact": "Separate reviewed learner-source proposal. Preserve stable lesson/block/prompt/response identities with explicit compiler mapping before any source release. No canonical correction is applied in this guide batch.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g11-t3-l48-048",
+      "blockId": "b6939be2f80e0eb089e6cef9-1",
+      "exactPassage": "Risk 1 — Disaster: \"Fire. Flood. Theft. My factory is insured. If it burns down tomorrow, I do not lose 25 years of work. I rebuild. Insurance is the price of peace.\"",
+      "category": "Insurance coverage overstatement",
+      "concern": "Insurance does not guarantee full rebuilding: coverage, exclusions, excesses, limits and insurer obligations affect claims.",
+      "proposedWording": "Insurance may cover specified losses according to policy terms. Check covered risks, limits, exclusions and affordability; some loss may remain.",
+      "implementationImpact": "Separate reviewed learner-source proposal. Preserve stable lesson/block/prompt/response identities with explicit compiler mapping before any source release. No canonical correction is applied in this guide batch.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g11-t3-l48-048",
+      "blockId": "368ff805b40ea8d275d89d9f-1",
+      "exactPassage": "Risk 5 — Inflation: \"Money loses value over time. If your wealth is in cash, you are losing money every year without seeing it. Growth investments — shares, property — protect against inflation.\"",
+      "category": "Inflation and return qualification",
+      "concern": "Cash real value depends on interest, inflation and tax; shares/property can lose value and do not guarantee inflation protection.",
+      "proposedWording": "Compare after-tax returns with inflation. Growth assets may help over a suitable horizon but carry risk and can underperform; accessible cash also serves a purpose.",
+      "implementationImpact": "Separate reviewed learner-source proposal. Preserve stable lesson/block/prompt/response identities with explicit compiler mapping before any source release. No canonical correction is applied in this guide batch.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g11-t3-l49-049",
+      "blockId": "2f573ac79056c416ae70c14d-1",
+      "exactPassage": "[[\"Approach\",\"What It Means\",\"Example\"],[\"Screening out\",\"Avoid companies that conflict with your values\",\"No tobacco, weapons, fossil fuels\"],[\"Screening in\",\"Seek companies doing good\",\"Renewable energy, fair labour\"],[\"Active impact\",\"Invest specifically to create change\",\"Community projects, green bonds, social enterprises\"]]",
+      "category": "ESG screening versus impact investing",
+      "concern": "Screening and ESG integration do not alone establish intentional measurable positive impact. The table conflates related approaches.",
+      "proposedWording": "Distinguish responsible/ESG screening from investments intentionally seeking and measuring positive impact alongside financial return. A label or exclusion alone does not prove an outcome.",
+      "implementationImpact": "Separate reviewed learner-source proposal. Preserve stable lesson/block/prompt/response identities with explicit compiler mapping before any source release. No canonical correction is applied in this guide batch.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g11-t3-l49-049",
+      "blockId": "41918fe7d7ab7f1e3c585a9e-1",
+      "exactPassage": "[[\"Option\",\"Description\",\"Minimum\"],[\"ESG-focused unit trusts\",\"Funds that screen for ESG factors\",\"R500+\"],[\"Green bonds\",\"Bonds funding environmental projects\",\"R1,000+\"],[\"Community investment notes\",\"Invest in local projects\",\"R1,000+\"],[\"Development funds\",\"Funds investing in underserved areas\",\"R500+\"],[\"Crowdfunding\",\"Pool money with others for impact projects\",\"R100+\"]]",
+      "category": "Current product claims require provider verification",
+      "concern": "Minimum amounts and generic option availability are not supported by dated named product sources.",
+      "proposedWording": "Mark the table illustrative until each current option, eligibility, fees and minimum is verified against a dated issuer/provider document. No product endorsement or return guarantee follows.",
+      "implementationImpact": "Separate reviewed learner-source proposal. Preserve stable lesson/block/prompt/response identities with explicit compiler mapping before any source release. No canonical correction is applied in this guide batch.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g11-t3-l50-050",
+      "blockId": "10175780d5efd9e3bad8bc3e-1",
+      "exactPassage": "\"South Africa is a small part of the world economy. Less than 1%. If you only invest here, you are missing 99% of the world's opportunities. And you are taking on unnecessary risk — because if the South African economy struggles, everything you own struggles with it.\"",
+      "category": "Local listing versus economic exposure",
+      "concern": "Not every SA-listed investment depends only on the domestic economy; many companies/funds have global operations or holdings. Economy share also needs a dated metric/source if treated as a current statistic.",
+      "proposedWording": "Distinguish listing location from underlying geographic/currency exposure. Explain concentration risk without claiming every local holding struggles identically or freezing an unsourced current GDP percentage.",
+      "implementationImpact": "Separate reviewed learner-source proposal. Preserve stable lesson/block/prompt/response identities with explicit compiler mapping before any source release. No canonical correction is applied in this guide batch.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g11-t3-l50-050",
+      "blockId": "0625d63a466d039c4372a35b-1",
+      "exactPassage": "[[\"Method\",\"How It Works\",\"Minimum\",\"Tax Implications\"],[\"Local ETFs with global exposure\",\"Buy SA-listed ETFs that hold international assets\",\"R500+\",\"Taxed in SA\"],[\"Offshore unit trusts\",\"SA-managed funds investing globally\",\"R1,000+\",\"Taxed in SA\"],[\"Direct international investing\",\"Use platforms like EasyEquities USD\",\"R1,000+\",\"May have US estate tax implications\"],[\"Foreign currency account\",\"Hold dollars, pounds, euros\",\"Varies\",\"Interest taxed in SA\"]]",
+      "category": "Current product and tax details require verification",
+      "concern": "Generic platform minimums and short tax labels cannot serve as complete current offshore rules or provider terms.",
+      "proposedWording": "Provide dated verified examples, underlying holdings/currency exposure, costs and appropriate tax/exchange-control qualifications; label unverified details as illustrative.",
+      "implementationImpact": "Separate reviewed learner-source proposal. Preserve stable lesson/block/prompt/response identities with explicit compiler mapping before any source release. No canonical correction is applied in this guide batch.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g11-t3-l52-052",
+      "blockId": "3990a6486a81caa10999c238-1",
+      "exactPassage": "Here’s the tension: the section you are avoiding is the section that will teach you the most. If you are avoiding the protection plan, it is because you do not want to think about what could go wrong. If you are avoiding the five forms of wealth, it is because you know one of them is weak and you do not want to face it. Face the section you are avoiding. That is where your growth is.",
+      "category": "Unsupported psychological inference",
+      "concern": "A learner’s difficulty with a section does not establish denial of risk or unwillingness to face a weak area. Privacy, access, literacy and time can matter.",
+      "proposedWording": "Identify what information or support would help with a difficult section. Invite reflection without asserting a hidden motive or requiring private disclosure.",
+      "implementationImpact": "Separate reviewed learner-source proposal. Preserve stable lesson/block/prompt/response identities with explicit compiler mapping before any source release. No canonical correction is applied in this guide batch.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g11-t3-l53-053",
+      "blockId": "82a36e8592ccd4c238ff6d66-1",
+      "exactPassage": "[[\"Area\",\"Research Needed\",\"Findings\"],[\"TFSA\",\"Current providers, fees, minimums\",\"EasyEquities: R0 minimum, low fees. Satrix: R500 minimum.\"],[\"RA\",\"Minimum contributions, providers\",\"10X: R500/month. Sygnia: R500/month.\"],[\"ESG funds\",\"Available in SA, minimums\",\"Old Mutual ESG Fund: R500. Sygnia SRI: R500.\"],[\"Property REITs\",\"Available on JSE, yields\",\"Growthpoint: ~8% yield. Redefine: ~9% yield.\"],[\"Digital products\",\"Platforms, costs\",\"Gumroad: free to list. Payhip: free to list.\"]]",
+      "category": "Provider figures require current external verification",
+      "concern": "Named providers, minimums, fees, yields and platform terms are time-sensitive and lack a dated basis.",
+      "proposedWording": "Retain as dated story research only until verified against current issuer/provider documents. Record date, fees, return period and limitations; a yield is not a guaranteed total return.",
+      "implementationImpact": "Separate reviewed learner-source proposal. Preserve stable lesson/block/prompt/response identities with explicit compiler mapping before any source release. No canonical correction is applied in this guide batch.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g11-t3-l53-053",
+      "blockId": "86f04ec4d58058acfc7b3386-1",
+      "exactPassage": "She uses these to build realistic projections. \"If I max my TFSA from age 20 to 30 — R36,000 a year at 8% growth — that is about R560,000, tax-free. If I add an RA from 25, even R500 a month, that adds another R100,000 by 30. These are real numbers. Not wishes. Math.\"",
+      "category": "Projection assumptions and inconsistent RA amount",
+      "concern": "The TFSA value can be plausible with beginning-year contributions, but timing is unstated. R500 monthly from 25 to 30 at an illustrative 8% effective annual rate is about R36,472, not R100,000; any other rate, duration or lump sum is absent.",
+      "proposedWording": "State dates, timing, rates, costs and tax assumptions. Retain a clearly labelled ten-year illustration within contribution limits; correct the RA amount or specify the different contributions/period supporting it after review.",
+      "implementationImpact": "Separate reviewed learner-source proposal. Preserve stable lesson/block/prompt/response identities with explicit compiler mapping before any source release. No canonical correction is applied in this guide batch.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g11-t3-l53-053",
+      "blockId": "349b5cfd9d3273d2ef140ec8-1",
+      "exactPassage": "[[\"Assumption\",\"How to Estimate\"],[\"Investment returns\",\"Use historical averages (8–10% for equities)\"],[\"Salary growth\",\"Assume 5–7% per year\"],[\"Inflation\",\"Assume 5% per year\"],[\"Property growth\",\"Assume 5–8% per year\"],[\"Business income\",\"Be conservative — start low\"]]",
+      "category": "Planning assumptions presented as generally realistic facts",
+      "concern": "Generic equity, salary, inflation and property rates need period, currency, evidence and uncertainty; historical averages do not make an individual forecast reliable.",
+      "proposedWording": "Label each rate as an illustrative scenario to test and update with dated relevant data. State nominal/real, fees, horizon and downside assumptions as needed.",
+      "implementationImpact": "Separate reviewed learner-source proposal. Preserve stable lesson/block/prompt/response identities with explicit compiler mapping before any source release. No canonical correction is applied in this guide batch.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g11-t3-l55-055",
+      "blockId": "5be4becc6643b0c161e59541-1",
+      "exactPassage": "\"My Reality Check for the workshops: If I have not run at least one paid workshop by the end of Grade 12, I am letting fear of failure stop me. Fear is not a strategy.\"",
+      "category": "Motivation presented as diagnostic evidence",
+      "concern": "A missed paid-workshop deadline does not establish fear; resources, access, duties or a responsible change can explain it.",
+      "proposedWording": "Use the date as a review signal: examine demand, resources, access and choices before deciding whether to adjust, seek support or change direction.",
+      "implementationImpact": "Separate reviewed learner-source proposal. Preserve stable lesson/block/prompt/response identities with explicit compiler mapping before any source release. No canonical correction is applied in this guide batch.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g11-t3-l56-056",
+      "blockId": "9ba75db7856a9b5cba21c22c-1",
+      "exactPassage": "Question 3 — The Commitment: What is the ONE action you will take THIS WEEK to begin implementing your 10-Year Wealth Plan? Be specific. Name the action. Name the day. If you cannot commit to a specific action, ask yourself: what am I afraid of?",
+      "category": "Commitment prompt presupposes fear",
+      "concern": "A learner may be unable to commit to an immediate implementation for practical or safety reasons, not only fear.",
+      "proposedWording": "Name an appropriate feasible first step or dependency and support. If no immediate step is suitable, explain what needs to change without assuming a hidden fear.",
+      "implementationImpact": "Separate reviewed learner-source proposal. Preserve stable lesson/block/prompt/response identities with explicit compiler mapping before any source release. No canonical correction is applied in this guide batch.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    },
+    {
+      "lessonId": "g11-t3-l57-057",
+      "blockId": "34bb7db741fc9717fe3eded9-1",
+      "exactPassage": "9. The 1-10 Scale: At the start of the term, you were a \"1\" on the wealth literacy scale. Where are you now, honestly? What is the exact number? What is the ONE specific thing you need to do in Term 4 to move up by a single point?",
+      "category": "Unsubstantiated self-rating baseline",
+      "concern": "The informal wealth-literacy scale assumes everyone began at one and requests an exact comparable score without a validated measure.",
+      "proposedWording": "Use the learner’s own earlier reflection if available. Treat a rating as a personal estimate, with evidence and a feasible next step; do not impose a starting number or compulsory increase.",
+      "implementationImpact": "Separate reviewed learner-source proposal. Preserve stable lesson/block/prompt/response identities with explicit compiler mapping before any source release. No canonical correction is applied in this guide batch.",
+      "status": "PROPOSED_SEPARATE_SOURCE_REVIEW; NOT APPLIED"
+    }
+  ]
+}

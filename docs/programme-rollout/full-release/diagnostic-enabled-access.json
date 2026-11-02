@@ -1,0 +1,46 @@
+{
+  "at": "2026-11-02T10:23:06.635Z",
+  "authentication": "genuine browser password logins",
+  "projectRef": "inxshlumnhcgiahxqewe",
+  "baseURL": "https://applied-commerce-sa-staging-do5wxp54l.vercel.app",
+  "enabled": true,
+  "status": "PASS",
+  "checks": [
+    {
+      "role": "platformAdmin",
+      "normalStatus": 200,
+      "measuredStatus": 200,
+      "normalMeasurementAbsent": true,
+      "deniedPrivatePayloadAbsent": false
+    },
+    {
+      "role": "facilitator",
+      "normalStatus": 200,
+      "measuredStatus": 403,
+      "normalMeasurementAbsent": true,
+      "deniedPrivatePayloadAbsent": true
+    },
+    {
+      "role": "schoolAdmin",
+      "normalStatus": 200,
+      "measuredStatus": 403,
+      "normalMeasurementAbsent": true,
+      "deniedPrivatePayloadAbsent": true
+    },
+    {
+      "role": "learner",
+      "normalStatus": 403,
+      "measuredStatus": 403,
+      "normalMeasurementAbsent": true,
+      "deniedPrivatePayloadAbsent": true
+    },
+    {
+      "role": "unassigned",
+      "normalStatus": 403,
+      "measuredStatus": 403,
+      "normalMeasurementAbsent": true,
+      "deniedPrivatePayloadAbsent": true
+    }
+  ],
+  "commit": "fc6bf6ed984385e65313ce73d14d09453fc09ec6"
+}

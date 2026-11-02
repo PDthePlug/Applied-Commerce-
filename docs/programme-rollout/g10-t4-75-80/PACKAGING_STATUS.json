@@ -1,0 +1,50 @@
+{
+  "at": "2026-11-01T04:45:01.378085+00:00",
+  "projectRef": "inxshlumnhcgiahxqewe",
+  "stagingVercelProject": "applied-commerce-sa-staging",
+  "verifiedGuides": 237,
+  "privatePreparedGuides": 0,
+  "candidateGuideTotal": 237,
+  "candidateStatus": "SEALED AND VERIFIED IN GENUINE STAGING",
+  "ownerReaffirmedFullDirective": "2026-11-01",
+  "local": {
+    "runtime": "395 lessons / 4 assessments / 20766 stable blocks PASS",
+    "nodeTests": 218,
+    "typecheck": "PASS",
+    "lint": "PASS",
+    "build": "PASS",
+    "privateSourceSchemaRenderer": "PASS; all231 prior bindings preserved"
+  },
+  "genuineLearnerBaseline": {
+    "commit": "c7942644eb01a126b06ac741b414e4556f002539",
+    "newGuideDelivery": "NOT TESTED; guides not sealed",
+    "readingOnlyLessons": 3,
+    "authoredResponseControls": 0,
+    "optionalNotesCompletionFreshLoginScopedReview": "PASS",
+    "editableAudienceTables": 1,
+    "tableFreshLoginAndRestoration": "PASS"
+  },
+  "blocker": null,
+  "privateSealingInputsCreated": true,
+  "originalServerKeyBindingUnchanged": true,
+  "temporaryInputs": 0,
+  "keyDecryptionRequested": false,
+  "nextSourceAudit": {
+    "grade": 11,
+    "term": 1,
+    "lessonsRead": 20,
+    "blocksRead": 1143,
+    "newGuidesAuthored": 0,
+    "acceptedBenchmarkPreserved": "g11-t1-l14-014"
+  },
+  "pending": [
+    "Independent educator moderation and timing trials pending",
+    "Physical printer and human assistive-technology trials pending",
+    "Hosted cold-process, concurrency and runtime server-memory measurements pending",
+    "Natural JWT expiry demonstrated historically; no fresh natural-expiry or configured maximum/inactivity lifetime claim in this batch"
+  ],
+  "stagedPendingVerification": 0,
+  "sealingAccess": "Coding Vercel token now reaches exact isolated project and supports creation/deletion; original server key used without export",
+  "testedApplicationCommit": "459fa223462187a3bcda3f73984c2d2e73ffeabe",
+  "stagingURL": "https://applied-commerce-sa-staging-gyukafoek.vercel.app"
+}
