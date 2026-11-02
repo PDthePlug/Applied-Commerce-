@@ -1,0 +1,33 @@
+{
+  "at": "2026-11-02T12:46:06.055Z",
+  "status": "PASS",
+  "projectRef": "inxshlumnhcgiahxqewe",
+  "baseURL": "https://applied-commerce-sa-staging-5svgh4g9x.vercel.app",
+  "authentication": "genuine browser and API password login",
+  "scope": "supported Auth global logout invalidates an existing educator browser session; fresh password login recovers access",
+  "naturalExpiry": "NOT TESTED by this runner",
+  "checks": [
+    {
+      "operation": "existing browser authorised",
+      "status": 200
+    },
+    {
+      "operation": "supported Auth global logout",
+      "status": 204
+    },
+    {
+      "operation": "same browser denied without changing cookies",
+      "status": 401,
+      "privatePayloadAbsent": true
+    },
+    {
+      "operation": "reload removes teacher interface",
+      "pass": true
+    },
+    {
+      "operation": "fresh password login restores authorised access",
+      "status": 200
+    }
+  ],
+  "commit": "ba173c4bc0221e48b41d9138c3926178f69d1a73"
+}

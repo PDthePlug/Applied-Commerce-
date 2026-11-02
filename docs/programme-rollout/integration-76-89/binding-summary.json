@@ -1,0 +1,21 @@
+{
+  "mainGuides": 215,
+  "integrationGuides": 395,
+  "originalBindingsIdentical": 214,
+  "changedPriorBindings": [
+    "g8-t1-l12-012"
+  ],
+  "changedCoveragePaths": [
+    "materials.0",
+    "stages.0.explain.0"
+  ],
+  "inheritedCorrection": {
+    "lessonId": "g8-t1-l12-012",
+    "mainPlanSHA256": "780eafa11026dc6ddc0f26f458ac13e64eb2361f90361d12424d0b623920ecd0",
+    "accepted89PlanSHA256": "8e90ee4e64de3e11670e7c2963c9254a36e8b5c76f2ad93c69cab49d00002dce",
+    "originalCommit": "0f3cb61",
+    "sourcePR": 80,
+    "scope": "Two existing teacher fields describe the actual five numbered saving methods rather than a nonexistent table. Learner source, placement, period and saved-work identity remain unchanged.",
+    "inheritedFromOwnerAccepted89": true
+  }
+}
