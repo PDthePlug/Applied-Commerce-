@@ -19,7 +19,10 @@
     "classroom:inventory": "node scripts/classroom-inventory.mjs",
     "classroom:release": "node scripts/classroom-release.mjs",
     "classroom:fixture": "node scripts/prepare-classroom-fixture.mjs",
-    "verify": "npm run verify:runtime && npm test && npm run typecheck && npm run lint && npm run build"
+    "verify": "npm run verify:runtime && npm test && npm run typecheck && npm run lint && npm run build",
+    "census:learner": "node scripts/audit-learner-semantics.mjs",
+    "compile:wraps": "node scripts/compile-lesson-wraps.mjs",
+    "test:learner": "playwright test --config=playwright.learner-hardening.config.mjs"
   },
   "dependencies": {
     "@supabase/ssr": "^0.12.7",

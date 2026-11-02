@@ -1,0 +1,843 @@
+{
+  "at": "2026-11-02T16:40:28.898452+00:00",
+  "implementationCommit": "b59dec5794117bf02dc22d4464e365112ea8ac17",
+  "semanticCommit": "87ed1bd0287821ed1fc6e719c97e224c88f1874d",
+  "baseline": "ab52273eae7d5d459c77e30a9d7bfdea8d8540ff",
+  "sourceAndModel": {
+    "lessons": 395,
+    "assessments": 4,
+    "originalCompiledBlocks": 20766,
+    "effectiveReaderBlocks": 20742,
+    "wraps": 395,
+    "uniqueTakeawaySets": 395,
+    "deeperSections": 383,
+    "findings": 1221,
+    "findingsByClass": {
+      "circling-as-prose": 5,
+      "deepening-disclosure": 383,
+      "lesson-wrap": 395,
+      "source-ambiguity": 15,
+      "redundant-response": 29,
+      "missing-confidence-marker": 10,
+      "missing-repeated-response": 1,
+      "missing-deepening-response": 315,
+      "privacy-promise-conflict": 3,
+      "checkpoint-context-lost": 7,
+      "multiple-questions-one-response": 1,
+      "selection-as-prose": 4,
+      "labelled-question-response": 50,
+      "missing-written-evaluation": 1,
+      "lesson-map-contrast": 1,
+      "statement-text-scaling": 1
+    },
+    "wrapsByGrade": {
+      "8": 80,
+      "9": 75,
+      "10": 80,
+      "11": 80,
+      "12": 80
+    },
+    "independentOwnerCurriculumAcceptance": "pending"
+  },
+  "automated": {
+    "runtime": "PASS",
+    "nodeTests": {
+      "passed": 240,
+      "failed": 0
+    },
+    "identityPythonTests": {
+      "passed": 2
+    },
+    "typecheck": "PASS",
+    "lint": "PASS",
+    "localAndStagingBuilds": "PASS",
+    "CI": {
+      "run": "https://github.com/PDthePlug/Applied-Commerce-/actions/runs/41482135977",
+      "commit": "b59dec5794117bf02dc22d4464e365112ea8ac17",
+      "conclusion": "success",
+      "browserPassed": 252,
+      "unitTestsPassed": 240,
+      "syntheticDatabaseOperations": "PASS"
+    },
+    "focusedWorkbook": {
+      "commit": "b59dec5794117bf02dc22d4464e365112ea8ac17",
+      "passed": 24,
+      "widths": [
+        320,
+        360,
+        430,
+        768,
+        1280,
+        1920
+      ]
+    },
+    "additionalUIAudit": {
+      "commit": "b6d516b",
+      "passed": 390
+    },
+    "renderedCensuses": {
+      "before": {
+        "sourceCommit": "ab52273eae7d5d459c77e30a9d7bfdea8d8540ff",
+        "units": 399,
+        "errors": 0,
+        "overflow": 0,
+        "wraps": 0,
+        "panels": 295
+      },
+      "after": {
+        "sourceCommit": "87ed1bd0287821ed1fc6e719c97e224c88f1874d",
+        "units": 399,
+        "errors": 0,
+        "overflow": 0,
+        "wraps": 395,
+        "panels": 383
+      }
+    },
+    "accessibility": {
+      "commit": "b59dec5794117bf02dc22d4464e365112ea8ac17",
+      "scans": 36,
+      "violations": 0,
+      "textScale": 2,
+      "cases": [
+        {
+          "path": "/learn/8/term/1/g8-t1-l03-003",
+          "width": 320,
+          "appearance": "light",
+          "textScale": 2,
+          "violations": []
+        },
+        {
+          "path": "/learn/8/term/1/g8-t1-l16-016",
+          "width": 320,
+          "appearance": "light",
+          "textScale": 2,
+          "violations": []
+        },
+        {
+          "path": "/learn/9/term/1/g9-t1-l07-007",
+          "width": 320,
+          "appearance": "light",
+          "textScale": 2,
+          "violations": []
+        },
+        {
+          "path": "/learn/8/term/1/g8-t1-l03-003",
+          "width": 320,
+          "appearance": "dark",
+          "textScale": 2,
+          "violations": []
+        },
+        {
+          "path": "/learn/8/term/1/g8-t1-l16-016",
+          "width": 320,
+          "appearance": "dark",
+          "textScale": 2,
+          "violations": []
+        },
+        {
+          "path": "/learn/9/term/1/g9-t1-l07-007",
+          "width": 320,
+          "appearance": "dark",
+          "textScale": 2,
+          "violations": []
+        },
+        {
+          "path": "/learn/8/term/1/g8-t1-l03-003",
+          "width": 360,
+          "appearance": "light",
+          "textScale": 2,
+          "violations": []
+        },
+        {
+          "path": "/learn/8/term/1/g8-t1-l16-016",
+          "width": 360,
+          "appearance": "light",
+          "textScale": 2,
+          "violations": []
+        },
+        {
+          "path": "/learn/9/term/1/g9-t1-l07-007",
+          "width": 360,
+          "appearance": "light",
+          "textScale": 2,
+          "violations": []
+        },
+        {
+          "path": "/learn/8/term/1/g8-t1-l03-003",
+          "width": 360,
+          "appearance": "dark",
+          "textScale": 2,
+          "violations": []
+        },
+        {
+          "path": "/learn/8/term/1/g8-t1-l16-016",
+          "width": 360,
+          "appearance": "dark",
+          "textScale": 2,
+          "violations": []
+        },
+        {
+          "path": "/learn/9/term/1/g9-t1-l07-007",
+          "width": 360,
+          "appearance": "dark",
+          "textScale": 2,
+          "violations": []
+        },
+        {
+          "path": "/learn/8/term/1/g8-t1-l03-003",
+          "width": 430,
+          "appearance": "light",
+          "textScale": 2,
+          "violations": []
+        },
+        {
+          "path": "/learn/8/term/1/g8-t1-l16-016",
+          "width": 430,
+          "appearance": "light",
+          "textScale": 2,
+          "violations": []
+        },
+        {
+          "path": "/learn/9/term/1/g9-t1-l07-007",
+          "width": 430,
+          "appearance": "light",
+          "textScale": 2,
+          "violations": []
+        },
+        {
+          "path": "/learn/8/term/1/g8-t1-l03-003",
+          "width": 430,
+          "appearance": "dark",
+          "textScale": 2,
+          "violations": []
+        },
+        {
+          "path": "/learn/8/term/1/g8-t1-l16-016",
+          "width": 430,
+          "appearance": "dark",
+          "textScale": 2,
+          "violations": []
+        },
+        {
+          "path": "/learn/9/term/1/g9-t1-l07-007",
+          "width": 430,
+          "appearance": "dark",
+          "textScale": 2,
+          "violations": []
+        },
+        {
+          "path": "/learn/8/term/1/g8-t1-l03-003",
+          "width": 768,
+          "appearance": "light",
+          "textScale": 2,
+          "violations": []
+        },
+        {
+          "path": "/learn/8/term/1/g8-t1-l16-016",
+          "width": 768,
+          "appearance": "light",
+          "textScale": 2,
+          "violations": []
+        },
+        {
+          "path": "/learn/9/term/1/g9-t1-l07-007",
+          "width": 768,
+          "appearance": "light",
+          "textScale": 2,
+          "violations": []
+        },
+        {
+          "path": "/learn/8/term/1/g8-t1-l03-003",
+          "width": 768,
+          "appearance": "dark",
+          "textScale": 2,
+          "violations": []
+        },
+        {
+          "path": "/learn/8/term/1/g8-t1-l16-016",
+          "width": 768,
+          "appearance": "dark",
+          "textScale": 2,
+          "violations": []
+        },
+        {
+          "path": "/learn/9/term/1/g9-t1-l07-007",
+          "width": 768,
+          "appearance": "dark",
+          "textScale": 2,
+          "violations": []
+        },
+        {
+          "path": "/learn/8/term/1/g8-t1-l03-003",
+          "width": 1280,
+          "appearance": "light",
+          "textScale": 2,
+          "violations": []
+        },
+        {
+          "path": "/learn/8/term/1/g8-t1-l16-016",
+          "width": 1280,
+          "appearance": "light",
+          "textScale": 2,
+          "violations": []
+        },
+        {
+          "path": "/learn/9/term/1/g9-t1-l07-007",
+          "width": 1280,
+          "appearance": "light",
+          "textScale": 2,
+          "violations": []
+        },
+        {
+          "path": "/learn/8/term/1/g8-t1-l03-003",
+          "width": 1280,
+          "appearance": "dark",
+          "textScale": 2,
+          "violations": []
+        },
+        {
+          "path": "/learn/8/term/1/g8-t1-l16-016",
+          "width": 1280,
+          "appearance": "dark",
+          "textScale": 2,
+          "violations": []
+        },
+        {
+          "path": "/learn/9/term/1/g9-t1-l07-007",
+          "width": 1280,
+          "appearance": "dark",
+          "textScale": 2,
+          "violations": []
+        },
+        {
+          "path": "/learn/8/term/1/g8-t1-l03-003",
+          "width": 1920,
+          "appearance": "light",
+          "textScale": 2,
+          "violations": []
+        },
+        {
+          "path": "/learn/8/term/1/g8-t1-l16-016",
+          "width": 1920,
+          "appearance": "light",
+          "textScale": 2,
+          "violations": []
+        },
+        {
+          "path": "/learn/9/term/1/g9-t1-l07-007",
+          "width": 1920,
+          "appearance": "light",
+          "textScale": 2,
+          "violations": []
+        },
+        {
+          "path": "/learn/8/term/1/g8-t1-l03-003",
+          "width": 1920,
+          "appearance": "dark",
+          "textScale": 2,
+          "violations": []
+        },
+        {
+          "path": "/learn/8/term/1/g8-t1-l16-016",
+          "width": 1920,
+          "appearance": "dark",
+          "textScale": 2,
+          "violations": []
+        },
+        {
+          "path": "/learn/9/term/1/g9-t1-l07-007",
+          "width": 1920,
+          "appearance": "dark",
+          "textScale": 2,
+          "violations": []
+        }
+      ]
+    },
+    "touch": {
+      "commit": "b59dec5794117bf02dc22d4464e365112ea8ac17",
+      "journeys": [
+        {
+          "width": 320,
+          "appearance": "light",
+          "hasTouch": true,
+          "selectChangeClearPreservesText": true,
+          "reloadRestoresUnmarked": true
+        },
+        {
+          "width": 320,
+          "appearance": "dark",
+          "hasTouch": true,
+          "selectChangeClearPreservesText": true,
+          "reloadRestoresUnmarked": true
+        },
+        {
+          "width": 360,
+          "appearance": "light",
+          "hasTouch": true,
+          "selectChangeClearPreservesText": true,
+          "reloadRestoresUnmarked": true
+        },
+        {
+          "width": 360,
+          "appearance": "dark",
+          "hasTouch": true,
+          "selectChangeClearPreservesText": true,
+          "reloadRestoresUnmarked": true
+        },
+        {
+          "width": 430,
+          "appearance": "light",
+          "hasTouch": true,
+          "selectChangeClearPreservesText": true,
+          "reloadRestoresUnmarked": true
+        },
+        {
+          "width": 430,
+          "appearance": "dark",
+          "hasTouch": true,
+          "selectChangeClearPreservesText": true,
+          "reloadRestoresUnmarked": true
+        }
+      ]
+    }
+  },
+  "staging": {
+    "projectRef": "inxshlumnhcgiahxqewe",
+    "actualPasswordSessions": true,
+    "savedRecordAndFreshLoginBrowserTests": {
+      "commit": "b59dec5794117bf02dc22d4464e365112ea8ac17",
+      "passed": 4,
+      "viewports": [
+        {
+          "viewport": "roles-desktop",
+          "primaryAndAdvancedChecks": 11,
+          "originalAdvancedResponseKeys": 64,
+          "checks": [
+            {
+              "name": "ten text fields and ten independent marker keys reach real staging",
+              "status": "PASS"
+            },
+            {
+              "name": "clearing a marker preserves its written ability",
+              "status": "PASS"
+            },
+            {
+              "name": "collapsed reflection parts persist through the revision API and reload",
+              "status": "PASS"
+            },
+            {
+              "name": "fresh login with empty browser storage restores written, marked, unmarked, combined and split answers",
+              "status": "PASS"
+            },
+            {
+              "name": "explicit labelled question outside a deepening panel survives fresh authenticated login",
+              "status": "PASS"
+            },
+            {
+              "name": "assigned educator can read annotation while another learner and unassigned educator are denied",
+              "status": "PASS"
+            },
+            {
+              "name": "educator review renders a readable confidence marker and produces a private PDF",
+              "status": "PASS"
+            },
+            {
+              "name": "other learner browser does not restore another account evidence",
+              "status": "PASS"
+            },
+            {
+              "name": "native ranking, rating and all 62 currency/allocation fields reach real staging at their original keys",
+              "status": "PASS"
+            },
+            {
+              "name": "fresh authenticated browser restores every authored amount and allocation plus native rating/ranking",
+              "status": "PASS"
+            },
+            {
+              "name": "assigned educator reads the same advanced learner evidence",
+              "status": "PASS"
+            }
+          ]
+        },
+        {
+          "viewport": "roles-mobile",
+          "primaryAndAdvancedChecks": 11,
+          "originalAdvancedResponseKeys": 64,
+          "checks": [
+            {
+              "name": "ten text fields and ten independent marker keys reach real staging",
+              "status": "PASS"
+            },
+            {
+              "name": "clearing a marker preserves its written ability",
+              "status": "PASS"
+            },
+            {
+              "name": "collapsed reflection parts persist through the revision API and reload",
+              "status": "PASS"
+            },
+            {
+              "name": "fresh login with empty browser storage restores written, marked, unmarked, combined and split answers",
+              "status": "PASS"
+            },
+            {
+              "name": "explicit labelled question outside a deepening panel survives fresh authenticated login",
+              "status": "PASS"
+            },
+            {
+              "name": "assigned educator can read annotation while another learner and unassigned educator are denied",
+              "status": "PASS"
+            },
+            {
+              "name": "educator review renders a readable confidence marker and produces a private PDF",
+              "status": "PASS"
+            },
+            {
+              "name": "other learner browser does not restore another account evidence",
+              "status": "PASS"
+            },
+            {
+              "name": "native ranking, rating and all 62 currency/allocation fields reach real staging at their original keys",
+              "status": "PASS"
+            },
+            {
+              "name": "fresh authenticated browser restores every authored amount and allocation plus native rating/ranking",
+              "status": "PASS"
+            },
+            {
+              "name": "assigned educator reads the same advanced learner evidence",
+              "status": "PASS"
+            }
+          ]
+        }
+      ]
+    },
+    "httpRoleAndRevisionChecks": {
+      "passed": 37,
+      "checks": [
+        {
+          "name": "learner real password session",
+          "status": "PASS"
+        },
+        {
+          "name": "other real password session",
+          "status": "PASS"
+        },
+        {
+          "name": "facilitator real password session",
+          "status": "PASS"
+        },
+        {
+          "name": "unassigned real password session",
+          "status": "PASS"
+        },
+        {
+          "name": "schoolAdmin real password session",
+          "status": "PASS"
+        },
+        {
+          "name": "platformAdmin real password session",
+          "status": "PASS"
+        },
+        {
+          "name": "administrator provisioning through real sessions",
+          "status": "PASS"
+        },
+        {
+          "name": "learner persists answer through revision-checked RPC",
+          "status": "PASS"
+        },
+        {
+          "name": "two device requests have exactly one winner",
+          "status": "PASS"
+        },
+        {
+          "name": "lost response retry does not duplicate or advance revision",
+          "status": "PASS"
+        },
+        {
+          "name": "other learner visibility boundary",
+          "status": "PASS"
+        },
+        {
+          "name": "unassigned learner visibility boundary",
+          "status": "PASS"
+        },
+        {
+          "name": "facilitator learner visibility boundary",
+          "status": "PASS"
+        },
+        {
+          "name": "schoolAdmin learner visibility boundary",
+          "status": "PASS"
+        },
+        {
+          "name": "platformAdmin learner visibility boundary",
+          "status": "PASS"
+        },
+        {
+          "name": "learner cannot escalate institution privileges",
+          "status": "PASS"
+        },
+        {
+          "name": "unassigned facilitator cannot review",
+          "status": "PASS"
+        },
+        {
+          "name": "revision feedback is visible to the learner",
+          "status": "PASS"
+        },
+        {
+          "name": "learner revision persists",
+          "status": "PASS"
+        },
+        {
+          "name": "stale review returns a non-retryable rejection without approving the revised answer",
+          "status": "PASS"
+        },
+        {
+          "name": "approval follows the revised answer and reaches learner",
+          "status": "PASS"
+        },
+        {
+          "name": "authorized administrator observes approved evidence",
+          "status": "PASS"
+        },
+        {
+          "name": "role revocation blocks existing facilitator session",
+          "status": "PASS"
+        },
+        {
+          "name": "settings patches retain independent changes",
+          "status": "PASS"
+        },
+        {
+          "name": "invalid identities are rejected through HTTP",
+          "status": "PASS"
+        },
+        {
+          "name": "anonymous mutation is denied",
+          "status": "PASS"
+        },
+        {
+          "name": "learner cannot self-grade through the Data API",
+          "status": "PASS"
+        },
+        {
+          "name": "learner cannot self-approve through the Data API",
+          "status": "PASS"
+        },
+        {
+          "name": "account switch during dispatch cannot save into the new account",
+          "status": "PASS"
+        },
+        {
+          "name": "supplied learner identifier cannot change RPC ownership",
+          "status": "PASS"
+        },
+        {
+          "name": "ownership probe did not write the targeted learner account",
+          "status": "PASS"
+        },
+        {
+          "name": "learner cannot create another learner portfolio artifact",
+          "status": "PASS"
+        },
+        {
+          "name": "logged-out JWT fails active-session check",
+          "status": "PASS"
+        },
+        {
+          "name": "logged-out JWT cannot read its own private data",
+          "status": "PASS"
+        },
+        {
+          "name": "logged-out JWT cannot persist new data",
+          "status": "PASS"
+        },
+        {
+          "name": "revoked refresh token cannot restore the session",
+          "status": "PASS"
+        },
+        {
+          "name": "tampered role token fails signature verification",
+          "status": "PASS"
+        }
+      ]
+    },
+    "hostedTeacher": {
+      "commit": "b59dec5794117bf02dc22d4464e365112ea8ac17",
+      "appOrigin": "https://applied-commerce-sa-staging-2hn6vh323.vercel.app",
+      "plans": [
+        {
+          "lessonId": "g8-t1-l03-003",
+          "fields": 84,
+          "originalFieldsPreserved": true,
+          "originalResponseControlsPreserved": true,
+          "noRedundantDepthPanels": true,
+          "navigationTargetsVerified": 10,
+          "teacherLayouts": 24,
+          "presentationAndStandalone": true,
+          "printFieldsPreserved": true,
+          "heapBefore": 6746452,
+          "heapAfter": 19623500
+        },
+        {
+          "lessonId": "g8-t1-l16-016",
+          "fields": 59,
+          "originalFieldsPreserved": true,
+          "originalResponseControlsPreserved": true,
+          "noRedundantDepthPanels": true,
+          "navigationTargetsVerified": 7,
+          "teacherLayouts": 24,
+          "presentationAndStandalone": true,
+          "printFieldsPreserved": true,
+          "heapBefore": 19623500,
+          "heapAfter": 21591456
+        },
+        {
+          "lessonId": "g8-t1-l20-020",
+          "fields": 84,
+          "originalFieldsPreserved": true,
+          "originalResponseControlsPreserved": true,
+          "noRedundantDepthPanels": true,
+          "navigationTargetsVerified": 10,
+          "teacherLayouts": 24,
+          "presentationAndStandalone": true,
+          "printFieldsPreserved": true,
+          "heapBefore": 21591456,
+          "heapAfter": 32073032
+        },
+        {
+          "lessonId": "g9-t1-l01-001",
+          "fields": 30,
+          "originalFieldsPreserved": true,
+          "originalResponseControlsPreserved": true,
+          "noRedundantDepthPanels": true,
+          "navigationTargetsVerified": 8,
+          "teacherLayouts": 24,
+          "presentationAndStandalone": true,
+          "printFieldsPreserved": true,
+          "heapBefore": 32073032,
+          "heapAfter": 35848716
+        },
+        {
+          "lessonId": "g10-t3-l46-046",
+          "fields": 33,
+          "originalFieldsPreserved": true,
+          "originalResponseControlsPreserved": true,
+          "noRedundantDepthPanels": true,
+          "navigationTargetsVerified": 9,
+          "teacherLayouts": 24,
+          "presentationAndStandalone": true,
+          "printFieldsPreserved": true,
+          "heapBefore": 35848716,
+          "heapAfter": 26854444
+        },
+        {
+          "lessonId": "g11-t2-l22-022",
+          "fields": 26,
+          "originalFieldsPreserved": true,
+          "originalResponseControlsPreserved": true,
+          "noRedundantDepthPanels": true,
+          "navigationTargetsVerified": 7,
+          "teacherLayouts": 24,
+          "presentationAndStandalone": true,
+          "printFieldsPreserved": true,
+          "heapBefore": 26854444,
+          "heapAfter": 28612556
+        },
+        {
+          "lessonId": "g12-t3-l53-checkpoint-20261004",
+          "fields": 26,
+          "originalFieldsPreserved": true,
+          "originalResponseControlsPreserved": true,
+          "noRedundantDepthPanels": true,
+          "navigationTargetsVerified": 7,
+          "teacherLayouts": 24,
+          "presentationAndStandalone": true,
+          "printFieldsPreserved": true,
+          "heapBefore": 28612556,
+          "heapAfter": 27392280
+        }
+      ],
+      "stageTargets": 58,
+      "layouts": 168,
+      "roles": [
+        {
+          "role": "facilitator existing session after revocation",
+          "status": 403
+        },
+        {
+          "role": "platformAdmin",
+          "status": 200
+        },
+        {
+          "role": "schoolAdmin",
+          "status": 200
+        },
+        {
+          "role": "learner",
+          "status": 403
+        },
+        {
+          "role": "unassigned",
+          "status": 403
+        },
+        {
+          "role": "other",
+          "status": 403
+        }
+      ],
+      "persistence": [
+        "browser save and reload",
+        "portfolio contains synthetic original response",
+        "fresh browser password login restores answers, reflection, note and completion"
+      ],
+      "integratedAndStandalonePDFs": {
+        "pdfs": 14,
+        "fields": 684,
+        "missingFields": 0
+      },
+      "educatorReviewPDFReadableMarkerChecks": 2
+    }
+  },
+  "assessments": {
+    "existingInputCounts": [
+      63,
+      62,
+      62,
+      64
+    ],
+    "proposedInputCounts": [
+      63,
+      62,
+      62,
+      64
+    ],
+    "wraps": 0
+  },
+  "preservation": {
+    "sourceBooksUnchanged": true,
+    "compiledCurriculumUnchanged": true,
+    "encryptedClassroomReleasesUnchanged": true,
+    "schemaRPCAndRLSUnchanged": true,
+    "destructiveMigrations": 0,
+    "productionApplicationDeployments": 0,
+    "productionMerges": 0,
+    "stagingVerification": {
+      "project": "applied-commerce-sa-staging",
+      "target": "production within isolated staging project only",
+      "autoAssignCustomDomains": false,
+      "canonicalAliasDeployment": "dpl_HrdBWbtRZtpCkqfGDBRUXjfoXqoY"
+    }
+  },
+  "acceptanceLimits": {
+    "conceptualQuestionAmbiguities": 15,
+    "authoredPrivacyPromiseConflicts": 3,
+    "ownerWrapModeration": "pending",
+    "humanScreenReader": "NOT TESTED",
+    "physicalPrinting": "NOT TESTED",
+    "liveMultiPeriodClassroomTrial": "NOT TESTED"
+  }
+}

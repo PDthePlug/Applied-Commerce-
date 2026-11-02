@@ -120,3 +120,58 @@
 /* Keep the unit and its original answer in one responsive grid column. */
 .authored-amount-cell{min-width:0}
 @media screen{.workbook-table tr:first-child:has(.authored-amount-cell) td{background:var(--paper)!important;color:var(--ink)}}
+
+/* Universal question flow: number and wording share a single paragraph. */
+.question-heading{min-width:0;overflow-wrap:anywhere}
+.checkpoint-question{display:block}
+.question-heading .structured-part-label{display:inline;margin:0 .25em 0 0;font:inherit;color:inherit;letter-spacing:0;text-transform:none}
+.semantic-learning-document .response-surface-prompt .question-heading .question-prompt{margin:0!important;font-size:calc(18px * var(--ac-text-scale))!important;line-height:1.55!important}
+.question-heading .structured-prompt-helper{display:block;margin-top:.5em;font-weight:400}
+.response-surface-checkpoint:has(.checkpoint-question)>.response-surface-control{margin-inline-start:0}
+@media(max-width:620px){.semantic-learning-document .response-surface-prompt .question-heading .question-prompt{font-size:calc(16px * var(--ac-text-scale))!important}}
+/* Compact icons retain a 44px touch target beside the unchanged text answer. */
+.annotation-legend{margin:20px 0 12px;color:var(--ink)}
+.annotation-legend p{margin:0 0 6px!important;font-size:calc(15px * var(--ac-text-scale))!important;line-height:1.6!important}
+.annotation-legend small{color:var(--muted);font-size:calc(13px * var(--ac-text-scale))}
+.annotated-statement{display:flex;align-items:center;gap:10px;padding:10px 12px!important;margin:8px 0!important;min-width:0}
+.annotated-statement .fill-response-line{display:flex;flex:1;align-items:center;flex-wrap:wrap;gap:8px;min-width:0}
+.annotated-statement .fill-response-field{flex:1;min-width:min(10em,100%);max-width:100%}
+.annotated-statement .fill-response-field input{width:100%;min-width:0}
+.annotated-statement .fill-response-copy{white-space:normal;font-size:calc(15px * var(--ac-text-scale));line-height:1.5}
+.confidence-markers{flex:none;max-width:100%}
+.confidence-marker-buttons{display:flex;gap:4px}
+.confidence-marker-buttons button{display:grid;place-items:center;width:44px;min-width:44px;min-height:44px;padding:0;border:1px solid var(--muted);border-radius:8px;background:var(--paper);color:var(--ink);cursor:pointer}
+.confidence-marker-buttons button span{font-size:18px;line-height:1}
+.confidence-marker-buttons button[aria-pressed="true"]{border:2px solid var(--teal);box-shadow:inset 0 -4px 0 var(--teal);background:var(--cream)}
+.confidence-marker-buttons button:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
+.printed-annotation{display:none}
+@media(max-width:430px){.annotated-statement{flex-wrap:wrap}.annotated-statement .fill-response-line{flex-basis:100%}.annotated-statement .confidence-markers{margin-left:auto}.annotated-statement .fill-response-field{min-width:0}}
+/* One source-specific conclusion follows all instructional/later-work content. */
+.lesson-wrap{margin:40px 0 24px;padding:24px 0;border-block:2px solid var(--teal);min-width:0;color:var(--ink)}
+.lesson-wrap>header{display:flex;gap:12px;align-items:center;margin-bottom:20px}
+.lesson-wrap>header svg{width:24px;height:24px;flex:none;color:var(--teal)}
+.lesson-wrap>header h2{margin:0;font:500 calc(30px * var(--ac-text-scale))/1.25 var(--serif)}
+.lesson-wrap h3{margin:20px 0 8px;font:700 calc(17px * var(--ac-text-scale))/1.5 var(--sans)}
+.lesson-wrap p,.lesson-wrap li{font-size:calc(17px * var(--ac-text-scale));line-height:1.7;overflow-wrap:anywhere}
+.lesson-wrap ul{padding-left:1.3em}
+.lesson-wrap-next{margin-top:24px}
+.lesson-wrap-next p{font-weight:600}
+.insight-source-title{font:600 calc(19px * var(--ac-text-scale))/1.5 var(--serif);color:var(--ink)}
+@media print{
+ .confidence-marker-buttons{display:none!important}
+ .printed-annotation{display:block;font-size:10pt;white-space:normal}
+ .annotated-statement{break-inside:avoid}
+ .lesson-wrap{border-color:#17313b;margin:18pt 0;padding:12pt 0}
+ .lesson-wrap>header{break-after:avoid}
+ .lesson-wrap h3{break-after:avoid}
+ .deepening-insight::details-content,.previous-combined-response::details-content{display:contents!important;content-visibility:visible!important}
+ .deepening-insight>.deepening-insight-body,.previous-combined-response>p,.previous-combined-response>small{display:block!important;content-visibility:visible!important}
+}
+.source-selection-control{display:grid;gap:8px;min-width:0;margin-bottom:12px;font-size:calc(16px * var(--ac-text-scale))}
+.source-selection-control select{width:100%;min-width:0;min-height:44px;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--paper);color:var(--ink);font:inherit}
+.source-selection-control select:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
+@media print{.source-selection-control select{display:none!important}}
+.circle-map-control{min-width:0}
+.circle-map-control fieldset{display:grid;gap:14px;min-width:0;margin:18px 0;padding:16px;border:1px solid var(--line);border-radius:12px}
+.circle-map-control legend{font-weight:700}
+.circle-map-control label{display:grid;gap:8px;min-width:0}

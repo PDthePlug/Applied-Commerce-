@@ -240,3 +240,6 @@ html[data-ac-appearance="dark"] :is(
     --ac-staff-avatar-text:#17313b;
   }
 }
+
+/* Light lesson-map text must also meet AA on the warm rail surface. */
+html[data-ac-appearance="light"] .reader-shell .reader-rail{--muted:#5d6762}

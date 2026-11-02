@@ -1,0 +1,87 @@
+{
+  "ownerImageFilesAttached": false,
+  "baseline": "genuine merged-main browser reproduction",
+  "evidence": [
+    {
+      "file": "g8-l3-before-360.png",
+      "sha256": "e529f804ff98acb1c520ca97ee0d56a7fcb33842a4ccca248c2a40c3d0308850",
+      "bytes": 690394,
+      "sourceCommit": "ab52273eae7d5d459c77e30a9d7bfdea8d8540ff",
+      "purpose": "Personal Efficacy, whole lesson, initial state",
+      "transformation": "none; copied original browser output",
+      "data": "public curriculum; synthetic local learner work where shown"
+    },
+    {
+      "file": "g8-l3-after-360.png",
+      "sha256": "826c5bf8a64e9349d790c53e524f6e53241ab435fad295961c4f24ffca01ab91",
+      "bytes": 717792,
+      "sourceCommit": "87ed1bd0287821ed1fc6e719c97e224c88f1874d",
+      "purpose": "Same lesson and viewport; ten marking controls and one wrap",
+      "transformation": "none; copied original browser output",
+      "data": "public curriculum; synthetic local learner work where shown"
+    },
+    {
+      "file": "g8-l16-before-1280.png",
+      "sha256": "0e166f71be619b37c134ed711bb8d1bfd152038eec6d14d317cb58012b85ee5d",
+      "bytes": 553596,
+      "sourceCommit": "ab52273eae7d5d459c77e30a9d7bfdea8d8540ff",
+      "purpose": "Personal Initiative, whole lesson, initially collapsed insight",
+      "transformation": "none; copied original browser output",
+      "data": "public curriculum; synthetic local learner work where shown"
+    },
+    {
+      "file": "g8-l16-after-1280.png",
+      "sha256": "7e22a7e6909950cbe17b7e4ae4cf184952d4ef1509c3aa82e260c5cea037ee1d",
+      "bytes": 578343,
+      "sourceCommit": "87ed1bd0287821ed1fc6e719c97e224c88f1874d",
+      "purpose": "Same lesson and viewport; collapsed insight and final wrap",
+      "transformation": "none; copied original browser output",
+      "data": "public curriculum; synthetic local learner work where shown"
+    },
+    {
+      "file": "g8-l3-activity-after-360.png",
+      "sha256": "b5674746ceda1d44292349dc8d8bd97215267f851f52283ccdaf486c61024e6a",
+      "bytes": 156790,
+      "sourceCommit": "b59dec5794117bf02dc22d4464e365112ea8ac17",
+      "purpose": "Activity screenshot with synthetic answers and independent markers; earlier combined answer open",
+      "transformation": "none; copied original browser output",
+      "data": "public curriculum; synthetic local learner work where shown"
+    },
+    {
+      "file": "g8-l16-insight-after-1280.png",
+      "sha256": "3cd15f5e0829f20dddcf118288eede409102db9ed7aa441722a43ec8e27f95fe",
+      "bytes": 71468,
+      "sourceCommit": "87ed1bd0287821ed1fc6e719c97e224c88f1874d",
+      "purpose": "Expanded insight with synthetic independently saved reflective answers",
+      "transformation": "none; copied original browser output",
+      "data": "public curriculum; synthetic local learner work where shown"
+    },
+    {
+      "file": "g8-l3-learner-print.pdf",
+      "sha256": "2f9891aa2cbea4ddf0fbc8220658e783530e88a405b386eb683ae8fcfeab583a",
+      "bytes": 202433,
+      "sourceCommit": "b59dec5794117bf02dc22d4464e365112ea8ac17",
+      "purpose": "Actual learner PDF with text, readable confidence markers and historical combined response",
+      "transformation": "none; copied original browser output",
+      "data": "public curriculum; synthetic local learner work where shown"
+    },
+    {
+      "file": "g8-l16-learner-print.pdf",
+      "sha256": "01e23d4a9b99c355b3181002ba42fcdaedb52bd8a619e2f7548e35d6e993aa96",
+      "bytes": 143131,
+      "sourceCommit": "87ed1bd0287821ed1fc6e719c97e224c88f1874d",
+      "purpose": "Actual learner PDF retains closed deeper explanations and saved responses",
+      "transformation": "none; copied original browser output",
+      "data": "public curriculum; synthetic local learner work where shown"
+    },
+    {
+      "file": "g8-l3-light-200-1280.png",
+      "sha256": "b82a4bfac7601a7834eaa2a7b8cd4d15db1459a5029979e114a58d86bc07bb17",
+      "bytes": 139522,
+      "sourceCommit": "b59dec5794117bf02dc22d4464e365112ea8ac17",
+      "purpose": "Explicit light appearance at 200% with corrected desktop lesson-map contrast",
+      "transformation": "none; original browser output",
+      "data": "public curriculum; no authenticated user"
+    }
+  ]
+}
