@@ -1,0 +1,102 @@
+{
+  "guides": 2,
+  "guidesPassing": 2,
+  "releasedGuides": 395,
+  "scope": "explicit selected lessons",
+  "check": "Text stays within 12 mm A4 margins, allowing 2 pt measurement tolerance; all pages contain text.",
+  "results": [
+    {
+      "lessonId": "g12-t1-l12-012",
+      "pages": 4,
+      "allPagesHaveText": true,
+      "marginsPass": true,
+      "pageBounds": [
+        {
+          "page": 1,
+          "words": 278,
+          "bounds": {
+            "xMin": 34.499999,
+            "yMin": 36.244627,
+            "xMax": 559.910133,
+            "yMax": 737.975067
+          },
+          "inside12mmWithTolerance": true
+        },
+        {
+          "page": 2,
+          "words": 263,
+          "bounds": {
+            "xMin": 34.499999,
+            "yMin": 35.455077,
+            "xMax": 560.981665,
+            "yMax": 778.475065
+          },
+          "inside12mmWithTolerance": true
+        },
+        {
+          "page": 3,
+          "words": 224,
+          "bounds": {
+            "xMin": 34.499999,
+            "yMin": 35.455077,
+            "xMax": 560.945775,
+            "yMax": 703.475068
+          },
+          "inside12mmWithTolerance": true
+        },
+        {
+          "page": 4,
+          "words": 53,
+          "bounds": {
+            "xMin": 34.499999,
+            "yMin": 35.455077,
+            "xMax": 555.665014,
+            "yMax": 183.72509
+          },
+          "inside12mmWithTolerance": true
+        }
+      ]
+    },
+    {
+      "lessonId": "g12-t3-l46-046",
+      "pages": 3,
+      "allPagesHaveText": true,
+      "marginsPass": true,
+      "pageBounds": [
+        {
+          "page": 1,
+          "words": 264,
+          "bounds": {
+            "xMin": 34.499999,
+            "yMin": 36.244627,
+            "xMax": 556.254615,
+            "yMax": 781.475065
+          },
+          "inside12mmWithTolerance": true
+        },
+        {
+          "page": 2,
+          "words": 235,
+          "bounds": {
+            "xMin": 34.499999,
+            "yMin": 35.455077,
+            "xMax": 561.602025,
+            "yMax": 767.225066
+          },
+          "inside12mmWithTolerance": true
+        },
+        {
+          "page": 3,
+          "words": 184,
+          "bounds": {
+            "xMin": 34.499999,
+            "yMin": 35.455077,
+            "xMax": 559.2385,
+            "yMax": 645.725071
+          },
+          "inside12mmWithTolerance": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "authentication": "genuine educator and learner password logins; no interception",
+  "projectRef": "inxshlumnhcgiahxqewe",
+  "commit": "7ebce10319a1a3b582d7862fbbebc5747b4f14f3",
+  "readOnly": true,
+  "returns": [
+    {
+      "currentLesson": "g12-t2-l40-040",
+      "stageId": "g12-l40-stage-7",
+      "previous": [
+        {
+          "lessonId": "g12-t1-l20-020",
+          "responseKey": "g12-t1-l20-020::prompt-e9be752e4d61f93af419610c-1::response",
+          "existingSavedValue": true,
+          "savedValueSHA256": "cf1431bc90dc4d14102f18b2bd881861ee91723f8790f4a497d4f106cbabb117",
+          "nativeLetterSingular": true,
+          "savedContentNonempty": true,
+          "reloadMatchesCloud": true,
+          "unchanged": true
+        }
+      ],
+      "captures": [
+        {
+          "width": 320,
+          "scale": 1,
+          "focused": true,
+          "overflow": false
+        },
+        {
+          "width": 320,
+          "scale": 2,
+          "focused": true,
+          "overflow": false
+        },
+        {
+          "width": 1280,
+          "scale": 1,
+          "focused": true,
+          "overflow": false
+        },
+        {
+          "width": 1280,
+          "scale": 2,
+          "focused": true,
+          "overflow": false
+        }
+      ],
+      "normalAuthenticatedRoutesReturnToCurrent": true
+    }
+  ],
+  "pageErrors": [],
+  "status": "PASS"
+}
