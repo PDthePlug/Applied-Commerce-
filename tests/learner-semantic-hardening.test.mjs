@@ -86,3 +86,13 @@ test('every removed generic instruction field keeps its historical written value
  const rows=JSON.parse(fs.readFileSync('docs/learner-hardening/defect-register.json')).rows.filter(r=>r.kind==='redundant-response');assert.equal(rows.length,29);
  for(const [i,row]of rows.entries()){const u=units.find(u=>u.id===row.unitId),value='SYNTHETIC_RETIRED_FIELD_'+i,html=render(u,{[key(u,row.sourceIndex,'response')]:value});assert.ok(html.includes(value),u.id+' '+row.blockId);assert.ok(!html.includes('id="'+u.id+'::block-'+row.sourceIndex+'::response"'),u.id);}
 });
+
+test('all 50 explicit labelled questions outside deeper panels retain combined evidence and source-associated controls',()=>{
+ const decisions=JSON.parse(fs.readFileSync('lib/interaction-decisions.json'));let count=0;
+ for(const u of units)for(const [i,b]of u.blocks.entries()){
+  if(!decisions[u.id+'::'+b.id]?.reason.includes('labelled question'))continue;count++;
+  const html=render(u,{[key(u,i,'response')]:'SYNTHETIC_EARLIER_LABELLED_ANSWER'});
+  assert.ok(html.includes('SYNTHETIC_EARLIER_LABELLED_ANSWER'),u.id);
+  assert.ok(html.includes('id="'+u.id+'::block-'+i+'::response')||html.includes('id="'+u.id+'::block-'+i+'::response-0'),u.id);
+ }assert.equal(count,50);
+});

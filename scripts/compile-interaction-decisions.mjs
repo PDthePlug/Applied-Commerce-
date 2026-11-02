@@ -20,6 +20,13 @@ for(const u of units){
   review.push({unitId:u.id,headingId:b.id,originalHeading:b.text,contentIds:content.map(p=>p.id)});
  }
 }
+// Explicit authored question labels also occur outside deeper-learning sections.
+// These exact source labels are reviewed tasks, not inferred rhetorical prose.
+for(const u of units)for(const b of u.blocks){
+ if(b.kind!=='text'||/_{3,}/.test(b.text)||decisions[`${u.id}::${b.id}`])continue;
+ if(/^The (?:Architect's|Launcher's) Question:/.test(b.text)&&b.text.includes('?'))
+  add(u,b,'reflection','Explicit source-authored labelled question outside the deeper section; retain combined evidence and stable response parts');
+}
 // Source-specific duplicates and native selections reviewed against the full activity.
 for(const [id,index,kind,reason]of[
  ['g8-t1-l04-004',65,'circle-map','Three authored circles each require people and money-belief entries'],
