@@ -774,6 +774,10 @@ function TableBlockView({
                 const value=promptResponses[id]??"";
                 const rowLabel=cleanMarkup(row.find((value,index)=>index!==colIndex&&cleanMarkup(value))??"");
                 const label=[rowLabel,headers[colIndex],headerOnly?`Entry ${rowIndex}`:""].filter(Boolean).join(" — ")||"Table response";
+                const meaningful=(value:string)=>{const text=cleanMarkup(value);return text&&!/^(?:-?R|%)$/.test(text)?text:"";};
+                const amountRow=meaningful(row[colIndex-1]??"")||meaningful(row[0]??"");
+                const pairedHeader=headers.filter(header=>header===headers[colIndex]).length>1?headers[colIndex-1]:"";
+                const amountLabel=[amountRow,pairedHeader,headers[colIndex],!amountRow?`Entry ${rowIndex}`:""].filter(Boolean).join(" — ");
                 const scale=authoredScale(headers[colIndex]);
                 if(scale) return <td className="editable-cell rating-cell" data-label={dataLabel} key={colIndex}>
                   <RatingControl scale={scale} label={label} value={value} onChange={next=>onSavePromptResponse(id,next)}/>
@@ -781,7 +785,7 @@ function TableBlockView({
                 return <td className="editable-cell" data-label={dataLabel} key={colIndex}>
                   {unitPlaceholder&&<span aria-hidden="true">{cleaned}</span>}
                   <textarea
-                    aria-label={unitPlaceholder?`${label} (${unitName})`:label}
+                    aria-label={unitPlaceholder?`${amountLabel} (${unitName})`:label}
                     rows={2}
                     value={value}
                     onChange={event=>onSavePromptResponse(id,event.target.value)}

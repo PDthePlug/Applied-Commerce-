@@ -50,5 +50,6 @@ test('the original worked example remains read-only and percentage/deduction uni
  const tableIndex=example.blocks.slice(0,index).filter(b=>b.type==='table').length,tables=render(example).match(/<table>[^]*?<\/table>/g);
  assert.ok(!/<textarea|<input|<select/.test(tables[tableIndex]),'Do not turn a worked example into new learner fields');
  const budget=render(units.find(u=>u.id==='g12-t1-l12-012'));assert.match(budget,/\(rand, deduction\)/);assert.match(budget,/<span aria-hidden="true">-R<\/span>/);
+ const pairedBudget=render(units.find(u=>u.id==='g12-t1-l15-015'));assert.match(pairedBudget,/aria-label="Income — Amount — Entry 1 \(rand\)"/);assert.match(pairedBudget,/aria-label="Rent — Expenses — Amount \(rand\)"/);
  const allocation=render(units.find(u=>u.id==='g12-t3-l46-046'));assert.match(allocation,/\(percent\)/);assert.match(allocation,/<span aria-hidden="true">%<\/span>/);
 });
