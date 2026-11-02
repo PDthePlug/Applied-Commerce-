@@ -41,7 +41,7 @@ test('existing table answers survive beside repaired currency cells in learner a
  for(const extra of [{},{sectionGuidance:()=>null}]){
   const html=render(unit,values,extra);
   for(const value of Object.values(values))assert.match(html,new RegExp('<textarea\\b[^>]*>'+value+'<\\/textarea>'));
-  assert.match(html,/\(rand\)/);assert.match(html,/<span aria-hidden="true">R<\/span>/);
+  assert.match(html,/\(rand\)/);assert.match(html,/<div class="authored-amount-cell"><span aria-hidden="true">R<\/span><textarea/);
  }
 });
 

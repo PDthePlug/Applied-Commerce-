@@ -782,7 +782,7 @@ function TableBlockView({
                 if(scale) return <td className="editable-cell rating-cell" data-label={dataLabel} key={colIndex}>
                   <RatingControl scale={scale} label={label} value={value} onChange={next=>onSavePromptResponse(id,next)}/>
                 </td>;
-                return <td className="editable-cell" data-label={dataLabel} key={colIndex}>
+                const control=<>
                   {unitPlaceholder&&<span aria-hidden="true">{cleaned}</span>}
                   <textarea
                     aria-label={unitPlaceholder?`${amountLabel} (${unitName})`:label}
@@ -793,6 +793,9 @@ function TableBlockView({
                   />
                   <span className="printed-response">{value||"—"}</span>
                   {value.trim()&&<small>Saved</small>}
+                </>;
+                return <td className="editable-cell" data-label={dataLabel} key={colIndex}>
+                  {unitPlaceholder?<div className="authored-amount-cell">{control}</div>:control}
                 </td>;
               }
 

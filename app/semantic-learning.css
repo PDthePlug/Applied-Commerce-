@@ -116,3 +116,7 @@
   .focused-reader .app-menu-trigger{top:auto;right:auto;bottom:max(12px,env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);min-width:118px;height:46px}
   .focused-reader .reader-progress{right:0}
 }
+
+/* Keep the unit and its original answer in one responsive grid column. */
+.authored-amount-cell{min-width:0}
+.workbook-table tr:first-child:has(.authored-amount-cell) td{background:var(--paper)!important;color:var(--ink)}
