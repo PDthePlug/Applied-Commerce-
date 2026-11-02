@@ -30,7 +30,7 @@ test('ability answers and compact confidence marks have independent durable iden
 
 test('external-validation instructions keep earlier combined evidence without a redundant editable input',()=>{
  const u=unit(8,3),html=render(u,{[key(u,50,'response')]:'Historical combined evidence',[key(u,51,'blank-0')]:'Observed skill',[key(u,52,'blank-0')]:'Missing skill'});
- assert.ok(html.includes('Historical combined evidence'));assert.ok(!html.includes('id="'+u.id+'::block-50::response"'));assert.ok(html.includes('value="Observed skill"'));assert.ok(html.includes('value="Missing skill"'));
+ assert.ok(html.includes('Historical combined evidence'));assert.ok(!html.includes('id="'+u.id+'::block-50::response"'));assert.ok(!html.includes('id="'+u.id+'::block-47::response"'));assert.ok(html.includes('value="Observed skill"'));assert.ok(html.includes('value="Missing skill"'));
 });
 
 test('all 383 deeper sections are collapsed and preserve source distinctions and actual reflections',()=>{
@@ -71,4 +71,18 @@ test('all seven source Final Checkpoints retain checkpoint context and structure
  let count=0;for(const u of units){const i=u.blocks.findIndex(b=>b.type==='section'&&/^Final Checkpoint\b/.test(b.text));if(i<0)continue;count++;
   const html=render(u,{[key(u,i+1,'response')]:'SYNTHETIC_OLD_FINAL_CHECKPOINT'});assert.ok(html.includes('SYNTHETIC_OLD_FINAL_CHECKPOINT'));const section=html.slice(html.indexOf('id="learning-'+u.blocks[i].id+'"'));assert.ok(section.includes('checkpoint-question'),u.id);assert.ok(section.includes('class="structured-part-label">1.'),u.id);
  }assert.equal(count,7);
+});
+
+test('reviewed adjacent blanks do not erase distinct open written work',()=>{
+ for(const[g,n,index]of[[11,49,30],[11,69,35],[12,7,31],[12,23,42],[12,24,34],[12,32,35]]){const u=unit(g,n),html=render(u,{[key(u,index,'response')]:'SYNTHETIC_DISTINCT_WRITTEN_WORK'});assert.ok(/(?:value="SYNTHETIC_DISTINCT_WRITTEN_WORK"|<textarea[^>]*>SYNTHETIC_DISTINCT_WRITTEN_WORK<\/textarea>)/.test(html),u.id);}
+});
+
+test('three time projections keep separate original-block destinations and the earlier combined answer',()=>{
+ const u=unit(8,45),html=render(u,{[key(u,31,'response')]:'SYNTHETIC_EARLIER_PROJECTIONS',...Object.fromEntries([0,1,2].map(i=>[key(u,31,'response-'+i),'SYNTHETIC_PROJECTION_'+i]))});
+ assert.ok(html.includes('SYNTHETIC_EARLIER_PROJECTIONS'));for(let i=0;i<3;i++)assert.ok(html.includes('SYNTHETIC_PROJECTION_'+i));
+});
+
+test('every removed generic instruction field keeps its historical written value inspectable',()=>{
+ const rows=JSON.parse(fs.readFileSync('docs/learner-hardening/defect-register.json')).rows.filter(r=>r.kind==='redundant-response');assert.equal(rows.length,29);
+ for(const [i,row]of rows.entries()){const u=units.find(u=>u.id===row.unitId),value='SYNTHETIC_RETIRED_FIELD_'+i,html=render(u,{[key(u,row.sourceIndex,'response')]:value});assert.ok(html.includes(value),u.id+' '+row.blockId);assert.ok(!html.includes('id="'+u.id+'::block-'+row.sourceIndex+'::response"'),u.id);}
 });

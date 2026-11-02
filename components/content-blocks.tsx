@@ -874,6 +874,11 @@ export function ContentBlocks({blocks,unitId,unitType="lesson",promptResponses:s
         views.push(<Fragment key={`instruction-${index}`}><TextBlockView block={block} unitId={unitId}/><PreviousCombinedResponse value={promptResponses[promptId(unitId,index,"response")]??""}/><PreviousCombinedResponse value={promptResponses[promptId(unitId,index,"blank-0")]??""}/></Fragment>);
         continue;
       }
+      if(decision?.kind==="projections"&&block.kind==="text"){
+        const prompts=block.text.split(":").map(text=>text.trim()).filter(Boolean).map(prompt=>({prompt}));
+        views.push(<StructuredResponseGroup key={`projections-${index}`} breakdown={{prompts}} unitId={unitId} blockIndex={index} promptResponses={promptResponses} onSavePromptResponse={onSavePromptResponse} tone={context??"activity"}/>);
+        continue;
+      }
       if(decision?.kind==="circle-map"&&block.kind==="text"){
         views.push(<section className="circle-map-control" key={`circle-map-${index}`} aria-label="My circle map">
           <p>{displayText(block.text)}</p>

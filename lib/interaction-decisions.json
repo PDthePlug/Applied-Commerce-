@@ -5314,6 +5314,31 @@
     "reason": "Checkpoint group instructions are answered by the two following dedicated fields; retain the earlier combined blank",
     "sourceText": "Question 2: What is the biggest REASON you might not take your first step? (Fear? Forgetting? No resources? No permission?) Now write: When that reason appears, I will _______________."
   },
+  "g8-t1-l03-003::2398a7db962db744343960a2-1": {
+    "kind": "instruction",
+    "reason": "Interview instructions are answered by the dedicated external-validation fields",
+    "sourceText": "Show your list to ONE other person. Ask them two questions:"
+  },
+  "g9-t1-l07-007::0b30e4ce3537a1af9b44ce21-1": {
+    "kind": "instruction",
+    "reason": "Equivalent external-validation interview instructions use the two following answer fields",
+    "sourceText": "Show your top three skills to ONE person who knows you well. Ask them:"
+  },
+  "g9-t2-l29-030::255b9a58e7c8d245365dd2a8-1": {
+    "kind": "instruction",
+    "reason": "Reviewed parent instruction; the following dedicated authored fields capture the requested work",
+    "sourceText": "Answer these questions based on your map:"
+  },
+  "g9-t4-l58-048::4b79e889f94fede09729d086-1": {
+    "kind": "instruction",
+    "reason": "Reviewed parent instruction; the following dedicated authored fields capture the requested work",
+    "sourceText": "Answer these additional questions:"
+  },
+  "g9-t4-l71-061::ff24cb62bd90238daccbc755-1": {
+    "kind": "instruction",
+    "reason": "Reviewed parent instruction; the following dedicated authored fields capture the requested work",
+    "sourceText": "Answer these questions honestly:"
+  },
   "g8-t1-l03-003::0a87f7fdc0371164c72b2ddb-1": {
     "kind": "instruction",
     "reason": "Same self-taught skill already answered at block 24; retain both historical responses",
@@ -5331,7 +5356,7 @@
   },
   "g8-t1-l03-003::f39cd085eb11d4b743dd7df4-1": {
     "kind": "instruction",
-    "reason": "Instruction for the two dedicated external-validation fields; retain historical combined response",
+    "reason": "Reviewed parent instruction; the following dedicated authored fields capture the requested work",
     "sourceText": "Write their answers exactly:"
   },
   "g9-t1-l07-007::90907862a7dc13573fcba69f-1": {
@@ -5358,5 +5383,250 @@
     "kind": "skills",
     "reason": "Explicit top-five selection per authored category with custom skills allowed",
     "sourceText": "Creative skills: Drawing, writing, singing, designing, cooking creatively, building creatively, making something from nothing, telling stories"
+  },
+  "g8-t1-l01-001::a5febe72bbbb3c8879c303e9-1": {
+    "kind": "instruction",
+    "reason": "Reviewed parent instruction; the following dedicated authored fields capture the requested work",
+    "sourceText": "Complete these sentences:"
+  },
+  "g8-t1-l03-003::f989b5cecaeb008cee908a13-1": {
+    "kind": "instruction",
+    "reason": "Reviewed parent instruction; the following dedicated authored fields capture the requested work",
+    "sourceText": "Choose one thing you are good at. Write it here:"
+  },
+  "g8-t1-l03-003::c1f61c60fc3e31b6ca6e9616-1": {
+    "kind": "instruction",
+    "reason": "Reviewed parent instruction; the following dedicated authored fields capture the requested work",
+    "sourceText": "Now list 3–5 skills hidden inside that one thing:"
+  },
+  "g8-t1-l12-012::555f07153886ec132a8554e4-1": {
+    "kind": "instruction",
+    "reason": "Reviewed parent instruction; the following dedicated authored fields capture the requested work",
+    "sourceText": "Set up your saving method this week. Start this week. Even R5. Start. After one week, record:"
+  },
+  "g8-t1-l16-016::7edc3fb604310f9c546b030c-1": {
+    "kind": "instruction",
+    "reason": "Reviewed parent instruction; the following dedicated authored fields capture the requested work",
+    "sourceText": "Take your first step. Do it. Then record:"
+  },
+  "g8-t1-l17-017::8a8854c8a005b90ed3098823-1": {
+    "kind": "instruction",
+    "reason": "Reviewed parent instruction; the following dedicated authored fields capture the requested work",
+    "sourceText": "Before you make a choice, ask yourself:"
+  },
+  "g8-t2-l23-023::671034e644a904f9a130d11e-1": {
+    "kind": "instruction",
+    "reason": "Reviewed parent instruction; the following dedicated authored fields capture the requested work",
+    "sourceText": "Do not explain. Do not make it a speech. Just say it. Then record:"
+  },
+  "g8-t2-l24-024::b19a04bb0da5f3c9ace7e69b-1": {
+    "kind": "instruction",
+    "reason": "Reviewed parent instruction; the following dedicated authored fields capture the requested work",
+    "sourceText": "Help Emmanuel calculate:"
+  },
+  "g8-t2-l24-024::e7540fd29019f66aada189d5-1": {
+    "kind": "instruction",
+    "reason": "Reviewed parent instruction; the following dedicated authored fields capture the requested work",
+    "sourceText": "Find a small business in your community — a spaza shop, a vendor, a car wash. Observe it for 10 minutes. Write down:"
+  },
+  "g8-t2-l25-025::91c0a007141466b2371f8309-1": {
+    "kind": "instruction",
+    "reason": "Reviewed parent instruction; the following dedicated authored fields capture the requested work",
+    "sourceText": "From the examples above:"
+  },
+  "g8-t3-l45-044::fafbee0e62893e3857e80ddd-1": {
+    "kind": "projections",
+    "reason": "Three authored time projections need three independent answers; retain the original combined response",
+    "sourceText": "If I do it every day for one month: If I do it every day for one year: If I do it every day for five years:"
+  },
+  "g8-t3-l46-045::c7975da9c177e7bd5ec7c1a6-1": {
+    "kind": "instruction",
+    "reason": "Reviewed parent instruction; the following dedicated authored fields capture the requested work",
+    "sourceText": "Now add 5% interest per year (simplified):"
+  },
+  "g8-t3-l55-054::3159256cc5825b6f950d2ef3-1": {
+    "kind": "instruction",
+    "reason": "Reviewed parent instruction; the following dedicated authored fields capture the requested work",
+    "sourceText": "Choose ONE skill. Answer:"
+  },
+  "g8-t3-l56-055::50f28918a65449c4bfb76d66-1": {
+    "kind": "instruction",
+    "reason": "Reviewed parent instruction; the following dedicated authored fields capture the requested work",
+    "sourceText": "Design a simple weekly planning routine. Answer:"
+  },
+  "g8-t3-l57-056::e13c72ed29482613f99b703a-1": {
+    "kind": "instruction",
+    "reason": "Reviewed parent instruction; the following dedicated authored fields capture the requested work",
+    "sourceText": "Money Habits:"
+  },
+  "g8-t4-l62-061::5a211c25bbffcb3e75844aa5-1": {
+    "kind": "instruction",
+    "reason": "Reviewed parent instruction; the following dedicated authored fields capture the requested work",
+    "sourceText": "Look at your life NOW. Answer honestly:"
+  },
+  "g8-t4-l64-063::86bf5236767651caf0fdf6d2-1": {
+    "kind": "instruction",
+    "reason": "Reviewed parent instruction; the following dedicated authored fields capture the requested work",
+    "sourceText": "Complete these sentences:"
+  },
+  "g8-t4-l72-071::2725be14587df0ba2ca3af9f-1": {
+    "kind": "instruction",
+    "reason": "Reviewed parent instruction; the following dedicated authored fields capture the requested work",
+    "sourceText": "For Option A (Earn and Save):"
+  },
+  "g8-t4-l73-072::f9062af46d97feba08a8b2e1-1": {
+    "kind": "instruction",
+    "reason": "Reviewed parent instruction; the following dedicated authored fields capture the requested work",
+    "sourceText": "Before you move on, pause. Look at what you have done. Write:"
+  },
+  "g8-t4-l75-074::687c96c60d474b6058814485-1": {
+    "kind": "instruction",
+    "reason": "Reviewed parent instruction; the following dedicated authored fields capture the requested work",
+    "sourceText": "As you listen to each presentation, write:"
+  },
+  "g8-t4-l76-075::42dd102abeee220e36be5d8a-1": {
+    "kind": "instruction",
+    "reason": "Reviewed parent instruction; the following dedicated authored fields capture the requested work",
+    "sourceText": "As you listen to each presentation, write:"
+  },
+  "g8-t4-l77-076::1c4d4f30666058102c9eb5f2-1": {
+    "kind": "instruction",
+    "reason": "Reviewed parent instruction; the following dedicated authored fields capture the requested work",
+    "sourceText": "Write a thank you to one person:"
+  },
+  "g9-t3-l36-025::6c632ad1a2e0cc03a00c3cf8-1": {
+    "kind": "instruction",
+    "reason": "Reviewed parent instruction; the following dedicated authored fields capture the requested work",
+    "sourceText": "If I do this tiny habit every day for:"
+  },
+  "g9-t3-l49-038::b2305e5c54cfaa261cfc6eba-1": {
+    "kind": "instruction",
+    "reason": "Reviewed parent instruction; the following dedicated authored fields capture the requested work",
+    "sourceText": "Write your personal protocol for when you receive a suspicious message:"
+  },
+  "g9-t3-l50-039::e13c72ed29482613f99b703a-1": {
+    "kind": "instruction",
+    "reason": "Reviewed parent instruction; the following dedicated authored fields capture the requested work",
+    "sourceText": "Money Habits:"
+  },
+  "g9-t4-l66-056::44e1a4c69e17db990d66719e-1": {
+    "kind": "instruction",
+    "reason": "Reviewed parent instruction; the following dedicated authored fields capture the requested work",
+    "sourceText": "Before you move on, pause. Look at what you have done. Write:"
+  },
+  "g10-t2-l19-019::9c27bafe165f188ab23abd1c-1": {
+    "kind": "instruction",
+    "reason": "Reviewed parent instruction; the following dedicated authored fields capture the requested work",
+    "sourceText": "How long does it take money to double at:"
+  },
+  "g10-t3-l48-048::0e5233d02258722a95e7479b-1": {
+    "kind": "instruction",
+    "reason": "Reviewed parent instruction; the following dedicated authored fields capture the requested work",
+    "sourceText": "If you were making a will today, answer these questions:"
+  },
+  "g10-t4-l65-065::94dc0895baf0976caa2209d5-1": {
+    "kind": "instruction",
+    "reason": "Reviewed parent instruction; the following dedicated authored fields capture the requested work",
+    "sourceText": "Write Mama Rose's framework in your own words:"
+  },
+  "g11-t1-l03-003::c218a560e14a66604657fb3c-1": {
+    "kind": "instruction",
+    "reason": "Reviewed parent instruction; the following dedicated authored fields capture the requested work",
+    "sourceText": "The Core Skill: Look at your answers. What is the one skill or theme that connects them all — the way \"communication\" connects Myah's teaching, writing, speaking, and creating? Write it here:"
+  },
+  "g11-t1-l05-005::561f81081a39a349f1412129-1": {
+    "kind": "instruction",
+    "reason": "Reviewed parent instruction; the following dedicated authored fields capture the requested work",
+    "sourceText": "Calculate:"
+  },
+  "g11-t1-l06-006::1ae0a5d9a83f19010b9371ec-1": {
+    "kind": "instruction",
+    "reason": "Reviewed parent instruction; the following dedicated authored fields capture the requested work",
+    "sourceText": "Calculate:"
+  },
+  "g11-t1-l10-010::49338c2ff13cffb9d634825d-1": {
+    "kind": "instruction",
+    "reason": "Reviewed parent instruction; the following dedicated authored fields capture the requested work",
+    "sourceText": "Calculate:"
+  },
+  "g11-t1-l14-014::eb9599a90539b16a7548e4fb-1": {
+    "kind": "instruction",
+    "reason": "Reviewed parent instruction; the following dedicated authored fields capture the requested work",
+    "sourceText": "My Primary Leverage Combination:"
+  },
+  "g11-t1-l14-014::66ff5e0aeb150e42ee221f1b-1": {
+    "kind": "instruction",
+    "reason": "Reviewed parent instruction; the following dedicated authored fields capture the requested work",
+    "sourceText": "For each remaining lever, write one small way you could add it:"
+  },
+  "g11-t1-l15-015::690c528b777d3efee1c108af-1": {
+    "kind": "instruction",
+    "reason": "Reviewed parent instruction; the following dedicated authored fields capture the requested work",
+    "sourceText": "One idea for each lever I will use:"
+  },
+  "g11-t1-l17-017::0fc4cb837b60d1adab90e236-1": {
+    "kind": "instruction",
+    "reason": "Reviewed parent instruction; the following dedicated authored fields capture the requested work",
+    "sourceText": "The levers I will use and how:"
+  },
+  "g11-t2-l35-035::4d5040f89abf83b0b88efddd-1": {
+    "kind": "instruction",
+    "reason": "Reviewed parent instruction; the following dedicated authored fields capture the requested work",
+    "sourceText": "Three leadership principles that matter to me — and the specific experience that shaped each:"
+  },
+  "g11-t3-l43-043::5712673b6f3c932869e97c67-1": {
+    "kind": "instruction",
+    "reason": "Reviewed parent instruction; the following dedicated authored fields capture the requested work",
+    "sourceText": "Calculate:"
+  },
+  "g11-t3-l45-045::90e7ca085ea99aafe731f217-1": {
+    "kind": "instruction",
+    "reason": "Reviewed parent instruction; the following dedicated authored fields capture the requested work",
+    "sourceText": "Themba's Three Rules — Apply them:"
+  },
+  "g11-t3-l51-051::d417725d3aa634b3160ca030-1": {
+    "kind": "instruction",
+    "reason": "Reviewed parent instruction; the following dedicated authored fields capture the requested work",
+    "sourceText": "How I Will Build:"
+  },
+  "g11-t3-l51-051::ed3290c855cdc6967f3d55ff-1": {
+    "kind": "instruction",
+    "reason": "Reviewed parent instruction; the following dedicated authored fields capture the requested work",
+    "sourceText": "How I Will Protect:"
+  },
+  "g11-t3-l51-051::74d347c5ba9a2b1930dbdcd6-1": {
+    "kind": "instruction",
+    "reason": "Reviewed parent instruction; the following dedicated authored fields capture the requested work",
+    "sourceText": "How I Will Align:"
+  },
+  "g11-t3-l51-051::5d62a0e30ea2ad6faf1d11a5-1": {
+    "kind": "instruction",
+    "reason": "Reviewed parent instruction; the following dedicated authored fields capture the requested work",
+    "sourceText": "Tax Efficiency:"
+  },
+  "g11-t3-l51-051::022597c89a0778c96557e04d-1": {
+    "kind": "instruction",
+    "reason": "Reviewed parent instruction; the following dedicated authored fields capture the requested work",
+    "sourceText": "Five Forms of Wealth:"
+  },
+  "g11-t3-l52-052::24c0ee00f2c15abd7c85d46c-1": {
+    "kind": "instruction",
+    "reason": "Reviewed parent instruction; the following dedicated authored fields capture the requested work",
+    "sourceText": "In 10 years, I want to have:"
+  },
+  "g11-t3-l53-053::781ea379256d468ebb41456b-1": {
+    "kind": "instruction",
+    "reason": "Reviewed parent instruction; the following dedicated authored fields capture the requested work",
+    "sourceText": "Key assumptions I am making — and how I will test them:"
+  },
+  "g12-t1-l18-018::54c2a9b244d0cac9efad9d0c-1": {
+    "kind": "instruction",
+    "reason": "Reviewed parent instruction; the following dedicated authored fields capture the requested work",
+    "sourceText": "After all presentations, write:"
+  },
+  "g12-t4-l72-064::f17ac93c9f280fb702707ad7-1": {
+    "kind": "instruction",
+    "reason": "Reviewed parent instruction; the following dedicated authored fields capture the requested work",
+    "sourceText": "After all presentations, write:"
   }
 }

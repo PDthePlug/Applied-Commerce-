@@ -1,6 +1,6 @@
 import type {ContentBlock} from './types';
 import decisions from './interaction-decisions.json';
-export type InteractionDecision={kind:'instruction'|'reflection'|'skills'|'circle-map';reason:string;sourceText:string};
+export type InteractionDecision={kind:'instruction'|'reflection'|'skills'|'circle-map'|'projections';reason:string;sourceText:string};
 export function reviewedInteraction(unitId:string,block:ContentBlock):InteractionDecision|null{
  const decision=(decisions as Record<string,InteractionDecision>)[`${unitId}::${block.id}`];
  // A source edit requires renewed review; never silently reuse an exception.
