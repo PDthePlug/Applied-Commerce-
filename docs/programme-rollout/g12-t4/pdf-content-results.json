@@ -1,0 +1,333 @@
+{
+  "verification": "local text comparison of genuine hosted PDF exports; private strings not published",
+  "scope": "explicit selected lessons",
+  "releasedPlans": 395,
+  "normalisation": "Unicode compatibility, equivalent quote/dash forms and layout whitespace. Wrapped scaffold cells can use their full text within the existing fixed-layout column; no loose subsequence matching. Exact DOM fields and PDF margins checked separately.",
+  "summary": {
+    "pdfs": 40,
+    "fields": 1106,
+    "missingFields": 0
+  },
+  "results": [
+    {
+      "scope": "integrated",
+      "lessonId": "g12-t4-l61-053",
+      "fields": 26,
+      "tableColumnExtractionFields": 0,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "fallback",
+      "lessonId": "g12-t4-l61-053",
+      "fields": 26,
+      "tableColumnExtractionFields": 0,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "integrated",
+      "lessonId": "g12-t4-l62-054",
+      "fields": 30,
+      "tableColumnExtractionFields": 0,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "fallback",
+      "lessonId": "g12-t4-l62-054",
+      "fields": 30,
+      "tableColumnExtractionFields": 0,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "integrated",
+      "lessonId": "g12-t4-l63-055",
+      "fields": 31,
+      "tableColumnExtractionFields": 0,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "fallback",
+      "lessonId": "g12-t4-l63-055",
+      "fields": 31,
+      "tableColumnExtractionFields": 0,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "integrated",
+      "lessonId": "g12-t4-l64-056",
+      "fields": 29,
+      "tableColumnExtractionFields": 0,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "fallback",
+      "lessonId": "g12-t4-l64-056",
+      "fields": 29,
+      "tableColumnExtractionFields": 0,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "integrated",
+      "lessonId": "g12-t4-l65-057",
+      "fields": 26,
+      "tableColumnExtractionFields": 0,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "fallback",
+      "lessonId": "g12-t4-l65-057",
+      "fields": 26,
+      "tableColumnExtractionFields": 0,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "integrated",
+      "lessonId": "g12-t4-l66-058",
+      "fields": 26,
+      "tableColumnExtractionFields": 0,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "fallback",
+      "lessonId": "g12-t4-l66-058",
+      "fields": 26,
+      "tableColumnExtractionFields": 0,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "integrated",
+      "lessonId": "g12-t4-l67-059",
+      "fields": 26,
+      "tableColumnExtractionFields": 0,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "fallback",
+      "lessonId": "g12-t4-l67-059",
+      "fields": 26,
+      "tableColumnExtractionFields": 0,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "integrated",
+      "lessonId": "g12-t4-l68-060",
+      "fields": 26,
+      "tableColumnExtractionFields": 0,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "fallback",
+      "lessonId": "g12-t4-l68-060",
+      "fields": 26,
+      "tableColumnExtractionFields": 0,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "integrated",
+      "lessonId": "g12-t4-l69-061",
+      "fields": 29,
+      "tableColumnExtractionFields": 0,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "fallback",
+      "lessonId": "g12-t4-l69-061",
+      "fields": 29,
+      "tableColumnExtractionFields": 0,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "integrated",
+      "lessonId": "g12-t4-l70-062",
+      "fields": 29,
+      "tableColumnExtractionFields": 0,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "fallback",
+      "lessonId": "g12-t4-l70-062",
+      "fields": 29,
+      "tableColumnExtractionFields": 0,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "integrated",
+      "lessonId": "g12-t4-l71-063",
+      "fields": 28,
+      "tableColumnExtractionFields": 0,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "fallback",
+      "lessonId": "g12-t4-l71-063",
+      "fields": 28,
+      "tableColumnExtractionFields": 0,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "integrated",
+      "lessonId": "g12-t4-l72-064",
+      "fields": 29,
+      "tableColumnExtractionFields": 0,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "fallback",
+      "lessonId": "g12-t4-l72-064",
+      "fields": 29,
+      "tableColumnExtractionFields": 0,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "integrated",
+      "lessonId": "g12-t4-l73-065",
+      "fields": 27,
+      "tableColumnExtractionFields": 0,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "fallback",
+      "lessonId": "g12-t4-l73-065",
+      "fields": 27,
+      "tableColumnExtractionFields": 0,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "integrated",
+      "lessonId": "g12-t4-l74-066",
+      "fields": 26,
+      "tableColumnExtractionFields": 0,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "fallback",
+      "lessonId": "g12-t4-l74-066",
+      "fields": 26,
+      "tableColumnExtractionFields": 0,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "integrated",
+      "lessonId": "g12-t4-l75-067",
+      "fields": 27,
+      "tableColumnExtractionFields": 0,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "fallback",
+      "lessonId": "g12-t4-l75-067",
+      "fields": 27,
+      "tableColumnExtractionFields": 0,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "integrated",
+      "lessonId": "g12-t4-l76-068",
+      "fields": 25,
+      "tableColumnExtractionFields": 0,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "fallback",
+      "lessonId": "g12-t4-l76-068",
+      "fields": 25,
+      "tableColumnExtractionFields": 0,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "integrated",
+      "lessonId": "g12-t4-l77-069",
+      "fields": 26,
+      "tableColumnExtractionFields": 0,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "fallback",
+      "lessonId": "g12-t4-l77-069",
+      "fields": 26,
+      "tableColumnExtractionFields": 0,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "integrated",
+      "lessonId": "g12-t4-l78-070",
+      "fields": 27,
+      "tableColumnExtractionFields": 0,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "fallback",
+      "lessonId": "g12-t4-l78-070",
+      "fields": 27,
+      "tableColumnExtractionFields": 0,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "integrated",
+      "lessonId": "g12-t4-l79-071",
+      "fields": 25,
+      "tableColumnExtractionFields": 0,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "fallback",
+      "lessonId": "g12-t4-l79-071",
+      "fields": 25,
+      "tableColumnExtractionFields": 0,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "integrated",
+      "lessonId": "g12-t4-l80-072",
+      "fields": 35,
+      "tableColumnExtractionFields": 0,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "fallback",
+      "lessonId": "g12-t4-l80-072",
+      "fields": 35,
+      "tableColumnExtractionFields": 0,
+      "missing": [],
+      "preserved": true
+    }
+  ]
+}

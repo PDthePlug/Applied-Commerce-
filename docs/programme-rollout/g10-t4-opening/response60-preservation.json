@@ -1,0 +1,18 @@
+{
+  "localActualRendererComparison": "PASS",
+  "baselineCommit": "e4e8bc6f746f08f35e5f537c4286862ce5483622",
+  "sourceUnitSHA256": "36f8aa0524cf7c67b62faddb591f3de9c74ff487dbd90a1b2e5687b2b810c631",
+  "onlyExistingResponseSurfaceChanged": true,
+  "old": {
+    "radio": 0,
+    "checkbox": 24
+  },
+  "new": {
+    "radio": 24,
+    "checkbox": 0
+  },
+  "other398UnitEmptyMarkup": "Exact existing baseline comparison PASS in Node suite",
+  "sourceChanged": false,
+  "originalResponseIdentityRetained": true,
+  "databaseMigration": false
+}

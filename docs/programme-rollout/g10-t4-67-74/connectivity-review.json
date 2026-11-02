@@ -1,0 +1,52 @@
+{
+  "at": "2026-11-01T03:31:31.965Z",
+  "projectRef": "inxshlumnhcgiahxqewe",
+  "networkFailures": [],
+  "checks": [
+    {
+      "name": "staging public Auth settings",
+      "status": 200
+    },
+    {
+      "name": "supported Auth Admin read-only listing",
+      "status": 200
+    },
+    {
+      "name": "isolated staging project",
+      "status": 403,
+      "errorCode": "forbidden",
+      "category": "HTTP authorization/permission response; network request completed"
+    },
+    {
+      "name": "server key binding and temporary-input absence",
+      "status": 403,
+      "errorCode": "forbidden",
+      "category": "HTTP authorization/permission response; network request completed"
+    },
+    {
+      "name": "normal review deployment",
+      "status": 403,
+      "errorCode": "forbidden",
+      "category": "HTTP authorization/permission response; network request completed"
+    }
+  ],
+  "writes": false,
+  "managedEnvironmentRevision": 75,
+  "observationsCurrent": true,
+  "httpPolicy": "enforced unrestricted; no direct TCP grants",
+  "codingEnvironmentClassroomKeyListed": false,
+  "originalServerKeyExported": false,
+  "genuineApplicationRoles": "See separately dated browser/password/RLS evidence; configuration and Admin listing are not an educator login",
+  "connectedVercelVerification": {
+    "at": "2026-11-01T03:31:59.512Z",
+    "method": "connected Vercel tools; independent of coding VERCEL_TOKEN",
+    "projectId": "prj_9MXnYeh3mxtFzcS1xzEDrTjOW2nP",
+    "projectName": "applied-commerce-sa-staging",
+    "normalDeploymentId": "dpl_J6jaST8xrmCKu4U3CN2BWyA1wH2M",
+    "normalDeploymentState": "READY",
+    "testedCommit": "c7942644eb01a126b06ac741b414e4556f002539",
+    "originalServerKeyBindingUnchanged": true,
+    "temporaryInputCount": 0,
+    "keyDecryptionRequested": false
+  }
+}

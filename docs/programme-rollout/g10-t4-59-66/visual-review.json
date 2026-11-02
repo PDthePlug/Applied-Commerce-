@@ -1,0 +1,20 @@
+{
+  "evidence": "Manual review of protected genuine staging captures; not educator classroom trial",
+  "testedCommit": "6771e483bd62f5ec9266449d5f67b2c6e656743b",
+  "capturesInspected": [
+    "teacher-after-g10-t4-l66-066-320-1.png",
+    "checkpoint-after-g10-t4-l64-064-320-2.png",
+    "teacher-after-g10-t4-l63-063-1280-1.png"
+  ],
+  "observations": [
+    "Brief introduction immediately precedes original story with local optional deeper guidance.",
+    "Checkpoint number sits beside wrapped text; original response follows directly, without a repeated empty-field caption.",
+    "Desktop story remains central beside a compact teacher cue; repeated panel navigation blocks are absent."
+  ],
+  "limitations": [
+    "At 320px and text scale2, long words may wrap within the word to preserve reflow; normal scale remains readable.",
+    "Other responsive captures are automatically measured, not all manually inspected.",
+    "No educator timing trial is claimed."
+  ],
+  "authenticatedCapturesPublished": false
+}

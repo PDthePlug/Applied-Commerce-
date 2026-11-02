@@ -1,0 +1,91 @@
+{
+  "guides": 2,
+  "guidesPassing": 2,
+  "releasedGuides": 395,
+  "scope": "explicit selected lessons",
+  "check": "Text stays within 12 mm A4 margins, allowing 2 pt measurement tolerance; all pages contain text.",
+  "results": [
+    {
+      "lessonId": "g12-t1-l12-012",
+      "pages": 3,
+      "allPagesHaveText": true,
+      "marginsPass": true,
+      "pageBounds": [
+        {
+          "page": 1,
+          "words": 296,
+          "bounds": {
+            "xMin": 34.499999,
+            "yMin": 50.455076,
+            "xMax": 559.910133,
+            "yMax": 785.975065
+          },
+          "inside12mmWithTolerance": true
+        },
+        {
+          "page": 2,
+          "words": 264,
+          "bounds": {
+            "xMin": 34.499999,
+            "yMin": 35.170897,
+            "xMax": 560.981665,
+            "yMax": 793.475065
+          },
+          "inside12mmWithTolerance": true
+        },
+        {
+          "page": 3,
+          "words": 235,
+          "bounds": {
+            "xMin": 34.499999,
+            "yMin": 35.170897,
+            "xMax": 560.945775,
+            "yMax": 699.725068
+          },
+          "inside12mmWithTolerance": true
+        }
+      ]
+    },
+    {
+      "lessonId": "g12-t3-l46-046",
+      "pages": 3,
+      "allPagesHaveText": true,
+      "marginsPass": true,
+      "pageBounds": [
+        {
+          "page": 1,
+          "words": 263,
+          "bounds": {
+            "xMin": 34.499999,
+            "yMin": 50.455076,
+            "xMax": 556.254615,
+            "yMax": 726.178681
+          },
+          "inside12mmWithTolerance": true
+        },
+        {
+          "page": 2,
+          "words": 238,
+          "bounds": {
+            "xMin": 34.499999,
+            "yMin": 35.170897,
+            "xMax": 561.602025,
+            "yMax": 782.428678
+          },
+          "inside12mmWithTolerance": true
+        },
+        {
+          "page": 3,
+          "words": 160,
+          "bounds": {
+            "xMin": 34.499999,
+            "yMin": 35.170897,
+            "xMax": 559.2385,
+            "yMax": 589.475073
+          },
+          "inside12mmWithTolerance": true
+        }
+      ]
+    }
+  ]
+}

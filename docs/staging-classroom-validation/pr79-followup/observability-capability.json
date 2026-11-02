@@ -1,0 +1,19 @@
+{
+  "at": "2026-11-01T14:05:54.140905+00:00",
+  "projectId": "prj_9MXnYeh3mxtFzcS1xzEDrTjOW2nP",
+  "deploymentId": "dpl_EEVRLBr3hsidCpTnEdxhwcdpsBjs",
+  "metric": "vercel.function_invocation.peak_memory_mb",
+  "status": "BLOCKED",
+  "http": 402,
+  "code": "payment_required",
+  "reason": "plan_upgrade_required",
+  "message": "Observability Plus is required. No plan or billing change made.",
+  "scope": {
+    "type": "project",
+    "ownerId": "team_0F7XVax56npxBWgjVdXMJj3V",
+    "projectIds": [
+      "prj_9MXnYeh3mxtFzcS1xzEDrTjOW2nP"
+    ]
+  },
+  "limits": "Schema discovery succeeds. Query entitlement does not establish hosted memory or process identity."
+}

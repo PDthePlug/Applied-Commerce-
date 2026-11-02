@@ -1,0 +1,52 @@
+{
+  "commit": "7ebce10319a1a3b582d7862fbbebc5747b4f14f3",
+  "projectRef": "inxshlumnhcgiahxqewe",
+  "authentication": "genuine fresh learner browser/password API sessions, no interception",
+  "resumedOnlyLesson": "g12-t3-l46-046",
+  "pageErrors": [],
+  "httpFailures": [
+    {
+      "path": "/api/classroom",
+      "status": 403
+    },
+    {
+      "path": "/api/classroom",
+      "status": 403
+    }
+  ],
+  "requestFailures": [
+    {
+      "path": "/learn/8",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "path": "/learn/12",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "path": "/learn/12/term/3/g12-t3-l51-051",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "path": "/learn/12/term/3/g12-t3-l45-045",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "path": "/learn/12/term/3/g12-t3-l51-051",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "path": "/learn/12/term/3/g12-t3-l53-checkpoint-20261004",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "path": "/learn/12/term/3/g12-t3-l54-checkpoint-20261004",
+      "failure": "net::ERR_ABORTED"
+    }
+  ],
+  "navigationStatus": 200,
+  "actualPath": "/learn/12/term/3/g12-t3-l46-046",
+  "readerReadyMs": 1845,
+  "failure": "Expected values to be strictly equal:\n\n2 !== 0\n",
+  "status": "FAIL"
+}

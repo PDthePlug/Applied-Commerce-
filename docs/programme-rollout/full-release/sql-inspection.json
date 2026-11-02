@@ -1,0 +1,1066 @@
+{
+  "at": "2026-11-02T10:16:30.549Z",
+  "projectRef": "inxshlumnhcgiahxqewe",
+  "connection": "Supabase MCP Primary",
+  "access": "READ-ONLY catalog inspection through supported connector; no user/Auth row access or writes",
+  "project": {
+    "ref": "inxshlumnhcgiahxqewe",
+    "name": "Applied Commerce Staging",
+    "region": "eu-west-1",
+    "status": "ACTIVE_HEALTHY",
+    "postgresVersion": "17.11.0.003"
+  },
+  "summary": {
+    "public_tables": 22,
+    "public_tables_without_rls": 0,
+    "restrictive_session_policies": 22
+  },
+  "restrictiveSessionPolicies": [
+    {
+      "schemaname": "public",
+      "tablename": "account_preferences",
+      "policyname": "active_auth_session",
+      "permissive": "RESTRICTIVE",
+      "cmd": "ALL"
+    },
+    {
+      "schemaname": "public",
+      "tablename": "assessment_attempts",
+      "policyname": "active_auth_session",
+      "permissive": "RESTRICTIVE",
+      "cmd": "ALL"
+    },
+    {
+      "schemaname": "public",
+      "tablename": "audit_events",
+      "policyname": "active_auth_session",
+      "permissive": "RESTRICTIVE",
+      "cmd": "ALL"
+    },
+    {
+      "schemaname": "public",
+      "tablename": "cohort_enrolments",
+      "policyname": "active_auth_session",
+      "permissive": "RESTRICTIVE",
+      "cmd": "ALL"
+    },
+    {
+      "schemaname": "public",
+      "tablename": "cohort_staff",
+      "policyname": "active_auth_session",
+      "permissive": "RESTRICTIVE",
+      "cmd": "ALL"
+    },
+    {
+      "schemaname": "public",
+      "tablename": "cohorts",
+      "policyname": "active_auth_session",
+      "permissive": "RESTRICTIVE",
+      "cmd": "ALL"
+    },
+    {
+      "schemaname": "public",
+      "tablename": "curriculum_releases",
+      "policyname": "active_auth_session",
+      "permissive": "RESTRICTIVE",
+      "cmd": "ALL"
+    },
+    {
+      "schemaname": "public",
+      "tablename": "evidence_definitions",
+      "policyname": "active_auth_session",
+      "permissive": "RESTRICTIVE",
+      "cmd": "ALL"
+    },
+    {
+      "schemaname": "public",
+      "tablename": "evidence_records",
+      "policyname": "active_auth_session",
+      "permissive": "RESTRICTIVE",
+      "cmd": "ALL"
+    },
+    {
+      "schemaname": "public",
+      "tablename": "evidence_report_snapshots",
+      "policyname": "active_auth_session",
+      "permissive": "RESTRICTIVE",
+      "cmd": "ALL"
+    },
+    {
+      "schemaname": "public",
+      "tablename": "evidence_reviews",
+      "policyname": "active_auth_session",
+      "permissive": "RESTRICTIVE",
+      "cmd": "ALL"
+    },
+    {
+      "schemaname": "public",
+      "tablename": "learner_profiles",
+      "policyname": "active_auth_session",
+      "permissive": "RESTRICTIVE",
+      "cmd": "ALL"
+    },
+    {
+      "schemaname": "public",
+      "tablename": "lesson_notes",
+      "policyname": "active_auth_session",
+      "permissive": "RESTRICTIVE",
+      "cmd": "ALL"
+    },
+    {
+      "schemaname": "public",
+      "tablename": "lesson_progress",
+      "policyname": "active_auth_session",
+      "permissive": "RESTRICTIVE",
+      "cmd": "ALL"
+    },
+    {
+      "schemaname": "public",
+      "tablename": "portfolio_artifacts",
+      "policyname": "active_auth_session",
+      "permissive": "RESTRICTIVE",
+      "cmd": "ALL"
+    },
+    {
+      "schemaname": "public",
+      "tablename": "portfolio_evidence",
+      "policyname": "active_auth_session",
+      "permissive": "RESTRICTIVE",
+      "cmd": "ALL"
+    },
+    {
+      "schemaname": "public",
+      "tablename": "profiles",
+      "policyname": "active_auth_session",
+      "permissive": "RESTRICTIVE",
+      "cmd": "ALL"
+    },
+    {
+      "schemaname": "public",
+      "tablename": "prompt_responses",
+      "policyname": "active_auth_session",
+      "permissive": "RESTRICTIVE",
+      "cmd": "ALL"
+    },
+    {
+      "schemaname": "public",
+      "tablename": "rubric_criteria",
+      "policyname": "active_auth_session",
+      "permissive": "RESTRICTIVE",
+      "cmd": "ALL"
+    },
+    {
+      "schemaname": "public",
+      "tablename": "rubric_templates",
+      "policyname": "active_auth_session",
+      "permissive": "RESTRICTIVE",
+      "cmd": "ALL"
+    },
+    {
+      "schemaname": "public",
+      "tablename": "school_memberships",
+      "policyname": "active_auth_session",
+      "permissive": "RESTRICTIVE",
+      "cmd": "ALL"
+    },
+    {
+      "schemaname": "public",
+      "tablename": "schools",
+      "policyname": "active_auth_session",
+      "permissive": "RESTRICTIVE",
+      "cmd": "ALL"
+    }
+  ],
+  "selectedPolicies": [
+    {
+      "schemaname": "public",
+      "tablename": "cohort_enrolments",
+      "policyname": "active_auth_session",
+      "roles": "{authenticated}",
+      "cmd": "ALL",
+      "qual": "( SELECT private.has_active_session() AS has_active_session)",
+      "with_check": "( SELECT private.has_active_session() AS has_active_session)"
+    },
+    {
+      "schemaname": "public",
+      "tablename": "cohort_enrolments",
+      "policyname": "cohort staff delete enrolments",
+      "roles": "{authenticated}",
+      "cmd": "DELETE",
+      "qual": "private.is_cohort_staff_member(cohort_id)",
+      "with_check": null
+    },
+    {
+      "schemaname": "public",
+      "tablename": "cohort_enrolments",
+      "policyname": "cohort staff insert enrolments",
+      "roles": "{authenticated}",
+      "cmd": "INSERT",
+      "qual": null,
+      "with_check": "private.is_cohort_staff_member(cohort_id)"
+    },
+    {
+      "schemaname": "public",
+      "tablename": "cohort_enrolments",
+      "policyname": "cohort staff update enrolments",
+      "roles": "{authenticated}",
+      "cmd": "UPDATE",
+      "qual": "private.is_cohort_staff_member(cohort_id)",
+      "with_check": "private.is_cohort_staff_member(cohort_id)"
+    },
+    {
+      "schemaname": "public",
+      "tablename": "cohort_enrolments",
+      "policyname": "cohort_enrolments_select",
+      "roles": "{authenticated}",
+      "cmd": "SELECT",
+      "qual": "((learner_id = ( SELECT auth.uid() AS uid)) OR private.is_cohort_staff_member(cohort_id))",
+      "with_check": null
+    },
+    {
+      "schemaname": "public",
+      "tablename": "cohort_staff",
+      "policyname": "active_auth_session",
+      "roles": "{authenticated}",
+      "cmd": "ALL",
+      "qual": "( SELECT private.has_active_session() AS has_active_session)",
+      "with_check": "( SELECT private.has_active_session() AS has_active_session)"
+    },
+    {
+      "schemaname": "public",
+      "tablename": "cohort_staff",
+      "policyname": "cohort_staff_select",
+      "roles": "{authenticated}",
+      "cmd": "SELECT",
+      "qual": "((user_id = ( SELECT auth.uid() AS uid)) OR private.has_school_role(( SELECT c.school_id\n   FROM cohorts c\n  WHERE (c.id = cohort_staff.cohort_id)), ARRAY['owner'::text, 'admin'::text]))",
+      "with_check": null
+    },
+    {
+      "schemaname": "public",
+      "tablename": "cohort_staff",
+      "policyname": "school admins delete cohort staff",
+      "roles": "{authenticated}",
+      "cmd": "DELETE",
+      "qual": "private.is_cohort_admin(cohort_id)",
+      "with_check": null
+    },
+    {
+      "schemaname": "public",
+      "tablename": "cohort_staff",
+      "policyname": "school admins insert cohort staff",
+      "roles": "{authenticated}",
+      "cmd": "INSERT",
+      "qual": null,
+      "with_check": "private.is_cohort_admin(cohort_id)"
+    },
+    {
+      "schemaname": "public",
+      "tablename": "cohort_staff",
+      "policyname": "school admins update cohort staff",
+      "roles": "{authenticated}",
+      "cmd": "UPDATE",
+      "qual": "private.is_cohort_admin(cohort_id)",
+      "with_check": "private.is_cohort_admin(cohort_id)"
+    },
+    {
+      "schemaname": "public",
+      "tablename": "lesson_notes",
+      "policyname": "active_auth_session",
+      "roles": "{authenticated}",
+      "cmd": "ALL",
+      "qual": "( SELECT private.has_active_session() AS has_active_session)",
+      "with_check": "( SELECT private.has_active_session() AS has_active_session)"
+    },
+    {
+      "schemaname": "public",
+      "tablename": "lesson_notes",
+      "policyname": "lesson_notes_delete_own",
+      "roles": "{authenticated}",
+      "cmd": "DELETE",
+      "qual": "(( SELECT auth.uid() AS uid) = learner_id)",
+      "with_check": null
+    },
+    {
+      "schemaname": "public",
+      "tablename": "lesson_notes",
+      "policyname": "lesson_notes_insert_own",
+      "roles": "{authenticated}",
+      "cmd": "INSERT",
+      "qual": null,
+      "with_check": "(( SELECT auth.uid() AS uid) = learner_id)"
+    },
+    {
+      "schemaname": "public",
+      "tablename": "lesson_notes",
+      "policyname": "lesson_notes_select",
+      "roles": "{authenticated}",
+      "cmd": "SELECT",
+      "qual": "private.can_view_learner(learner_id)",
+      "with_check": null
+    },
+    {
+      "schemaname": "public",
+      "tablename": "lesson_notes",
+      "policyname": "lesson_notes_update_own",
+      "roles": "{authenticated}",
+      "cmd": "UPDATE",
+      "qual": "(( SELECT auth.uid() AS uid) = learner_id)",
+      "with_check": "(( SELECT auth.uid() AS uid) = learner_id)"
+    },
+    {
+      "schemaname": "public",
+      "tablename": "lesson_progress",
+      "policyname": "active_auth_session",
+      "roles": "{authenticated}",
+      "cmd": "ALL",
+      "qual": "( SELECT private.has_active_session() AS has_active_session)",
+      "with_check": "( SELECT private.has_active_session() AS has_active_session)"
+    },
+    {
+      "schemaname": "public",
+      "tablename": "lesson_progress",
+      "policyname": "lesson_progress_delete_own",
+      "roles": "{authenticated}",
+      "cmd": "DELETE",
+      "qual": "(( SELECT auth.uid() AS uid) = learner_id)",
+      "with_check": null
+    },
+    {
+      "schemaname": "public",
+      "tablename": "lesson_progress",
+      "policyname": "lesson_progress_insert_own",
+      "roles": "{authenticated}",
+      "cmd": "INSERT",
+      "qual": null,
+      "with_check": "(( SELECT auth.uid() AS uid) = learner_id)"
+    },
+    {
+      "schemaname": "public",
+      "tablename": "lesson_progress",
+      "policyname": "lesson_progress_select",
+      "roles": "{authenticated}",
+      "cmd": "SELECT",
+      "qual": "private.can_view_learner(learner_id)",
+      "with_check": null
+    },
+    {
+      "schemaname": "public",
+      "tablename": "lesson_progress",
+      "policyname": "lesson_progress_update_own",
+      "roles": "{authenticated}",
+      "cmd": "UPDATE",
+      "qual": "(( SELECT auth.uid() AS uid) = learner_id)",
+      "with_check": "(( SELECT auth.uid() AS uid) = learner_id)"
+    },
+    {
+      "schemaname": "public",
+      "tablename": "portfolio_artifacts",
+      "policyname": "active_auth_session",
+      "roles": "{authenticated}",
+      "cmd": "ALL",
+      "qual": "( SELECT private.has_active_session() AS has_active_session)",
+      "with_check": "( SELECT private.has_active_session() AS has_active_session)"
+    },
+    {
+      "schemaname": "public",
+      "tablename": "portfolio_artifacts",
+      "policyname": "portfolio_artifacts_delete_own",
+      "roles": "{authenticated}",
+      "cmd": "DELETE",
+      "qual": "(( SELECT auth.uid() AS uid) = learner_id)",
+      "with_check": null
+    },
+    {
+      "schemaname": "public",
+      "tablename": "portfolio_artifacts",
+      "policyname": "portfolio_artifacts_insert_own",
+      "roles": "{authenticated}",
+      "cmd": "INSERT",
+      "qual": null,
+      "with_check": "(( SELECT auth.uid() AS uid) = learner_id)"
+    },
+    {
+      "schemaname": "public",
+      "tablename": "portfolio_artifacts",
+      "policyname": "portfolio_artifacts_select",
+      "roles": "{authenticated}",
+      "cmd": "SELECT",
+      "qual": "private.can_view_learner(learner_id)",
+      "with_check": null
+    },
+    {
+      "schemaname": "public",
+      "tablename": "portfolio_artifacts",
+      "policyname": "portfolio_artifacts_update_own",
+      "roles": "{authenticated}",
+      "cmd": "UPDATE",
+      "qual": "(( SELECT auth.uid() AS uid) = learner_id)",
+      "with_check": "(( SELECT auth.uid() AS uid) = learner_id)"
+    },
+    {
+      "schemaname": "public",
+      "tablename": "portfolio_evidence",
+      "policyname": "active_auth_session",
+      "roles": "{authenticated}",
+      "cmd": "ALL",
+      "qual": "( SELECT private.has_active_session() AS has_active_session)",
+      "with_check": "( SELECT private.has_active_session() AS has_active_session)"
+    },
+    {
+      "schemaname": "public",
+      "tablename": "portfolio_evidence",
+      "policyname": "portfolio_evidence_delete_own",
+      "roles": "{authenticated}",
+      "cmd": "DELETE",
+      "qual": "(EXISTS ( SELECT 1\n   FROM portfolio_artifacts pa\n  WHERE ((pa.id = portfolio_evidence.artifact_id) AND (pa.learner_id = ( SELECT auth.uid() AS uid)))))",
+      "with_check": null
+    },
+    {
+      "schemaname": "public",
+      "tablename": "portfolio_evidence",
+      "policyname": "portfolio_evidence_insert_own",
+      "roles": "{authenticated}",
+      "cmd": "INSERT",
+      "qual": null,
+      "with_check": "(EXISTS ( SELECT 1\n   FROM (portfolio_artifacts pa\n     JOIN prompt_responses pr ON ((pr.id = portfolio_evidence.prompt_response_id)))\n  WHERE ((pa.id = portfolio_evidence.artifact_id) AND (pa.learner_id = ( SELECT auth.uid() AS uid)) AND (pr.learner_id = ( SELECT auth.uid() AS uid)))))"
+    },
+    {
+      "schemaname": "public",
+      "tablename": "portfolio_evidence",
+      "policyname": "portfolio_evidence_select",
+      "roles": "{authenticated}",
+      "cmd": "SELECT",
+      "qual": "(EXISTS ( SELECT 1\n   FROM portfolio_artifacts pa\n  WHERE ((pa.id = portfolio_evidence.artifact_id) AND private.can_view_learner(pa.learner_id))))",
+      "with_check": null
+    },
+    {
+      "schemaname": "public",
+      "tablename": "prompt_responses",
+      "policyname": "active_auth_session",
+      "roles": "{authenticated}",
+      "cmd": "ALL",
+      "qual": "( SELECT private.has_active_session() AS has_active_session)",
+      "with_check": "( SELECT private.has_active_session() AS has_active_session)"
+    },
+    {
+      "schemaname": "public",
+      "tablename": "prompt_responses",
+      "policyname": "prompt_responses_delete_own",
+      "roles": "{authenticated}",
+      "cmd": "DELETE",
+      "qual": "(( SELECT auth.uid() AS uid) = learner_id)",
+      "with_check": null
+    },
+    {
+      "schemaname": "public",
+      "tablename": "prompt_responses",
+      "policyname": "prompt_responses_insert_own",
+      "roles": "{authenticated}",
+      "cmd": "INSERT",
+      "qual": null,
+      "with_check": "(( SELECT auth.uid() AS uid) = learner_id)"
+    },
+    {
+      "schemaname": "public",
+      "tablename": "prompt_responses",
+      "policyname": "prompt_responses_select",
+      "roles": "{authenticated}",
+      "cmd": "SELECT",
+      "qual": "private.can_view_learner(learner_id)",
+      "with_check": null
+    },
+    {
+      "schemaname": "public",
+      "tablename": "prompt_responses",
+      "policyname": "prompt_responses_update_own",
+      "roles": "{authenticated}",
+      "cmd": "UPDATE",
+      "qual": "(( SELECT auth.uid() AS uid) = learner_id)",
+      "with_check": "(( SELECT auth.uid() AS uid) = learner_id)"
+    },
+    {
+      "schemaname": "public",
+      "tablename": "school_memberships",
+      "policyname": "active_auth_session",
+      "roles": "{authenticated}",
+      "cmd": "ALL",
+      "qual": "( SELECT private.has_active_session() AS has_active_session)",
+      "with_check": "( SELECT private.has_active_session() AS has_active_session)"
+    },
+    {
+      "schemaname": "public",
+      "tablename": "school_memberships",
+      "policyname": "school admins delete memberships",
+      "roles": "{authenticated}",
+      "cmd": "DELETE",
+      "qual": "private.has_school_role(school_id, ARRAY['owner'::text, 'admin'::text])",
+      "with_check": null
+    },
+    {
+      "schemaname": "public",
+      "tablename": "school_memberships",
+      "policyname": "school admins insert memberships",
+      "roles": "{authenticated}",
+      "cmd": "INSERT",
+      "qual": null,
+      "with_check": "private.has_school_role(school_id, ARRAY['owner'::text, 'admin'::text])"
+    },
+    {
+      "schemaname": "public",
+      "tablename": "school_memberships",
+      "policyname": "school admins update memberships",
+      "roles": "{authenticated}",
+      "cmd": "UPDATE",
+      "qual": "private.has_school_role(school_id, ARRAY['owner'::text, 'admin'::text])",
+      "with_check": "private.has_school_role(school_id, ARRAY['owner'::text, 'admin'::text])"
+    },
+    {
+      "schemaname": "public",
+      "tablename": "school_memberships",
+      "policyname": "school_memberships_select",
+      "roles": "{authenticated}",
+      "cmd": "SELECT",
+      "qual": "((user_id = ( SELECT auth.uid() AS uid)) OR private.has_school_role(school_id, ARRAY['owner'::text, 'admin'::text]))",
+      "with_check": null
+    }
+  ],
+  "selectedPrivateFunctions": [
+    {
+      "schema_name": "private",
+      "function_name": "can_view_learner",
+      "arguments": "target_learner uuid",
+      "security_definer": true,
+      "settings": [
+        "search_path=\"\""
+      ],
+      "definition": "CREATE OR REPLACE FUNCTION private.can_view_learner(target_learner uuid)\n RETURNS boolean\n LANGUAGE sql\n STABLE SECURITY DEFINER\n SET search_path TO ''\nAS $function$ select (select auth.uid()) is not null and private.has_active_session() and (\n  private.is_platform_admin() or auth.uid()=target_learner\n  or exists (select 1 from public.cohort_enrolments ce join public.cohort_staff cs on cs.cohort_id=ce.cohort_id\n    where ce.learner_id=target_learner and ce.status='active' and cs.user_id=auth.uid() and cs.status='active')\n  or exists (select 1 from public.cohort_enrolments ce join public.cohorts c on c.id=ce.cohort_id\n    join public.school_memberships sm on sm.school_id=c.school_id\n    where ce.learner_id=target_learner and ce.status='active' and sm.user_id=auth.uid()\n      and sm.status='active' and sm.role in ('owner','admin'))\n); $function$\n"
+    },
+    {
+      "schema_name": "private",
+      "function_name": "has_active_session",
+      "arguments": "",
+      "security_definer": true,
+      "settings": [
+        "search_path=\"\""
+      ],
+      "definition": "CREATE OR REPLACE FUNCTION private.has_active_session()\n RETURNS boolean\n LANGUAGE sql\n STABLE SECURITY DEFINER\n SET search_path TO ''\nAS $function$\n  select exists (\n    select 1 from auth.sessions s join auth.users u on u.id=s.user_id\n      join public.profiles p on p.id=u.id\n    where s.id=case when (auth.jwt()->>'session_id') ~ '^[0-9a-fA-F-]{36}$' then (auth.jwt()->>'session_id')::uuid else null end\n      and s.user_id=auth.uid() and (s.not_after is null or s.not_after>now())\n      and u.deleted_at is null and (u.banned_until is null or u.banned_until<now())\n      and p.status='active'\n  );\n$function$\n"
+    },
+    {
+      "schema_name": "private",
+      "function_name": "has_school_role",
+      "arguments": "target_school uuid, target_roles text[]",
+      "security_definer": true,
+      "settings": [
+        "search_path=\"\""
+      ],
+      "definition": "CREATE OR REPLACE FUNCTION private.has_school_role(target_school uuid, target_roles text[] DEFAULT NULL::text[])\n RETURNS boolean\n LANGUAGE sql\n STABLE SECURITY DEFINER\n SET search_path TO ''\nAS $function$ select (select auth.uid()) is not null and private.has_active_session() and (\n  private.is_platform_admin() or exists (\n    select 1 from public.school_memberships sm\n    where sm.school_id=target_school and sm.user_id=(select auth.uid())\n      and sm.status='active' and (target_roles is null or sm.role=any(target_roles))\n  )\n); $function$\n"
+    },
+    {
+      "schema_name": "private",
+      "function_name": "is_cohort_staff_member",
+      "arguments": "target_cohort uuid",
+      "security_definer": true,
+      "settings": [
+        "search_path=\"\""
+      ],
+      "definition": "CREATE OR REPLACE FUNCTION private.is_cohort_staff_member(target_cohort uuid)\n RETURNS boolean\n LANGUAGE sql\n STABLE SECURITY DEFINER\n SET search_path TO ''\nAS $function$ select (select auth.uid()) is not null and private.has_active_session() and (\n  private.is_platform_admin()\n  or exists (select 1 from public.cohort_staff cs where cs.cohort_id=target_cohort and cs.user_id=auth.uid() and cs.status='active')\n  or exists (select 1 from public.cohorts c join public.school_memberships sm on sm.school_id=c.school_id\n    where c.id=target_cohort and sm.user_id=auth.uid() and sm.status='active' and sm.role in ('owner','admin'))\n); $function$\n"
+    }
+  ],
+  "selectedPublicColumns": [
+    {
+      "table_name": "cohort_enrolments",
+      "column_name": "id",
+      "data_type": "uuid",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "cohort_enrolments",
+      "column_name": "cohort_id",
+      "data_type": "uuid",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "cohort_enrolments",
+      "column_name": "learner_id",
+      "data_type": "uuid",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "cohort_enrolments",
+      "column_name": "status",
+      "data_type": "text",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "cohort_enrolments",
+      "column_name": "enrolled_at",
+      "data_type": "timestamp with time zone",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "cohort_enrolments",
+      "column_name": "completed_at",
+      "data_type": "timestamp with time zone",
+      "is_nullable": "YES"
+    },
+    {
+      "table_name": "cohort_enrolments",
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "cohort_enrolments",
+      "column_name": "updated_at",
+      "data_type": "timestamp with time zone",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "cohort_staff",
+      "column_name": "id",
+      "data_type": "uuid",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "cohort_staff",
+      "column_name": "cohort_id",
+      "data_type": "uuid",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "cohort_staff",
+      "column_name": "user_id",
+      "data_type": "uuid",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "cohort_staff",
+      "column_name": "role",
+      "data_type": "text",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "cohort_staff",
+      "column_name": "status",
+      "data_type": "text",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "cohort_staff",
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "cohort_staff",
+      "column_name": "updated_at",
+      "data_type": "timestamp with time zone",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "lesson_notes",
+      "column_name": "id",
+      "data_type": "uuid",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "lesson_notes",
+      "column_name": "learner_id",
+      "data_type": "uuid",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "lesson_notes",
+      "column_name": "curriculum_version",
+      "data_type": "text",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "lesson_notes",
+      "column_name": "grade",
+      "data_type": "smallint",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "lesson_notes",
+      "column_name": "term",
+      "data_type": "smallint",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "lesson_notes",
+      "column_name": "unit_id",
+      "data_type": "text",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "lesson_notes",
+      "column_name": "note",
+      "data_type": "text",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "lesson_notes",
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "lesson_notes",
+      "column_name": "updated_at",
+      "data_type": "timestamp with time zone",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "lesson_notes",
+      "column_name": "curriculum_release_id",
+      "data_type": "uuid",
+      "is_nullable": "YES"
+    },
+    {
+      "table_name": "lesson_notes",
+      "column_name": "sync_revision",
+      "data_type": "bigint",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "lesson_progress",
+      "column_name": "id",
+      "data_type": "uuid",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "lesson_progress",
+      "column_name": "learner_id",
+      "data_type": "uuid",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "lesson_progress",
+      "column_name": "curriculum_version",
+      "data_type": "text",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "lesson_progress",
+      "column_name": "grade",
+      "data_type": "smallint",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "lesson_progress",
+      "column_name": "term",
+      "data_type": "smallint",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "lesson_progress",
+      "column_name": "unit_id",
+      "data_type": "text",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "lesson_progress",
+      "column_name": "status",
+      "data_type": "text",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "lesson_progress",
+      "column_name": "started_at",
+      "data_type": "timestamp with time zone",
+      "is_nullable": "YES"
+    },
+    {
+      "table_name": "lesson_progress",
+      "column_name": "last_opened_at",
+      "data_type": "timestamp with time zone",
+      "is_nullable": "YES"
+    },
+    {
+      "table_name": "lesson_progress",
+      "column_name": "completed_at",
+      "data_type": "timestamp with time zone",
+      "is_nullable": "YES"
+    },
+    {
+      "table_name": "lesson_progress",
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "lesson_progress",
+      "column_name": "updated_at",
+      "data_type": "timestamp with time zone",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "lesson_progress",
+      "column_name": "curriculum_release_id",
+      "data_type": "uuid",
+      "is_nullable": "YES"
+    },
+    {
+      "table_name": "lesson_progress",
+      "column_name": "sync_revision",
+      "data_type": "bigint",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "portfolio_artifacts",
+      "column_name": "id",
+      "data_type": "uuid",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "portfolio_artifacts",
+      "column_name": "learner_id",
+      "data_type": "uuid",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "portfolio_artifacts",
+      "column_name": "curriculum_version",
+      "data_type": "text",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "portfolio_artifacts",
+      "column_name": "grade",
+      "data_type": "smallint",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "portfolio_artifacts",
+      "column_name": "term",
+      "data_type": "smallint",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "portfolio_artifacts",
+      "column_name": "unit_id",
+      "data_type": "text",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "portfolio_artifacts",
+      "column_name": "marker_key",
+      "data_type": "text",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "portfolio_artifacts",
+      "column_name": "title",
+      "data_type": "text",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "portfolio_artifacts",
+      "column_name": "artifact_type",
+      "data_type": "text",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "portfolio_artifacts",
+      "column_name": "status",
+      "data_type": "text",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "portfolio_artifacts",
+      "column_name": "captured_at",
+      "data_type": "timestamp with time zone",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "portfolio_artifacts",
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "portfolio_artifacts",
+      "column_name": "updated_at",
+      "data_type": "timestamp with time zone",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "portfolio_artifacts",
+      "column_name": "curriculum_release_id",
+      "data_type": "uuid",
+      "is_nullable": "YES"
+    },
+    {
+      "table_name": "portfolio_evidence",
+      "column_name": "id",
+      "data_type": "uuid",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "portfolio_evidence",
+      "column_name": "artifact_id",
+      "data_type": "uuid",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "portfolio_evidence",
+      "column_name": "prompt_response_id",
+      "data_type": "uuid",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "portfolio_evidence",
+      "column_name": "label",
+      "data_type": "text",
+      "is_nullable": "YES"
+    },
+    {
+      "table_name": "portfolio_evidence",
+      "column_name": "position",
+      "data_type": "integer",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "portfolio_evidence",
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "portfolio_evidence",
+      "column_name": "curriculum_release_id",
+      "data_type": "uuid",
+      "is_nullable": "YES"
+    },
+    {
+      "table_name": "prompt_responses",
+      "column_name": "id",
+      "data_type": "uuid",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "prompt_responses",
+      "column_name": "learner_id",
+      "data_type": "uuid",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "prompt_responses",
+      "column_name": "curriculum_version",
+      "data_type": "text",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "prompt_responses",
+      "column_name": "grade",
+      "data_type": "smallint",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "prompt_responses",
+      "column_name": "term",
+      "data_type": "smallint",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "prompt_responses",
+      "column_name": "unit_id",
+      "data_type": "text",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "prompt_responses",
+      "column_name": "prompt_key",
+      "data_type": "text",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "prompt_responses",
+      "column_name": "response_kind",
+      "data_type": "text",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "prompt_responses",
+      "column_name": "response",
+      "data_type": "jsonb",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "prompt_responses",
+      "column_name": "answered_at",
+      "data_type": "timestamp with time zone",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "prompt_responses",
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "prompt_responses",
+      "column_name": "updated_at",
+      "data_type": "timestamp with time zone",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "prompt_responses",
+      "column_name": "curriculum_release_id",
+      "data_type": "uuid",
+      "is_nullable": "YES"
+    },
+    {
+      "table_name": "prompt_responses",
+      "column_name": "sync_revision",
+      "data_type": "bigint",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "school_memberships",
+      "column_name": "id",
+      "data_type": "uuid",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "school_memberships",
+      "column_name": "school_id",
+      "data_type": "uuid",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "school_memberships",
+      "column_name": "user_id",
+      "data_type": "uuid",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "school_memberships",
+      "column_name": "role",
+      "data_type": "text",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "school_memberships",
+      "column_name": "status",
+      "data_type": "text",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "school_memberships",
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "school_memberships",
+      "column_name": "updated_at",
+      "data_type": "timestamp with time zone",
+      "is_nullable": "NO"
+    }
+  ],
+  "otherConnectedIdentities": "Three target-project reads denied at management permission layer; public docs search alone did not establish project access.",
+  "directTcp": "NOT ESTABLISHED: environment TCP grants and database password/URL absent",
+  "authAdministration": "Separate supported secret-key Auth API and real password sessions; no direct Auth-table manipulation"
+}

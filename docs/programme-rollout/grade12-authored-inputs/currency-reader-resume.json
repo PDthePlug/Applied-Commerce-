@@ -1,0 +1,65 @@
+{
+  "commit": "7ebce10319a1a3b582d7862fbbebc5747b4f14f3",
+  "projectRef": "inxshlumnhcgiahxqewe",
+  "authentication": "genuine fresh learner browser/password API sessions, no interception",
+  "resumedOnlyLesson": "g12-t3-l46-046",
+  "pageErrors": [],
+  "httpFailures": [
+    {
+      "path": "/api/classroom",
+      "status": 403
+    },
+    {
+      "path": "/api/classroom",
+      "status": 403
+    }
+  ],
+  "requestFailures": [
+    {
+      "path": "/learn/12",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "path": "/learn/12/term/3/g12-t3-l41-041",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "path": "/learn/12/term/3/g12-t3-l42-042",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "path": "/learn/12/term/3/g12-t3-l46-046",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "path": "/learn/12/term/3/g12-t3-l48-048",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "path": "/learn/12/term/3/g12-t3-l42-042",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "path": "/learn/12/term/3/g12-t3-l44-044",
+      "failure": "net::ERR_ABORTED"
+    }
+  ],
+  "navigationStatus": 200,
+  "actualPath": "/learn/12/term/3/g12-t3-l46-046",
+  "readerReadyMs": 1435,
+  "expectedLearnerGuidanceDenials": [
+    {
+      "path": "/api/classroom",
+      "status": 403
+    },
+    {
+      "path": "/api/classroom",
+      "status": 403
+    }
+  ],
+  "unexpectedHTTPFailures": [],
+  "status": "PASS_GENUINE_FRESH_SESSION_RESUME",
+  "scope": "The prior genuine resumption verified remaining test values and restored every original before a final diagnostic assertion misclassified two expected learner classroom 403 responses. That original failure remains retained. This fresh browser/API session independently verifies all restored original snapshots and correctly classifies the expected denials.",
+  "verifiedRemainingCells": 18,
+  "allNineOriginalPromptSnapshotsUnchanged": true
+}

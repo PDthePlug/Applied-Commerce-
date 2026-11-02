@@ -1,0 +1,25 @@
+{
+  "at": "2026-11-02T06:31:55.153Z",
+  "baseURL": "https://applied-commerce-sa-staging-r18icgjr8.vercel.app",
+  "projectRef": "inxshlumnhcgiahxqewe",
+  "authentication": "real browser password login",
+  "plans": [
+    {
+      "lessonId": "g12-t4-l61-053",
+      "fields": 26,
+      "originalFieldsPreserved": true,
+      "originalResponseControlsPreserved": true,
+      "noRedundantDepthPanels": true,
+      "printFieldsPreserved": true,
+      "heapBefore": 9367652,
+      "heapAfter": 19813836
+    }
+  ],
+  "roles": [],
+  "persistence": [],
+  "delivery": [],
+  "commit": "7e0110bfe50b69900036738b259f4c8f0454320e",
+  "scope": "explicit selected lessons",
+  "releasedPlans": 395,
+  "failure": "locator.waitFor: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.lesson-document') to be visible\u001b[22m\n"
+}

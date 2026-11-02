@@ -1,0 +1,96 @@
+{
+  "at": "2026-10-26T10:49:20.412Z",
+  "projectRef": "inxshlumnhcgiahxqewe",
+  "authentication": "genuine staging password login",
+  "syntheticOnly": true,
+  "sourceChanges": false,
+  "responseStructureChanges": false,
+  "existingLogs": [
+    {
+      "lessonId": "g10-t4-l70-070",
+      "headingBlockId": "f4ee6d0f936e76a37823efc7-1",
+      "recordBlockId": "0f068233bc104337201a57c3-1",
+      "existingControls": 6,
+      "visible": true,
+      "newControlsAdded": 0
+    },
+    {
+      "lessonId": "g10-t4-l71-checkpoint-20261004",
+      "headingBlockId": "f4ee6d0f936e76a37823efc7-1",
+      "recordBlockId": "95361bfa06ada76734835170-1",
+      "existingControls": 6,
+      "visible": true,
+      "newControlsAdded": 0
+    },
+    {
+      "lessonId": "g10-t4-l72-checkpoint-20261004",
+      "headingBlockId": "f4ee6d0f936e76a37823efc7-1",
+      "recordBlockId": "a6af74b61f5806255e20a6cc-1",
+      "existingControls": 6,
+      "visible": true,
+      "newControlsAdded": 0
+    },
+    {
+      "lessonId": "g10-t4-l73-checkpoint-20261004",
+      "headingBlockId": "f4ee6d0f936e76a37823efc7-1",
+      "recordBlockId": "9c029e5b25a8f64db56616c4-1",
+      "existingControls": 6,
+      "visible": true,
+      "newControlsAdded": 0
+    },
+    {
+      "lessonId": "g10-t4-l74-checkpoint-20261004",
+      "headingBlockId": "f4ee6d0f936e76a37823efc7-1",
+      "recordBlockId": "ec5537aca1d030d1eeeef126-1",
+      "existingControls": 6,
+      "visible": true,
+      "newControlsAdded": 0
+    }
+  ],
+  "activityEvidence": [
+    {
+      "lessonId": "g10-t4-l70-070",
+      "blockId": "02d82e49b2e9d9c567391bfa-1",
+      "responseKey": "g10-t4-l70-070::prompt-02d82e49b2e9d9c567391bfa-1::response",
+      "kind": "original activity evidence",
+      "editClearReload": true,
+      "freshPasswordLogin": true,
+      "actualPortfolioVisible": true,
+      "assignedEducatorCanRead": true
+    },
+    {
+      "lessonId": "g10-t4-l73-checkpoint-20261004",
+      "blockId": "ff8acfa2945f0277c92c2c7f-1",
+      "responseKey": "g10-t4-l73-checkpoint-20261004::prompt-ff8acfa2945f0277c92c2c7f-1::response",
+      "kind": "original activity evidence",
+      "editClearReload": true,
+      "freshPasswordLogin": true,
+      "actualPortfolioVisible": true,
+      "assignedEducatorCanRead": true
+    },
+    {
+      "lessonId": "g10-t4-l74-checkpoint-20261004",
+      "blockId": "04b62b47b8152167fbb9206a-1",
+      "responseKey": "g10-t4-l74-checkpoint-20261004::prompt-04b62b47b8152167fbb9206a-1::response",
+      "kind": "original activity evidence",
+      "editClearReload": true,
+      "freshPasswordLogin": true,
+      "actualPortfolioVisible": true,
+      "assignedEducatorCanRead": true
+    },
+    {
+      "lessonId": "g10-t4-l70-070",
+      "blockId": "0f068233bc104337201a57c3-1",
+      "responseKey": "g10-t4-l70-070::prompt-0f068233bc104337201a57c3-1::blank-0",
+      "kind": "existing later-work log field",
+      "editClearReload": true,
+      "freshPasswordLogin": true,
+      "assignedEducatorCanRead": true
+    }
+  ],
+  "pageErrors": [],
+  "commit": "c7942644eb01a126b06ac741b414e4556f002539",
+  "otherAndRevokedDenied": true,
+  "status": "PASS",
+  "originalSyntheticValuesRestored": true
+}

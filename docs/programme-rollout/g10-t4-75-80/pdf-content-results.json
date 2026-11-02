@@ -1,0 +1,237 @@
+{
+  "verification": "local text comparison of genuine hosted PDF exports; private strings not published",
+  "scope": "explicit selected lessons",
+  "releasedPlans": 237,
+  "normalisation": "Unicode compatibility, equivalent quote/dash forms and layout whitespace. Wrapped scaffold cells can use their full text within the existing fixed-layout column; no loose subsequence matching. Exact DOM fields and PDF margins checked separately.",
+  "summary": {
+    "pdfs": 28,
+    "fields": 1858,
+    "missingFields": 0
+  },
+  "results": [
+    {
+      "scope": "integrated-pdfs",
+      "lessonId": "g8-t1-l01-001",
+      "fields": 82,
+      "tableColumnExtractionFields": 0,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "fallback-pdfs",
+      "lessonId": "g8-t1-l01-001",
+      "fields": 82,
+      "tableColumnExtractionFields": 0,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "integrated-pdfs",
+      "lessonId": "g8-t1-l08-008",
+      "fields": 125,
+      "tableColumnExtractionFields": 0,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "fallback-pdfs",
+      "lessonId": "g8-t1-l08-008",
+      "fields": 125,
+      "tableColumnExtractionFields": 0,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "integrated-pdfs",
+      "lessonId": "g9-t1-l02-002",
+      "fields": 101,
+      "tableColumnExtractionFields": 1,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "fallback-pdfs",
+      "lessonId": "g9-t1-l02-002",
+      "fields": 101,
+      "tableColumnExtractionFields": 1,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "integrated-pdfs",
+      "lessonId": "g10-t2-l19-019",
+      "fields": 154,
+      "tableColumnExtractionFields": 0,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "fallback-pdfs",
+      "lessonId": "g10-t2-l19-019",
+      "fields": 154,
+      "tableColumnExtractionFields": 0,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "integrated-pdfs",
+      "lessonId": "g11-t1-l14-014",
+      "fields": 105,
+      "tableColumnExtractionFields": 0,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "fallback-pdfs",
+      "lessonId": "g11-t1-l14-014",
+      "fields": 105,
+      "tableColumnExtractionFields": 0,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "integrated-pdfs",
+      "lessonId": "g12-t1-l05-005",
+      "fields": 156,
+      "tableColumnExtractionFields": 4,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "fallback-pdfs",
+      "lessonId": "g12-t1-l05-005",
+      "fields": 156,
+      "tableColumnExtractionFields": 4,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "integrated-pdfs",
+      "lessonId": "g10-t4-l73-checkpoint-20261004",
+      "fields": 39,
+      "tableColumnExtractionFields": 0,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "fallback-pdfs",
+      "lessonId": "g10-t4-l73-checkpoint-20261004",
+      "fields": 39,
+      "tableColumnExtractionFields": 0,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "integrated-pdfs",
+      "lessonId": "g10-t4-l74-checkpoint-20261004",
+      "fields": 35,
+      "tableColumnExtractionFields": 0,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "fallback-pdfs",
+      "lessonId": "g10-t4-l74-checkpoint-20261004",
+      "fields": 35,
+      "tableColumnExtractionFields": 0,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "integrated-pdfs",
+      "lessonId": "g10-t4-l75-071",
+      "fields": 28,
+      "tableColumnExtractionFields": 0,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "fallback-pdfs",
+      "lessonId": "g10-t4-l75-071",
+      "fields": 28,
+      "tableColumnExtractionFields": 0,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "integrated-pdfs",
+      "lessonId": "g10-t4-l76-072",
+      "fields": 27,
+      "tableColumnExtractionFields": 0,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "fallback-pdfs",
+      "lessonId": "g10-t4-l76-072",
+      "fields": 27,
+      "tableColumnExtractionFields": 0,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "integrated-pdfs",
+      "lessonId": "g10-t4-l77-073",
+      "fields": 21,
+      "tableColumnExtractionFields": 0,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "fallback-pdfs",
+      "lessonId": "g10-t4-l77-073",
+      "fields": 21,
+      "tableColumnExtractionFields": 0,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "integrated-pdfs",
+      "lessonId": "g10-t4-l78-074",
+      "fields": 19,
+      "tableColumnExtractionFields": 0,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "fallback-pdfs",
+      "lessonId": "g10-t4-l78-074",
+      "fields": 19,
+      "tableColumnExtractionFields": 0,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "integrated-pdfs",
+      "lessonId": "g10-t4-l79-075",
+      "fields": 21,
+      "tableColumnExtractionFields": 0,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "fallback-pdfs",
+      "lessonId": "g10-t4-l79-075",
+      "fields": 21,
+      "tableColumnExtractionFields": 0,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "integrated-pdfs",
+      "lessonId": "g10-t4-l80-076",
+      "fields": 16,
+      "tableColumnExtractionFields": 0,
+      "missing": [],
+      "preserved": true
+    },
+    {
+      "scope": "fallback-pdfs",
+      "lessonId": "g10-t4-l80-076",
+      "fields": 16,
+      "tableColumnExtractionFields": 0,
+      "missing": [],
+      "preserved": true
+    }
+  ]
+}

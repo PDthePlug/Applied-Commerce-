@@ -28,91 +28,256 @@
   },
   "rollout": {
     "existingPlans": 24,
-    "newCompleted": 191,
-    "privateUnsealedDrafts": 0,
-    "uncompleted": 180,
-    "blocker": null,
+    "newCompleted": 207,
+    "privateUnsealedDrafts": 6,
+    "uncompleted": 164,
+    "blocker": "New original-key sealing/cleanup: coding VERCEL_TOKEN HTTP403; connected Vercel tools lack removal endpoints. Supabase connectivity remains available.",
     "stagedPendingVerification": 0
   },
   "pending": [
-    "Remaining 180 guides to complete in verified staging",
+    "Remaining 164 guides to complete in verified staging; six individual private drafts prepared",
     "Educator timing trials",
     "Hosted cold-process/server-memory measurements",
     "Configured maximum/inactivity session lifetime"
   ],
   "latestBatch": {
     "projectRef": "inxshlumnhcgiahxqewe",
-    "totalPlans": 215,
-    "newCompletedAcrossRollout": 191,
-    "remaining": 180,
-    "testedCommit": "8c0f4e7916802a095ec0cd4db880dd73288a4283",
-    "stagingURL": "https://applied-commerce-sa-staging-mxbx5n52f.vercel.app",
-    "priorBindingsPreserved": 205,
-    "newPlans": 10,
-    "directClassroomPlans": 15,
-    "directFields": 846,
-    "navigatorTargets": 125,
-    "responsiveCombinations": 270,
-    "newFirstResponsePersistence": 10,
-    "renderedTablesVerified": 2,
-    "tableFreshLoginPersistence": 2,
-    "nativeLetterResponses": 2,
-    "letterScopedReviewAndPersistence": true,
-    "sharedContact": {
-      "authoredLessons": 2,
-      "rawAllocations": 2,
-      "recommendedProvisionalContacts": 1,
-      "letterMinutes": 33,
-      "closingMinutes": 12,
-      "actualNextPreviousAndCentralNavigation": true,
-      "educatorTimingTrial": "NOT DEMONSTRATED"
-    },
+    "totalPlans": 231,
+    "newCompletedAcrossRollout": 207,
+    "remaining": 164,
+    "testedCommit": "c7942644eb01a126b06ac741b414e4556f002539",
+    "stagingURL": "https://applied-commerce-sa-staging-4dtu6xm7x.vercel.app",
+    "priorBindingsPreserved": 223,
+    "newPlans": 8,
+    "directClassroomPlans": 14,
+    "directFields": 948,
+    "navigatorTargets": 143,
+    "responsiveCombinations": 252,
+    "newFirstResponsePersistence": 8,
+    "renderedTablesVerified": 0,
+    "tableFreshLoginPersistence": 0,
+    "existingWorkshopLogLessons": 5,
+    "existingWorkshopLogControls": 30,
+    "additionalWrittenEvidenceJourneys": 4,
+    "actualPortfolioJourneys": 3,
+    "workshopEvidenceFreshLoginAndScopedReview": true,
+    "syntheticValuesRestored": true,
     "approved24Unchanged": true,
-    "integratedPDFs": 15,
-    "integratedPDFPages": 79,
-    "fallbacks": 15,
-    "fallbackPDFPages": 85,
-    "pdfTextFields": 1692,
+    "integratedPDFs": 14,
+    "integratedPDFPages": 90,
+    "fallbacks": 14,
+    "fallbackPDFPages": 91,
+    "pdfTextFields": 1896,
     "pdfMissing": 0,
     "multiPeriodLessons": [
       {
-        "lessonId": "g10-t3-l51-051",
+        "lessonId": "g10-t4-l70-070",
         "periodCount": 2
       },
       {
-        "lessonId": "g10-t3-l53-053",
+        "lessonId": "g10-t4-l71-checkpoint-20261004",
         "periodCount": 2
       },
       {
-        "lessonId": "g10-t3-l54-054",
+        "lessonId": "g10-t4-l73-checkpoint-20261004",
+        "periodCount": 2
+      },
+      {
+        "lessonId": "g10-t4-l74-checkpoint-20261004",
         "periodCount": 2
       }
     ],
     "authRlsChecks": 37,
-    "nodeTests": 213,
+    "nodeTests": 218,
     "typecheck": "PASS",
     "lint": "PASS",
     "sourceChangesApplied": false,
     "delivery": {
-      "requests": 55,
-      "newRequests": 50,
-      "newMedianMs": 873,
+      "requests": 45,
+      "newRequests": 40,
+      "newMedianMs": 938.5,
       "rangeMs": [
-        574,
-        1433
+        607,
+        1199
       ],
       "decodedBytes": [
-        6426,
-        12209
+        10292,
+        14424
       ],
       "coldProcess": "NOT DEMONSTRATED",
       "hostedServerMemory": "NOT MEASURED"
     },
     "pending": [
-      "Remaining 180 guides to complete in verified staging",
+      "Remaining 164 guides to complete in verified staging",
       "Educator timing trials",
       "Hosted cold-process/server-memory measurements",
       "Configured maximum/inactivity session lifetime"
-    ]
-  }
+    ],
+    "genuineSuiteCompletedOn": "2026-10-26",
+    "evidenceReviewedOn": "2026-11-01",
+    "printingLimit": "Headless A4 PDFs and text bounds verified; physical printer trial not performed"
+  },
+  "latestSharedResponseFix": {
+    "projectRef": "inxshlumnhcgiahxqewe",
+    "pr": 76,
+    "status": "PASS_GENUINE_STAGING",
+    "ownerApproval": "Explicit separate response-format approval on 2026-10-26",
+    "testedCommit": "eb68e7e4b0e571e748eb84bd2f9c6a5d3da54b9a",
+    "stagingURL": "https://applied-commerce-sa-staging-ojx6i0k3g.vercel.app",
+    "verifiedGuides": 215,
+    "remainingGuides": 180,
+    "newGuidesCompleted": 0,
+    "originalKeyAnd215GuideFiles": "Byte-identical to owner-merged PR75",
+    "nodeTests": 218,
+    "typecheck": "PASS",
+    "lint": "PASS",
+    "localBuild": "PASS",
+    "localBrowser": {
+      "broaderUnchangedChecks": 90,
+      "newHorizonChecksAfterPrintCorrection": 3,
+      "initialPrintFailures": 3
+    },
+    "genuineHorizonChecks": {
+      "at": "2026-10-26T09:55:28.080Z",
+      "projectRef": "inxshlumnhcgiahxqewe",
+      "commit": "eb68e7e4b0e571e748eb84bd2f9c6a5d3da54b9a",
+      "lessonId": "g10-t4-l60-060",
+      "responseKey": "g10-t4-l60-060::prompt-dfe0b8dcfd78fcd81bea25f0-1::choice",
+      "authentication": "genuine staging password login",
+      "syntheticOnly": true,
+      "sourceChanges": false,
+      "responseIdentityChanges": false,
+      "responsive": [
+        {
+          "width": 320,
+          "scale": 1,
+          "overflow": false
+        },
+        {
+          "width": 320,
+          "scale": 1.28,
+          "overflow": false
+        },
+        {
+          "width": 320,
+          "scale": 2,
+          "overflow": false
+        },
+        {
+          "width": 360,
+          "scale": 1,
+          "overflow": false
+        },
+        {
+          "width": 360,
+          "scale": 1.28,
+          "overflow": false
+        },
+        {
+          "width": 360,
+          "scale": 2,
+          "overflow": false
+        },
+        {
+          "width": 430,
+          "scale": 1,
+          "overflow": false
+        },
+        {
+          "width": 430,
+          "scale": 1.28,
+          "overflow": false
+        },
+        {
+          "width": 430,
+          "scale": 2,
+          "overflow": false
+        },
+        {
+          "width": 768,
+          "scale": 1,
+          "overflow": false
+        },
+        {
+          "width": 768,
+          "scale": 1.28,
+          "overflow": false
+        },
+        {
+          "width": 768,
+          "scale": 2,
+          "overflow": false
+        },
+        {
+          "width": 1280,
+          "scale": 1,
+          "overflow": false
+        },
+        {
+          "width": 1280,
+          "scale": 1.28,
+          "overflow": false
+        },
+        {
+          "width": 1280,
+          "scale": 2,
+          "overflow": false
+        },
+        {
+          "width": 1920,
+          "scale": 1,
+          "overflow": false
+        },
+        {
+          "width": 1920,
+          "scale": 1.28,
+          "overflow": false
+        },
+        {
+          "width": 1920,
+          "scale": 2,
+          "overflow": false
+        }
+      ],
+      "pageErrors": [],
+      "independentChoices": true,
+      "keyboardEditAndIndividualClearReload": true,
+      "freshPasswordLogin": true,
+      "assignedEducatorActualUIAndRawEvidence": true,
+      "otherLearnerDenied": true,
+      "revokedEducatorDenied": true,
+      "unrelatedInstitutionStaffDenied": true,
+      "clearAllWithoutLegacyReloadAndFreshLogin": true,
+      "previousCombinedVerbatimAndFreshLogin": true,
+      "physicalPrintSelectionsAndPreviousAnswer": true,
+      "actualPortfolioReadable": true,
+      "clearAllNewChoicesRetainsExactOlderString": true,
+      "clearedStateAndLegacyFreshLogin": true,
+      "status": "PASS",
+      "originalSyntheticResponseRestored": true
+    },
+    "referenceLessons": {
+      "count": 6,
+      "exactFields": 683,
+      "navigatorTargets": 61,
+      "responsive": 108,
+      "pdfs": 6,
+      "pdfPages": 62,
+      "pdfFields": 683,
+      "missingFields": 0
+    },
+    "authRlsChecks": 37,
+    "institutionBoundary": "PASS",
+    "limitations": [
+      "No educator classroom or timing trial",
+      "No hosted cold-process/concurrency/server-memory measurement",
+      "Configured maximum/inactivity lifetime remains pending; natural JWT expiry was demonstrated historically"
+    ],
+    "initialHostedTestFailure": {
+      "reason": "The test polled with a verification session ended by its own genuine logout. Renewing the verification session on new learner login resolves the failure.",
+      "originalResponseRestored": true,
+      "appChangedForRerun": false
+    }
+  },
+  "evidenceScope": "Top-level testedApplicationCommit/local/genuineStaging describe the initial 24-plan acceptance. latestBatch describes the dated current 231-plan release and its selected 14-lesson genuine scope."
 }

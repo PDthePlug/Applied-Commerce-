@@ -1,0 +1,122 @@
+{
+  "at": "2026-11-02T12:46:42.646492+00:00",
+  "status": "PASS_VERIFIED_INTEGRATION_WITH_MAIN",
+  "baseMain": "31f24c8cfa03865880146e4395ed8494515dfed3",
+  "ownerAcceptedPR89": "3055789d63051ba520850a9a196e6d4f41f6279b",
+  "ownerAcceptance": "User accepted PR #89 and requested consolidation of #76\u2013#89 on 2026-11-02",
+  "mergeBase": "e4e8bc6f746f08f35e5f537c4286862ce5483622",
+  "all14HeadsContainedInAccepted89": true,
+  "sourcePullRequests": [
+    {
+      "pr": 76,
+      "headSHA": "452810719038d00cfa62193bdb138f7c4e05b5d7",
+      "includedIn89": true
+    },
+    {
+      "pr": 77,
+      "headSHA": "5d915a68a154c22868933330f0f588555efee731",
+      "includedIn89": true
+    },
+    {
+      "pr": 78,
+      "headSHA": "3b7f108bb063a1776abde330ccceec920970286b",
+      "includedIn89": true
+    },
+    {
+      "pr": 79,
+      "headSHA": "ac69dc7f910a6c1184eb75023e56dcfca2999179",
+      "includedIn89": true
+    },
+    {
+      "pr": 80,
+      "headSHA": "e57fcd0252dab09c55e2e298d4b98890025f1288",
+      "includedIn89": true
+    },
+    {
+      "pr": 81,
+      "headSHA": "ac0278b5fdf1db56c15f75fd64a3c29b728277a1",
+      "includedIn89": true
+    },
+    {
+      "pr": 82,
+      "headSHA": "dc3a07ee3a1b271f29e9f87f0c6ede8e4be84c94",
+      "includedIn89": true
+    },
+    {
+      "pr": 83,
+      "headSHA": "a7ad4384e6dfa095a0eaed62c20af8393752c3f8",
+      "includedIn89": true
+    },
+    {
+      "pr": 84,
+      "headSHA": "89691315576d75c0f323eb401abc2672117eabf2",
+      "includedIn89": true
+    },
+    {
+      "pr": 85,
+      "headSHA": "695f8c7ce7cbc53f6012a31174b94cd92ea3702e",
+      "includedIn89": true
+    },
+    {
+      "pr": 86,
+      "headSHA": "fe8b37fa4bb7078f9738229d4248b67588dc1005",
+      "includedIn89": true
+    },
+    {
+      "pr": 87,
+      "headSHA": "fc6f1199a6fd1d36b13dc1e0d8f1161ff0353a24",
+      "includedIn89": true
+    },
+    {
+      "pr": 88,
+      "headSHA": "9865e5cde678c44ad42e6205f20e1594d7f0f0e4",
+      "includedIn89": true
+    },
+    {
+      "pr": 89,
+      "headSHA": "3055789d63051ba520850a9a196e6d4f41f6279b",
+      "includedIn89": true
+    }
+  ],
+  "implementationCommit": "ba173c4bc0221e48b41d9138c3926178f69d1a73",
+  "implementationParentIsMain": true,
+  "cleanThreeWayMergeTree": "e0a2664a778d17a124f5fbdba8db9a7b31d9e87b",
+  "ownerAcceptedTree": "e0a2664a778d17a124f5fbdba8db9a7b31d9e87b",
+  "implementationTreeExactlyOwnerAccepted89": true,
+  "canonicalRuntimeBooksOrMigrationChangesFromMain": false,
+  "mainWasModified": false,
+  "productionDeployment": false,
+  "freshStagingURL": "https://applied-commerce-sa-staging-5svgh4g9x.vercel.app",
+  "freshStagingProject": "inxshlumnhcgiahxqewe",
+  "freshChecks": {
+    "integratedGuides": 4,
+    "fallbackGuides": 4,
+    "roleReads": 24,
+    "all395Hashes": true,
+    "amountCells": 62,
+    "amountLayouts": 216,
+    "appearanceChecks": 48,
+    "amountPrintChecks": 12,
+    "horizonLayouts": 18,
+    "readingOnlyLessons": 3,
+    "guidePDFs": 8,
+    "guidePDFPages": 62,
+    "guidePDFFieldOccurrences": 654,
+    "liveRoleAndSessionRevocation": true,
+    "institutionBoundary": true
+  },
+  "implementationCI": {
+    "conclusion": "success",
+    "databaseId": 41445458683,
+    "headSha": "ba173c4bc0221e48b41d9138c3926178f69d1a73",
+    "status": "completed",
+    "url": "https://github.com/PDthePlug/Applied-Commerce-/actions/runs/41445458683"
+  },
+  "sourceBranchesRetained": true,
+  "limits": [
+    "Classroom timing, independent educator moderation, physical print and human assistive-technology trials remain as recorded in the accepted release.",
+    "Source editorial proposals remain separate and unapplied.",
+    "Earlier stage readiness/validator failures remain retained in their original reports; historical test counts are not fresh integration counts.",
+    "No new cold/capacity/performance experiment is claimed; accepted-release measurements remain referenced."
+  ]
+}

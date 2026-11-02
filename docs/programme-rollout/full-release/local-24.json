@@ -1,0 +1,241 @@
+{
+  "at": "2026-11-02T10:32:52.697Z",
+  "status": "PASS",
+  "scope": "explicit selected lessons",
+  "nodeVersion": "v24.19.0",
+  "releaseVersion": "classroom-v2.g12-t4.2026-11-01",
+  "releaseManifestSHA256": "52aadc37f3809cd9fa5d97038abef6cbd1a0130d6042bd3c723e25b55a779d7b",
+  "selectedLessons": [
+    "g8-t1-l01-001",
+    "g8-t1-l02-002",
+    "g8-t1-l03-003",
+    "g8-t1-l04-004",
+    "g8-t1-l05-005",
+    "g8-t1-l06-006",
+    "g8-t1-l07-007",
+    "g8-t1-l08-008",
+    "g8-t1-l09-009",
+    "g8-t1-l10-010",
+    "g8-t1-l11-011",
+    "g8-t1-l12-012",
+    "g8-t1-l13-013",
+    "g8-t1-l14-014",
+    "g8-t1-l15-015",
+    "g8-t1-l16-016",
+    "g8-t1-l17-017",
+    "g8-t1-l18-018",
+    "g8-t1-l19-019",
+    "g8-t1-l20-020",
+    "g9-t1-l02-002",
+    "g10-t2-l19-019",
+    "g11-t1-l14-014",
+    "g12-t1-l05-005"
+  ],
+  "plans": 24,
+  "fields": 1867,
+  "reconstructedCompactBytes": 450279,
+  "measurement": "local parse, all-plan hashes and actual schema/source-binding validation; protected authorised API working copies",
+  "excludes": [
+    "AES/key access",
+    "Auth",
+    "network",
+    "file loading",
+    "hosted server memory",
+    "concurrent requests"
+  ],
+  "firstCallScope": "first measured call after module import and working-copy assembly; not a guaranteed cold process",
+  "memoryScope": "Node process observations with normal garbage collection; deltas are not retained allocations or proof of a leak",
+  "firstMs": 11.934796000000006,
+  "repeatedMedianMs": 5.608845499999973,
+  "samples": [
+    {
+      "iteration": 1,
+      "ms": 11.934796000000006,
+      "cpuMs": 17.64,
+      "heapBefore": 34696880,
+      "heapAfter": 34525904,
+      "heapDelta": -170976,
+      "rssAfter": 172675072
+    },
+    {
+      "iteration": 2,
+      "ms": 5.612720999999965,
+      "cpuMs": 5.961,
+      "heapBefore": 34531664,
+      "heapAfter": 38101000,
+      "heapDelta": 3569336,
+      "rssAfter": 172675072
+    },
+    {
+      "iteration": 3,
+      "ms": 6.816362999999967,
+      "cpuMs": 8.935,
+      "heapBefore": 38101760,
+      "heapAfter": 41769200,
+      "heapDelta": 3667440,
+      "rssAfter": 175951872
+    },
+    {
+      "iteration": 4,
+      "ms": 6.715094000000022,
+      "cpuMs": 7.748,
+      "heapBefore": 41769960,
+      "heapAfter": 45349232,
+      "heapDelta": 3579272,
+      "rssAfter": 179359744
+    },
+    {
+      "iteration": 5,
+      "ms": 7.037617999999952,
+      "cpuMs": 11.862,
+      "heapBefore": 45350024,
+      "heapAfter": 33959440,
+      "heapDelta": -11390584,
+      "rssAfter": 184340480
+    },
+    {
+      "iteration": 6,
+      "ms": 5.536047999999937,
+      "cpuMs": 7.165,
+      "heapBefore": 33960392,
+      "heapAfter": 37597360,
+      "heapDelta": 3636968,
+      "rssAfter": 184340480
+    },
+    {
+      "iteration": 7,
+      "ms": 6.851624000000015,
+      "cpuMs": 7.81,
+      "heapBefore": 37598288,
+      "heapAfter": 41166192,
+      "heapDelta": 3567904,
+      "rssAfter": 184864768
+    },
+    {
+      "iteration": 8,
+      "ms": 6.956638999999996,
+      "cpuMs": 7.177,
+      "heapBefore": 41167000,
+      "heapAfter": 44796520,
+      "heapDelta": 3629520,
+      "rssAfter": 188403712
+    },
+    {
+      "iteration": 9,
+      "ms": 6.217059999999947,
+      "cpuMs": 7.485,
+      "heapBefore": 44797328,
+      "heapAfter": 48349848,
+      "heapDelta": 3552520,
+      "rssAfter": 191811584
+    },
+    {
+      "iteration": 10,
+      "ms": 5.767098000000033,
+      "cpuMs": 6.193,
+      "heapBefore": 48350656,
+      "heapAfter": 35902352,
+      "heapDelta": -12448304,
+      "rssAfter": 192466944
+    },
+    {
+      "iteration": 11,
+      "ms": 5.60496999999998,
+      "cpuMs": 5.651,
+      "heapBefore": 35903160,
+      "heapAfter": 39453128,
+      "heapDelta": 3549968,
+      "rssAfter": 192466944
+    },
+    {
+      "iteration": 12,
+      "ms": 5.4717130000000225,
+      "cpuMs": 5.803,
+      "heapBefore": 39453936,
+      "heapAfter": 43021000,
+      "heapDelta": 3567064,
+      "rssAfter": 192598016
+    },
+    {
+      "iteration": 13,
+      "ms": 5.381530999999995,
+      "cpuMs": 5.485,
+      "heapBefore": 43021808,
+      "heapAfter": 46650464,
+      "heapDelta": 3628656,
+      "rssAfter": 192598016
+    },
+    {
+      "iteration": 14,
+      "ms": 5.523649999999975,
+      "cpuMs": 5.844,
+      "heapBefore": 46651272,
+      "heapAfter": 33967552,
+      "heapDelta": -12683720,
+      "rssAfter": 192598016
+    },
+    {
+      "iteration": 15,
+      "ms": 4.6556119999999055,
+      "cpuMs": 4.684,
+      "heapBefore": 33968360,
+      "heapAfter": 37621080,
+      "heapDelta": 3652720,
+      "rssAfter": 192598016
+    },
+    {
+      "iteration": 16,
+      "ms": 6.20761600000003,
+      "cpuMs": 10.003,
+      "heapBefore": 37621888,
+      "heapAfter": 41177392,
+      "heapDelta": 3555504,
+      "rssAfter": 192598016
+    },
+    {
+      "iteration": 17,
+      "ms": 4.88311699999997,
+      "cpuMs": 5.529,
+      "heapBefore": 41178200,
+      "heapAfter": 44825616,
+      "heapDelta": 3647416,
+      "rssAfter": 192729088
+    },
+    {
+      "iteration": 18,
+      "ms": 4.897407999999928,
+      "cpuMs": 5.092,
+      "heapBefore": 44826424,
+      "heapAfter": 48372992,
+      "heapDelta": 3546568,
+      "rssAfter": 192729088
+    },
+    {
+      "iteration": 19,
+      "ms": 5.3839040000000296,
+      "cpuMs": 6.162,
+      "heapBefore": 48374160,
+      "heapAfter": 35654080,
+      "heapDelta": -12720080,
+      "rssAfter": 192729088
+    },
+    {
+      "iteration": 20,
+      "ms": 5.40013799999997,
+      "cpuMs": 5.872,
+      "heapBefore": 35654888,
+      "heapAfter": 39201624,
+      "heapDelta": 3546736,
+      "rssAfter": 192729088
+    },
+    {
+      "iteration": 21,
+      "ms": 5.855858000000012,
+      "cpuMs": 7.034,
+      "heapBefore": 39202432,
+      "heapAfter": 42747032,
+      "heapDelta": 3544600,
+      "rssAfter": 192729088
+    }
+  ]
+}

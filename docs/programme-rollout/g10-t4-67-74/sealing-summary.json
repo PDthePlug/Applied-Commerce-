@@ -1,0 +1,34 @@
+{
+  "preservedPlans": 223,
+  "addedPlans": 8,
+  "totalPlans": 231,
+  "addedPeriods": 12,
+  "newPlacements": 82,
+  "version": "ac-classroom-231-g10-t4-workshops-2026-10-26",
+  "originalKeyAuthenticated": true,
+  "keyExported": false,
+  "plaintextWritten": false,
+  "sourceValidationMs": 533,
+  "buildProcessOnly": {
+    "heapBefore": 40665408,
+    "heapAfter": 73506568,
+    "rssAfter": 322768896
+  },
+  "files": [
+    {
+      "name": "teaching-plans.v2.enc.json",
+      "bytes": 3861615,
+      "sha256": "3aa65291aa00bd2801e902dd659e09e446155224737199b87c27f8f1e2824369"
+    },
+    {
+      "name": "teaching-manifest.v2.json",
+      "bytes": 4050914,
+      "sha256": "13509b532b913f53acb400ae2f3b9c70aecf3c62306593ee755b9107f8a847f8"
+    },
+    {
+      "name": "teaching-availability.v2.json",
+      "bytes": 5031,
+      "sha256": "67adce1293e2844a5aaf3911796615d72584d17cbadc0ac28f03cb3ff38d5c87"
+    }
+  ]
+}

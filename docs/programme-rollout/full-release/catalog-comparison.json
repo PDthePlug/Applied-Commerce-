@@ -1,0 +1,79 @@
+{
+  "provenance": "Earlier genuine 395-guide integrated batch; same released teaching content and classroom API implementation. Separate request order/conditions; not an isolated causal latency comparison.",
+  "commit": "7e0110bfe50b69900036738b259f4c8f0454320e",
+  "projectRef": "inxshlumnhcgiahxqewe",
+  "lessonId": "g8-t1-l01-001",
+  "samples": [
+    {
+      "catalog": "include",
+      "request": 1,
+      "ms": 943,
+      "decodedBytes": 101791,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "catalog": "include",
+      "request": 2,
+      "ms": 1703,
+      "decodedBytes": 101791,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "catalog": "include",
+      "request": 3,
+      "ms": 1398,
+      "decodedBytes": 101791,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "catalog": "include",
+      "request": 4,
+      "ms": 821,
+      "decodedBytes": 101791,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "catalog": "include",
+      "request": 5,
+      "ms": 1380,
+      "decodedBytes": 101791,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "catalog": "omit",
+      "request": 1,
+      "ms": 982,
+      "decodedBytes": 20092,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "catalog": "omit",
+      "request": 2,
+      "ms": 1007,
+      "decodedBytes": 20092,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "catalog": "omit",
+      "request": 3,
+      "ms": 922,
+      "decodedBytes": 20092,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "catalog": "omit",
+      "request": 4,
+      "ms": 843,
+      "decodedBytes": 20092,
+      "cache": "private, no-store, max-age=0"
+    },
+    {
+      "catalog": "omit",
+      "request": 5,
+      "ms": 688,
+      "decodedBytes": 20092,
+      "cache": "private, no-store, max-age=0"
+    }
+  ],
+  "serverAPIAndReleasedContentUnchanged": true
+}

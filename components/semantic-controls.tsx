@@ -3,6 +3,31 @@
 import { useState } from "react";
 import { ArrowDown, ArrowUp, Plus } from "lucide-react";
 import type { AuthoredScale } from "@/lib/semantic-learning";
+import { changeHorizonResponse, financialHorizons, financialStages, readHorizonResponse } from "@/lib/horizon-response";
+
+export function HorizonChoicesControl({id,value,onChange}:{id:string;value:string;onChange:(value:string)=>void}){
+  const {answers,legacy}=readHorizonResponse(value);
+  return <div className="horizon-choices">
+    {financialHorizons.map(horizon=><fieldset className="horizon-choice" key={horizon}>
+      <legend>{horizon}:</legend>
+      <div className="horizon-options">
+        {financialStages.map(option=><label key={option}>
+          <input type="radio" name={`${id}-${horizon}`} value={option} checked={answers[horizon]===option}
+            onChange={()=>onChange(changeHorizonResponse(value,horizon,option))}/>
+          <span>{option}</span>
+        </label>)}
+      </div>
+      {answers[horizon]&&<button type="button" className="horizon-clear" onClick={()=>onChange(changeHorizonResponse(value,horizon,""))}>Clear {horizon} selection</button>}
+    </fieldset>)}
+    {legacy&&<details className="previous-combined-response">
+      <summary>Previous combined response</summary>
+      <p>{legacy}</p>
+      <small>This earlier answer is kept as written because its choices cannot be matched to individual time horizons.</small>
+    </details>}
+    {legacy&&<div className="horizon-previous-print"><strong>Previous combined response</strong><p>{legacy}</p></div>}
+    {Object.keys(answers).length>0&&<small className="response-status saved">Captured on this device</small>}
+  </div>;
+}
 
 export function RatingControl({scale,label,value,onChange}:{scale:AuthoredScale;label:string;value:string;onChange:(value:string)=>void}){
   const valid=value===""||Array.from({length:scale.max-scale.min+1},(_,i)=>String(i+scale.min)).includes(value);

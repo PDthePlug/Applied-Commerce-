@@ -1,0 +1,16 @@
+{
+  "at": "2026-11-02T07:35:39.379017+00:00",
+  "commit": "7ebce10319a1a3b582d7862fbbebc5747b4f14f3",
+  "kind": "manual visual inspection by coding assistant, not independent educator or assistive-technology moderation",
+  "captures": [
+    {
+      "file": "currency/8988d66223851b62aaef9b0f-1-320-2.png",
+      "observation": "The rand/deduction marker and full six-digit synthetic value share the responsive value column at 320px and enlarged text; dark first-row unit/value remain visible."
+    },
+    {
+      "file": "final-learner-print-row.png",
+      "observation": "The actual final learner PDF shows the original first budget row with readable dark unit/value text on a light background. This corrects the retained earlier dark print row."
+    }
+  ],
+  "status": "PASS_REPRESENTATIVE_VISUAL_REVIEW"
+}

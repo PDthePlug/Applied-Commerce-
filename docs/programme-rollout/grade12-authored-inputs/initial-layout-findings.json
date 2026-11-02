@@ -1,0 +1,23 @@
+{
+  "initialCommit": "42443bbacedac29e6f09c229b10775aee7a65d91",
+  "initialFlowEvidence": {
+    "status": "PASS_GENUINE_STAGING",
+    "cells": 62,
+    "tables": 12,
+    "layouts": 216,
+    "existingSavedAnswersPreserved": true
+  },
+  "visualFinding": "An ungrouped unit marker occupied the responsive value column and displaced its input; the pre-existing first-data-row background override reduced unit-label contrast in dark mode.",
+  "resolution": "Group the original unit/input/saved state, scope the theme-token row background to reviewed amount tables, and repeat genuine saves/restoration, responsive geometry, 48 unit-contrast probes, review and representative printing on the corrected build.",
+  "scope": "Nine source-bound Grade 12 lessons only; no learner source or old response identity changes.",
+  "retainedEvidence": "Authenticated initial-build screenshots and full raw results remain in protected reader-repair-initial-layout outside Git.",
+  "screenCorrectionCommit": "784167caf72c824ea484ae6ca1d998f0e3fd9f16",
+  "screenCorrectionFlowEvidence": {
+    "cells": 62,
+    "layouts": 216,
+    "appearanceChecks": 48,
+    "existingSavedAnswersPreserved": true
+  },
+  "printFinding": "Visual inspection of the actual learner PDF confirmed that the screen first-data-row background made its printed answer hard to read. The background override is now confined to screen media; twelve genuine print-media probes and fresh PDF samples verify the final correction.",
+  "retainedPrintSample": "Protected reader-repair-screen-layout/initial-learner-print-row.png"
+}

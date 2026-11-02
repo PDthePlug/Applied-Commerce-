@@ -10,7 +10,9 @@ import { cleanMarkup, isRemovedLogBlock, sanitizeRemovedLogReferences } from "@/
 import { DeepeningInsightPanel, LearningNotice, LearningOutcomesIntro, LessonSectionHeading, PortfolioCaptureNotice, ResponseSurface, StoryHeading, ThinkingEquationNotice } from "./presentation-system";
 import outcomeIcons from "@/lib/lesson-outcome-icons.json";
 import { authoredScale, choiceMeaning, learningSections, sourceCopy, valueSelection } from "@/lib/semantic-learning";
-import { RankingControl, RatingControl, ValuesControl } from "./semantic-controls";
+import { HorizonChoicesControl, RankingControl, RatingControl, ValuesControl } from "./semantic-controls";
+import { isFinancialHorizonPrompt } from "@/lib/horizon-response";
+import { hasAuthoredCurrencyInputs } from "@/lib/authored-currency-tables";
 
 type PromptContext = "activity" | "reflection" | "checkpoint" | "home" | null;
 type PromptMode = "checkpoint" | "home";
@@ -553,6 +555,8 @@ function ChoiceBlock({
   const prefix=(parts.shift()??"").trim();
   const options=parts.map(value=>value.trim()).filter(Boolean).filter(value=>!TENSION_RE.test(value));
   const choiceId=promptId(unitId,blockIndex,"choice");
+  if(unitId==="g10-t4-l60-060"&&isFinancialHorizonPrompt(cleaned)) return <HorizonChoicesControl
+    id={choiceId} value={promptResponses[choiceId]??""} onChange={value=>onSavePromptResponse(choiceId,value)}/>;
   const selected=(promptResponses[choiceId]??"").split("\n").map(value=>value.trim()).filter(Boolean);
   const meaning=choiceMeaning(cleaned,instruction);
   const singleChoice=meaning?.kind==="single";
@@ -710,6 +714,7 @@ function TableBlockView({
   onSavePromptResponse,
   minimumRows=3,
   regionLabel,
+  activityContext=false,
 }:{
   block:Extract<ContentBlock,{kind:"table"}>;
   unitId:string;
@@ -718,12 +723,13 @@ function TableBlockView({
   onSavePromptResponse:(promptId:string,value:string)=>void;
   minimumRows?:number;
   regionLabel?:string;
+  activityContext?:boolean;
 }){
   const headers=(block.rows[0]??[]).map(value=>sourceCopy(displayText(value)));
   const headerOnly=block.rows.length===1;
   const hasWorkbookCells=headerOnly||block.rows.slice(1).some(row=>row.some(cell=>{
     const value=sourceCopy(cell);
-    return !value||/^_+$/.test(value);
+    return !value||/^_+$/.test(value)||(activityContext&&/^(?:-?R|%)$/.test(value));
   }));
   const countId=promptId(unitId,blockIndex,"row-count");
   const storedCount=Number(promptResponses[countId]??"");
@@ -757,7 +763,9 @@ function TableBlockView({
           return <tr key={rowIndex}>
             {row.map((cell,colIndex)=>{
               const cleaned=sourceCopy(displayText(cell));
-              const editable=hasWorkbookCells&&(!cleaned||/^_+$/.test(cleaned));
+              const unitPlaceholder=activityContext&&/^(?:-?R|%)$/.test(cleaned);
+              const unitName=cleaned==="%"?"percent":cleaned==="-R"?"rand, deduction":"rand";
+              const editable=hasWorkbookCells&&(!cleaned||/^_+$/.test(cleaned)||unitPlaceholder);
               const containsBlank=BLANK_RE.test(cleaned);
               const dataLabel=headers[colIndex]||undefined;
 
@@ -766,13 +774,18 @@ function TableBlockView({
                 const value=promptResponses[id]??"";
                 const rowLabel=cleanMarkup(row.find((value,index)=>index!==colIndex&&cleanMarkup(value))??"");
                 const label=[rowLabel,headers[colIndex],headerOnly?`Entry ${rowIndex}`:""].filter(Boolean).join(" — ")||"Table response";
+                const meaningful=(value:string)=>{const text=cleanMarkup(value);return text&&!/^(?:-?R|%)$/.test(text)?text:"";};
+                const amountRow=meaningful(row[colIndex-1]??"")||meaningful(row[0]??"");
+                const pairedHeader=headers.filter(header=>header===headers[colIndex]).length>1?headers[colIndex-1]:"";
+                const amountLabel=[amountRow,pairedHeader,headers[colIndex],!amountRow?`Entry ${rowIndex}`:""].filter(Boolean).join(" — ");
                 const scale=authoredScale(headers[colIndex]);
                 if(scale) return <td className="editable-cell rating-cell" data-label={dataLabel} key={colIndex}>
                   <RatingControl scale={scale} label={label} value={value} onChange={next=>onSavePromptResponse(id,next)}/>
                 </td>;
-                return <td className="editable-cell" data-label={dataLabel} key={colIndex}>
+                const control=<>
+                  {unitPlaceholder&&<span aria-hidden="true">{cleaned}</span>}
                   <textarea
-                    aria-label={label}
+                    aria-label={unitPlaceholder?`${amountLabel} (${unitName})`:label}
                     rows={2}
                     value={value}
                     onChange={event=>onSavePromptResponse(id,event.target.value)}
@@ -780,6 +793,9 @@ function TableBlockView({
                   />
                   <span className="printed-response">{value||"—"}</span>
                   {value.trim()&&<small>Saved</small>}
+                </>;
+                return <td className="editable-cell" data-label={dataLabel} key={colIndex}>
+                  {unitPlaceholder?<div className="authored-amount-cell">{control}</div>:control}
                 </td>;
               }
 
@@ -876,6 +892,7 @@ export function ContentBlocks({blocks,unitId,unitType="lesson",promptResponses:s
           promptResponses={promptResponses}
           onSavePromptResponse={onSavePromptResponse}
           minimumRows={inferMinimumRows(items,position)}
+          activityContext={context==="activity"&&hasAuthoredCurrencyInputs(unitId,block.id)}
           key={`table-${index}`}
         />);
         continue;
