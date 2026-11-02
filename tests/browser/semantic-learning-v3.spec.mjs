@@ -10,7 +10,7 @@ const storageKey="applied-commerce-learning-state-v1";
 async function open(page,unit){
   await page.goto(route(unit));
   await expect(page.locator(".lesson-heading h1")).toHaveText(unit.title);
-  await expect(page.locator("[data-semantic-renderer]")).toHaveAttribute("data-semantic-renderer","applied-commerce-v3");
+  await expect(page.locator("[data-semantic-renderer]")).toHaveAttribute("data-semantic-renderer","applied-commerce-v4");
   await page.evaluate(async()=>{await document.fonts.ready;});
 }
 async function integrity(page){

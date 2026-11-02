@@ -1,3 +1,4 @@
+import {confidenceSlot} from "../response-annotations";
 import { buildPortfolioDefinitions, cleanMarkup, sanitizeRemovedLogReferences } from "../portfolio-model";
 import type { ContentBlock, UnitContent } from "../types";
 import { domainsFor, rubricForKind, stageForGrade } from "./taxonomy";
@@ -17,7 +18,8 @@ function parseStableResponseKey(key:string){
 
 function promptFor(block:ContentBlock,slot:string){
   if(block.kind==="text"){
-    return cleanMarkup(sanitizeRemovedLogReferences(block.text))
+    const prefix=slot===confidenceSlot?"Confidence marker — ":"";
+    return prefix+cleanMarkup(sanitizeRemovedLogReferences(block.text))
       .replace(/_{3,}/g,"")
       .replace(/\s+:/g,":")
       .trim() || "Learner response";
@@ -48,7 +50,7 @@ function inferKind(block:ContentBlock,prompt:string,unitTitle:string,slot:string
 
 function assessmentModeFor(kind:EvidenceKind,slot:string,hasAuthoredRule:boolean){
   if(hasAuthoredRule) return "deterministic" as const;
-  if(slot==="choice"||slot.startsWith("choice-")) return "unscored" as const;
+  if(slot.startsWith("annotation-")||slot==="choice"||slot.startsWith("choice-")) return "unscored" as const;
   if(["action","interview","observation"].includes(kind)) return "verification" as const;
   if(kind==="reflection") return "rubric" as const;
   if(["analysis","calculation","plan","project","structured-work","knowledge-response"].includes(kind)) return "rubric" as const;

@@ -44,7 +44,7 @@ function boundaryMode(block:ContentBlock, unitType:UnitContent["type"]):Learning
   if(block.type==="equation"&&/^Thinking Equation$/i.test(text)) return "understand";
   if(block.type!=="section"||/^(?:OR|Part\s+[A-Z]\s*:)/i.test(text)) return null;
   if(unitType==="assessment") return "prove";
-  if(/^(?:Learning Outcomes|Key Vocabulary|Deepening Insight|What (?:Is|Are)\b|How\b|Types?\b|Understanding\b)/i.test(text)) return "understand";
+  if(/^(?:Learning Outcomes|Key Vocabulary|Deepening Insight|The Deeper Look|Truth \/ Danger \/ Your Move|What (?:Is|Are)\b|How\b|Types?\b|Understanding\b)/i.test(text)) return "understand";
   return "read";
 }
 

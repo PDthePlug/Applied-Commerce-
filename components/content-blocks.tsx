@@ -2,12 +2,17 @@
 import {teachingHeading} from "@/lib/classroom/teaching-plan";
 
 import { responseView, persistResponseKey } from "@/lib/response-identity";
+import {LessonWrap} from "./lesson-wrap";
+import {lessonWrapFor} from "@/lib/lesson-wrap";
+import {ConfidenceLegend,ConfidenceMarkers,SourceSelectionControl} from "./learner-annotations";
+import {sourceSelection} from "@/lib/source-selections";
+import {abilityAnnotations,confidenceSlot,deepeningHeading,reviewedInteraction} from "@/lib/learner-interactions";
 import {Fragment} from "react";
 import { Plus } from "lucide-react";
 import type { ContentBlock, TextBlockType, UnitContent } from "@/lib/types";
 import type {LearningSection} from "@/lib/semantic-learning";
 import { cleanMarkup, isRemovedLogBlock, sanitizeRemovedLogReferences } from "@/lib/portfolio-model";
-import { DeepeningInsightPanel, LearningNotice, LearningOutcomesIntro, LessonSectionHeading, PortfolioCaptureNotice, ResponseSurface, StoryHeading, ThinkingEquationNotice } from "./presentation-system";
+import { DeepeningInsightPanel, LearningNotice, LearningOutcomesIntro, LessonSectionHeading, PortfolioCaptureNotice, ResponseSurface, StoryHeading, ThinkingEquationNotice, QuestionHeading } from "./presentation-system";
 import outcomeIcons from "@/lib/lesson-outcome-icons.json";
 import { authoredScale, choiceMeaning, learningSections, sourceCopy, valueSelection } from "@/lib/semantic-learning";
 import { HorizonChoicesControl, RankingControl, RatingControl, ValuesControl } from "./semantic-controls";
@@ -16,8 +21,8 @@ import { hasAuthoredCurrencyInputs } from "@/lib/authored-currency-tables";
 
 type PromptContext = "activity" | "reflection" | "checkpoint" | "home" | null;
 type PromptMode = "checkpoint" | "home";
-type StructuredPrompt = { prompt:string; helper?:string };
-type PromptBreakdown = { groupLabel?:string; intro?:string; prompts:StructuredPrompt[] };
+type StructuredPrompt = { prompt:string; helper?:string; slot?:string };
+type PromptBreakdown = { groupLabel?:string; intro?:string; prompts:StructuredPrompt[]; originalCount?:number; retainedSlots?:string[] };
 type IndexedBlock = { block: ContentBlock; index: number };
 
 type Props = {
@@ -230,7 +235,18 @@ function buildPromptBreakdown(text:string,mode:PromptMode):PromptBreakdown{
     }
   });
 
-  return {groupLabel,intro:intro.join(" ").trim()||undefined,prompts};
+  // These authored phrases qualify the preceding answer; they are not a new
+  // question. Keep their former slots inspectable without renumbering any slot.
+  const merged:StructuredPrompt[]=[];
+  const retainedSlots:string[]=[];
+  prompts.forEach((part,index)=>{
+    const slot=prompts.length>1?`response-${index}`:"response";
+    if(merged.length&&/^(?:Write honestly|Answer honestly|Write the evidence|Write it down|Name it|Name both|Write both)\.?$/i.test(part.prompt)){
+      appendPromptHelper(merged[merged.length-1],[part.prompt,part.helper].filter(Boolean).join(" "));
+      retainedSlots.push(slot);
+    }else merged.push({...part,slot});
+  });
+  return {groupLabel,intro:intro.join(" ").trim()||undefined,prompts:merged,originalCount:prompts.length,retainedSlots};
 }
 
 function compactStructuredPrompt(prompt:string){
@@ -383,7 +399,7 @@ function StructuredResponseGroup({
 }){
   const many=breakdown.prompts.length>1;
   const legacyId=promptId(unitId,blockIndex,"response");
-  const legacyValue=many?(promptResponses[legacyId]??""):"";
+  const legacyValue=(breakdown.originalCount??breakdown.prompts.length)>1?(promptResponses[legacyId]??""):"";
   // Source question numbers group compound prompts; visible checkpoint numbers
   // instead count each existing response in order. Storage slots stay untouched.
   const groupLabel=tone==="checkpoint"
@@ -398,7 +414,7 @@ function StructuredResponseGroup({
 
     <div className="structured-response-parts">
       {breakdown.prompts.map((part,index)=>{
-        const slot=many?`response-${index}`:"response";
+        const slot=part.slot??(many?`response-${index}`:"response");
         const id=promptId(unitId,blockIndex,slot);
         const value=promptResponses[id]??"";
         const compact=compactStructuredPrompt(part.prompt);
@@ -406,17 +422,7 @@ function StructuredResponseGroup({
           key={id}
           compact={compact}
           tone={tone}
-          prompt={<>
-            {tone==="checkpoint"?<div className="checkpoint-question">
-              <span className="structured-part-label">{startNumber+index}.</span>
-              <p className="question-prompt">{part.prompt}</p>
-              {part.helper&&<small className="structured-prompt-helper">{part.helper}</small>}
-            </div>:<>
-            {(many&&tone!=="assessment")&&<span className="structured-part-label">{startNumber+index}.</span>}
-            <p className="question-prompt">{part.prompt}</p>
-            {part.helper&&<small className="structured-prompt-helper">{part.helper}</small>}
-            </>}
-          </>}
+          prompt={<QuestionHeading text={part.prompt} number={tone==="checkpoint"||many&&tone!=="assessment"?startNumber+index:undefined} helper={part.helper} checkpoint={tone==="checkpoint"}/>}
         >
           <ResponseArea
             compact={compact}
@@ -430,6 +436,7 @@ function StructuredResponseGroup({
     </div>
 
     <PreviousCombinedResponse value={legacyValue}/>
+    {breakdown.retainedSlots?.map(slot=><PreviousCombinedResponse key={slot} value={promptResponses[promptId(unitId,blockIndex,slot)]??""}/>)}
   </section>;
 }
 
@@ -647,9 +654,7 @@ function pruneTensionContent(blocks:ContentBlock[]):IndexedBlock[]{
   return output;
 }
 
-function isDeepeningInsight(block:ContentBlock){
-  return block.kind==="text"&&/deepening\s+insight/i.test(block.text);
-}
+const isDeepeningInsight=deepeningHeading;
 
 function isInsightBoundary(block:ContentBlock){
   return block.kind==="text"&&(Boolean(homeTaskSubtype(block.text))||["activity","reflection","checkpoint","portfolio","story","section"].includes(block.type));
@@ -672,6 +677,7 @@ function isGenericActivityLabel(text:string,context:PromptContext,nextBlock?:Con
 function isAnswerPrompt(text:string,context:PromptContext,type:TextBlockType,nextBlock?:ContentBlock){
   const value=displayText(text).trim();
   if(!value||INSTRUCTION_ONLY_RE.test(value)) return false;
+  if(hasDedicatedInput(nextBlock)&&/^(?:Write|Complete|Fill in|Now list|Now write|Choose one thing|Identify one small problem)\b/i.test(value))return false;
   if(QUESTION_RE.test(value)) return true;
   if(!context) return false;
   if(INTERROGATIVE_RE.test(value)&&value.includes("?")) return true;
@@ -826,6 +832,9 @@ export function ContentBlocks({blocks,unitId,unitType="lesson",promptResponses:s
   const promptResponses=responseView(unitId,blocks,storedResponses);
   const onSavePromptResponse=(key:string,value:string)=>saveResponse(persistResponseKey(unitId,blocks,key),value);
   const indexed=pruneTensionContent(blocks);
+  const annotations=abilityAnnotations(unitId,blocks);
+  const wrap=unitType==="lesson"?lessonWrapFor(unitId):null;
+  const authoredWrapIndex=wrap?.authoredHeadingId?blocks.findIndex(block=>block.id===wrap.authoredHeadingId):-1;
 
   const renderIndexedBlocks=(items:IndexedBlock[],allowInsightGrouping=true,initialContext:PromptContext=null)=>{
     const views:React.ReactNode[]=[];
@@ -843,7 +852,8 @@ export function ContentBlocks({blocks,unitId,unitType="lesson",promptResponses:s
     for(let position=0;position<items.length;position+=1){
       const {block,index}=items[position];
 
-      if(block.kind==="text"&&block.type==="list"&&!block.text.includes("☐")&&!BLANK_RE.test(block.text)){
+      const decision=reviewedInteraction(unitId,block);
+      if(block.kind==="text"&&block.type==="list"&&!block.text.includes("☐")&&!BLANK_RE.test(block.text)&&decision?.kind!=="reflection"){
         list.push({text:block.text,index});
         continue;
       }
@@ -856,12 +866,58 @@ export function ContentBlocks({blocks,unitId,unitType="lesson",promptResponses:s
         if(guidance)views.push(<Fragment key={`part-guidance-${index}`}>{guidance}</Fragment>);
       }
 
+      if(block.id===wrap?.authoredHeadingId) continue;
+      if(annotations?.instructionId===block.id) continue;
+      if(annotations?.ids[0]===block.id)views.push(<ConfidenceLegend key="ability-legend"/>);
+      if(decision?.kind==="instruction"&&block.kind==="text"){
+        views.push(<Fragment key={`instruction-${index}`}><TextBlockView block={block} unitId={unitId}/><PreviousCombinedResponse value={promptResponses[promptId(unitId,index,"response")]??""}/></Fragment>);
+        continue;
+      }
+      if(decision?.kind==="circle-map"&&block.kind==="text"){
+        views.push(<section className="circle-map-control" key={`circle-map-${index}`} aria-label="My circle map">
+          <p>{displayText(block.text)}</p>
+          {(["Inner","Middle","Outer"] as const).map(circle=><fieldset key={circle}><legend>{circle} circle</legend>{[["people","Who is in it?"],["beliefs","What do they teach me about money (directly or indirectly)?"]].map(([slot,label])=>{
+            const id=promptId(unitId,index,`circle-${circle.toLowerCase()}-${slot}`);
+            return <label key={id}><span>{label}</span><ResponseArea id={id} label={`${circle} circle: ${label}`} value={promptResponses[id]??""} onChange={value=>onSavePromptResponse(id,value)}/></label>;
+          })}</fieldset>)}
+          <PreviousCombinedResponse value={promptResponses[promptId(unitId,index,"response")]??""}/>
+        </section>);
+        continue;
+      }
+      if(decision?.kind==="skills"&&block.kind==="text"){
+        const [label,...rest]=block.text.split(":");
+        const options=rest.join(":").split(",").map(text=>text.trim()).filter(Boolean);
+        const id=promptId(unitId,index,"response");
+        views.push(<ResponseSurface key={`skills-${index}`} mode="decide" prompt={<QuestionHeading text={label}/>}><ValuesControl itemName="skill" options={options} count={5} allowCustom label={label} value={promptResponses[id]??""} onChange={value=>onSavePromptResponse(id,value)}/></ResponseSurface>);
+        continue;
+      }
+      const selectionTask=sourceSelection(unitId,blocks,index,promptResponses);
+      if(selectionTask&&block.kind==="text"){
+        const id=promptId(unitId,index,selectionTask.slot);
+        const label=displayText(block.text).replace(/_{3,}/g,"").trim();
+        views.push(<ResponseSurface key={`selection-${index}`} mode="decide" prompt={<QuestionHeading text={label}/>}>
+          <SourceSelectionControl label="Your selection" options={selectionTask.options} value={promptResponses[id]??""} onChange={value=>onSavePromptResponse(id,value)}/>
+          {selectionTask.reasoning&&<ResponseArea id={promptId(unitId,index,"response")} label={label} value={promptResponses[promptId(unitId,index,"response")]??""} onChange={value=>onSavePromptResponse(promptId(unitId,index,"response"),value)}/>}
+          {!selectionTask.reasoning&&<PreviousCombinedResponse value={promptResponses[promptId(unitId,index,"response")]??""}/>}
+        </ResponseSurface>);
+        continue;
+      }
+      if(decision?.kind==="reflection"&&block.kind==="text"){
+        const breakdown=buildPromptBreakdown(block.text,"checkpoint");
+        // Existing combined evidence stays available beside the independently
+        // addressable parts. No field is added to completion requirements.
+        const prompts=breakdown.prompts;
+        if(prompts.length){
+          views.push(<StructuredResponseGroup key={`insight-reflection-${index}`} breakdown={{...breakdown,prompts}} unitId={unitId} blockIndex={index} promptResponses={promptResponses} onSavePromptResponse={onSavePromptResponse} tone="reflection"/>);
+        }else views.push(<TextBlockView key={`insight-reading-${index}`} block={block} unitId={unitId}/>);
+        continue;
+      }
       if(allowInsightGrouping&&isDeepeningInsight(block)){
         context=null;
         let end=position+1;
         while(end<items.length&&!isInsightBoundary(items[end].block)) end+=1;
         const insightBlocks=items.slice(position+1,end);
-        views.push(<DeepeningInsightPanel key={`insight-${index}`}>{renderIndexedBlocks(insightBlocks,false)}</DeepeningInsightPanel>);
+        views.push(<DeepeningInsightPanel sourceTitle={block.kind==="text"?block.text:undefined} key={`insight-${index}`}>{renderIndexedBlocks(insightBlocks,false)}</DeepeningInsightPanel>);
         position=end-1;
         continue;
       }
@@ -1005,8 +1061,9 @@ export function ContentBlocks({blocks,unitId,unitType="lesson",promptResponses:s
         if(multi){
           views.push(<MultiBlankFields text={block.text} unitId={unitId} blockIndex={index} promptResponses={promptResponses} onSavePromptResponse={onSavePromptResponse} key={`multi-${index}`}/>);
         } else {
-          views.push(<div className="answerable-block fill-answerable-block" key={`fill-${index}`}>
+          views.push(<div className={`answerable-block fill-answerable-block${annotations?.ids.includes(block.id??"")?" annotated-statement":""}`} key={`fill-${index}`}>
             <FillBlankLine text={block.text} unitId={unitId} blockIndex={index} promptResponses={promptResponses} onSavePromptResponse={onSavePromptResponse}/>
+            {annotations?.ids.includes(block.id??"")&&<ConfidenceMarkers label={block.text.replace(/_{3,}/g,"").trim()} value={promptResponses[promptId(unitId,index,confidenceSlot)]??""} onChange={value=>onSavePromptResponse(promptId(unitId,index,confidenceSlot),value)}/>}
           </div>);
         }
         continue;
@@ -1094,24 +1151,21 @@ export function ContentBlocks({blocks,unitId,unitType="lesson",promptResponses:s
         const id=promptId(unitId,index,"response");
         const compact=/^(?:Date|Name|Education|Skills)\b/i.test(displayText(block.text).trim());
         const checkpointNumber=context==="checkpoint"?checkpointQuestionNumber++:undefined;
-        views.push(<ResponseSurface key={`prompt-${index}`} compact={compact} tone={context??"default"} prompt={<>
-          {checkpointNumber!==undefined&&<span className="structured-part-label">{checkpointNumber}.</span>}
-          <p className={block.type==="equation"?"question-prompt equation-question":"question-prompt"}>{displayText(block.text)}</p>
-        </>}>
+        views.push(<ResponseSurface key={`prompt-${index}`} compact={compact} tone={context??"default"} prompt={<QuestionHeading text={displayText(block.text)} number={checkpointNumber} checkpoint={context==="checkpoint"}/>}>
           <ResponseArea compact={compact} id={id} value={promptResponses[id]??""} onChange={value=>onSavePromptResponse(id,value)} label={displayText(block.text)}/>
         </ResponseSurface>);
         continue;
       }
 
-      views.push(<TextBlockView block={block} unitId={unitId} key={`text-${index}`}/>);
+      views.push(<Fragment key={`text-${index}`}><TextBlockView block={block} unitId={unitId}/><PreviousCombinedResponse value={promptResponses[promptId(unitId,index,"response")]??""}/></Fragment>);
     }
 
     flush();
     return views;
   };
 
-  return <div className="semantic-learning-document" data-semantic-renderer="applied-commerce-v3">
-    {learningSections(blocks,unitType).map(section=>{
+  const sections=learningSections(blocks,unitType);
+  const renderSection=(section:LearningSection)=>{
       const items=indexed.filter(item=>item.index>=section.start&&item.index<section.end);
       if(!items.length) return null;
       return <section className={`learning-section learning-mode-${section.mode}`} data-learning-mode={section.mode} id={section.anchor} key={section.anchor}>
@@ -1119,8 +1173,9 @@ export function ContentBlocks({blocks,unitId,unitType="lesson",promptResponses:s
         {renderIndexedBlocks(items,true,section.context)}
         {sectionGuidance?.(section,"after")}
       </section>;
-    })}
+  };
+  return <div className="semantic-learning-document" data-semantic-renderer="applied-commerce-v4">
+    {sections.filter(section=>authoredWrapIndex<0||section.start<authoredWrapIndex).map(renderSection)}
+    {wrap&&<LessonWrap content={wrap}>{authoredWrapIndex>=0?sections.filter(section=>section.start>=authoredWrapIndex).map(renderSection):undefined}</LessonWrap>}
   </div>;
 }
-
-// Deployment retry checkpoint: 2026-10-01

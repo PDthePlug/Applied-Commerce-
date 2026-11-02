@@ -1,3 +1,4 @@
+import {displayLearnerResponse,confidenceSlot} from "./response-annotations";
 import { responseView } from "./response-identity";
 import { displayHorizonResponse } from "./horizon-response";
 import type { ContentBlock, UnitContent } from "./types";
@@ -118,6 +119,7 @@ function responseLabelForBlock(block:ContentBlock,slot:string){
       .replace(/_{3,}/g,"")
       .replace(/\s+:/g,":")
       .trim() || "Response";
+    if(slot===confidenceSlot)return `Confidence for ${label}`;
     const structured=slot.match(/^response-(\d+)$/);
     if(structured){
       const group=label.match(/^((?:Question|Q)\s*\d+(?:\s*[—-]\s*[^:]+)?):/i)?.[1];
@@ -164,13 +166,13 @@ export function responsesForPortfolio(
       const blockIndex=Number(match[1]);
       const slot=match[2];
       if(!allowed.has(blockIndex)) return null;
-      if(slot==="response"&&splitBlocks.has(blockIndex)) return null;
+      // Keep historical combined evidence inspectable after parts are edited.
       const block=unit.blocks[blockIndex];
       if(!block) return null;
       return {
         key,
-        label:responseLabelForBlock(block,slot),
-        value:displayHorizonResponse(`${unit.id}::prompt-${block.id}::${slot}`,value),
+        label:slot==="response"&&splitBlocks.has(blockIndex)?`Previous combined response — ${responseLabelForBlock(block,slot)}`:responseLabelForBlock(block,slot),
+        value:displayLearnerResponse(key,displayHorizonResponse(`${unit.id}::prompt-${block.id}::${slot}`,value)),
       };
     })
     .filter((item):item is PortfolioResponse=>Boolean(item));

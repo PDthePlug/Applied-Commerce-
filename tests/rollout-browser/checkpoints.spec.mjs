@@ -8,7 +8,7 @@ for(const [grade,number]of[[8,1],[8,8],[8,10],[12,5]])test(`Grade ${grade} lesso
  for(const scale of [1,1.28,2]){
   await page.evaluate(scale=>document.documentElement.style.setProperty('--ac-text-scale',String(scale)),scale);
   const q=questions.first();await q.scrollIntoViewIfNeeded();const boxes=await q.evaluate(node=>{const n=node.querySelector('.structured-part-label'),p=node.querySelector('.question-prompt'),s=getComputedStyle(node);const a=n.getBoundingClientRect(),b=p.getBoundingClientRect();return {display:s.display,nx:a.x,nright:a.right,px:b.x,ny:a.y,py:b.y,text:parseFloat(getComputedStyle(p).fontSize),number:parseFloat(getComputedStyle(n).fontSize)};});
-  expect(boxes.display).toBe('grid');expect(boxes.px).toBeGreaterThan(boxes.nright);expect(Math.abs(boxes.ny-boxes.py)).toBeLessThan(12*scale);expect(boxes.text).toBeGreaterThanOrEqual(16);expect(boxes.number).toBeGreaterThanOrEqual(14);
+  expect(boxes.display).toBe('block');expect(boxes.nx).toBeGreaterThanOrEqual(boxes.px);expect(Math.abs(boxes.ny-boxes.py)).toBeLessThan(12*scale);expect(boxes.text).toBeGreaterThanOrEqual(16);expect(boxes.number).toBeGreaterThanOrEqual(14);
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true);await expect(checkpoint.getByRole('textbox')).toHaveCount(originalCount);
   await page.screenshot({path:`test-results/rollout/checkpoint-${grade}-${number}-${info.project.name}-scale-${scale}.png`});
  }

@@ -96,15 +96,23 @@ export function ThinkingEquationNotice({equation}:{equation:string}){
   </aside>;
 }
 
-export function DeepeningInsightPanel({children}:{children:ReactNode}){
+export function DeepeningInsightPanel({children,sourceTitle}:{children:ReactNode;sourceTitle?:string}){
   return <details className="deepening-insight">
     <summary>
       <div className="learning-notice-icon"><LessonIcon name="reflection"/></div>
       <div><strong>Deepening Insight</strong><small>Tap to explore the deeper idea</small></div>
       <ChevronDown aria-hidden="true"/>
     </summary>
-    <div className="deepening-insight-body">{children}</div>
+    <div className="deepening-insight-body">{sourceTitle&&sourceTitle!=="Deepening Insight"&&<h3 className="insight-source-title">{sourceTitle}</h3>}{children}</div>
   </details>;
+}
+
+// Keep the number and its question in one text flow at every text scale.
+export function QuestionHeading({text,number,helper,checkpoint=false}:{text:string;number?:number;helper?:string;checkpoint?:boolean}){
+ return <div className={`question-heading${checkpoint?' checkpoint-question':''}`}>
+  <p className="question-prompt">{number!==undefined&&<><span className="structured-part-label">{number}.</span>{' '}</>}{text}</p>
+  {helper&&<small className="structured-prompt-helper">{helper}</small>}
+ </div>;
 }
 
 export function ResponseSurface({

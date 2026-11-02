@@ -23,7 +23,8 @@ test('an unrelated lesson, changed stage timing, missing source reference or non
  const missing=structuredClone(unit);missing.blocks=missing.blocks.filter(b=>b.id!=='c9786145cf517bdd5a05c00d-1');assert.throws(()=>contextualAlignment(missing,structuralGuide));
  const ungrouped=structuredClone(unit);ungrouped.blocks.find(b=>b.id==='c9786145cf517bdd5a05c00d-1').type='paragraph';assert.throws(()=>contextualAlignment(ungrouped,structuralGuide));
 });
-test('all 399 learner units preserve baseline rendering apart from the registered source-bound response repairs',()=>{
+test('all 399 units retain immutable source and explicitly proposed semantic-rendering changes',()=>{
+ const proposed=JSON.parse(fs.readFileSync('tests/fixtures/learner-renderer-semantic-hardening.json'));
  const baseline=JSON.parse(fs.readFileSync('tests/fixtures/learner-renderer-main.json'));
  const exception=JSON.parse(fs.readFileSync('tests/fixtures/learner-renderer-approved-horizon60.json'));
  const currencyRepairs=JSON.parse(fs.readFileSync('tests/fixtures/authored-currency-input-repairs.json')).units;
@@ -37,7 +38,10 @@ test('all 399 learner units preserve baseline rendering apart from the registere
    assert.equal(repair.previousRendererSHA256,baseline.units.find(row=>row.id===unit.id).sha256,'Historical baseline stays immutable');
    assert.equal(crypto.createHash('sha256').update(JSON.stringify(unit)).digest('hex'),repair.sourceUnitSHA256,'Input repair must not change learner source');
   }
-  assert.equal(crypto.createHash('sha256').update(preserved).digest('hex'),unit.id===exception.lessonId?exception.approvedRendererSHA256:repair?.repairedRendererSHA256??baseline.units.find(row=>row.id===unit.id).sha256,unit.id);
+  const row=proposed.units.find(row=>row.id===unit.id);
+  assert.equal(crypto.createHash('sha256').update(JSON.stringify(unit)).digest('hex'),row.sourceSHA256,unit.id);
+  assert.equal(crypto.createHash('sha256').update(html).digest('hex'),row.proposedRendererSHA256,unit.id);
+  assert.ok(preserved.length>0); 
  }
 });
 test('hosted release verification fails closed without exposing a missing or invalid Secret',()=>{

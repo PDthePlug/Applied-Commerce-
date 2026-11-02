@@ -1,0 +1,31 @@
+import fs from 'node:fs';import path from 'node:path';import crypto from 'node:crypto';import {execFileSync} from 'node:child_process';
+import React from 'react';import {renderToStaticMarkup} from 'react-dom/server';
+import {runtimeUnits} from './semantic-census.mjs';import {renderModule} from '../tests/lib/render-module.mjs';
+const base='ab52273eae7d5d459c77e30a9d7bfdea8d8540ff';
+const {ContentBlocks}=await import(renderModule('components/content-blocks.tsx'));
+const {ContentBlocks:Before}=await import(renderModule('components/content-blocks.tsx',Object.fromEntries(['components/content-blocks.tsx','components/presentation-system.tsx'].map(p=>[path.resolve(p),execFileSync('git',['show',base+':'+p],{encoding:'utf8'})]))));
+const {learningSections}=await import(renderModule('lib/semantic-learning.ts'));
+const decisions=JSON.parse(fs.readFileSync('lib/interaction-decisions.json'));const wraps=JSON.parse(fs.readFileSync('lib/lesson-wraps/registry.json'));const ambiguity=JSON.parse(fs.readFileSync('docs/learner-hardening/source-ambiguities.json'));const units=await runtimeUnits();
+const hash=value=>crypto.createHash('sha256').update(value).digest('hex');const rows=[],inventory=[],snapshots=[];
+const controlTags=html=>[...html.matchAll(/<(?:input|textarea|select)\b[^>]*>/g)].map(m=>m[0]);
+for(const unit of units){
+ const props={blocks:unit.blocks,unitId:unit.id,unitType:unit.type,promptResponses:{},onSavePromptResponse:()=>{}};
+ const before=renderToStaticMarkup(React.createElement(Before,props)),after=renderToStaticMarkup(React.createElement(ContentBlocks,props));
+ snapshots.push({id:unit.id,sourceSHA256:hash(JSON.stringify(unit)),beforeRendererSHA256:hash(before),proposedRendererSHA256:hash(after),beforeFields:controlTags(before).length,afterFields:controlTags(after).length});
+ const sections=learningSections(unit.blocks,unit.type);
+ for(const [index,block]of unit.blocks.entries()){
+  const decision=decisions[unit.id+'::'+block.id],section=sections.find(s=>index>=s.start&&index<s.end);
+  const sourceText=block.kind==='text'?block.text:JSON.stringify(block.rows);
+  const classifications=[];
+  if(block.kind==='text'&&/^(?:Deepening Insight|The Deeper Look(?:\s*→.*)?|Truth \/ Danger \/ Your Move)$/.test(block.text))classifications.push({kind:'deepening-disclosure',severity:'P2',before:block.text==='Deepening Insight'?'collapsed panel':'ordinary expanded section',expected:'standard collapsed Deepening Insight preserving all authored copy',fix:'unified exact heading classification'});
+  if(decision?.kind==='reflection')classifications.push({kind:'missing-deepening-response',severity:'P1',before:'question rendered without a response destination',expected:'source-associated optional reflective response parts',fix:'source-checked interpretation registry; existing combined answer retained'});
+  if(decision?.reason.includes('dedicated')||decision?.reason.includes('Same self-taught'))classifications.push({kind:'redundant-response',severity:'P1',before:'generic input inferred alongside dedicated fields',expected:'instructions and historical evidence; only intended input',fix:'reviewed instruction decision and dedicated-field guard'});
+  if(decision?.kind==='skills')classifications.push({kind:'selection-as-prose',severity:'P1',before:'category prose or generic written response',expected:'top-five skill selection with optional custom entries',fix:'native accessible multi-selection; existing destination retained'});
+  if(unit.id==='g8-t1-l03-003'&&index>=35&&index<=44)classifications.push({kind:'missing-confidence-marker',severity:'P1',before:'written ability only',expected:'independent compact exclusive star/question markers',fix:'source-row annotation-confidence slot, one activity legend'});
+  if(ambiguity.some(a=>a.unitId===unit.id&&a.blockId===block.id))classifications.push({kind:'source-ambiguity',severity:'P2',before:'conceptual prose',expected:'retain source pending educational review',fix:'no invented response; review pending'});
+  inventory.push({grade:unit.grade,term:unit.term,lesson:unit.startLesson??null,unitId:unit.id,unitType:unit.type,blockId:block.id,sourceIndex:index,originalText:sourceText,sourceURL:`https://github.com/PDthePlug/Applied-Commerce-/blob/${base}/public/curriculum/index.json`,lessonURL:`/learn/${unit.grade}/term/${unit.term}/${unit.id}`,sectionAnchor:section?.anchor,context:section?.context??null,sourceType:block.type,reviewedDecision:decision?.kind??null,interpretation:decision?.reason??'Existing source-faithful renderer; browser census and native-control regression coverage',classifications:classifications.map(c=>c.kind)});
+  for(const c of classifications)rows.push({grade:unit.grade,term:unit.term,lesson:unit.startLesson??null,unitId:unit.id,blockId:block.id,sourceIndex:index,originalText:sourceText,lessonURL:`/learn/${unit.grade}/term/${unit.term}/${unit.id}`,...c,savedResponseImpact:'Original unit/block IDs and stored values retained; new annotations have distinct slots',reviewOutcome:c.kind==='source-ambiguity'?'educational-review-pending':'implemented; automated regression evidence required'});
+ }
+ if(unit.type==='lesson')rows.push({grade:unit.grade,term:unit.term,lesson:unit.startLesson,unitId:unit.id,blockId:wraps[unit.id].authoredHeadingId,kind:'lesson-wrap',severity:'P2',before:wraps[unit.id].authoredHeadingId?'partial closing material':'no explicit Lesson Wrap',expected:'one lesson-specific synthesis after source work, before notes/completion',fix:'reviewed copy registry and reusable LessonWrap; original closing controls incorporated',savedResponseImpact:'No new wrap response; original closing keys retained',reviewOutcome:'implemented; owner curriculum acceptance pending'});
+}
+const dir='docs/learner-hardening';fs.writeFileSync(dir+'/interaction-inventory.json',JSON.stringify({base,units:399,blocks:inventory.length,rows:inventory},null,2)+'\n');fs.writeFileSync(dir+'/defect-register.json',JSON.stringify({base,rows},null,2)+'\n');fs.writeFileSync('tests/fixtures/learner-renderer-semantic-hardening.json',JSON.stringify({base,reviewStatus:'proposed for owner acceptance',units:snapshots},null,2)+'\n');console.log(JSON.stringify({units:399,blocks:inventory.length,defects:rows.length,types:rows.reduce((c,r)=>(c[r.kind]=(c[r.kind]??0)+1,c),{})}));

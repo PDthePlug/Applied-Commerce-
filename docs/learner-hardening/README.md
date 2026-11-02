@@ -1,0 +1,33 @@
+# Learner interaction and lesson conclusion hardening
+
+This is a proposed programme-wide change against merged `main` **ab52273eae7d5d459c77e30a9d7bfdea8d8540ff** (classroom integration #90). It preserves all source books, runtime curriculum, unit/block identities, encrypted teacher releases, migrations and production configuration. No production merge or deployment is authorised by this work.
+
+## Root causes and corrections
+
+1. **Recognition and grouping were separate.** Only the words “Deepening Insight” triggered a disclosure; 88 equivalent source headings were ordinary reading. All 383 exact, audited deepening headings now use the same initially closed component. The Deeper Look and Truth / Danger / Your Move remain named inside it. Original section anchors, source order and teacher placement callbacks remain intact.
+2. **Deepening recursion reset context.** Questions such as Grade 8 Lesson 16 block `394c5cbe20d55e4fefd81669-1` became plain paragraphs. A source-checked decision registry now distinguishes conceptual explanations from source-directed reflections, including the Architect's and Launcher's Questions. These responses remain optional; completion does not depend on them.
+3. **Written controls were inferred from punctuation and sentence starts.** This created generic boxes for instructions and hid question-shaped list items. Reviewed overrides supply the Grade 8 circle-map entries, the Grade 11 hiring evaluation and four Grade 9 skill categories. Dedicated-field instructions no longer ask for the same text twice. Short trailing directions such as “Write honestly” become helper copy while their historical slots remain available.
+4. **A number was a separate block in several response paths.** `QuestionHeading` keeps numbering and wording in one paragraph for structured home work, reflections and checkpoints. It changes presentation without changing the original field slots. Formal assessment numbers/subparts remain authored.
+5. **Authored marking had no independent destination.** Each of the ten Personal Efficacy rows now retains `blank-0` and adds `annotation-confidence`. Toggle buttons are exclusive and clearable, have 44px targets, visible selection/focus and accessible names. One activity legend replaces per-row explanations. Reviewed circling tasks use native selection; skill categories use bounded multi-selection. Existing ranking/rating/table controls remain.
+6. **There was no universal concluding contract.** 75 Grade 9 checklists and 13 generic workshop closings were partial wraps; 307 lessons had no explicit wrap. All 395 now have two individually drafted takeaways and a practical connection in the TSV registry. Existing authored closing material remains inside the same wrap, including its controls and original keys. A source-based next-lesson reference crosses term boundaries and excludes assessments. There is no generated final response or generic fallback.
+
+## Inspectable evidence
+
+- [Full source-block interaction inventory](interaction-inventory.json): all 399 effective runtime units, original wording, source IDs/index, section anchors, contexts and decisions.
+- [Defect register](defect-register.json): source-linked findings, severity, prior/expected presentation, correction, saved-response impact and review status. Includes all 395 wrap findings.
+- [Wrap coverage and source fingerprints](wrap-coverage.json): one reviewed draft per lesson, references, original closing classification, placement and next lesson. These are agent-reviewed proposals; owner curriculum acceptance is pending.
+- [All deeper-section groupings](deepening-coverage.json): 383 headings and their original content IDs.
+- [Source ambiguities](source-ambiguities.json): 15 embedded/rhetorical question cases preserved for educational review. No compulsory answer was invented for them. Existing authored wording, including privacy claims or dated legal/financial statements, is not silently corrected; the pre-existing programme editorial register remains applicable.
+- The baseline and proposed HTML fingerprints are stored separately in `tests/fixtures/learner-renderer-semantic-hardening.json`; historical approved renderer fixtures are unchanged. New source-hash tests cover all lessons and assessments. Snapshot hashes represent the proposed implementation, not owner approval.
+
+## Saved responses and role boundaries
+
+Original text, choice, ranking, rating and table slots remain in the existing string-based learning contract. Source-specific annotation slots are ordinary independent prompt keys under the existing revision protocol and RLS. Confidence evidence is unscored and has readable educator/portfolio labels. Splitting a newly answerable reflection retains the old combined answer. Retired instruction fields remain inspectable in lesson disclosures and portfolio evidence. No data migration, reassignment, deletion, forced completion or answer-key exposure is introduced.
+
+The repeatable role runner uses `scripts/lib/validation-target.mjs` and a private fixture directory. Only `inxshlumnhcgiahxqewe` is allowed for this verification. Credentials, sessions and authenticated teacher captures stay outside Git. Public screenshots use synthetic local learner work. Physical printing and human screen-reader trials require separate acceptance.
+
+## Reproduce
+
+Run the standard runtime, identity, Node, type, lint and production-build gates. Compile reviewed copy with `node scripts/compile-lesson-wraps.mjs` and source decisions with `node scripts/compile-interaction-decisions.mjs`. `node scripts/audit-learner-semantics.mjs` regenerates the source inventory, register and proposed renderer fingerprints; review those changes before accepting them. `node scripts/audit-learner-rendering.mjs before|after` requires an explicitly local backend server and records actual DOM census/screenshot evidence. The six-width regression suite is `npx playwright test --config=playwright.learner-hardening.config.mjs`; the existing `playwright.config.mjs` and `playwright.audit.config.mjs` remain regression gates.
+
+A passing generated count is insufficient curriculum approval. The owner should review the TSV copy and listed ambiguities alongside the genuine persistence, teacher-view and print evidence before promotion.

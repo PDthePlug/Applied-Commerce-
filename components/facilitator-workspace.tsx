@@ -1,4 +1,5 @@
 "use client";
+import {displayLearnerResponse} from "@/lib/response-annotations";
 import { displayHorizonResponse } from "@/lib/horizon-response";
 import Link from "next/link";
 import { currentReviews, hasReviewDecision } from "@/lib/evidence/current-reviews";
@@ -489,7 +490,7 @@ function EvidenceReviewPanel({record,existing,onSave,onAdvance}:{record:Evidence
       <em className={"fac-review-status "+status}>{titleCase(status)}</em>
     </header>
 
-    <section className="fac-source-context"><div><span>Prompt</span><strong>{record.definition.prompt}</strong></div><div><span>Learner response</span><p>{displayHorizonResponse(record.responseKey,record.responseValue)}</p></div></section>
+    <section className="fac-source-context"><div><span>Prompt</span><strong>{record.definition.prompt}</strong></div><div><span>Learner response</span><p>{displayLearnerResponse(record.responseKey,displayHorizonResponse(record.responseKey,record.responseValue))}</p></div></section>
     <section className="fac-evidence-map">
       <div><span>Development stage</span><strong>{titleCase(record.definition.stage)}</strong></div>
       <div><span>Auto-check</span><strong>{record.autoCheck.label}</strong><small>{record.autoCheck.detail}</small></div>

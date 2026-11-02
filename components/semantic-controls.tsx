@@ -69,7 +69,7 @@ export function RankingControl({options,label,value,onChange}:{options:string[];
   </div>;
 }
 
-export function ValuesControl({options,count,allowCustom,label,value,onChange}:{options:string[];count:number;allowCustom:boolean;label:string;value:string;onChange:(value:string)=>void}){
+export function ValuesControl({options,count,allowCustom,label,value,onChange,itemName="value"}:{options:string[];count:number;allowCustom:boolean;label:string;value:string;onChange:(value:string)=>void;itemName?:string}){
   const [custom,setCustom]=useState("");
   const selected=value.split("\n").filter(Boolean);
   const choices=[...new Set([...options,...selected])];
@@ -83,13 +83,13 @@ export function ValuesControl({options,count,allowCustom,label,value,onChange}:{
       {choices.map(option=><button type="button" key={option} aria-pressed={selected.includes(option)}
         disabled={!selected.includes(option)&&selected.length>=count} onClick={()=>toggle(option)}>{option}</button>)}
     </div>
-    {!options.length&&!selected.length&&<p className="interaction-guidance">Choose your values in the previous step first.</p>}
+    {!options.length&&!selected.length&&<p className="interaction-guidance">Choose your {itemName}s in the previous step first.</p>}
     {outsidePrevious&&<p className="retained-answer">An earlier selection no longer appears in the previous step. Review your selection here; it has been kept so your work is not lost.</p>}
     {allowCustom&&<form className="custom-value" onSubmit={event=>{
       event.preventDefault();
       const next=custom.trim();
       if(next&&!selected.includes(next)&&selected.length<count){onChange([...selected,next].join("\n"));setCustom("");}
-    }}><label><span>Add a value of your own</span><input aria-label="Add a value of your own" value={custom} onChange={event=>setCustom(event.target.value)}/></label>
+    }}><label><span>Add a {itemName} of your own</span><input aria-label={`Add a ${itemName} of your own`} value={custom} onChange={event=>setCustom(event.target.value)}/></label>
       <button type="submit" disabled={!custom.trim()||selected.length>=count}><Plus/>Add</button>
     </form>}
     <small className="selection-count" aria-live="polite">{selected.length} of {count} selected{selected.length?" · Captured on this device":""}</small>
