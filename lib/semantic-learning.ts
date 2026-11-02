@@ -33,13 +33,20 @@ export function choiceMeaning(text:string, instruction=""):ChoiceMeaning|null{
   return {prompt,options,kind:single?"single":"multiple"};
 }
 
+export function authoredTaskContext(block:ContentBlock):LearningSection["context"]{
+  if(block.kind!=="text")return null;
+  if(/^Try This at Home\b/i.test(sourceCopy(block.text)))return "home";
+  if(block.type==="checkpoint"||block.type==="section"&&/^Final Checkpoint\b/i.test(sourceCopy(block.text)))return "checkpoint";
+  return block.type==="activity"||block.type==="reflection"?block.type:null;
+}
+
 function boundaryMode(block:ContentBlock, unitType:UnitContent["type"]):LearningMode|null{
   if(block.kind!=="text") return null;
   const text=sourceCopy(block.text);
   if(/^Try This at Home\b/i.test(text)) return "do";
   if(block.type==="activity") return "do";
   if(block.type==="reflection") return "reflect";
-  if(block.type==="checkpoint") return "prove";
+  if(authoredTaskContext(block)==="checkpoint") return "prove";
   if(block.type==="story") return "read";
   if(block.type==="equation"&&/^Thinking Equation$/i.test(text)) return "understand";
   if(block.type!=="section"||/^(?:OR|Part\s+[A-Z]\s*:)/i.test(text)) return null;
@@ -54,8 +61,7 @@ export function learningSections(blocks:ContentBlock[], unitType:UnitContent["ty
     const mode=boundaryMode(block,unitType);
     if(index!==0&&!mode) return;
     if(sections.length) sections[sections.length-1].end=index;
-    const context=block.kind==="text"&&/^Try This at Home\b/i.test(sourceCopy(block.text))?"home"
-      :block.kind==="text"&&["activity","reflection","checkpoint"].includes(block.type)?block.type as "activity"|"reflection"|"checkpoint":null;
+    const context=authoredTaskContext(block);
     sections.push({start:index,end:blocks.length,mode:unitType==="assessment"?"prove":mode??"read",context,
       title:block.kind==="text"&&mode?sourceCopy(block.text):undefined,anchor:`learning-${block.id??index}`});
   });

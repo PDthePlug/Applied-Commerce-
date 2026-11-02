@@ -32,7 +32,7 @@ test('Personal Initiative keeps full collapsed insight, two reflections, numberi
 });
 
 test('all grades keep source-specific wraps, controls, disclosures and scaled mobile bounds',async({page},info)=>{
- for(const[g,n]of[[9,1],[9,7],[10,46],[11,22],[11,10],[12,5],[12,53]]){
+ for(const[g,n]of[[8,20],[9,1],[9,7],[10,46],[11,22],[11,10],[12,5],[12,53]]){
   await open(page,unit(g,n));await expect(page.locator('.lesson-wrap')).toHaveCount(1);const panel=page.locator('.deepening-insight');if(await panel.count()){await expect(panel).not.toHaveAttribute('open','');await panel.locator('summary').click();}
   if(g===9&&n===1){await expect(panel).toContainText('The Truth:');await expect(panel).toContainText('The Danger:');await expect(panel).toContainText('Your Move:');}
   if(g===9&&n===7){const categories=page.locator('.values-control');await expect(categories).toHaveCount(4);await categories.first().getByRole('button',{name:'Fixing things',exact:true}).click();await page.reload();await expect(categories.first().getByRole('button',{name:'Fixing things',exact:true})).toHaveAttribute('aria-pressed','true');}

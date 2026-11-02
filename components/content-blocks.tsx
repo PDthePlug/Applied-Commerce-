@@ -14,7 +14,7 @@ import type {LearningSection} from "@/lib/semantic-learning";
 import { cleanMarkup, isRemovedLogBlock, sanitizeRemovedLogReferences } from "@/lib/portfolio-model";
 import { DeepeningInsightPanel, LearningNotice, LearningOutcomesIntro, LessonSectionHeading, PortfolioCaptureNotice, ResponseSurface, StoryHeading, ThinkingEquationNotice, QuestionHeading } from "./presentation-system";
 import outcomeIcons from "@/lib/lesson-outcome-icons.json";
-import { authoredScale, choiceMeaning, learningSections, sourceCopy, valueSelection } from "@/lib/semantic-learning";
+import { authoredScale, authoredTaskContext, choiceMeaning, learningSections, sourceCopy, valueSelection } from "@/lib/semantic-learning";
 import { HorizonChoicesControl, RankingControl, RatingControl, ValuesControl } from "./semantic-controls";
 import { isFinancialHorizonPrompt } from "@/lib/horizon-response";
 import { hasAuthoredCurrencyInputs } from "@/lib/authored-currency-tables";
@@ -964,10 +964,12 @@ export function ContentBlocks({blocks,unitId,unitType="lesson",promptResponses:s
         }
       }
 
-      if(block.type==="activity"||block.type==="reflection"||block.type==="checkpoint"){
-        context=block.type;
-        if(block.type==="checkpoint") checkpointQuestionNumber=1;
-        views.push(<TextBlockView block={block} unitId={unitId} key={`text-${index}`}/>);
+      if(block.type==="activity"||block.type==="reflection"||authoredTaskContext(block)==="checkpoint"){
+        context=authoredTaskContext(block);
+        if(context==="checkpoint") checkpointQuestionNumber=1;
+        views.push(context==="checkpoint"&&block.type==="section"
+          ?<LearningNotice tone="checkpoint" title={displayText(block.text)} key={`text-${index}`}/>
+          :<TextBlockView block={block} unitId={unitId} key={`text-${index}`}/>);
         continue;
       }
 

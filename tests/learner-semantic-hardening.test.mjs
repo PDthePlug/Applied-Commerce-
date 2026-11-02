@@ -66,3 +66,9 @@ test('checkpoint blanks use their existing keys under continuous questions and c
  for(const [i,value]of[[49,'SYNTHETIC_REASON'],[50,'SYNTHETIC_RESPONSE']]){assert.ok(html.includes('id="'+u.id+'::block-'+i+'::blank-0"'));assert.ok(html.includes(value));}
  const prove=html.match(/class="learning-section learning-mode-prove"[^]*?(?=<section class="learning-section|<section class="lesson-wrap")/)[0];const numbers=[...prove.matchAll(/class="structured-part-label">(\d+)\./g)].map(m=>Number(m[1]));assert.deepEqual(numbers,Array.from({length:numbers.length},(_,i)=>i+1));
 });
+
+test('all seven source Final Checkpoints retain checkpoint context and structured question numbering',()=>{
+ let count=0;for(const u of units){const i=u.blocks.findIndex(b=>b.type==='section'&&/^Final Checkpoint\b/.test(b.text));if(i<0)continue;count++;
+  const html=render(u,{[key(u,i+1,'response')]:'SYNTHETIC_OLD_FINAL_CHECKPOINT'});assert.ok(html.includes('SYNTHETIC_OLD_FINAL_CHECKPOINT'));const section=html.slice(html.indexOf('id="learning-'+u.blocks[i].id+'"'));assert.ok(section.includes('checkpoint-question'),u.id);assert.ok(section.includes('class="structured-part-label">1.'),u.id);
+ }assert.equal(count,7);
+});
