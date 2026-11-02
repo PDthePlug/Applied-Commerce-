@@ -1,14 +1,14 @@
 # Proposed learner workbook hardening — verification and acceptance record
 
-Implementation: `7dbfb1b7851f4e2f1fa3745b754521ad69320a03` (semantic mapping completed at `87ed1bd`), based on merged `main` `ab52273eae7d5d459c77e30a9d7bfdea8d8540ff`. PR: [#91](https://github.com/PDthePlug/Applied-Commerce-/pull/91). This record distinguishes implementation verification from owner curriculum acceptance. No production application merge or deployment has been performed.
+Implementation: `b59dec5794117bf02dc22d4464e365112ea8ac17` (semantic mapping completed at `87ed1bd`), based on merged `main` `ab52273eae7d5d459c77e30a9d7bfdea8d8540ff`. PR: [#91](https://github.com/PDthePlug/Applied-Commerce-/pull/91). This record distinguishes implementation verification from owner curriculum acceptance. No production application merge or deployment has been performed.
 
 ## Coverage and review
 
 The [interaction inventory](interaction-inventory.json) covers all 399 effective reader units and 20,742 blocks. The runtime verifier independently confirms 395 lessons, four assessments and all 20,766 original compiled blocks. These counts have different scopes: the unchanged Grade 9 Term 2 reader normalisation removes editorial metadata before display. No source blocks were removed by this change.
 
-The [defect register](defect-register.json) contains 1,220 findings, including the unresolved editorial cases. It records source text, original IDs/index, grade/term/lesson, route, classification, severity, correction, response impact and review outcome. Findings can overlap at one block; their count is not a count of defective lessons. The [wrap register](wrap-coverage.json) includes all 395 lesson IDs, source references/fingerprints, original closing disposition, placement and next lesson. All 395 drafts have different takeaways, manually drafted against the source concepts/objectives. The shared component has no generic-copy fallback. Four assessments retain their assessment flow without a lesson wrap.
+The [defect register](defect-register.json) contains 1,221 findings, including the unresolved editorial cases. It records source text, original IDs/index, grade/term/lesson, route, classification, severity, correction, response impact and review outcome. Findings can overlap at one block; their count is not a count of defective lessons. The [wrap register](wrap-coverage.json) includes all 395 lesson IDs, source references/fingerprints, original closing disposition, placement and next lesson. All 395 drafts have different takeaways, manually drafted against the source concepts/objectives. The shared component has no generic-copy fallback. Four assessments retain their assessment flow without a lesson wrap.
 
-The explicit light theme also had a desktop lesson-map contrast failure, corrected with a slightly darker muted colour scoped to that rail. The source review identified 383 deeper sections, 315 source-directed deeper reflections, 50 additional explicit Architect's Questions outside those sections, seven Final Checkpoints with lost task context, ten missing confidence annotations, five circling tasks, four skill categories and 29 actually rendered duplicate instruction inputs. Six distinct adjacent written tasks remain editable, including a full cover letter, personal statement and investment red line. Three time projections now have separate destinations at the original block. Fifteen embedded conceptual questions remain reading pending educational review; none was made a compulsory answer.
+The explicit light theme also had a desktop lesson-map contrast failure, corrected with a slightly darker muted colour scoped to that rail. Final screenshot review caught fixed-size “I can” prefixes beside enlarged answers; they now use the same text-scale token, with a browser assertion at 200%. The source review identified 383 deeper sections, 315 source-directed deeper reflections, 50 additional explicit Architect's Questions outside those sections, seven Final Checkpoints with lost task context, ten missing confidence annotations, five circling tasks, four skill categories and 29 actually rendered duplicate instruction inputs. Six distinct adjacent written tasks remain editable, including a full cover letter, personal statement and investment red line. Three time projections now have separate destinations at the original block. Fifteen embedded conceptual questions remain reading pending educational review; none was made a compulsory answer.
 
 Every lesson received a source/closing/copy review and automated structural/source-identity checks. Browser interaction reviews target the mandatory cases and representative complex work in every grade; this is not a claim that a human educator has individually moderated 395 wraps. Owner moderation of the TSV copy remains required.
 
@@ -22,10 +22,10 @@ The actual original/proposed field census is retained in [rendered-before.json](
 | Node regressions | 240 tests, including all wraps, deeper panels, stable/legacy keys, final checkpoints, named questions and 29 retired inputs | PASS |
 | Block identity Python tests | 2 tests | PASS |
 | TypeScript, ESLint, production builds | Local backend plus isolated staging build | PASS |
-| Focused workbook browser suite | 24 journeys across 320, 360, 430, 768, 1280, 1920px; semantic revision `87ed1bd` | PASS |
+| Focused workbook browser suite | 24 journeys across 320, 360, 430, 768, 1280, 1920px; final application revision `b59dec5` | PASS |
 | Focused WCAG audit | 36 actual browser axe scans; three high-risk lessons × six widths × light/dark; 200% text | PASS: zero violations |
 | Touch interaction | Six real touch-emulation journeys at 320/360/430, light/dark | PASS: select/change/clear/reload preserves text |
-| Existing browser regressions | 252 journeys; [CI evidence](https://github.com/PDthePlug/Applied-Commerce-/actions/runs/41479789584) | PASS: final application revision |
+| Existing browser regressions | 252 journeys; [CI evidence](https://github.com/PDthePlug/Applied-Commerce-/actions/runs/41482135977) | PASS: final application revision |
 | Additional UI audit | 390 journeys across six widths; implementation `b6d516b` | PASS |
 | Full reader browser census | All 399 units; 36 six-width screenshots; semantic revision `87ed1bd` | PASS: zero page errors / overflow |
 | Genuine role/RLS HTTP checks | 37 staging checks, including revision/session/RLS denials | PASS |
@@ -33,7 +33,7 @@ The actual original/proposed field census is retained in [rendered-before.json](
 | Hosted contextual Teacher View | Seven lessons; 58 navigation targets; 168 layouts; six role checks; three persistence outcomes | PASS |
 | Teacher PDF text | 14 integrated/standalone PDFs; 684 expected fields | PASS: zero missing fields; two educator-review PDFs also retain readable markers |
 
-The final contrast correction changes one scoped CSS variable only. Earlier full-curriculum and focused workbook results retain their exact semantic-revision scope; the new accessibility, touch, CI and authenticated staging checks cover the final application revision.
+The final presentation corrections adjust the scoped lesson-map colour and annotated-statement text scaling. Full-curriculum census results retain their exact semantic-revision scope; the focused workbook, accessibility, touch, CI and authenticated staging checks cover the final application revision.
 
 ### Route × viewport × role matrix
 

@@ -23144,6 +23144,23 @@
       "fix": "Scoped light-appearance rail muted colour #5d6762; approved theme and typography retained",
       "savedResponseImpact": "Presentation only; no response changes",
       "reviewOutcome": "implemented; focused six-width light/dark 200% axe audit in VERIFICATION.md"
+    },
+    {
+      "grade": 8,
+      "term": 1,
+      "lesson": 3,
+      "unitId": "g8-t1-l03-003",
+      "blockId": "annotated-statement-label",
+      "sourceIndex": null,
+      "originalText": "1. I can … 10. I can",
+      "sourceURL": "https://github.com/PDthePlug/Applied-Commerce-/blob/209fbe0/app/semantic-learning.css",
+      "kind": "statement-text-scaling",
+      "severity": "P2",
+      "before": "Statement prefix stays small while its answer enlarges at 200% text",
+      "expected": "Statement label and answer scale together without horizontal overflow",
+      "fix": "Source-row label uses the shared text-scale token; mobile wrapping retained",
+      "savedResponseImpact": "Presentation only; unchanged text and annotation keys",
+      "reviewOutcome": "implemented; focused browser, touch and accessibility verification in VERIFICATION.md"
     }
   ]
 }
