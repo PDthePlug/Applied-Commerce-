@@ -871,7 +871,11 @@ export function ContentBlocks({blocks,unitId,unitType="lesson",promptResponses:s
       if(annotations?.instructionId===block.id) continue;
       if(annotations?.ids[0]===block.id)views.push(<ConfidenceLegend key="ability-legend"/>);
       if(decision?.kind==="instruction"&&block.kind==="text"){
-        views.push(<Fragment key={`instruction-${index}`}><TextBlockView block={block} unitId={unitId}/><PreviousCombinedResponse value={promptResponses[promptId(unitId,index,"response")]??""}/><PreviousCombinedResponse value={promptResponses[promptId(unitId,index,"blank-0")]??""}/></Fragment>);
+        const group=context==="checkpoint"?displayText(block.text).match(QUESTION_GROUP_RE):null;
+        // The original group number is source metadata; visible numbering counts
+        // its following answer fields, just as it does for structured groups.
+        const instructionBlock=group?{...block,text:group[2]}:block;
+        views.push(<Fragment key={`instruction-${index}`}><TextBlockView block={instructionBlock} unitId={unitId}/><PreviousCombinedResponse value={promptResponses[promptId(unitId,index,"response")]??""}/><PreviousCombinedResponse value={promptResponses[promptId(unitId,index,"blank-0")]??""}/></Fragment>);
         continue;
       }
       if(decision?.kind==="projections"&&block.kind==="text"){
