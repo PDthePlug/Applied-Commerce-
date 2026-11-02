@@ -119,4 +119,4 @@
 
 /* Keep the unit and its original answer in one responsive grid column. */
 .authored-amount-cell{min-width:0}
-.workbook-table tr:first-child:has(.authored-amount-cell) td{background:var(--paper)!important;color:var(--ink)}
+@media screen{.workbook-table tr:first-child:has(.authored-amount-cell) td{background:var(--paper)!important;color:var(--ink)}}
