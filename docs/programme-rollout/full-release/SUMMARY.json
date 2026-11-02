@@ -1,0 +1,134 @@
+{
+  "at": "2026-11-02T10:33:31.856211+00:00",
+  "status": "PASS_GENUINE_STAGING_FULL_RELEASE",
+  "projectRef": "inxshlumnhcgiahxqewe",
+  "normalDeployment": {
+    "projectId": "prj_9MXnYeh3mxtFzcS1xzEDrTjOW2nP",
+    "deploymentId": "dpl_4WrLENcXJchALX4DPnyextm84bza",
+    "url": "applied-commerce-sa-staging-14nyfqa60.vercel.app",
+    "commit": "fc6bf6ed984385e65313ce73d14d09453fc09ec6"
+  },
+  "guides": 395,
+  "prior237BindingsIdentical": true,
+  "acceptedBenchmarksIdentical": true,
+  "canonicalSourceChanges": false,
+  "targetedReaderRepair": {
+    "lessons": 9,
+    "tables": 12,
+    "authoredAnswerCells": 62,
+    "genuineResponsiveCases": 216,
+    "appearanceProbes": 48,
+    "printMediaProbes": 12,
+    "existingSavedAnswersPreserved": true
+  },
+  "sourceLessons": 395,
+  "sourceAssessments": 4,
+  "stableSourceBlocks": 20766,
+  "fileBytes": {
+    "teaching-plans.v2.enc.json": 6113247,
+    "teaching-manifest.v2.json": 6567779,
+    "teaching-availability.v2.json": 8767
+  },
+  "normalSequential": {
+    "requests": 135,
+    "lessons": 27,
+    "medianMs": 884,
+    "rangeMs": [
+      649,
+      2637
+    ],
+    "decodedBytesRange": [
+      12205,
+      70344
+    ]
+  },
+  "normalOverlapWallMs": [
+    2234,
+    2975,
+    1487
+  ],
+  "hosted": {
+    "instrumentedRequests": 32,
+    "routeInstances": 2,
+    "sequentialFirstPrivateReads": [
+      {
+        "lessonId": "g8-t1-l01-001",
+        "routeInstanceId": "151db189-30f4-4159-ba14-571ae8aa1af0",
+        "privateReadSequence": 1,
+        "firstPrivateReadInRouteInstance": true,
+        "processUptimeSeconds": 2.457224736,
+        "importMs": 459.38385300000004,
+        "benchmarkAndEnrichmentMs": 0.11976000000004206,
+        "teachingPlanMs": 250.28548,
+        "privateReadMs": 709.7890930000001,
+        "memoryBefore": {
+          "rss": 103669760,
+          "heapTotal": 28119040,
+          "heapUsed": 22603720,
+          "external": 4650744,
+          "arrayBuffers": 156832
+        },
+        "memoryAfter": {
+          "rss": 228925440,
+          "heapTotal": 110321664,
+          "heapUsed": 102983008,
+          "external": 9222996,
+          "arrayBuffers": 151127
+        },
+        "scope": "Hosted Node process observations; excludes authorisation and response serialization. Route-instance first private read is not proof of a platform cold process. Memory includes other work in the process and normal garbage collection."
+      },
+      {
+        "lessonId": "g8-t1-l01-001",
+        "routeInstanceId": "ad8e6044-00f2-4669-84f7-59da51d302fa",
+        "privateReadSequence": 1,
+        "firstPrivateReadInRouteInstance": true,
+        "processUptimeSeconds": 3.367348886,
+        "importMs": 458.417606,
+        "benchmarkAndEnrichmentMs": 0.1168430000002445,
+        "teachingPlanMs": 221.86959899999965,
+        "privateReadMs": 680.4040479999999,
+        "memoryBefore": {
+          "rss": 103628800,
+          "heapTotal": 25665536,
+          "heapUsed": 19996248,
+          "external": 6006533,
+          "arrayBuffers": 1512646
+        },
+        "memoryAfter": {
+          "rss": 227995648,
+          "heapTotal": 107438080,
+          "heapUsed": 105490416,
+          "external": 19748261,
+          "arrayBuffers": 1506976
+        },
+        "scope": "Hosted Node process observations; excludes authorisation and response serialization. Route-instance first private read is not proof of a platform cold process. Memory includes other work in the process and normal garbage collection."
+      }
+    ],
+    "repeatedSequentialTeachingPlanMedianMs": 110.39375300000029,
+    "rssBytesRange": [
+      103628800,
+      368906240
+    ],
+    "overlapWallMs": [
+      1472,
+      1447,
+      1423
+    ]
+  },
+  "local395": {
+    "compactBytes": 4584691,
+    "firstMs": 99.54683500000004,
+    "repeatedMedianMs": 64.64279599999998
+  },
+  "local24": {
+    "compactBytes": 450279,
+    "firstMs": 11.934796000000006,
+    "repeatedMedianMs": 5.608845499999973
+  },
+  "all395AuthorisedHashesVerified": true,
+  "coldPlatformBootstrap": "NOT ISOLATED",
+  "multiUserCapacity": "NOT DEMONSTRATED",
+  "keyExported": false,
+  "productionDeployment": false,
+  "databaseMigration": false
+}
