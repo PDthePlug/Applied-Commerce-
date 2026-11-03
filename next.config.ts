@@ -7,6 +7,10 @@ const nextConfig: NextConfig = {
       {key:"X-Frame-Options",value:"DENY"},
       {key:"Referrer-Policy",value:"strict-origin-when-cross-origin"},
       {key:"Content-Security-Policy",value:"frame-ancestors 'none'; object-src 'none'; base-uri 'self'"},
+    ]}, {source:"/sw.js",headers:[
+      {key:"Content-Type",value:"application/javascript; charset=utf-8"},
+      {key:"Cache-Control",value:"no-cache, no-store, must-revalidate"},
+      {key:"Service-Worker-Allowed",value:"/"},
     ]}];
   },
 };

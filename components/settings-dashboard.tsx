@@ -9,13 +9,14 @@ import { useLearningStore } from "@/lib/learning-store";
 import type { LearnerProfile } from "@/lib/types";
 import { DEFAULT_PERSONALISATION, type Personalisation } from "@/lib/personalisation";
 import { usePersonalisation } from "@/components/personalisation-provider";
+import { PwaInstallSettings } from "@/components/pwa-provider";
 
 const grades = [8, 9, 10, 11, 12];
 const accents: Array<{ value: Personalisation["accent"]; label: string }> = [
   { value: "commerce", label: "Commerce" }, { value: "blue", label: "Blue" }, { value: "amber", label: "Amber" }, { value: "sage", label: "Sage" },
 ];
 
-type Section = "profile" | "appearance" | "reading" | "account";
+type Section = "profile" | "appearance" | "reading" | "account" | "app";
 
 function ProfileSettingsForm({ initialName, initialGrade, saveProfile, syncError }: {
   initialName: string;
@@ -79,6 +80,7 @@ export function SettingsDashboard() {
     { value: "appearance", label: "Appearance", detail: "Theme and accent" },
     { value: "reading", label: "Reading", detail: "Text size and page width" },
     { value: "account", label: "Account & security", detail: "Email and password" },
+    { value: "app", label: "Install app", detail: "Home screen and connection" },
   ];
 
   return <div className="settings-page">
@@ -99,6 +101,7 @@ export function SettingsDashboard() {
       </nav>
 
       <section className="settings-content" aria-label={sectionLabels.find(item => item.value === section)?.label}>
+        {section === "app" ? <PwaInstallSettings/> : null}
         {section === "profile" ? <>
           <div className="settings-section-heading"><h2>Learning profile</h2><p>These details help Applied Commerce return you to the right learning context.</p></div>
           <ProfileSettingsForm key={user?.id ?? "guest"} initialName={state.profile?.displayName ?? ""} initialGrade={state.profile?.grade ?? state.activeGrade ?? 8} saveProfile={setProfile} syncError={syncError}/>
