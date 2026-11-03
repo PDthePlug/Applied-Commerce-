@@ -7,6 +7,7 @@ import { Archive, BookOpen, Building2, ChevronRight, GraduationCap, Settings2, U
 import { createClient } from "@/lib/supabase/client";
 import { useAuth } from "@/lib/auth-context";
 import { useLearningStore } from "@/lib/learning-store";
+import { ProfileInstall } from "@/components/pwa-install";
 
 export function ProfileDashboard() {
   const { user, loading } = useAuth();
@@ -109,6 +110,7 @@ export function ProfileDashboard() {
         <div><span>Email address</span><strong>{user?.email ?? (loading ? "Checking account…" : "Not signed in")}</strong></div>
         {user ? <button type="button" onClick={() => void signOut()} disabled={signingOut}>{signingOut ? "Signing out…" : "Sign out"}</button> : <Link href="/auth">Sign in</Link>}
       </div>
+      <ProfileInstall/>
       {signOutError ? <p className="profile-hub-error" role="alert">{signOutError}</p> : null}
     </section>
     <p className="profile-hub-footnote"><UserRound aria-hidden="true"/> Your saved responses and lesson completion are not changed by presentation settings.</p>

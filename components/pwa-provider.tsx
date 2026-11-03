@@ -7,20 +7,34 @@ interface InstallPromptEvent extends Event {
   userChoice: Promise<{ outcome: "accepted" | "dismissed" }>;
 }
 
+export type InstallPlatform = "ios" | "android" | "desktop" | "other";
+
 type PwaState = {
+  ready: boolean;
   installed: boolean;
   canInstall: boolean;
+  installing: boolean;
+  platform: InstallPlatform;
   install: () => Promise<void>;
   message: string;
 };
 
 const PwaContext = createContext<PwaState | null>(null);
 
+export function usePwaInstall() {
+  const state = useContext(PwaContext);
+  if (!state) throw new Error("PwaProvider is required.");
+  return state;
+}
+
 export function PwaProvider({ children }: { children: ReactNode }) {
   const [prompt, setPrompt] = useState<InstallPromptEvent | null>(null);
   const [installed, setInstalled] = useState(false);
   const [offline, setOffline] = useState(false);
   const [message, setMessage] = useState("");
+  const [ready, setReady] = useState(false);
+  const [platform, setPlatform] = useState<InstallPlatform>("other");
+  const [installing, setInstalling] = useState(false);
 
   useEffect(() => {
     const displayMode = window.matchMedia("(display-mode: standalone)");
@@ -28,8 +42,14 @@ export function PwaProvider({ children }: { children: ReactNode }) {
     const refreshConnection = () => setOffline(!navigator.onLine);
     const capturePrompt = (event: Event) => { event.preventDefault(); setPrompt(event as InstallPromptEvent); };
     const didInstall = () => { setInstalled(true); setPrompt(null); setMessage("Applied Commerce is installed on this device."); };
-    refreshInstalled();
-    refreshConnection();
+    const frame = requestAnimationFrame(() => {
+      refreshInstalled();
+      refreshConnection();
+      const agent = navigator.userAgent;
+      const ios = /iPad|iPhone|iPod/.test(agent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+      setPlatform(ios ? "ios" : /Android/.test(agent) ? "android" : /Windows|Macintosh|Linux|CrOS/.test(agent) ? "desktop" : "other");
+      setReady(true);
+    });
     displayMode.addEventListener("change", refreshInstalled);
     window.addEventListener("online", refreshConnection);
     window.addEventListener("offline", refreshConnection);
@@ -41,6 +61,7 @@ export function PwaProvider({ children }: { children: ReactNode }) {
       void navigator.serviceWorker.register("/sw.js", { scope: "/", updateViaCache: "none" }).catch(() => {});
     }
     return () => {
+      cancelAnimationFrame(frame);
       displayMode.removeEventListener("change", refreshInstalled);
       window.removeEventListener("online", refreshConnection);
       window.removeEventListener("offline", refreshConnection);
@@ -50,34 +71,23 @@ export function PwaProvider({ children }: { children: ReactNode }) {
   }, []);
 
   async function install() {
-    if (!prompt) return;
-    setPrompt(null);
+    if (!prompt || installing) return;
+    setInstalling(true);
+    setMessage("");
     try {
       await prompt.prompt();
       const choice = await prompt.userChoice;
       setMessage(choice.outcome === "accepted" ? "Follow your browser’s steps to finish installing Applied Commerce." : "You can install later from your browser’s menu.");
     } catch {
       setMessage("Open your browser’s menu and choose Install app or Add to Home Screen.");
+    } finally {
+      setPrompt(null);
+      setInstalling(false);
     }
   }
 
-  return <PwaContext.Provider value={{ installed, canInstall: Boolean(prompt), install, message }}>
+  return <PwaContext.Provider value={{ ready, installed, canInstall: Boolean(prompt), installing, platform, install, message }}>
     {offline ? <div className="pwa-offline-notice" role="status">You’re offline. Keep this lesson open to continue. Check the save status for your work; account sync and opening pages need a connection.</div> : null}
     {children}
   </PwaContext.Provider>;
-}
-
-export function PwaInstallSettings() {
-  const pwa = useContext(PwaContext);
-  if (!pwa) return null;
-  return <>
-    <div className="settings-section-heading"><h2>Install Applied Commerce</h2><p>Keep Applied Commerce on your home screen and open it in its own app window.</p></div>
-    {pwa.installed ? <p className="settings-feedback" role="status">Applied Commerce is running as an installed app.</p> : <>
-      {pwa.canInstall ? <button className="settings-primary" type="button" onClick={() => void pwa.install()}>Install Applied Commerce</button> : null}
-      <p className="settings-feedback">On Android or a computer, open your browser’s menu and choose <strong>Install app</strong> or <strong>Add to Home Screen</strong>. If the option is missing, open this site in Chrome or Edge.</p>
-      <p className="settings-feedback">On iPhone or iPad, open this site in Safari, tap <strong>Share</strong>, then <strong>Add to Home Screen</strong>.</p>
-    </>}
-    {pwa.message ? <p className="settings-feedback" role="status">{pwa.message}</p> : null}
-    <div className="settings-section-heading"><h2>When your connection drops</h2><p>Keep the current lesson open. Work successfully saved on this device remains here, and pending account changes retry when you reconnect. Opening pages, loading lessons, sign-in and staff tools need an internet connection. Installing the app does not download the curriculum.</p></div>
-  </>;
 }

@@ -30,34 +30,127 @@ test("manifest, icons and worker headers support installation", async ({ page, r
   await controlled(page);
 });
 
-test("install controls offer browser guidance, handle dismissal and hide when installed", async ({ page }, info) => {
-  await page.goto("/settings");
-  await page.getByRole("button", { name: /Install app/ }).click();
-  await expect(page.getByRole("heading", { name: "Install Applied Commerce", exact: true })).toBeVisible();
-  await expect(page.locator(".settings-content")).toContainText("Safari");
-  await expect(page.locator(".settings-content")).toContainText("does not download the curriculum");
+test("Profile keeps installation quiet, keyboard accessible and native when available", async ({ page }) => {
+  await page.goto("/profile");
+  const surface = page.locator(".profile-install");
+  const summary = surface.locator(":scope > summary");
+  await expect(summary).toHaveText("Install Applied Commerce");
+  await expect(surface).not.toHaveAttribute("open", "");
+  await expect(surface.getByRole("heading", { name: "A place on your home screen" })).not.toBeVisible();
+  await summary.focus();
+  await page.keyboard.press("Enter");
+  await expect(surface).toHaveAttribute("open", "");
+  await expect(surface.getByRole("heading", { name: "A place on your home screen" })).toBeVisible();
   await page.evaluate(() => {
     const event = new Event("beforeinstallprompt", { cancelable: true });
-    event.prompt = async () => {};
+    event.prompt = async () => { window.__installCalls = (window.__installCalls ?? 0) + 1; };
     event.userChoice = Promise.resolve({ outcome: "dismissed" });
     window.dispatchEvent(event);
   });
-  await page.getByRole("button", { name: "Install Applied Commerce", exact: true }).click();
-  await expect(page.locator(".settings-content")).toContainText("You can install later");
+  const install = surface.getByRole("button", { name: "Install Applied Commerce", exact: true });
+  await expect.poll(async () => {
+    const actionBox = await install.boundingBox();
+    const menuBox = await page.locator(".app-menu-trigger").boundingBox();
+    return actionBox.y + actionBox.height < menuBox.y;
+  }).toBe(true);
+  await install.click();
+  await expect(surface.getByRole("status")).toContainText("You can install later");
+  expect(await page.evaluate(() => window.__installCalls)).toBe(1);
+  await expect(install).toHaveCount(0);
+  await expect(surface.locator(".profile-install-help")).not.toHaveAttribute("open", "");
+  await surface.getByText("What works offline?", { exact: true }).click();
+  await expect(surface).toContainText("installation does not download the curriculum");
+  await expect.poll(async () => {
+    const helpBox = await surface.locator(".profile-install-help").boundingBox();
+    return helpBox.y + helpBox.height < (await page.locator(".app-menu-trigger").boundingBox()).y;
+  }).toBe(true);
   await page.evaluate(() => window.dispatchEvent(new Event("appinstalled")));
-  await expect(page.locator(".settings-content")).toContainText("running as an installed app");
-  await expect(page.getByRole("button", { name: "Install Applied Commerce", exact: true })).toHaveCount(0);
-  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
-  if (info.project.name === "desktop-1280") {
-    for (const width of [320, 360, 430, 768, 1280, 1920]) {
+  await expect(surface).toHaveCount(0);
+  await page.goto("/settings");
+  await expect(page.getByRole("button", { name: /Install app/ })).toHaveCount(0);
+});
+
+for (const device of [
+  { name: "iPhone", agent: "Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X)", expected: "Safari", absent: "Chrome" },
+  { name: "Android", agent: "Mozilla/5.0 (Linux; Android 13; Pixel 7)", expected: "browser’s menu", absent: "Safari" },
+  { name: "desktop", agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64)", expected: "Chrome", absent: "Safari" },
+]) test(`${device.name} installation shows only relevant instructions`, async ({ page }) => {
+  await page.addInitScript(agent => {
+    Object.defineProperty(navigator, "userAgent", { get: () => agent });
+  }, device.agent);
+  await page.goto("/profile");
+  const surface = page.locator(".profile-install");
+  await surface.locator(":scope > summary").click();
+  await expect(surface.locator(".profile-install-steps")).toContainText(device.expected);
+  await expect(surface.locator(".profile-install-steps")).not.toContainText(device.absent);
+  await expect(surface.locator(".profile-install-steps li")).toHaveCount(2);
+});
+
+test("a failed native install offers recovery and preserves learner state", async ({ page }) => {
+  await page.goto("/profile");
+  const surface = page.locator(".profile-install");
+  await expect(surface.locator(":scope > summary")).toBeVisible();
+  await page.evaluate(() => {
+    localStorage.setItem("pwa-test-preserved", "keep my work");
+    const event = new Event("beforeinstallprompt", { cancelable: true });
+    event.prompt = async () => { throw new Error("Browser rejected the prompt"); };
+    event.userChoice = Promise.resolve({ outcome: "dismissed" });
+    window.dispatchEvent(event);
+  });
+  await surface.locator(":scope > summary").click();
+  await surface.getByRole("button", { name: "Install Applied Commerce" }).click();
+  await expect(surface.getByRole("status")).toContainText("Open your browser’s menu");
+  await expect(surface.locator(".profile-install-steps")).toBeVisible();
+  expect(await page.evaluate(() => localStorage.getItem("pwa-test-preserved"))).toBe("keep my work");
+});
+
+test("an installed app does not flash the install action on load", async ({ page }) => {
+  await page.addInitScript(() => {
+    const original = window.matchMedia.bind(window);
+    window.matchMedia = query => {
+      if (query !== "(display-mode: standalone)") return original(query);
+      return { matches: true, media: query, addEventListener() {}, removeEventListener() {} };
+    };
+  });
+  await page.goto("/profile");
+  await expect(page.getByRole("heading", { name: "Learner", exact: true })).toBeVisible();
+  await expect(page.locator(".profile-install")).toHaveCount(0);
+});
+
+test("profile install remains readable across widths and themes", async ({ page }, info) => {
+  await page.emulateMedia({ colorScheme: "dark", reducedMotion: "reduce" });
+  await page.goto("/profile");
+  const surface = page.locator(".profile-install");
+  await surface.locator(":scope > summary").click();
+  await page.evaluate(() => {
+    const event = new Event("beforeinstallprompt", { cancelable: true });
+    event.prompt = async () => {};
+    event.userChoice = Promise.resolve({ outcome: "accepted" });
+    window.dispatchEvent(event);
+  });
+  const widths = info.project.name === "desktop-1280" ? [320, 360, 430, 768, 1280, 1920] : [page.viewportSize().width];
+  for (const theme of ["light", "dark", "system"]) {
+    await page.evaluate(value => document.documentElement.setAttribute("data-ac-appearance", value), theme);
+    for (const width of widths) {
       await page.setViewportSize({ width, height: 900 });
-      expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), `settings at ${width}px`).toBe(true);
-      await page.getByRole("button", { name: "Open Applied Commerce menu" }).click();
-      await expect(page.getByRole("link", { name: /Settings Install app/ })).toBeVisible();
-      expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), `menu at ${width}px`).toBe(true);
-      await page.getByRole("button", { name: "Close menu", exact: true }).click();
+      expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), `${theme}, ${width}px`).toBe(true);
+      const button = surface.getByRole("button", { name: "Install Applied Commerce" });
+      const box = await button.boundingBox();
+      expect(box.height).toBeGreaterThanOrEqual(44);
+      const contrast = await button.evaluate(el => {
+        const luminance = value => {
+          const rgb = value.match(/[\d.]+/g).slice(0,3).map(Number).map(x => x/255).map(x => x<=.04045?x/12.92:((x+.055)/1.055)**2.4);
+          return .2126*rgb[0]+.7152*rgb[1]+.0722*rgb[2];
+        };
+        const style = getComputedStyle(el), a = luminance(style.color), b = luminance(style.backgroundColor);
+        return (Math.max(a,b)+.05)/(Math.min(a,b)+.05);
+      });
+      expect(contrast, `${theme}, ${width}px button contrast`).toBeGreaterThanOrEqual(4.5);
     }
   }
+  await page.evaluate(() => document.documentElement.setAttribute("data-ac-appearance", "light"));
+  await page.setViewportSize(info.project.use.viewport);
+  await page.screenshot({ path: `test-results/pwa-profile-${info.project.name}.png`, fullPage: true });
 });
 
 test("an open lesson saves offline, navigation recovers and reconnect restores the answer", async ({ page, context }, info) => {

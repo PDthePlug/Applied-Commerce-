@@ -4,7 +4,7 @@ This release makes the existing Applied Commerce site installable, with the curr
 
 ## Learner experience
 
-- Open Menu → Settings → Install app. A browser install button appears when the browser offers one; manual Android/desktop and iPhone/iPad instructions remain available otherwise.
+- Open Menu → Profile → Install Applied Commerce. The install action is a compact, closed disclosure under Account, following BIS’s Profile pattern. Expanding it offers one native install button when available, otherwise two short steps for the current device. Offline information stays behind a separate disclosure. Installed app windows hide the install action.
 - The installed app launches at `/` in a standalone window. Its home screen icons use the existing `app/icon.svg` AC mark, rasterised at 192, 512 and Apple 180 pixels; a separate 512-pixel maskable icon has a full background.
 - Losing connectivity displays a notice. An already loaded lesson can keep using the existing local save controls. Successful device saves are preserved, and the existing learning store retries pending account changes on reconnect with its revision/conflict rules.
 - A full document navigation or refresh that fails without a network displays a self-contained recovery page. Its retry link retries the original URL; the page does not inspect or expose saved learner data.
@@ -30,7 +30,7 @@ Replacement workers wait for existing app windows to close. No `skipWaiting`, fo
 
 | Surface | Role/session | Widths | Coverage |
 | --- | --- | --- | --- |
-| Settings → Install app; learner menu | Local guest | 320, 360, 430, 768, 1280, 1920 | Install guidance, simulated prompt/dismissal/installed event; settings/menu overflow at all six widths |
+| Profile → Install Applied Commerce | Local guest | 320, 360, 430, 768, 1280, 1920 | Compact disclosure, keyboard operation, device-specific guidance, native prompt recovery, installed-state hiding; light/dark/system contrast and overflow |
 | Grade 8 Lesson 1 | Local guest | 1280, 430, 360 | Answer saved while offline, retained after recovery/reconnect |
 | Original lesson URL → recovery screen | Local guest | 1280, 430, 360 | Offline navigation, cached icon, retry, overflow |
 | Manifest, icons, worker | Public | All three browser projects | Resolution, PNG dimensions, cache headers and active worker |
@@ -38,6 +38,8 @@ Replacement workers wait for existing app windows to close. No `skipWaiting`, fo
 | Actual Android/iOS/desktop installation | Physical devices | NOT TESTED | Requires HTTPS preview/production and device acceptance |
 
 The repository-wide Chromium suite also runs as the existing CI pull-request acceptance gate, including these new PWA journeys. Production release and live-device acceptance remain separate from this implementation.
+
+The Profile presentation refinement and its current verification are documented in [the before/after review](pwa-presentation/README.md). Its new browser checks replace the initial Settings-based install checks above; the initial release counts remain a historical baseline.
 
 ### Repaired defects found during verification
 

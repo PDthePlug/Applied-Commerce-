@@ -3,7 +3,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCallback, useRef, useState } from "react";
 import { useModalFocus } from "@/lib/use-modal-focus";
-import { Archive, BarChart3, BookOpen, Home, Menu, Settings, UserRound, X } from "lucide-react";
+import { Archive, BarChart3, BookOpen, Home, Menu, UserRound, X } from "lucide-react";
 import { Brand } from "./brand";
 
 const nav=[
@@ -12,7 +12,6 @@ const nav=[
   {href:"/portfolio",label:"Portfolio",detail:"Evidence captured from your work",icon:Archive},
   {href:"/progress",label:"Progress",detail:"See what you have completed",icon:BarChart3},
   {href:"/profile",label:"Profile",detail:"Your learner record and current grade",icon:UserRound},
-  {href:"/settings",label:"Settings",detail:"Install app, appearance and reading",icon:Settings},
 ];
 
 export function AppShell({children}:{children:React.ReactNode}) {
