@@ -49,7 +49,7 @@ Expected source filenames:
 
 ## Installable app
 
-Applied Commerce includes a web app manifest, home screen icons and a production service worker for offline recovery. Open **Menu → Settings → Install app** for browser installation or iPhone/iPad instructions. An open lesson retains the existing device-save behaviour when disconnected; installing does not download the curriculum. See [PWA behaviour, cache boundaries and verification](docs/PWA.md).
+Applied Commerce includes a web app manifest, home screen icons and a production service worker for offline recovery. Open **Menu → Profile → Install Applied Commerce** for installation. A compact, expandable Profile action offers native installation when available, or instructions for your device. An open lesson retains the existing device-save behaviour when disconnected; installing does not download the curriculum. See [PWA behaviour, cache boundaries and verification](docs/PWA.md).
 
 ## Development
 
